@@ -3,34 +3,44 @@
 \usepackage{fontspec}
 \usepackage{xcolor}
 \usepackage{fancyhdr}
+\usepackage{booktabs}
 \usepackage{geometry}
 \geometry{margin=1.8cm,top=2cm,headheight=15pt}
 
-\setmainfont{Times New Roman}
-\setCJKmainfont{PingFang SC}
-% ★ (U+2605) 不在 Times New Roman 中，用苹方渲染
-\newfontfamily{\starfont}{PingFang SC}
+\setmainfont{Baskerville}
+% 中文正文与星号统一使用宋体
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
 
 \definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{wrongbg}{RGB}{253,235,233}
 \definecolor{rulegray}{RGB}{200,200,200}
 
 % 允许 LaTeX 在难以断行处拉伸，避免下划线撑出页边
 \setlength{\emergencystretch}{3em}
+\setlength{\fboxsep}{3pt}
+\setlength{\parindent}{0pt}
 
 % 填空横线
-\newcommand{\blank}{\underline{\hspace{2.2cm}}}
+\newcommand{\blank}{\underline{\hspace{2.8cm}}}
+% 可手写勾选的小方框
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.8ex}\rule{0.8ex}{0pt}}}
 % 错题星标
 \newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
 % 用法：\Q{题号}{标记(\STAR 或空)}{句子}
+% 错题整行浅红底 + 红色加粗题号
 \newcommand{\Q}[3]{%
-  \par\vspace{0.36em}\noindent
-  \hangindent=3em\hangafter=1%
   \if\relax\detokenize{#2}\relax
-    \makebox[1.8em][r]{#1.}%
+    \def\qbg{white}\def\qnum{#1.}\def\qmark{}%
   \else
-    \makebox[1.8em][r]{\textcolor{wrongred}{\textbf{#1.}}}%
+    \def\qbg{wrongbg}\def\qnum{\textcolor{wrongred}{\textbf{#1.}}}\def\qmark{#2}%
   \fi
-  \makebox[1.3em][l]{#2}\,#3\par}
+  \par\vspace{0.22em}\noindent
+  \colorbox{\qbg}{%
+    \parbox[t]{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \hangindent=3em\hangafter=1%
+      \makebox[1.8em][r]{\qnum}\makebox[1.3em][l]{\qmark}\,#3}}%
+  \par}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -59,9 +69,9 @@
     重做日期：\underline{\hspace{2.6cm}}}}
 
 \vspace{0.8em}
-\noindent 说明：在横线处填入所给动词的正确时态/语态形式。\STAR\ 为原题做错的题目。
+\noindent 说明：在横线处填入所给动词的正确时态/语态形式。\STAR\ 为原题做错的题目（整行浅红底）。
 
-\vspace{0.9em}
+\vspace{0.7em}
 \Q{1}{}{My friend Tony always \blank\ (attend) the meeting on time.}
 \Q{2}{}{Will you go and help to get in the crops when the harvest time \blank\ (come)?}
 \Q{3}{}{He said he \blank\ (live) in the countryside when he retired.}
@@ -73,7 +83,7 @@
 \Q{9}{\STAR}{Once he \blank\ (make) up his mind to do something, you will never hold him back.}
 \Q{10}{}{Great changes \blank\ (take) place in Pudong since we carried out the Party's open policy.}
 \Q{11}{}{So far we have \blank\ (discuss) the first three paragraphs.}
-\Q{12}{\STAR}{The students \blank\ (write) busily when Miss Brown went to get a book that she \blank\ (leave) in the office.}
+\Q{12}{\STAR}{The students \blank\ (write) busily when Miss Brown went to get a book that she\\[-0.05em]\blank\ (leave) in the office.}
 \Q{13}{}{It \blank\ (rain) heavily all morning yesterday.}
 \Q{14}{}{This is the second time that he \blank\ (win) the first prize in the English contest.}
 \Q{15}{}{By the end of last month the old man \blank\ (write) three letters to his son.}
@@ -86,23 +96,23 @@
 \Q{22}{}{Lisa \blank\ (listen) to the songs by the Beatles at 8 o'clock last Sunday.}
 \Q{23}{}{I'm sorry you've missed the last bus. It \blank\ (leave) ten minutes ago.}
 \Q{24}{}{When Mark opened the door, he saw a woman standing there. He \blank\ (never see) her before.}
-\Q{25}{\STAR}{This is the third time that our school \blank\ (send) English teachers to Britain for the exchange program.}
-\Q{26}{}{You don't need to describe her. I \blank\ (meet) her several times.}
-% 第27题原句识别不清，待核对
-\Q{27}{}{When I saw Jim, he \blank\ (stare) into space.}
-\Q{28}{\STAR}{Helen \blank\ (leave) her keys in the office so she had to wait until her husband \blank\ (come) home.}
-\Q{29}{}{I first met Lisa three years ago. She \blank\ (work) at a radio shop at the time.}
-\Q{30}{}{Everybody in the office \blank\ (work) hard when the manager came in.}
+\Q{25}{\STAR}{Everybody in the office \blank\ (work) hard when the manager came in.}
+\Q{26}{}{This is the third time that our school \blank\ (send) English teachers to Britain for the exchange program.}
+\newpage
+\vspace{0.35em}
+\Q{27}{}{You don't need to describe her. I \blank\ (meet) her several times.}
+\Q{28}{\STAR}{I don't think Jim saw me; he \blank\ (stare) into space.}
+\Q{29}{}{Helen \blank\ (leave) her keys in the office so she had to wait until her husband \blank\ (come) home.}
+\Q{30}{}{I first met Lisa three years ago. She \blank\ (work) at a radio shop at the time.}
 \Q{31}{\STAR}{--- Hi, Tracy, you look tired.\\--- I am tired. I \blank\ (paint) the living room all day.}
 \Q{32}{\STAR}{Shirley \blank\ (write) a book about China last year but I don't know whether she has finished it.}
 \Q{33}{}{--- How are you today?\\--- Oh, I \blank\ (not feel) as ill as I do now for a very long time.}
 \Q{34}{\STAR}{--- Oh, it's you! I \blank\ (not recognize) you.\\--- I \blank\ (just have) my hair cut, and I \blank\ (wear) new glasses.}
 \Q{35}{}{--- What's that terrible noise?\\--- The neighbors \blank\ (prepare) for a party.}
-% 第36题原句识别不清，待核对
-\Q{36}{\STAR}{We \blank\ (read) these books in the last three years.}
+\Q{36}{\STAR}{We \blank\ (publish) ten books in the last three years.}
 \Q{37}{}{A new cinema \blank\ (build) here. They hope to finish it next month.}
 \Q{38}{}{I arrived late; I \blank\ (not expect) the road to be so icy.}
-\Q{39}{}{John and I \blank\ (be) friends for eight years. We first \blank\ (get) to know each other at a Christmas party. But we \blank\ (see) each other a couple of times before that.}
+\Q{39}{}{John and I \blank\ (be) friends for eight years.\\[-0.05em]We first \blank\ (get) to know each other at a Christmas party.\\[-0.05em]But we \blank\ (see) each other a couple of times before that.}
 \Q{40}{}{This morning I \blank\ (hang) out the washing when it started to rain.}
 \Q{41}{\STAR}{It's said that the scientist \blank\ (work) in Africa with wild animals for six years in the 1990's.}
 \Q{42}{}{According to the timetable, the next train for Beijing \blank\ (leave) at 10 o'clock.}
@@ -110,10 +120,58 @@
 \Q{44}{\STAR}{He said in the email that he \blank\ (leave) for the international conference the next day.}
 \Q{45}{}{She had to stay at home as her husband \blank\ (fall) ill two days before.}
 \Q{46}{}{He \blank\ (hardly finish) his test paper when the bell \blank\ (ring).}
-\Q{47}{}{Where have you been? I \blank\ (look) for you everywhere the whole morning.}
-% 第48题原句识别不清，待核对
-\Q{48}{}{He \blank\ (not take) a job until he graduates from high school.}
+\Q{47}{}{It \blank\ (not be) long before he graduates from high school.}
+\Q{48}{}{Where have you been? I \blank\ (look) for you everywhere the whole morning.}
 \Q{49}{}{Please tell me if he \blank\ (come) to our party tomorrow.}
 \Q{50}{\STAR}{I \blank\ (think) of going up to Scotland at the end of December, but I've only got a few days' holiday.}
+
+\newpage
+\begin{center}
+{\Large\bfseries 错题知识点归类与复盘}
+\end{center}
+\vspace{-0.4em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.8pt}}
+
+\vspace{0.5em}
+\noindent 说明：按语法点归类 18 道错题，完成二刷后勾选结果，并记录后续复习重点。
+
+\vspace{0.5em}
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabular}{@{}p{3.25cm} p{3.05cm} c p{6.15cm}@{}}
+\toprule
+\textbf{薄弱知识点} & \textbf{题号} & \textbf{题数} & \textbf{二刷结果 / 复习记录} \\
+\midrule
+过去进行时     & 12, 25, 28     & 3 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+现在进行时     & 19, 43, 50     & 3 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+现在完成时     & 20, 36         & 2 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+一般过去时     & 32, 34, 41     & 3 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+将来进行时     & 5              & 1 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+将来完成时     & 18             & 1 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+过去将来时     & 44             & 1 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+过去完成时     & 8（另 12）     & 1 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+从句时态呼应   & 9              & 1 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+现在完成进行时 & 31             & 1 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+被动语态       & 21             & 1 & \checkmarkbox 正确\quad \checkmarkbox 错误\quad 日期：\underline{\hspace{1.3cm}} \\
+\midrule
+\textbf{合计}  & \textbf{18 题} & \textbf{18} & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.35em}
+\noindent{\footnotesize 注：第 31 题考查现在完成进行时；第 32、41 题按明确的过去时间语境归入一般过去时；第 12 题同时涉及过去进行时与过去完成时；第 34 题同时涉及一般过去时、现在完成时与现在进行时。}
+
+\vspace{0.65em}
+\noindent\fcolorbox{black!15}{black!4}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    \textbf{复盘记录}\\[0.35em]
+    最薄弱的知识点：\underline{\hspace{9.2cm}}\\[0.55em]
+    主要错误原因：\checkmarkbox 概念混淆\quad \checkmarkbox 时态判断\quad \checkmarkbox 形式错误\quad \checkmarkbox 粗心\\[0.55em]
+    本次复习的改进措施：\underline{\hspace{10.1cm}}\\[0.55em]
+    \hspace{3.2em}\underline{\hspace{10.1cm}}\\[0.55em]
+    下次复习日期：\underline{\hspace{2.2cm}}\qquad
+    当前掌握度：\checkmarkbox 仍薄弱\quad \checkmarkbox 基本掌握\quad \checkmarkbox 已掌握
+  }}
 
 \end{document}
