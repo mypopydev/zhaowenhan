@@ -1,0 +1,119 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{margin=1.8cm,top=2cm,headheight=15pt}
+
+\setmainfont{Times New Roman}
+\setCJKmainfont{PingFang SC}
+% ★ (U+2605) 不在 Times New Roman 中，用苹方渲染
+\newfontfamily{\starfont}{PingFang SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{200,200,200}
+
+% 允许 LaTeX 在难以断行处拉伸，避免下划线撑出页边
+\setlength{\emergencystretch}{3em}
+
+% 填空横线
+\newcommand{\blank}{\underline{\hspace{2.2cm}}}
+% 错题星标
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% 用法：\Q{题号}{标记(\STAR 或空)}{句子}
+\newcommand{\Q}[3]{%
+  \par\vspace{0.36em}\noindent
+  \hangindent=3em\hangafter=1%
+  \if\relax\detokenize{#2}\relax
+    \makebox[1.8em][r]{#1.}%
+  \else
+    \makebox[1.8em][r]{\textcolor{wrongred}{\textbf{#1.}}}%
+  \fi
+  \makebox[1.3em][l]{#2}\,#3\par}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize 时态语态练习1（错题重做）}
+\fancyhead[R]{\footnotesize 赵文瀚}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries 时态语态练习1}\\[0.25em]
+{\large 错题重做}\\[0.35em]
+{\footnotesize 上海市大同中学 · 高一英语}
+\end{center}
+
+\vspace{-0.2em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.8pt}}
+
+\vspace{0.7em}
+\noindent\fcolorbox{black!15}{black!4}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    \small 姓名：赵文瀚\quad 原得分：66.0\quad
+    错题：\textcolor{wrongred}{\textbf{18}}\,/\enspace 50\quad
+    重做日期：\underline{\hspace{2.6cm}}}}
+
+\vspace{0.8em}
+\noindent 说明：在横线处填入所给动词的正确时态/语态形式。\STAR\ 为原题做错的题目。
+
+\vspace{0.9em}
+\Q{1}{}{My friend Tony always \blank\ (attend) the meeting on time.}
+\Q{2}{}{Will you go and help to get in the crops when the harvest time \blank\ (come)?}
+\Q{3}{}{He said he \blank\ (live) in the countryside when he retired.}
+\Q{4}{}{My parents told me that practice \blank\ (make) perfect.}
+\Q{5}{\STAR}{This time next month I \blank\ (sit) on the shuttle bus.}
+\Q{6}{}{He said he \blank\ (call) you as soon as you \blank\ (get) there.}
+\Q{7}{}{Don't take away the papers. They \blank\ (not sign) yet.}
+\Q{8}{\STAR}{Yesterday was the second time his brother \blank\ (be) late for school.}
+\Q{9}{\STAR}{Once he \blank\ (make) up his mind to do something, you will never hold him back.}
+\Q{10}{}{Great changes \blank\ (take) place in Pudong since we carried out the Party's open policy.}
+\Q{11}{}{So far we have \blank\ (discuss) the first three paragraphs.}
+\Q{12}{\STAR}{The students \blank\ (write) busily when Miss Brown went to get a book that she \blank\ (leave) in the office.}
+\Q{13}{}{It \blank\ (rain) heavily all morning yesterday.}
+\Q{14}{}{This is the second time that he \blank\ (win) the first prize in the English contest.}
+\Q{15}{}{By the end of last month the old man \blank\ (write) three letters to his son.}
+\Q{16}{}{The audience was larger than they \blank\ (expect).}
+\Q{17}{}{Don't go into the room while it \blank\ (paint).}
+\Q{18}{\STAR}{My mother \blank\ (work) as a teacher for 30 years by the end of this year.}
+\Q{19}{\STAR}{Betty \blank\ (always make) the same mistake. I need to talk to her.}
+\Q{20}{\STAR}{The recent years \blank\ (see) great changes in Shanghai.}
+\Q{21}{\STAR}{Every means \blank\ (try) since then.}
+\Q{22}{}{Lisa \blank\ (listen) to the songs by the Beatles at 8 o'clock last Sunday.}
+\Q{23}{}{I'm sorry you've missed the last bus. It \blank\ (leave) ten minutes ago.}
+\Q{24}{}{When Mark opened the door, he saw a woman standing there. He \blank\ (never see) her before.}
+\Q{25}{\STAR}{This is the third time that our school \blank\ (send) English teachers to Britain for the exchange program.}
+\Q{26}{}{You don't need to describe her. I \blank\ (meet) her several times.}
+% 第27题原句识别不清，待核对
+\Q{27}{}{When I saw Jim, he \blank\ (stare) into space.}
+\Q{28}{\STAR}{Helen \blank\ (leave) her keys in the office so she had to wait until her husband \blank\ (come) home.}
+\Q{29}{}{I first met Lisa three years ago. She \blank\ (work) at a radio shop at the time.}
+\Q{30}{}{Everybody in the office \blank\ (work) hard when the manager came in.}
+\Q{31}{\STAR}{--- Hi, Tracy, you look tired.\\--- I am tired. I \blank\ (paint) the living room all day.}
+\Q{32}{\STAR}{Shirley \blank\ (write) a book about China last year but I don't know whether she has finished it.}
+\Q{33}{}{--- How are you today?\\--- Oh, I \blank\ (not feel) as ill as I do now for a very long time.}
+\Q{34}{\STAR}{--- Oh, it's you! I \blank\ (not recognize) you.\\--- I \blank\ (just have) my hair cut, and I \blank\ (wear) new glasses.}
+\Q{35}{}{--- What's that terrible noise?\\--- The neighbors \blank\ (prepare) for a party.}
+% 第36题原句识别不清，待核对
+\Q{36}{\STAR}{We \blank\ (read) these books in the last three years.}
+\Q{37}{}{A new cinema \blank\ (build) here. They hope to finish it next month.}
+\Q{38}{}{I arrived late; I \blank\ (not expect) the road to be so icy.}
+\Q{39}{}{John and I \blank\ (be) friends for eight years. We first \blank\ (get) to know each other at a Christmas party. But we \blank\ (see) each other a couple of times before that.}
+\Q{40}{}{This morning I \blank\ (hang) out the washing when it started to rain.}
+\Q{41}{\STAR}{It's said that the scientist \blank\ (work) in Africa with wild animals for six years in the 1990's.}
+\Q{42}{}{According to the timetable, the next train for Beijing \blank\ (leave) at 10 o'clock.}
+\Q{43}{\STAR}{I don't really work in this shop. I \blank\ (help) out here these days.}
+\Q{44}{\STAR}{He said in the email that he \blank\ (leave) for the international conference the next day.}
+\Q{45}{}{She had to stay at home as her husband \blank\ (fall) ill two days before.}
+\Q{46}{}{He \blank\ (hardly finish) his test paper when the bell \blank\ (ring).}
+\Q{47}{}{Where have you been? I \blank\ (look) for you everywhere the whole morning.}
+% 第48题原句识别不清，待核对
+\Q{48}{}{He \blank\ (not take) a job until he graduates from high school.}
+\Q{49}{}{Please tell me if he \blank\ (come) to our party tomorrow.}
+\Q{50}{\STAR}{I \blank\ (think) of going up to Scotland at the end of December, but I've only got a few days' holiday.}
+
+\end{document}
