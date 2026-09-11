@@ -1,0 +1,46 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.6cm,top=1.8cm}
+\linespread{1.02}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{rulegray}{RGB}{190,190,190}
+\newcommand{\num}[1]{\makebox[1.7em][r]{#1.}\hspace{0.28em}}
+\newcommand{\lvl}[1]{\makebox[1.35em][l]{\small\textbf{#1}}}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语单词默写 \quad 参考答案（中 $\to$ 英）}\\[0.22em]
+{\large Z 字母 · 第 1 / 1 份}\\[0.18em]
+{\small 2026年上海市高考英语词汇用法手册 · 参照普通高中英语课程标准}
+\end{center}
+
+\vspace{0.2em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.8pt}}
+
+\vspace{0.35em}
+\noindent{\small 对照：左侧为题目（含词性与中文释义），右侧加粗为正确英文单词。}
+
+\vspace{0.25em}
+\renewcommand{\arraystretch}{1.32}
+\noindent\begin{tabular}{@{}p{4.4cm}@{\hspace{0.2cm}}p{3.95cm}@{\hspace{0.4cm}}p{4.4cm}@{\hspace{0.2cm}}p{3.95cm}@{}}
+\toprule
+\textbf{等级 / 词性 / 中文释义} & \textbf{英文单词} & \textbf{等级 / 词性 / 中文释义} & \textbf{英文单词} \\
+\midrule
+\num{1}\lvl{\ensuremath{\circ}}n. 斑马 & \textbf{zebra} & \num{4}\lvl{\ensuremath{\ast\ast}}n. 地带；区域 & \textbf{zone} \\
+\num{2}\lvl{\ensuremath{\circ}}n. 零；零度 & \textbf{zero} & \num{5}\lvl{\ensuremath{\circ}}n. 动物园 & \textbf{zoo} \\
+\num{3}\lvl{\ensuremath{\circ}}n. 拉链；邮政编码 & \textbf{zip} &  \\
+\bottomrule
+\end{tabular}
+
+\end{document}
