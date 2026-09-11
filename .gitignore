@@ -26,3 +26,6 @@ English/vocabulary/dist/
 
 # 数学试卷源码目录的编译中间 PDF（成品位于 Mathematics/papers/试卷 与 答案）
 Mathematics/papers/源码/*.pdf
+
+# 化学试卷源码目录的编译中间 PDF（成品位于 Chemistry/papers/试卷 与 答案）
+Chemistry/papers/源码/*.pdf

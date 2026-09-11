@@ -1,0 +1,71 @@
+% chem.sty —— 上海高中化学试卷共享样式
+%
+% 与 Mathematics/papers/源码/common.sty 采用同一套「单文件双输出」机制：
+%   试卷版：xelatex 试卷.tex
+%   答案版：xelatex "\def\isanswer{1}\input{试卷.tex}"
+%
+% 依赖：xelatex + ctex（fontset=mac 需 macOS 中文字体）、chemformula、tikz。
+
+% ---- 中文与字体 ----
+\RequirePackage[UTF8, fontset=mac, scheme=plain]{ctex}
+\setmainfont{Times New Roman}
+
+% ---- 版面 ----
+\RequirePackage[a4paper,left=2.2cm,right=2.2cm,top=2.4cm,bottom=2.4cm]{geometry}
+\RequirePackage{setspace}\setstretch{1.35}
+
+% ---- 数学与化学符号 ----
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{chemformula}
+
+% ---- 排版宏包 ----
+\RequirePackage{enumitem}
+\setlist[enumerate]{leftmargin=2.2em,itemsep=0.35em,topsep=0.4em}
+\RequirePackage{array,tabularx,booktabs,longtable}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\usetikzlibrary{shapes,positioning,calc}
+\RequirePackage{xcolor}
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage{ulem}
+\RequirePackage{multirow}
+
+% ---- 页眉页脚骨架（左侧卷名由各试卷 \fancyhead[L] 自行指定）----
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ==========================================================
+% 试卷版 / 答案版 控制
+% ==========================================================
+\newif\ifanswer
+\answerfalse
+\DeclareOption{answer}{\answertrue}
+\DeclareOption{test}{\answerfalse}
+\ExecuteOptions{test}
+\ProcessOptions\relax
+% 也支持在 \input 主文件前 \def\isanswer{1}
+\ifdefined\isanswer\answertrue\fi
+
+% 版本标记：仅答案版在页眉追加，便于打印后区分两摞纸
+\newcommand{\vermark}{\ifanswer\quad【参考答案版】\fi}
+
+% 行内答案 / 解析（备用于把答案直接挂在题目后面；本卷答案集中在卷末）
+\newcommand{\ans}[1]{\ifanswer\par\noindent{\small\kaishu\bfseries 【答案】}#1\fi}
+\newcommand{\sol}[1]{\ifanswer\par\noindent{\small\kaishu\bfseries 【解析】}#1\fi}
+
+% ==========================================================
+% 题型排版命令
+% ==========================================================
+% 填空横线
+\newcommand{\blank}[1][2.2em]{\underline{\hspace{#1}}}
+
+% 四选项（注意：行首 \par 换行，行尾不可再添 \par，否则会打断 enumerate 的 item）
+\newcommand{\choice}[4]{\par\hangindent=2em A.~#1 \quad B.~#2 \quad C.~#3 \quad D.~#4}
+% 三选项版本（原题无 D 选项时使用）
+\newcommand{\choicethree}[3]{\par\hangindent=2em A.~#1 \quad B.~#2 \quad C.~#3}
+
+% 大题标题（一、/二、/三、）
+\newcommand{\bigsection}[1]{\par\vspace{0.6em}{\kaishu\large\bfseries #1}\par\vspace{0.2em}}
