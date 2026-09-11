@@ -8,6 +8,7 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.xdv
 *.bbl
 *.blg
 
@@ -19,3 +20,6 @@
 # 大型参考 PDF（教材/手册，不入库）
 *词汇用法手册*.pdf
 *课程标准*.pdf
+
+# 构建产物（由 Makefile 生成，见 English/vocabulary/Makefile）
+English/vocabulary/dist/
