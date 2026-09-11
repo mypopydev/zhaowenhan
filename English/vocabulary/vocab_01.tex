@@ -3,12 +3,17 @@
 \usepackage{fontspec}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{xcolor}
 \usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
 \geometry{margin=1.8cm}
+\linespread{1.05}
 
-\setmainfont{Times New Roman}
-\setCJKmainfont{PingFang SC}
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
 
+\definecolor{rulegray}{RGB}{190,190,190}
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.8ex}\rule{0.8ex}{0pt}}}
 % 题号：右对齐，使句点对齐
 \newcommand{\num}[1]{\makebox[2em][r]{#1.}\hspace{0.35em}}
 % 默写横线
@@ -35,7 +40,7 @@
 \renewcommand{\arraystretch}{1.45}
 \noindent\begin{tabular}{@{}p{4.6cm}@{\hspace{0.25cm}}p{3.5cm}@{\hspace{0.5cm}}p{4.6cm}@{\hspace{0.25cm}}p{3.5cm}@{}}
 \toprule
-中文释义 & 英文 & 中文释义 & 英文 \\
+中文释义 & 英文默写 & 中文释义 & 英文默写 \\
 \midrule
 \num{1}放弃             & \blank & \num{26}疼痛            & \blank \\
 \num{2}聪明能干的       & \blank & \num{27}可爱的          & \blank \\
@@ -64,5 +69,23 @@
 \num{25}适应了的        & \blank & \num{50}拥护            & \blank \\
 \bottomrule
 \end{tabular}
+
+\vspace{0.55em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.35em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.35em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.3cm}}\,/\,50
+& 错误单词编号：\underline{\hspace{3.1cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.35em}
+\noindent 薄弱知识点：\underline{\hspace{13.4cm}}
+
+\vspace{0.35em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
 
 \end{document}
