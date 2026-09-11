@@ -1,23 +1,25 @@
 # 英语单词默写表 —— 编译 Makefile
 #
-# 目录约定：
-#   vocab_*.tex            中→英题目（含早期 vocab_01 专项）
-#   en2cn/vocab_*.tex      英→中题目
-#   ans/zh2en/vocab_*.tex  中→英参考答案
-#   ans/en2cn/vocab_*.tex  英→中参考答案
+# 目录约定（按字母组织，L = A…Z）：
+#   L/zh2en_NN.tex        中→英题目
+#   L/en2cn_NN.tex        英→中题目
+#   L/ans_zh2en_NN.tex    中→英参考答案
+#   L/ans_en2cn_NN.tex    英→中参考答案
+#   extra/zh2en_01.tex    早期 A-advanced 专项
 #
 # 常用命令：
 #   make                 编译题目（197 份）
 #   make ans             编译答案（196 份）
-#   make zh2en / en2cn   只编某方向题目
-#   make ans-zh2en / ans-en2cn  只编某方向答案
-#   make letter L=A      只编 A 字母（两个方向）
-#   make dist            编译并汇总到 dist/{zh2en,en2cn}/
+#   make zh2en / en2cn              只编某方向题目
+#   make ans-zh2en / ans-en2cn      只编某方向答案
+#   make letter L=S      只编 S 字母（题目+答案）
+#   make dist            汇总到 dist/（保留字母子目录）
 #   make merge           合成两本题目合册
 #   make merge-ans       合成两本答案合册
 #   make check           校验每份均为 1 页
 #   make clean           清理 LaTeX 临时文件
 #   make distclean       清理临时文件与生成的 PDF
+#   make list / help     查看统计 / 用法
 
 SHELL       := /bin/bash
 LATEXMK     := latexmk
@@ -25,17 +27,17 @@ LATEXMKOPTS := -cd -xelatex -interaction=nonstopmode -halt-on-error -file-line-e
 PDFUNITE    := pdfunite
 PDFINFO     := pdfinfo
 DIST        := dist
+DIRS        := A B C D E F G H I J K L M N O P Q R S T U V W X Y Z extra
 
-ZH_SRC   := $(sort $(wildcard vocab_*.tex))
-E2C_SRC  := $(sort $(wildcard en2cn/*.tex))
-ANSZH_SRC := $(sort $(wildcard ans/zh2en/*.tex))
-ANSE2C_SRC := $(sort $(wildcard ans/en2cn/*.tex))
-ZH_PDF   := $(ZH_SRC:.tex=.pdf)
-E2C_PDF  := $(E2C_SRC:.tex=.pdf)
-ANSZH_PDF := $(ANSZH_SRC:.tex=.pdf)
+ZH_SRC     := $(sort $(wildcard [A-Z]/zh2en_*.tex) $(wildcard extra/zh2en_*.tex))
+E2C_SRC    := $(sort $(wildcard [A-Z]/en2cn_*.tex))
+ANSZH_SRC  := $(sort $(wildcard [A-Z]/ans_zh2en_*.tex))
+ANSE2C_SRC := $(sort $(wildcard [A-Z]/ans_en2cn_*.tex))
+ZH_PDF     := $(ZH_SRC:.tex=.pdf)
+E2C_PDF    := $(E2C_SRC:.tex=.pdf)
+ANSZH_PDF  := $(ANSZH_SRC:.tex=.pdf)
 ANSE2C_PDF := $(ANSE2C_SRC:.tex=.pdf)
-ALL_SRC  := $(ZH_SRC) $(E2C_SRC) $(ANSZH_SRC) $(ANSE2C_SRC)
-ALL_PDF  := $(ZH_PDF) $(E2C_PDF) $(ANSZH_PDF) $(ANSE2C_PDF)
+ALL_PDF    := $(ZH_PDF) $(E2C_PDF) $(ANSZH_PDF) $(ANSE2C_PDF)
 
 .PHONY: all zh2en en2cn ans ans-zh2en ans-en2cn letter dist merge merge-ans check clean distclean list help
 
@@ -53,22 +55,24 @@ ans-en2cn: $(ANSE2C_PDF)
 
 letter:
 	@if [ -z "$(L)" ]; then echo "用法: make letter L=A"; exit 1; fi
+	@test -d "$(L)" || { echo "无目录: $(L)"; exit 1; }
 	@echo ">> 编译字母 $(L)"
-	@for f in $(wildcard vocab_$(L)_*.tex) $(wildcard en2cn/vocab_$(L)_*.tex); do \
+	@for f in $(sort $(wildcard $(L)/*.tex)); do \
 		echo "   $$f"; \
 		$(LATEXMK) $(LATEXMKOPTS) -silent "$$f" || exit 1; \
 	done
 
-# ---- 汇总 ----
+# ---- 汇总（保留字母子目录）----
 dist: all ans
-	@mkdir -p $(DIST)/zh2en $(DIST)/en2cn $(DIST)/ans-zh2en $(DIST)/ans-en2cn
-	@cp $(ZH_PDF) $(DIST)/zh2en/
-	@cp $(E2C_PDF) $(DIST)/en2cn/
-	@cp $(ANSZH_PDF) $(DIST)/ans-zh2en/
-	@cp $(ANSE2C_PDF) $(DIST)/ans-en2cn/
+	@for L in $(DIRS); do \
+		mkdir -p $(DIST)/zh2en/$$L $(DIST)/en2cn/$$L $(DIST)/ans-zh2en/$$L $(DIST)/ans-en2cn/$$L; \
+		cp $$L/zh2en_*.pdf     $(DIST)/zh2en/$$L/     2>/dev/null || true; \
+		cp $$L/en2cn_*.pdf     $(DIST)/en2cn/$$L/     2>/dev/null || true; \
+		cp $$L/ans_zh2en_*.pdf $(DIST)/ans-zh2en/$$L/ 2>/dev/null || true; \
+		cp $$L/ans_en2cn_*.pdf $(DIST)/ans-en2cn/$$L/ 2>/dev/null || true; \
+	done
 	@echo ">> 已汇总: 题目 $(words $(ZH_PDF))+$(words $(E2C_PDF)) 份, 答案 $(words $(ANSZH_PDF))+$(words $(ANSE2C_PDF)) 份 -> $(DIST)/"
 
-# 合成整册（便于打印）
 merge: all
 	@mkdir -p $(DIST)
 	@$(PDFUNITE) $(ZH_PDF)  "$(DIST)/默写表_中译英_全册.pdf"
@@ -77,7 +81,6 @@ merge: all
 		echo ">> $$f  $$($(PDFINFO) "$$f" 2>/dev/null | awk '/^Pages/{print $$2}') 页"; \
 	done
 
-# 合成答案合册
 merge-ans: ans
 	@mkdir -p $(DIST)
 	@$(PDFUNITE) $(ANSZH_PDF) "$(DIST)/参考答案_中译英_全册.pdf"
@@ -87,7 +90,7 @@ merge-ans: ans
 	done
 
 # ---- 校验 ----
-check: all
+check: all ans
 	@fail=0; n=0; \
 	for f in $(ALL_PDF); do \
 		n=$$((n+1)); \
@@ -98,15 +101,13 @@ check: all
 
 # ---- 清理 ----
 clean:
-	@$(LATEXMK) -c $(ALL_SRC) >/dev/null 2>&1 || true
-	@rm -f *.aux *.log *.out *.toc *.fls *.fdb_latexmk *.synctex.gz *.xdv *.bbl *.blg
-	@rm -f en2cn/*.aux en2cn/*.log en2cn/*.out en2cn/*.toc en2cn/*.fls en2cn/*.fdb_latexmk en2cn/*.synctex.gz en2cn/*.xdv
-	@rm -f ans/zh2en/*.aux ans/zh2en/*.log ans/zh2en/*.out ans/zh2en/*.toc ans/zh2en/*.fls ans/zh2en/*.fdb_latexmk ans/zh2en/*.synctex.gz ans/zh2en/*.xdv
-	@rm -f ans/en2cn/*.aux ans/en2cn/*.log ans/en2cn/*.out ans/en2cn/*.toc ans/en2cn/*.fls ans/en2cn/*.fdb_latexmk ans/en2cn/*.synctex.gz ans/en2cn/*.xdv
+	@for L in $(DIRS); do \
+		rm -f $$L/*.aux $$L/*.log $$L/*.out $$L/*.toc $$L/*.fls $$L/*.fdb_latexmk $$L/*.synctex.gz $$L/*.xdv; \
+	done
 	@echo ">> 已清理 LaTeX 临时文件"
 
 distclean: clean
-	@rm -f $(ZH_PDF) $(E2C_PDF) $(ANSZH_PDF) $(ANSE2C_PDF)
+	@for L in $(DIRS); do rm -f $$L/*.pdf; done
 	@rm -rf $(DIST)
 	@echo ">> 已清理生成的 PDF 与 $(DIST)/"
 
@@ -117,4 +118,4 @@ list:
 	@echo "合计: $(words $(ALL_PDF)) 份"
 
 help:
-	@sed -n '2,17p' $(firstword $(MAKEFILE_LIST)) | sed 's/^# \{0,1\}//'
+	@sed -n '2,21p' $(firstword $(MAKEFILE_LIST)) | sed 's/^# \{0,1\}//'
