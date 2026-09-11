@@ -25,17 +25,8 @@
 \item 将图中阴影部分可用交、并、补运算表示为 \blankline[2em].
 
 \begin{center}
-\begin{tikzpicture}[scale=1]
-\draw (0,0) circle (0.7);
-\draw (0.9,0) circle (0.7);
-\draw (1.8,0) circle (0.7);
-\node at (-0.7,0) {A};
-\node at (0.9,0.8) {B};
-\node at (2.5,0) {C};
-\fill[gray!50] (-0.7,0) circle (0.7);
-\fill[gray!50] (2.5,0) circle (1.8);
-\draw (-0.5,0.7) node {\small $U$};
-\end{tikzpicture}
+% 插图取自原卷截图（裁去截图残影后 4× LANCZOS 放大），不用 TikZ 手绘
+\includegraphics[width=0.40\textwidth]{figures/venn_ABC_shaded.png}
 \end{center}
 
 \ans{$(A\cup C)\cap\overline{B}$}
@@ -91,7 +82,7 @@
 \ans{$289$}
 
 \ifanswer
-\textbf{【解析】}因为集合 $A=\{a,b,c,d\}$ 的所有非空真子集为：$\{a\},\{b\},\{c\},\{d\},\{a,b\},\{a,c\},\{a,d\},\{b,c\},\{b,d\},\{c,d\},\{a,b,c\},\{a,b,d\},\{a,c,d\},\{b,c,d\}$，所以有 $7a+7b+7c+7d=2023\Rightarrow 7(a+b+c+d)=2023$，注意此处原题 2023 不能被 7 整除，应为 2023 即 $7\times 289$. $\Rightarrow a+b+c+d=289$.
+\textbf{【解析】}因为集合 $A=\{a,b,c,d\}$ 的所有非空真子集为：$\{a\},\allowbreak\{b\},\allowbreak\{c\},\allowbreak\{d\},\allowbreak\{a,b\},\allowbreak\{a,c\},\allowbreak\{a,d\},\allowbreak\{b,c\},\allowbreak\{b,d\},\allowbreak\{c,d\},\allowbreak\{a,b,c\},\allowbreak\{a,b,d\},\allowbreak\{a,c,d\},\allowbreak\{b,c,d\}$，所以有 $7a+7b+7c+7d=2023\Rightarrow 7(a+b+c+d)=2023$，注意此处原题 2023 不能被 7 整除，应为 2023 即 $7\times 289$. $\Rightarrow a+b+c+d=289$.
 
 \fi
 \item 设 $S=\{r_1,r_2,\dots,r_n\}\subseteq\{1,2,3,\dots,50\}$，且 $S$ 中任意两数之和不能被 7 整除，则 $n$ 的最大值为 \blankline[2em].
