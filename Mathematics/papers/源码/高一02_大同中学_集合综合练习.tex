@@ -1,0 +1,207 @@
+% datong/datong.tex —— 大同中学高一上集合综合练习（试卷版/答案版）
+% 试卷版：xelatex datong.tex
+% 答案版：xelatex "\def\isanswer{1}\input{datong.tex}"
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 学年度大同中学高一上集合综合练习}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 集合 $A=\{1,2,3,5\}$，当 $x\in A$ 时，若 $x-1\notin A$，$x+1\notin A$，则称 $x$ 为 $A$ 的一个"孤立元素"，则 $A$ 中孤立元素为 \blankline[2em].
+
+\ans{$5$}
+
+\ifanswer
+\textbf{【解析】}对于元素 1，$1+1=2\in A$，故不满足孤立元素的定义；对于元素 2，$2+1=3\in A$，故不满足孤立元素的定义；对于元素 3，$3-1=2\in A$，故不满足孤立元素的定义；对于元素 5，$5-1=4\notin A$，$5+1=6\notin A$，故满足孤立元素的定义. 故 $A$ 中孤立元素为 5.
+
+\fi
+\item 已知全集 $U=\{1,2,3,4,5\}$，$A=\{1,2\}$，$A\cup\left(\complement_U B\right)=U$，试写出一个符合要求的集合 $B=$ \blankline[2em].
+
+\ans{$\{1\}$（答案不唯一）}
+
+\item 已知集合 $M=\{1,m+2,m^2+4\}$，且 $5\in M$，则 $m$ 的值为 \blankline[2em].
+
+\ans{$m=3\text{ 或 }1$}
+
+\ifanswer
+\textbf{【解析】}因为 $M=\{1,m+2,m^2+4\}$，所以 $m+2=5$ 或 $m^2+4=5$，即 $m=3$ 或 $m=\pm 1$. 当 $m=3$ 时，$M=\{1,5,13\}$；当 $m=1$ 时，$M=\{1,3,5\}$；当 $m=-1$ 时，$M=\{1,1,5\}$ 不满足互异性. 所以 $m=3$ 或 1.
+
+\fi
+\item 若 $x\in A$，则 $\dfrac{1}{x}\in A$，就称 $A$ 是伙伴关系集合，集合 $M=\left\{-1,0,\dfrac{1}{3},\dfrac{1}{2},1,2,3,4\right\}$ 的所有非空子集中具有伙伴关系的集合的个数为 \blankline[2em].
+
+\ans{$15$}
+
+\ifanswer
+\textbf{【解析】}集合 $M=\left\{-1,0,\dfrac{1}{3},\dfrac{1}{2},1,2,3,4\right\}$ 的所有非空子集中具有伙伴关系的集合为 $\{-1\}$，$\{1\}$，$\left\{\dfrac{1}{2},2\right\}$，$\left\{\dfrac{1}{3},3\right\}$，$\{-1,1\}$，$\left\{-1,\dfrac{1}{2},2\right\}$，$\left\{-1,\dfrac{1}{3},3\right\}$，$\left\{1,\dfrac{1}{2},2\right\}$，$\left\{1,\dfrac{1}{3},3\right\}$，$\left\{\dfrac{1}{2},2,\dfrac{1}{3},3\right\}$，$\left\{-1,1,\dfrac{1}{2},2\right\}$，$\left\{-1,1,\dfrac{1}{3},3\right\}$，$\left\{-1,\dfrac{1}{2},2,\dfrac{1}{3},3\right\}$，$\left\{1,\dfrac{1}{2},2,\dfrac{1}{3},3\right\}$，$\left\{-1,1,\dfrac{1}{2},2,\dfrac{1}{3},3\right\}$，共 15 个.
+
+\fi
+\item 已知 $m\in\R$，$n\in\R$，若集合 $\left\{m,\dfrac{n}{m},1\right\}=\{m^2,m+n,0\}$，则 $m^{2025}+n^{2025}$ 的值为 \blankline[2em].
+
+\ans{$-1$}
+
+\ifanswer
+\textbf{【解析】}因为集合 $\left\{m,\dfrac{n}{m},1\right\}=\{m^2,m+n,0\}$，所以 $0\in\left\{m,\dfrac{n}{m},1\right\}$，$m\neq 0$，所以 $\dfrac{n}{m}=0$，故 $n=0$，所以集合 $\{m,0,1\}=\{m^2,m,0\}$，所以 $m^2=1$，解得 $m=1$ 或 $m=-1$. 当 $m=1$ 时，不满足集合元素的互异性；当 $m=-1$ 时，集合为 $\{-1,0,1\}$，符合条件. 所以 $m^{2025}+n^{2025}=(-1)^{2025}+0^{2025}=-1$.
+
+\fi
+\item 已知非空集合 $A$、$B$ 同时满足以下四个条件：
+
+① $A\cup B=\{1,2,3,4,5\}$；\quad ② $A\cap B=\varnothing$；\quad ③ $\operatorname{card}(A)\notin A$；\quad ④ $\operatorname{card}(B)\notin B$.
+
+注：其中 $\operatorname{card}(A)$、$\operatorname{card}(B)$ 分别表示 $A$、$B$ 中元素的个数.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 如果集合 $A$ 中只有一个元素，那么 $A=$ \blankline[2em]；
+\item 如果集合 $A$ 中有 3 个元素，则有序集合对 $(A,B)$ 的个数是 \blankline[2em].
+\end{enumerate}
+
+\ans{(1) $\{4\}$；（2）$3$}
+
+\ifanswer
+\textbf{【解析】}(1) 如果集合 $A$ 中只有一个元素，则 $\operatorname{card}(A)=1$，由 ③ $\operatorname{card}(A)\notin A$ 得 $1\notin A$，由 ④ $\operatorname{card}(B)\notin B$ 得 $4\notin B$，即 $4\in A$，得 $A=\{4\}$. (2) 如果集合 $A$ 中有 3 个元素，则 $3\notin A$，得 $A=\{1,2,4\},\{1,2,5\},\{1,4,5\},\{2,4,5\}$，由 $A\cup B=\{1,2,3,4,5\}$，得 $B$ 中至少含 2 个元素，且 $A\cap B=\varnothing$，得 $B$ 为二元集，$\operatorname{card}(B)\notin B$，得 $2\notin B$，得 $B=\{3,5\},\{3,4\},\{1,3\}$，则 $A=\{1,2,4\},B=\{3,5\}$ 或 $A=\{1,2,5\},B=\{3,4\}$ 或 $A=\{2,4,5\},B=\{1,3\}$，所以有序集合对 $(A,B)$ 的个数是 3 个.
+
+\fi
+\item 设 $U$ 为全集，对集合 $X,Y$，定义运算"*"，$M*N=\complement_U(M\cap N)$. 已知全集 $U=\{1,2,3,4,5,6,7,8\}$，集合 $X=\{1,2,3\},Y=\{3,4,5\},Z=\{2,4,7\}$，则 $(X*Y)*Z=$ \blankline[2em].
+
+\ans{$\{1,3,5,6,8\}$}
+
+\ifanswer
+\textbf{【解析】}因为集合 $U=\{1,2,3,4,5,6,7,8\}$，$X=\{1,2,3\}$，$Y=\{3,4,5\}$，$Z=\{2,4,7\}$，所以 $X\cap Y=\{3\}$，则 $X*Y=\complement_U(X\cap Y)=\{1,2,4,5,6,7,8\}$，又 $\{1,2,4,5,6,7,8\}\cap\{2,4,7\}=\{2,4,7\}$，所以 $(X*Y)*Z=\{1,3,5,6,8\}$.
+
+\fi
+\item 已知集合 $A=\{x\mid 2a+1\leqslant x\leqslant 3a-5\}$，$B=\{x\mid x<0\text{ 或 }x>19\}$. 若 $A\subseteq(A\cap B)$，则实数 $a$ 的取值范围是 \blankline[2em].
+
+\ans{$\{a\mid a<6\text{ 或 }a>9\}$}
+
+\ifanswer
+\textbf{【解析】}若 $A\subseteq(A\cap B)$，则 $A\subseteq B$. 当 $2a+1>3a-5$，即 $a<6$ 时，$A=\varnothing$ 满足条件；当 $2a+1\leqslant 3a-5$ 时，即当 $a\geqslant 6$ 时，若 $A\subseteq B$，则 $3a-5<0$ 或 $2a+1>19$，解得 $a<\dfrac{5}{3}$（舍）或 $a>9$. 综上，实数 $a$ 的取值范围是 $\{a\mid a<6\text{ 或 }a>9\}$.
+
+\fi
+\item 对于 $A$、$B$ 两个集合，满足 $A\cup B=\{n\mid 1\leqslant n\leqslant 6,\,n\in\Z\}$，$A\cap B=\varnothing$，且 $A$ 中元素个数不属于 $A$、$B$ 中元素个数不属于 $B$. 求满足题意的不同的 $A$ 的个数为 \blankline[2em].
+
+\ans{$10$}
+
+\ifanswer
+\textbf{【解析】}$A\cup B=\{1,2,3,4,5,6\}$，$A\cap B=\varnothing$，当 $A$ 的元素个数为 1 时，$B$ 中的元素个数为 5，此时 $1\notin A$ 且 $5\in A$，1 种情况；当 $A$ 的元素个数为 2 时，$B$ 中的元素个数为 4，此时 $2\notin A$ 且 $4\in A$，4 种情况；当 $A$ 的元素个数为 3 时，$B$ 中的元素个数为 3，不成立；当 $A$ 的元素个数为 4 时，$B$ 中的元素个数为 2，由对称性得有 4 种情况；当 $A$ 的元素个数为 5 时，$B$ 中的元素个数为 1，由对称性得有 1 种情况. 综上所述，共有 10 个不同的 $A$ 满足条件.
+
+\fi
+\item 设 $A$、$B$ 是非空集合，定义 $A*B=\{x\mid x\in A\cup B\text{ 且 }x\notin A\cap B\}$，已知 $A=\{x\mid 0\leqslant x\leqslant 3\}$，$B=\{x\mid x\geqslant 1\}$，则 $A*B=$ \blankline[2em].
+
+\ans{$\{x\mid 0\leqslant x<1\text{ 或 }x>3\}$}
+
+\ifanswer
+\textbf{【解析】}$A\cup B=\{x\mid x\geqslant 0\}$，$A\cap B=\{x\mid 1\leqslant x\leqslant 3\}$，$A*B=\{x\mid 0\leqslant x<1\text{ 或 }x>3\}$.
+
+\fi
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 以下关系：① $0\in\{0\}$；② $\varnothing\in\{\varnothing\}$；③ $\{0,1\}\subseteq\{\{0,1\}\}$；④ $\{(a,b)\}=\{(b,a)\}$；⑤ $\varnothing\subseteq\{\varnothing\}$；其中正确的个数为（\quad）.
+
+\ans{C}
+
+A. $1$\qquad B. $2$\qquad C. $3$\qquad D. $5$
+
+\ifanswer
+\textbf{【解析】}① $0\in\{0\}$ 正确；② $\varnothing\in\{\varnothing\}$ 正确；③ $\{0,1\}$ 表示一个元素，集合 $\{0,1\}$ 与 $\{\{0,1\}\}$ 没有公共元素，$\{0,1\}\subseteq\{\{0,1\}\}$ 错误；④ $(a,b)$ 和 $(b,a)$ 是两个不同元素，所以 $\{(a,b)\}=\{(b,a)\}$ 错误；⑤ 空集是任何集合的子集，$\varnothing\subseteq\{\varnothing\}$ 正确；所以正确的个数为 3. 故选 C.
+
+\fi
+\item 已知集合 $A=\{1,|a-1|,a+2\}$，且 $2\in A$，则实数 $a$ 的值为（\quad）.
+
+\ans{C}
+
+A. $-1$\qquad B. $0$\qquad C. $3$\qquad D. $-1$ 或 $3$
+
+\ifanswer
+\textbf{【解析】}因为 $2\in A$，所以 $|a-1|=2$ 或 $a+2=2$. 当 $|a-1|=2$ 时，解得 $a=3$ 或 $-1$，当 $a=3$ 时，集合 $A=\{1,2,5\}$，满足题意；当 $a=-1$ 时，集合 $A=\{1,2,1\}$，不满足集合的互异性，故舍去；当 $a+2=2$ 时，得 $a=0$，集合 $A=\{1,1,2\}$，不满足集合的互异性，故舍去. 综上所述，$a=3$. 故选 C.
+
+\fi
+\item 已知集合 $U=\{x\mid 0<x\leqslant 6,\,x\in\mathbb{N}\}$，若 $A\subseteq U$，且同时满足：① 若 $x\in A$，则 $3x\notin A$；④ 若 $x\in\complement_U A$，则 $3x\notin\complement_U A$. 则集合 $A$ 的个数为（\quad）.
+
+\ans{C}
+
+A. $4$\qquad B. $8$\qquad C. $16$\qquad D. $20$
+
+\ifanswer
+\textbf{【解析】}因为 $U=\{1,2,3,4,5,6\}$，$A\subseteq U$，由题意得，若 $1\in A$，则 $3\notin A$，若 $1\in\complement_U A$，则 $3\notin\complement_U A$，若 $2\in A$，则 $6\notin A$，若 $2\in\complement_U A$，则 $6\notin\complement_U A$，4、5 没有限制. 综上所述，满足条件的集合 $A$ 可为 $\{1,2\},\{1,2,4\},\{1,2,5\},\{1,2,4,5\}$，$\{1,6\},\{1,6,4\},\{1,6,5\},\{1,6,4,5\},\{2,3\},\{2,3,4\},\{2,3,5\},\{2,3,4,5\}$，$\{3,6\},\{3,6,4\},\{3,6,5\},\{3,6,4,5\}$，共 16 个. 故选 C.
+
+\fi
+\item 指示函数是一个重要的数学函数，通常用来表示某个条件的成立情况. 已知全集 $U$ 的元素个数有限，对于 $U$ 的任意一个子集 $S$，定义集合 $S$ 的指示函数 $f_S(x)=\begin{cases}1, & x\in S \\ 0, & x\in\overline{S}\end{cases}$，集合 $A$、$B$ 都是 $U$ 的子集. 现有以下四个命题：
+
+① 若 $A\subseteq B$，则 $f_A(x)\leqslant f_B(x)$；
+
+② $\displaystyle\sum_{x\in A}f_A(x)<\sum_{x\in U}f_A(x)$；
+
+③ $\displaystyle\sum_{x\in U}f_{A\cup B}(x)=\sum_{x\in U}\left(f_A(x)+f_B(x)-f_A(x)f_B(x)\right)$；
+
+④ $\displaystyle\sum_{x\in U}(1-f_A(x))(1-f_B(x))=\sum_{x\in U}\left(1-f_A(x)-f_B(x)\right)$.
+
+注：$\displaystyle\sum_{x\in M}f(x)$ 表示 $M$ 中所有元素 $x$ 所对应的函数值 $f(x)$ 之和.（其中 $M$ 是 $f(x)$ 定义域的子集）
+
+上述命题中真命题的个数是（\quad）.
+
+\ans{B}
+
+A. $1$\qquad B. $2$\qquad C. $3$\qquad D. $4$
+
+\ifanswer
+\textbf{【解析】}由已知，集合 $S$ 的指示函数 $f_S(x)=\begin{cases}1, & x\in S \\ 0, & x\in\overline{S}\end{cases}$，则对集合 $S$ 的指示函数求和的结果是属于集合 $S$ 的元素的个数；对于 ①，因为 $A\subseteq B$，所以若 $x\in A$，则 $x\in B$，此时 $f_A(x)=f_B(x)=1$，若 $x\notin A$，但 $x\in B$，此时 $f_A(x)=0$，$f_B(x)=1$，此时 $f_A(x)<f_B(x)$，若 $x\notin A$，且 $x\notin B$，此时 $f_A(x)=f_B(x)=0$，故始终有 $f_A(x)\leqslant f_B(x)$，①正确；对于 ②，当 $A=U$ 时，由指示函数的意义得次数 $\displaystyle\sum_{x\in A}f_A(x)=\sum_{x\in U}f_A(x)$，②错误；对于 ③，$\displaystyle\sum_{x\in U}f_{A\cup B}(x)$ 表示属于 $A\cup B$ 中的元素个数，$\displaystyle\sum_{x\in U}\left(f_A(x)+f_B(x)-f_A(x)f_B(x)\right)$ 表示 $A$ 中元素个数加 $B$ 中元素个数再减去 $A\cap B$ 中的元素个数，即 $A\cup B$ 中的元素个数，故 ③ 正确；对于 ④，当且仅当 $x\notin A$，且 $x\notin B$ 时，$(1-f_A(x))(1-f_B(x))=1$，否则 $(1-f_A(x))(1-f_B(x))=0$，所以 $\displaystyle\sum_{x\in U}(1-f_A(x))(1-f_B(x))$ 表示 $U$ 中既不在 $A$ 中又不在 $B$ 中的元素个数，即 $\overline{A\cup B}$ 中的元素个数，$\displaystyle\sum_{x\in U}\left(1-f_A(x)-f_B(x)\right)$ 表示 $U$ 中元素个数减去 $A$ 中元素个数再减去 $B$ 中元素个数，相较左边少减了 1 次 $A\cap B$ 中的元素个数，故左右两式不相等，④错误；综上，①③ 正确，②④ 错误，真命题个数为 2. 故选 B.
+
+\fi
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 设集合 $A=\{x\mid x^2-3x+2=0\}$，$B=\{x\mid x^2+2(a+1)x+a^2-5=0\}$.
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $A\cap B=\{2\}$，求实数 $a$ 的值；
+\item 若 $A\cup B=A$，求实数 $a$ 的取值范围.
+\end{enumerate}
+
+\ans{(1) $a=-1\text{ 或 }a=-3$；（2）$(-\infty,-3]$}
+
+\ifanswer
+\textbf{【解析】}(1) 集合 $A=\{x\mid x^2-3x+2=0\}=\{x\mid (x-1)(x-2)=0\}=\{1,2\}$，因为 $A\cap B=\{2\}$，所以 $2\in A$，$2\in B$. 又集合 $B=\{x\mid x^2+2(a+1)x+a^2-5=0\}$，则 $4+4(a+1)+a^2-5=0$，整理得 $a^2+4a+3=0$，解得 $a=-1$ 或 $a=-3$，当 $a=-1$ 时，$B=\{-2,2\}$，符合题意；当 $a=-3$ 时，$B=\{2\}$，符合题意. 综上所述，$a=-1$ 或 $a=-3$；(2) 由题意 $A=\{1,2\}$，因为 $A\cup B=A$，所以 $B\subseteq A$. ① 当 $B=\varnothing$ 时，关于 $x$ 的方程 $x^2+2(a+1)x+a^2-5=0$ 无解，所以 $\Delta=4(a+1)^2-4(a^2-5)<0$，解得 $a<-3$；② 当 $B=\{1\}$ 时，$\begin{cases}1+1=-2(a+1) \\ 1\times 1=a^2-5\end{cases}$，无解；③ 当 $B=\{2\}$ 时，$\begin{cases}2+2=-2(a+1) \\ 2\times 2=a^2-5\end{cases}$，解得 $a=-3$；④ 当 $B=\{1,2\}$ 时，$\begin{cases}1+2=-2(a+1) \\ 1\times 2=a^2-5\end{cases}$，无解. 综上所述，实数 $a$ 的取值范围为 $(-\infty,-3]$.
+
+\fi
+\item 设全集 $U=\R$，集合 $A=\{x\mid 0<x<2\}$，$B=\{x\mid a-1<x<2a+3\}$.
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $A\cup B=B$，求实数 $a$ 的取值范围；
+\item 若 $A\cap B=B$，求实数 $a$ 的取值范围.
+\end{enumerate}
+
+\ans{(1) $\left[-\dfrac{1}{2},1\right]$；（2）$(-\infty,-4]$}
+
+\ifanswer
+\textbf{【解析】}(1) 若 $A\cup B=B$，则 $A\subseteq B$，因为集合 $A=\{x\mid 0<x<2\}$，$B=\{x\mid a-1<x<2a+3\}$，所以 $\begin{cases}a-1\leqslant 0 \\ 2a+3\geqslant 2\end{cases}$，解得 $-\dfrac{1}{2}\leqslant a\leqslant 1$，所以实数 $a$ 的取值范围为 $\left[-\dfrac{1}{2},1\right]$；(2) 若 $A\cap B=B$，则 $B\subseteq A$，当 $B=\varnothing$ 时，则 $a-1\geqslant 2a+3$，解得 $a\leqslant -4$，当 $B\neq\varnothing$ 时，则 $\begin{cases}a-1<2a+3 \\ a-1\geqslant 0 \\ 2a+3\leqslant 2\end{cases}$，无解. 综上所述，实数 $a$ 的取值范围为 $(-\infty,-4]$.
+
+\fi
+\item 对于正整数集合 $A=\{a_1,a_2,\dots,a_n\}\,(n\in\mathbb{N}^*,\,n\geqslant 3)$，如果去掉其中任意一个元素 $a_i\,(i=1,2,\dots,n)$ 之后，剩余的所有元素组成的集合都能分为两个交集为空集的集合，且这两个集合的所有元素之和相等，就称集合 $A$ 为"和谐集".
+\begin{enumerate}[label=(\arabic*)]
+\item 判断集合 $\{1,2,3,4,5\}$ 是否是"和谐集"，并说明理由；
+\item 求证：若集合 $A$ 是"和谐集"，则集合 $A$ 中元素个数为奇数；
+\item 若集合 $A$ 是"和谐集"，求集合 $A$ 中元素个数的最小值.
+\end{enumerate}
+
+\ans{(1) 不是；（2）略；（3）$7$}
+
+\ifanswer
+\textbf{【解析】}(1) 对于 $\{1,2,3,4,5\}$，去掉 2 后，$\{1,3,4,5\}$ 不满足题中条件，故 $\{1,2,3,4,5\}$ 不是"和谐集". (2) 设 $A=\{a_1,a_2,\dots,a_n\}$ 中所有元素之和为 $M$，由题意得 $M-a_i\,(i=1,2,\dots,n)$ 均为偶数，因此 $a_i\,(i=1,2,\dots,n)$ 的奇偶性相同，① 若 $a_i$ 为奇数，则 $M$ 为奇数，易得 $n$ 为奇数；② 若 $a_i$ 为偶数，此时取 $b_i=\dfrac{a_i}{2}$，得 $B=\{b_1,b_2,\dots,b_n\}$ 仍满足题中条件，集合 $B$ 也是"和谐集"，若 $b_i$ 仍是偶数，则重复以上操作，最终可得各项均为奇数的"和谐集"，由 ① 得 $n$ 为奇数；综上，集合 $A$ 中元素个数为奇数. (3) 由 (2) 得集合 $A$ 中元素个数为奇数，当 $n=3$ 时，显然任意集合 $\{a_1,a_2,a_3\}$ 不是"和谐集". 当 $n=5$ 时，不妨设 $a_1<a_2<a_3<a_4<a_5$，将集合 $\{a_1,a_3,a_4,a_5\}$ 分成两个交集为空集的子集，且两个子集元素之和相等，则有 $a_1+a_5=a_3+a_4$ ①，或者 $a_5=a_1+a_3+a_4$ ②；将集合 $\{a_2,a_3,a_4,a_5\}$ 分成两个交集为空集的子集，且两个子集元素之和相等，则有 $a_2+a_5=a_3+a_4$ ③，或者 $a_5=a_2+a_3+a_4$ ④. 由 ①、③，得 $a_1=a_2$，矛盾；由 ①、④，得 $a_1=-a_2$，矛盾；由 ②、③，得 $a_1=-a_2$，矛盾；由 ②、④，得 $a_1=a_2$，矛盾. 因此当 $n=5$ 时，集合 $A$ 一定不是"和谐集". 当 $n=7$ 时，设 $A=\{1,3,5,7,9,11,13\}$，因为 $3+5+7+9=11+13$，$1+9+13=5+7+11$，$9+13=1+3+7+11$，$1+3+5+11=7+13$，$1+9+11=3+5+13$，$3+7+9=1+5+13$，$1+3+5+9=7+11$，所以集合 $A=\{1,3,5,7,9,11,13\}$ 是"和谐集". 集合 $A$ 中元素个数 $n$ 的最小值是 7.
+
+\fi
+\end{enumerate}
+
+\end{document}

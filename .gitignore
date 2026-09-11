@@ -23,3 +23,6 @@
 
 # 构建产物（由 Makefile 生成，见 English/vocabulary/Makefile）
 English/vocabulary/dist/
+
+# 数学试卷源码目录的编译中间 PDF（成品位于 Mathematics/papers/试卷 与 答案）
+Mathematics/papers/源码/*.pdf

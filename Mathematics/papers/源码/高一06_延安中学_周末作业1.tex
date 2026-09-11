@@ -1,0 +1,99 @@
+% yanan/yanan.tex —— 延安中学高一上周末作业 1（试卷版/答案版）
+% 试卷版：xelatex yanan.tex
+% 答案版：xelatex -D answer yanan.tex  或  xelatex "\def\isanswer{1}\input{yanan.tex}"
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest{2026--2027 学年度延安中学高一上周末作业 1}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\item 已知集合 $A=\{x \mid x^2=1\}$，$B=\{x \mid ax-1=0\}$，若 $B \subseteq A$，则实数 $a=$ \blankline[2.5em].
+
+\ans{$0,\,-1$}
+
+\item 已知集合 $A=\left\{x \in \mathbb{N} \mid y=\dfrac{12}{x+3},\, x\in\mathbb{Z}\right\}$，则集合 $A$ 用列举法表示为 \blankline[2em].
+
+\ans{$\{0,1,3,9\}$}
+
+\item 若集合 $A=\{x \mid ax^2+x+1=0,\, x\in\mathbb{R}\}$，且 $A$ 中只有一个元素，则 $a=$ \blankline[2em].
+
+\ans{$0$ 或 $\dfrac{1}{4}$}
+
+\item 集合 $S=\{x \mid x=m\sqrt{2}+n\sqrt{3},\, m\in\mathbb{Z},\, n\in\mathbb{Z}\}$，则 $-\sqrt{3}$ \blankline[1.2em] $S$（用"$\in$"或"$\notin$"连接）.
+
+\ans{$\in$}
+
+\item 已知集合 $S=\{s \mid s=2n+1,\, n\in\mathbb{N}\}$，集合 $T=\{t \mid t=2n-1,\, n\in\mathbb{N}\}$，则 $S$ \blankline[1.2em] $T$（用"$=$"或"$\subsetneq$"或"$\supsetneq$"连接）.
+
+\ans{$\subsetneq$}
+
+\item 若集合 $P=\{0,2,5\}$，$Q=\{1,2,6\}$，定义集合 $P+Q=\{x \mid x=a+b,\, a\in P,\, b\in Q\}$，则集合 $P+Q$ 用列举法表示为 \blankline[2em].
+
+\ans{$\{1,2,3,4,6,7,8,11\}$}
+
+\item 设 $A$ 是整数集的一个非空子集，对于 $k\in A$，如果 $k-1\notin A$ 且 $k+1\notin A$，那么 $k$ 是 $A$ 的一个"孤立元"。给定 $S=\{1,2,3,4,5,6,7,8\}$，由 $S$ 的 3 个元素构成的所有集合中，不含"孤立元"的集合共有 \blankline 个.
+
+\ans{6}
+
+\item 已知集合 $M=\{1,2,3,4,\dots,10\}$，$A$ 是集合 $M$ 的非空真子集，把集合 $A$ 中的各元素之和记为 $S(A)$，则满足 $S(A)=8$ 的集合 $A$ 的个数为 \blankline；$S(A)$ 的所有不同取值的个数为 \blankline.
+
+\ans{6；54}
+
+\item 当两个集合中有一个集合为另一个集合的子集时，称两个集合之间构成"全食"；当两个集合有公共元素，但互不为对方子集时，称两个集合之间构成"偏食"。对于集合 $A=\{-1,\tfrac{1}{2},1\}$，$B=\{x \mid x^2=a\}$，若 $A$ 与 $B$ 构成"全食"，则 $a$ 的取值范围是 \blankline；若 $A$ 与 $B$ 构成"偏食"，则 $a$ 的取值范围是 \blankline.
+
+\ans{全食：$\{a\mid a<0 \text{ 或 } a=1\}$；偏食：$\{\tfrac{1}{4}\}$}
+
+\end{enumerate}
+
+\bigsec{二、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{11}
+
+\item 已知集合 $M=\{a,\, a-1,\, a^2-1\}$ 三个元素组成的，且 $0\in M$，求实数 $a$ 的值.
+
+\ans{$-1$}
+
+\item $x_1,\, x_2,\, x_3,\, x_4,\, x_5$ 是正整数，任取四个和组成的集合为 $\{44,45,46,47\}$，求这五个数.
+
+\item 对于非负整数集合 $S$ 且 $S\neq\varnothing$，若对任意 $x,y\in S$，都有 $x+y\in S$，或者 $|x-y|\in S$，则称 $S$ 为一个好集合，以下记 $|S|$ 为 $S$ 的元素个数.
+\begin{enumerate}[label=(\arabic*)]
+\item 写出两个所有的元素均小于 $3$ 的好集合；
+\item 设集合 $S=\{a,b,c,d\},\, a<b<c<d$，若集合 $S$ 为好集合，求出 $a,b,c,d$ 所满足的条件.
+\end{enumerate}
+
+\end{enumerate}
+
+\ifanswer
+\bigsec{参考答案}
+
+\begin{enumerate}
+\item $0,\,-1$.
+\item $\{0,1,3,9\}$.
+\item 当 $a=0$ 时，由 $x+1=0$，解得 $x=-1$，所以 $A=\{-1\}$，符合题意；\\
+当 $a\neq 0$ 时，要使 $A$ 中只有一个元素，则 $\Delta=1^2-4a=0$，解得 $a=\tfrac{1}{4}$. 此时方程 $\tfrac{1}{4}x^2+x+1=0$，解得 $x_1=x_2=-2$，所以 $A=\{-2\}$，符合题意；综上，$a=0$ 或 $a=\tfrac{1}{4}$.
+\item 取 $m=0,\, n=-1$，则 $x=-\sqrt{3}$，所以 $-\sqrt{3}\in S$.
+\item $S$ 为正奇数集，$T$ 为非负奇数集，所以 $T \subseteq S$，故 $S \supsetneq T$.
+\item $\{1,2,3,4,6,7,8,11\}$.
+\item 由题意，"孤立元"即为在集合中无与之相邻的元素. 满足条件的集合有 $\{1,2,3\},\{2,3,4\},\{3,4,5\},\{4,5,6\},\{5,6,7\},\{6,7,8\}$，共 6 个集合.
+\item 满足 $S(A)=8$ 的集合 $A$ 有 $\{1,2,5\},\{1,3,4\},\{1,7\},\{2,6\},\{3,5\},\{8\}$，共 6 个.\\
+对于 $S(A)$ 来说，由于它是集合 $A$ 中的各元素之和，同时 $A$ 又是集合 $M$ 的非空真子集，因为 $1+2+3+\cdots+10=55$，由题意，易得 $S(A)$ 将取尽 $1$ 到 $54$ 的所有整数，所以 $S(A)$ 的所有不同取值的个数为 54.
+\item 由 $B=\{x \mid x^2=a\}$ 得，当 $a<0$ 时，$B=\varnothing$，此时 $B\subseteq A$；当 $a=0$ 时，$B=\{0\}$，此时 $A\cap B=\varnothing$；当 $a>0$ 时，$B=\{-\sqrt{a},\sqrt{a}\}$. 又 $A=\{-1,\tfrac{1}{2},1\}$.\\
+若 $A$ 与 $B$ 构成"全食"，则 $B\subseteq A$. 当 $a<0$ 时满足题意；当 $a=0$ 时不合题意；当 $a>0$ 时，要使 $B\subseteq A$，则 $B=\{-1,1\}$，即 $\sqrt{a}=1$，解得 $a=1$. 综上，$a$ 的取值范围是 $\{a \mid a<0 \text{ 或 } a=1\}$.\\
+若 $A$ 与 $B$ 构成"偏食"，显然 $a\le 0$ 时不满足题意. 当 $a>0$ 时，由 $A\cap B\neq\varnothing$，所以 $B=\{\tfrac{1}{2},\tfrac{1}{2}\}$（即 $\sqrt{a}=\tfrac{1}{2}$），解得 $a=\tfrac{1}{4}$. 此时 $a$ 的取值范围是 $\{\tfrac{1}{4}\}$.
+
+\item $-1$.
+
+\item 五个元素中有两个是相同的. 令重复元素之和为 $Z$，则 $(x_1+x_2+x_3+x_4+x_5)\times 4 = 44+45+46+47+Z$. 等式左侧是 4 的倍数；$44+45+46+47=45\times 4+2$，故 $Z$ 必是比 4 的倍数多 2 的数. 所以 $Z=46$，五个元素的和为 57，五个元素分别为 $10,11,11,12,13$.
+
+\item (1) $\{0\},\{0,1\},\{0,2\},\{0,1,2\}$；
+(2) 设 $S=\{a,b,c,d\},\, a<b<c<d$. 由题意得 $d+d\notin S$，故 $0\in S$，即 $a=0$. 考虑 $c,d$，有 $0<d-c\in S$，所以 $d-c=c$ 或 $d-c=b$. 若 $d-c=c$，则考虑 $b,c$. 由 $c<b+c<2c=d$，得 $c-b\in S$，所以 $c-b=b$，故 $S=\{a,b,2b,4b\}$. 但此时考虑 $b,4b$ 时 $3b,5b\notin S$，不满足题意. 若 $d-c=b$，此时 $S=\{0,b,c,b+c\}$ 满足题意. 所以 $S=\{0,b,c,b+c\}$，其中 $b,c$ 为正非零整数.
+\end{enumerate}
+\fi
+
+\end{document}

@@ -1,0 +1,72 @@
+% math_exams/common.sty —— 上海高一数学周末作业共享样式
+% 需要 ctex、amsmath、amssymb、enumitem、geometry
+
+\RequirePackage{ctex}
+\RequirePackage[a4paper,margin=2.5cm]{geometry}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{extarrows}
+\RequirePackage{tikz}
+
+% 中文标点
+\AtBeginDocument{\xeCJKsetup{CJKecglue={\hskip 0.15em plus 0.05em}}}
+
+% 试卷版/答案版控制
+% 用法 1（命令行）：xelatex -D answer yanan.tex
+% 用法 2（源码顶部）：\def\isanswer{1}  然后再 \input 主文件
+\newif\ifanswer
+\answerfalse
+\DeclareOption{answer}{\answertrue}
+\DeclareOption{test}{\answerfalse}
+\ExecuteOptions{test}
+\ProcessOptions\relax
+\ifdefined\isanswer\answertrue\fi
+
+% 填空横线
+\newcommand{\blankline}[1][3em]{\underline{\hspace{#1}}}
+
+% 标题（可选参数 = 标题字号档位，默认 2 号；长标题可传 3）
+\newcommand{\examtitlest}[3][2]{%
+  \begin{center}
+    {\zihao{#1}\bfseries #2}\\[0.3em]
+    {\zihao{4}\rmfamily #3}
+  \end{center}%
+}
+
+% 大节标题（一、/二、/三、）
+\newcommand{\bigsec}[1]{%
+  \par\vspace{0.5em}\noindent{\zihao{4}\bfseries #1}\par\vspace{0.2em}%
+}
+
+% 子小节
+\newcommand{\smallsec}[1]{%
+  \par\noindent{\zihao{-4}\bfseries #1}\par\vspace{0.1em}%
+}
+
+% 解答题使用 enumerate
+\setlist[enumerate,1]{label=\arabic*.,leftmargin=*,topsep=0.3em,itemsep=0.3em}
+
+% 答案/解析标记（仅 answer 版本显示）
+\newcommand{\ans}[1]{\ifanswer\textbf{【答案】}#1\fi}
+\newcommand{\sol}{\par\noindent\textbf{【解析】}\par}
+
+% ===== 数学常用符号快捷命令 =====
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\e}{\varnothing}
+\newcommand{\sub}{\subseteq}
+\newcommand{\nsub}{\not\subseteq}
+\newcommand{\bsub}{\subsetneq}
+\newcommand{\bsup}{\supsetneq}
+\newcommand{\bsubeq}{\subseteq}  % 占位
+\newcommand{\card}[1]{\operatorname{Card}(#1)}
+% 花括号字面
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\setp}[1]{\{#1\}}
+
+% \ch 风格的化学式（这里不用，留个 hook）
+\providecommand{\ch}{}
