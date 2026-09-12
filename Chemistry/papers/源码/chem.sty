@@ -10,14 +10,20 @@
 \RequirePackage[UTF8, fontset=mac, scheme=plain]{ctex}
 \setmainfont{Times New Roman}
 
-% 圈数字符 ①②③…（U+2460–U+24FF）不在 xeCJK 默认 CJK 字符范围内，
-% 会落到西文字体上导致字形丢失（Missing character），显式划入 CJK 类。
-% 本卷现用 \textcircled{1} 未受影响，此行是防止后续改用字面 ① 时踩同一个坑。
-\xeCJKDeclareCharClass{CJK}{"2460 -> "24FF}
+% 下列字符不在 xeCJK 默认 CJK 字符范围内，会落到西文字体（Times New Roman）
+% 上导致字形丢失（Missing character），显式划入 CJK 类交给中文字体渲染：
+%   U+2460–U+24FF  圈数字 ①②③…
+%   U+2160–U+217F  罗马数字 Ⅰ Ⅱ Ⅲ…（原卷「方案Ⅰ/方案Ⅱ」用）
+%   U+2100–U+214F  字母式符号 ℃ ℉ № …
+\xeCJKDeclareCharClass{CJK}{"2460 -> "24FF, "2160 -> "217F, "2100 -> "214F}
 
 % ---- 版面 ----
 \RequirePackage[a4paper,left=2.2cm,right=2.2cm,top=2.4cm,bottom=2.4cm]{geometry}
 \RequirePackage{setspace}\setstretch{1.35}
+
+% 允许段落末尾额外拉伸，避免「长题干 + 填空横线」把最后一行顶出右边界（Overfull \hbox）。
+% 中文段落几乎没有可伸长的词间空格，仅靠 \tolerance 无法化解，故给出 2em 的应急余量。
+\setlength{\emergencystretch}{2em}
 
 % ---- 数学与化学符号 ----
 \RequirePackage{amsmath,amssymb}
@@ -71,6 +77,12 @@
 \newcommand{\choice}[4]{\par\hangindent=2em A.~#1 \quad B.~#2 \quad C.~#3 \quad D.~#4}
 % 三选项版本（原题无 D 选项时使用）
 \newcommand{\choicethree}[3]{\par\hangindent=2em A.~#1 \quad B.~#2 \quad C.~#3}
+% 选项较长时改用下面两个：\choicepairs 每行两项，\choicelines 每行一项。
+% 同样以 \par 开头、结尾不加 \par，避免打断 enumerate 的 \item。
+\newcommand{\choicepairs}[4]{%
+  \par\noindent A.~#1 \quad B.~#2\par\noindent C.~#3 \quad D.~#4}
+\newcommand{\choicelines}[4]{%
+  \par\noindent A.~#1\par\noindent B.~#2\par\noindent C.~#3\par\noindent D.~#4}
 
 % 大题标题（一、/二、/三、）
 \newcommand{\bigsection}[1]{\par\vspace{0.6em}{\kaishu\large\bfseries #1}\par\vspace{0.2em}}
