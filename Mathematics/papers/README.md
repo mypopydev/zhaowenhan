@@ -10,7 +10,7 @@
 
 | 目录 | 内容 |
 |------|------|
-| `试卷/` | 试卷版 PDF，**仅题目与填空横线，不含任何答案**（8 份） |
+| `试卷/` | 试卷版 PDF，**仅题目、填空横线与解答题作答题区，不含任何答案**（8 份） |
 | `答案/` | 答案版 PDF，题目 + 行内【答案】+ 逐题【解析】（8 份） |
 | `源码/` | LaTeX 源码（8 份 `.tex` + 共享样式 `common.sty` + `Makefile`） |
 | `原图/` | 微信公众号原卷图片，按页序命名（`01.png`、`02.png`…），用于溯源（58 张） |
@@ -22,14 +22,14 @@
 
 | 系列 | 学校 | 作业 | 页数 试卷/答案 | 原图 | 原文 |
 |------|------|------|:---:|:---:|------|
-| 高一02 | 大同中学 | 集合综合练习 | 2 / 5 | 8 | [链接](https://mp.weixin.qq.com/s/NvdeYz6-8KgQfImrs40L_Q) |
-| 高一03 | 格致中学 | 周末作业1 | 2 / 4 | 6 | [链接](https://mp.weixin.qq.com/s/fLqIJLEGpTq0-I5CoLrd_g) |
+| 高一02 | 大同中学 | 集合综合练习 | 3 / 5 | 8 | [链接](https://mp.weixin.qq.com/s/NvdeYz6-8KgQfImrs40L_Q) |
+| 高一03 | 格致中学 | 周末作业1 | 3 / 4 | 6 | [链接](https://mp.weixin.qq.com/s/fLqIJLEGpTq0-I5CoLrd_g) |
 | 高一04 | 位育中学 | 周末作业1 | 2 / 2 | 3 | [链接](https://mp.weixin.qq.com/s/sTXEEcN_lpv5jmpGgmfMVQ) |
-| 高一05 | 七宝中学 | 周末作业9.5 | 2 / 5 | 9 | [链接](https://mp.weixin.qq.com/s/UY9w_gk3iw9gyu0GRXbE3A) |
-| 高一06 | 延安中学 | 周末作业1 | 1 / 3 | 4 | [链接](https://mp.weixin.qq.com/s/cnFq_79rKIUShDp0SzWEkw) |
-| 高一07 | 交附闵行 | 周练1 | 3 / 6 | 11 | [链接](https://mp.weixin.qq.com/s/jfnfEjbjjJy8Uw48nMQB1A) |
-| 高一08 | 七宝中学 | 周末作业1 | 2 / 5 | 9 | [链接](https://mp.weixin.qq.com/s/eojQb4OGTGHJyrnP3_3mww) |
-| 高一09 | 进才中学 | 周末作业1 | 3 / 5 | 8 | [链接](https://mp.weixin.qq.com/s/65D0HFe1t_SzD3S1PGfyLg) |
+| 高一05 | 七宝中学 | 周末作业9.5 | 4 / 5 | 9 | [链接](https://mp.weixin.qq.com/s/UY9w_gk3iw9gyu0GRXbE3A) |
+| 高一06 | 延安中学 | 周末作业1 | 2 / 3 | 4 | [链接](https://mp.weixin.qq.com/s/cnFq_79rKIUShDp0SzWEkw) |
+| 高一07 | 交附闵行 | 周练1 | 4 / 6 | 11 | [链接](https://mp.weixin.qq.com/s/jfnfEjbjjJy8Uw48nMQB1A) |
+| 高一08 | 七宝中学 | 周末作业1 | 4 / 5 | 9 | [链接](https://mp.weixin.qq.com/s/eojQb4OGTGHJyrnP3_3mww) |
+| 高一09 | 进才中学 | 周末作业1 | 4 / 5 | 8 | [链接](https://mp.weixin.qq.com/s/65D0HFe1t_SzD3S1PGfyLg) |
 
 合计 16 份 PDF、58 张原图。
 
@@ -70,3 +70,6 @@ make clean      # 清理 LaTeX 临时文件
 - 原卷为微信公众号图片，答案以原卷给出的版本为准，未擅自改动。
 - 试卷中出现的插图直接取自原卷截图（如格致中学第 4 题的 Venn 图，`源码/figures/`），
   **不用 TikZ 重绘**，以保证与原卷完全一致。
+- **解答题作答题区**：OCR 重排会丢掉原卷给解答题留的书写空间，故由 `\ansspace[n]` 按题量
+  重新留白（2 小问约 5–6 行、3 小问约 7–8 行、含证明/压轴 8–10 行、5 小问 10–12 行，行高 1.2cm）。
+  留白只在**试卷版**输出，答案版版式与页数完全不受影响。
