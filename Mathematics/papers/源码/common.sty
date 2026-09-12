@@ -55,9 +55,58 @@
 % 解答题使用 enumerate
 \setlist[enumerate,1]{label=\arabic*.,leftmargin=*,topsep=0.3em,itemsep=0.3em}
 
-% 答案/解析标记（仅 answer 版本显示）
-\newcommand{\ans}[1]{\ifanswer\textbf{【答案】}#1\fi}
-\newcommand{\sol}{\par\noindent\textbf{【解析】}\par}
+% ===== 答案版：答案与解析的分步排版 =====
+% 答案版读起来吃力的根源不在内容，而在「形状」：一条解析被写成一个几百字的连续
+% 段落，读者看不出解题分几步、每步在干什么。这里统一做三件事——
+%   ① 标签 + 悬挂缩进：【答案】【解析】 贴在段首，正文整体右移，换行时与正文
+%      左端对齐，标签不会再和正文糊在一起；
+%   ② 解析切步：一个 \step 独占一段，段间留 0.16em 呼吸空间，行首挂一枚浅色小
+%      方块，一眼可数清有几步（方块用 \rule 画，不依赖任何字体里有没有该字形）；
+%   ③ 子题标号另起样式：以 (1)(2)① 开头的步骤交给 \stepm，标号加粗着色、正文
+%      悬挂对齐，与普通步骤区分开。
+% 颜色取深钢蓝：灰度打印时仍与黑色正文有明度差，不会糊成一片。
+\definecolor{solblue}{RGB}{31,78,121}
+\definecolor{solmark}{RGB}{152,176,201}
+
+% \ans{答案}：标签在段首，续行悬挂对齐到答案正文左端
+\newcommand{\ans}[1]{\ifanswer
+  \begingroup
+    \par\addvspace{0.30em}%
+    \hangindent=4.4em \hangafter=1
+    \noindent{\bfseries\color{solblue}【答案】}\hspace{0.35em}#1\par
+  \endgroup
+\fi}
+
+% \solbegin … \solend：解析块。块内所有 \step 共享同一层缩进。
+\newcommand{\solbegin}{\ifanswer
+  \par\addvspace{0.40em}%
+  \begingroup
+    \parindent=0pt
+    \hangindent=0pt
+    \leftskip=1.5em
+    \emergencystretch=1.2em
+    \noindent\hspace*{-1.5em}{\bfseries\color{solblue}【解析】}\par
+    \nopagebreak
+    \vspace{0.14em}%
+    \nopagebreak
+\fi}
+\newcommand{\solend}{\ifanswer\par\endgroup\fi}
+
+% \step{一步}：普通解题步骤，行首悬挂浅色方块
+\newcommand{\step}[1]{\ifanswer
+  \par\addvspace{0.16em}\hangindent=0pt\hangafter=1
+  \noindent\llap{\textcolor{solmark}{\rule[0.26em]{0.34em}{0.34em}}\hspace{0.60em}}%
+  #1\par
+\fi}
+
+% \stepm{(1)}{一步}：带子题标号的步骤，标号加粗着色，正文悬挂对齐
+\newcommand{\stepm}[2]{\ifanswer
+  \par\addvspace{0.16em}\hangindent=2.05em\hangafter=1
+  \noindent{\bfseries\color{solblue}#1}\hspace{0.35em}#2\par
+\fi}
+
+% 兼容旧写法（旧稿里 \sol 后接一段连续文字）
+\newcommand{\sol}{\solbegin}
 
 % ===== 解答题作答留白（仅试卷版显示）=====
 % \ansspace[n]   在解答题末尾预留 n 行书写空间（默认 4 行，行高 1.2cm）

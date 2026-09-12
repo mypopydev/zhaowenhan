@@ -22,16 +22,16 @@
 
 | 系列 | 学校 | 作业 | 页数 试卷/答案 | 原图 | 原文 |
 |------|------|------|:---:|:---:|------|
-| 高一02 | 大同中学 | 集合综合练习 | 3 / 5 | 8 | [链接](https://mp.weixin.qq.com/s/NvdeYz6-8KgQfImrs40L_Q) |
-| 高一03 | 格致中学 | 周末作业1 | 3 / 4 | 6 | [链接](https://mp.weixin.qq.com/s/fLqIJLEGpTq0-I5CoLrd_g) |
-| 高一04 | 位育中学 | 周末作业1 | 2 / 2 | 3 | [链接](https://mp.weixin.qq.com/s/sTXEEcN_lpv5jmpGgmfMVQ) |
-| 高一05 | 七宝中学 | 周末作业9.5 | 4 / 5 | 9 | [链接](https://mp.weixin.qq.com/s/UY9w_gk3iw9gyu0GRXbE3A) |
+| 高一02 | 大同中学 | 集合综合练习 | 3 / 8 | 8 | [链接](https://mp.weixin.qq.com/s/NvdeYz6-8KgQfImrs40L_Q) |
+| 高一03 | 格致中学 | 周末作业1 | 3 / 5 | 6 | [链接](https://mp.weixin.qq.com/s/fLqIJLEGpTq0-I5CoLrd_g) |
+| 高一04 | 位育中学 | 周末作业1 | 2 / 3 | 3 | [链接](https://mp.weixin.qq.com/s/sTXEEcN_lpv5jmpGgmfMVQ) |
+| 高一05 | 七宝中学 | 周末作业9.5 | 4 / 8 | 9 | [链接](https://mp.weixin.qq.com/s/UY9w_gk3iw9gyu0GRXbE3A) |
 | 高一06 | 延安中学 | 周末作业1 | 2 / 3 | 4 | [链接](https://mp.weixin.qq.com/s/cnFq_79rKIUShDp0SzWEkw) |
-| 高一07 | 交附闵行 | 周练1 | 4 / 6 | 11 | [链接](https://mp.weixin.qq.com/s/jfnfEjbjjJy8Uw48nMQB1A) |
-| 高一08 | 七宝中学 | 周末作业1 | 4 / 5 | 9 | [链接](https://mp.weixin.qq.com/s/eojQb4OGTGHJyrnP3_3mww) |
-| 高一09 | 进才中学 | 周末作业1 | 4 / 5 | 8 | [链接](https://mp.weixin.qq.com/s/65D0HFe1t_SzD3S1PGfyLg) |
+| 高一07 | 交附闵行 | 周练1 | 4 / 9 | 11 | [链接](https://mp.weixin.qq.com/s/jfnfEjbjjJy8Uw48nMQB1A) |
+| 高一08 | 七宝中学 | 周末作业1 | 4 / 8 | 9 | [链接](https://mp.weixin.qq.com/s/eojQb4OGTGHJyrnP3_3mww) |
+| 高一09 | 进才中学 | 周末作业1 | 4 / 7 | 8 | [链接](https://mp.weixin.qq.com/s/65D0HFe1t_SzD3S1PGfyLg) |
 
-合计 16 份 PDF、58 张原图。
+合计 16 份 PDF、58 张原图。答案版比试卷版多出的篇幅，主要用于把解析排成分步版式（见下）。
 
 ## 答案与试卷如何分离
 
@@ -40,13 +40,37 @@
 ```latex
 \newif\ifanswer
 \ifdefined\isanswer\answertrue\fi
-\newcommand{\ans}[1]{\ifanswer\textbf{【答案】}#1\fi}
+\newcommand{\ans}[1]{\ifanswer …输出【答案】…#1…\fi}
 ```
 
-- **试卷版**：不传入 `\isanswer`，`\ans{}` 及其后的【解析】块整段不输出。
+- **试卷版**：不传入 `\isanswer`，`\ans{}` 及其后的解析块整段不输出。
 - **答案版**：编译时传入 `\def\isanswer{1}`，答案与解析正常渲染。
 
 题目本身在两种版本中完全一致，因此答案版也同时是一份"带解析的讲解稿"。
+
+## 答案版为什么这样排
+
+解析原本是一条几百字的连续段落，读者看不出解题分几步。答案版做了两处统一处理：
+
+1. **解析分步**——一条解析在顶层分隔符（`；`、句末句点）处切成若干「步骤」，
+   每步独占一段，段间留 0.16em 呼吸空间，行首挂一枚浅灰蓝小方块；
+   以 `(1)(2)①` 开头的步骤另用 `\stepm{标号}{正文}`，标号加粗着色、正文悬挂对齐。
+
+   ```latex
+   \solbegin
+   \step{由题意得 $a+2=-1$，解得 $a=-3$.}
+   \stepm{(2)}{因为 $B=\{-2,2\}$，所以 $a+2=-2$.}
+   \solend
+   ```
+
+2. **标签悬挂缩进**——【答案】【解析】用深钢蓝加粗贴在段首，正文整体右移一档，
+   换行时与正文左端对齐，标签不会和正文糊在一起。
+
+另外，选择题的 `\ans{...}` 在答案版中一律排在**整段选项之后**，
+使答案稿按「题目 → 选项 → 答案 → 解析」的顺序阅读（原稿中答案位置不一，
+有写在选项之前的，也有夹在 A 与 B 之间的）。
+
+切步只动排版命令，**不增删任何一个字**：脚本会校验切分前后去掉空白后逐字相同。
 
 ## 编译方式
 
@@ -72,4 +96,6 @@ make clean      # 清理 LaTeX 临时文件
   **不用 TikZ 重绘**，以保证与原卷完全一致。
 - **解答题作答题区**：OCR 重排会丢掉原卷给解答题留的书写空间，故由 `\ansspace[n]` 按题量
   重新留白（2 小问约 5–6 行、3 小问约 7–8 行、含证明/压轴 8–10 行、5 小问 10–12 行，行高 1.2cm）。
-  留白只在**试卷版**输出，答案版版式与页数完全不受影响。
+  留白只在**试卷版**输出，答案版不输出作答题区。
+- **答案版排版**：解析统一改成分步版式（详见上节），因此答案版页数比试卷版多。
+  高一06 原卷只给答案、没有解析，其「参考答案」本就是一行一子题的列表，无需再切步。
