@@ -9,6 +9,14 @@
 \RequirePackage{extarrows}
 \RequirePackage{tikz}
 
+% ===== 圈数字符 ①②③…（U+2460–U+24FF）=====
+% 该区段（Enclosed Alphanumerics）不在 xeCJK 默认的 CJK 字符范围内，
+% 于是会落到西文字体 lmroman 上，而 lmroman 没有这些字形 —— 编译时报
+%   Missing character: There is no ① (U+2460) in font [lmroman10-regular]
+% 结果是题目里的 ①②③ 被静默丢弃（PDF 中直接消失，不报错、不留白）。
+% 显式划入 CJK 字符类，改由中文字体（宋体）渲染，字形完整。
+\xeCJKDeclareCharClass{CJK}{"2460 -> "24FF}
+
 % 中文标点
 \AtBeginDocument{\xeCJKsetup{CJKecglue={\hskip 0.15em plus 0.05em}}}
 
@@ -50,6 +58,69 @@
 % 答案/解析标记（仅 answer 版本显示）
 \newcommand{\ans}[1]{\ifanswer\textbf{【答案】}#1\fi}
 \newcommand{\sol}{\par\noindent\textbf{【解析】}\par}
+
+% ===== 解答题作答留白（仅试卷版显示）=====
+% \ansspace[n]   在解答题末尾预留 n 行书写空间（默认 4 行，行高 1.2cm）
+% \ansspace*[n]  同上，但整段改用「可丢弃胶水」，用于每份卷子的最后一题
+%
+% 两种写法分两段拼出留白，动机如下：
+%   ① 前 3 行用 0 宽支撑盒（\rule）：盒子属于实打实的内容，分页时不会被丢弃，
+%      保证题目哪怕正好卡在页底，也还留得下最低限度的书写空间；
+%   ② 其余行数用 \vspace 胶水：胶水是可丢弃项，一旦遇上分页会被 TeX 直接扔掉。
+%      正因如此，留白绝不会把后续内容顶到下一页，也就不会在卷末多出一张
+%      只有页码的空白页——这正是最初用「整块支撑盒」时踩到的坑。
+%   ③ 最后一题必须用 * 版：它后面已无内容，任何不可丢弃的支撑盒一旦溢出，
+%      都会单独占据一整页而印出一张白纸。
+\newcount\ansspace@n
+\newdimen\ansspace@skip
+\newcommand{\ansspace}{\@ifstar\ansspace@soft\ansspace@hard}
+\newcommand{\ansspace@glue}{%
+  \ansspace@skip=\baselineskip
+  \multiply\ansspace@skip by \ansspace@n
+  \vspace{\ansspace@skip}%
+}
+\newcommand{\ansspace@hard}[1][4]{%
+  \ifanswer\else
+    \par\vspace{0.5em}%
+    \begingroup
+      \baselineskip=1.2cm
+      \ansspace@n=#1\relax
+      \ifnum\ansspace@n<3 \ansspace@n=3 \fi
+      \advance\ansspace@n by -3
+      \noindent\rule{0pt}{0.92\baselineskip}\par
+      \noindent\rule{0pt}{0.92\baselineskip}\par
+      \noindent\rule{0pt}{0.92\baselineskip}\par
+      \ifnum\ansspace@n>0 \ansspace@glue\fi
+    \endgroup
+  \fi
+}
+\newcommand{\ansspace@soft}[1][4]{%
+  \ifanswer\else
+    \par\vspace{0.5em}%
+    \begingroup
+      \baselineskip=1.2cm
+      \ansspace@n=#1\relax
+      \ansspace@glue
+    \endgroup
+  \fi
+}
+% \ansneed{dim}：若本页剩余高度不足 dim，就先另起一页（仅试卷版生效）。
+% 只用在每份卷子的压轴题之前：压轴题往往最需要版面，而它的作答区是“可丢弃胶水”，
+% 若正好落在页底会被整段丢掉。先量一下 \pagegoal-\pagetotal，不够就换页。
+% 答案版不做此调整，以免改变已定稿答案稿的分页。
+\newcommand{\ansneed}[1]{%
+  \ifanswer\else
+  \par
+  \begingroup
+    \dimen@=#1\relax
+    \ifdim\pagegoal<\maxdimen
+      \advance\dimen@ by \pagetotal
+      \ifdim\dimen@>\pagegoal \newpage \fi
+    \fi
+  \endgroup
+  \par
+  \fi
+}
 
 % ===== 数学常用符号快捷命令 =====
 \newcommand{\R}{\mathbb{R}}

@@ -162,6 +162,7 @@ A. $15$\qquad B. $16$\qquad C. $31$\qquad D. $32$
 \textbf{【解析】}(1) 因为集合 $B=\{x\mid x^2+2(a+1)x+a^2-5=0\}$ 仅有一个元素，所以 $\Delta=4(a+1)^2-4(a^2-5)=8a+24=0$，解得 $a=-3$. (2) 因为 $A\cup B=A$，所以 $B\subseteq A$. ① 当 $B=\varnothing$ 时，则 $\Delta=8a+24<0$，解得 $a<-3$，符合题意. ② 当 $B$ 有一个元素时，$a=-3$，此时 $x^2-4x+4=0$，所以 $B=\{2\}$，符合题意. ③ 当 $B=\{1,2\}$ 时，则 $\begin{cases}1+2=-2(a+1) \\ 1\times 2=a^2-5\end{cases}$，无解. 综上所述，$a$ 的取值范围为 $(-\infty,-3]$.
 
 \fi
+\ansspace[6]
 \item 已知集合 $A=\{x\mid 2<x<5\}$，$B=\{x\mid m-2\leqslant x\leqslant 2m-1\}$.
 \begin{enumerate}[label=(\arabic*)]
 \item 若 $m=5$，求 $B$；
@@ -173,6 +174,7 @@ A. $15$\qquad B. $16$\qquad C. $31$\qquad D. $32$
 
 \ans{(1) $B=\{x\mid 3\leqslant x\leqslant 9\}$；(2) $\{m\mid m<-1\}$；(3) $[1,2)\cup\left(2,\tfrac{5}{2}\right]$；(4) $\{m\mid 3\leqslant m\leqslant 4\}$；(5) $\{m\mid m<-1\}$}
 
+\ansspace[12]
 \item 已知数集 $X=\{x_1,x_2,\dots,x_n\}$（其中 $1\leqslant x_1<x_2<\dots<x_n,\,n\in\mathbb{N}^*,n\geqslant 2$）具有性质 $M$：对任意的 $i,j\,(1\leqslant i\leqslant j\leqslant n)$，$x_ix_j$ 与 $\tfrac{x_i}{x_j}$ 两数中至少有一个属于 $X$.
 \begin{enumerate}[label=(\arabic*)]
 \item 分别判断数集 $P=\{1,2,3\}$ 与 $Q=\{1,2,4\}$ 是否具有性质 $M$；
@@ -186,19 +188,22 @@ A. $15$\qquad B. $16$\qquad C. $31$\qquad D. $32$
 \textbf{【解析】}(1) 对于集合 $P$：取 $x_2=2,\,x_3=3$，则 $x_2x_3=2\times 3=6\notin P$，$\tfrac{x_3}{x_2}=\tfrac{3}{2}\notin P$，所以数集 $P$ 不具有性质 $M$. 对于集合 $Q$：$1\times 2=2\in Q$，$1\times 4=4\in Q$，$\tfrac{4}{2}=2\in Q$，$\tfrac{4}{4}=1\in Q$，则对 $Q$ 中任意 $x_i$、$x_j$，$x_ix_j$ 与 $\tfrac{x_i}{x_j}$ 中至少有一个属于 $Q$，所以数集 $Q$ 具有性质 $M$. (2) 由已知 $x_2\geqslant 1$. 若 $x_1>1$，则 $x_n>1$，$x_nx_n>x_n$，所以 $x_nx_n\notin X$，又 $\tfrac{x_n}{x_n}=1\notin X$，所以数集 $X$ 不具有性质 $M$，不符合题意. 所以 $x_1=1$. (3) 数集 $X$ 具有性质 $M$，$n=5$，$x_2=3$. 由 (2) 得 $x_1=1$. 因为 $1<x_2<x_3<x_4<x_5$，所以 $x_i\cdot x_5>x_i\,(i=2,3,4,5)$，所以 $x_i\cdot x_5\notin X$. 因为数集 $X$ 具有性质 $M$，所以 $\tfrac{x_5}{x_1}\in X$，所以 $x_5=1=\tfrac{x_5}{x_5}<\tfrac{x_5}{x_4}<\tfrac{x_5}{x_3}<\tfrac{x_5}{x_2}<x_5$，所以 $\tfrac{x_5}{x_4}=x_2$，$\tfrac{x_5}{x_3}=x_3$，$\tfrac{x_5}{x_2}=x_4$，所以 $x_5=x_2x_4=x_3x_4$，即 $x_5^2=x_2x_4^2$. 因为 $x_2x_4>x_3x_4=x_5$，所以 $x_3x_4\notin X$. 所以 $\tfrac{x_4}{x_3}\in X$，由 $1<\tfrac{x_2}{x_3}<\tfrac{x_2}{x_2}=x_3<1<\tfrac{x_2}{x_2}<x_3<x_5$，所以 $\tfrac{x_4}{x_3}=x_2$，所以 $\tfrac{x_5}{x_4}=\tfrac{x_5}{x_3}=\tfrac{x_5}{x_2}=x_5$，所以 $x_3=x_2^2=9,\,x_4=x_2x_3=3\times 9=27,\,x_5=x_3^2=9^2=81$. 所以 $X=\{1,3,9,27,81\}$.
 
 \fi
-\item 已知集合 $M=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\in\mathbb{N}^*)$ 具有性质：对任意 $1\leqslant i\leqslant j\leqslant n\,(i,j\in\mathbb{N}^*)$，$a_i+a_j$ 与 $a_j-a_i$ 至少有一个属于 $M$，则称 $M$ 为"封闭集".
+\ansspace[12]
+\ansneed{7cm}
+\item 已知集合 $M=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\in\mathbb{N}^*)$ 具有性质：对任意 $1\leqslant i\leqslant j\leqslant n\,(i,j\in\mathbb{N}^*)$，$a_i+a_j$ 与 $a_j-a_i$ 至少有一个属于 $M$，则称 $M$ 为“封闭集”.
 \begin{enumerate}[label=(\arabic*)]
-\item 若集合 $P=\{2,5,8\}$，$Q=\{0,5,10\}$，判断 $P$、$Q$ 是否是"封闭集"，并说明理由；
-\item 若集合 $P=\{a_1,a_2,a_3\}(0\leqslant a_1<a_2<a_3)$ 是"封闭集"，且 $a_3=2026$，求集合 $P$；
-\item 设集合 $A=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\geqslant 4,\,n\in\mathbb{N}^*)$ 是"封闭集"，证明：$a_1+a_2+a_3+\dots+a_n=\tfrac{n}{2}\cdot a_n$.
+\item 若集合 $P=\{2,5,8\}$，$Q=\{0,5,10\}$，判断 $P$、$Q$ 是否是“封闭集”，并说明理由；
+\item 若集合 $P=\{a_1,a_2,a_3\}(0\leqslant a_1<a_2<a_3)$ 是“封闭集”，且 $a_3=2026$，求集合 $P$；
+\item 设集合 $A=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\geqslant 4,\,n\in\mathbb{N}^*)$ 是“封闭集”，证明：$a_1+a_2+a_3+\dots+a_n=\tfrac{n}{2}\cdot a_n$.
 \end{enumerate}
 
-\ans{(1) $P$ 不是"封闭集"，$Q$ 是"封闭集"；(2) $\{0,1013,2026\}$；(3) 略}
+\ans{(1) $P$ 不是“封闭集”，$Q$ 是“封闭集”；(2) $\{0,1013,2026\}$；(3) 略}
 
 \ifanswer
-\textbf{【解析】}(1) 集合 $P$ 不是"封闭集"，理由如下：在集合 $P=\{2,5,8\}$ 中，因为 $2+5=7\notin P$，$5-2=3\notin P$，所以集合 $P$ 不是"封闭集". 集合 $Q$ 是"封闭集"，理由如下：集合 $Q=\{0,5,10\}$ 中，因为 $0+5=5\in Q$，$0+10=10\in Q$，$10-5=5\in Q$，$0+0=0\in Q$. $5+5=10\in Q$，$5-5=0\in Q$，$10-10=0\in Q$. 所以集合 $Q$ 是"封闭集". (2) 因为 $a_1<a_2<a_3$，且 $P=\{a_1,a_2,a_3\}$ 是"封闭集"，$a_3+a_3>a_3$，所以 $a_3+a_3\notin P$，则 $a_3-a_3=0\in P$，所以 $a_1=0$. 因为 $a_2+a_3>a_3$，所以 $a_2+a_3\notin P$. 则 $(a_3-a_3)\in P,(a_3-a_2)\in P,(a_2-a_2)\in P,(a_3-a_1)\in P,(a_2-a_1)\in P$. $a_3-a_3<a_3-a_2<a_2-a_1$. 由集合的元素互异性得 $a_3-a_3=a_2$，因为 $a_3=2026$，所以 $a_2=\tfrac{1}{2}a_3=1013$. 所以集合 $P=\{0,1013,2026\}$. (3) 因为 $M=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\in\mathbb{N}^*)$ 是"封闭集"，所以 $a_n+a_n\notin A$，则 $a_n-a_n=0\in A$，所以 $a_1=0$. 又 $0\leqslant a_1<a_2<\dots<a_n$，所以 $0\leqslant a_n-a_n<a_n-a_{n-1}<\dots<a_n-a_1$. 又 $a_n+a_{n-1}>a_n\,(i=1,2,\dots,n-1)$，所以 $a_n+a_{n-1}\notin A$，则 $a_n-a_{n-1}\in A$. 由集合元素的互异性得 $a_1=a_n-a_n,\,a_2=a_n-a_{n-1},\,a_3=a_n-a_{n-2},\,\dots,\,a_n=a_n-a_1$. 所以 $a_1+a_2+a_3+\dots+a_n=(a_n-a_1)+(a_n-a_{n-1})+(a_n-a_{n-2})+\dots+(a_n-a_1)=na_n-(a_1+a_2+a_3+\dots+a_n)$. 所以 $2(a_1+a_2+a_3+\dots+a_n)=na_n$，所以 $a_1+a_2+a_3+\dots+a_n=\tfrac{n}{2}\cdot a_n$.
+\textbf{【解析】}(1) 集合 $P$ 不是“封闭集”，理由如下：在集合 $P=\{2,5,8\}$ 中，因为 $2+5=7\notin P$，$5-2=3\notin P$，所以集合 $P$ 不是“封闭集”. 集合 $Q$ 是“封闭集”，理由如下：集合 $Q=\{0,5,10\}$ 中，因为 $0+5=5\in Q$，$0+10=10\in Q$，$10-5=5\in Q$，$0+0=0\in Q$. $5+5=10\in Q$，$5-5=0\in Q$，$10-10=0\in Q$. 所以集合 $Q$ 是“封闭集”. (2) 因为 $a_1<a_2<a_3$，且 $P=\{a_1,a_2,a_3\}$ 是“封闭集”，$a_3+a_3>a_3$，所以 $a_3+a_3\notin P$，则 $a_3-a_3=0\in P$，所以 $a_1=0$. 因为 $a_2+a_3>a_3$，所以 $a_2+a_3\notin P$. 则 $(a_3-a_3)\in P,(a_3-a_2)\in P,(a_2-a_2)\in P,(a_3-a_1)\in P,(a_2-a_1)\in P$. $a_3-a_3<a_3-a_2<a_2-a_1$. 由集合的元素互异性得 $a_3-a_3=a_2$，因为 $a_3=2026$，所以 $a_2=\tfrac{1}{2}a_3=1013$. 所以集合 $P=\{0,1013,2026\}$. (3) 因为 $M=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\in\mathbb{N}^*)$ 是“封闭集”，所以 $a_n+a_n\notin A$，则 $a_n-a_n=0\in A$，所以 $a_1=0$. 又 $0\leqslant a_1<a_2<\dots<a_n$，所以 $0\leqslant a_n-a_n<a_n-a_{n-1}<\dots<a_n-a_1$. 又 $a_n+a_{n-1}>a_n\,(i=1,2,\dots,n-1)$，所以 $a_n+a_{n-1}\notin A$，则 $a_n-a_{n-1}\in A$. 由集合元素的互异性得 $a_1=a_n-a_n,\,a_2=a_n-a_{n-1},\,a_3=a_n-a_{n-2},\,\dots,\,a_n=a_n-a_1$. 所以 $a_1+a_2+a_3+\dots+a_n=(a_n-a_1)+(a_n-a_{n-1})+(a_n-a_{n-2})+\dots+(a_n-a_1)=na_n-(a_1+a_2+a_3+\dots+a_n)$. 所以 $2(a_1+a_2+a_3+\dots+a_n)=na_n$，所以 $a_1+a_2+a_3+\dots+a_n=\tfrac{n}{2}\cdot a_n$.
 
 \fi
+\ansspace*[11]
 \end{enumerate}
 
 \end{document}

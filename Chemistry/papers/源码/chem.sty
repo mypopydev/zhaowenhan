@@ -10,6 +10,11 @@
 \RequirePackage[UTF8, fontset=mac, scheme=plain]{ctex}
 \setmainfont{Times New Roman}
 
+% 圈数字符 ①②③…（U+2460–U+24FF）不在 xeCJK 默认 CJK 字符范围内，
+% 会落到西文字体上导致字形丢失（Missing character），显式划入 CJK 类。
+% 本卷现用 \textcircled{1} 未受影响，此行是防止后续改用字面 ① 时踩同一个坑。
+\xeCJKDeclareCharClass{CJK}{"2460 -> "24FF}
+
 % ---- 版面 ----
 \RequirePackage[a4paper,left=2.2cm,right=2.2cm,top=2.4cm,bottom=2.4cm]{geometry}
 \RequirePackage{setspace}\setstretch{1.35}
@@ -69,3 +74,43 @@
 
 % 大题标题（一、/二、/三、）
 \newcommand{\bigsection}[1]{\par\vspace{0.6em}{\kaishu\large\bfseries #1}\par\vspace{0.2em}}
+
+% ---- 解答题作答留白（仅试卷版显示）----
+% \ansspace[n] / \ansspace*[n]：预留 n 行书写空白（默认 4 行，行高 1.2cm）。
+% 前 3 行用不可丢弃的 0 宽支撑盒（分页时不会被扔掉，保证最低限度书写空间），
+% 其余行数用可丢弃胶水 \vspace（分页时自动消失，绝不顶出一页白纸）。
+% 每份卷子的最后一题请用 * 版，因为其后已无内容，支撑盒一旦溢出就是一张白纸。
+% 本卷题目基本沿用原卷的填空横线，故仅在需要整段演算时按需调用。
+\newcount\ansspace@n
+\newdimen\ansspace@skip
+\newcommand{\ansspace}{\@ifstar\ansspace@soft\ansspace@hard}
+\newcommand{\ansspace@glue}{%
+  \ansspace@skip=\baselineskip
+  \multiply\ansspace@skip by \ansspace@n
+  \vspace{\ansspace@skip}%
+}
+\newcommand{\ansspace@hard}[1][4]{%
+  \ifanswer\else
+    \par\vspace{0.5em}%
+    \begingroup
+      \baselineskip=1.2cm
+      \ansspace@n=#1\relax
+      \ifnum\ansspace@n<3 \ansspace@n=3 \fi
+      \advance\ansspace@n by -3
+      \noindent\rule{0pt}{0.92\baselineskip}\par
+      \noindent\rule{0pt}{0.92\baselineskip}\par
+      \noindent\rule{0pt}{0.92\baselineskip}\par
+      \ifnum\ansspace@n>0 \ansspace@glue\fi
+    \endgroup
+  \fi
+}
+\newcommand{\ansspace@soft}[1][4]{%
+  \ifanswer\else
+    \par\vspace{0.5em}%
+    \begingroup
+      \baselineskip=1.2cm
+      \ansspace@n=#1\relax
+      \ansspace@glue
+    \endgroup
+  \fi
+}
