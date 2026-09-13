@@ -15,7 +15,11 @@
 %   Missing character: There is no ① (U+2460) in font [lmroman10-regular]
 % 结果是题目里的 ①②③ 被静默丢弃（PDF 中直接消失，不报错、不留白）。
 % 显式划入 CJK 字符类，改由中文字体（宋体）渲染，字形完整。
-\xeCJKDeclareCharClass{CJK}{"2460 -> "24FF}
+% 同理，罗马数字 Ⅰ Ⅱ Ⅲ（U+2160–U+217F，常见于「方案Ⅰ/方案Ⅱ」「（Ⅰ）（Ⅱ）」）
+% 与字母式符号 ℃ ℉ №（U+2100–U+214F，常见于「温度/℃」轴标签）也不在默认 CJK
+% 范围内，同样会被静默丢弃。三个区间一次划清，避免逐轮踩坑。
+% 注：现有 8 份数学卷源码中不含后两个区间的字符，故此行对既有输出无影响。
+\xeCJKDeclareCharClass{CJK}{"2460 -> "24FF, "2160 -> "217F, "2100 -> "214F}
 
 % 中文标点
 \AtBeginDocument{\xeCJKsetup{CJKecglue={\hskip 0.15em plus 0.05em}}}
