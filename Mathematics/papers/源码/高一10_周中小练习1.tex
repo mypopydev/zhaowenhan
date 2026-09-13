@@ -1,0 +1,324 @@
+% 高一10_周中小练习1.tex —— 高一上数学「周中小练习一」（试卷版/答案版）
+% 试卷版：xelatex 高一10_周中小练习1.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一10_周中小练习1.tex}"
+%
+% 原始材料为家长拍摄的学生作业照片（含学生作答与教师红笔批改，卷面得分 62）。
+% 试题文字照原卷录入；答案版给出的是**正确解答与解析**（学生答错、教师红笔改正处
+% 均已按正确结果给出），差异见 README「说明」。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 学年高一上数学周中小练习一}{集合与常用逻辑用语}
+
+\bigsec{一、填空题（1-6 题 5 分，8-10 题 8 分）}
+% 注：原卷此处印作「1-6 题 5 分，8-10 题 8 分」，与 7-10 题的实际情形不符，疑为
+%    「7-10 题 8 分」之误；本稿照原卷抄录，未擅改。
+
+\begin{enumerate}
+
+\item 设集合 $M=\{m+6,m^2\}$，若 $9\in M$，则实数 $m=$ \blankline[2.4em].
+
+\ans{$m=-3$}
+
+\ifanswer
+\solbegin
+\step{因为 $9\in M$，所以 $m+6=9$ 或 $m^2=9$.}
+\step{当 $m+6=9$ 时，$m=3$，此时 $M=\{9,9\}$，不满足集合元素的互异性，舍去；}
+\step{当 $m^2=9$ 时，$m=3$（舍去）或 $m=-3$，此时 $M=\{3,9\}$，符合条件.}
+\step{所以 $m=-3$.}
+\solend
+
+\fi
+
+\item 已知全集 $U=\{0,1,2,3,4,5,6,7,8\}$，集合 $A=\{0,1,3,5,8\}$，集合 $B=\{2,4,5,6,8\}$，则 $\overline{A}\cap\overline{B}=$ \blankline[2.4em].
+
+\ans{$\{7\}$}
+
+\ifanswer
+\solbegin
+\step{由题意得 $\overline{A}=\{2,4,6,7\}$，$\overline{B}=\{0,1,3,7\}$.}
+\step{所以 $\overline{A}\cap\overline{B}=\{7\}$.}
+\solend
+
+\fi
+
+\item 已知集合 $P=\{x\mid x^2-1=0\}$，$Q=\{y\mid y=x^2-1\}$，则 $\overline{P}\cap Q=$ \blankline[4.4em].
+
+\ans{$(-1,1)\cup(1,+\infty)$}
+
+\ifanswer
+\solbegin
+\step{$P=\{x\mid x^2-1=0\}=\{-1,1\}$，$Q=\{y\mid y=x^2-1\}$ 是函数 $y=x^2-1$ 的值域，即 $Q=[-1,+\infty)$.}
+\step{$\overline{P}$ 是 $P$ 在 $\mathbb{R}$ 中的补集，因为 $-1\in P$、$1\in P$，所以 $\overline{P}=(-\infty,-1)\cup(-1,1)\cup(1,+\infty)$.}
+\step{取 $\overline{P}$ 与 $Q=[-1,+\infty)$ 的公共部分：$-1$ 已被 $\overline{P}$ 排除，而 $(-1,1)$、$(1,+\infty)$ 都含于 $[-1,+\infty)$，}
+\step{所以 $\overline{P}\cap Q=(-1,1)\cup(1,+\infty)$.}
+\solend
+
+\fi
+
+\item 满足 $M\subseteq\{a_1,a_2,a_3,a_4,a_5\}$，且 $M\cap\{a_1,a_2,a_3\}=\{a_1,a_2\}$，则集合 $M$ 的个数是 \blankline[2.4em].
+
+\ans{$4$}
+
+\ifanswer
+\solbegin
+\step{由 $M\cap\{a_1,a_2,a_3\}=\{a_1,a_2\}$ 得 $a_1\in M$，$a_2\in M$，$a_3\notin M$.}
+\step{又 $M\subseteq\{a_1,a_2,a_3,a_4,a_5\}$，所以 $a_4$、$a_5$ 可以在 $M$ 中，也可以不在 $M$ 中.}
+\step{即 $M=\{a_1,a_2\}\cup S$，其中 $S\subseteq\{a_4,a_5\}$，共 $2^2=4$ 个.}
+\step{所以集合 $M$ 的个数是 4.}
+\solend
+
+\fi
+
+\item 已知集合 $A=\{(x,y)\mid y=x^2\}$，$B=\left\{(x,y)\mid \dfrac{y-1}{x-1}=\dfrac{1}{2}\right\}$，则 $A\cap B=$ \blankline[5.2em].
+
+\ans{$\left\{\left(-\dfrac{1}{2},\dfrac{1}{4}\right)\right\}$}
+
+\ifanswer
+\solbegin
+\step{集合 $B$ 中的点满足 $\dfrac{y-1}{x-1}=\dfrac{1}{2}$，即 $y=\dfrac{1}{2}x+\dfrac{1}{2}$，且 $x\neq 1$.}
+\step{将 $y=\dfrac{1}{2}x+\dfrac{1}{2}$ 代入 $y=x^2$，得 $2x^2-x-1=0$，解得 $x=1$ 或 $x=-\dfrac{1}{2}$.}
+\step{因为 $x\neq 1$，所以 $x=-\dfrac{1}{2}$，此时 $y=\dfrac{1}{4}$.}
+\step{所以 $A\cap B=\left\{\left(-\dfrac{1}{2},\dfrac{1}{4}\right)\right\}$.}
+\solend
+
+\fi
+
+\item 已知集合 $A=\{-2,1\}$，$B=\{x\mid ax=2\}$，若 $A\cap B=B$，则实数 $a$ 的所有可能取值构成的集合为 \blankline[3.2em].
+
+\ans{$\{0,-1,2\}$}
+
+\ifanswer
+\solbegin
+\step{由 $A\cap B=B$ 得 $B\subseteq A$.}
+\step{当 $a=0$ 时，$B=\{x\mid 0=2\}=\varnothing$，满足 $B\subseteq A$；}
+\step{当 $a\neq 0$ 时，$B=\left\{\dfrac{2}{a}\right\}$，由 $\dfrac{2}{a}\in A$ 得 $\dfrac{2}{a}=-2$ 或 $\dfrac{2}{a}=1$，解得 $a=-1$ 或 $a=2$.}
+\step{所以实数 $a$ 的所有可能取值构成的集合为 $\{0,-1,2\}$.}
+\solend
+
+\fi
+
+\item “$x\geqslant a$”是“$0<x<2$”的必要非充分条件，则实数 $a$ 的取值范围是 \blankline[4.2em].
+
+\ans{$(-\infty,0]$}
+
+\ifanswer
+\solbegin
+\step{“$x\geqslant a$”是“$0<x<2$”的必要非充分条件，即由 $0<x<2$ 一定能推出 $x\geqslant a$，而由 $x\geqslant a$ 不能推出 $0<x<2$.}
+\step{由 $0<x<2$ 得 $x>0$，要对一切 $x\in(0,2)$ 都有 $x\geqslant a$，只需 $a\leqslant 0$.}
+\step{反过来，当 $a\leqslant 0$ 时，取 $x=5$ 有 $x\geqslant a$，但 $0<x<2$ 不成立，故不是充分条件.}
+\step{所以实数 $a$ 的取值范围是 $(-\infty,0]$.}
+\solend
+
+\fi
+
+\item 已知集合 $A=\{x\mid 2a+1\leqslant x\leqslant 3a-5\}$，$B=\{x\mid x<0\text{ 或 }x>19\}$. 若 $A\subseteq(A\cap B)$，则实数 $a$ 的取值范围是 \blankline[4.2em].
+
+\ans{$(-\infty,6)\cup(9,+\infty)$}
+
+\ifanswer
+\solbegin
+\step{由 $A\subseteq(A\cap B)$ 得 $A\subseteq B$.}
+\step{当 $2a+1>3a-5$，即 $a<6$ 时，$A=\varnothing$，满足 $A\subseteq B$；}
+\step{当 $2a+1\leqslant 3a-5$，即 $a\geqslant 6$ 时，要使 $A\subseteq B$，需 $3a-5<0$ 或 $2a+1>19$，解得 $a<\dfrac{5}{3}$（舍去）或 $a>9$.}
+\step{综上，实数 $a$ 的取值范围是 $(-\infty,6)\cup(9,+\infty)$.}
+\solend
+
+\fi
+
+\item 集合 $A=\{x\mid ax^2-3x-4=0,\,x\in\mathbb{R}\}$，若 $A$ 只有一个真子集，则实数 $a$ 的值为 \blankline[3.2em].
+
+\ans{$0$ 或 $-\dfrac{9}{16}$}
+
+\ifanswer
+\solbegin
+\step{含有 $n$ 个元素的集合共有 $2^n-1$ 个真子集，由 $2^n-1=1$ 得 $n=1$，即方程 $ax^2-3x-4=0$ 在 $\mathbb{R}$ 上只有一个解.}
+\step{当 $a=0$ 时，方程为 $-3x-4=0$，解得 $x=-\dfrac{4}{3}$，此时 $A=\left\{-\dfrac{4}{3}\right\}$，符合；}
+\step{当 $a\neq 0$ 时，需判别式 $\Delta=(-3)^2-4\cdot a\cdot(-4)=9+16a=0$，解得 $a=-\dfrac{9}{16}$，此时 $A=\left\{-\dfrac{8}{3}\right\}$，符合.}
+\step{所以实数 $a$ 的值为 $0$ 或 $-\dfrac{9}{16}$.}
+\solend
+
+\fi
+
+\item 高斯是德国著名的数学家，近代数学奠基者之一，享有“数学王子”的称号. 为了纪念数学家高斯，我们把取整函数 $y=[x]$（$x\in\mathbb{R}$）称为高斯函数，其中 $[x]$ 表示不超过 $x$ 的最大整数，如 $[1.1]=1$，$[-1.1]=-2$，则点集 $P=\{(x,y)\mid [x]^2+[y]^2=1\}$ 所表示的平面区域的面积是 \blankline[2.4em].
+
+\ans{$4$}
+
+\ifanswer
+\solbegin
+\step{设 $[x]=m$，$[y]=n$，其中 $m,n\in\mathbb{Z}$，则由 $[x]^2+[y]^2=1$ 得 $m^2+n^2=1$.}
+\step{满足条件的整数对只有 $(m,n)=(1,0),(-1,0),(0,1),(0,-1)$ 四组.}
+\step{$[x]=1$ 即 $x\in[1,2)$，$[y]=0$ 即 $y\in[0,1)$，对应 $1\times1=1$ 个单位正方形区域；其余三组同理也各对应 1 个单位正方形区域.}
+\step{这四组解对应的区域互不重叠，所以点集 $P$ 所表示的平面区域的面积是 $4\times1=4$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题（11、12 每题 5 分，13 题 8 分）}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item 若集合 $A=\{0,1,2\}$，则集合 $B=\{x-y\mid x\in A,\,y\in A\}$ 中元素的个数为（\quad）.
+
+A. $9$\qquad B. $5$\qquad C. $3$\qquad D. $1$
+
+\ans{B}
+
+\ifanswer
+\solbegin
+\step{逐一写出 $x-y$ 的取值：$0-0=0$，$0-1=-1$，$0-2=-2$，$1-0=1$，$1-1=0$，$1-2=-1$，$2-0=2$，$2-1=1$，$2-2=0$.}
+\step{所以 $B=\{-2,-1,0,1,2\}$，共有 5 个元素.}
+\step{故选 B.}
+\solend
+
+\fi
+
+\item 已知命题“非空集合 $M$ 中的元素都是集合 $P$ 中的元素”是假命题，现有下列命题：
+
+① $M$ 中的元素都不是 $P$ 的元素；\quad ② $M$ 中有不属于 $P$ 的元素；
+
+③ $M$ 中有属于 $P$ 的元素；\quad ④ $M$ 中的元素不都是 $P$ 的元素.
+
+其中真命题的个数是（\quad）.
+
+A. $1$\qquad B. $2$\qquad C. $3$\qquad D. $4$
+
+\ans{B}
+
+\ifanswer
+\solbegin
+\step{“$M$ 中的元素都是 $P$ 中的元素”是假命题，即存在 $x\in M$，且 $x\notin P$.}
+\step{对于 ②，由上述结论知 $M$ 中确有不属于 $P$ 的元素，②是真命题；}
+\step{对于 ④，$M$ 中既有属于 $P$ 的元素、又有不属于 $P$ 的元素，或全都不属于 $P$，总之“不都是”，④是真命题；}
+\step{对于 ①，$M$ 中可能有元素属于 $P$（只要不全是），故 ① 不一定是真命题；}
+\step{对于 ③，$M$ 中的元素可能全都不属于 $P$，此时 $M$ 中没有属于 $P$ 的元素，故 ③ 不一定是真命题.}
+\step{综上，真命题是 ②④，共 2 个.}
+\step{故选 B.}
+\solend
+
+\fi
+
+\item 已知集合 $M=\{x\mid x\in\mathbb{N},\,0<x\leqslant 15\}$，$A_1$、$A_2$、$A_3$ 满足：① $A_1\cup A_2\cup A_3=M$；② 每个集合都恰有 5 个元素. 集合 $A_i\,(i=1,2,3)$ 中最大元素与最小元素之和称为 $A_i$ 的特征数，记为 $X_i\,(i=1,2,3)$，则 $X_1+X_2+X_3$ 的值不可能为（\quad）.
+
+A. $37$\qquad B. $39$\qquad C. $48$\qquad D. $57$
+
+\ans{A}
+
+\ifanswer
+\solbegin
+\step{$M=\{1,2,3,\cdots,15\}$，其中共有 15 个元素；由 ① 与 ② 得 $|A_1|+|A_2|+|A_3|=15=|M|$，故 $A_1$、$A_2$、$A_3$ 两两不交，即把 $M$ 分成三个 5 元集.}
+\step{记三个集合的最小元素之和为 $s$，最大元素之和为 $t$，则 $X_1+X_2+X_3=s+t$.}
+\step{因为 $1$ 必是某个集合的最小元素、$15$ 必是某个集合的最大元素，所以 $s\geqslant 1+2+3=6$，$t\geqslant 5+10+15=30$.}
+\step{两个下界不能同时取到（取 $s=6$ 时三集合的最小元素为 1、2、3，要使其最大元素之和最小，只能为 $3+4+5+6+7$、$2+8+9+10+11$、$1+12+13+14+15$ 这类分法，此时 $t\geqslant 33$），逐一检验可得 $X_1+X_2+X_3$ 的最小值为 39.}
+\step{取 $A_1=\{1,4,5,6,7\}$，$A_2=\{2,8,9,10,11\}$，$A_3=\{3,12,13,14,15\}$，则 $X_1+X_2+X_3=8+13+18=39$，可达到；}
+\step{取 $A_1=\{1,2,3,4,13\}$，$A_2=\{5,6,7,8,14\}$，$A_3=\{9,10,11,12,15\}$，则 $X_1+X_2+X_3=14+19+24=57$，可达到.}
+\step{事实上，把取到 39 的分法中最小的元素与最大的元素逐步对调，$X_1+X_2+X_3$ 可取遍 39 到 57 之间的每一个整数，故 37 不可能取到.}
+\step{故选 A.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题（共 28 分）}
+
+\begin{enumerate}
+\setcounter{enumi}{13}
+
+\item（本题共 15 分）设集合 $A=\{x\mid x^2-ax+a^2-19=0\}$，$B=\{x\mid x^2-5x+6=0\}$，$C=\{x\mid x^2+2x-8=0\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $A\cap B=A\cup B$，求实数 $a$ 的值；
+\item 若 $\varnothing\subsetneq A\cap B$，且 $A\cap C=\varnothing$，求实数 $a$ 的值；
+\item 若 $A\cap B=A\cap C\neq\varnothing$，求实数 $a$ 的值.
+\end{enumerate}
+
+\ans{(1) $a=5$；（2）$a=-2$；（3）$a=-3$}
+
+\ifanswer
+\solbegin
+\step{先化简：$B=\{x\mid x^2-5x+6=0\}=\{2,3\}$，$C=\{x\mid x^2+2x-8=0\}=\{-4,2\}$.}
+\stepm{(1)}{由 $A\cap B=A\cup B$ 得 $A=B=\{2,3\}$，即 2、3 是方程 $x^2-ax+a^2-19=0$ 的两个根，由根与系数的关系得 $2+3=a$，所以 $a=5$（此时 $a^2-19=25-19=6=2\times3$，符合）.}
+\stepm{(2)}{由 $\varnothing\subsetneq A\cap B$ 知 $A\cap B\neq\varnothing$；又 $A\cap C=\varnothing$，而 $2\in C$，所以 $2\notin A$，从而只能有 $3\in A$，}
+\step{代入得 $9-3a+a^2-19=0$，即 $a^2-3a-10=0$，解得 $a=5$ 或 $a=-2$.}
+\step{当 $a=5$ 时 $A=\{2,3\}$，此时 $2\in A$，与 $A\cap C=\varnothing$ 矛盾，舍去；}
+\step{当 $a=-2$ 时 $A=\{x\mid x^2+2x-15=0\}=\{-5,3\}$，$A\cap B=\{3\}$，$A\cap C=\varnothing$，符合条件. 所以 $a=-2$.}
+\stepm{(3)}{由 $A\cap B=A\cap C\neq\varnothing$，而 $A\cap B\subseteq B$、$A\cap C\subseteq C$，得 $A\cap B=A\cap C\subseteq B\cap C=\{2\}$，又 $A\cap B\neq\varnothing$，所以 $A\cap B=A\cap C=\{2\}$，即 $2\in A$，}
+\step{代入得 $4-2a+a^2-19=0$，即 $a^2-2a-15=0$，解得 $a=5$ 或 $a=-3$.}
+\step{当 $a=5$ 时 $A=\{2,3\}$，$A\cap B=\{2,3\}\neq\{2\}$，舍去；}
+\step{当 $a=-3$ 时 $A=\{x\mid x^2+3x-10=0\}=\{-5,2\}$，$A\cap B=\{2\}$，$A\cap C=\{2\}$，符合条件. 所以 $a=-3$.}
+\solend
+
+\fi
+
+\ansspace[12]
+
+\ansneed{7cm}
+
+\item（本题共 13 分，第一小问 5 分，第二小问 8 分）有限个元素组成的集合 $A=\{a_1,a_2,\cdots,a_n\}$，$n\in\mathbb{N}$，$n\geqslant 1$，记集合 $A$ 中的元素个数为 $\operatorname{card}(A)$，即 $\operatorname{card}(A)=n$. 定义 $A+A=\{x+y\mid x\in A,\,y\in A\}$，集合 $A+A$ 中的元素个数记为 $\operatorname{card}(A+A)$，当 $\operatorname{card}(A+A)=\dfrac{n(n+1)}{2}$ 时，称集合 $A$ 具有性质 $P$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item $A=\{1,4,7\}$，$B=\{2,4,8\}$，判断集合 $A$、$B$ 是否具有性质 $P$，并说明理由；
+\item 设集合 $A=\{a_1,a_2,a_3,2022\}$，$a_1<a_2<a_3<2022$ 且 $a_i\in\mathbb{N}$，$a_i\geqslant 1$（$i=1,2,3$），若集合 $A$ 具有性质 $P$，求 $a_1+a_2+a_3$ 的最大值.
+\end{enumerate}
+
+\ans{(1) 集合 $A$ 不具有性质 $P$，集合 $B$ 具有性质 $P$；（2）$a_1+a_2+a_3$ 的最大值为 $6055$}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$\operatorname{card}(A)=3$，若 $A$ 具有性质 $P$，应有 $\operatorname{card}(A+A)=\dfrac{3\times4}{2}=6$. 而 $A+A=\{1+1,1+4,1+7,4+4,4+7,7+7\}=\{2,5,8,11,14\}$，$\operatorname{card}(A+A)=5\neq6$，所以 $A$ 不具有性质 $P$.}
+\step{$\operatorname{card}(B)=3$，$B+B=\{2+2,2+4,2+8,4+4,4+8,8+8\}=\{4,6,8,10,12,16\}$，$\operatorname{card}(B+B)=6=\dfrac{3\times4}{2}$，所以 $B$ 具有性质 $P$.}
+\stepm{(2)}{$\operatorname{card}(A)=4$，由 $A$ 具有性质 $P$ 得 $\operatorname{card}(A+A)=\dfrac{4\times5}{2}=10$，而 $A+A$ 中的 10 个和依次为}
+\step{$2a_1,\ a_1+a_2,\ a_1+a_3,\ a_1+2022,\ 2a_2,\ a_2+a_3,\ a_2+2022,\ 2a_3,\ a_3+2022,\ 4044$，它们必须两两不等.}
+\step{要使 $a_1+a_2+a_3$ 最大，先取 $a_3=2021$（最大值）；此时若 $a_2=2020$，则 $a_2+2022=4042=2a_3$，重复，故取 $a_2=2019$.}
+\step{再确定 $a_1$：若 $a_1=2018$，则 $a_1+2022=4040=a_2+a_3$，重复；若 $a_1=2017$，则 $a_1+a_3=4038=2a_2$，重复；若 $a_1=2016$，则 $a_1+2022=4038=2a_2$，重复. 故 $a_1\leqslant 2015$.}
+\step{检验 $a_1=2015$：此时 $A=\{2015,2019,2021,2022\}$，$A+A$ 中的 10 个和依次为 $4030,\allowbreak 4034,\allowbreak 4036,\allowbreak 4037,\allowbreak 4038,\allowbreak 4040,\allowbreak 4041,\allowbreak 4042,\allowbreak 4043,\allowbreak 4044$，两两不等，符合要求.}
+\step{所以 $a_1+a_2+a_3$ 的最大值为 $2015+2019+2021=6055$.}
+\solend
+
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\bigsec{【附加题】（10 分）}
+
+\begin{enumerate}
+
+\item（本题 5 分）已知集合 $U=\{1,2,\cdots,n\}$（$n\in\mathbb{N}^*$，$n\geqslant 2$），对于集合 $U$ 的两个非空子集 $A$、$B$，若 $A\cap B=\varnothing$，则称 $(A,B)$ 为集合 $U$ 的一组“互斥子集”. 记集合 $U$ 的所有“互斥子集”的组数为 $f(n)$（当且仅当 $A=B$ 时，$(A,B)$ 与 $(B,A)$ 为同一组“互斥子集”），则 $f(6)=$ \blankline[3.2em].
+
+\ans{$f(6)=602$}
+
+\ifanswer
+\solbegin
+\step{对于 $U=\{1,2,\cdots,6\}$ 的每个元素，有三种可能：属于 $A$、属于 $B$、既不属于 $A$ 也不属于 $B$，故满足 $A\cap B=\varnothing$ 的有序子集对 $(A,B)$ 共有 $3^6=729$ 组.}
+\step{其中 $A=\varnothing$ 的有 $2^6=64$ 组，$B=\varnothing$ 的有 $2^6=64$ 组，而 $A=B=\varnothing$ 的这一组被重复计算了 1 次.}
+\step{所以非空且互斥的组数为 $729-64-64+1=602$.}
+\step{又因为 $A\neq B$（二者非空且不交），由题意 $(A,B)$ 与 $(B,A)$ 是两组不同的“互斥子集”，故 $f(6)=602$.}
+\solend
+
+\fi
+
+\item（本题 5 分）若规定集合 $M=\{a_1,a_2,\cdots,a_n\}$（$n\in\mathbb{N}^*$）的子集 $\{a_{b_1},a_{b_2},\cdots,a_{b_m}\}$（$m\in\mathbb{N}^*$）为 $M$ 的第 $k$ 个子集，其中 $k=2^{b_1-1}+2^{b_2-1}+\cdots+2^{b_m-1}$，则 $M$ 的第 25 个子集是 \blankline[4.2em].
+
+\ans{$\{a_1,a_4,a_5\}$}
+
+\ifanswer
+\solbegin
+\step{把 25 写成 2 的幂之和：$25=16+8+1=2^4+2^3+2^0=2^{5-1}+2^{4-1}+2^{1-1}$.}
+\step{对照定义得 $b_1=1$，$b_2=4$，$b_3=5$.}
+\step{所以 $M$ 的第 25 个子集是 $\{a_1,a_4,a_5\}$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\end{document}
