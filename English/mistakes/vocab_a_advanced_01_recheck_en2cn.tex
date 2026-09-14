@@ -1,0 +1,100 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\blank}{\underline{\hspace{3.0cm}}}
+\newcommand{\lvl}[1]{\makebox[1.5em][l]{\small\textbf{#1}}}
+% 原卷做错的词：等级后加红星
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+\newcommand{\ens}[4]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STAR\ \textbf{#3} #4}
+\newcommand{\enx}[4]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\textbf{#3} #4}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语单词默写 \quad 二刷（英 $\to$ 中）}\\[0.25em]
+{\large A -- advanced}\\[0.22em]
+{\small 2029届高一英语词汇手册 · \STAR 为 2026-09 原卷做错的 31 个词}
+\end{center}
+
+\vspace{0.35em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.2cm}} & 日期：\underline{\hspace{2.2cm}} & 得分：\underline{\hspace{1.5cm}}\,/\enspace 50 \\
+\end{tabular}
+
+\vspace{0.45em}
+\noindent{\small 说明：根据英文单词与词性，在横线上写出中文释义，题号沿用原卷。\STAR\ 为原卷曾写错/空白的词（31 个）。}
+
+\vspace{0.25em}
+\noindent{\small 等级（课程标准）：$\ast\ast$ 选择性必修\quad $\ast$ 必修\quad $\circ$ 课标未列\quad 无标记为义务教育}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.5}
+\noindent\begin{tabular}{@{}p{4.85cm}@{\hspace{0.15cm}}p{3.35cm}@{\hspace{0.5cm}}p{4.85cm}@{\hspace{0.15cm}}p{3.35cm}@{}}
+\toprule
+等级 / 英文单词 / 词性 & 中文释义 & 等级 / 英文单词 / 词性 & 中文释义 \\
+\midrule
+\enx{1}{\ensuremath{\ast\ast}}{abandon}{v.}      & \blank & \enx{26}{}{ache}{v./n.}          & \blank \\
+\ens{2}{}{able}{adj.}                            & \blank & \ens{27}{\ensuremath{\ast\ast}}{adorable}{adj.} & \blank \\
+\enx{3}{\ensuremath{\ast\ast}}{abnormal}{adj.}   & \blank & \enx{28}{\ensuremath{\ast}}{achievement}{n.} & \blank \\
+\enx{4}{\ensuremath{\ast\ast}}{aboard}{prep./adv.} & \blank & \enx{29}{\ensuremath{\ast\ast}}{acid}{n./adj.} & \blank \\
+\ens{5}{}{above}{prep./adv.}                     & \blank & \ens{30}{\ensuremath{\ast\ast}}{acknowledge}{v.} & \blank \\
+\enx{6}{}{abroad}{adv.}                          & \blank & \ens{31}{\ensuremath{\ast}}{acquire}{v.} & \blank \\
+\ens{7}{\ensuremath{\ast\ast}}{absence}{n.}      & \blank & \ens{32}{}{across}{prep./adv.}   & \blank \\
+\enx{8}{}{absent}{adj.}                          & \blank & \ens{33}{}{act}{v./n.}           & \blank \\
+\enx{9}{\ensuremath{\circ}}{absolute}{adj.}      & \blank & \enx{34}{\ensuremath{\circ}}{actual}{adj.} & \blank \\
+\enx{10}{\ensuremath{\ast\ast}}{absorb}{v.}      & \blank & \ens{35}{\ensuremath{\ast}}{adapt}{v.} & \blank \\
+\ens{11}{\ensuremath{\ast\ast}}{abstract}{adj./n.} & \blank & \ens{36}{\ensuremath{\ast}}{addict}{n./v.} & \blank \\
+\enx{12}{\ensuremath{\ast\ast}}{academic}{adj.}  & \blank & \enx{37}{\ensuremath{\ast}}{addition}{n.} & \blank \\
+\ens{13}{\ensuremath{\ast\ast}}{accent}{n.}      & \blank & \ens{38}{\ensuremath{\circ}}{additional}{adj.} & \blank \\
+\enx{14}{\ensuremath{\ast\ast}}{access}{n./v.}   & \blank & \ens{39}{}{address}{n./v.}       & \blank \\
+\ens{15}{\ensuremath{\circ}}{accommodate}{v.}    & \blank & \ens{40}{\ensuremath{\circ}}{adequate}{adj.} & \blank \\
+\ens{16}{\ensuremath{\ast\ast}}{accommodation}{n.} & \blank & \ens{41}{\ensuremath{\ast\ast}}{administration}{n.} & \blank \\
+\ens{17}{\ensuremath{\ast\ast}}{accompany}{v.}   & \blank & \enx{42}{}{admire}{v.}           & \blank \\
+\enx{18}{\ensuremath{\circ}}{accomplish}{v.}     & \blank & \ens{43}{\ensuremath{\circ}}{admission}{n.} & \blank \\
+\ens{19}{\ensuremath{\circ}}{according to}{prep.} & \blank & \ens{44}{\ensuremath{\ast}}{admit}{v.} & \blank \\
+\ens{20}{}{account}{n./v.}                       & \blank & \ens{45}{\ensuremath{\circ}}{adolescent}{n./adj.} & \blank \\
+\enx{21}{\ensuremath{\circ}}{accountant}{n.}     & \blank & \ens{46}{\ensuremath{\ast\ast}}{adopt}{v.} & \blank \\
+\enx{22}{\ensuremath{\ast\ast}}{accurate}{adj.}  & \blank & \ens{47}{}{ahead}{adv.}          & \blank \\
+\ens{23}{\ensuremath{\ast\ast}}{accuse}{v.}      & \blank & \enx{48}{}{adult}{n.}            & \blank \\
+\ens{24}{\ensuremath{\circ}}{accustom}{v.}       & \blank & \ens{49}{\ensuremath{\circ}}{adore}{v.} & \blank \\
+\ens{25}{\ensuremath{\circ}}{accustomed}{adj.}   & \blank & \ens{50}{\ensuremath{\ast\ast}}{advocate}{v./n.} & \blank \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,50
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox\ 释义记不全\quad\checkmarkbox\ 与近义词混淆\quad\checkmarkbox\ 词性判断
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
+
+\end{document}

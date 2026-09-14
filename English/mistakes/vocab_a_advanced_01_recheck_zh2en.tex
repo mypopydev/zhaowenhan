@@ -1,0 +1,99 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+% 题号：右对齐，使句点对齐
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+% 默写横线
+\newcommand{\blank}{\underline{\hspace{3.0cm}}}
+% 原卷做错的词：题号后加红星
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% \zhs / \zhx：带星 / 不带星（行首悬挂缩进，换行不错位）
+\newcommand{\zhs}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STAR\ #2}
+\newcommand{\zhx}[2]{\hangindent=2.2em\hangafter=1\num{#1}#2}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语单词默写 \quad 二刷（中 $\to$ 英）}\\[0.25em]
+{\large A -- advanced}\\[0.22em]
+{\small 2029届高一英语词汇手册 · \STAR 为 2026-09 原卷做错的 31 个词}
+\end{center}
+
+\vspace{0.35em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.2cm}} & 日期：\underline{\hspace{2.2cm}} & 得分：\underline{\hspace{1.5cm}}\,/\enspace 50 \\
+\end{tabular}
+
+\vspace{0.45em}
+\noindent{\small 说明：根据中文释义默写出英文单词，题号沿用原卷。\STAR\ 为原卷曾写错/空白的词（31 个），本次需重点复现；无星号的词用于检验是否遗忘。}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.5}
+\noindent\begin{tabular}{@{}p{4.9cm}@{\hspace{0.25cm}}p{3.3cm}@{\hspace{0.5cm}}p{4.9cm}@{\hspace{0.25cm}}p{3.3cm}@{}}
+\toprule
+中文释义 & 英文默写 & 中文释义 & 英文默写 \\
+\midrule
+\zhx{1}{放弃}          & \blank & \zhx{26}{疼痛}          & \blank \\
+\zhs{2}{聪明能干的}    & \blank & \zhs{27}{可爱的}        & \blank \\
+\zhx{3}{反常的}        & \blank & \zhx{28}{成就}          & \blank \\
+\zhx{4}{登机}          & \blank & \zhx{29}{酸的}          & \blank \\
+\zhs{5}{优于}          & \blank & \zhs{30}{对…表示感谢}   & \blank \\
+\zhx{6}{在国外}        & \blank & \zhs{31}{取得}          & \blank \\
+\zhs{7}{不存在}        & \blank & \zhs{32}{在…对面}       & \blank \\
+\zhx{8}{缺席的}        & \blank & \zhs{33}{法案}          & \blank \\
+\zhx{9}{绝对的}        & \blank & \zhx{34}{实际的}        & \blank \\
+\zhx{10}{吸收}         & \blank & \zhs{35}{改编}          & \blank \\
+\zhs{11}{摘要}         & \blank & \zhs{36}{入迷的人}      & \blank \\
+\zhx{12}{学术的}       & \blank & \zhx{37}{增加的人（或物）} & \blank \\
+\zhs{13}{腔调}         & \blank & \zhs{38}{附加的}        & \blank \\
+\zhx{14}{接近}         & \blank & \zhs{39}{处理}          & \blank \\
+\zhs{15}{容纳}         & \blank & \zhs{40}{恰当的}        & \blank \\
+\zhs{16}{住处}         & \blank & \zhs{41}{支配}          & \blank \\
+\zhs{17}{伴奏}         & \blank & \zhx{42}{钦佩}          & \blank \\
+\zhx{18}{达到}         & \blank & \zhs{43}{入场券}        & \blank \\
+\zhs{19}{按照}         & \blank & \zhs{44}{准许…进入（或加入）} & \blank \\
+\zhs{20}{解释}         & \blank & \zhs{45}{青少年}        & \blank \\
+\zhx{21}{会计人员}     & \blank & \zhs{46}{收养}          & \blank \\
+\zhx{22}{精确的}       & \blank & \zhs{47}{在前面的}      & \blank \\
+\zhs{23}{指控}         & \blank & \zhx{48}{成年人}        & \blank \\
+\zhs{24}{使习惯于}     & \blank & \zhs{49}{崇拜}          & \blank \\
+\zhs{25}{适应了的}     & \blank & \zhs{50}{拥护}          & \blank \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,50
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox\ 双写字母\quad\checkmarkbox\ 词族派生（n./adj.）\quad\checkmarkbox\ 词组漏词\quad\checkmarkbox\ 近义混淆
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
+
+\end{document}

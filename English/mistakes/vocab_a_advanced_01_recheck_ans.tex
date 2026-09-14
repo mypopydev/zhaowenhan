@@ -1,0 +1,78 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\lvl}[1]{\makebox[1.5em][l]{\small\textbf{#1}}}
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% 错词（带星）/ 正确（不带星）：\anss{题号}{等级}{单词}{词性}{中文释义}
+\newcommand{\anss}[5]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STAR\ \textbf{#3} #4 & #5}
+\newcommand{\ansx}[5]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\textbf{#3} #4 & #5}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语单词默写 \quad 二刷 · 参考答案}\\[0.25em]
+{\large A -- advanced \quad（中 $\to$ 英 / 英 $\to$ 中 通用）}\\[0.22em]
+{\small 2029届高一英语词汇手册 · \STAR 为 2026-09 原卷做错的 31 个词}
+\end{center}
+
+\vspace{0.35em}
+\noindent{\small 说明：全 50 词，题号沿用原卷。中 $\to$ 英只考英文单词（括号内为词性）；英 $\to$ 中只考中文释义。}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.5}
+\noindent\begin{tabular}{@{}p{4.9cm}@{\hspace{0.15cm}}p{3.3cm}@{\hspace{0.5cm}}p{4.9cm}@{\hspace{0.15cm}}p{3.3cm}@{}}
+\toprule
+\textbf{题号 / 等级 / 英文单词} & \textbf{中文释义} & \textbf{题号 / 等级 / 英文单词} & \textbf{中文释义} \\
+\midrule
+\ansx{1}{\ensuremath{\ast\ast}}{abandon}{v.}{放弃}            & \ansx{26}{}{ache}{v./n.}{疼痛} \\
+\anss{2}{}{able}{adj.}{聪明能干的}                             & \anss{27}{\ensuremath{\ast\ast}}{adorable}{adj.}{可爱的} \\
+\ansx{3}{\ensuremath{\ast\ast}}{abnormal}{adj.}{反常的}        & \ansx{28}{\ensuremath{\ast}}{achievement}{n.}{成就} \\
+\ansx{4}{\ensuremath{\ast\ast}}{aboard}{prep./adv.}{登机}      & \ansx{29}{\ensuremath{\ast\ast}}{acid}{n./adj.}{酸的} \\
+\anss{5}{}{above}{prep./adv.}{优于}                            & \anss{30}{\ensuremath{\ast\ast}}{acknowledge}{v.}{对…表示感谢} \\
+\ansx{6}{}{abroad}{adv.}{在国外}                               & \anss{31}{\ensuremath{\ast}}{acquire}{v.}{取得} \\
+\anss{7}{\ensuremath{\ast\ast}}{absence}{n.}{不存在}            & \anss{32}{}{across}{prep./adv.}{在…对面} \\
+\ansx{8}{}{absent}{adj.}{缺席的}                               & \anss{33}{}{act}{v./n.}{法案} \\
+\ansx{9}{\ensuremath{\circ}}{absolute}{adj.}{绝对的}            & \ansx{34}{\ensuremath{\circ}}{actual}{adj.}{实际的} \\
+\ansx{10}{\ensuremath{\ast\ast}}{absorb}{v.}{吸收}             & \anss{35}{\ensuremath{\ast}}{adapt}{v.}{改编} \\
+\anss{11}{\ensuremath{\ast\ast}}{abstract}{adj./n.}{摘要}      & \anss{36}{\ensuremath{\ast}}{addict}{n./v.}{入迷的人} \\
+\ansx{12}{\ensuremath{\ast\ast}}{academic}{adj.}{学术的}       & \ansx{37}{\ensuremath{\ast}}{addition}{n.}{增加的人（或物）} \\
+\anss{13}{\ensuremath{\ast\ast}}{accent}{n.}{腔调}             & \anss{38}{\ensuremath{\circ}}{additional}{adj.}{附加的} \\
+\ansx{14}{\ensuremath{\ast\ast}}{access}{n./v.}{接近}          & \anss{39}{}{address}{n./v.}{处理} \\
+\anss{15}{\ensuremath{\circ}}{accommodate}{v.}{容纳}           & \anss{40}{\ensuremath{\circ}}{adequate}{adj.}{恰当的} \\
+\anss{16}{\ensuremath{\ast\ast}}{accommodation}{n.}{住处（双 c 双 m）} & \anss{41}{\ensuremath{\ast\ast}}{administration}{n.}{支配} \\
+\anss{17}{\ensuremath{\ast\ast}}{accompany}{v.}{伴奏}          & \ansx{42}{}{admire}{v.}{钦佩} \\
+\ansx{18}{\ensuremath{\circ}}{accomplish}{v.}{达到}            & \anss{43}{\ensuremath{\circ}}{admission}{n.}{入场券} \\
+\anss{19}{\ensuremath{\circ}}{according to}{prep.}{按照}       & \anss{44}{\ensuremath{\ast}}{admit}{v.}{准许进入（或加入）} \\
+\anss{20}{}{account}{n./v.}{解释}                              & \anss{45}{\ensuremath{\circ}}{adolescent}{n./adj.}{青少年} \\
+\ansx{21}{\ensuremath{\circ}}{accountant}{n.}{会计人员}        & \anss{46}{\ensuremath{\ast\ast}}{adopt}{v.}{收养} \\
+\ansx{22}{\ensuremath{\ast\ast}}{accurate}{adj.}{精确的}       & \anss{47}{}{ahead}{adv.}{在前面的} \\
+\anss{23}{\ensuremath{\ast\ast}}{accuse}{v.}{指控}             & \ansx{48}{}{adult}{n.}{成年人} \\
+\anss{24}{\ensuremath{\circ}}{accustom}{v.}{使习惯于}          & \anss{49}{\ensuremath{\circ}}{adore}{v.}{崇拜} \\
+\anss{25}{\ensuremath{\circ}}{accustomed}{adj.}{适应了的}      & \anss{50}{\ensuremath{\ast\ast}}{advocate}{v./n.}{拥护} \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.45em}
+\noindent{\footnotesize 注：第 5、39、41 题原卷中文释义与《词汇手册》词条略有出入，答案按字母序与手册词条推定为 above / address / administration，如与原卷答案不符以原卷为准。}
+
+\vspace{0.3em}
+\noindent{\footnotesize 拼写提醒：accommodation（双 c 双 m）、abstract、adolescent、acknowledge 为长词易错拼写；adore（崇拜）与 admire（钦佩）需区分；according to 不可漏 to。}
+
+\end{document}
