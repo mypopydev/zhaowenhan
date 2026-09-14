@@ -61,6 +61,19 @@ make clean                               # 清理 LaTeX 临时文件
 需 `xelatex`（TeX Live / MacTeX 均可）、`pdfinfo` 与 `pdftotext`（poppler）。
 `make check` 会抽取两版 PDF 的文本，确认试卷版中「参考答案」标记数为 0、答案版大于 0。
 
+**编译时附带缺字检查。** `xelatex` 遇到字体里没有的字形时，只往日志写一行
+`Missing character: There is no ★ (U+2605) in font …` 就继续编译，该字符被**静默丢弃**——
+PDF 里直接消失，不留空白、也不报错。所以 `make test` / `make ans` / `make one` 在每条编完会
+立即扫日志，命中就中止本次构建并点名是哪个字符：
+
+```
+❌ 高一化学_交大附中_10月月考 有字符没字形（PDF 里已静默消失）：★ (U+2605)
+   处理：把该字符划入 CJK 字符类（见 chem.sty 的 xeCJKDeclareCharClass）
+```
+
+往题里加新符号（★、℃、生僻字等）时，先照 `chem.sty` 里 `\xeCJKDeclareCharClass` 的写法把
+对应码位划入 CJK 类——圈数字 `①②③` 与罗马数字 `Ⅰ Ⅱ Ⅲ` 就是这么处理并已列入声明的。
+
 > `chem.sty` 使用 `ctex` 的 `fontset=mac`，即依赖 macOS 自带中文字体，须在 macOS 上编译。
 > 其他平台请把该选项改为本机可用的 fontset。
 

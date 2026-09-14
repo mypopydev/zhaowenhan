@@ -201,6 +201,19 @@ make clean      # 清理 LaTeX 临时文件
 需 `xelatex`（TeX Live / MacTeX 均可）、`pdfinfo` 与 `pdftotext`（poppler）。
 `make check` 会抽取两版 PDF 的文本，确认试卷版中【答案】【解析】标记数为 0、答案版大于 0。
 
+**编译时附带缺字检查。** `xelatex` 遇到字体里没有的字形时，只往日志写一行
+`Missing character: There is no ★ (U+2605) in font …` 就继续编译，该字符被**静默丢弃**——
+PDF 里直接消失，不留空白、也不报错。所以 `make test` / `make ans` / `make one` 在每条编完会
+立即扫日志，命中就中止本次构建并点名是哪个字符：
+
+```
+❌ 高一04_位育中学_周末作业1 有字符没字形（PDF 里已静默消失）：★ (U+2605)
+   处理：把该字符划入 CJK 字符类（见 common.sty 的 xeCJKDeclareCharClass）
+```
+
+往题里加新符号（★、℃、生僻字等）时，先照 `common.sty` 里 `\xeCJKDeclareCharClass` 的写法
+把对应码位划入 CJK 类——圈数字 `①②③` 就是这么处理的（现用了 293 次、遍布 11 份）。
+
 ## 说明
 
 - 原卷为微信公众号图片，答案以原卷给出的版本为准，未擅自改动。
