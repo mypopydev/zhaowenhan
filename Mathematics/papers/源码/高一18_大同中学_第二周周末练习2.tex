@@ -1,0 +1,458 @@
+% 高一18_大同中学_第二周周末练习2.tex —— 高一上数学「第二周周末练习2」（试卷版/答案版）
+% 试卷版：xelatex 高一18_大同中学_第二周周末练习2.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一18_大同中学_第二周周末练习2.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一18_大同中学_第二周周末练习2.tex}"
+%
+% 原始材料为学生作业的手机翻拍照片（4 张；卷首手写姓名与班级，卷面为学生本人的**手写作答**）。
+% 与高一b 一样，卷面上看不到教师批改的痕迹：墨色分离（31×31 中值背景，强墨迹阈值 60）叠加
+% 3×3 腐蚀后，卷面范围内的红色像素为 0、蓝色只剩 0—100 个细条残影（最大块 6×15 px，属印刷字
+% 边缘色差），无任何成片笔画；对照高一a（确有蓝笔订正）同法测得蓝 5066 px、最大块 27×34 px。
+% 判据与实测数据见 README「高一c 专记」。
+% 试题文字照原卷录入；答案版给出的是**经核验的正确解答与解析**，与原卷手写答案的差异见 README。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原卷只在卷首印「基础达标」四字（未印分节标题与分值），本稿按题型补
+%      「一、填空题 / 二、选择题 / 三、解答题」三节标题；
+%   ② 第 5 题原卷用的是 $\subset$（真包含），与第 9、13 题带下划线的 $\subseteq$ 在卷面上
+%      明显不同，本稿保留原符号，答案按「真子集」口径给出；
+%   ③ 解答题原卷把子问编号印了两遍（作答框左端一次、题干前又一次），本稿只保留一处；
+%   ④ 第 17 题题号后原卷印有一个虚线框小标签「手批」（全卷仅此一处，非题面文字），本稿不排。
+
+% 本篇的正文与家长拍照卷 `高一c_大同中学_第二周周末练习2（补）` **完全相同**——同一份作业，
+% 试卷版/答案版也都是同一份源码编译而来；`高一c` 的 4 张原图另存于
+% `原图/高一c_大同中学_第二周周末练习2（补）/`，本卷 `原图/` 下是同一组照片的副本。
+% 经核对，这份作业就是公众号「魔都数学加油站」连载「27学年高一18——2026-2027年上海市大同中学
+% 高一上周末作业2.2」的那一份（2026-09-15 17:59 发布）：**题号与题干逐题一致**——第 3 题的
+% $A=\{x\mid x^2-3x-4=0\}$、第 5 题那个没有下划线的 $\subset$、第 12 题的「88」都对得上；
+% 只是公众号版略去了填空第 1、2 题，故拍照卷反而是更完整的版本
+% （对照关系见 README「与公众号连载号的对照表」）。
+%
+% 本卷的编号与连载号对齐（高一18），卷面标题因此**不带**「（补）」；标题里的「大同中学」为**本稿所加**
+% （原卷标题只有作业名，校名只印在页眉「上海市大…」）。带「（补）」的 `高一c` 保留为
+% 拍照原件的转录本，两者内容一字不差。
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 学年度大同中学高一上数学第二周周末练习2}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+
+\item 若 $\alpha$ 是 $\beta$ 的必要非充分条件，$\beta$ 是 $\gamma$ 的充要条件，$\gamma$ 是 $\delta$ 的必要非充分条件，
+则 $\delta$ 是 $\alpha$ 的 \blankline[4.4em] 条件.
+
+\ans{充分非必要}
+
+\ifanswer
+\solbegin
+\step{“$\alpha$ 是 $\beta$ 的必要非充分条件”即 $\beta\Rightarrow\alpha$ 而 $\alpha\not\Rightarrow\beta$；
+“$\beta$ 是 $\gamma$ 的充要条件”即 $\beta\Leftrightarrow\gamma$；
+“$\gamma$ 是 $\delta$ 的必要非充分条件”即 $\delta\Rightarrow\gamma$ 而 $\gamma\not\Rightarrow\delta$.}
+\step{于是 $\delta\Rightarrow\gamma\Leftrightarrow\beta\Rightarrow\alpha$，即 $\delta\Rightarrow\alpha$，充分性成立.}
+\step{再看必要性：若 $\alpha\Rightarrow\delta$，由 $\delta\Rightarrow\gamma\Leftrightarrow\beta$ 又得 $\alpha\Rightarrow\beta$，
+与 $\alpha\not\Rightarrow\beta$ 矛盾，故必要性不成立.}
+\step{所以 $\delta$ 是 $\alpha$ 的充分非必要条件.}
+\solend
+
+\fi
+
+\item 已知 $p:-2\leqslant x\leqslant 2$，$q:1-m\leqslant x\leqslant m-1$，若 $p$ 是 $q$ 的充分不必要条件，
+则实数 $m$ 的取值范围为 \blankline[5.2em].
+
+\ans{$(3,+\infty)$}
+
+\ifanswer
+\solbegin
+\step{记 $P=[-2,2]$，$Q=[1-m,\,m-1]$.“$p$ 是 $q$ 的充分不必要条件”就是 $P\subseteq Q$ 且 $P\neq Q$.}
+\step{先要求 $q$ 对应的集合非空，即 $1-m\leqslant m-1$，解得 $m\geqslant 1$.}
+\step{由 $P\subseteq Q$ 得 $1-m\leqslant-2$ 且 $m-1\geqslant 2$，两式都给出 $m\geqslant 3$.}
+\step{又当 $m=3$ 时 $Q=[-2,2]=P$，此时 $p$ 与 $q$ 互为充要条件，不合“不必要”的要求，应舍去.}
+\step{所以 $m>3$，$m$ 的取值范围为 $(3,+\infty)$.}
+\solend
+
+\fi
+
+\item 若集合 $A=\{x\mid x^2-3x-4=0\}$，$B=\{x\mid ax-1=0\}$，且“$x\in B$”是“$x\in A$”的充分非必要条件，
+则实数 $a$ 组成的集合是 \blankline[5.2em].
+
+\ans{$\left\{-1,\dfrac14\right\}$}
+
+\ifanswer
+\solbegin
+\step{由 $x^2-3x-4=0$ 得 $(x-4)(x+1)=0$，所以 $A=\{4,-1\}$.}
+\step{“$x\in B$”是“$x\in A$”的充分非必要条件，即 $B$ 是 $A$ 的真子集且 $B\neq\varnothing$.}
+\step{当 $a=0$ 时 $B=\varnothing$，不合；当 $a\neq 0$ 时 $B=\left\{\dfrac1a\right\}$ 是单元素集，}
+\step{要使 $B$ 是 $A$ 的真子集，只能 $\dfrac1a=4$ 或 $\dfrac1a=-1$，解得 $a=\dfrac14$ 或 $a=-1$.}
+\step{所以 $a$ 组成的集合是 $\left\{-1,\dfrac14\right\}$.}
+\solend
+
+\fi
+
+\item 若命题“存在实数 $x$，使 $x^2+ax+1<0$”为假命题，则实数 $a$ 的取值范围为 \blankline[4.4em].
+
+\ans{$[-2,2]$}
+
+\ifanswer
+\solbegin
+\step{该命题为假，则它的否定为真，即对任意实数 $x$ 都有 $x^2+ax+1\geqslant 0$.}
+\step{抛物线开口向上，故只需判别式 $\Delta=a^2-4\leqslant 0$，解得 $-2\leqslant a\leqslant 2$.}
+\step{所以 $a$ 的取值范围是 $[-2,2]$.}
+\solend
+
+\fi
+
+% 注：原卷第 5 题用 $\subset$（真包含，卷面上没有下划线），与第 9、13 题的 $\subseteq$ 明显不同，
+%     故本稿按「真子集」口径解答：$B=[1,a]$，由 $[1,2]\subsetneq[1,a]$ 得 $a>2$。
+%     若按 $\subseteq$ 理解则会得到 $a\geqslant 2$，与原卷所印符号不符。
+\item 已知集合 $A=\{x\mid 1\leqslant x\leqslant 2\}$，$B=\{x\mid x^2-(a+1)x+a\leqslant 0\}$，若 $A\subset B$，
+则实数 $a$ 的取值范围为 \blankline[5.2em].
+
+\ans{$(2,+\infty)$}
+
+\ifanswer
+\solbegin
+\step{因式分解得 $x^2-(a+1)x+a=(x-1)(x-a)$，故 $(x-1)(x-a)\leqslant 0$ 的解集就是 $B$.}
+\step{若 $a>1$，则 $B=[1,a]$；若 $a=1$，则 $B=\{1\}$；若 $a<1$，则 $B=[a,1]$.}
+\step{要使 $A=[1,2]$ 是 $B$ 的真子集，只能 $a>1$ 且 $B=[1,a]$，此时需 $a>2$.}
+\step{（$a=2$ 时 $B=[1,2]=A$，不是真子集，舍去.）}
+\step{所以 $a$ 的取值范围为 $(2,+\infty)$.}
+\solend
+
+\fi
+
+\item 已知集合 $S=\{x\mid x<-1\text{ 或 }x>5\}$，$T=\{x\mid a<x<a+8,\ a\in\R\}$，且 $S\cup T=\R$，
+则实数 $a$ 的取值范围是 \blankline[5.2em].
+
+\ans{$(-3,-1)$}
+
+\ifanswer
+\solbegin
+\step{$S$ 在实数轴上只差 $[-1,5]$ 这一段，$S\cup T=\R$ 说明这段“缺口”必须被 $T$ 盖住，即 $[-1,5]\subseteq(a,a+8)$.}
+\step{于是 $a<-1$ 且 $a+8>5$，解得 $-3<a<-1$.}
+\step{（$a=-1$ 时 $T=(-1,7)$ 不含 $-1$；$a=-3$ 时 $T=(-3,5)$ 不含 $5$，均不合.）}
+\step{所以 $a$ 的取值范围是 $(-3,-1)$.}
+\solend
+
+\fi
+
+\item 若 $a,b$ 都是实数，试从 ①$a^3+8b^3=0$，②$a(|a|+|b|)=0$，③$a^2+b^2=0$ 中选出所有适合的条件，
+用序号填空：
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item “$|a|+|b|=0$”的充要条件是 \blankline[2.4em]；
+
+\item “$a+2b\geqslant 0$”的充分不必要条件是 \blankline[2.4em]；
+
+\item “$a=0$ 且 $b=1$”的必要不充分条件是 \blankline[2.4em].
+
+\end{enumerate}
+
+\ans{（1）③；（2）①③；（3）②}
+
+\ifanswer
+\solbegin
+\step{先把三个条件化简：①$a^3+8b^3=0\Leftrightarrow a^3=-8b^3\Leftrightarrow a=-2b$；}
+\step{②$a(|a|+|b|)=0\Leftrightarrow a=0$ 或 $|a|+|b|=0$，而后者也是 $a=0$，故 ②$\Leftrightarrow a=0$；}
+\step{③$a^2+b^2=0\Leftrightarrow a=0$ 且 $b=0$.}
+\stepm{(1)}{“$|a|+|b|=0$”$\Leftrightarrow a=0$ 且 $b=0$，与 ③ 完全等价，故选 ③.}
+\stepm{(2)}{①$a=-2b\Rightarrow a+2b=0\geqslant 0$，而 $a+2b\geqslant 0$ 推不出 $a=-2b$，故 ① 是充分不必要条件；}
+\step{③$a=0$ 且 $b=0\Rightarrow a+2b=0\geqslant 0$，反之不成立，故 ③ 也是充分不必要条件；}
+\step{②$a=0$ 时 $a+2b=2b$ 未必非负，即 ② 不充分. 所以填 ①③.}
+\stepm{(3)}{“$a=0$ 且 $b=1$”$\Rightarrow a(|a|+|b|)=0$，反之由 ② 只能得 $a=0$、$b$ 任意，故 ② 是必要不充分条件；}
+\step{而 ① 要求 $a=-2b$、③ 要求 $b=0$，都被“$a=0$ 且 $b=1$”排除，即 ①③ 都不必要. 所以填 ②.}
+\solend
+
+\fi
+
+\item 已知条件 $p:\{x\mid x^2+x-6=0\}$，条件 $q:\{x\mid mx+1=0\}$，且 $p$ 是 $q$ 的必要条件，
+则 $m$ 的取值集合是 \blankline[5.2em].
+
+\ans{$\left\{-\dfrac12,\ 0,\ \dfrac13\right\}$}
+
+\ifanswer
+\solbegin
+\step{由 $x^2+x-6=0$ 得 $x=2$ 或 $x=-3$，所以 $p$ 对应的集合是 $P=\{2,-3\}$.}
+\step{“$p$ 是 $q$ 的必要条件”即 $q\Rightarrow p$，也就是 $q$ 对应的集合 $Q$ 满足 $Q\subseteq P$.}
+\step{当 $m=0$ 时，$mx+1=0$ 无解，$Q=\varnothing$，而空集是任何集合的子集，符合；}
+\step{当 $m\neq 0$ 时，$Q=\left\{-\dfrac1m\right\}$，由 $-\dfrac1m=2$ 得 $m=-\dfrac12$，由 $-\dfrac1m=-3$ 得 $m=\dfrac13$.}
+\step{所以 $m$ 的取值集合是 $\left\{-\dfrac12,\ 0,\ \dfrac13\right\}$.}
+\solend
+
+\fi
+
+\item 已知集合 $A=\{x\mid 2a+1\leqslant x\leqslant 3a-5\}$，$B=\{x\mid x<0\text{ 或 }x>19\}$. 若 $A\subseteq(A\cap B)$，
+则实数 $a$ 的取值范围是 \blankline[6.0em].
+
+\ans{$(-\infty,6)\cup(9,+\infty)$}
+
+\ifanswer
+\solbegin
+\step{$A\cap B$ 是 $A$ 与 $B$ 的公共部分，所以 $A\subseteq(A\cap B)$ 等价于 $A\subseteq B$.}
+\step{若 $A=\varnothing$，即 $2a+1>3a-5$，解得 $a<6$，此时 $A\subseteq B$ 自然成立.}
+\step{若 $A\neq\varnothing$，即 $a\geqslant 6$，要 $A\subseteq B$，只需整个区间落在 $0$ 的左侧或 $19$ 的右侧：}
+\step{$3a-5<0$ 或 $2a+1>19$；前者得 $a<\dfrac53$，与 $a\geqslant 6$ 矛盾；后者得 $a>9$.}
+\step{综上，$a<6$ 或 $a>9$，即 $a\in(-\infty,6)\cup(9,+\infty)$.}
+\solend
+
+\fi
+
+\item 设 $A,B$ 是有限集，定义 $d(A,B)=\operatorname{card}(A\cup B)-\operatorname{card}(A\cap B)$，
+其中 $\operatorname{card}(A)$ 表示有限集 $A$ 中的元素个数.
+则“$A\neq B$”是“$d(A,B)>0$”的 \blankline[4.4em] 条件.
+
+\ans{充要}
+
+\ifanswer
+\solbegin
+\step{由容斥原理，$\operatorname{card}(A\cup B)-\operatorname{card}(A\cap B)=\operatorname{card}(A\triangle B)$，
+其中 $A\triangle B$ 表示 $A$、$B$ 的对称差（即恰属于其中一个集合的元素组成的集合）.}
+\step{当 $A\neq B$ 时，$A\triangle B$ 非空，故 $d(A,B)>0$，充分性成立；}
+\step{当 $A=B$ 时，$A\triangle B=\varnothing$，故 $d(A,B)=0$，即必要条件也成立.}
+\step{所以“$A\neq B$”是“$d(A,B)>0$”的充要条件.}
+\solend
+
+\fi
+
+\item 若一个集合是另一个集合的子集，则称两个集合构成“全食”；若两个集合有公共元素，但互不为对方的子集，
+则称两个集合构成“偏食”. 对于集合 $A=\left\{-1,\dfrac12,1\right\}$，$B=\{x\mid ax^2=1,\ a\geqslant 0\}$，
+若这两个集合构成“全食”或“偏食”，则实数 $a$ 的值为 \blankline[5.2em].
+
+\ans{$0$ 或 $1$ 或 $4$}
+
+\ifanswer
+\solbegin
+\step{当 $a=0$ 时，方程 $ax^2=1$ 化为 $0=1$，无解，$B=\varnothing$；空集是 $A$ 的子集，两者构成“全食”，符合.}
+\step{当 $a>0$ 时，$x^2=\dfrac1a$，$B=\left\{-\dfrac{1}{\sqrt a},\ \dfrac{1}{\sqrt a}\right\}$.
+记 $t=\dfrac{1}{\sqrt a}>0$，则 $B=\{-t,t\}$.}
+\step{“全食”：若 $B\subseteq A$，由于 $A$ 中只有 $-1$ 与 $1$ 这一对相反数，只能 $t=1$，即 $a=1$；
+（$t=\dfrac12$ 时 $-\dfrac12\notin A$，不合.）}
+\step{又 $A$ 有 $3$ 个元素而 $B$ 只有 $2$ 个，$A\subseteq B$ 不可能，故“全食”只有 $a=1$.}
+\step{“偏食”：要求 $A\cap B\neq\varnothing$ 且互不包含，而 $A\cap B\neq\varnothing$ 要求 $t\in\left\{1,\dfrac12\right\}$.}
+\step{$t=1$ 时 $B=\{-1,1\}\subseteq A$，属于“全食”而非“偏食”；}
+\step{$t=\dfrac12$ 时 $B=\left\{-\dfrac12,\dfrac12\right\}$，$A\cap B=\left\{\dfrac12\right\}\neq\varnothing$，
+又 $-\dfrac12\notin A$、$-1\notin B$，两者互不包含，构成“偏食”；此时 $\dfrac{1}{\sqrt a}=\dfrac12$，解得 $a=4$.}
+\step{所以 $a$ 的值为 $0$ 或 $1$ 或 $4$.}
+\solend
+
+\fi
+
+\item 从集合 $U=\{1,2,3,4,5,6,7,8,9,10\}$ 的子集中选出两个非空集合 $A,B$，同时满足以下两个条件：
+①$A\cup B=U$ 且 $A\cap B=\varnothing$；②若 $x\in A$，则 $x+1\in B$. 则共有 \blankline[3.2em] 种不同的选择.
+
+\ans{$88$}
+
+\ifanswer
+\solbegin
+\step{由 ① 知 $(A,B)$ 是 $U$ 的一个“二分划”：$A,B$ 非空、不交且并为 $U$.}
+\step{由 ② 知，对任意 $x\in A$ 都有 $x+1\notin A$（否则 $x+1$ 同时在 $A$ 与 $B$ 中，与不交矛盾），
+即 $A$ 中不含相邻的两个数.}
+\step{特别地，若 $10\in A$，则 $11\in B$，而 $11\notin U$，矛盾，所以 $10\notin A$，即 $10\in B$.}
+\step{于是问题化为：在 $\{1,2,\cdots,9\}$ 的所有“不含相邻元素”的非空子集中计数
+（取定这样的 $A$ 后令 $B=U\setminus A$，可逐条验证 ①② 都满足）.}
+\step{设 $f(n)$ 为 $\{1,\cdots,n\}$ 中不含相邻元素的子集（含空集）的个数. 按“$n$ 是否入选”分类得
+$f(n)=f(n-1)+f(n-2)$，且 $f(1)=2$，$f(2)=3$，}
+\step{依次算得 $f(3)=5$，$f(4)=8$，$f(5)=13$，$f(6)=21$，$f(7)=34$，$f(8)=55$，$f(9)=89$.}
+\step{其中包含空集这一种，而 $A$ 必须非空，故须减去 $1$，得 $89-1=88$.}
+\step{所以共有 $88$ 种不同的选择.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 设 $M=\{1,2\}$，$N=\{a^2\}$，则“$a=1$”是“$N\subseteq M$”的\mbox{（\quad）.}
+
+\keepwithprev
+A. 充分不必要条件\qquad B. 必要不充分条件\qquad C. 充要条件\qquad D. 既不充分又不必要条件
+
+\ans{A}
+
+\ifanswer
+\solbegin
+\step{当 $a=1$ 时 $N=\{1\}$，而 $\{1\}\subseteq\{1,2\}=M$，故充分性成立.}
+\step{反之，$N\subseteq M$ 只需 $a^2\in\{1,2\}$，即 $a=\pm 1$ 或 $a=\pm\sqrt2$，可见 $a=1$ 并非必需.}
+\step{所以“$a=1$”是“$N\subseteq M$”的充分不必要条件. 故选 A.}
+\solend
+
+\fi
+
+\item 关于 $x$ 的不等式 $mx^2+2mx-1<0$ 的解集为 $\R$ 的一个充分不必要条件是\mbox{（\quad）.}
+
+\keepwithprev
+A. $-1<m<-\dfrac12$\qquad B. $-1<m\leqslant 0$\qquad C. $-2<m<-1$\qquad D. $-3<m<-\dfrac12$
+
+\ans{A}
+
+\ifanswer
+\solbegin
+\step{先求“解集为 $\R$”的充要条件. 当 $m=0$ 时，不等式即 $-1<0$，对一切 $x$ 成立，符合；}
+\step{当 $m\neq 0$ 时，需开口向下且判别式小于零，即 $m<0$ 且 $\Delta=4m^2+4m<0$，解得 $-1<m<0$.}
+\step{所以“解集为 $\R$”$\Leftrightarrow m\in(-1,0]$.}
+\step{所求是它的一个充分不必要条件，即一个真包含于 $(-1,0]$ 的范围.}
+\step{选项 A：$(-1,-\frac12)\subsetneq(-1,0]$，符合；选项 B：$(-1,0]$ 恰为它本身，是充要条件，不符合“不必要”；}
+\step{选项 C：含 $m=-\frac32$、选项 D：含 $m=-1$ 等不在 $(-1,0]$ 内的值，不能保证解集为 $\R$. 故选 A.}
+\solend
+
+\fi
+
+\item 已知集合 $A=\{x\mid -1<x<4\}$，$B=\{x\mid a-1\leqslant x\leqslant a+2\}$，若集合 $A\cap B$ 中恰好只有两个整数，
+则实数 $a$ 的取值范围是\mbox{（\quad）.}
+
+\keepwithprev
+A. $[-1,0)\cup(2,3]$\qquad B. $(-1,0)\cup(2,3)$\qquad C. $(-2,-1]\cup[3,4)$\qquad D. $(-2,-1)\cup(3,4)$
+
+\ans{A}
+
+\ifanswer
+\solbegin
+\step{$A=(-1,4)$ 中的整数只有 $0,1,2,3$. 整数 $n$ 属于 $A\cap B$，等价于
+$n\in\{0,1,2,3\}$ 且 $a-1\leqslant n\leqslant a+2$，即 $n-2\leqslant a\leqslant n+1$.}
+\step{于是四个整数分别对应四个 $a$ 的范围：}
+\step{$n=0$ 对应 $a\in[-2,1]$；$n=1$ 对应 $a\in[-1,2]$；$n=2$ 对应 $a\in[0,3]$；$n=3$ 对应 $a\in[1,4]$.}
+\step{“$A\cap B$ 中恰有两个整数”即 $a$ 恰好落在上述四个范围中的两个里，逐一检查各区间：}
+\step{$a\in[-1,0)$ 时恰为 $n=0,1$ 两个；$a\in(2,3]$ 时恰为 $n=2,3$ 两个；}
+\step{其余位置或不足两个（$a\in[-2,-1)$ 只有 $n=0$；$a\in(3,4]$ 只有 $n=3$），或达到三个以上
+（$a\in[0,1)$ 时有 $n=0,1,2$；$a=1$ 时有 $n=0,1,2,3$），均不合.}
+\step{所以 $a\in[-1,0)\cup(2,3]$. 故选 A.}
+\solend
+
+\fi
+
+\item 已知集合 $P=\{1,2,3,4,5\}$，若 $A,B$ 是 $P$ 的两个非空子集，则所有满足 $A$ 中的最大数小于 $B$ 中的最小数
+的集合对 $(A,B)$ 的个数为\mbox{（\quad）.}
+
+\keepwithprev
+A. $49$\qquad B. $48$\qquad C. $47$\qquad D. $46$
+
+\ans{A}
+
+\ifanswer
+\solbegin
+\step{设 $k=\max A$. 条件“$\max A<\min B$”即 $B$ 中每个元素都大于 $k$，
+所以 $B$ 是 $\{k+1,k+2,\cdots,5\}$ 的非空子集；$k$ 只能是 $1,2,3,4$（$k=5$ 时 $B$ 无从取起）.}
+\step{固定 $k$ 后分两步计数：}
+\step{$A$ 是 $\{1,2,\cdots,k\}$ 中含有 $k$ 的子集，其余元素任取，共 $2^{k-1}$ 个；}
+\step{$B$ 是 $\{k+1,\cdots,5\}$（共 $5-k$ 个元素）的非空子集，共 $2^{5-k}-1$ 个.}
+\step{逐项计算：$k=1$ 时 $2^0\times(2^4-1)=15$；$k=2$ 时 $2^1\times(2^3-1)=14$；}
+\step{$k=3$ 时 $2^2\times(2^2-1)=12$；$k=4$ 时 $2^3\times(2^1-1)=8$.}
+\step{合计 $15+14+12+8=49$. 故选 A.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+% 注：原卷本题题号后印有一个虚线框小标签「手批」（全卷仅此一处；非题面文字，
+%     疑为原卷／公众号标注该题由教师手批），本稿不排。
+\item 设 $n\in\Z$，用反证法证明：若 $n^3$ 是奇数，则 $n$ 是奇数.
+
+\ans{见解析}
+
+\ifanswer
+\solbegin
+\step{假设结论不成立，即 $n$ 不是奇数. 因为 $n$ 是整数，所以 $n$ 为偶数，可设 $n=2k$（$k\in\Z$）.}
+\step{于是 $n^3=(2k)^3=8k^3=2\cdot 4k^3$，它是 $2$ 的倍数，即为偶数.}
+\step{这与已知“$n^3$ 是奇数”矛盾，说明假设不成立，故 $n$ 一定是奇数.}
+\solend
+
+\fi
+
+\ansspace[10]
+
+\item 已知非空集合 $P=\{x\mid a+1\leqslant x\leqslant 2a+1\}$，$Q=\{x\mid -2\leqslant x\leqslant 5\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item 若 $a=3$，求 $(\complement_{\R}P)\cap Q$；
+
+\item 若“$x\in P$”是“$x\in Q$”的充分而不必要条件，求实数 $a$ 的取值范围.
+
+\end{enumerate}
+
+\ans{（1）$[-2,4)$；（2）$[0,2]$}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$a=3$ 时 $P=\{x\mid 4\leqslant x\leqslant 7\}=[4,7]$，则 $\complement_{\R}P=(-\infty,4)\cup(7,+\infty)$.}
+\step{又 $Q=[-2,5]$，两集合取公共部分得 $(\complement_{\R}P)\cap Q=[-2,4)$.}
+\stepm{(2)}{因为 $P$ 非空，所以 $a+1\leqslant 2a+1$，即 $a\geqslant 0$.}
+\step{“$x\in P$”是“$x\in Q$”的充分而不必要条件，即 $P\subseteq Q$ 且 $P\neq Q$.}
+\step{由 $P\subseteq Q$ 得 $a+1\geqslant-2$ 且 $2a+1\leqslant 5$，即 $a\geqslant-3$ 且 $a\leqslant 2$，结合 $a\geqslant 0$ 得 $0\leqslant a\leqslant 2$.}
+\step{此时 $P$ 的两端点不可能同时等于 $-2$ 与 $5$（否则 $a=-3$ 且 $a=2$，矛盾），故 $P\neq Q$ 自动成立.}
+\step{所以 $a$ 的取值范围是 $[0,2]$.}
+\solend
+
+\fi
+
+\ansspace[10]
+
+\item 设数集 $A$ 由实数构成，且满足：若 $x\in A$（$x\neq 1$ 且 $x\neq 0$），则 $\dfrac{1}{1-x}\in A$.
+
+\begin{enumerate}[label=(\arabic*)]
+
+\item 若 $2\in A$，则 $A$ 中至少还有几个元素?
+
+\item 集合 $A$ 是否为双元素集合?请说明理由；
+
+\item 若 $A$ 中元素个数不超过 $8$，所有元素的和为 $\dfrac{14}{3}$，且 $A$ 中有一个元素的平方等于所有元素的积，
+求集合 $A$ 中的元素.
+
+\end{enumerate}
+
+\ans{（1）至少还有 $2$ 个（$-1$ 与 $\dfrac12$）；（2）不是，理由见解析；
+（3）$A=\left\{-1,\ \dfrac12,\ 2,\ -\dfrac12,\ \dfrac23,\ 3\right\}$}
+
+\ifanswer
+\solbegin
+\step{记 $f(x)=\dfrac{1}{1-x}$（$x\neq 0,1$）. 直接计算可得}
+\step{$f(f(x))=\dfrac{1}{1-\frac{1}{1-x}}=\dfrac{x-1}{x}$，\qquad
+$f(f(f(x)))=\dfrac{1}{1-\frac{x-1}{x}}=x$，}
+\step{即 $x$、$\dfrac{1}{1-x}$、$\dfrac{x-1}{x}$ 三个数在 $A$ 中循环出现，$f$ 的迭代周期为 $3$.}
+\step{又 $f(x)=x$ 即 $x^2-x+1=0$ 无实根，$f(f(x))=x$ 也归结为同一个方程，
+所以这三个数\textbf{两两不等}（每个数既不会停在自身，也不会两两互换）.}
+\stepm{(1)}{$2\in A\Rightarrow f(2)=\dfrac{1}{1-2}=-1\in A$；再对 $-1$ 用一次得
+$f(-1)=\dfrac{1}{1-(-1)}=\dfrac12\in A$；}
+\step{对 $\dfrac12$ 用一次又回到 $f\!\left(\dfrac12\right)=\dfrac{1}{1-\frac12}=2\in A$，三数恰好成环.}
+\step{所以 $A$ 中至少还有 $2$ 个元素，即 $-1$ 与 $\dfrac12$（此时 $\left\{2,-1,\dfrac12\right\}\subseteq A$）.}
+\stepm{(2)}{不是双元素集合. 理由：设 $A$ 中每个元素 $x$ 都满足 $x\neq 0$ 且 $x\neq 1$，
+则任取 $x\in A$，由条件知 $x$、$f(x)$、$f^2(x)$ 互不相同且都属于 $A$，于是 $|A|\geqslant 3$；}
+\step{更一般地，$A$ 是若干条“三数循环”的并集，因此 $|A|$ 必为 $3$ 的倍数，不可能等于 $2$.}
+\step{（说明：原卷括注“$x\neq 1$ 且 $x\neq 0$”意味着 $0$、$1$ 可以出现在 $A$ 中而不触发该条件；
+若允许这种退化情形，则如 $A=\{0,1\}$ 这样的双元素集合也能满足字面条件。本稿按常规理解——
+$A$ 的元素都使条件中的映射有意义——给出结论与后续解答.）}
+\stepm{(3)}{由 (2) 知 $|A|$ 是 $3$ 的倍数，又 $|A|\leqslant 8$，故 $|A|=3$ 或 $6$.
+每条三数循环 $\left\{x,\ \dfrac{1}{1-x},\ \dfrac{x-1}{x}\right\}$ 的三个数之积为}
+\step{$x\cdot\dfrac{1}{1-x}\cdot\dfrac{x-1}{x}=\dfrac{x-1}{1-x}=-1$（与 $x$ 无关）.}
+\step{若 $|A|=3$，则 $A$ 中所有元素的积为 $-1$，而实数的平方不可能等于 $-1$，舍去.}
+\step{若 $|A|=6$，则 $A$ 是两条循环的并，积为 $(-1)\times(-1)=1$，
+于是 $A$ 中某个元素的平方等于 $1$，该元素只能是 $1$ 或 $-1$；}
+\step{$1$ 不落在任何三数循环中，所以只能 $-1\in A$，从而 $A$ 含循环 $\left\{-1,\ \dfrac12,\ 2\right\}$，其和为 $\dfrac32$.}
+\step{另一条循环的三个数之和应为 $\dfrac{14}{3}-\dfrac32=\dfrac{19}{6}$. 设它为 $\left\{x,\ \dfrac{1}{1-x},\ \dfrac{x-1}{x}\right\}$，则由}
+\step{$x+\dfrac{1}{1-x}+\dfrac{x-1}{x}=\dfrac{19}{6}$ 去分母整理得 $6x^3-19x^2+x+6=0$，}
+\step{分解得 $(x-3)(2x+1)(3x-2)=0$，即 $x=3$、$x=-\dfrac12$、$x=\dfrac23$，
+三者恰构成一条循环 $\left\{3,\ -\dfrac12,\ \dfrac23\right\}$.}
+\step{所以 $A=\left\{-1,\ \dfrac12,\ 2,\ -\dfrac12,\ \dfrac23,\ 3\right\}$
+（元素个数 $6$，和 $\dfrac32+\dfrac{19}{6}=\dfrac{14}{3}$，积为 $1$，且 $(-1)^2=1$，各条均符合）.}
+\solend
+
+\fi
+
+\ansspace*[12]
+
+\end{enumerate}
+
+\end{document}
