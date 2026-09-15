@@ -1,0 +1,403 @@
+% 高一20_进才中学_周末作业2.tex —— 高一上数学「2026-2027 年进才中学高一上周末作业 2」（试卷版/答案版）
+% 试卷版：xelatex 高一20_进才中学_周末作业2.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一20_进才中学_周末作业2.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一20_进才中学_周末作业2.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」，作者署名「破晓」，
+% 原文链接 https://mp.weixin.qq.com/s/Yx5swqf7yr0WrcA_XPtOkg），正文为 9 张 PNG 页；
+% 原文本身就是一份**讲评版**——题目下方直接印出【答案】或【解析】。本稿把答案与解析
+% 移到答案版，试卷版即一张干净的空卷；试题文字、答案与解析均照原卷录入。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文发布），源码里以 \setcounter{enumi}{2} 起编；
+%      全卷分「一、填空题」「二、选择题」「三、解答题」三节，节标题原卷本就印着；
+%   ② 原卷的实数集、整数集符号作粗体 $\mathbf{R}$、$\mathbf{Z}$（第 13、19、20 题的题干、
+%      第 21 题 (3) 的 $U=\mathbf R$ 等），本稿按全稿惯例统一写作 $\R$、$\Z$；
+%      第 4 题题干与第 16 题的 $Z$ 亦然；原卷中文括注用**半角**括号（第 13—16 题的
+%      「(   )」），本稿按全稿惯例排全角；选择题选项一律改排「\mbox{（\quad）}」；
+%   ③ 第 20 题的五个小问（1)—(5) 在答案版里按小问编号逐条给出（原卷【解析】把第 (5) 问
+%      的解答误印成「(2)」，本稿按小问口径规范为 (5)，见该题下的注）；
+%   ④ 本卷是「讲评版」，解析按全稿统一的 \solbegin/\step 分步重排（原卷为连续段落），
+%      分步不改一字，只断句、断行。
+%
+% 原卷笔误三处（已逐处放大到能看清字形后核对，处理方式见各题下的 `%` 注）：
+%   ① 第 13 题【解析】印作「则 $a+b$ 为奇数，所以 AD 错误，B 正确」「故选 B」，与同句
+%      「$a+b$ 为奇数」自相矛盾（$a$ 为奇数、$b$ 为偶数 $\Rightarrow a+b$ 为奇数，故应落
+%      在奇数集 $A$ 里），本稿按文意订正为「BD 错误，A 正确」「故选 A」；
+%   ② 第 20 题(5) 的【解析】原卷误标为「(2)」（该卷 (2) 的解答另有其文，见原图 07.png），
+%      本稿按小问编号规范为 (5)；
+%   ③ 第 14 题题干印作「则下列四个命题」，其后却列了 ①—⑤ 五个命题，本稿照录题干
+%      原样、不代为改写，只在此处加注。
+% 另：第 14 题 ⑤、第 16 题 ③ 与第 17、18 题里的 $\subset$／$\subseteq$ 照原卷记号录入
+%     （第 14 题 ⑤ 的「$A\subset B$」为**真包含**，与同题题干的 $A\subseteq B$ 逐处放大
+%     比对后确认不同）；第 17 题【解析】末句原卷作「解②得 $a\in\varnothing$」，为原卷写法，
+%     本稿照录（即「无解」之意）。
+
+% 本篇在公众号「魔都数学加油站」连载里的编号是「27学年高一20」，本地编号与之对齐（高一20）；
+% 对应关系见 README「与公众号连载号的对照表」。
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest{2026--2027 年进才中学高一上周末作业 2}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+% 原卷填空题从第 3 题起（1、2 未在该文中发布），须与解答题的 \setcounter{enumi}{16} 对齐
+\setcounter{enumi}{2}
+\item 已知集合 $A=\{x\mid 1\le x\le2\}$，集合 $B=\{x\mid x\le a\}$，若 $A\cap B\ne\varnothing$，则实数 $a$ 的取值范围是 \blankline[5.4em].
+
+\ans{$a\ge1$}
+
+\ifanswer
+\solbegin
+\step{集合 $A=\{x\mid 1\le x\le2\}$，集合 $B=\{x\mid x\le a\}$，}
+\step{因为 $A\cap B\ne\varnothing$，所以 $a\ge1$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid ax^2+x+1=0,x\in\R\}$，且 $A$ 中只有一个元素，则 $a=$ \blankline[4.4em].
+
+\ans{$0$ 或 $\dfrac14$}
+
+\ifanswer
+\solbegin
+\step{当 $a=0$ 时，$x=-1$，满足条件.}
+\step{当 $a\ne0$ 时，由 $\Delta=1-4a=0$，得 $a=\dfrac14$.}
+\step{综上，$a=0$ 或 $a=\dfrac14$.}
+\solend
+\fi
+
+\item 用反证法证明“自然数 $a$、$b$、$c$ 中至多有一个偶数”时，假设应为 \blankline[5.4em].
+
+\ans{$a$、$b$、$c$ 中至少有两个偶数}
+
+\item 若集合 $A=\left\{(x,y)\mid \dfrac{y-1}{x-2}=1\right\}$，$B=\{(x,y)\mid y=x^2-2x+1\}$，则 $A\cap B=$ \blankline[4.4em].
+
+\ans{$\{(1,0)\}$}
+
+\ifanswer
+\solbegin
+\step{因为 $\dfrac{y-1}{x-2}=1$，所以 $y=x-1\ (x\ne2)$，}
+\step{由 $\begin{cases}y=x-1\ (x\ne2)\\ y=x^2-2x+1\end{cases}$，解得 $\begin{cases}x=1\\ y=0\end{cases}$，}
+\step{所以 $A\cap B=\{(1,0)\}$.}
+\solend
+\fi
+
+\item “$x$、$y$ 中至少有一个小于 $0$”是“$x+y<0$”的 \blankline[3.4em] 条件.
+
+\ans{必要非充分}
+
+\item 设全集 $U=\R$，集合 $M=\{x\mid x<1\}$，$N=\{x\mid -1<x<2\}$，则 $\{x\mid x\ge2\}=$ \blankline[4.4em]（用 $M$、$N$ 的交、并、补的运算表示）.
+
+\ans{$\overline{M\cup N}$}
+
+\item 设集合 $P=\{y\mid y=x^2-1,y\in\Z\}$，$Q=\{y\mid y=-2x^2+2,y\in\Z\}$，则 $P\cap Q=$ \blankline[4.4em].
+
+\ans{$\{y\mid -1\le y\le2,y\in\Z\}=[-1,2]$}
+
+\ifanswer
+\solbegin
+\step{因为集合 $P=\{y\mid y=x^2-1,y\in\Z\}=\{y\mid y\ge-1,y\in\Z\}$，}
+\step{$Q=\{y\mid y=-2x^2+2,y\in\Z\}=\{y\mid y\le2,y\in\Z\}$，}
+\step{则 $P\cap Q=\{y\mid -1\le y\le2,y\in\Z\}=[-1,2]$.}
+\solend
+\fi
+
+\item 若“$\begin{cases}x_1>a\\ x_2>a\end{cases}$”是“$\begin{cases}x_1+x_2>2a\\ x_1x_2>a^2\end{cases}$”的必要不充分条件，则实数 $a$ 的取值范围是 \blankline[4.4em].
+
+\ans{$a<0$}
+
+\ifanswer
+\solbegin
+\step{由题意得 $\begin{cases}x_1+x_2>2a\\ x_1x_2>a^2\end{cases}$ 可以推出 $\begin{cases}x_1>a\\ x_2>a\end{cases}$，则 $a\ge0$ 时不合题意（可举反例），}
+\step{当 $a<0$ 时，$\begin{cases}x_1+x_2>2a\\ x_1x_2>a^2\end{cases}$ 等价于 $\begin{cases}(x_1-a)+(x_2-a)>0\\ x_1x_2>a^2\end{cases}$，则 $\begin{cases}x_1>a\\ x_2>a\end{cases}$，}
+\step{所以 $a<0$.}
+\solend
+\fi
+
+\item 设集合 $A=\{x\mid x^2-mx+3=0,x\in\R\}$，且 $A\cap\{1,3\}=A$，则实数 $m$ 的取值范围是 \blankline[4.4em].
+
+\ans{$\{m\mid -2\sqrt3<m<2\sqrt3\text{ 或 }m=4\}$}
+
+\ifanswer
+\solbegin
+\step{因为 $A\cap\{1,3\}=A$，所以 $A\subseteq\{1,3\}$，}
+\step{当 $A=\varnothing$ 时，$\Delta=m^2-12<0$，解得 $-2\sqrt3<m<2\sqrt3$，}
+\step{当 $A=\{1\}$ 时，$\begin{cases}\Delta=m^2-12=0\\ 1-m+3=0\end{cases}$，此时 $m$ 不存在，}
+\step{当 $A=\{3\}$ 时，$\begin{cases}\Delta=m^2-12=0\\ 9-3m+3=0\end{cases}$，此时 $m$ 不存在，}
+\step{当 $A=\{1,3\}$ 时，$\begin{cases}m^2-12>0\\ 1+3=m\end{cases}$，此时 $m=4$，}
+\step{故 $m$ 的范围为 $\{m\mid -2\sqrt3<m<2\sqrt3\text{ 或 }m=4\}$.}
+\solend
+\fi
+
+\item 设集合 $M=\{1,2,3,\cdots,6\}$，现对 $M$ 的任一非空子集 $A$，令 $x_A$ 为 $A$ 中最大数与最小数之和，则所有这样的 $x_A$ 的算术平均值为 \blankline[4.4em].
+
+\ans{$7$}
+
+\ifanswer
+\solbegin
+\step{集合 $M$ 的任一非空子集共有 $2^6-1$ 个，}
+\step{其中最小值为 $1$ 的子集可视为 $\{2,3,\cdots,6\}$ 的子集与集合 $\{1\}$ 的并集，共有 $2^5$ 个，}
+\step{同上可得，最小值为 $2$ 的子集共有 $2^4$ 个，最小值为 $3$ 的子集共有 $2^3$ 个，}
+\step{最小值为 $4$ 的子集共有 $2^2$ 个，最小值为 $5$ 的子集共有 $2^1$ 个，最小值为 $6$ 的子集共有 $2^0$ 个，}
+\step{同上可得，最大值为 $6$ 的子集共有 $2^5$ 个，最大值为 $5$ 的子集共有 $2^4$ 个，}
+\step{最大值为 $4$ 的子集共有 $2^3$ 个，最大值为 $3$ 的子集共有 $2^2$ 个，}
+\step{最大值为 $2$ 的子集共有 $2^1$ 个，最大值为 $1$ 的子集共有 $2^0$ 个，}
+\step{所以 $M$ 的所有非空子集中最小值之和为 $1\times2^5+2\times2^4+3\times2^3+4\times2^2+5\times2^1+6\times2^0$，}
+\step{最大值之和为 $6\times2^5+5\times2^4+4\times2^3+3\times2^2+2\times2^1+1\times2^0$，}
+\step{所以 $x_A=\dfrac{1}{2^6-1}\bigl(1\times2^5+2\times2^4+3\times2^3+4\times2^2+5\times2^1+6\times2^0+6\times2^5+5\times2^4+4\times2^3+3\times2^2+2\times2^1+1\times2^0\bigr)=\dfrac{7\times(2^5+2^4+2^3+2^2+2^1+2^0)}{2^6-1}=7$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 数集 $A=\{x\mid x=2k-1,k\in\Z\}$，$B=\{x\mid x=2k,k\in\Z\}$，$C=\{x\mid x=4k-1,k\in\Z\}$，若 $a\in A$，$b\in B$，则 $a+b\in$\mbox{（\quad）}
+
+\keepwithprev
+A. $A$\qquad B. $B$\qquad C. $C$\qquad D. $A,B,C$ 都有可能
+
+\ans{$A$}
+
+\ifanswer
+\solbegin
+\step{由题意得集合 $A$ 为奇数集，集合 $B$ 为偶数集，}
+\step{即 $a$ 为奇数，$b$ 为偶数，则 $a+b$ 为奇数，所以 BD 错误，A 正确；}
+\step{例如 $a=1$，$b=0$，令 $a+b=4k-1$，即 $1=4k-1$，解得 $k=\dfrac12\notin\Z$，}
+\step{所以 $a+b\notin C$，故 C 错误；}
+\step{故选 $A$.}
+\solend
+\fi
+
+% 注：原卷本题【解析】此二处印作「所以 AD 错误，B 正确」「故选 B」，与同句
+%     「$a$ 为奇数、$b$ 为偶数 $\Rightarrow a+b$ 为奇数」自相矛盾——$a+b$ 为奇数就该落在奇数集
+%     $A$ 里（B 是偶数集），且第 3 步又专门论证了「$a+b\notin C$」。按文意订正为
+%     「BD 错误，A 正确」「故选 A」。已逐处放大核对原卷字形，确系原卷笔误而非本稿抄错。
+
+\item 若 $A$、$B$ 是全集 $I$ 的真子集，则下列四个命题：① $A\cap B=A$；② $A\cup B=A$；③ $A\cap(\overline B)=\varnothing$；④ $A\cap B=I$；⑤ $x\in B$ 是 $x\in A$ 的必要不充分条件. 其中与命题 $A\subseteq B$ 等价的有\mbox{（\quad）}
+
+\keepwithprev
+A. $1$ 个\qquad B. $2$ 个\qquad C. $3$ 个\qquad D. $4$ 个
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{对于①，$A\cap B=A$ 等价于 $A\subseteq B$，故①正确；}
+\step{对于②，$A\cup B=A$ 等价于 $B\subseteq A$，故②不正确；}
+\step{对于③，$A\cap(\overline B)=\varnothing$ 等价于 $A\subseteq B$，故③正确；}
+\step{对于④，$A\cap B=I$ 与 $A$、$B$ 是全集 $I$ 的真子集相矛盾，故④不正确；}
+\step{对于⑤，$x\in B$ 是 $x\in A$ 的必要不充分条件等价于 $A\subset B$，故⑤不正确，}
+\step{所以与命题 $A\subseteq B$ 等价的有①③，共 $2$ 个，故选 $B$.}
+\solend
+\fi
+
+% 注：原卷本题题干印作「则下列四个命题」，其后却列了 ①—⑤ 五个命题（第 ⑤ 条在第 4 张图上），
+%     本稿照录题干原样、不代为改写。
+
+\item 设 $a_1$、$b_1$、$c_1$、$a_2$、$b_2$、$c_2$ 均为非零实数，不等式 $a_1x^2+b_1x+c_1>0$ 和 $a_2x^2+b_2x+c_2>0$ 的解集分别为集合 $M$ 和 $N$，且 $\varnothing\subset M\subset\R$，$\varnothing\subset N\subset\R$，那么“$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$”是“$M=N$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad B. 必要非充分条件
+
+C. 充要条件\qquad D. 既非充分又非必要条件
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{因为 $a_1$、$b_1$、$c_1$、$a_2$、$b_2$、$c_2$ 均为非零实数，}
+\step{且不等式 $a_1x^2+b_1x+c_1>0$ 和 $a_2x^2+b_2x+c_2>0$ 的解集分别为集合 $M$ 和 $N$，}
+\step{$\varnothing\subset M\subset\R$，$\varnothing\subset N\subset\R$，则 $M$ 和 $N$ 均为非空集合且均不为实数集，}
+\step{所以这两个不等式的系数比相等与不等式解集没有必然联系，}
+\step{所以是必要非充分条件，故选 $B$.}
+\solend
+\fi
+
+\item 当一个非空数集 $G$ 满足“如果 $a$、$b\in G$，则 $a+b$，$a-b$，$ab\in G$，且 $b\ne0$ 时，$\dfrac ab\in G$”时，我们称 $G$ 就是一个数域，以下四个关于数域的命题：
+
+① $0$ 是任何数域的元素；② 若数域 $G$ 有非零元素，则 $2023\in G$；
+
+③ 集合 $P=\{x\mid x=2k,k\in\Z\}$ 是一个数域；④ 有理数集是一个数域.
+
+其中假命题的个数是\mbox{（\quad）}
+
+\keepwithprev
+A. $0$\qquad B. $1$\qquad C. $2$\qquad D. $3$
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{对于①，设 $a\in G$，显然有 $a-a\in G$，即 $0\in G$，故 $0$ 是任意数域的元素，故①正确；}
+\step{对于②，范围最小的数域为有理数域，而 $2023$ 是有理数，故 $2023\in G$，故②正确；}
+\step{对于③，显然 $2\in P$，$4\in P$，但是 $\dfrac24=\dfrac12\notin P$，}
+\step{故 $P=\{x\mid x=2k,k\in\Z\}$ 不是一个数域，故③错误；}
+\step{对于④，若 $a$ 是有理数，$b$ 是有理数，}
+\step{则 $a+b$，$a-b$，$ab$，$\dfrac ab\ (b\ne0)$ 都是有理数，故有理数集是一个数域，故④正确.}
+\step{故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知全集 $U=\{2,3,a^2+2a-3\}$，$A=\{|a+1|,2\}$，$\overline A=\{a+3\}$，求实数 $a$ 的值.
+
+\ans{$2$}
+
+\ansspace[6]
+
+\ifanswer
+\solbegin
+\step{因为 $U=\{2,3,a^2+2a-3\}$，$A=\{|a+1|,2\}$，且 $\overline A=\{a+3\}$，}
+\step{所以 $\begin{cases}|a+1|=3\\ a+3=a^2+2a-3\end{cases}$ ①，或 $\begin{cases}|a+1|=a^2+2a-3\\ a+3=3\end{cases}$ ②，}
+\step{解①得 $a=2$，符合题意；解②得 $a\in\varnothing$；所以实数 $a$ 的值是 $2$.}
+\solend
+\fi
+
+\item 用适当的方法表示下列集合，并判断它是有限集还是无限集.
+
+\keepwithprev
+（1）不等式 $2x-3>0$ 的解集；
+
+\keepwithprev
+（2）二元二次方程组 $\begin{cases}y=x\\ y=x^2\end{cases}$ 的解集；
+
+\keepwithprev
+（3）由大于 $-3$ 且小于 $9$ 的偶数组成的集合.
+
+\ans{（1）$\left(\dfrac32,+\infty\right)$，无限集；（2）$\{(0,0),(1,1)\}$，有限集；（3）$\{-2,0,2,4,6,8\}$，有限集}
+
+\ansspace[6]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{解集为 $\left(\dfrac32,+\infty\right)$，无限集；}
+\stepm{（2）}{解集为 $\{(0,0),(1,1)\}$，有限集；}
+\stepm{（3）}{$\{-2,0,2,4,6,8\}$，有限集.}
+\solend
+\fi
+
+\item 已知 $A$ 为方程 $ax^2+2x+1=0$ 的所有实数解构成的集合，其中 $a$ 为实数.
+
+\keepwithprev
+（1）若 $A$ 是空集，求 $a$ 的范围；
+
+\keepwithprev
+（2）若 $A$ 是单元素集合，求 $a$ 的范围；
+
+\keepwithprev
+（3）若 $A$ 中至多有一个元素，求 $a$ 的取值范围.
+
+\ans{（1）$(1,+\infty)$；（2）$\{0,1\}$；（3）$\{a\mid a=0\text{ 或 }a\ge1\}$}
+
+\ansspace[6]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{若 $A$ 是空集，则方程 $ax^2+2x+1=0$ 无解，}
+\step{当 $a=0$ 时，方程 $2x+1=0$ 有解，不符合题意；}
+\step{当 $a\ne0$ 时，$\Delta=4-4a<0$，得 $a>1$.}
+\step{综上所述，实数 $a$ 的范围是 $(1,+\infty)$；}
+\stepm{（2）}{若 $A$ 是单元素集合，则方程 $ax^2+2x+1=0$ 有唯一实根，}
+\step{当 $a=0$ 时，方程 $2x+1=0$ 有唯一解 $x=-\dfrac12$，符合题意；}
+\step{当 $a\ne0$ 时，$\Delta=4-4a=0$，得 $a=1$.}
+\step{综上所述，实数 $a$ 的取值范围是 $\{0,1\}$；}
+\stepm{（3）}{若 $A$ 中至多有一个元素，则方程 $ax^2+2x+1=0$ 至多有一个解，}
+\step{当方程 $ax^2+2x+1=0$ 无解时，由（1）得 $a>1$；}
+\step{方程 $ax^2+2x+1=0$ 有唯一实根时，由（2）得 $a=0$ 或 $a=1$.}
+\step{综上所述，实数 $a$ 的取值范围是 $\{a\mid a=0\text{ 或 }a\ge1\}$.}
+\solend
+\fi
+
+\item 下列命题中，判断条件 $p$ 是条件 $q$ 的什么条件：
+
+\keepwithprev
+（1）$p:|x|=|y|$，$q:x=y$；
+
+\keepwithprev
+（2）$p:\triangle ABC$ 是直角三角形，$q:\triangle ABC$ 是等腰三角形；
+
+\keepwithprev
+（3）$p$：四边形的对角线互相平分，$q$：四边形是矩形；
+
+\keepwithprev
+（4）$p:x=1$，$q:x-1=\sqrt{x-1}$；
+
+\keepwithprev
+（5）$p:m>0$，$q$：关于 $x$ 的方程 $x^2+x-m=0$ 有实根.
+
+\ans{（1）必要不充分条件；（2）既不充分也不必要条件；（3）必要不充分条件；（4）充分不必要条件；（5）充分不必要条件}
+
+\ansspace[6]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$p:|x|=|y|\iff x=\pm y$，$q:x=y$，$p$ 是 $q$ 的必要不充分条件；}
+\stepm{（2）}{$p:\triangle ABC$ 是直角三角形，$q:\triangle ABC$ 是等腰三角形，$p$ 是 $q$ 的既不充分也不必要条件；}
+\stepm{（3）}{$p$：四边形的对角线互相平分 $\iff$ 平行四边形，$q$：四边形是矩形，$p$ 是 $q$ 的必要不充分条件；}
+\stepm{（4）}{若 $x=1$，则 $x-1=0$，$\sqrt{x-1}=0$，则有 $x-1=\sqrt{x-1}$，}
+\step{反之，若 $x-1=\sqrt{x-1}$，解得 $x=1$ 或 $x=2$，故 $p$ 是 $q$ 的充分不必要条件；}
+% 注：原卷此处把第 (5) 问的解答误标为「(2)」（同一卷的 (2) 已在本块开头给出），
+%     本稿按小问编号规范为 (5)。已逐处放大核对原卷字形，确系原卷笔误而非本稿抄错。
+\stepm{（5）}{若 $m>0$，对于方程 $x^2+x-m=0$，有 $\Delta=1+4m>0$，方程有两解，}
+\step{反之，若方程 $x^2+x-m=0$ 有实根，则 $\Delta=1+4m\ge0$，解得 $m\ge-\dfrac14$，则 $m>0$ 不一定成立；}
+\step{故 $p$ 是 $q$ 的充分不必要条件.}
+\solend
+\fi
+
+% 压轴题：其后已无内容，故作答区全用可丢弃胶水（\ansspace*），并在题目前先量一下版面。
+\ansneed{8cm}
+\item 设集合 $A=\{x\mid x^2-3x+2=0\}$，$B=\{x\mid x^2+2(a+1)x+(a^2-5)=0\}$.
+
+\keepwithprev
+（1）若 $A\cap B=\{2\}$，求实数 $a$ 的值；
+
+\keepwithprev
+（2）若 $B$ 集合中有两个元素 $x_1,x_2$，求 $|x_1-x_2|$；
+
+\keepwithprev
+（3）若 $U=\R$，$\overline A\cap B=\varnothing$，求实数 $a$ 的取值范围.
+
+\ans{（1）$a=-3$ 或 $a=-1$；（2）$|x_1-x_2|=\sqrt{8a+24}$；（3）$a\le-3$}
+
+\ansspace*[10]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由题意得 $A=\{x\mid x^2-3x+2=0\}=\{1,2\}$，}
+\step{因为 $A\cap B=\{2\}$，所以 $2\in B$，所以 $2^2+4(a+1)+a^2-5=0$，}
+\step{即 $4+4a+4+a^2-5=0$，化简得 $a^2+4a+3=0$，即 $(a+3)(a+1)=0$，}
+\step{解得 $a=-3$ 或 $a=-1$，}
+\step{检验：当 $a=-3$ 时，$B=\{x\mid x^2-4x+4=0\}=\{2\}$，满足 $A\cap B=\{2\}$，}
+\step{当 $a=-1$ 时，$B=\{x\mid x^2-4=0\}=\{-2,2\}$，满足 $A\cap B=\{2\}$，}
+\step{所以 $a=-3$ 或 $a=-1$.}
+\stepm{（2）}{因为 $B$ 集合中有两个元素 $x_1,x_2$，}
+\step{所以方程 $x^2+2(a+1)x+(a^2-5)=0$ 有两个根，}
+\step{所以 $\Delta=4(a+1)^2-4(a^2-5)=8a+24>0$，}
+\step{且 $x_1+x_2=-2(a+1)$，$x_1x_2=a^2-5$，}
+\step{所以 $|x_1-x_2|=\sqrt{(x_1+x_2)^2-4x_1x_2}=\sqrt{4(a+1)^2-4(a^2-5)}=\sqrt{8a+24}$.}
+\stepm{（3）}{因为 $A=\{1,2\}$，且 $U=\R$，$\overline A\cap B=\varnothing$，}
+\step{当 $B=\varnothing$ 时，$\Delta=4(a+1)^2-4(a^2-5)=8a+24<0$，解得 $a<-3$，符合题意；}
+\step{当 $B=\{1\}$ 时，则 $\begin{cases}\Delta=4(a+1)^2-4(a^2-5)=8a+24=0\\ 1^2+2(a+1)+(a^2-5)=0\end{cases}$，无解；}
+\step{当 $B=\{2\}$ 时，则 $\begin{cases}\Delta=4(a+1)^2-4(a^2-5)=8a+24=0\\ 2^2+4(a+1)+a^2-5=0\end{cases}$，所以 $a=-3$；}
+\step{当 $B=\{1,2\}$ 时，则 $\begin{cases}\Delta=4(a+1)^2-4(a^2-5)=8a+24>0\\ 1+2=-2(a+1)\\ 2=a^2-5\end{cases}$，无解；}
+\step{综上，$a\le-3$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}

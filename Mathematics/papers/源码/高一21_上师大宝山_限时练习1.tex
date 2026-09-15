@@ -1,0 +1,272 @@
+% 高一21_上师大宝山_限时练习1.tex —— 高一上数学「2026-2027 年上师大宝山高一上限时练习 1」（试卷版/答案版）
+% 试卷版：xelatex 高一21_上师大宝山_限时练习1.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一21_上师大宝山_限时练习1.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一21_上师大宝山_限时练习1.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」，作者署名「破晓」，
+% 原文链接 https://mp.weixin.qq.com/s/oum5u0-snvmrJMDPVbvRmw），正文为 6 张 PNG 页；
+% 原文本身就是一份**讲评版**——题目下方直接印出【答案】或【解析】。本稿把答案与解析
+% 移到答案版，试卷版即一张干净的空卷；试题文字、答案与解析均照原卷录入。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文发布），源码里以 \setcounter{enumi}{2} 起编；
+%      全卷只有「一、填空题」「二、解答题」两节，无选择题（最后一题原卷标「（选做题）」）；
+%   ② 原卷的实数集、自然数集符号作粗体 $\mathbf{R}$（全文的 $\complement_R A$）与普通斜体
+%      $N$（第 14 题题干的 $n\in N$），本稿按全稿惯例统一写作 $\R$、$\N$；第 11 题【答案】
+%      原卷印在【解析】末尾（「综上，以上正确的命题是②④」），本稿按全稿惯例另起 \ans{}；
+%   ③ 第 11 题原卷未给【答案】块、把结论放在解析末句，本稿把该结论另提为【答案】②④，
+%      解析末句的「综上」照录（两处并不重复：一处是卷面答案、一处是解析的收束句）；
+%   ④ 本卷是「讲评版」，解析按全稿统一的 \solbegin/\step 分步重排（原卷为连续段落），
+%      分步不改一字，只断句、断行。
+%
+% 原卷笔误一处（照录并加注）：第 14 题 (1)【解析】首句连用两个「因为」
+% （「因为 $A=\{5,7,9,13\}$，因为 $|7-5|=2$」），本稿照录，不代为改写。
+% 另：第 9 题的 $\subset$ 与第 11 题④的 $\subseteq$ 为不同记号，已逐处放大比对确认
+%     （第 9 题的 $\subset$ 是真包含，其解析也按「真子集个数 $2^8-1=255$」计算，两者自洽）；
+%     第 7 题的「$k\le-\frac14$」与第 8 题的「$a\le-1$」是原卷的闭端点，本稿照录。
+
+% 本篇在公众号「魔都数学加油站」连载里的编号是「27学年高一21」，本地编号与之对齐（高一21）；
+% 对应关系见 README「与公众号连载号的对照表」。
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest{2026--2027 年上师大宝山高一上限时练习 1}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+% 原卷填空题从第 3 题起（1、2 未在该文中发布），须与解答题的 \setcounter{enumi}{11} 对齐
+\setcounter{enumi}{2}
+\item 已知集合 $A=\{(x,y)\mid 2x-y+5=0\}$，集合 $B=\{(x,y)\mid 3x-2y+8=0\}$，则 $A\cap B=$ \blankline[4.4em].
+
+\ans{$\{(-2,1)\}$}
+
+\ifanswer
+\solbegin
+\step{因为集合 $A=\{(x,y)\mid 2x-y+5=0\}$，集合 $B=\{(x,y)\mid 3x-2y+8=0\}$，}
+\step{由 $\begin{cases}2x-y+5=0\\ 3x-2y+8=0\end{cases}$，解得 $x=-2$，$y=1$，所以交点坐标为 $(-2,1)$，}
+\step{故 $A\cap B=\{(-2,1)\}$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x<a\}$，$B=\{x\mid x\ge1\}$，且 $A\cup B=\R$，则实数 $a$ 的取值范围是 \blankline[4.4em].
+
+\ans{$[1,+\infty)$}
+
+\item 已知集合 $A=\{12,a^2+4a,a+10\}$，$5\in A$，则 $a=$ \blankline[4.4em].
+
+\ans{$1$}
+
+\ifanswer
+\solbegin
+\step{因为集合 $A=\{12,a^2+4a,a+10\}$，$5\in A$，所以 $a+10=5$ 或 $a^2+4a=5$，}
+\step{当 $a+10=5$ 时，$a=-5$，此时 $a^2+4a=5$，不满足元素的互异性，}
+\step{当 $a^2+4a=5$ 时，解得 $a=1$ 或 $-5$，显然 $a=-5$ 不符合题意，}
+\step{当 $a=1$ 时，此时集合 $A=\{12,5,11\}$，符合题意，所以 $a=1$.}
+\solend
+\fi
+
+\item 满足 $\{1,2\}\subseteq M\subseteq\{1,2,3,4\}$ 的集合 $M$ 的个数是 \blankline[4.4em].
+
+\ans{$4$}
+
+\ifanswer
+\solbegin
+\step{符合条件的集合有 $\{1,2\}$，$\{1,2,3\}$，$\{1,2,4\}$，$\{1,2,3,4\}$，共 $4$ 个.}
+\solend
+\fi
+
+\item 若集合 $A=\{x\mid (k-2)x^2+(2k-1)x+k=0\}$ 至多有一个真子集，求实数 $k$ 的范围是 \blankline[4.4em].
+
+\ans{$k\le-\dfrac14$ 或 $k=2$}
+
+\ifanswer
+\solbegin
+\step{集合 $A$ 至多有一个真子集，则集合 $A$ 中元素个数至多为 $1$，即 $A=\varnothing$ 或 $A$ 中只有一个元素.}
+\step{当 $A=\varnothing$ 时，方程 $(k-2)x^2+(2k-1)x+k=0$ 无实数解，}
+\step{此时 $k-2\ne0$，即 $k\ne2$，且 $\Delta=(2k-1)^2-4(k-2)k<0$，解得 $k<-\dfrac14$；}
+\step{当 $A$ 中只有一个元素时，当 $k-2=0$，即 $k=2$ 时，方程化为 $3x+2=0$，解得 $x=-\dfrac23$，}
+\step{此时 $A=\left\{-\dfrac23\right\}$，符合 $A$ 中只有一个元素的情况.}
+\step{当 $k-2\ne0$ 时，则 $\Delta=(2k-1)^2-4(k-2)k=0$，解得 $k=-\dfrac14$.}
+\step{综上，实数 $k$ 的范围是 $k\le-\dfrac14$ 或 $k=2$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid 1\le x<5\}$，$B=\{x\mid -a<x\le a+3\}$. 若 $B\subseteq(A\cap B)$，则实数 $a$ 的取值范围为 \blankline[4.4em].
+
+\ans{$\{a\mid a\le-1\}$}
+
+\ifanswer
+\solbegin
+\step{由 $B\subseteq(A\cap B)$ 得 $B\subseteq A$，}
+\step{①当 $B=\varnothing$ 时，$-a\ge a+3$，解得 $a\le-\dfrac32$，}
+\step{②当 $B\ne\varnothing$ 时，$\begin{cases}-a<a+3\\ -a\ge1\\ a+3<5\end{cases}$，解得 $-\dfrac32<a\le-1$，}
+\step{综上所述，实数 $a$ 的取值范围为 $\{a\mid a\le-1\}$.}
+\solend
+\fi
+
+\item 若集合 $M\subset\{1,2,3,4,5,6,7,8\}$，且 $M$ 中至少含有两个奇数，则满足条件的集合 $M$ 的个数是 \blankline[4.4em].
+
+\ans{$175$}
+
+\ifanswer
+\solbegin
+\step{考虑反面的两种情况，}
+\step{若 $M$ 中不含有奇数，则集合 $M$ 的个数等价于集合 $\{2,4,6,8\}$ 的子集的个数，即 $2^4=16$ 个，}
+\step{若 $M$ 中只含有 $1$ 个奇数，集合 $M$ 中共有 $4$ 个奇数，故有 $4$ 种可能，}
+\step{集合 $M$ 的个数等价于集合 $\{2,4,6,8\}$ 的子集的个数的 $4$ 倍，即 $2^4\times4=64$，}
+\step{$\{1,2,3,4,5,6,7,8\}$ 的真子集个数共有 $2^8-1=255$，}
+\step{所以 $M$ 中至少含有两个奇数时，满足条件的集合 $M$ 个数为 $255-16-64=175$.}
+\solend
+\fi
+
+\item 若对任意的 $x\in A$，都有 $\dfrac1x\in A$，则称 $A$ 是伙伴关系集合. 集合 $M=\left\{-1,0,\dfrac13,\dfrac12,1,2,3,4\right\}$ 的所有非空子集中，具有伙伴关系的集合个数为 \blankline[4.4em].
+
+\ans{$15$}
+
+\ifanswer
+\solbegin
+\step{$M$ 中共 $8$ 个元素，则 $M$ 的非空子集有 $2^8-1=255$ 个，}
+\step{进而可得伙伴关系集合中的元素两两成对，互为倒数，}
+\step{观察集合 $M$，互为倒数的数有两对，即 $2$ 与 $\dfrac12$，$3$ 与 $\dfrac13$；}
+\step{包括两个倒数是自身的数 $1$ 与 $-1$，可将这些数看作是四个元素，}
+\step{由于包括四个元素的集合的非空子集是 $2^4-1=15$，}
+\step{则 $M$ 的子集中，伙伴关系集合的个数为 $15$.}
+\solend
+\fi
+
+\item 下列四个命题中正确的是 \blankline[4.4em]（请写出所有正确的序号）.
+
+① 已知集合 $A=\{-1,1\}$，$B=\{x\mid mx=1\}$，且 $A\cup B=A$，则 $m=\pm1$；
+
+② 设 $P$、$Q$ 为两非空数集，定义集合 $P+Q=\{x\mid x=a+b,a\in P,b\in Q\}$，若 $P=\{0,-2\}$，$Q=\{1,2,3\}$，则 $P+Q=\{-1,0,1,2,3\}$；
+
+③ 若 $A=\{x\mid x=1\}$，$B=\{y\mid y=1\}$，则 $A\cap B=\varnothing$；
+
+④ 设集合 $A=\{x\mid x\ge2\}$，$B=\{x\mid 2x+a\ge0\}$，且满足 $A\cap B=A$，则实数 $a$ 的取值范围是 $[-4,+\infty)$.
+
+\ans{②④}
+
+\ifanswer
+\solbegin
+\step{对于①，集合 $A=\{-1,1\}$，$B=\{x\mid mx=1\}$，且 $A\cup B=A$，所以 $B\subseteq A$，}
+\step{所以 $B=\varnothing$ 或 $B=\{-1\}$ 或 $B=\{1\}$；}
+\step{当 $B=\varnothing$ 时，$m=0$；当 $B=\{-1\}$ 时，$m=-1$；当 $B=\{1\}$ 时，$m=1$；}
+\step{所以 $m$ 的值是 $0$、$1$、或 $-1$，①错误；}
+\step{对于②，$P+Q=\{x\mid x=a+b,a\in P,b\in Q\}$，且 $P=\{0,-2\}$，$Q=\{1,2,3\}$，}
+\step{所以 $x=0+1=1$，$x=0+2=2$，$x=0+3=3$，}
+\step{$x=-2+1=-1$，$x=-2+2=0$，$x=-2+3=1$；}
+\step{所以 $P+Q=\{-1,0,1,2,3\}$，②正确；}
+\step{对于③，若 $A=\{x\mid x=1\}=\{1\}$，$B=\{y\mid y=1\}=\{1\}$，则 $A\cap B=\{1\}$，③错误；}
+\step{对于④，集合 $A=\{x\mid x\ge2\}$，$B=\{x\mid 2x+a\ge0\}=\left\{x\mid x\ge-\dfrac a2\right\}$，且 $A\cap B=A$，}
+\step{所以 $A\subseteq B$，$-\dfrac a2\le2$，解得 $a\ge-4$，所以实数 $a$ 的取值范围是 $[-4,+\infty)$，④正确.}
+\step{综上，以上正确的命题是②④.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{11}
+
+\item 已知集合 $A=\{x\mid a+1\le x\le2a-1\}$，$B=\{x\mid x\le3\text{ 或 }x>5\}$.
+
+\keepwithprev
+（1）若 $a=4$，求 $A\cap B$；
+
+\keepwithprev
+（2）若 $A\cup B=B$，求 $a$ 的取值范围.
+
+\ans{（1）$A\cap B=\{x\mid 5<x\le7\}$；（2）$\{a\mid a\le2\text{ 或 }a>4\}$}
+
+\ansspace[6]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $a=4$ 时，$A=\{x\mid 5\le x\le7\}$，则 $A\cap B=\{x\mid 5<x\le7\}$；}
+\stepm{（2）}{由 $A\cup B=B$ 得 $A\subseteq B$，}
+\step{当 $A=\varnothing$ 时，$a+1>2a-1$，解得 $a<2$；}
+\step{当 $A\ne\varnothing$ 时，有 $\begin{cases}a\ge2\\ 2a-1\le3\end{cases}$ 或 $\begin{cases}a\ge2\\ a+1>5\end{cases}$，解得 $a=2$ 或 $a>4$；}
+\step{综上，$a$ 的取值范围为 $\{a\mid a\le2\text{ 或 }a>4\}$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x<-3\text{ 或 }x>7\}$，$B=\{x\mid m+1\le x\le2m-1\}$.
+
+\keepwithprev
+（1）若 $(\complement_{\R}A)\cup B=\complement_{\R}A$，求 $m$ 的取值范围；
+
+\keepwithprev
+（2）若 $(\complement_{\R}A)\cap B=\{x\mid a\le x\le b\}$，且 $b-a\ge1$，求 $m$ 的取值范围.
+
+\ans{（1）$\{m\mid m\le4\}$；（2）$\{m\mid 3\le m\le5\}$}
+
+\ansspace[6]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{因为集合 $A=\{x\mid x<-3\text{ 或 }x>7\}$，$B=\{x\mid m+1\le x\le2m-1\}$，}
+\step{所以 $\complement_{\R}A=\{x\mid -3\le x\le7\}$.}
+\step{因为 $(\complement_{\R}A)\cup B=\complement_{\R}A$，所以 $B\subseteq\complement_{\R}A$.}
+\step{当 $B=\varnothing$ 时，$m+1>2m-1$，得 $m<2$，符合题意.}
+\step{当 $B\ne\varnothing$ 时，$\begin{cases}m+1\le2m-1\\ m+1\ge-3\\ 2m-1\le7\end{cases}$，解得 $2\le m\le4$.}
+\step{所以 $m$ 的取值范围为 $\{m\mid m\le4\}$；}
+\stepm{（2）}{由题意得 $B\ne\varnothing$，由（1）得 $m\ge2$，得 $m+1\ge3$.}
+\step{当 $2m-1\le7$，即 $m\le4$ 时，$(\complement_{\R}A)\cap B=B=\{x\mid m+1\le x\le2m-1\}$，}
+\step{所以 $b-a=2m-1-(m+1)\ge1$，得 $m\ge3$，所以 $3\le m\le4$.}
+\step{当 $\begin{cases}m+1\le7\\ 2m-1>7\end{cases}$ 时，即 $4<m\le6$ 时，$(\complement_{\R}A)\cap B=\{x\mid m+1\le x\le7\}$，}
+\step{所以 $b-a=7-(m+1)\ge1$，得 $m\le5$，所以 $4<m\le5$.}
+\step{当 $m+1>7$，即 $m>6$ 时，$(\complement_{\R}A)\cap B=\varnothing$，不符合题意.}
+\step{故 $m$ 的取值范围为 $\{m\mid 3\le m\le5\}$.}
+\solend
+\fi
+
+% 压轴题（原卷标「（选做题）」）：其后已无内容，故作答区全用可丢弃胶水（\ansspace*），
+% 并在题目前先量一下版面。
+\ansneed{8cm}
+\item （选做题）已知 $M=\{a_1,a_2,\cdots,a_n\}(n\in\N,n\ge2)$ 是由正整数组成的集合，如果对于 $M$ 中的任意两个元素 $x,y$，都有 $|x-y|>2$，则称 $M$ 为“好集合”.
+
+\keepwithprev
+（1）分别判断集合 $A=\{5,7,9,13\}$ 与集合 $B=\{2,5,8,11\}$ 是否为“好集合”？
+
+\keepwithprev
+（2）若集合 $C=\{a_1,a_2,\cdots,a_7\}\subseteq\{1,2,\cdots,18\}$，证明：此集合不可能是“好集合”；
+
+\keepwithprev
+（3）若 $S=\{1,2,3,\cdots,2026\}$，$D$ 是 $S$ 的子集，且 $D$ 是“好集合”，求 $D$ 所含元素个数的最大值.
+
+\ans{（1）$A$ 不是，$B$ 是；（2）见解析；（3）$676$}
+
+\ansspace*[10]
+
+\ifanswer
+\solbegin
+% 注：原卷本问【解析】首句连用两个「因为」（「因为 $A=\{5,7,9,13\}$，因为 $|7-5|=2$」），
+%     本稿照录原卷原样、不代为改写。
+\stepm{（1）}{因为 $A=\{5,7,9,13\}$，因为 $|7-5|=2$，所以集合 $A$ 不是“好集合”，}
+\step{因为 $B=\{2,5,8,11\}$，$|5-2|=3>2$，$|8-2|=6>2$，$|11-2|=9>2$，}
+\step{$|8-5|=3>2$，$|11-5|=6>2$，$|11-8|=3>2$，所以集合 $B$ 是“好集合”.}
+\stepm{（2）}{将集合 $\{1,2,\cdots,18\}$ 中的元素分为如下 $10$ 个集合，}
+\step{$\{1,3\},\{2,4\},\{5,7\},\{6,8\},\{9,11\},\{10,12\},\{13,15\},\{14,16\},\{17\},\{18\}$，}
+\step{所以从集合 $\{1,2,\cdots,18\}$ 中取 $12$ 个元素，则前 $8$ 个集合至少要选 $10$ 个元素，}
+\step{所以必有 $2$ 个元素取自前 $8$ 个集合中的同一集合，}
+\step{即存在两个元素的差的绝对值不大于 $2$，所以 $C$ 不可能是“好集合”.}
+\stepm{（3）}{因为 $D$ 是“好集合”，所以对于 $D$ 中的任意两个不同的元素 $x,y$，}
+\step{不妨设 $x>y$，都有 $x-y\ge3$.}
+\step{要想 $D$ 所含元素个数最大，则要 $x-y$ 尽可能小，}
+\step{故需使得 $x-y$ 的最小值为 $3$.}
+\step{将 $1\sim2026$ 这 $2026$ 个元素按如下分组：}
+\step{$\{1,2,3\},\{4,5,6\},\cdots,\{2023,2024,2025\},\{2026\}$，}
+\step{故应取 $D=\{1,4,7,\cdots,2023,2026\}$，}
+\step{其中任意两元素差值 $x-y\ (x>y)$ 都大于 $2$，故其是好集合，}
+\step{故集合 $S$ 的“好集合”$D$ 所含元素个数的最大值为 $\dfrac{2025}{3}+1=676$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
