@@ -1,0 +1,450 @@
+% 高一18_交附闵行_周末作业9.11.tex —— 高一上数学「2026-2027 年交附闵行高一上周末作业 9.11」
+% 试卷版：xelatex 高一18_交附闵行_周末作业9.11.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一18_交附闵行_周末作业9.11.tex}"
+%
+% 原始材料是微信公众号图文（正文为 11 张 PNG 页，1080×1527）。原文本身就是一份**讲评版**——
+% 题目下方直接印出【答案】或【解析】；试题文字、答案与解析均照原卷录入（订正处见下）。
+% 卷面上的粉色斜水印属水印，未录入。全卷无插图，故未新增 figures 文件。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题（分别在原图
+%      00/04/06.png 上，逐页核对过），本稿照原卷分节，只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷填空、选择的答案直接印在题目下方，本稿统一改为试卷版隐去、答案版以【答案】给出；
+%      选择题的括注一律改排「（\quad）」，并把答案移到选项之后，使两版彻底分离；
+%   ④ 原卷第 13—16 题的选项原为一个选项一行的四行式（或两行式），本稿按全稿惯例连排；
+%   ⑤ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」；
+%   ⑥ 原卷解答题子问编号为「（1）（2）」，本稿用嵌套 enumerate 排成同一形态；
+%   ⑦ 原卷解答题未留作答空间（讲评稿通篇是答案），本稿逐题补出书写留白，仅试卷版显示；
+%   ⑧ 原卷第 17 题题干与解析中的补集记号印作 $\complement_R A$，本稿照录。
+%
+% 原卷笔误一处（已放大到能看清字形后核对，本稿按文意订正，并在 README 中写明原委）：
+%   ① 第 5 题【解析】第三行原卷印「所以 $\{a,1\}=\{a^2,a,0\}$」——由上一行刚求出的 $b=0$
+%      可知左端应为三元集 $\{a,0,1\}$（原卷漏排了那个 $0$），否则「两个集合元素个数不等」
+%      与紧接着的「所以 $a^2=1$」直接矛盾（$a^2=1$ 正是比较左端的 $1$ 与右端的 $a^2$ 得来的），
+%      本稿按文意订正为 $\{a,0,1\}=\{a^2,a,0\}$.
+%
+% 原卷存疑两处（无法确证原意，本稿照抄原卷、未改）：
+%   ① 第 21 题(3)【解析】起首印「…具有性质 $P$」，而题干给出的名称是「单封集」——两处指同一性质，
+%      疑为原卷沿用了他处题源的说法，本稿照抄（不影响该问结论）；
+%   ② 第 21 题(3)【解析】印「则 $0\leqslant a_{2025}-a_{2025}<a_{2025}-a_{2024}<\cdots<a_{2025}-a_1$」，
+%      其中 $a_{2025}-a_{2025}$ 严格等于 $0$，原卷首端用「$\leqslant$」，本稿照抄未改.
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest{2026--2027 年交附闵行高一上周末作业 9.11}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 若 $A=\{x\mid x=a^2+2a+4,a\in R\}$，$B=\{y\mid y=b^2-4b+3,b\in R\}$，则 $A$ 与 $B$ 的关系为 \blankline[4.4em].
+
+\ans{$A\subset B$}
+
+\ifanswer
+\solbegin
+\step{由 $x=a^2+2a+4=(a+1)^2+3$，}
+\step{所以 $x=(a+1)^2+3\geqslant 3$，因此 $A=[3,+\infty)$，}
+\step{由 $y=b^2-4b+3=(b-2)^2-1$，因为 $b\in R$，所以 $y=(b-2)^2-1\geqslant -1$，}
+\step{因此 $B=[-1,+\infty)$，因此 $A\subset B$.}
+\solend
+
+\fi
+
+\item 设 $\alpha:4\leqslant x\leqslant 8$，$\beta:m+1\leqslant x\leqslant 2m+4$，$m\in R$，$\alpha$ 是 $\beta$ 的充分不必要条件，则实数 $m$ 的取值范围是 \blankline[4.4em].
+
+\ans{$[2,3]$}
+
+\ifanswer
+\solbegin
+\step{因为 $\alpha$ 是 $\beta$ 的充分不必要条件，所以 $\begin{cases}m+1\leqslant 4\\ 2m+4\geqslant 8\end{cases}$，且等号不能同时成立，}
+\step{解得 $2\leqslant m\leqslant 3$，所以实数 $m$ 的取值范围是 $[2,3]$.}
+\solend
+
+\fi
+
+\item 含有三个实数的集合可表示为 $\left\{a,\dfrac{b}{a},1\right\}$，也可以表示为 $\{a^2,a+b,0\}$，则 $a^{2023}+a^{2024}$ 的值为 \blankline[3em].
+
+\ans{$0$}
+
+\ifanswer
+\solbegin
+\step{由题意得 $\left\{a,\dfrac{b}{a},1\right\}=\{a^2,a+b,0\}$，显然 $a\neq 0$，所以 $\dfrac{b}{a}=0$，所以 $b=0$，}
+% 注：下面一行原卷印作「所以 $\{a,1\}=\{a^2,a,0\}$」，左端漏排元素 $0$，本稿按文意订正为 $\{a,0,1\}$.
+\step{所以 $\{a,0,1\}=\{a^2,a,0\}$，所以 $a^2=1$，解得 $a=\pm 1$，}
+\step{当 $a=1$ 时，不满足元素的互异性，舍去，}
+\step{当 $a=-1$ 时，$\{-1,0,1\}=\{1,-1,0\}$，符合题意，}
+\step{综上所述，$a=-1$，所以 $a^{2023}+a^{2024}=(-1)^{2023}+(-1)^{2024}=-1+1=0$.}
+\solend
+
+\fi
+
+\item “$a<0$”是关于 $x$ 的方程“$ax^2+2x+2=0$ 至少有一个负根”的 \blankline[4.4em] 条件.
+
+（用“充分非必要”，“必要非充分”，“充要”，“既非充分又非必要”填空）
+
+\ans{充分非必要}
+
+\ifanswer
+\solbegin
+\step{当 $a>0$ 时，显然函数 $f(x)=ax^2+2x+2$ 开口向上，}
+\step{对称轴为 $x=-\dfrac{2}{a}<0$，$f(0)=2$，所以若 $ax^2+2x+2=0$ 有根，则根为负数，}
+\step{所以有 $\Delta=4-8a\geqslant 0\Rightarrow a\leqslant \dfrac12$，即 $0<a\leqslant \dfrac12$；}
+\step{当 $a=0$ 时，得 $2x+2=0\Rightarrow x=-1$，此时有一个负数根；}
+\step{当 $a<0$ 时，显然 $f(x)=ax^2+2x+2$ 开口向下，$f(0)=2$，}
+\step{所以 $ax^2+2x+2=0$ 有两根，一正一负；}
+\step{综上所述，$a\leqslant \dfrac12$，}
+\step{所以“$a<0$”是关于 $x$ 的方程“$ax^2+2x+2=0$ 至少有一个负根”的充分非必要条件.}
+\solend
+
+\fi
+
+\item 学校里有 30 位老师会打乒乓球，60 位老师会打羽毛球，20 位老师会打篮球，有 80 位老师至少会一种球类，三种球都会的老师有 5 位，则会且仅会两种球类的老师有 \blankline[2.4em] 位.
+
+\ans{$20$}
+
+\ifanswer
+\solbegin
+\step{先把会三种球的人数加起来 $30+60+20=110$（人），}
+\step{这里面，只会两种球的人被重复算了 1 次，三种球都会的人被重复算了 2 次，}
+\step{而实际至少会一种的只有 80 人，三种球都会的 5 人，多算了 2 次，}
+\step{一共多算 $5\times 2=10$（人），}
+\step{用总和减去多算的部分，再减去实际的总人数，}
+\step{剩下的就是只会两种球的人数 $110-10-80=20$（人）.}
+\solend
+
+\fi
+
+\item 已知命题“存在 $x\in\{x\mid -1<x<2\}$，使得等式 $3x-m=0$ 成立”是假命题，则实数 $m$ 的取值范围是 \blankline[5em].
+
+\ans{$m\leqslant -3$ 或 $m\geqslant 6$}
+
+\ifanswer
+\solbegin
+\step{任意 $x\in\{x\mid -1<x<2\}$，使得等式 $3x-m\neq 0$ 成立是真命题，}
+\step{又因为 $-1<x<2$，所以 $-3<3x<6$，要使 $3x\neq m$，则需 $m\leqslant -3$ 或 $m\geqslant 6$.}
+\solend
+
+\fi
+
+\item 已知 $a\in R$，若关于 $x$ 的方程 $x^2+ax+a^2-8=0$ 有两个实根 $x_1$、$x_2$，且 $\dfrac{1}{x_1}+\dfrac{1}{x_2}=-\dfrac12$，则 $a$ 的值为 \blankline[3em].
+
+\ans{$-2$}
+
+\ifanswer
+\solbegin
+\step{由题意得 $\Delta=a^2-4(a^2-8)=32-3a^2\geqslant 0$，解得 $a^2\leqslant \dfrac{32}{3}$，}
+\step{由韦达定理得 $x_1+x_2=-a$，$x_1x_2=a^2-8$，则 $\dfrac{1}{x_1}+\dfrac{1}{x_2}=\dfrac{x_1+x_2}{x_1x_2}=\dfrac{-a}{a^2-8}=-\dfrac12$，}
+\step{即 $a^2-2a-8=(a-4)(a+2)=0$，解得 $a=4$ 或 $a=-2$. 又 $a^2\leqslant \dfrac{32}{3}$，则 $a=-2$.}
+\solend
+
+\fi
+
+\item 对于一个数集 $E$，定义函数 $f_E(x)=\begin{cases}1,&x\in E\\ 0,&x\notin E\end{cases}$. 现设数集 $U$ 是全集，$A$、$B$ 是 $U$ 的子集，对任意 $x\in U$，有以下命题：
+
+① 如果 $A\cap B=\varnothing$，那么 $f_A(x)+f_B(x)\leqslant 1$；
+
+② 如果 $A=A\cap B$，那么 $f_A(x)-f_B(x)\leqslant 0$；
+
+③ 如果 $C=A\cup B$，那么 $f_C(x)=f_A(x)+f_B(x)$；
+
+④ 如果 $C=A\cap B$，那么 $f_C(x)=f_A(x)\cdot f_B(x)$.
+
+其中命题正确的是 \blankline[4.4em].
+
+\ans{①②④}
+
+\ifanswer
+\solbegin
+\step{对于①，由 $A\cap B=\varnothing$，则任意 $x\in U$，$x$ 不同时属于 $A$、$B$，}
+\step{则 $f_A(x)$、$f_B(x)$ 不同时为 1，则 $f_A(x)+f_B(x)\leqslant 1$，故①正确；}
+\step{对于②，由 $A=A\cap B$，得 $A\subseteq B$，若 $x\in A$，则 $x\in B$，得 $f_A(x)=f_B(x)=1$，}
+\step{若 $x\notin A$，则 $f_A(x)=0$，$f_B(x)=0$ 或 1，则 $f_A(x)-f_B(x)\leqslant 0$，故②正确；}
+\step{对于③，当 $x\in A\cap B$ 时，$x\in C$，$f_C(x)=1$，$f_A(x)=f_B(x)=1$，}
+\step{$f_C(x)\neq f_A(x)+f_B(x)$，故③错误；}
+\step{对于④，若 $x\in C$，则 $x\in A$，$x\in B$，则 $f_C(x)=f_A(x)=f_B(x)=1$，}
+\step{$f_C(x)=f_A(x)\cdot f_B(x)=1$；}
+\step{若 $x\notin C$，则 $x$ 不同时属于 $A$、$B$，则 $f_C(x)=0$，$f_A(x)$ 与 $f_B(x)$ 必有一个为 0，}
+\step{则 $f_C(x)=f_A(x)\cdot f_B(x)=0$，故④正确.}
+\step{故正确的是①②④.}
+\solend
+
+\fi
+
+\item 已知 $a$、$b$、$c$、$d$、$e$、$f$、$g$、$h$ 是在集合 $\{-7,-5,-3,-2,2,4,6,13\}$ 中的不同数，则 $(a+b+c+d)^2+(e+f+g+h)^2$ 的最小值为 \blankline[3em].
+
+\ans{$34$}
+
+\ifanswer
+\solbegin
+\step{不妨设 $a+b+c+d=M$，$e+f+g+h=N$，}
+\step{因为 $a+b+c+d+e+f+g+h=-7-5-3-2+2+4+6+13=8$，}
+\step{所以 $M+N=8$，}
+\step{所以 $(a+b+c+d)^2+(e+f+g+h)^2=M^2+N^2$}
+\step{$=M^2+(8-M)^2=2(M-4)^2+32$，}
+\step{若要 $2(M-4)^2+32$ 值最小，则先考虑 $M=4$，下面分析 $M=4$ 的可能性：}
+\step{当 $M=4$ 时，则 $a$、$b$、$c$、$d$ 四个数全为偶数，或全为奇数，或两奇两偶，}
+\step{若四个数全为偶数，则和的结果为 $-2+2+4+6=10$，不满足要求；}
+\step{若四个数全为奇数，则和的结果为 $-7-5-3+13=-2$，不满足要求；}
+\step{若四个数两奇两偶，其中两个奇数之和可能为 $\{-12,\allowbreak -10,\allowbreak 6,\allowbreak -8,\allowbreak 8,\allowbreak 10\}$，}
+\step{两个偶数之和可能为 $\{0,\allowbreak 2,\allowbreak 4,\allowbreak 6,\allowbreak 8,\allowbreak 10\}$，}
+\step{此时两奇两偶的四个数之和不可能等于 4，所以 $M=4$ 不成立，}
+\step{结合二次函数的性质考虑 $M=3$ 或 $M=5$ 的情形，}
+\step{所以当 $M=a+b+c+d=-3-2+2+6=3$ 时，}
+\step{此时 $2(M-4)^2+32$ 取值最小，最小值为 34.}
+\solend
+
+\fi
+
+\item 已知 $a,b,c$ 为实数，用 $|S|$ 表示集合 $S$ 的元素个数，若集合 $A=\{x\mid (ax+1)(cx^2+bx+1)=0\}$，则 $|A|$ 所有可能的值是 \blankline[5em].
+
+\ans{0 或 1 或 2 或 3}
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 关于实数 $x$，有下列甲、乙、丙三个陈述，分别为 甲：$x>2$；乙：$x<4$；丙：$x>3$. 如果甲、乙、丙三个陈述中有且仅有一个正确，则 $x$ 的取值范围可以为（\quad）
+
+A. $(3,+\infty)$\qquad B. $(-\infty,2]$\qquad C. $(2,3)$\qquad D. $[4,+\infty)$
+
+\ans{B}
+
+\ifanswer
+\solbegin
+\step{若甲对，则 $\begin{cases}x>2\\ x\geqslant 4\\ x\leqslant 3\end{cases}$，此时 $x$ 不存在；}
+\step{若乙对，则 $\begin{cases}x\leqslant 2\\ x<4\\ x\leqslant 3\end{cases}$，即 $x\leqslant 2$；}
+\step{若丙对，则 $\begin{cases}x\leqslant 2\\ x\geqslant 4\\ x>3\end{cases}$，此时 $x$ 不存在，}
+\step{综上，$x\leqslant 2$. 故选 B.}
+\solend
+
+\fi
+
+\item 若“$\exists x\in[1,4]$，使得 $2x+a+1\geqslant 0$”是真命题，则实数 $a$ 的取值范围是（\quad）
+
+A. $\{a\mid a<-9\}$\qquad B. $\{a\mid a<-3\}$\qquad C. $\{a\mid a\geqslant -9\}$\qquad D. $\{a\mid a>-3\}$
+
+\ans{C}
+
+\ifanswer
+\solbegin
+\step{由于“$\exists x\in[1,4]$，使得 $2x+a+1\geqslant 0$”是真命题，}
+\step{得 $\exists x\in[1,4]$，使得 $a\geqslant -2x-1$ 成立，又 $-9\leqslant -2x-1\leqslant -3$，}
+\step{所以 $a\geqslant (-2x-1)_{min}=-9$. 故选 C.}
+\solend
+
+\fi
+
+\item 已知 $A$、$B$ 为非空实数集，$\Omega$ 为平面直角坐标系中的一些点构成的集合，集合 $C=\{y\mid$ 对任意 $x\in A$，有 $(x,y)\in\Omega\}$，集合 $D=\{x\mid$ 对任意 $y\in B$，有 $(x,y)\in\Omega\}$，对于下列两个命题：① 若 $C\subseteq B$，则 $D\subseteq A$；② 若 $C\supseteq B$，则 $D\supseteq A$；其中判断正确的是（\quad）
+
+A. ①②都正确\qquad B. ①②都错误\qquad C. ①正确②错误\qquad D. ①错误②正确
+
+\ans{B}
+
+\ifanswer
+\solbegin
+\step{设 $A=\{a_1,a_2,a_3,\cdots,a_n\}$，$B=\{b_1,b_2,b_3,\cdots,b_n\}$，$n>2$，}
+\step{若 $\Omega=\{(c,b_1),(c,b_2),\cdots,(c,b_n)\}$，$c\notin A$，}
+\step{此时 $C=\varnothing\subseteq B$，$D=\{c\}$，$D\subseteq A$ 错误，}
+\step{故①错误；}
+\step{若 $C\supseteq B$，则 $\forall(a_i,b_j)(1\leqslant i,j\leqslant n,i,j\in N^*)\in\Omega$，则 $D\supseteq A$，}
+\step{且 $A=\{a_1\}$，$B=\{b_1,b_2\}$，}
+\step{若 $\Omega=\{(a_1,b_1),(a_2,b_1),(a_1,b_2),(a_2,b_2),(c,b_1),(c,b_2)\}$，$D$ 真包含 $A$，故②错误.}
+\step{故选 B.}
+\solend
+
+\fi
+
+\item 置换是抽象代数的一种基本变换，对于有序数组 $M:\{m_1,m_2,m_3\}$，有序数组 $N:\{n_1,n_2,n_3\}$，定义“间距置换”：$n_1=|m_1-m_2|$，$n_2=|m_2-m_3|$，$n_3=|m_3-m_1|$. 已知有序数组 $T:\{x,y,z\}$，经过一次“间距置换”后得到新的有序数组 $S:\{a,3,b\}(a\leqslant b)$，且 $S$ 中所有数之和为 2025，则 $\dfrac{a}{b}$ 的值为（\quad）
+
+A. $\dfrac{2019}{2025}$\qquad B. $\dfrac{2021}{2024}$\qquad C. $\dfrac{2021}{2023}$\qquad D. $\dfrac{2019}{2023}$
+
+\ans{A}
+
+\ifanswer
+\solbegin
+\step{由题意得 $a=|x-y|$，$3=|y-z|$，$b=|z-x|$.}
+\step{若 $x$ 介于 $y$、$z$ 之间，则 $|y-z|=|x-y|+|z-x|=a+b=3$.}
+\step{由题意得 $a+3+b=2025$，所以 $a+b=2022$，矛盾，舍去.}
+\step{因为 $a\leqslant b$，所以 $|x-y|\leqslant |z-x|$，结合 $|y-z|=3\neq 0$，得 $x>y>z$ 或 $x<y<z$.}
+\step{若 $x>y>z$，由题意得 $a=|x-y|=x-y$，$3=|y-z|=y-z$，$b=|z-x|=x-z$，}
+\step{上述三个式子相加得 $a+3+b=2025=2x-2z=2(x-z)$，}
+\step{所以 $a+b=2022$，$x-z=\dfrac{2025}{2}$，所以 $b=\dfrac{2025}{2}$，则 $a=2022-b=\dfrac{2019}{2}$，}
+\step{所以 $\dfrac{a}{b}=\dfrac{2019}{2025}$，}
+\step{若 $x<y<z$，同理可得 $\dfrac{a}{b}=\dfrac{2019}{2025}$. 故选 A.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知集合 $A=\{x\mid 2<x\leqslant 4\}$，集合 $B=\{x\mid k+1\leqslant x\leqslant 2k-1\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $k=3$ 时，求 $A\cup B$，$(\complement_R A)\cap B$；
+\item 若 $p:x\in A$ 是 $q:x\in B$ 的必要条件，求 $k$ 的取值范围.
+\end{enumerate}
+
+\ans{（1）$A\cup B=\{x\mid 2<x\leqslant 5\}$，$(\complement_R A)\cap B=\{x\mid 4<x\leqslant 5\}$；（2）$\left\{k\mid k\leqslant \dfrac52\right\}$}
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $k=3$ 时，$B=\{x\mid 4\leqslant x\leqslant 5\}$，$A=\{x\mid 2<x\leqslant 4\}$，}
+\step{所以 $A\cup B=\{x\mid 2<x\leqslant 5\}$，$\complement_R A=\{x\mid x\leqslant 2\text{ 或 }x>4\}$，}
+\step{$(\complement_R A)\cap B=\{x\mid 4<x\leqslant 5\}$；}
+\stepm{（2）}{因为 $p:x\in A$ 是 $q:x\in B$ 的必要条件，所以 $B\subseteq A$，}
+\step{当 $k+1>2k-1$，即 $k<2$ 时，$B=\varnothing$，符合题意；}
+\step{当 $k+1\leqslant 2k-1$，即 $k\geqslant 2$ 时，}
+\step{若 $B\subseteq A$，则 $\begin{cases}k\geqslant 2\\ k+1>2\\ 2k-1\leqslant 4\end{cases}$，解得 $2\leqslant k\leqslant \dfrac52$，}
+\step{综上，$k$ 的取值范围为 $\left\{k\mid k\leqslant \dfrac52\right\}$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知集合 $A=\{x\mid x^2-6x+8<0\}$，集合 $B=\{x\mid 3m<x<1-m\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 命题 $p:x\in A$，命题 $q:x\in B$，若 $p$ 是 $q$ 的充分条件，求实数 $m$ 的取值范围.
+\item 若 $A\cap B=\varnothing$，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ans{（1）$m\leqslant -3$，即 $(-\infty,-3]$；（2）$m\geqslant -1$，即 $[-1,+\infty)$}
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$x^2-6x+8<0\Rightarrow 2<x<4\Rightarrow A=\{x\mid 2<x<4\}$.}
+\step{若 $p$ 是 $q$ 的充分条件，则 $A\subseteq B$，结合 $B$ 为非空集合，得 $\begin{cases}3m<1-m\\ 3m\leqslant 2\\ 1-m\geqslant 4\end{cases}$，}
+\step{解得 $m\leqslant -3$，故 $m$ 的取值范围是 $(-\infty,-3]$；}
+\stepm{（2）}{对于 $A\cap B=\varnothing$，}
+\step{当 $B=\varnothing$ 时，$3m\geqslant 1-m$，解得 $m\geqslant \dfrac14$，满足 $A\cap B=\varnothing$；}
+\step{当 $B\neq\varnothing$ 时，$3m<1-m$ 即 $m<\dfrac14$，要使交集为空，}
+\step{则 $1-m\leqslant 2$ 或 $3m\geqslant 4$，解得 $m\geqslant -1$，结合 $m<\dfrac14$，得 $-1\leqslant m<\dfrac14$.}
+\step{综上，$m\geqslant -1$，即 $m$ 的取值范围是 $[-1,+\infty)$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 设命题 $p:\forall x\in R$，使得不等式 $mx^2-mx+2>0$ 恒成立；命题 $q:\exists 0\leqslant x\leqslant 3$，不等式 $2x-2\geqslant |m|$ 成立.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $p$ 为假命题，求实数 $m$ 的取值范围；
+\item 若命题 $p$、$q$ 有且只有一个是真命题，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ans{（1）$\{m\mid m<0\text{ 或 }m\geqslant 8\}$；（2）$\{m\mid -4\leqslant m<0\text{ 或 }4<m<8\}$}
+
+\ifanswer
+\solbegin
+\stepm{（1）}{命题 $p:\forall x\in R$，使得不等式 $mx^2-mx+2>0$ 恒成立为真命题，}
+\step{当 $m=0$ 时，$2>0$，成立；}
+\step{当 $m\neq 0$ 时，需 $\begin{cases}m>0\\ \Delta=m^2-8m<0\end{cases}$，解得 $0<m<8$，}
+\step{所以若 $p$ 为真命题，则 $0\leqslant m<8$，}
+\step{则若 $p$ 为假命题，则实数 $m$ 的范围为 $\{m\mid m<0\text{ 或 }m\geqslant 8\}$；}
+\stepm{（2）}{命题 $q:\exists 0\leqslant x\leqslant 3$，不等式 $2x-2\geqslant |m|$ 成立为真命题，}
+\step{则 $|m|\leqslant (2x-2)_{max}$，所以 $|m|\leqslant 2\times 3-2=4$，解得 $-4\leqslant m\leqslant 4$，}
+\step{设 $A=\{m\mid 0\leqslant m<8\}$，$B=\{m\mid -4\leqslant m\leqslant 4\}$，}
+\step{当 $p$ 真 $q$ 假时，$m$ 的范围为 $A\cap\complement_R B=\{m\mid 4<m<8\}$，}
+\step{当 $p$ 假 $q$ 真时，$m$ 的范围为 $\complement_R A\cap B=\{m\mid -4\leqslant m<0\}$，}
+\step{综上，命题 $p$、$q$ 有且只有一个是真命题的 $m$ 的取值范围是}
+\step{$\{m\mid -4\leqslant m<0\text{ 或 }4<m<8\}$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知实数 $a$、$b$、$c$、$m$、$n$ 满足 $\dfrac{3}{n}+\dfrac{1}{m}=\dfrac{b}{c}$，$mn=\dfrac{c}{a}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 判断 $s=b^2-12ac$ 的正负，并证明；
+\item 若 $a$、$b$、$c$ 均为奇数，$m$、$n$ 是否可能都为整数？说明你的理由.
+\end{enumerate}
+
+\ans{（1）$b^2-12ac$ 为非负数；（2）$m$、$n$ 不可能都为整数}
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由题意得 $3m+n=\dfrac{b}{a}$，$mn=\dfrac{c}{a}$.}
+\step{法一（最优解）：韦达定理应用，}
+\step{变形结构 $-3m+(-n)=-\dfrac{b}{a}$，$3mn=\dfrac{3c}{a}$，显然 $a\neq 0$，}
+\step{由韦达定理得 $-3m$ 和 $-n$ 是一元二次方程 $ax^2+bx+3c=0$ 的两个根，}
+\step{其中 $\Delta=b^2-4a\cdot 3c=b^2-12ac\geqslant 0$，所以 $b^2-12ac$ 为非负数；}
+\step{法二：由已知，可用 $a$ 表达 $b$、$c$，$b=a(3m+n)$，$c=amn$，}
+\step{$b^2-12ac=[a(3m+n)]^2-12a^2mn=a^2(9m^2+6mn+n^2)-12a^2mn$}
+\step{$=a^2(9m^2-6mn+n^2)=a^2(3m-n)^2\geqslant 0$，所以 $b^2-12ac$ 为非负数.}
+\stepm{（2）}{若 $m$、$n$ 都为整数，}
+\step{其可能的情况有：$m$、$n$ 都为奇数和 $m$、$n$ 中至少有一个为偶数.}
+\step{① 若 $m$、$n$ 都为奇数，则 $3m+n$ 为偶数，$a$ 为奇数，}
+\step{则 $b=a(3m+n)$ 为偶数，与已知矛盾.}
+\step{② 若 $m$、$n$ 为整数，且其中至少有一个为偶数，}
+\step{则 $mn$ 必为偶数，$c=amn$ 为偶数，与已知矛盾.}
+\step{因此，$m$、$n$ 不可能都为整数.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+% 压轴题：在其 \item 前先量一下版面，本页剩余高度不足 7cm 就另起一页。
+\ansneed{7cm}
+
+\item 设集合 $A=\{a_1,a_2,\cdots,a_n\}(0\leqslant a_1<a_2<\cdots<a_n,n\in N,n\geqslant 3)$. 如果集合 $A$ 满足：对任意 $i$、$j$（$1\leqslant i\leqslant j\leqslant n$），$a_i+a_j$ 与 $a_j-a_i$ 至少有一个属于 $A$，则称集合 $A$ 为“单封集”.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 判断集合 $C=\{0,2,4\}$ 与 $D=\{1,2,3\}$ 是否为“单封集”，请直接写出结论.
+\item 若 $A=\{a_1,a_2,a_3\}(0\leqslant a_1<a_2<a_3)$ 是“单封集”，且 $a_1=0$，$a_2=2025$，求 $a_3$.
+\item 若 $A=\{a_1,a_2,\cdots,a_{2025}\}(0\leqslant a_1<a_2<\cdots<a_{2025})$ 是“单封集”，证明：$0\in A$，并求出 $\dfrac{a_{2025}}{a_1+a_2+a_3+\cdots+a_{2025}}$ 的值.
+\end{enumerate}
+
+\ans{（1）$C$ 为“单封集”，$D$ 不为“单封集”；（2）$a_3=4050$；（3）$\dfrac{2}{2025}$}
+
+\ifanswer
+\solbegin
+\stepm{（1）}{对于集合 $C=\{0,2,4\}$，}
+\step{因为 $0+2\in C$，$0+4\in C$，$4-2=2\in C$，$0\pm 0=0\in C$，}
+\step{$2+2=4\in C$，$2-2=0\in C$，$4-4=0\in C$，所以集合 $C$ 为“单封集”；}
+\step{对于集合 $D=\{1,2,3\}$，}
+\step{因为 $3+3=6\notin D$，$3-3=0\notin D$，所以集合 $D$ 不为“单封集”；}
+\stepm{（2）}{因为集合 $A=\{a_1,a_2,a_3\}(0\leqslant a_1<a_2<a_3)$ 是“单封集”，}
+\step{又 $a_1=0$，$a_2=2025$，则 $a_3-a_3=0\in A$，}
+\step{因为 $a_2+a_3>a_3$，所以 $a_2+a_3\notin A$，则 $a_3-a_2\in A$，}
+\step{由集合的互异性得 $a_3-a_2=a_2$，所以 $a_3=2a_2=4050$；}
+% 注：下面一行原卷印作「…具有性质 $P$」，题干给出的名称是「单封集」，本稿照抄原卷（详见文件头「原卷存疑」）。
+\stepm{（3）}{因为 $A=\{a_1,a_2,\cdots,a_{2025}\}(0\leqslant a_1<a_2<\cdots<a_{2025})$ 具有性质 $P$，且 $a_1=0$，}
+\step{所以 $a_{2025}+a_{2025}\notin A$，$a_{2025}-a_{2025}=0\in A$，}
+\step{又 $0\leqslant a_1<a_2<\cdots<a_{2025}$，}
+\step{则 $0\leqslant a_{2025}-a_{2025}<a_{2025}-a_{2024}<\cdots<a_{2025}-a_1$，}
+\step{又因为 $a_{2025}+a_{2026-i}>a_{2025}(i=1,2,\cdots,2025)$，}
+\step{则 $a_{2025}+a_{2026-i}\notin A$，得 $a_{2025}-a_{2026-i}\in A$，}
+\step{则 $a_i=a_{2025}-a_{2026-i}(i=1,2,\cdots,2025)$，}
+\step{即 $a_i+a_{2026-i}=a_{2025}(i=1,2,\cdots,2025)$，}
+\step{得 $2(a_1+a_2+a_3+\cdots+a_{2025})$}
+\step{$=(a_1+a_{2025})+(a_2+a_{2024})+(a_3+a_{2023})+\cdots+(a_{2025}+a_1)=2025a_{2025}$，}
+\step{所以 $\dfrac{a_{2025}}{a_1+a_2+a_3+\cdots+a_{2025}}=\dfrac{2}{2025}$.}
+\solend
+
+\fi
+
+% 压轴题：其后已无内容，故作答区全用可丢弃胶水（\ansspace*）。
+\ansspace*[12]
+
+\end{enumerate}
+
+\end{document}
