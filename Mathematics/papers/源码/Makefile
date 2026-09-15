@@ -19,9 +19,15 @@
 #   make one-c F=高一02_大同中学_集合综合练习   只编某一套的紧凑版
 #   make check              校验：试卷版/紧凑版不含答案，且紧凑版正文与试卷版一致
 #   make list               查看页数统计
+#   make trace              生成「题目溯源」报告（溯源.tex → ../溯源/题目溯源.pdf）
 #   make clean              清理 LaTeX 临时文件
 #   make distclean          清理临时文件与中间 PDF
 #   make help               显示本帮助
+#
+# 溯源报告（与 21 份试卷分开的一条链）：内容来自 ../README.md 的「题目溯源」一节，
+# 由 ../工具/README转tex.py 生成 溯源.tex（**不要手改 溯源.tex**——改内容改 README、
+# 改排版改那个脚本）。溯源.tex 不匹配 高一*.tex 通配符，故 test/ans/compact/one 都不碰它。
+# 编译后跑 ../工具/溯源比对.py 做两道校验，见该脚本头部。
 #
 # 编译时附带「缺字检查」：xelatex 对字体里没有的字形只报 Missing character 然后
 # 静默丢弃该字符（PDF 里直接消失、不报错），故每条编完立即扫日志，命中就中止构建。
@@ -37,6 +43,7 @@ TOOLS     := ../工具
 DEST_TEST := ../试卷
 DEST_COMPACT := ../试卷紧凑
 DEST_ANS  := ../答案
+DEST_TRACE := ../溯源
 TEX       := $(sort $(wildcard 高一*.tex))
 
 # 缺字检查（test / ans / one 共用）：扫 $$LF.log，命中 Missing character 即中止。
@@ -44,7 +51,7 @@ TEX       := $(sort $(wildcard 高一*.tex))
 # 写成单行是为了让 shell 所见与 make 展开一致（多行续行在变量里会被折叠）。
 FONTCHK = miss=$$(grep -a 'Missing character' "$$LF.log" 2>/dev/null | sed 's/.*There is no //; s/ in font.*//' | sort -u | tr '\n' ' '); if [ -n "$$miss" ]; then printf '❌ %s 有字符没字形（PDF 里已静默消失）：%s\n' "$$LF" "$$miss"; printf '   处理：把该字符划入 CJK 字符类（见 common.sty 的 xeCJKDeclareCharClass）\n'; exit 1; fi
 
-.PHONY: all test ans compact one one-c check list clean distclean help
+.PHONY: all test ans compact one one-c check trace list clean distclean help
 
 all: test ans
 
@@ -117,6 +124,28 @@ check:
 		fi; \
 	done; \
 	if [ $$fail -eq 0 ]; then echo "✅ 全部试卷版与紧凑版均无答案泄漏，且紧凑版正文与试卷版逐字一致"; else echo "❌ 有问题，请检查"; exit 1; fi
+
+# ===== 溯源报告（独立一条链，不进 all：all 会把 34 份成品 PDF 全重写、污染 diff）=====
+# 依赖 ../README.md：README 改了，make trace 会自动重新生成 溯源.tex 再编译。
+溯源.tex: ../README.md ../工具/README转tex.py
+	@python3 ../工具/README转tex.py
+
+trace: 溯源.pdf
+	@mkdir -p "$(DEST_TRACE)"
+	@cp 溯源.pdf "$(DEST_TRACE)/题目溯源.pdf"
+	@# 比对放在 cp 之后：它读的是成品 ../溯源/题目溯源.pdf（见该脚本头部）
+	@python3 $(TOOLS)/溯源比对.py
+	@echo "✅ 溯源报告 -> $(DEST_TRACE)/题目溯源.pdf"
+
+溯源.pdf: 溯源.tex common.sty
+	@# 两遍：第二遍才有目录与交叉引用。每遍都跑缺字检查（★▲⊕ 这些最容易静默丢）。
+	@LF=溯源; $(XELATEX) $(OPTS) 溯源.tex >/dev/null && $(FONTCHK) || exit 1
+	@LF=溯源; $(XELATEX) $(OPTS) 溯源.tex >/dev/null && $(FONTCHK) || exit 1
+	@# 注意 $$( ) ：写 $( ) 会被 make 当成变量展开（踩过，打印出来是空的）
+	@printf '  缺字 %s 处 / Overfull %s 处 / 页数 %s\n' \
+	  "$$(grep -ac 'Missing character' 溯源.log)" \
+	  "$$(grep -ac 'Overfull .hbox' 溯源.log)" \
+	  "$$($(PDFINFO) 溯源.pdf | awk '/^Pages/{print $$2}')"
 
 list:
 	@for f in "$(DEST_TEST)"/*_试卷.pdf; do \

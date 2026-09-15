@@ -1,0 +1,805 @@
+%% 溯源.tex —— 「题目溯源」报告（21 份口径）
+%% **本文件由 工具/README转tex.py 从 ../README.md 的「题目溯源」一节自动生成，不要手改**：
+%% 改内容请改 README，改排版请改那个脚本，然后 `make trace` 重生成。
+%% 编译：xelatex 溯源.tex（跑两遍，第二遍才有目录与交叉引用）
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+\usepackage{booktabs}
+\usepackage{xltabular}          % longtable + 固定列宽（宽表见 README 的「题目溯源」）
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=solblue,urlcolor=solblue,
+            pdftitle={题目溯源},pdfsubject={上海高一上数学 · 跨卷同题与真题出处考证}}
+\setlength{\parskip}{0.28em}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.12}
+
+%% pandoc 的列表里会插 \tightlist，它只在 pandoc 自带模板里定义，独立编译要自己补，
+%% 否则报 `Undefined control sequence \tightlist`（踩过）。定义与 pandoc 模板同文。
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{solblue} 题目溯源}
+\fancyhead[R]{\small 21 份口径（2026-09-15）}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{2.6cm}
+{\Huge\bfseries 题目溯源}\\[0.9em]
+{\Large 上海高一上数学 · 跨卷同题与真题出处考证}\\[2.6em]
+{\large 21 份试卷 369 道一级题干 $\times$ 参考库 16{,}273 道高考真题}\\[0.35em]
+{\large 跨卷两两 67{,}896 对 \quad|\quad 逐字同题 24 组、同模板变体 12 组}\\[3.2em]
+\begin{minipage}{0.8\textwidth}\small\raggedright
+本文件由 \texttt{工具/README转tex.py} 从 \texttt{README.md} 的「题目溯源」一节自动生成，
+内容与该节逐字一致。判定口径、阈值与踩过的坑见末节「方法与局限」；
+两档同题表的每一行都注明了该对「变在哪」，跨卷同题的成员已逐题回 \texttt{原图/} 核过。
+\end{minipage}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+\section{核对摘要}
+
+\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{6.72cm}>{\raggedright\arraybackslash}p{8.44cm}@{}}
+\toprule
+项 & 结果 \\
+\midrule
+\endfirsthead
+\multicolumn{2}{r}{\footnotesize（续上表）} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+核对范围 & \textbf{21 份试卷的 369 道}一级题干（其中最早入库的 12 份 211 道），逐题比对参考库的 \textbf{16,273 道}高考真题；跨卷两两 \textbf{67,896 对}。\textbf{高一16／高一18 不计入}------它们分别与 高一b／高一c 同卷，重复计入只会造出成对的假同题 \\ \addlinespace[1pt]
+定到具体高考试卷 & \textbf{24 道真题}（\textbf{26 条对应}：原题照录 9、改编 15、借定义／借集合另出题 2），对应本库 \textbf{32 个题位}------其中 8 道真题各被两份试卷用到。三个数与「真题出处」表\textbf{逐行数出来的完全相同}，拆解与该表的出处一并见该节 \\ \addlinespace[1pt]
+跨卷同题（校际重复） & \textbf{逐字同题 24 组 + 同模板变体 12 组}（另有 8 对分数够不上变体线、但读过原文确属真同题，手工补记），两档成员共 \textbf{73 道}（逐字 52 ＋ 只出现在变体档的 21）------其中逐字档的 \textbf{52 道已逐题对照 \texttt{原图/\allowbreak{}} 的原卷核实过}（含本轮新增的 10 个题位） \\ \addlinespace[1pt]
+与真题同题型但非同一题 & 约 40 道（上一轮逐条判读；本轮只跑机判，未逐条重判），未计入 \\ \addlinespace[1pt]
+其余 & 真题库里既无 $\geqslant$12 字的逐字串、也无「\(r\ge0.71\) 且最长串 $\geqslant$ 12」的候选 $\to$ 非高考真题 \\ \addlinespace[1pt]
+\end{xltabular}
+
+\begin{quote}
+下面几段是\textbf{上表数字的来历}（溯源一共跑过四轮：12 份 $\to$ 17 份 $\to$ 18 份 $\to$ \textbf{21 份}）；
+前三轮的数字保留原文以便对照，\textbf{以末一段的 21 份口径为准}。
+第三轮是 \textbf{2026-09-15 全量重跑}：17 份一起重算（此前只跑过前 12 份，即
+高一02---高一09 与 高一a---高一c），新增的五份（高一12／13／14／15／17）由此带出
+\textbf{8 个题位}的真题出处与 \textbf{5 组}跨卷同题，另补出旧卷漏检
+\textbf{3 条}（高一09 第 5 题、高一05 第 19 题、高一a 附加题第 2 题），合计 11 个题位。
+\textbf{2026-09-15 已补跑高一10}（原 17 份 $\to$ 18 份、301 $\to$ 320 道、45,150 $\to$ 51,040 对）：本表、下面
+的同题表与真题出处表都已含它。\textbf{高一10 的 19 题在参考库里没有一道达同题线}------最好的匹配只有
+11--15 字的通用片段（如 \texttt{集合M=1,2,3,4,5,6}、\texttt{已知集合A=x\textbar{}x2-\allowbreak{}2x-\allowbreak{}3}），整段相似度都 $\leqslant$ 0.60；
+但它与库内两份卷比出两组\textbf{逐字同题}（见同题表末两行）。\textbf{高一16／高一18 不计入}：它们分别与
+高一b／高一c 同卷，重复计入只会造出成对的假同题。
+四份卷的 \textbf{10 道附加题}另见「附加题专查」一节（其中一道可确指校际试卷出处、
+一道连网络检索也落空）；另有若干\textbf{非高考但可考据到来源}的题，单列一节。
+2026-09-15 的第二轮复核又用「\textbf{数字脱敏}」与「\textbf{自定义名词}」两路重扫，补出
+高一02 第 15 题、高一09 第 15 题、高一17 第 11 题三条（都是判据捞不到的形态）。
+参考库题干数 16,273（此前记 16,176／16,180）是同一套 \texttt{content/\allowbreak{}**/\allowbreak{}*.tex} 在不同去噪阈值下的读数。
+\textbf{2026-09-15 末又把高一19---高一21 三份并入，做了 21 份的全量重跑}：原 18 份 320 道 $\to$ \textbf{21 份
+369 道}、跨卷 51,040 $\to$ \textbf{67,896 对}。这一轮的变动分三块------
+① \textbf{三份新卷直接带出}的：逐字同题 4 对（02\#6$\times$21\#10「伙伴关系集合」、06\#5$\times$20\#4
+「\(ax^2+x+1=0\) 只有一个元素」、07\#9$\times$19\#11「四个数字元素的集合」、09\#13$\times$19\#8「六个关系式」）、
+同模板变体 2 组（17\#11$\times$20\#16「数域」、17\#7$\times$20\#15「条件判断」）、新出处 1 条
+（高一20 第 15 题＝2003 上海卷（秋理））；
+② \textbf{改判据后翻出来的旧卷同题}：同模板变体 2 组（13\#18$\times$15 附加 19「\(x=m^2-n^2\)」、
+06\#7$\times$17\#9「填包含关系」）、逐字同题 2 对（07\#10$\times$a\#13「特征数」、15\#14$\times$a\#14，
+它们原先都在「手工补记」里）、把 09 第 19 题并入 07／08／11 那一组（3 份 $\to$ \textbf{4 份}）；
+③ \textbf{改判与剔除}：05 第 16 题从逐字档移到变体档（05 版漏「非空」、答案 16 与 07／11 的 15
+不同），08 第 15 题 $\times$ 19 第 7 题\textbf{回原图发现图形不同}、从两档剔除。
+\textbf{判据本身也修了两处}（见「方法与局限」），故两档的组数、成员数与「真题出处」表都随本轮重排。
+\end{quote}
+
+本轮核对\textbf{发现并订正了 11 处}（都是核对过程本身查出来的，不是新发现而是纠错）：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{转录错误}：高一08 第 15 题（1999 广东卷 Venn 图题）选项 A 误录为 \((M\cap P)\setminus S\)，
+  原卷是 \((M\cap P)\cap S\) ------ 已改源码并重编两版。
+\item
+  \textbf{判定写错}：高一a 第 11 题原判「改编（有序对$\to$差集）」，但真题本身就是差集
+  \(B=\{x-y\mid x,y\in A\}\)，应判\textbf{原题照录}（差别只在四个选项的次序被倒过来）。
+\item
+  \textbf{描述不实}：高一a 第 2 题原写「\(U\) 少一个元素，问法改变」，实际问法未变，只是
+  \(U\) 由 \(\{0,\dots,9\}\) 改成 \(\{0,\dots,8\}\)（答案随之由 \(\{7,9\}\) 变为 \(\{7\}\)）。
+\item
+  \textbf{题号与计数}：三处题号（高一03、高一09、高一c）先前按 \texttt{\textbackslash{}item} 出现次序编号，
+  与卷面的 \texttt{\textbackslash{}setcounter\{enumi\}} 口径不符，已订正；「一级题干 230 道」「真题 15,932 道」
+  两个数字同属口径错误，已改为 \textbf{211} / \textbf{16,180}。
+\item
+  \textbf{跨卷同题的判据与计数}：变体档阈值原写 0.74，却与表内最低那对（「全食／偏食」
+  \(r=0.7129\)）自相矛盾，已改为 \textbf{0.71}；变体表原多出一行份数 1 的成员，使「7 组」
+  与 8 行对不上，已删行、改由正文交代；又补上 4 对分数低于变体线、但逐条读过确属
+  真同题的配对（见「判据之外手工补记」）。
+\item
+  \textbf{变体表里有 6 行的描述与成员原文对不上}（复核成员时逐条比对原始 \texttt{.tex} 才发现）：
+  ① 08 第 17 题的 \(P\) 实为\textbf{区间} \((-2,3)\)，本行先写 \(\{2,3\}\)、后照源码的错改成
+  \(\{-2,3\}\)（源码也错，见第 8 条）；② 09 第 17 题的 \(P\) 是
+  「不等式 \(x^2-x-6<0\) 的解集」，原写成「方程 \(x^2-x-6=0\) 的解集」；③ 03 第 16 题的
+  \(A\) 是 \(\{x\mid a\leqslant x\leqslant -a+3\}\)，原写成 \(\{x\mid a<x<a+3\}\)；④ 05 第 7 题的
+  \(A\) 是 \(\{x\mid x\geqslant-1\}\)，原行标题却按 c 第 5 题的 \(\{x\mid 1<x<2\}\) 写（且
+  c 第 5 题实为 \(1\leqslant x\leqslant 2\)）；⑤ 02／05 第 17 题原写「小问不同」，实则只
+  (1) 问不同，(2) 问两版\textbf{完全相同}（同为 \(A\cup B=A\)、答案同为 \((-\infty,-3]\)）；
+  ⑥ 三行的「变在哪」漏了条件，已补出实际的 \(\cup\)、\(\cap\)、\(\varnothing\)、\(\subset\)。
+  六行的「题目」「变在哪」两栏已按原文重写。
+\item
+  \textbf{高一05 第 17 题两处转录错误}（对着原卷图片逐字比对时才发现）：① (1) 问原卷作
+  「\(B\) 为\textbf{单元素}集合」，本稿误抄成「\(B\) 为单元集集合」；② 答案 (2) 原卷作
+  \((-\infty,-3]\)，本稿误抄成 \((-\infty,-3)\)------\textbf{本稿自己的解析写的就是 \((-\infty,-3]\)
+  （\(a=-3\) 时 \(B=\{2\}\subseteq A\) 也成立），即解析对、\texttt{\textbackslash{}ans} 错}。已改源码并重编两版。
+\item
+  \textbf{高一08 第 17 题的 \(P\) 抄成了 \(\{-2,3\}\)}：原卷印的是\textbf{开区间} \((-2,3)\)。源码自己的
+  解析就是按开区间做的（\(a+1<3\)、答案 \(\left[-\tfrac{2}{3},+\infty\right)\)），是题干抄错。
+  已改源码并重编两版。
+\item
+  \textbf{高一06 填空题漏了起始偏移}：原卷填空从\textbf{第 3 题}编到第 11 题（1、2 未印在本卷），
+  本稿漏写 \texttt{\textbackslash{}setcounter\{enumi\}\{2\}}，于是印成 1--9，而解答题又按原卷印成 12--14，卷面
+  凭空多出「10、11 缺号」。同批 8 份（02／03／04／05／07／08／09／11）都有这一行，只
+  高一06 漏了。已补上并重编两版------受此影响，本 README 里 高一06 的题号整体 \textbf{+2}
+  （孤立元 7$\to$9、全食／偏食 9$\to$11、\(B=\{x\mid ax-1=0\}\) 那题的 1$\to$3）。
+\item
+  \textbf{高一05 第 10 题的答案端点抄错}：原卷解析得 \(a<-4\) 或 \(2<a\)，本稿的 \texttt{\textbackslash{}ans} 与
+  「综上」都写成 \(a<-4\) 或 \(a\geqslant 2\)------\(a=2\) 时 \(B=[4,5]\not\subseteq A=(-\infty,-1)\cup(4,\infty)\)，
+  故原卷为是。已改源码并重编两版。
+\item
+  \textbf{高一07 第 10 题的「特征数」抄错}：原卷作「最大值与最小值\textbf{之和}」，本稿抄成
+  「\textbf{之差}」------原卷解析「\(A_1=\{1,2,3,12\}\)，则 \(A_1=13\)」（\(=12+1\)，原卷此处把 \(X_1\) 误印
+  成 \(A_1\)，本稿按 \(X_1\) 规范并加注）可证为「之和」。
+  这个抄错一度让本 README 误判该对「差／和不同」（见第 6 条附近的手工补记）。已改重编。
+\end{enumerate}
+
+以上 11 条是\textbf{溯源核对}那一轮（12 份）的记录。2026-09-15 又对新入库的五份
+（高一12／13／14／15／17）做了一轮\textbf{整卷回原图}核对（41 张图逐张放大比对），
+另查出 \textbf{5 处转录错误}，清单见文末「9 月中旬五份专记」里的回原图复核表。
+
+\section{回原图逐题核对（2026-09-15 起，按批推进）}
+
+\textbf{页级核对（已全部完成）}：把公众号原文的图片逐张下载，与 \texttt{原图/\allowbreak{}} 里归档的文件比对------
+有原文链接的现为 \textbf{18 份 / 136 张}（高一02---高一09 与 高一10---高一15、高一17，加最后入库的
+高一19---高一21），其中最早一轮
+逐张核过的是 \textbf{13 份共 95 张}，\textbf{张数、顺序、逐张 MD5 全部一致}；其余五份不在那一轮内
+（高一12 交附闵行 11 张、高一10 复附浦东 9 张、高一19 延安 6 张、高一20 进才 9 张、
+高一21 上师大宝山 6 张------后四份都是本次下载所得，\texttt{原图/\allowbreak{}} 里的就是下载原件本身）。
+高一a---高一c、高一16 与 高一18 是家长拍摄的作业照片（后两者的原图是 \texttt{高一b}／\texttt{高一c} 同一组照片的副本），
+不适用这一路。这一步只能证明「纸面都搬进来了」，逐题逐字
+是否转录完整另见下表。
+
+\textbf{逐题核对}（每卷都逐页读原图，比对题干、选项、\texttt{\textbackslash{}ans} 与 \texttt{\textbackslash{}ifanswer} 解析全文）。下表是
+高一02---高一09 与 高一a---高一c 这 \textbf{12 份}，分四批推进；另五份（高一12／13／14／15／17）的
+\textbf{整卷回原图}核对（41 张图逐张
+放大比对）在时间上更早，清单见文末「9 月中旬五份专记」里的回原图复核表------除\textbf{新入库的高一10}
+与\textbf{与 \texttt{高一b} 同卷的 \texttt{高一16}}（见下表末两行）外，其余 17 份至此全部过了一遍逐字回原图；
+末三行的高一19---高一21 是随后入库的三份，入库时即逐页放大比对了题干、答案与解析全文：
+
+\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.39cm}>{\centering\arraybackslash}p{3.39cm}>{\raggedright\arraybackslash}p{7.96cm}@{}}
+\toprule
+卷 & 原图/题数 & 核对结果 \\
+\midrule
+\endfirsthead
+\multicolumn{3}{r}{\footnotesize（续上表）} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+高一02 & 8 张 / 17 题 & \textbf{无转录错误}。唯一差异是第 18 题【解析】原卷把第 (2) 问印成「（3）」（原卷跳号），本稿按题干口径规范为 (2)，已加注 \\ \addlinespace[1pt]
+高一03 & 6 张 / 16 题 & \textbf{3 处解析转录错误}，均已订正重编：① 第 10 题【解析】多写一对「\(S_3\) 和 \(S_5\) 不能同时取数」（原卷只列 \(S_1S_6\)／\(S_2S_5\)／\(S_3S_4\) 三对，且 \(3+\allowbreak 5=\allowbreak 8\equiv1\pmod 7\)，本可同时取）；② 同题末句原卷作「和 \(S_0\) 中的一个」，本稿误作「\(S_6\)」；③ 第 18(3)【解析】等号左端首项原卷作 \(\dfrac{1}{x-1}\)，本稿误作 \(\dfrac{1}{x}\) \\ \addlinespace[1pt]
+高一04 & 3 张 / 14 题 & \textbf{2 处实质错误 + 2 处记号差异}，均已订正重编：① 第 3 题题干原卷作「\(y=\allowbreak \dfrac{12}{3-x}\in\mathbb N\)，\(x\in\mathbb Z\)」，本稿把 \(\in\mathbb N\) 挂到了 \(x\) 上（那样只能得 \(\{4,\allowbreak 6,\allowbreak 12\}\)，与本稿自己的答案冲突）；② 第 7 题【答案】原卷作「\(A\subset\allowbreak  B\)」，本稿抄成「\(A\supsetneq B\)」------\textbf{方向反了}；③ 第 6 题【答案】、④ 第 16 题(2) 的 \(\subset\allowbreak \) 本稿原写作 \(\subsetneq\allowbreak \)／\(\subseteq\allowbreak \)，已按原卷记号改回 \\ \addlinespace[1pt]
+高一05 & 9 张 / 18 题 & \textbf{16 处}（题干/选项/答案 3、解析 13），均已订正重编。题干/选项/答案：① 第 19 题题干性质 \(M\) 中 \(x_ix_j\) 与 \(\dfrac{x_j}{x_i}\) 的分式被抄成 \(\dfrac{x_i}{x_j}\)------\textbf{方向反了}；② 第 20 题记号 \(N_+\allowbreak \) 写成 \(\mathbb N^*\)；③ \textbf{第 15 题的选项 B、选项 D 与【解析】末句三处把「开左闭右」的 \(\left(\frac43,\allowbreak \frac53\right]\) 抄成 \(\left[\frac43,\allowbreak \frac53\right)\)（开闭抄反）}------与它自己第 ① 步解出的「\(\frac43<m\leqslant\allowbreak \frac53\)」自相矛盾（2026-09-15 复核题号时补出）。解析（集中在第 4、5、9、11、19、20 题）：第 4 题末项丢负号（\(-\frac52\) 抄成 \(\frac52\)）；第 5 题把原卷「\textbf{两个方程组用『或』并列}」抄成一个三层嵌套的 \texttt{cases}；第 9 题把原卷「集合 \(\overline B\) 中含 1、5」改写成「集合 \(B\) 不含 1、5」（两句等价，按原卷录回）；第 11 题两处「\textbf{一元}一次方程」抄成「二元一次方程」；\textbf{第 19 题解析 5 处}------下标 \(x_1\)／\(x_2\) 抄成 \(i\)／\(j\)、\(x_1\geqslant\allowbreak  1\) 抄成 \(x_2\geqslant\allowbreak  1\)、\(x_i\cdot x_5>x_5\) 抄成 \(>x_i\)、\(\dfrac{x_5}{x_i}\) 抄成 \(\dfrac{x_5}{x_1}\)、\(x_3x_4>x_2x_4=x_5\) 不等号写反且漏一句（末两行不等式链整个走样）；\textbf{第 20 题解析 5 处}------\(0\pm 0\) 抄成 \(0+\allowbreak 0\)、不等链末项 \(a_3-a_1\) 抄成 \(a_2-a_1\) 且 \(a_3-a_2=a_2\) 抄成 \(a_3-a_3=a_2\)（后者会使 \(a_2=a_3=\allowbreak 2026\)，与本卷答案 \(a_2=\allowbreak 1013\) 冲突）、三处下标 \(n-i\) 抄成 \(n-1\)、展开式首项 \((a_n-a_n)\) 抄成 \((a_n-a_1)\) \\ \addlinespace[1pt]
+高一06 & 4 张 / 12 题 & \textbf{10 处}（题干/答案 3、记号 1、题号口径 1、解析 5），均已订正重编：① 第 3 题【答案】漏 \(a=\allowbreak 1\)（原卷作「0, 1, -1」，\(a=\allowbreak 1\) 时 \(B=\allowbreak \{1\}\subseteq\allowbreak  A\)）；② 第 4 题题干把 \(\in\mathbb Z\) 挂到了 \(x\) 上（原卷作 \(A=\allowbreak \{x\in N\mid\allowbreak  y=\allowbreak \dfrac{12}{x+\allowbreak 3}\in Z\}\)，即「\(y\) 是整数」）；③ 第 7 题题干与【答案】的 \(\subset\allowbreak \)／\(\supset\) 照原卷改回（本稿原写作 \(\subsetneq\allowbreak \)／\(\supsetneq\)），其解析方向也是反的（本稿作「\(T\subseteq\allowbreak  S\)，故 \(S\supsetneq T\)」，与本题答案 \(\subset\allowbreak \) 自相矛盾）；④ 文末「参考答案」块原从 1 起编，与卷面第 3---14 题错位，已补 \texttt{\textbackslash{}setcounter\{enumi\}\{2\}}；⑤ 解析：第 11 题 \(B=\allowbreak \{-\frac12,\allowbreak \frac12\}\) 丢负号（原卷此句还把 \(A\cap\allowbreak  B\neq\varnothing\) 印成 \(=\allowbreak \varnothing\)，已加注）、第 13 题题干漏「其和」且解析首段被压缩成一句（已按原卷补回）、第 14 题两小问漏了原卷的「（给出结论即可）」「（需说明理由）」、其 (2) 解析末句「相异正整数」抄成「正非零整数」 \\ \addlinespace[1pt]
+高一07 & 11 张 / 19 题 & \textbf{13 处}（按源码里的 \texttt{\%} 注计：漏排整图 1、原卷笔误加注 2、转录错误 10；其中第 16 题一处含 4 个错点，合并为 3 条注），均已订正重编：① 第 14 题解析原卷印有一张韦恩图（\(A\) 独 5、\(B\) 独 5、三集合公共 10、\(A\cap\allowbreak  C\) 独 4、\(B\cap\allowbreak  C\) 独 4、\(C\) 独 2、三集合之外 10），本稿此前\textbf{漏排此图而正文仍作「如图」}，已按原卷截图补入（\texttt{figures/\allowbreak{}venn\_50\_ABC.png}）；② 第 16 题：差集记号 \(A\setminus\allowbreak  B\) 抄成 \(A\vee B\)、\(C\) 描述里的待填横线抄成 \(\vee\vee\)，选项 D 的 \(\complement_{\mathbb N}\) 抄成 \(\varnothing\)、\(\complement_{\mathbb N}C\) 抄成 \(C\setminus\allowbreak  C\)，同题解析里两处 \(\complement_{\mathbb N}\) 抄成 \(C\setminus\allowbreak \)；③ 第 12 题解析「得 \(x_2=\allowbreak -\dfrac{3a}{2}\)」漏掉负号（本稿写成 \(\dfrac{3a}{2}\)）；④ 第 20 题【答案】漏 \(\frac34\)（与本稿自己的解析结论不一致）；⑤ 第 11 题② \(c\notin M\) 抄成 \(c\in M\)（那样②为假，与本卷答案 ①②③ 冲突）、第 19 题定义 \(2-x^2\notin D\) 抄成 \(\in D\)（那样 \(E=\allowbreak \varnothing\)，与答案 \(-5\) 冲突）、第 20 题解析 \(xy=\allowbreak 0\in D\) 抄成 \(\notin D\)、第 21 题解析上界 \(x_4-x_3<x_4\) 抄成 \(<x_3\)，其第 (3) 问不等式链抄乱且首项 \(a_1-a_1\) 抄成 \(a_i-a_1\)；⑥ 第 10 题原卷自身把 \(X_1=\allowbreak 13\) 印成「\(A_1=\allowbreak 13\)」、第 18 题原卷子集列举印成 \(\{0-4\}\)（两处均为原卷笔误，按文意规范并加注） \\ \addlinespace[1pt]
+高一08 & 9 张 / 19 题 & \textbf{1 处漏排整图 + 5 处转录错误}（源码内 5 条 \texttt{\%} 注，其中第 11 题一条含 3 个错点、另有 1 条是分页说明），均已订正重编：① 第 15 题原卷印有一个韦恩图（全集 \(I\)、\(M\) 与 \(P\) 两圆相交、\(S\) 为含于 \(P\) 的小圆、阴影为 \((M\cap\allowbreak  P)\setminus\allowbreak  S\)），本稿\textbf{漏排此图而题干仍作「如图」}，已按原卷截图补入（\texttt{figures/\allowbreak{}venn\_MP\_minus\_S.png}）；② 第 6 题解析原卷作「所以 \(3\in C\)，\(2\notin C\)，\(-4\notin C\)」，本稿把 \(2\notin C\) 抄成 \(2\in C\)------\textbf{与题干 \(A\cap\allowbreak  C=\allowbreak \varnothing\) 及 \(2\in A\) 直接矛盾}；③ 第 11 题题干原卷作「集合 \(E=\allowbreak \{0,\allowbreak 1,\allowbreak 2,\allowbreak \cdots,n\}\) 的子集 \(\{a_1,a_2,\allowbreak \dots,a_m\}\)」（原卷上标用 \(n\)、下标用 \(m\)，本身不统一），本稿把上标也写成 \(m\)；④ 同题解析原卷作「\(211=\allowbreak 2^7+\allowbreak 2^6+\allowbreak 2^4+\allowbreak 2^1+\allowbreak 2^0\)」（本稿写成 \(2^2\)，那样和为 213）；⑤ 同题【答案】原卷作 \(\{0,\allowbreak 1,\allowbreak 4,\allowbreak 6,\allowbreak 7\}\)，本稿漏掉 7（作 \(\{0,\allowbreak 1,\allowbreak 4,\allowbreak 6\}\)，仅 83）；⑥ 第 17(1) 题解析原卷的方程组含三行「\(3a\geqslant\allowbreak  -2\)／\(a+\allowbreak 1<3\)／\(3a<a+\allowbreak 1\)」，本稿略去了末行 \\ \addlinespace[1pt]
+高一09 & 8 张 / 20 题 & \textbf{1 处漏排整图 + 2 处转录错误}，均已订正重编：① 第 16 题原卷印有一个韦恩图（全集 \(U\)、相交的椭圆 \(A\) 与 \(B\)、阴影为 \(A\cup\allowbreak  B\) 之外），本稿\textbf{漏排此图而题干仍作「如图」}，已按原卷截图补入（\texttt{figures/\allowbreak{}venn\_U\_minus\_AB.png}）；② 第 9 题解析 ② 原卷作「但 \(-1+\allowbreak \sqrt3\notin\{x\mid\allowbreak  x=t^2,\allowbreak \,t\in M\}\)」，本稿把 \(\notin\) 抄成 \(\in\)------那样②反而与 \(M\) 相等，与同句「即②与集合 \(M\) 不相等」自相矛盾；③ 第 12 题题干原卷作「\textbf{高一的}同学发现\ldots\ldots」（逐字放大后「高一」与「的」之间只有常规字距，无班号），本稿写成「高一（13）班的同学发现」，已按原卷删去「（13）班」 \\ \addlinespace[1pt]
+高一a & 4 张 / 17 题 & \textbf{无转录错误}。这一份是家长拍摄的学生作业照片，逐页比对后题干、选项、分值行、附加题编号与卷面笔色分工（黑笔学生作答／蓝笔教师订正／红笔打钩$\times$）全部与 \texttt{\%} 注记录一致；卷面 10 处学生错答与教师的蓝笔订正也逐处核对无误（清单见文末「高一a 专记」） \\ \addlinespace[1pt]
+高一b & 4 张 / 21 题 & \textbf{无转录错误}。三处已知差异（第 11 题的答案取 \(5\) 而非学生所写的 \(10\)、第 13 题原卷漏排「\(A=\allowbreak \)」、第 16---18 题的作答区）与卷首两处排版差异（原卷未印分节标题与分值、本稿补「2026-\/-2027 学年度」前缀与校名「大同中学」）均已在 \texttt{\%} 注与「高一b 专记」写明，本轮逐页放大复核无误；第 4 题的韦恩图与 \texttt{figures/\allowbreak{}venn\_AB\_complement.png} 一致（阴影在 \(A\cup\allowbreak  B\) 之外，与【答案】\(\overline{A\cup\allowbreak  B}\) 相符） \\ \addlinespace[1pt]
+高一c & 4 张 / 19 题 & \textbf{无转录错误}；只有 1 处非题面标签：第 17 题题号后原卷印有一个虚线框小标签「手批」（全卷仅此一处，疑为标注该题由教师手批），本稿不排，已在卷首 \texttt{\%} 注与源码内写明。第 5 题的 \(\subset\allowbreak \)（无下划线，即真包含，答案 \((2,\allowbreak +\allowbreak \infty)\)）与同卷第 9、13 题的 \(\subseteq\allowbreak \) 本轮再逐处放大比对，确认两者在卷面上确有区别；第 1、2、6、9、10、11、12 题与选择 13---16 的题干、选项、答案亦与卷面逐字一致 \\ \addlinespace[1pt]
+高一11 & 7 张 / 19 题 & \textbf{无转录错误}。四处原卷笔误（第 10 题【解析】①③ 的「为真命题」、第 19(1) 的 \(\{0-4\}\)、第 19(2) 的 \(a^2-1=\allowbreak -4\times\allowbreak (-4)\)）与三处排版口径（答案直接印在题下、\textbf{第 14 题的答案「D」更是印在题干括注里}、实数集 \(R\) 与 \(\mathbf{R}\) 混用）均已在卷首 \texttt{\%} 注与「高一11 专记」写明，本轮逐页放大复核无误；第 21(3) 的 \(\subset\allowbreak \) 与第 10②、12、17、19、20 题的 \(\subseteq\allowbreak \) 也逐处放大确认；第 6 题的韦恩图与 \texttt{figures/\allowbreak{}venn\_A\_minus\_B.png} 一致（阴影为 \(A\setminus\allowbreak  B\)，与【解析】\(A\cap\allowbreak \overline B\) 相符） \\ \addlinespace[1pt]
+高一10 & 9 张 / 19 题 & \textbf{新入库（本次转写）}。填空 3---12、选择 13---16、解答 17---21，题干、选项、\texttt{\textbackslash{}ans} 与 \texttt{\textbackslash{}ifanswer} 解析逐页照原卷录入（沿用同一学校的 \texttt{高一11} 的体例）；转写时逐页放大比对过一遍，\textbf{未发现原卷笔误}------题 16 的 \(1995=\allowbreak 15\times\allowbreak 133\) 与「\(15^2\) 的倍数有 8 个」两处最易被误判为笔误，实测 \(133\)、\(8\) 均正确。因系首次入库，暂无\textbf{独立于转写}的第二轮回原图复核记录 \\ \addlinespace[1pt]
+高一16 & 4 张 / 21 题 & \textbf{与 \texttt{高一b} 同卷}（源码逐字相同），故不另做一轮核对------上表 \texttt{高一b} 那一行的结论直接适用于本卷。两卷只差卷面标题的「（补）」二字（已用 \texttt{pdftotext} 逐行比对确认） \\ \addlinespace[1pt]
+高一18 & 4 张 / 19 题 & \textbf{与 \texttt{高一c} 同卷}（源码逐字相同），同上不作独立核对。两卷只差卷面标题的「（补）」二字（已用 \texttt{pdftotext} 逐行比对确认） \\ \addlinespace[1pt]
+高一19 & 6 张 / 18 题 & \textbf{新入库（本次转写）}。填空 3---13、解答 14---20，题干、\texttt{\textbackslash{}ans} 与 \texttt{\textbackslash{}ifanswer} 解析逐页照原卷录入；转写时逐页放大比对了题干、答案与解析全文，并单独核过三张韦恩图（第 4、6、7 题）的裁剪范围与阴影（第 4 题的图原卷印在【解析】右侧，故入答案版；第 6、7 题是题干图，两版都排------三张都取自原卷截图、4$\times$ LANCZOS 放大）。\textbf{原卷存疑三处}已照录加注：第 11 题「已知一个有四个数字元素的集合 \(S\)」、第 16(1) 结论「\(a\) 的值为 \(5\backslash-3\)」（「\textbackslash」应是顿号）、第 12 题【解析】末句「同理当 \(0\in A\) 时」（按文意应为 \(0\notin A\)，但卷面字形确为 \(\in\)、无斜杠）。因系首次入库，暂无\textbf{独立于转写}的第二轮回原图复核记录 \\ \addlinespace[1pt]
+高一20 & 9 张 / 20 题 & \textbf{新入库（本次转写）}。填空 3---12、选择 13---16、解答 17---21，逐页照原卷录入。\textbf{订正原卷笔误两处}：① 第 13 题【解析】印作「所以 AD 错误，B 正确」「故选 B」，与同句「\(a\) 为奇数、\(b\) 为偶数 \(\Rightarrow a+b\) 为奇数」自相矛盾（\(a+b\) 为奇数就该落在奇数集 \(A\) 里），按文意订正为「BD 错误，A 正确」「故选 A」；② 第 20(5) 的【解析】原卷误标为「(2)」（同卷 (2) 的解答另有其文），按小问编号规范为 (5)。另第 14 题题干印「则下列四个命题」而其后列了 ①---⑤ 五条，照录加注。本卷无插图。因系首次入库，暂无独立于转写的第二轮回原图复核记录 \\ \addlinespace[1pt]
+高一21 & 6 张 / 16 题 & \textbf{新入库（本次转写）}。填空 3---11、解答 12---14（末题原卷标「（选做题）」），逐页照原卷录入。第 11 题的【答案】原卷印在【解析】末句（「综上，以上正确的命题是②④」），本稿按全稿惯例另提为 \texttt{\textbackslash{}ans\{\}}；第 14(1)【解析】首句原卷连用两个「因为」，照录加注。第 9 题的 \(\subset\allowbreak \)（真包含，与解析「真子集个数 \(2^8-1=\allowbreak 255\)」自洽）与第 11④ 的 \(\subseteq\allowbreak \) 逐处放大确认确有区别。本卷无插图。因系首次入库，暂无独立于转写的第二轮回原图复核记录 \\ \addlinespace[1pt]
+\end{xltabular}
+
+（体例沿用全稿：订正处一律在 \texttt{.tex} 里加 \texttt{\%} 注写明原卷原样与本稿错处，并重编试卷版/答案版。）
+
+\textbf{另做过一次「半开半闭区间」专项扫描}（2026-09-15）：把（当时）17 份源码里的半开半闭区间全捞出来，
+共 17 处、分布在 6 份；其中 12 处另一侧端点是 \(+\infty\)（如 \([-\frac23,+\infty)\)），写法唯一、
+无歧义，剩下 \textbf{5 处两端都是有限数}的逐处回原图核了括号形状------\textbf{高一05 第 15 题的选项 B、D
+与【解析】末句三处确有「开闭抄反」}（\((\frac43,\frac53]\) 抄成 \([\frac43,\frac53)\)，已订正），
+另外 4 处（高一05 第 18(3) 题的 \((2,\frac52]\)、高一09 第 20 题的 \([\frac14,1)\)、高一03 第 7 题的
+\([\frac32,2)\)、高一13 第 3 题的 \((\frac83,6]\)）与卷面逐字一致。\textbf{后入库的高一10 也同法扫过}：
+它的半开半闭区间只有 \([6,+\infty)\) 与 \((-\infty,1)\) 两处，\textbf{另一侧端点都是无穷}，
+没有「两端都是有限数」的情形。
+
+另把历史上\textbf{改过区间或端点}的题逐条回原图复核了一遍（共 5 处，含上面提到的第 15 题）：
+高一05 第 17(2) 题的答案 \((-\infty,-3]\)（原卷【解析】末句即带 \(]\)）、第 10 题的「\(a<-4\) 或
+\(a>2\)」（原卷末句作「\(2<a\)」，右端点不取）、高一08 第 17 题的 \(P=(-2,3)\)（\textbf{开}区间）、
+高一07 第 21 题【解析】里的 \((t,t+2)\)（随「当 \(t<0<t+2\) 即 \(-2<t<0\) 时」一句照原卷录回）
+------四处均与卷面一致，无需改动。
+
+\begin{quote}
+\textbf{区间开闭这件事到此已核完，不必重扫}：全库 17 处半开半闭区间（含 5 处两端有限的）与
+历史上改过区间/端点的 5 处，都已逐处放大到看清括号形状核对过；只有高一05 第 15 题有错
+并已订正。今后只需在\textbf{改动过某题的区间}时，重新核那一处。
+\end{quote}
+
+\section{材料流转}
+
+各市重点中学高一数学备课组的校本周末作业/周练 $\to$ 公众号「\textbf{魔都数学加油站}」（作者署名
+「破晓」，上海本地数学自媒体）收集整理后图文发布 $\to$ 本仓库 OCR 重排。
+
+\begin{itemize}
+\tightlist
+\item
+  20 份的原文\textbf{逐篇核实}都出自该号（标题统一作「27学年高一 N------2026-2027年上海市$\times$$\times$中学
+  高一上\ldots」，\texttt{N} 是该号的连载编号），发布日期集中在开学第一至三周，与「周末作业」的时序吻合。
+\item
+  \textbf{连载号与本地编号的对应关系}见下表。2026-09-15 逐篇抓原文标题核对过一遍：\texttt{N} \textbf{一律以标题
+  为准}，不能按发布日期判------9-12 当天一次发了三篇。\textbf{本地数字编号一律与连载号对齐}（\texttt{高一NN}
+  的 \texttt{NN} 就是连载号 \texttt{N}）；\textbf{没有连载号的三份家长拍照卷改用字母}编号（\texttt{高一a}／\texttt{高一b}／
+  \texttt{高一c}），数字号段因此全部留给连载卷。
+\item
+  连载 2---21 共 20 篇\textbf{现已全部入库}。其中 \textbf{N=16}（大同中学 周末作业2.1）\textbf{没有从公众号原文
+  另转一份}------经逐题核对，那份原文与家长拍照卷 \texttt{高一b} 是同一份作业（公众号版还略去填空
+  第 1、2 题），故用 \texttt{高一b} 的内容做了编号对齐的 \texttt{高一16}；同理 \textbf{N=18}（大同中学 周末作业2.2，
+  9-15 发布）就是拍照卷 \texttt{高一c}（见下表 N=16／18 两行与「试卷清单」）。
+  \textbf{N=19---21}（9-16 前后发布，延安 · 周末作业2、进才 · 周末作业2、上师大宝山 · 限时练习1）
+  是最后入库的三篇，均为公众号原文直转，没有对应的拍照卷。
+\end{itemize}
+
+\begin{xltabular}{\textwidth}{@{}>{\centering\arraybackslash}p{1.45cm}>{\raggedright\arraybackslash}p{5.55cm}>{\raggedright\arraybackslash}p{1.10cm}>{\centering\arraybackslash}p{1.93cm}>{\raggedright\arraybackslash}p{3.86cm}@{}}
+\toprule
+连载 N & 原文标题里的学校 · 作业 & 发布 & 本地编号 & 状态 \\
+\midrule
+\endfirsthead
+\multicolumn{5}{r}{\footnotesize（续上表）} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+2 & 大同中学 · 集合综合练习 & 9-05 & 高一02 & 已入库，编号一致 \\ \addlinespace[1pt]
+3 & 格致中学 · 周末作业1 & 9-05 & 高一03 & 已入库，编号一致 \\ \addlinespace[1pt]
+4 & 位育中学 · 周末作业1 & 9-05 & 高一04 & 已入库，编号一致 \\ \addlinespace[1pt]
+5 & 七宝中学 · 周末作业9.5 & 9-06 & 高一05 & 已入库，编号一致 \\ \addlinespace[1pt]
+6 & 延安中学 · 周末作业1 & 9-07 & 高一06 & 已入库，编号一致 \\ \addlinespace[1pt]
+7 & 交附闵行 · 周练1 & 9-08 & 高一07 & 已入库，编号一致 \\ \addlinespace[1pt]
+8 & 七宝中学 · 周末作业1 & 9-08 & 高一08 & 已入库，编号一致 \\ \addlinespace[1pt]
+9 & 进才中学 · 周末作业1 & 9-11 & 高一09 & 已入库，编号一致 \\ \addlinespace[1pt]
+\textbf{10} & 复附浦东 · 周末作业1 & 9-12 & 高一10 & 已入库，编号一致 \\ \addlinespace[1pt]
+11 & 复附浦东 · 周末作业2 & 9-12 & 高一11 & 已入库，编号一致 \\ \addlinespace[1pt]
+12 & 交附闵行 · 周末作业9.11 & 9-12 & 高一12 & 已入库，编号一致 \\ \addlinespace[1pt]
+13 & 格致中学 · 周末作业2 & 9-12 & 高一13 & 已入库，编号一致 \\ \addlinespace[1pt]
+14 & 华师大二附中 · 集合与逻辑单元练习 & 9-13 & 高一14 & 已入库，编号一致 \\ \addlinespace[1pt]
+15 & 七宝中学 · 抱孩子练习9.8 & 9-13 & 高一15 & 已入库，编号一致 \\ \addlinespace[1pt]
+16 & 大同中学 · 周末作业2.1 & 9-13 & 高一16（对号副本）＋ \textbf{高一b（补）}（同一份拍照卷） & 已入库，编号一致 \\ \addlinespace[1pt]
+17 & 七宝中学 · 周末作业2 & 9-14 & 高一17 & 已入库，编号一致 \\ \addlinespace[1pt]
+18 & 大同中学 · 周末作业2.2 & 9-15 & 高一18（对号副本）＋ \textbf{高一c（补）}（同一份拍照卷） & 已入库，编号一致 \\ \addlinespace[1pt]
+19 & 延安中学 · 周末作业2 & 9-16 & 高一19 & 已入库，编号一致 \\ \addlinespace[1pt]
+20 & 进才中学 · 周末作业2 & 9-16 & 高一20 & 已入库，编号一致 \\ \addlinespace[1pt]
+21 & 上师大宝山 · 限时练习1 & 9-16 & 高一21 & 已入库，编号一致 \\ \addlinespace[1pt]
+--- & 大同中学 · 周中小练习1 & --- & 高一a（补） & 无连载号，家长拍照卷（原卷未印校名，判为大同） \\ \addlinespace[1pt]
+--- & 大同中学 · 第二周周末练习2 & --- & 高一c（补） & 无连载号，家长拍照卷 \\ \addlinespace[1pt]
+\end{xltabular}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{为什么拍照卷用字母}：三份卷的原始材料是家长拍摄的学生作业，\textbf{不经公众号、原卷也没有
+  连载号}，若沿用数字就会与连载卷抢号（此前正是「重号 + 加「（补）」」的做法，需靠校名才能
+  区分）。现改为字母前缀，\texttt{高一02}---\texttt{高一17}、\texttt{高一19}---\texttt{高一21} 全部留给连载卷，一一对应、不再有歧义。
+  \textbf{例外是 \texttt{高一16} 与 \texttt{高一18}}：它们的内容来自拍照卷（见上表 N=16／18 两行），但为了让数字号段
+  与连载号一一对应，各出了一份\textbf{编号对齐的副本}（\texttt{高一16\_大同中学\_第二周周末练习1}、
+  \texttt{高一18\_大同中学\_第二周周末练习2}，卷面标题都不带「（补）」），内容分别与 \texttt{高一b（补）}、
+  \texttt{高一c（补）} 一字不差------两份都留着：带「（补）」的作拍照原件的转录本、对号的那份作编号副本。
+  \textbf{改动其一时须同步改另一份。}
+\item
+  \textbf{「（补）」怎么用}：只用在\textbf{三份家长拍照卷}上（\texttt{高一a\_大同中学\_周中小练习1（补）}、
+  \texttt{高一b\_大同中学\_第二周周末练习1（补）}、\texttt{高一c\_大同中学\_第二周周末练习2（补）}），表示
+  本篇不在连载序列内（原卷标题也没有这三个字，是\textbf{本稿所加}，已写进各卷头部注释）。
+  其余各卷编号与连载号一致，文件名与卷面标题都\textbf{不带}任何标记。
+\item
+  高一a---高一c 是家长拍摄的学生作业，不经公众号。\textbf{旁证}：高一a 与 高一b 有两道题
+  \textbf{逐字相同}（\(A=\{(x,y)\mid y=x^2\}\) 求交、满足 \(M\cap\{a_1,a_2,a_3\}=\{a_1,a_2\}\)
+  的 \(M\) 个数），而 高一b 卷眉印「上海市大同\ldots」、高一a 原卷未印校名------\textbf{据此把 高一a 判为大同
+  中学}，文件名记为 \texttt{高一a\_大同中学\_周中小练习1（补）}（卷面标题仍照原卷、不带校名）。
+\end{itemize}
+
+\section{上游是「共享题库」：24 组逐字同题 + 12 组同模板变体}
+
+把 \textbf{21 份试卷的 369 道}一级题干两两交叉比对（跨卷 \textbf{67,896 对}），校际重复分两档，两档的
+成员都按卷面题号逐条调出、逐字核过题干。判据见「方法与局限」。（本表是 2026-09-15 末
+\textbf{21 份全量重跑}后的口径；17 份、18 份那两轮的组数见「核对摘要」的注。高一16／高一18
+分别与 高一b／高一c 同卷，不重复计入。）
+
+\textbf{逐字同题 24 组}（骨架最长公共子串 $\geqslant$ 25 字且含 $\geqslant$ 8 个汉字，或整段相似度 $\geqslant$ 0.95------
+几乎全是符号的题另有一条\textbf{符号档}，见「方法与局限」；★ 为 2026-09-15 重跑新增，
+$\oplus$ 为补跑高一10 新增，▲ 为 2026-09-15 末并入高一19---21 后的新增或改判）：
+
+\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{5.61cm}>{\centering\arraybackslash}p{1.42cm}>{\raggedright\arraybackslash}p{7.70cm}@{}}
+\toprule
+题目 & 份数 & 分布 \\
+\midrule
+\endfirsthead
+\multicolumn{3}{r}{\footnotesize（续上表）} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\(A=\allowbreak \{x\mid\allowbreak  2a+\allowbreak 1\leqslant\allowbreak  x\leqslant\allowbreak  3a-5\}\)，\(B=\allowbreak \{x\mid\allowbreak  x<0\text{ 或 }x>19\}\) & 3 & 02 第 10 题、a 第 8 题、c 第 9 题 \\ \addlinespace[1pt]
+对加减封闭的数集 \(S\)（\(x\pm y\in S\)，问最小的正数） & 3 & 05 第 12 题、09 第 21 题、b 第 18 题　\textbf{数字有变体}：05 版是「最小正数为 6」的填空，09／b 版是「最小正数为 5」的三小问 \\ \addlinespace[1pt]
+集合 \(M\) 的 \(k\) 个不同\textbf{非空}子集 \(N_1\dots N_k\) 且并集 \(\neq M\)，求 \(k\) 最大 & 2 & 07 第 15 题、11 第 16 题　▲\textbf{05 第 16 题已移出本组}：它漏了「非空」二字、\(M\) 也换成 \(\{a,b,c,d,e\}\)，答案 16 与 07／11 的 15 不同，两两只有 \(0.797\)／\(0.813\)，改列变体档 \\ \addlinespace[1pt]
+\(A=\allowbreak \{x\mid\allowbreak  x^2+\allowbreak 4x=\allowbreak 0\}\) 与含参 \(B=\allowbreak \{x\mid\allowbreak  x^2+\allowbreak 2(a+\allowbreak 1)x+a^2-1=\allowbreak 0\}\) 的子集讨论 & \textbf{4} & 07 第 18 题、08 第 18 题、11 第 19 题、\textbf{▲09 第 19 题}　▲09 版题干与前三份\textbf{一字不差}（\(r=\allowbreak 0.840\)），只是只问「\(B\subseteq\allowbreak  A\) 求 \(a\)」；它原先是作为「单成员变体」附在本表之外的，本轮并入本组 \\ \addlinespace[1pt]
+「和谐集」（去掉任一元素后余下元素可平分） & 2 & 02 第 19 题、09 \textbf{附加题}（卷面无编号）　\textbf{题干逐字相同}：09 版是《上海市上海中学东校 2023--2024 学年高一上期中卷》的原题（三小问），02 版是它的改编（只问「元素个数的最小值」）------见「附加题专查」 \\ \addlinespace[1pt]
+\(f(x)=\allowbreak \dfrac1{1-x}\) 迭代（\(x\in A\Rightarrow\dfrac1{1-x}\in A\)） & 2 & 03 第 18 题、c 第 19 题 \\ \addlinespace[1pt]
+全集 \(U=\allowbreak \{x\in\mathbb N\mid\allowbreak  x\leqslant\allowbreak  9\}\)，由 \(A\cup\allowbreak  B\)、\(A\cap\allowbreak \overline{B}\)、\(A\cap\allowbreak  B\) 反求 \(A\) & 2 & 05 第 9 题、07 第 8 题 \\ \addlinespace[1pt]
+\(\{0,\allowbreak -1,\allowbreak 2a\}=\allowbreak \{a-1,\allowbreak -\lvert a\rvert,a+\allowbreak 1\}\)，求 \(a\) & 2 & 07 第 5 题、08 第 5 题 \\ \addlinespace[1pt]
+满足 \(M\cap\allowbreak \{a_1,a_2,a_3\}=\allowbreak \{a_1,a_2\}\) 的 \(M\) 个数 & 2 & a 第 4 题、b 第 7 题　\textbf{这一组同时见于上面的高考出处表}（改编自 2008 山东卷（文）选择 1） \\ \addlinespace[1pt]
+\(A=\allowbreak \{(x,y)\mid\allowbreak  y=x^2\}\) 与 \(B=\allowbreak \{(x,y)\mid\allowbreak  (y-1)/(x-1)=\allowbreak \tfrac12\}\) 求 \(A\cap\allowbreak  B\) & 2 & a 第 5 题、b 第 8 题 \\ \addlinespace[1pt]
+★「孤立元」（\(S=\allowbreak \{1,\allowbreak \dots,\allowbreak 8\}\) 的 3 元子集不含孤立元） & 2 & 06 第 9 题、15 附加 17 题　\textbf{两版逐字相同，且同为题源 2009 北京卷（文）填空 6 的原题照录} \\ \addlinespace[1pt]
+★「好集」（\(0,\allowbreak 1\in A\)；\(x-y\in A\)，\(x\neq0\) 时 \(1/x\in A\)） & 2 & 08 第 21 题、14 第 20 题　\textbf{定义与 (1)(2) 问逐字相同}；14 版第 (3) 问多一个命题 \(q\)（\(y/x\in A\)） \\ \addlinespace[1pt]
+★非空数集 \(A\) 的 \(S=\allowbreak \{x\mid\allowbreak  x=a+b\}\)、\(T=\allowbreak \{x\mid\allowbreak  x=\allowbreak \lvert a-b\rvert\}\) & 2 & 07 第 21 题、15 第 16 题　\textbf{定义与 (2) 问逐字相同}，只换 \(A\)（\(\{2,\allowbreak 5\}\)／\(\{1,\allowbreak 3\}\)）与第 (3) 问上界（2025／2021） \\ \addlinespace[1pt]
+★\(\alpha:4\leqslant\allowbreak  x\leqslant\allowbreak  8\)，\(\beta:m+\allowbreak 1\leqslant\allowbreak  x\leqslant\allowbreak  2m+\allowbreak 4\)，\(\alpha\) 是 \(\beta\) 的充分不必要条件 & 2 & 11 第 11 题、12 第 4 题　\textbf{逐字相同}（\(r=\allowbreak 0.987\)） \\ \addlinespace[1pt]
+★\(A=\allowbreak \{x\mid\allowbreak  x=a^2+\allowbreak 2a+\allowbreak 4,a\in\mathbb{R}\}\) 与 \(B=\allowbreak \{y\mid\allowbreak  y=b^2-4b+\allowbreak 3,b\in\mathbb{R}\}\) 的关系 & 2 & 11 第 8 题、12 第 3 题　\textbf{逐字相同}（\(r=\allowbreak 0.971\)） \\ \addlinespace[1pt]
+$\oplus$集合 \(\{(x,y)\mid\allowbreak  x+\allowbreak 2y=\allowbreak 2,\allowbreak \ x,y\in\mathbb{N}\}\) 用列举法表示 & 2 & 10 第 4 题、11 第 7 题　\textbf{逐字相同}（\(r=\allowbreak 1.000\)）------同一学校相邻两次作业用了同一道题 \\ \addlinespace[1pt]
+$\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\allowbreak \{x\mid\allowbreak  ax-1=\allowbreak 0\}\)，\(A\cap\allowbreak  B=B\) 求 \(a\) & 2 & 05 第 6 题、10 第 9 题　\textbf{逐字相同}（\(r=\allowbreak 0.955\)）；同族还有 c 第 3 题（改问「充分非必要条件」，见变体档）与 a 第 9 题（把 \(A\) 换成含参方程、改问「只有一个真子集」） \\ \addlinespace[1pt]
+▲\(A=\allowbreak \{x\mid\allowbreak  x^2-3x+\allowbreak 2=\allowbreak 0\}\) 与含参 \(B=\allowbreak \{x\mid\allowbreak  x^2+\allowbreak 2(a+\allowbreak 1)x+a^2-5=\allowbreak 0\}\) & 2 & 02 第 17 题、05 第 17 题　\textbf{两版集合一字不差}，只差「设集合／已知集合」；\textbf{小问有出入}------(1) 问 02 作 \(A\cap\allowbreak  B=\allowbreak \{2\}\)、05 作「\(B\) 为单元素集合」，(2) 问两版相同（\(A\cup\allowbreak  B=A\)，答案同为 \((-\infty,\allowbreak -3]\)）。原列变体档首行，本轮按题干逐字改入本档 \\ \addlinespace[1pt]
+▲「伙伴关系集合」（\(x\in A\Rightarrow\frac1x\in A\)），\(M=\allowbreak \{-1,\allowbreak 0,\allowbreak \frac13,\allowbreak \frac12,\allowbreak 1,\allowbreak 2,\allowbreak 3,\allowbreak 4\}\) & 2 & 02 第 6 题、21 第 10 题　定义措辞略有出入（「若 \(x\in A\)，则 \(\frac1x\in A\)，就称 \(A\) 是\ldots」／「若对任意的 \(x\in A\)，都有 \(\frac1x\in A\)，则称 \(A\) 是\ldots」），集合与问法相同，\textbf{答案同为 15} \\ \addlinespace[1pt]
+▲\(A=\allowbreak \{x\mid\allowbreak  ax^2+x+\allowbreak 1=\allowbreak 0\}\) 只有一个元素 & 2 & 06 第 5 题、20 第 4 题　\textbf{逐字相同}（\(r=\allowbreak 0.939\)），只差「若集合／已知集合」，答案同为 \(a=\allowbreak 0\) 或 \(\frac14\) \\ \addlinespace[1pt]
+▲四个数字元素的集合 \(S\) 的\textbf{全子集元素和}（空集记 0） & 2 & 07 第 9 题、19 第 11 题　\textbf{只换数字}：07 版和 \(16208\)（元素和 \(2026\)）、19 版和 \(16192\)（\(2024\)） \\ \addlinespace[1pt]
+▲六个关系式（\(\varnothing\)、\(\{a\}\)、\(a\) 与 \(\{a,b\}\) 间的 \(\in/\subseteq\allowbreak \)） & 2 & 09 第 13 题、19 第 8 题　\textbf{只换记号}：①② 09 印 \(\subsetneq\allowbreak \)、19 印 \(\subseteq\allowbreak \)；因 \(\varnothing\subsetneq\allowbreak \{a\}\) 与 \(\varnothing\subseteq\allowbreak \{a\}\) 同真、\(a\subsetneq\allowbreak \{a\}\) 与 \(a\subseteq\allowbreak \{a\}\) 同假，两版答案都是 ①③⑤ \\ \addlinespace[1pt]
+▲\(A=\allowbreak \{x\mid\allowbreak  x^2-ax+a^2-19=\allowbreak 0\}\)、\(B=\allowbreak \{x\mid\allowbreak  x^2-5x+\allowbreak 6=\allowbreak 0\}\)、\(C=\allowbreak \{x\mid\allowbreak  x^2+\allowbreak 2x-8=\allowbreak 0\}\) & 2 & 15 第 14 题、a 第 14 题　\textbf{三式一字不差}（\(r=\allowbreak 0.978\)，公共串 44 字）；15 版两小问、a 版三小问（a 版多「\(A\cap\allowbreak  B=A\cup\allowbreak  B\)」一问），公共的后两问相同。原列「判据之外手工补记」，本轮改入本档 \\ \addlinespace[1pt]
+▲「特征数」定义题（把 \(M\) 分成三个集合，\(X_i\) 取「最大＋最小」之和） & 2 & 07 第 10 题、a 第 13 题　同一个自定义概念，差别在 \(M\)（\(1\sim12\)／\(0<x\leqslant\allowbreak 15\)）、每组元素个数（4／5）与问法（求最大值与最小值的积 \(=\allowbreak 1485\)／问哪个值不可能）；公共串 27 字全落在「特征数」的定义句上。原列「判据之外手工补记」，本轮改入本档 \\ \addlinespace[1pt]
+\end{xltabular}
+
+\textbf{同模板变体 12 组}（整段相似度 $\geqslant$ 0.71 且最长公共子串 $\geqslant$ 12，且公共串里含汉字／字母／关系符号
+这类\textbf{内容字符}------纯数字串不算；成员之间换了数字、问法或设定，\textbf{答案往往随之不同}。
+判据本身在本轮修过，见「方法与局限」）：
+
+\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.71cm}>{\centering\arraybackslash}p{1.44cm}>{\raggedright\arraybackslash}p{1.68cm}>{\raggedright\arraybackslash}p{7.49cm}@{}}
+\toprule
+题目 & 份数 & 分布 & 变在哪 \\
+\midrule
+\endfirsthead
+\multicolumn{4}{r}{\footnotesize（续上表）} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+含参二次方程与子集讨论\textbf{族内}的交叉（02／05 那一版 $\leftrightarrow$ 07／08／09／11 那一版） & 2 $\leftrightarrow$ 4 & 02 第 17 题、05 第 17 题 $\times$ 07 第 18 题、08 第 18 题、09 第 19 题、11 第 19 题（共 \textbf{7 对}） & 两版\textbf{不是一个组}：\(B=\allowbreak \{x\mid\allowbreak  x^2+\allowbreak 2(a+\allowbreak 1)x+a^2-1=\allowbreak 0\}\) 只在 07／08／09／11 四份一字不差，02／05 那版是 \(a^2-5\)；\(A\) 的方程也是 \(x^2-3x+\allowbreak 2=\allowbreak 0\)／\(x^2+\allowbreak 4x=\allowbreak 0\) 两种。\(r=\allowbreak 0.747\sim0.886\)，都够变体线但够不上逐字线。\textbf{这是全稿最大的一个族}，本稿按相似度拆成逐字档（07／08／09／11）与变体档（02／05）两处，合起来看才是它的全貌 \\ \addlinespace[1pt]
+含参区间 \(B\) 与两射线之并 \(A\) 的包含关系 & 2 & 05 第 10 题、08 第 10 题 & 条件相同（都是 \(B\subseteq\allowbreak  A\)），只换端点------\(A\) 左支 \(x<-1\)／\(x<-5\)，右支 \(x>4\)／\(x\geqslant\allowbreak  4\)；\(B\) 左端 \(2a\)／\(a+\allowbreak 1\)，右端同为 \(a+\allowbreak 3\) \\ \addlinespace[1pt]
+▲集合 \(M\) 的 \(k\) 个不同子集 \(N_1\dots N_k\) 且并集 \(\neq M\) & 2 & 05 第 16 题 $\times$ 07 第 15 题、11 第 16 题（共 2 对） & 05 版 \(M=\allowbreak \{a,b,c,d,e\}\)、只写「不同子集」（答案 16）；07／11 版 \(M=\allowbreak \{1,\allowbreak 2,\allowbreak 3,\allowbreak 4,\allowbreak 5\}\)、写「不同\textbf{非空}子集」（答案 15）。▲本轮从逐字档移到本档 \\ \addlinespace[1pt]
+▲\(A=\allowbreak \{x\mid\allowbreak  x=m^2-n^2,\allowbreak \ m\)、\(n\in\mathbb Z\}\) 的「所有满足 \(A\) 的偶数」 & 2 & 13 第 18 题、15 附加 19 题 & \textbf{本表里重合最强的一对}：13 版是三小问（判断 \(8,\allowbreak 9,\allowbreak 10\) 是否属于 \(A\)／证「\(x\in A\)」是「\(x\in B\)」的必要非充分条件／求所有满足 \(A\) 的偶数），其中第 (3) 问与 15 附加 19 题的\textbf{题干与问法一字不差}；只因判据只看题干（小问被切掉）才落进本档。答案 \(4n,\allowbreak \,n\in\mathbb Z\) \\ \addlinespace[1pt]
+▲「数域」定义题（\(a+b\)、\(a-b\)、\(ab\)、\(\frac ab\) 都在集合内） & 2 & 17 第 11 题、20 第 16 题 & 定义句与四个命题的骨架几乎逐字相同，差别在字母（\(F\)／\(G\)）、数字（\(2026\)／\(2023\)）、第三条命题的集合（\(P=\allowbreak \{x\mid\allowbreak  x=\allowbreak 3k\}\)／\(\{x\mid\allowbreak  x=\allowbreak 2k\}\)）与问法（问\textbf{真命题编号}／问\textbf{假命题个数}）；答案（1）（2）（4）／B（1 个） \\ \addlinespace[1pt]
+\(M=\allowbreak \{1,\allowbreak \dots,\allowbreak 10\}\) 的非空子集按 \(\sum k(-1)^k\) 求和 & 2 & 09 第 11 题、b 附加 20 题 & 一问填空、一问解答 \\ \addlinespace[1pt]
+「全食／偏食」定义题 & 2 & 06 第 11 题、c 第 11 题 & 同一个 \(A=\allowbreak \{-1,\allowbreak \tfrac12,\allowbreak 1\}\)，但 \(B\) 的定义与问法不同（求范围 / 求值） \\ \addlinespace[1pt]
+★集合 \(A\) 满足「\(x\)、\(y\in A\Rightarrow x-y\in A\)」（或 \(\tfrac xy\in\mathbb N\)）的元素个数/关系题 & 2 & 03 第 12 题、09 第 7 题 & 两版分别改编自\textbf{同一道} 2012 新课标卷（理）选择 1（见出处表那两条）：09 只把 \(A\) 的元素由 5 个改成 6 个，03 把条件换成 \(\tfrac xy\in\mathbb N\)、\(A\) 换成 \(\{-1,\allowbreak 0,\allowbreak 1\}\)，\(r=\allowbreak 0.734\)。★本对在改判据前是\textbf{漏检}的（公共串全符号、\(r=\allowbreak 0.800\)） \\ \addlinespace[1pt]
+▲「\(\tfrac{a_1}{a_2}=\allowbreak \tfrac{b_1}{b_2}=\allowbreak \tfrac{c_1}{c_2}\) 是 \(M=N\) 的什么条件」 & 2 & 17 第 7 题、20 第 15 题 & 20 版\textbf{就是 2003 上海卷（秋理）的那道真题}（解集为两个\textbf{不等式} \(>0\) 的集合，本卷补了 \(\varnothing\subsetneq\allowbreak  M\subsetneq\allowbreak \mathbb R\)、\(\varnothing\subsetneq\allowbreak  N\subsetneq\allowbreak \mathbb R\)），答案「必要非充分」；17 版把不等式改成\textbf{方程} \(=\allowbreak 0\)、去掉两个补条件，答案随之变成「充分非必要」。\textbf{同结构、答案相反} \\ \addlinespace[1pt]
+▲\(S=\allowbreak \{s\mid\allowbreak  s=\allowbreak 2n+\allowbreak 1\}\) 与 \(T\) 填包含关系 & 2 & 06 第 7 题、17 第 9 题 & 06 版 \(n\in\mathbb N\)、\(T=\allowbreak \{t\mid\allowbreak  t=\allowbreak 2n-1\}\)、只能填「\(=\allowbreak \)／\(\subset\allowbreak \)／\(\supset\)」，答案 \(\subset\allowbreak \)；17 版 \(n\in\mathbb Z\)、\(T=\allowbreak \{t\mid\allowbreak  t=\allowbreak 4n+\allowbreak 1\}\)、四个符号都能填，解析结论 \(S\supset T\) \\ \addlinespace[1pt]
+▲\(P_1=\allowbreak \{x\mid\allowbreak  x^2+ax+\allowbreak 1>0\}\)、\(P_2=\allowbreak \{x\mid\allowbreak  x^2+ax+\allowbreak 2>0\}\) 那道上海春考题 & 2 & 13 第 14 题、17 第 16 题 & \(r=\allowbreak 0.732\)／公共串 31 字；17 版多出一对 \(Q_1\)、\(Q_2\)（\(x^2+x+b>0\)／\(x^2+\allowbreak 2x+b>0\)）。原列「判据之外手工补记」，本轮够变体线，移入本档 \\ \addlinespace[1pt]
+▲「封闭集／单封集」（\(a_i+a_j\) 与 \(a_j-a_i\) 至少有一个属于该集合） & 2 & 05 第 20 题、12 第 21 题 & \(r=\allowbreak 0.726\)／公共串 18 字。原列「判据之外手工补记」，本轮够变体线，移入本档 \\ \addlinespace[1pt]
+\end{xltabular}
+
+\textbf{有 3 行从本表移出、改列「判据之外手工补记」}------它们共享的只是句型骨架（「含参集合 + 包含
+关系 + 求 \(a\) 范围」），集合与条件都不相同，两版的\textbf{公共串短于 12 字}，任何文本判据都捞不到：
+\texttt{08\ 第\ 17\ 题\ ×\ 09\ 第\ 17\ 题}（公共串 5 字）、\texttt{02\ 第\ 18\ 题\ ×\ 03\ 第\ 16\ 题}（4 字）、
+\texttt{05\ 第\ 7\ 题\ ×\ c\ 第\ 5\ 题}（9 字）。它们不是被新判据筛掉的，而是\textbf{从来就没进过候选池}。
+
+\textbf{另有一个族跨在「逐字档」与「判据之外」之间}------\textbf{「性质 \(P\)／封闭集／单封集」}：三者是
+同一副定义的三种说法（对任意 \(i\leqslant j\)，\(a_ia_j\) 与 \(a_j/a_i\)／\(a_i+a_j\) 与 \(a_j-a_i\)
+两数中至少有一个属于该集合），源头是 \textbf{2009 北京卷（理）的「性质 \(P\)」}（乘除版）。本库里
+高一05 第 19 题是它的乘除版（换名「性质 \(M\)」），高一05 第 20 题「封闭集」与高一12 第 21 题
+「单封集」是它的\textbf{加减版}，两版定义逐字程度很高（见「判据之外手工补记」与出处表）。
+
+\textbf{全稿最大的一个族藏在上面两档之间}：「含参二次方程 + 子集讨论」共出现在 \textbf{6 份}里------
+高一02 第 17 题、05 第 17 题、07 第 18 题、08 第 18 题、09 第 19 题、11 第 19 题，其中
+\(B=\{x\mid x^2+2(a+1)x+a^2-1=0\}\) 这一表达式\textbf{四份一字不差}（02／05 那份是 \(a^2-5\)），
+差别只在 \(A\) 的方程（\(x^2+4x=0\) 或 \(x^2-3x+2=0\)）与小问。本稿按相似度把它拆在了逐字档
+（07／08／11）、变体档（02／05）和单成员变体（09）三处，合起来看才是它的全貌。另有一份
+（高一04 第 15 题）是它的\textbf{反向形式}（含参的换成了 \(A\)、固定的换成 \(B\)）。
+
+后一档里最后两组\textbf{只共享句型骨架}（「含参集合 + 包含关系 + 求 \(a\) 范围」），集合与条件都不
+相同，证据强度明显弱于前五组，单列备查；前五组的题设骨架则一致，只是参数、问法或小问有出入。
+
+\textbf{判据之外手工补记 8 对（7 行）}------这一批的分数都在变体线以下，但逐条读过原文、确实是真同题。它们正好
+说明 \textbf{「骨架文本相似度」量的不是「数学内容」}：下文「方法与局限」里 \texttt{高一07\ 第\ 4\ 题\ ×\ 高一b\ 第\ 8\ 题} 的 \(r=0.783\) 是虚高（两句都短），下面七对则都是虚低（题面文字改了、数学没改）。
+（★ 为 2026-09-15 重跑新增；▲ 为 2026-09-15 末并入高一19---21 那一轮新增；分数是本轮口径，
+与上一轮有 $\pm$0.02 的出入。）
+
+\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{6.78cm}>{\centering\arraybackslash}p{1.10cm}>{\raggedright\arraybackslash}p{4.68cm}>{\centering\arraybackslash}p{1.75cm}@{}}
+\toprule
+题目 & 份数 & 分布 & \(r\)／LCS \\
+\midrule
+\endfirsthead
+\multicolumn{4}{r}{\footnotesize（续上表）} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\allowbreak \{x\mid\allowbreak  ax-1=\allowbreak 0\}\) & 2 & 05 第 6 题、c 第 3 题 & 0.582／14 \\ \addlinespace[1pt]
+\(A=\allowbreak \{x\mid\allowbreak  x<-1\text{ 或 }x>4\}\) 与含参 \(B\) & 2 & 05 第 10 题、07 第 17 题 & 0.575／13 \\ \addlinespace[1pt]
+固定方程 \(x^2+\allowbreak 2x-8=\allowbreak 0\)、\(x^2-5x+\allowbreak 6=\allowbreak 0\) ＋ 含参 \(x^2-tx+t^2-c=\allowbreak 0\) & 3 & 08 第 6 题、a 第 14 题、15 第 14 题 & 0.448／13（a 与 15 两版已升入逐字档，\textbf{本行指 08 版与这两份的关系}，共 2 对） \\ \addlinespace[1pt]
+★「第 \(k\) 个子集」（2 的幂编码） & 2 & 08 第 11 题、a 附加题第 2 题 & 0.614／10　\textbf{同源}：都改编自 2010 湖南卷（文）填空 7，改法不同（见表下说明） \\ \addlinespace[1pt]
+▲同一个 \(P=\allowbreak (-2,\allowbreak 3)\) 与含参 \(Q\) 的包含关系 & 2 & 08 第 17 题、09 第 17 题 & 0.640／\textbf{5} \\ \addlinespace[1pt]
+▲含参区间与包含关系（含参的那个一在 \(B\)、一在 \(A\)） & 2 & 02 第 18 题、03 第 16 题 & 0.448／\textbf{4} \\ \addlinespace[1pt]
+▲\(A\) 为固定区间、\(B\) 含参时的包含关系 & 2 & 05 第 7 题、c 第 5 题 & 0.635／\textbf{9} \\ \addlinespace[1pt]
+\end{xltabular}
+
+后 3 对（▲）是\textbf{从变体档移下来的}，缘由见变体表下的那段说明：它们的公共串只有 4---9 字，
+短于候选取线（LCS $\geqslant$ 12），\textbf{根本进不了候选池}------不是判据放宽或收紧能救回来的。
+上一轮把它们列在变体表里，靠的是「只共享句型骨架」这句话，与判据口径不符，本轮据实归位。
+另外 3 对（「特征数」、上海春考的 \(P_1/P_2\)、「封闭集／单封集」）本轮\textbf{分数够了}，
+已分别移入逐字档与变体档。
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{「特征数」}（原列本表首行，本轮\textbf{移入逐字档}）：同一个自定义概念------把 \(M\) 分成三个集合、
+  \(X_i\) 都取「最大元素与最小元素\textbf{之和}」。差别只在 \(M\)（\(1\sim12\)／\(0<x\leqslant15\)）、
+  每组元素个数（4／5）与问法（求最大值与最小值的积 \(=1485\)／问哪个值不可能）。判据这次能捞到它，
+  是因为\textbf{公共串 27 字全落在「特征数」那句定义上}，越过了逐字档的「$\geqslant$ 25 字」线。这个名词与
+  高考里的「特征数」\textbf{同名不同义}（见「考据不出来的」一节）。
+\item
+  \textbf{\(x^2-3x-4=0\) 那一对}：\textbf{两版集合一字不差}（与变体档首行那对一样强），只是 05 问
+  \(A\cap B=B\)、12 问「\(x\in B\)」是「\(x\in A\)」的充分非必要条件------问法占了句子一大截，
+  把分数拉了下去。
+\item
+  \textbf{\(A=\{x\mid x<-1\text{ 或 }x>4\}\) 那一对}：\(A\) 一字不差，\(B\) 都是含参区间、都求参数范围。
+  \textbf{据此上表「含参区间 \(B\) 与两射线之并 \(A\)」那一族实为 3 份}（05／07／08），不只是 2 份。
+\item
+  \textbf{最后一对是这一轮新翻出来的}，也是四对里唯一\textbf{连 \(r\ge 0.50\) 的候选池都没进}的：08 第 6 题
+  给 \(A=\{x\mid x^2+2x-8=0\}\)、\(B=\{x\mid x^2-5x+6=0\}\)、\(C=\{x\mid x^2-mx+m^2-13=0\}\)，
+  问「\(B\cap C\neq\varnothing\) 且 \(A\cap C=\varnothing\) 求 \(m\)」；a 第 14 题把三条式子摆成
+  \(A=\{x\mid x^2-ax+a^2-19=0\}\)、\(B=\{x\mid x^2-5x+6=0\}\)、\(C=\{x\mid x^2+2x-8=0\}\)，
+  三小问全用 \(\cap\)、\(\subseteq\) 与 \(\varnothing\) 串起来。\textbf{两条固定方程一字不差}，第三条同为
+  \(x^2-tx+t^2-c=0\) 型，只是含参的那条在两题里换了位置。
+  \textbf{前两档按「骨架文本」找，它按「共享方程」才找得出来}------题面措辞改得多，\(r\) 就掉到 0.448，
+  但数学骨架是同一副。
+\end{itemize}
+
+（上面的 \(r\)／LCS 都是\textbf{本轮 21 份口径}；下面这段阈值分析里的数字是 \textbf{12 份}那一轮跑的，
+21 份口径下未重算，结论不变。）
+
+这 4 对\textbf{不能靠降线收进来}：后两对里最松的是 0.597，要收它得把变体线从 0.71 压到 0.597，而
+\(r\) 落在 0.597--0.71、LCS $\geqslant$ 12 的共 15 对，真同题只有 2 对，其余 13 对全是套话；最后一对
+（0.448）更在 0.50 之外，再降就把 646 对翻成上千对。故按「分数不够、内容够」单列在此。
+
+同一轮扫描里\textbf{更弱的几对没有收}------它们只共用一段常见表达式，不足以断定同源，故留在此处备查
+不列成组：\texttt{05\ 第\ 6\ 题／06\ 第\ 3\ 题／c\ 第\ 3\ 题} 三者共用 \(B=\{x\mid ax-1=0\}\)（其中 05 与 c
+另共用 \(A\) 一字不差，已收在上表；\texttt{06} 只共用 \(B\)。2026-09-15 补跑又发现 \textbf{05 与 10 的那一版
+逐字相同}，一并收在上表末两行）；\texttt{05\ 第\ 7\ 题\ ×\ c\ 第\ 15\ 题} 共用
+\(B=\{x\mid a-1\leqslant x\leqslant a+2\}\)；\texttt{02／05\ 第\ 17\ 题\ ×\ 08\ 第\ 3\ 题} 共用
+\(A=\{x\mid x^2-3x+2=0\}=\{1,2\}\)------这个集合太常见，几乎不构成证据。
+
+不同学校、不同周次出现这么多同题，说明各校备课组\textbf{大量取材于同一批公共题源}（教辅、网络
+题库、区统考、教材习题），而非各校独立原创。旁证是这些题在菁优网、1010jiajiao、百度题库、
+作业帮上都能搜到近乎一致的版本。
+
+\section{能考据到的高考出处：24 道真题（26 条对应／32 个题位）}
+
+拿 1952--2026 年的\textbf{全部高考真题}逐字比对（参考库 \texttt{\textasciitilde{}/\allowbreak{}Sources/\allowbreak{}AI/\allowbreak{}Gaokao-\allowbreak{}Math-\allowbreak{}Problems-\allowbreak{}Compilation}，
+含上海春/秋/文/理及各地方卷；去噪后有效题干 \textbf{16,273 道}），能定到具体试卷的\textbf{真题有 24 道}，
+对应本库 \textbf{32 个题位}、\textbf{26 条对应关系}：
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{按关系分}：原题照录 \textbf{9} 条、改编 \textbf{15} 条、借定义／借集合另出题 \textbf{2} 条 ＝ 26 条；
+\item
+  \textbf{真题侧}：\textbf{8 道}真题各被两份试卷用到（孤立元、2017 江苏卷、2012 新课标卷、2010 湖南卷、
+  2008 山东卷、2015 上海卷（春）、2003 上海卷（秋理）、2009 北京卷（理）「性质 \(P\)」）
+  $\to$ 8 $\times$ 2 ＋ 16 $\times$ 1 ＝ \textbf{32 个题位}；\textbf{2 道}真题各占两行（2012 新课标卷（理）选择 1、
+  2015 上海卷（春）的两种改法）$\to$ 24 ＋ 2 ＝ \textbf{26 条对应}。
+\end{itemize}
+
+判定口径是「脱去 LaTeX 与标点后的骨架文本最长公共子串」+ 整段相似度，下表每一条都逐字看过原文：
+（★ 为 2026-09-15 全量重跑新增，含旧卷漏检 2 条；▲ 为并入高一19---21 后新增。）
+
+\begin{quote}
+\textbf{本节原与「核对摘要」那一行的口径不同}（摘要写「26 道／31 个题位」，本节写「24 道／27 个题位」）。
+根子是\textbf{两处数的不是一个东西}：摘要数的是「题目 $\leftrightarrow$ 真题」的\textbf{对应条数}，本节数的是\textbf{真题的道数}，
+而两处都没把这层区分写出来；本节那个「27 个题位」还漏算了 5 个。\textbf{2026-09-15 已统一}------
+两个地方现在都用「\textbf{24 道真题／26 条对应／32 个题位}」这一套。
+
+另需说明：本节\textbf{尚未整体并入高一19---21}，只并入了下面这一条------\textbf{高一20 第 15 题＝
+2003 上海卷（秋理）}（骨架 LCS 55 字、\(r=0.935\)，本卷补了
+\(\varnothing\subsetneq M\subsetneq\mathbb R\)、\(\varnothing\subsetneq N\subsetneq\mathbb R\) 两个条件），
+它和 17 第 7 题那一行是\textbf{同一道真题的两种改法}。三份新卷的其余题在真题库里\textbf{都没有达逐字线的
+命中}（19 第 3 题、20 第 3／8 题只有 12---22 字的通用片段，属「同题型但非同一题」）。
+\end{quote}
+
+\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.73cm}>{\raggedright\arraybackslash}p{4.26cm}>{\raggedright\arraybackslash}p{7.75cm}@{}}
+\toprule
+本库题目 & 出处 & 关系 \\
+\midrule
+\endfirsthead
+\multicolumn{3}{r}{\footnotesize（续上表）} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+高一06 第 9 题、★高一15 附加 17 题 & \textbf{2009 北京卷（文）填空 6}「孤立元」 & \textbf{原题照录}（高一15 版最长公共子串 76 字，整题一字不差；两版互为逐字同题） \\ \addlinespace[1pt]
+高一09 第 5 题 ★（旧卷漏检） & \textbf{2008 浙江卷（理）选择 1} & \textbf{原题照录}（\(U=\allowbreak \mathbb{R}\)、\(A=\allowbreak \{x\mid\allowbreak  x>0\}\)、\(B=\allowbreak \{x\mid\allowbreak  x\leqslant\allowbreak -1\}\) 与所求式 \((A\cap\allowbreak \overline{B})\cup\allowbreak (B\cap\allowbreak \overline{A})\) 一字不差，只去掉四个选项改成填空） \\ \addlinespace[1pt]
+★高一17 第 15 题 & \textbf{2012 湖北卷（文）} & \textbf{原题照录}（「存在一个无理数，它的平方是有理数」的否定；题干与四个选项逐字相同，\(r=\allowbreak 0.977\)） \\ \addlinespace[1pt]
+高一b 第 9 题 & \textbf{2014 福建卷（文）填空 4} & \textbf{原题照录}（\(\{a,b,c\}=\allowbreak \{0,\allowbreak 1,\allowbreak 2\}\) 且三条关系只有一条成立，求 \(100a+\allowbreak 10b+c\)） \\ \addlinespace[1pt]
+高一b 第 13 题 & \textbf{2018 全国 II 卷（理）选择 2} & \textbf{原题照录}（\(A=\allowbreak \{(x,y)\mid\allowbreak  x^2+y^2\leqslant\allowbreak  3,\allowbreak \ x,y\in\mathbb{Z}\}\) 求元素个数） \\ \addlinespace[1pt]
+高一b 第 15 题 & \textbf{2009 北京卷（文）选择 8} & \textbf{原题照录}（正三角形内 \(\lvert PO\rvert\leqslant\allowbreak \lvert PO_i\rvert\) 的区域，只把 T/D、O/P$_{0}$ 换了记号） \\ \addlinespace[1pt]
+高一08 第 15 题 & \textbf{1999 广东卷 / 全国卷 选择 1} & \textbf{原题照录}（Venn 图阴影区域；题干与四个选项均逐字相同） \\ \addlinespace[1pt]
+高一c 第 13 题 & \textbf{2011 湖南卷（理）选择 2} & \textbf{原题照录}（\(M=\allowbreak \{1,\allowbreak 2\},\allowbreak \ N=\allowbreak \{a^2\}\)，问「\(a=\allowbreak 1\)」是「\(N\subseteq\allowbreak  M\)」的什么条件） \\ \addlinespace[1pt]
+高一a 第 11 题 & \textbf{2013 山东卷（理）选择 2} & \textbf{原题照录}（\(A=\allowbreak \{0,\allowbreak 1,\allowbreak 2\}\)，\(B=\allowbreak \{x-y\mid\allowbreak  x,y\in A\}\)；题干一字不差，只把四个选项的次序倒了过来） \\ \addlinespace[1pt]
+高一03 第 5 题、★高一09 第 15 题 & 2017 江苏卷 填空 1 & 改编·\textbf{两种改法}：真题是 \(A=\allowbreak \{1,\allowbreak 2\}\)、\(B=\allowbreak \{a,a^2+\allowbreak 3\}\)、\(A\cap\allowbreak  B=\allowbreak \{1\}\) 求 \(a\)（答 1）；高一03 版把 \(a\) 换成 \(-a\) 并改问 \(A\cup\allowbreak  B=\allowbreak \{1,\allowbreak 2,\allowbreak 4\}\)，高一09 版把 \(a^2+\allowbreak 3\) 换成 \(a^2+\allowbreak 1\)、改成选择（答案随之由 1 变 0） \\ \addlinespace[1pt]
+高一08 第 13 题 & 2004 全国 IV 卷（理）选择 1 & 改编（\(M\)、\(N\) 一字未动，把 \(M\cap\allowbreak  N\) 改成 \(M\cup\allowbreak  N\) 并换掉四个选项） \\ \addlinespace[1pt]
+高一09 第 7 题 & 2012 新课标卷（理）选择 1 & 改编（\(A\) 的元素由 \(\{1,\allowbreak 2,\allowbreak 3,\allowbreak 4,\allowbreak 5\}\) 改为 \(\{1,\allowbreak 2,\allowbreak 3,\allowbreak 4,\allowbreak 5,\allowbreak 6\}\)） \\ \addlinespace[1pt]
+高一03 第 12 题 & 2012 新课标卷（理）选择 1 & 改编（与上一条同源、改法不同：把条件 \(x-y\in A\) 换成 \(\tfrac xy\in\mathbb N\)，\(A\) 换成 \(\{-1,\allowbreak 0,\allowbreak 1\}\)） \\ \addlinespace[1pt]
+高一08 第 11 题、★高一a 附加题第 2 题 & 2010 湖南卷（文）填空 7 & 改编·\textbf{两种改法}：\textbf{高一a 版的定义与真题一字不差}（\(k=\allowbreak 2^{i_1-1}+\allowbreak 2^{i_2-1}+\allowbreak \cdots\)、集合 \(M=\allowbreak \{a_1,\allowbreak \dots,a_n\}\)），只把问法换成「第 25 个子集」；高一08 版把指数改成元素值（集合取 \(\{0,\allowbreak 1,\allowbreak \dots,n\}\)、\(k=\allowbreak 2^{a_1}+\allowbreak \cdots\)；原卷此题上标用 \(n\)、子集下标却用 \(m\)，本身不统一，本稿照原卷），保留「第 211 个子集」这一问、删去原题第一问 \\ \addlinespace[1pt]
+高一a 第 4 题、高一b 第 7 题 & 2008 山东卷（\textbf{文/理}）选择 1 & 改编（原题 \(M\subseteq\allowbreak \{a_1,\allowbreak \dots,a_4\}\)，本稿扩成 5 个元素，答案由 2 变 4）。\textbf{该卷文、理两卷都印了这一道}，两边相似度相同，故出处写作「文/理」 \\ \addlinespace[1pt]
+★高一17 第 16 题 & 2015 上海卷（春） & 改编（\(P_1,P_2,Q_1,Q_2\) 四集合版；\textbf{C、D 两项真题作「存在 \(a\)」，原卷印成「对任意 \(a\)」}------原卷笔误，答案 B 不受影响） \\ \addlinespace[1pt]
+★高一13 第 14 题 & 2015 上海卷（春） & 改编（与上一行同源：只留 \(P_1,P_2\) 半题，四个选项改写） \\ \addlinespace[1pt]
+★高一17 第 7 题、\textbf{▲高一20 第 15 题} & 2003 上海卷（秋理） & \textbf{同一道真题的两种改法}：17 版把真题的「两个一元二次\textbf{不等式}解集相同」改成「两个一元二次\textbf{方程}解集相同」的填空题（\(r=\allowbreak 0.882\)）；20 版\textbf{保留不等式}（\(r=\allowbreak 0.935\)、LCS 55 字），只补了 \(\varnothing\subsetneq\allowbreak  M\subsetneq\allowbreak \mathbb R\)、\(\varnothing\subsetneq\allowbreak  N\subsetneq\allowbreak \mathbb R\) 两个条件------\textbf{接近于原题照录}。两版答案不同（充分非必要／必要非充分） \\ \addlinespace[1pt]
+★高一15 第 9 题 & 2006 山东卷（理/文） & 改编（\(A\odot B=\allowbreak \{z\mid\allowbreak  z=xy(x+y),\allowbreak \ x\in A,\allowbreak \ y\in B\}\) 定义一字不差；\(A,B\) 由 \(\{0,\allowbreak 1\},\allowbreak \{2,\allowbreak 3\}\) 换成 \(\{1,\allowbreak 2\},\allowbreak \{3,\allowbreak 4\}\)，选择改填空） \\ \addlinespace[1pt]
+★高一17 第 9 题 & 2021 全国乙卷（理）选择 2 & 借同一对集合另问（\(S=\allowbreak \{s\mid\allowbreak  s=\allowbreak 2n+\allowbreak 1,n\in\mathbb{Z}\}\)、\(T=\allowbreak \{t\mid\allowbreak  t=\allowbreak 4n+\allowbreak 1,n\in\mathbb{Z}\}\) \textbf{定义逐字相同}；真题问 \(S\cap\allowbreak  T\)，本卷改问 \(S\) 与 \(T\) 的包含关系） \\ \addlinespace[1pt]
+★高一12 第 21 题、★高一05 第 19 题 & 2009 北京卷（理）「性质 \(P\)」 & 同构改编／改编：真题定义为「\(a_ia_j\) 与 \(a_j/a_i\) 至少有一个属于 \(A\)」------高一05 第 19 题是它的\textbf{乘除版}（换名「性质 \(M\)」，改小问），高一12 第 21 题「单封集」是它的\textbf{加减版}（\(a_i+a_j\) 与 \(a_j-a_i\)） \\ \addlinespace[1pt]
+高一a 第 2 题 & 2012 辽宁卷（理/文）选择 & 改编（\(U\) 由 \(\{0,\allowbreak \dots,\allowbreak 9\}\) 改为 \(\{0,\allowbreak \dots,\allowbreak 8\}\)；问法未变，答案随之由 \(\{7,\allowbreak 9\}\) 变为 \(\{7\}\)） \\ \addlinespace[1pt]
+高一b 第 11 题 & 2010 上海卷（秋理）填空 14 & 改编（4 个子集 $\to$ 2 个子集，\(\varnothing\)、\(U\) $\to$ \(a\)、\(b\)） \\ \addlinespace[1pt]
+高一c 第 10 题 & 2015 浙江卷（理）选择 6 & 借 \(d(A,B)=\allowbreak \operatorname{card}(A\cup\allowbreak  B)-\operatorname{card}(A\cap\allowbreak  B)\) 的定义另出题 \\ \addlinespace[1pt]
+★高一02 第 15 题 & 2012 江苏卷（\(f(n)\) 计数题） & 改编（\textbf{同构换参数}：真题是 \(P_n=\allowbreak \{1,\allowbreak \dots,n\}\)、\(A\subseteq\allowbreak  P_n\)、\(x\in A\Rightarrow2x\notin A\) 且 \(x\notin A\Rightarrow2x\notin\complement_{P_n}A\)，求 \(f(4)\) 与 \(f(n)\)；本卷改成 \(U=\allowbreak \{1,\allowbreak \dots,\allowbreak 6\}\)、\(2x\to\allowbreak 3x\)、改问选择的元素个数------答案由 \(f(4)=\allowbreak 4\) 变为 \(16\)） \\ \addlinespace[1pt]
+★高一17 第 11 题 & 2008 福建卷（文/理）「数域」 & 改编（\textbf{同一定义、四个命题全换}：真题文理两卷各给一组「数域必含 \(0,\allowbreak 1\)／整数集是数域／\(\mathbb{Q}\subseteq\allowbreak  M\) 则 \(M\) 必为数域／数域必为无限集」式命题，本卷换成「\(0\) 是任何数域的元素／有非零元素则 \(2026\in F\)／\(\{3k\}\) 是否数域／\(\mathbb{Q}\) 是否数域」） \\ \addlinespace[1pt]
+\end{xltabular}
+
+另有 1 道\textbf{同定义但换了问法}、未计入上表：高一02 第 3 题用了 2009 北京卷（文）「孤立元」的
+定义（改称「孤立元素」，并把问题简化成「给定 \(A=\{1,2,3,5\}\) 求其孤立元素」）。
+
+\textbf{存疑一条（未计入上表）}：高一11 第 3 题「已知集合 \(A=\{2,a\}\)，且 \(1\in A\)，则 \(a=\)」与
+\textbf{2026 上海卷（秋）填空 1}「\(A=\{2,1+a\}\)，且 \(-1\in A\)」同构而数字全换。两条证据方向相反：
+① 这个句式在 1952--2026 的全库里\textbf{只出现这一次}（正是 2026 秋），而本卷发布于高考后三个月，
+不能排除照当年高考题改写；② 但「元素属于含参集合 $\Rightarrow$ 求参数」本身是教材同步练习的标准题型
+（人教 A 版《1.1 集合的概念》就有一道 \(A=\{a-2,2a^2+5a,12\}\)、\(-3\in A\) 的经典题），而这两道
+题都极简------都只含 2 个元素、都问 \(a\)------更像是各自从同一常见题型简化而来。证据不足以断，
+故单列于此，\textbf{不计入上面的 24 道}。
+
+其中 \textbf{2010 上海秋理第 14 题}这次以原卷原文核实过：题面是「从集合 \(U=\{a,b,c,d\}\) 的
+子集中选出 \textbf{4 个}不同的子集，需同时满足 ① \(\varnothing\)、\(U\) 都要选出 ② 任意两个子集
+\(A\)、\(B\) 必有 \(A\subseteq B\) 或 \(A\supseteq B\)」，官方答案 36------与 高一b 第 11 题
+源码注记的记载一致（网上流传的「选出 2 个」版本是讹传）。
+
+\section{考据不出来的：绝大多数}
+
+把 \textbf{17 份}试卷里的\textbf{自定义名词}逐个在全库检索：
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{全库皆无}：闭集合、和谐集、好集、划分集、互斥子集、可积数集、二分划、三数循环、
+  全食／偏食、高斯函数、单封集。（这些名词在 1952--2026 的高考真题库里确实一次都没出现；
+  但「检索不到」只等于「不是高考真题」------例如「和谐集」就已考据出非高考的出处，即上海市
+  上海中学东校 2023--2024 学年高一上期中卷，见「附加题专查」。）
+\item
+  \textbf{同名不同题}：「特征数」见于 2013 湖南卷（文）与 1977 江苏常州卷（前者的指子集的 0/1
+  指示数列，后者的含义与之也不同），与 高一07／高一a 的「最大元素与最小元素之和」
+  \textbf{同名不同义}。
+\item
+  \textbf{「封闭集」那条要订正}（2026-09-15 重跑）：此前写「封闭集只与 2010 四川卷（文/理；
+  定义是 \(x+y,\ x-y,\ xy\in S\)）\textbf{借名不借题}」------这条对 2010 四川卷而言仍是「借名」，
+  但\textbf{高一05 那道题的真正源头不是它}：高一05 第 19 题（「性质 \(M\)」）与高一05 第 20 题
+  （「封闭集」）、高一12 第 21 题（「单封集」）同出一源，即 \textbf{2009 北京卷（理）的
+  「性质 \(P\)」}（\(a_ia_j\) 与 \(a_j/a_i\) 至少有一个属于 \(A\)）：05 第 19 题是它的乘除版，
+  05 第 20 题与 12 第 21 题是它的加减版（\(a_i+a_j\) 与 \(a_j-a_i\)）。三者已改列入上面的
+  出处表，此处不再算「考据不出来」。
+\end{itemize}
+
+也就是说，这些「新定义压轴题」\textbf{都不是高考真题}，应属校本自编，或取材自模考／竞赛／自招
+与教辅。
+
+\section{非高考但能考据到来源的题}
+
+高考真题库里查不到的题，有一部分能在\textbf{教辅/题库/校际试卷}里找到同题或同定义版本
+（2026-09-15 第二轮复核时逐题做了网络检索，取「同题面」或「同定义＋同小问」为准）：
+
+\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{7.03cm}>{\raggedright\arraybackslash}p{8.12cm}@{}}
+\toprule
+题 & 考据结果 \\
+\midrule
+\endfirsthead
+\multicolumn{2}{r}{\footnotesize（续上表）} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+高一11 第 21 题「闭集合」 & \textbf{教辅/题库常见题}------「给定数集 \(M\)，若对任意 \(a\)、\(b\in M\) 有 \(a+b\in M\) 且 \(a-b\in M\)，则称 \(M\) 为闭集合」这一题面（连同「\(C\cup\allowbreak  D\) 是否一定为闭集合」这一小问）在百度文库、作业帮、青夏教育、百度题库都能检索到 \\ \addlinespace[1pt]
+高一a 第 15 题「性质 \(P\)」（\(\operatorname{card}(A+A)=\allowbreak \frac{n(n+\allowbreak 1)}{2}\)） & \textbf{菁优网收录同题}：该站版本是 \(A=\allowbreak \{1,\allowbreak 3,\allowbreak 5\}\)、\(B=\allowbreak \{2,\allowbreak 4,\allowbreak 8\}\) 与 \(2021\)，本卷换成 \(\{1,\allowbreak 4,\allowbreak 7\}\) 与 \(2022\) \\ \addlinespace[1pt]
+高一06 第 14 题「好集合」 & \textbf{百度题库收录同题}，且题库里有小问更多的完整版（如「若 \(\lvert S\rvert=\allowbreak 2019\)，求证 \(S\) 中存在元素 \(m\)，使 \(S\) 中所有元素均为 \(m\) 的整数倍」），本卷只取前两问 \\ \addlinespace[1pt]
+高一13 第 10 题「好子集」 & \textbf{菁优网收录同定义题}：该站版本是 \(I=\allowbreak \{1,\allowbreak 3,\allowbreak 5,\allowbreak 7\}\)，本卷换成 \(\{1,\allowbreak 2,\allowbreak 3,\allowbreak 4,\allowbreak 5\}\) \\ \addlinespace[1pt]
+高一02 第 6 题「伙伴关系集合」 & \textbf{教辅/题库常见题}：作业帮、青夏教育、菁优网各有不同 \(M\) 的版本（\(\{-1,\allowbreak 0,\allowbreak \frac12,\allowbreak 1,\allowbreak 2\}\)／\(\{-1,\allowbreak 0,\allowbreak \frac13,\allowbreak \frac12,\allowbreak 1,\allowbreak 2\}\) 等），本卷用的是 \(\{-1,\allowbreak 0,\allowbreak \frac12,\allowbreak 1,\allowbreak 2,\allowbreak 3,\allowbreak 4\}\) \\ \addlinespace[1pt]
+\end{xltabular}
+
+其余「真题库与网络都检索不到」的，是各卷的自编压轴与自编小题（如高一02 第 16 题只借用了
+「指示函数」这个集合论标准名词；高一15 附加 18、高一09 第 12 题「划分集」等整题无同题）。
+另有一处卷面小疵顺带记下：\textbf{高一02 第 15 题}的两个条件原卷编号印作「①」「④」（跳过②③），
+本稿照原卷录入、未擅改。
+
+\section{附加题专查（四份 10 题）}
+
+全稿共 \textbf{4 份卷带附加题、合计 10 道}：\texttt{高一09}（进才）、\texttt{高一a}（大同中学）、
+\texttt{高一b}（大同）、\texttt{高一15}（七宝）。其中 \textbf{高一09 的附加题卷面上没有编号}（只印「附加题：」
+直接接题干，本稿按通例排成「1.」------已在下表注明），其余三份都\textbf{另起编号}或接续正文
+（高一a 另起「1.」「2.」；高一b 接续作 19---21；高一15 接续作 17---20）。十题都在原图
+（高一a／高一b 见 \texttt{04.jpg}，高一09 见 \texttt{07.png}，高一15 见第 6---7 页）上逐字核对过
+（高一a 附加题第 2 题的下标 \(i\) 一处笔误已订正），2026-09-15 逐题考据如下：
+
+\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{1.98cm}>{\raggedright\arraybackslash}p{4.98cm}>{\raggedright\arraybackslash}p{7.78cm}@{}}
+\toprule
+卷·题 & 内容 & 考据结果 \\
+\midrule
+\endfirsthead
+\multicolumn{3}{r}{\footnotesize（续上表）} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+09 附加题（卷面无编号） & 「和谐集」三小问（判断 \(\{1,\allowbreak 2,\allowbreak 3,\allowbreak 4,\allowbreak 5\}\)、求证 \(\{1,\allowbreak 3,\allowbreak 5,\allowbreak 7,\allowbreak 9,\allowbreak 11,\allowbreak 13\}\)、证明元素个数为奇数） & \textbf{可确指校际试卷}：同题见于 \textbf{《上海市上海中学东校 2023--2024 学年高一上学期数学期中试卷》}------组卷网（21 世纪教育网）标注其来源为「(2023 高一上·上海市期中)」并直接引用该卷，同题另被《备考 2024 年高考数学优生冲刺专题特训》等收录。本卷三小问与该卷\textbf{完全一致}；\textbf{高一02 第 19 题是它的改编}（改问「元素个数的最小值」）。真题库无 \\ \addlinespace[1pt]
+a 附加 1 & 「互斥子集」\(f(6)\) & 真题库无（参考库里的「互斥」7 条全是概率的「互斥事件」）。教辅/题库常见题（青夏教育、作业帮、百度题库、洛谷 T421094 均可检索到），\textbf{但网上有两个版本}：主流版作「\textbf{视 \((A,B)\) 与 \((B,A)\) 为同一组}」$\to$ \(f(n)=\allowbreak \frac{3^n-2^{n+\allowbreak 1}+\allowbreak 1}{2}\)、\(f(6)=\allowbreak 301\)；\textbf{本卷原卷作「当且仅当 \(A=B\) 时\ldots 为同一组」}（与洛谷 T421094 同），因 \(A\)、\(B\) 非空且不交、\(A=B\) 不可能成立，等价于「两者总是不同组」$\to$ 有序对 $\to$ \(f(6)=\allowbreak 602\)。\textbf{卷面蓝笔订正写的正是 602}，本稿即按原卷口径给出 \\ \addlinespace[1pt]
+a 附加 2 & 「第 \(k\) 个子集」（2 的幂编码），问第 25 个子集 & \textbf{2010 湖南卷（文）填空 7}（见出处表；本条是 2026-09-15 新补出的漏检，与高一08 第 11 题同源、改法不同） \\ \addlinespace[1pt]
+b 附加 19 & \(A\subseteq\allowbreak  B\subseteq\allowbreak  C\subseteq\allowbreak \{1,\allowbreak \dots,\allowbreak 2024\}\)，有序集合组的个数 \(4^{2024}\) & 真题库\textbf{零命中}（16,273 道里连「有序集合组」或 \(A\subseteq\allowbreak  B\subseteq\allowbreak  C\) 的结构都没有）。同类题的近亲是「\(A,B\subseteq\allowbreak  C\subseteq\allowbreak \{1,\allowbreak \dots,\allowbreak 2020\}\) $\to$ \(5^{2020}\)」，见于\textbf{强基计划}题解（博客园《{[}强基{]}3，有趣的集合个数算法》）$\to$ 判为\textbf{强基／自招风格的计数题＋校本改编}（上界改成 2024、条件收成链式包含） \\ \addlinespace[1pt]
+b 附加 20 & \(M=\allowbreak \{1,\allowbreak \dots,\allowbreak 10\}\) 的非空子集按 \(\sum(-1)^kk\) 求和，总和 \(2560\) & 真题库无；\textbf{与高一09 第 11 题是同一道}（两版只换举例：09 用 \(\{1,\allowbreak 4,\allowbreak 7\}\to\allowbreak -4\)，大同用 \(\{2,\allowbreak 3,\allowbreak 6\}\to\allowbreak 5\)）。网络上是\textbf{教辅/题库常见题}：青夏教育上至少三个版本，分别叫「无名称」「\textbf{非常元素和}」「\textbf{独立和}」，答案都是 2560 \\ \addlinespace[1pt]
+b 附加 21 & 四个有理数、两两乘积集合给定，求四数之和 \(\pm\frac94\) & 真题库无；\textbf{同一道题 2015-09-13 见于 Math StackExchange}（编号 1432967，英文原题、未标出处，两个解答给出的答案 \(\pm\frac94\) 与本稿一致），百度知道亦有中文版 $\to$ \textbf{2015 年前已在网上流传的竞赛／自招风格组合题}，确切出处考据不到 \\ \addlinespace[1pt]
+15 附加 17 & 「孤立元」（\(S=\allowbreak \{1,\allowbreak \dots,\allowbreak 8\}\) 的 3 元子集不含孤立元） & \textbf{2009 北京卷（文）填空 6 的原题照录}（见出处表；与高一06 第 9 题互为逐字同题） \\ \addlinespace[1pt]
+15 附加 18 & \(A\cap\allowbreak  B=\allowbreak \varnothing\)，\(M=\allowbreak \{T\mid\allowbreak  T\subseteq\allowbreak  A\}\)，\(P=\allowbreak \{S\mid\allowbreak  S\subseteq\allowbreak  B\}\)，求 \(M\cap\allowbreak  P\)（答 \(\{\varnothing\}\)） & 真题库\textbf{零命中}（LCS \(=\allowbreak 0\)），网上亦检索不到 $\to$ 十道附加题里唯一\textbf{校本自编}性质的题（幂集交为 \(\{\varnothing\}\) 的辨析小题） \\ \addlinespace[1pt]
+15 附加 19 & \(A=\allowbreak \{x\mid\allowbreak  x=m^2-n^2,\allowbreak \ m,n\in\mathbb{Z}\}\)，写出所有满足集合 \(A\) 的偶数（答 \(4k\)） & 真题库无；\textbf{教材/教辅常见题}（百度题库、作业帮、青夏教育都有「\(A=\allowbreak \{x\mid\allowbreak  x=m^2-n^2\}\)」的同型题，其中一份标为「高一上学期数学期末考试试卷第 73 套真题」）。\textbf{与高一13 第 18 题是同一个 \(A\)}------那版是三小问（判断 \(8,\allowbreak 9,\allowbreak 10\)、证必要非充分、求所有偶数），本卷只留最后一问的结论 \\ \addlinespace[1pt]
+15 附加 20 & \(n\) 元「调和子集」（\(a_1+\allowbreak \cdots+a_n=a_1\cdots a_n\)），求自然数集 \(\mathbb{N}\) 的 3 元调和子集（答 \(\{1,\allowbreak 2,\allowbreak 3\}\)） & 真题库无；\textbf{是教辅/题库里「好集」那道题的改名版}------青夏教育、作业帮上的同题作「若 \(a_1+\allowbreak \cdots+a_n=a_1a_2\cdots a_n\)，则称集合 \(A\) 是集合 \(M\) 的 \(n\) 元`好集'」。注意与高一08／高一14 那道同名的「好集」，其定义（\(0,\allowbreak 1\in A\)；\(x-y\in A\)；\(x\neq0\) 时 \(1/x\in A\)）\textbf{完全不同}：同名两义，本卷改称「调和子集」反倒避开了撞名 \\ \addlinespace[1pt]
+\end{xltabular}
+
+小结：\textbf{十道附加题没有一道是高考真题}。两道能直接对上真题（a 附加 2 ＝ 2010 湖南卷改编、
+15 附加 17 ＝ 2009 北京卷原题照录），一道可确指校际试卷（09 附加题 ＝ 上海中学东校
+2023--2024 学年高一上期中卷，大同那份是它的改编），四道在教辅/题库里有迹可循（a 附加 1、
+b 附加 20、15 附加 19、15 附加 20），b 附加 19 与 b 附加 21 的最近亲分别是强基计划题解
+与 2015 年就在网上流传的竞赛／自招组合题，只有 15 附加 18 连网络检索也落空。这与
+「附加题＝压轴拔高」的定位吻合：各校多从题库、强基／自招题、校际试卷与真题改编里挑。
+
+\section{方法与局限}
+
+\begin{itemize}
+\tightlist
+\item
+  方法：把题目脱去 LaTeX 与标点做「骨架」文本 $\to$ 6-gram 倒排索引全召回 $\to$ 最长公共子串 +
+  整段相似度判定 $\to$ 人工复核高置信项。\textbf{参考实现已随仓库提交：\texttt{papers/\allowbreak{}工具/\allowbreak{}题目溯源.py}}
+  （\texttt{python3\ 题目溯源.py\ 全跑} 即抽取两库并比对；判据、阈值与踩过的坑都写在文件头注释里，
+  中间结果落在系统临时目录，不污染仓库）。\textbf{两个判据要一起看}：长题靠「最长公共子串 $\geqslant$ 12」，
+  短题（如一句式的选择题）最长串天然长不了，靠「整段相似度 $\geqslant$ 0.71」补上。上表 26 条对应里，
+  高一08 第 11 题、高一a 第 4 题与 高一b 第 7 题、高一03 第 12 题 都是只靠后者才捞出来的。
+\item
+  \textbf{两处实现细节}（2026-09-15 重跑时踩到）：① 本库那侧要先剥 \texttt{\%} 注释再按 \texttt{\textbackslash{}item} 切分------
+  源码注释里会出现字面 \texttt{\textbackslash{}item}（如「在其 \texttt{\textbackslash{}item} 前先量一下版面」），留着会被当成一道题，
+  实测让高一12 多出一道假题、题号整体后移一位；② 归一化时 \texttt{\textbackslash{}cap} \texttt{\textbackslash{}cup} \texttt{\textbackslash{}subseteq}
+  \texttt{\textbackslash{}varnothing} \texttt{\textbackslash{}mid} 必须先换成字符再剥命令（否则剥成空串，见下条），且\textbf{选项文字也会
+  制造假阳性}------\texttt{高一c\ 第\ 13\ 题\ ×\ 高一13\ 第\ 13\ 题} 的 LCS 达 27，公共串却是四个选项的
+  套话「充分不必要／必要不充分／充要／既不充分也不必要」，并非同题；③ \textbf{记号的字母不同也会
+  把公共串切断}------\texttt{高一a\ 附加题第\ 2\ 题} 与 2010 湖南卷（文）填空 7 的定义本该逐字相同，只因
+  一个写 \(\{a_{i_1},\dots\}\)、另一个写 \(\{a_{b_1},\dots\}\)（外加集合名 \(M\) 与 \(E\) 不同），
+  最长公共子串被切到只有 10 字、\(r=0.596\)，两项判据双双落在线下，是靠「同一道真题的两种改编」
+  这条内容线索才捞回来的（已补进出处表与手工补记）。\textbf{字母级别不同的同题，一定要人工过一遍。}
+\item
+  \textbf{两个曾导致漏检的口径陷阱}（已修，记此备查）：① 两边必须用\textbf{同一套}归一化------参考库
+  那侧若只做骨架化、不先剥 LaTeX 命令，\texttt{\textbackslash{}operatorname\{card\}} 会留下 \texttt{operatornamecard}
+  这类残渣，与已经剥干净的高一文本对不上，实测把同一道题的相似度从 38 压到 12；
+  ② 预筛不能用「共享片段数 top-K」截断，候选一多真匹配就会被挤出榜外。
+\item
+  \textbf{题号口径}：一律按\textbf{卷面实际编号}（源码里靠 \texttt{\textbackslash{}setcounter\{enumi\}} 还原，与 \texttt{\textbackslash{}item} 的
+  先后顺序不同）；\textbf{附加题也照卷面}------高一b 接续正文作 19---21、高一15 接续作 17---20、
+  高一a 另起编号作「1.」「2.」，而高一09 卷面\textbf{根本没有编号}（只印「附加题：」，本稿按
+  通例排成「1.」），故本稿一律称它「09 附加题」，不写作「09 第 22 题」。引用出处时同理：
+  不能用 \texttt{\textbackslash{}item} 的出现次序编号。比对前会把参考库里个别「答案/解析被误排进 \texttt{problem} 块」的条目先截断，
+  否则会压低整段的相似度而漏检。
+\item
+  \textbf{原图核对}：跨卷同题的旧一轮 \textbf{46 道成员逐题对照 \texttt{原图/\allowbreak{}} 里的原卷图}核过一遍（不只核
+  题干，连集合的端点开闭、条件用的是 \(\cap\) 还是 \(\cup\)、答案的方括号都逐字比对）。这轮核出
+  \textbf{5 处转录错误}（见前面订正清单第 7---11 条），全部是「解析对、题干或 \texttt{\textbackslash{}ans} 错」这一类------
+  因为解析是从原卷整段抄的，抄错的多在需要转写的地方。\textbf{骨架文本比对查不出这类错}
+  （\texttt{\textbackslash{}cap}、\texttt{\textbackslash{}cup}、\texttt{\textbackslash{}subseteq} 脱去 LaTeX 后都变成空串），必须回原图。
+  新增的 6 道成员（高一14 第 20 题，高一15 第 14／16／17 题，高一12 第 3／4 题）属于
+  高一12／13／14／15／17 五份，已在 2026-09-15 那轮\textbf{整卷回原图}核对里逐字比过（见专记）。
+  \textbf{2026-09-15 末并入高一19---21 后，两档新增或改判的每一对又都回原图核了一遍}（逐字档 10 个
+  题位、变体档 8 个题位），本轮\textbf{没有查出转录错误}，但查出\textbf{一对假同题}------见下条。
+\item
+  \textbf{骨架里没有图形，图形题必须单独看图（本轮新增的教训）}：\texttt{高一08\ 第\ 15\ 题\ ×\ 高一19\ 第\ 7\ 题}
+  两边的题干几乎\textbf{一字不差}（都是「\(M\)、\(P\)、\(S\) 是 \(X\) 的三个子集，则阴影部分所表示的集合
+  是」，\(r=0.857\)），骨架判据因此把它判成逐字同题。可回原图一看------\textbf{图形配置不同}：08 版
+  \(S\) 内含于 \(P\)、阴影是 \((M\cap P)\setminus S\)（选 C），19 版 \textbf{\(P\) 内含于 \(S\)}、阴影是
+  \((M\cap S)\setminus P\)------\textbf{不是同题}，已从两档剔除。凡题干高度相同而含「如图／图中」的
+  配对，都要把两边的 \texttt{figures/\allowbreak{}venn\_*.png} 并排看一遍再定档。
+\item
+  \textbf{选择题的选项不计入骨架}（2026-09-15 补跑高一10 时落实）：四个选项
+  （「A. 充分不必要条件 B. 必要不充分条件 C. 充要条件 D. 既不充分又不必要条件」）是\textbf{跨题复用的
+  套话}，留在骨架里会让两道毫不相干的选择题凭选项文字拿到 LCS 27--30 的假命中------下一条「制造
+  假阳性」记的就是这个坑。补跑时先在骨架里按行首「A.」把选项切掉，逐字档的分组才稳定（本次
+  据此剔除了 1 组纯选项命中）；上表 24 组 = 上一轮人工核定的 15 组 + 补跑高一10 新增的 2 组
+
+  \begin{itemize}
+  \tightlist
+  \item
+    2026-09-15 末并入高一19---21 后新增或改判的 7 组。
+  \end{itemize}
+\item
+  \textbf{纯数字的公共串不算文本证据}：候选取线（LCS $\geqslant$ 12 字）本身很松，元素表一类的数字串
+  （\texttt{=1,2,3,4,5,6,7}）就能凑够 12 字。故判「逐字同题」时还要求\textbf{公共串里至少 8 个汉字}，
+  变体档与符号档则要求\textbf{公共串里含「内容字符」}------汉字、拉丁字母或关系符号三者有一个即可
+  （2026-09-15 末把「至少 1 个汉字」放宽成这个口径，纯数字串仍被挡掉，但
+  \texttt{B=\{x\textbar{}x²+2(a+1)x+a²-\allowbreak{}5=0\}} 这类全符号的公共串不再误伤），
+  这一条也正是「高一10 全部 19 题无真题」这个结论的判据（它最好的几个匹配都栽在这一条）。
+\item
+  \textbf{通用句尾也会凑出够长的公共串，机械结果必须人工过一遍}：像「则实数 \(m\) 的取值范围是」
+  「求实数 \(a\) 的取值范围」这类\textbf{题干套话}，LCS 轻松到 15--16 字、汉字数也够------它只是「含参
+  求范围」这一大类的共同句尾，并非同题。2026-09-15 补跑高一10 时机械跑出 4 对这样的「变体」
+  （与 11\#11、12\#4、13\#3、13\#5，LCS 15--16、\(r\le0.59\)），逐条看过\textbf{都不算}，故未收进变体表；
+  下表 12 组都是「换了数字或设定但题干骨架高度相同」的那一类。
+  \textbf{2026-09-15 末这条判据本身也修了}（见上面「下一条」与本节末）：原先变体档写的是
+  「子串 $\geqslant$ 12 且含 $\geqslant$ 8 个汉字，\textbf{或} \(r\ge0.72\) 且含 $\geqslant$ 5 个汉字」------\textbf{前半句没有 \(r\) 门}，
+  于是「则实数 \(a\) 的取值范围是」这类套话只要凑够 12 字、8 个汉字就被判成变体（\(r\) 低到 0.380）；
+  同时它又只有正文档、没有符号档，把 02\#17 $\times$ 05\#17（\(r=0.933\)）、03\#12 $\times$ 09\#7（\(r=0.800\)）
+  这类\textbf{公共串里一个汉字都没有}的真变体挡在门外。现改成 README 本来写的那条合取式
+  「\(r\ge0.71\) $\wedge$ 子串 $\geqslant$ 12 $\wedge$ 公共串含内容字符」，两头都顺了：套话被 \(r\) 门挡掉，
+  符号题被内容字符闸放行。
+\item
+  \textbf{两路补扫（2026-09-15 第二轮）}：判据（LCS ＋ 整段相似度）对\textbf{换了数字或字母的同题}天生
+  不敏感，故补了两路------① \textbf{数字脱敏}：把两边骨架里的阿拉伯数字全部抽掉再比一次，专找
+  「同结构、换数字」的改编，揪出了高一02 第 15 题（2012 江苏卷、\(2x\to3x\)）与高一09 第 15 题
+  （2017 江苏卷、\(a^2+3\to a^2+1\)）；② \textbf{自定义名词检索}：把每题「称\ldots 为「X」」里的名词抽出来
+  逐个在参考库正文里做字符串检索，揪出了高一17 第 11 题（「数域」＝2008 福建卷（文/理））------
+  该题定义与真题实质相同、四个命题全换，LCS 只有 11、\(r\) 也低，判据完全看不见。\textbf{启示：同题
+  检测不能只看一处最长连续子串，还得看「数字/字母之外的骨架」与「概念名」这两路。}
+\item
+  \textbf{局限 1}：参考库只含\textbf{高考真题}，不含模考、竞赛与教材习题，所以「检索不到」只能说明
+  「不是高考真题」，\textbf{不能据此推断为自编}（见「非高考但能考据到来源的题」一节：闭集合、
+  性质 \(P\)、好集合、好子集、伙伴关系集合等都能在教辅/题库里找到同题）。
+\item
+  \textbf{局限 2}：同模板换数字的改编题，机器判定边界模糊；出处表的 \textbf{26 条对应（24 道真题）} 均已逐条核对原文（含数学
+  符号的具体取值与选项文字），但仍有判断余地。「跨卷同题」同理------组数随判据松紧而变，
+  本稿把两档分开列（逐字 24 组 / 同模板变体 12 组），只取可确证的；分数低于变体线、但读过
+  原文可确证的 7 对，另列「判据之外手工补记」。
+  「存疑」单列的那一条也属此类------判据给不出结论，留给读者自己判断。
+\item
+  \textbf{短题要补看整段相似度}：一条式选择题的骨架往往不足 25 字，只用「最长公共子串 $\geqslant$ 25」
+  会把\textbf{整组}漏掉------\texttt{高一a\ 第\ 5\ 题\ ×\ 高一b\ 第\ 8\ 题}（改写自同一道，相似度 1.000）
+  当初就是这么漏的。故判据里并上「整段相似度 $\geqslant$ 0.95」，变体档则用「$\geqslant$ 0.71 且最长串 $\geqslant$ 12
+  且公共串含内容字符」。\textbf{每一条路径都写死「最长串 $\geqslant$ 12」}------比对前的 12-gram 预筛丢掉的
+  正是「最长串 \textless{} 12」的对，两者口径必须一致，否则会出现「\(r\) 够但这道题根本没进候选池」的漏检
+  （2026-09-15 末修的就是这一处：原先「\(r\ge0.95\)」那条没有长度下限，与预筛互相矛盾）。
+  0.71 不是随手取的：表内最低那对是「全食／偏食」\(r=0.7129\)，而它往下一直要到 \(r=0.6957\)
+  才有下一个候选（一对纯套话），\textbf{0.696--0.713 这一段是空的}，线落在这一档里哪个位置都一样。
+\item
+  \textbf{阈值压到底是什么样}（记下边界在哪；下面这组数字是 \textbf{12 份}那一轮跑的，17 份重跑后的
+  对应数字附在本条末尾）：把判据放宽到「相似度 $\geqslant$ 0.50」，跨卷配对由本稿
+  收的二十几对涨到 \textbf{646 组}，但\textbf{最长公共子串}把它切成两半------LCS $\geqslant$ 11 的只有 \textbf{56 对}，
+  LCS 9--10 一档就骤增到 \textbf{123 对}，\textbf{这个跳变就是边界}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    LCS $\geqslant$ 11（56 对）：本稿列的 \textbf{28 对}（逐字 18 ＋ 变体 10）全在里面，已占一半；
+    剩下 28 对逐条看过，\textbf{8 对是判据漏掉的真同题、分属 3 个模板}------5 对是上面那个
+    「含参二次方程」大族的边（\texttt{高一02\ 第\ 17\ 题} 配 07／08／09／11 那四份，再加
+    \texttt{高一05\ 第\ 17\ 题\ ×\ 高一09\ 第\ 19\ 题}；\(r=0.660\sim0.815\)，LCS 全卡在 11），
+    另 3 对见上文「判据之外手工补记」（该节共 4 对，第 4 对连 \(r\ge 0.50\) 都没到，不在本档）；其余 \textbf{20 对}的公共串清一色是不含题意的套话
+    （「则实数 \(a\) 的取值范围是」之类）；
+  \item
+    LCS 9--10（123 对）里 \(r\ge 0.80\) 的只剩 \textbf{2 对}：\texttt{高一05\ 第\ 5\ 题\ ×\ 高一08\ 第\ 7\ 题}
+    （含参区间包含关系的繁简两版）和 \texttt{高一04\ 第\ 15\ 题\ ×\ 高一09\ 第\ 19\ 题}（即上面那族的
+    反向形式）；其余都在 0.80 以下；
+  \item
+    LCS $\leqslant$ 8：只是共享套话（「已知集合\ldots，则实数 \(a\) 的取值范围是」）。注意\textbf{整段相似度在
+    短题上会骗人}------\texttt{高一07\ 第\ 4\ 题\ ×\ 高一b\ 第\ 8\ 题} 的 \(r\) 高达 0.783，LCS 却只有 4，
+    是两句都短的缘故，属同题型巧合。
+    所以本稿取 LCS $\geqslant$ 12 为线、并给变体档留了整段相似度这一条补充，不再往下压。
+    \textbf{17 份重跑后的同一档数字}（2026-09-15，跨卷 45,150 对里取 LCS $\geqslant$ 8 的 936 对）：
+    LCS $\geqslant$ 12 共 \textbf{71 对}、LCS $\geqslant$ 11 共 \textbf{91 对}（其中 \(r\ge0.80\) 的 22 对），LCS 9--10 骤增到
+    \textbf{346 对}、\(r\ge0.80\) 的\textbf{一对也没有}------\textbf{跳变仍在同一处}，判据不用改。
+  \end{itemize}
+\end{itemize}
+
+
+\end{document}
