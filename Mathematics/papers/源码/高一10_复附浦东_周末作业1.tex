@@ -1,0 +1,397 @@
+% 高一10_复附浦东_周末作业1.tex —— 高一上数学「2026-2027 年复附浦东高一上周末作业 1」（试卷版/答案版）
+% 试卷版：xelatex 高一10_复附浦东_周末作业1.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一10_复附浦东_周末作业1.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」），正文为 9 张 PNG 页；原文本身就是一份
+% **讲评版**——题目下方直接印出【答案】或【解析】。试题文字、答案与解析均照原卷录入，未改内容。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题（分别在原图 01/04/06.png
+%      上，逐页放大核对过），本稿照原卷分节，只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷填空、选择的答案直接印在题目下方，本稿统一改为试卷版隐去、答案版以【答案】给出，
+%      使两版彻底分离；
+%   ④ 原卷的实数集符号时作正体 $R$、时作粗体 $\mathbf{R}$（第 21(3) 与 (3) 末句均为粗体），
+%      本稿按全稿惯例统一写作 $\R$.
+%
+% 原卷笔误：本卷 9 页逐页放大核对，**未发现笔误**（题 16 的 $1995=15\times 133$ 与「$15^2$ 的倍数
+% 有 8 个」两处最易被误判为笔误，实测 $133$、$8$ 均正确）；故本稿未作任何按文意的订正。
+
+% 本篇在公众号「魔都数学加油站」连载里的编号是「27学年高一10」，本地编号与之对齐（高一10）；
+% 对应关系见 README「与公众号连载号的对照表」。
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年复附浦东高一上周末作业 1}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知集合 $M=\{1,2m+1\}$，$N=\{-1,m^2\}$，且 $M=N$，则 $m=$ \blankline[2.4em].
+
+\ans{$-1$}
+
+\ifanswer
+\solbegin
+\step{若 $M=N$，必有 $\begin{cases}2m+1=-1\\ m^2=1\end{cases}$，解得 $m=-1$.}
+\solend
+
+\fi
+
+\item 集合 $\{(x,y)\mid x+2y=2,\ x,y\in\N\}$ 用列举法表示为 \blankline[4.4em].
+
+\ans{$\{(0,1),(2,0)\}$}
+
+\ifanswer
+\solbegin
+\step{由题意得 $x+2y=2$ 可化为 $y=1-\dfrac{x}{2}$，}
+\step{由 $y\in\N$，有 $y=1-\dfrac{x}{2}\geqslant 0$，解得 $x\leqslant 2$，}
+\step{又由 $x\in\N$，得 $x$ 可能取值为 $0$，$1$，$2$，}
+\step{当 $x=0$ 时，得 $y=1$，满足条件，}
+\step{当 $x=1$ 时，得 $y=\dfrac{1}{2}\notin\N$，不满足条件，}
+\step{当 $x=2$ 时，得 $y=0$，满足条件，}
+\step{综上，集合用列举法表示为 $\{(0,1),(2,0)\}$.}
+\solend
+
+\fi
+
+\item 已知集合 $A=\{1\}$，集合 $B=\{0,1,2\}$，则满足关系 $A\sub P\sub B$ 的所有集合 $P$ 为 \blankline[4.4em].
+
+\ans{$\{1\},\{0,1\},\{1,2\},\{0,1,2\}$}
+
+\ifanswer
+\solbegin
+\step{由题意，集合 $P$ 可以是 $\{1\},\{0,1\},\{1,2\},\{0,1,2\}$.}
+\solend
+
+\fi
+
+\item 已知集合 $A=\{x\mid a-1\leqslant x\leqslant a+2\}$，$B=\{x\mid 3<x<5\}$，则使 $A\supseteq B$ 成立的实数 $a$ 的取值范围是 \blankline[4.4em].
+
+\ans{$[3,4]$}
+
+\ifanswer
+\solbegin
+\step{因为 $A\supseteq B$，所以 $\begin{cases}a+2\geqslant 5\\ a-1\leqslant 3\end{cases}$，解得 $3\leqslant a\leqslant 4$.}
+\solend
+
+\fi
+
+\item 若集合 $\{x\mid mx^2-4x+1=0\}=\{n\}$，则 $m+n=$ \blankline[2.4em].
+
+\ans{$\dfrac{1}{4}$ 或 $\dfrac{9}{2}$}
+
+\ifanswer
+\solbegin
+\step{若集合 $\{x\mid mx^2-4x+1=0\}=\{n\}$，则 $mx^2-4x+1=0$ 有唯一实数根 $n$，}
+\step{当 $m=0$ 时，得 $n=\dfrac{1}{4}$，$m+n=\dfrac{1}{4}$，}
+\step{当 $m\neq 0$ 时，$\Delta=16-4m=0$，即 $m=4$，}
+\step{此时 $4x^2-4x+1=0$ 的根为 $n=\dfrac{1}{2}$，$m+n=\dfrac{9}{2}$.}
+\step{故 $m+n=\dfrac{1}{4}$ 或 $\dfrac{9}{2}$.}
+\solend
+
+\fi
+
+\item 集合 $M=\{-1,2,3,5,6\}$ 的全部非空子集的元素和等于 \blankline[4.4em].
+
+\ans{$240$}
+
+\ifanswer
+\solbegin
+\step{集合 $M=\{-1,2,3,5,6\}$ 中共有 $5$ 个元素，}
+\step{在其所有子集中，元素 $-1$ 出现的次数为 $2^{5-1}=2^4=16$，}
+\step{同理 $2$、$3$、$5$、$6$ 都出现 $16$ 次，}
+\step{则集合 $M$ 的全部非空子集的元素和为 $(-1+2+3+5+6)\times 16=240$.}
+\solend
+
+\fi
+
+\item 设 $A=\{x\mid x^2-3x-4=0\}$，$B=\{x\mid ax-1=0\}$，若 $A\cap B=B$，则实数 $a$ 的值可以为 \blankline[4.4em].
+
+\ans{$0$、$-1$、$\dfrac{1}{4}$}
+
+\ifanswer
+\solbegin
+\step{$A=\{-1,4\}$，因为 $A\cap B=B$，所以 $B\sub A$，}
+\step{①$a=0$ 时，$B=\e$，满足 $B\sub A$；}
+\step{②$a\neq 0$ 时，$B=\left\{\dfrac{1}{a}\right\}$，则 $\dfrac{1}{a}=-1$ 或 $\dfrac{1}{a}=4$，所以 $a=-1$ 或 $\dfrac{1}{4}$；}
+\step{所以 $a$ 的值可以为 $0$、$-1$、$\dfrac{1}{4}$.}
+\solend
+
+\fi
+
+\item 设集合 $A=\{1,m\}$，其中 $m$ 为实数. 令集合 $B=\{a+b\mid a\in A,b\in A\}$，若 $A\cap B$ 恰有一个元素，则 $A\cup B$ 的元素之和为 \blankline[2.4em].
+
+\ans{$5$ 或 $10$}
+
+\ifanswer
+\solbegin
+\step{由题意得，若 $A\cap B$ 恰有一个元素，这个元素不是 $1$ 就是 $m$，}
+\stepm{（1）}{当 $1\in B$ 时，}
+\step{①若 $1=1+m$，则 $m=0$，此时 $A=\{1,0\},B=\{2,1,0\},A\cap B=\{0,1\}$，不满足题意，舍去；}
+\step{②若 $1=2m$，则 $m=\dfrac{1}{2}$，此时 $A=\left\{1,\dfrac{1}{2}\right\}$，$B=\left\{2,\dfrac{3}{2},1\right\}$，$A\cap B=\{1\}$，}
+\step{满足题意，所以 $A\cup B=\left\{1,\dfrac{1}{2},2,\dfrac{3}{2}\right\}$，其元素之和为 $5$，}
+\stepm{（2）}{当 $m\in B$ 时，}
+\step{①若 $m=1+m$，则 $m$ 无解，}
+\step{②若 $m=2m$，则 $m=0$，此时 $A=\{1,0\},B=\{2,1,0\},A\cap B=\{0,1\}$，不满足题意，}
+\step{③若 $m=2$，则 $A=\{1,2\},B=\{2,3,4\},A\cap B=\{2\}$，满足题意，}
+\step{所以 $A\cup B=\{1,2,3,4\}$，其元素之和为 $10$，}
+\step{综上所述，$A\cup B$ 的元素之和为 $5$ 或 $10$.}
+\solend
+
+\fi
+
+\item 设非空集合 $Q\sub M$，当 $Q$ 中所有元素和为偶数时（集合为单元素时和为元素本身），称 $Q$ 是 $M$ 的偶子集. 若集合 $M=\{1,2,3,4,5,6,7\}$，则其偶子集 $Q$ 的个数为 \blankline[2.4em].
+
+\ans{$63$}
+
+\ifanswer
+\solbegin
+\step{偶子集可以分为只有奇数、偶数及偶数个奇数和偶数的集合，}
+\step{奇数有 $4$ 个，偶数有 $3$ 个，}
+\step{只有奇数的有 $\mathrm{C}_4^2+1=7$ 个，只有偶数的有 $\mathrm{C}_3^1+\mathrm{C}_3^2+1=7$ 个，}
+\step{偶数个奇数和偶数的：两奇一偶 $\mathrm{C}_4^2\cdot\mathrm{C}_3^1=18$ 个，两奇二偶 $\mathrm{C}_4^2\cdot\mathrm{C}_3^2=18$ 个，}
+\step{两奇三偶 $\mathrm{C}_4^2\cdot\mathrm{C}_3^3=6$ 个，四奇一偶 $\mathrm{C}_4^4\cdot\mathrm{C}_3^1=3$ 个，四奇二偶 $\mathrm{C}_4^4\cdot\mathrm{C}_3^2=3$ 个，}
+\step{四奇三偶 $\mathrm{C}_4^4\cdot\mathrm{C}_3^3=1$ 个，所以共有 $7+7+18+18+6+3+3+1=63$ 个.}
+\solend
+
+\fi
+
+\item 已知非空集合 $S=\left\{x\mid -\dfrac{1}{2}\leqslant x\leqslant m\right\}$ 满足：当 $x\in S$ 时，有 $x^2\in S$，则实数 $m$ 的取值范围是 \blankline[4.4em].
+
+\ans{$\left[\dfrac{1}{4},1\right]$}
+
+\ifanswer
+\solbegin
+\step{因为集合 $S=\left\{x\mid -\dfrac{1}{2}\leqslant x\leqslant m\right\}$ 是非空集合，所以 $m\geqslant -\dfrac{1}{2}$，}
+\step{又当 $x\in S$ 时，有 $x^2\in S$，所以 $m^2\leqslant m$ 且 $m\geqslant \left(-\dfrac{1}{2}\right)^2=\dfrac{1}{4}$，所以 $\dfrac{1}{4}\leqslant m\leqslant 1$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知集合 $U=\{1+x,1\}$，$x\in U$，则 $x=$（\quad）
+
+A. $-1$\qquad B. $0$\qquad C. $1$\qquad D. $2$
+
+\ans{C}
+
+\ifanswer
+\solbegin
+\step{因为集合 $U=\{1+x,1\}$，$x\in U$，所以 $1+x=x$ 或 $x=1$，}
+\step{当 $x=1+x$ 时，即 $0=1$，此时显然不成立，舍去，}
+\step{当 $x=1$，此时集合 $U=\{1,2\}$，满足互异性，}
+\step{综上所述，$x=1$. 故选 C.}
+\solend
+
+\fi
+
+\item 已知集合 $M=\{m\mid m=a+b\sqrt2,\ a,b\in\Q\}$，则下列四个元素中属于 $M$ 的元素的个数是（\quad）
+
+①$1+\sqrt2\pi$；②$\sqrt{11+6\sqrt2}$；③$\dfrac{1}{2+\sqrt2}$；④$\sqrt{2-\sqrt3}+\sqrt{2+\sqrt3}$
+
+A. $4$\qquad B. $3$\qquad C. $2$\qquad D. $1$
+
+\ans{C}
+
+\ifanswer
+\solbegin
+\step{①$1+\sqrt2\pi$，由于 $\sqrt2$、$\pi$ 都为无理数，因此 $1+\sqrt2\pi\notin M$；}
+\step{②$\sqrt{11+6\sqrt2}=\sqrt{11+2\sqrt{18}}=3+\sqrt2\in M$；}
+\step{③$\dfrac{1}{2+\sqrt2}=1-\dfrac{1}{2}\sqrt2\in M$；}
+\step{④$\sqrt{2-\sqrt3}+\sqrt{2+\sqrt3}=\sqrt{\dfrac{8-2\sqrt{12}}{4}}+\sqrt{\dfrac{8+2\sqrt{12}}{4}}=\dfrac{\sqrt6-\sqrt2}{2}+\dfrac{\sqrt6+\sqrt2}{2}=\sqrt6=\sqrt3\cdot\sqrt2\notin M$；}
+\step{则上述四个元素中属于 $M$ 的元素的个数是 $2$. 故选 C.}
+\solend
+
+\fi
+
+\item 集合 $A=\{2,3,7,8,9,11\}$，集合 $B=\{1,2,4,6,8\}$，下面说法正确的是（\quad）
+
+A. 两个集合的交集是 $\{2,8\}$
+
+B. 两个集合没有并集
+
+C. $B$ 集合的元素无法用 $\{x\mid x=f(k),k\in D\}$ 这种形式表示出来
+
+D. 集合 $A$ 有 $6$ 个子集
+
+\ans{A}
+
+\ifanswer
+\solbegin
+\step{对于 A，$A\cap B=\{2,8\}$，故 A 正确；}
+\step{对于 B，$A\cup B=\{1,2,3,4,6,7,8,9,11\}$，故 B 错误；}
+\step{对于 C，集合 $B$ 可以表示为 $B=\{x\mid x=f(k),k\in\{1,2,3,4,5\}\}$，}
+\step{其中 $f(1)=1,f(2)=2,f(3)=4,f(4)=6,f(5)=8$，}
+\step{即集合 $B$ 可描述为 $\{x\mid x=f(k),k\in D\}$ 形式，故 C 错误；}
+\step{对于 D，集合 $A$ 有 $6$ 个元素，其子集总数为 $2^6=64\neq 6$，故 D 错误.}
+\step{故选 A.}
+\solend
+
+\fi
+
+\item 设 $M=\{1,2,\cdots,1995\}$，$A$ 是 $M$ 的子集且满足条件：当 $x\in A$ 时，$15x\notin A$，则 $A$ 中元素的个数的最大值为（\quad）
+
+A. $1862$\qquad B. $1866$\qquad C. $1868$\qquad D. $1870$
+
+\ans{D}
+
+\ifanswer
+\solbegin
+\step{$1995=15\times 133$. 故取出所有不是 $15$ 的倍数的数，共 $1862$ 个，}
+\step{这些数均符合要求.}
+\step{在所有 $15$ 的倍数的数中，$15^2$ 的倍数有 $8$ 个，这些数又可以取出，}
+\step{这样共取出了 $1870$ 个，即 $|A|\geqslant 1870$.}
+\step{又 $\{k,15k\}(k=9,10,11,\cdots,133)$ 中的两个元素不能同时取出，}
+\step{故 $|A|\leqslant 1995-133+8=1870$，故选 D.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知集合 $A=\{x\mid a\leqslant x\leqslant a+4\}$，$B=\{x\mid x\geqslant 6\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $a=3$，求 $A\cup B$；
+\item 若 $A\cap B=A$，求实数 $a$ 的取值范围.
+\end{enumerate}
+
+\ans{（1）$\{x\mid x\geqslant 3\}$；（2）$[6,+\infty)$}
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $a=3$ 时，$A=\{x\mid 3\leqslant x\leqslant 7\}$，所以 $A\cup B=\{x\mid x\geqslant 3\}$；}
+\stepm{（2）}{若 $A\cap B=A$，则 $A\sub B$，所以 $a\geqslant 6$，所以实数 $a$ 的取值范围是 $[6,+\infty)$.}
+\solend
+
+\fi
+
+\ansspace[7]
+
+\item 已知集合 $M=\{x\mid (x-a)(x^2-ax+a-1)=0\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $a=3$，求集合 $M$；
+\item 若集合 $M$ 中各元素之和等于 $3$，求实数 $a$ 的值，并用列举法表示集合 $M$.
+\end{enumerate}
+
+\ans{（1）$\{1,2,3\}$；（2）$a=2$ 或 $\dfrac{3}{2}$，此时 $M=\{1,2\}$ 或 $M=\left\{\dfrac{1}{2},1,\dfrac{3}{2}\right\}$}
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$\{1,2,3\}$；}
+\stepm{（2）}{当 $(x-a)(x^2-ax+a-1)=0$ 有重根时，重根只能算作集合的一个元素，}
+\step{$(x-a)(x^2-ax+a-1)=(x-a)(x-1)[x-(a-1)]=0$，}
+\step{当 $a=1$ 时，得 $M=\{0,1\}$，不符合题意；}
+\step{当 $a-1=1$ 时，即 $a=2$ 时，得 $M=\{1,2\}$，符合题意；}
+\step{当 $a\neq 1$ 且 $a\neq 2$ 时，此时 $M=\{1,a,a-1\}$，得 $1+a+a-1=3$，}
+\step{解得 $a=\dfrac{3}{2}$，此时 $M=\left\{\dfrac{1}{2},1,\dfrac{3}{2}\right\}$，符合题意，}
+\step{综上，实数 $a$ 的值为 $2$ 或 $\dfrac{3}{2}$，}
+\step{当 $a=2$ 时，$M=\{1,2\}$；当 $a=\dfrac{3}{2}$ 时，$M=\left\{\dfrac{1}{2},1,\dfrac{3}{2}\right\}$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 已知集合 $A=\{x\mid x^2-2x-3=0\}$，集合 $B=\{x\mid ax-1=0\}$. 若 $B\sub A$，求实数 $a$ 的值.
+
+\ans{$a=0$ 或 $a=-1$ 或 $a=\dfrac{1}{3}$}
+
+\ifanswer
+\solbegin
+\step{当 $B=\e$ 时，$a=0$，满足题意；}
+\step{当 $B\neq\e$，即 $a\neq 0$ 时，$B=\left\{\dfrac{1}{a}\right\}$，}
+\step{又 $A=\{x\mid x^2-2x-3=0\}=\{x\mid x=-1\text{ 或 }x=3\}$，$B\sub A$，}
+\step{所以 $\dfrac{1}{a}=-1$ 或 $\dfrac{1}{a}=3$，所以 $a=-1$ 或 $a=\dfrac{1}{3}$.}
+\step{综上所述，$a=0$ 或 $a=-1$ 或 $a=\dfrac{1}{3}$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 设集合 $A=\{x\mid -2\leqslant x\leqslant 5\}$，$B=\{x\mid m+1\leqslant x\leqslant 2m-1\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $B\sub A$，求实数 $m$ 的取值范围；
+\item 当 $x\in\Z$ 时，求 $A$ 的非空真子集个数；
+\item 当 $x\in\R$ 时，不存在元素 $x$ 使 $x\in A$ 与 $x\in B$ 同时成立，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ans{（1）$\{m\mid m\leqslant 3\}$；（2）$254$；（3）$\{m\mid m<2\text{ 或 }m>4\}$}
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $m+1>2m-1$，即 $m<2$ 时，$B=\e$，满足 $B\sub A$.}
+\step{当 $m+1\leqslant 2m-1$，即 $m\geqslant 2$ 时，要使 $B\sub A$ 成立，}
+\step{需 $\begin{cases}m+1\geqslant -2\\ 2m-1\leqslant 5\end{cases}$，得 $2\leqslant m\leqslant 3$，}
+\step{综上，$m$ 的范围为 $\{m\mid m\leqslant 3\}$；}
+\stepm{（2）}{$A=\{x\mid -2\leqslant x\leqslant 5,x\in\Z\}=\{-2,-1,0,1,2,3,4,5\}$，}
+\step{则 $A$ 的非空真子集个数为 $2^8-1-1=254$；}
+\stepm{（3）}{因为没有元素 $x$ 使 $x\in A$ 与 $x\in B$ 同时成立，所以 $A$ 与 $B$ 交集为空集.}
+\step{①若 $B=\e$，即 $m+1>2m-1$，得 $m<2$ 时满足条件；}
+\step{②若 $B\neq\e$，则要满足的条件是 $\begin{cases}m+1\leqslant 2m-1\\ m+1>5\end{cases}$ 或 $\begin{cases}m+1\leqslant 2m-1\\ 2m-1<-2\end{cases}$，}
+\step{解得 $m>4$.}
+\step{综上，有 $m<2$ 或 $m>4$，所以 $m$ 的范围为 $\{m\mid m<2\text{ 或 }m>4\}$.}
+\solend
+
+\fi
+
+\ansspace[10]
+
+% 压轴题：其后已无内容，故作答区全用可丢弃胶水（\ansspace*），并在题目前先量一下版面。
+\ansneed{7cm}
+
+\item 已知集合 $A=\{x\mid ax=1\}$，$B=\{x\mid x^2-ax+b=0\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $a=2$，且 $A\sub B$，求 $b$ 的值；
+\item 当 $a^2\geqslant 4b$ 时，若 $B\sub A$，求 $a$、$b$ 的值；
+\item 若 $A\sub B$，讨论 $a$、$b$ 的取值范围.
+\end{enumerate}
+
+\ans{（1）$\dfrac{3}{4}$；（2）$a=\pm\sqrt2$，$b=\dfrac{1}{2}$；（3）$a=0$ 时 $b\in\R$，$a\neq 0$ 时 $b\in(-\infty,1)$}
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $a=2$ 时，$A=\left\{\dfrac{1}{2}\right\}$，}
+\step{由 $A\sub B$ 得 $\dfrac{1}{2}$ 是方程 $x^2-2x+b=0$ 的解，代入得 $\left(\dfrac{1}{2}\right)^2-2\times\dfrac{1}{2}+b=0$，}
+\step{解得 $b=\dfrac{3}{4}$.}
+\stepm{（2）}{当 $a^2\geqslant 4b$ 时，方程 $x^2-ax+b=0$ 有实根.}
+\step{若 $a=0$，则 $A=\e$，要 $B\sub A$ 需 $B=\e$，}
+\step{但此时方程 $x^2+b=0$ 在 $a^2\geqslant 4b$（即 $b\leqslant 0$）时有实根，矛盾，舍去.}
+\step{若 $a\neq 0$，则 $A=\left\{\dfrac{1}{a}\right\}$，$B\sub A$ 且方程有实根，故方程有且仅有一个根 $\dfrac{1}{a}$.}
+\step{由韦达定理，根的和为 $a=\dfrac{1}{a}+\dfrac{1}{a}$，根的积为 $b=\dfrac{1}{a}\times\dfrac{1}{a}$.}
+\step{由根的和得 $a=\dfrac{2}{a}$，即 $a^2=2$，$a=\pm\sqrt2$，$b=\dfrac{1}{2}$.}
+\stepm{（3）}{当 $a=0$ 时，$A=\e$，故 $A\sub B$ 恒成立，此时 $b\in\R$.}
+\step{当 $a\neq 0$ 时，$A=\left\{\dfrac{1}{a}\right\}$，将 $x=\dfrac{1}{a}$ 代入 $x^2-ax+b=0$，得 $b=1-\dfrac{1}{a^2}$.}
+\step{此时方程判别式 $\Delta=a^2-4b=\dfrac{(a^2-2)^2}{a^2}\geqslant 0$，}
+\step{若 $\Delta=0$，则 $a=\pm\sqrt2$，$b=\dfrac{1}{2}$；}
+\step{若 $\Delta>0$，则 $a\neq 0$ 且 $a\neq\pm\sqrt2$，此时 $b=1-\dfrac{1}{a^2}<1$.}
+\step{综上，当 $a=0$ 时，$b\in\R$；当 $a\neq 0$ 时，$b\in(-\infty,1)$.}
+\solend
+
+\fi
+
+\ansspace*[12]
+
+\end{enumerate}
+
+\end{document}
