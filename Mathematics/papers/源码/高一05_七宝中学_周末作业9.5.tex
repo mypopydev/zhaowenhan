@@ -39,7 +39,9 @@
 \ifanswer
 \solbegin
 \step{因为 $M=N$，所以 $a-3=-2$ 时，$a=1$，$M=\{-2,1,2\}$，$N=\{-2,1,2\}$，满足 $M=N$；}
-\step{$2a-1=-2$ 时，$a=-\tfrac{1}{2}$，$M=\{-\tfrac{7}{2},-2,\tfrac{5}{4}\}$，$N=\{-2,-5,\tfrac{5}{2}\}$，不满足 $M=N$.}
+% 注：原卷此处作「$N=\left\{-2,-5,-\frac{5}{2}\right\}$」（$a=-\frac12$ 时 $3a-1=-\frac52$）；
+%     本稿曾把末项抄成 $\frac{5}{2}$（丢了负号），2026-09-15 回原图核对时已订正。
+\step{$2a-1=-2$ 时，$a=-\tfrac{1}{2}$，$M=\{-\tfrac{7}{2},-2,\tfrac{5}{4}\}$，$N=\{-2,-5,-\tfrac{5}{2}\}$，不满足 $M=N$.}
 \step{所以 $a=1$.}
 \solend
 
@@ -52,7 +54,10 @@
 \solbegin
 \step{先求解 $A\cap B=\varnothing$ 时 $m$ 的取值范围.}
 \stepm{①}{当集合 $B=\varnothing$ 时，则 $m+1>2m-1$，解得 $m<2$.}
-\stepm{②}{当集合 $B\neq\varnothing$ 时，则 $\begin{cases}m+1\leqslant 2m-1 \\ 2m-1<-12\text{ 或 }\begin{cases}m+1\leqslant 2m-1 \\ m+1>15\end{cases}\end{cases}$，解得 $m>14$.}
+% 注：原卷此句是【两个方程组用「或」并列】——「$\begin{cases}m+1\leqslant 2m-1 \\ 2m-1<-12\end{cases}$ 或
+%     $\begin{cases}m+1\leqslant 2m-1 \\ m+1>15\end{cases}$」；本稿曾把第二个方程组嵌进第一个的第二个方程里
+%     （写成一个三层嵌套的 cases），2026-09-15 回原图核对时改为与原卷一致的并列写法。
+\stepm{②}{当集合 $B\neq\varnothing$ 时，则 $\begin{cases}m+1\leqslant 2m-1 \\ 2m-1<-12\end{cases}$ 或 $\begin{cases}m+1\leqslant 2m-1 \\ m+1>15\end{cases}$，解得 $m>14$.}
 \step{综上，$A\cap B=\varnothing$ 时，$m<2$ 或 $m>14$.}
 \step{所以 $A\cap B\neq\varnothing$ 时，$m$ 的取值范围是 $\{m\mid 2\leqslant m\leqslant 14\}$.}
 \solend
@@ -104,7 +109,9 @@
 \solbegin
 \step{由题意得 $U=\{x\in\mathbb{N}\mid x\leqslant 9\}=\{0,1,2,3,4,5,6,7,8,9\}$，$A\cap B=\{3\}$ 得 $A$、$B$ 中含有元素 $3$；}
 \step{$\overline{A}\cap B=\{4,6,8\}$ 得 $B$ 中含有 $4$、$6$、$8$，集合 $A$ 中不含 $4$、$6$、$8$；}
-\step{$A\cap\overline{B}=\{1,5\}$ 得 $A$ 含有 $1$、$5$，集合 $B$ 不含 $1$、$5$.}
+% 注：本句照原卷作「集合 $\overline{B}$ 中含 1、5」（原卷原文）；本稿曾改写为「集合 $B$ 不含 1、5」，
+%     两句等价，2026-09-15 回原图核对时按原卷原样录回。
+\step{$A\cap\overline{B}=\{1,5\}$ 得 $A$ 含有 $1$、$5$，集合 $\overline{B}$ 中含 $1$、$5$.}
 \step{对于 $0$，假设集合 $A$ 中含有 $0$，由 $A\cap B=\{3\}$ 得 $B$ 不含 $0$，则 $A\cap\overline{B}$ 必含元素 $0$，与 $A\cap\overline{B}=\{1,5\}$ 矛盾.}
 \step{同理可得集合 $A$ 中不含元素 $2$、$7$、$9$.}
 \step{综上所述，$A=\{1,3,5\}$.}
@@ -132,7 +139,9 @@
 \ifanswer
 \solbegin
 \step{由 $\tfrac{x^2-9}{2x-m}=1$ 得 $x^2-2x+m-9=0$，则 $\Delta=4-4\times 1\times(m-9)=0$，解得 $m=10$.}
-\step{当方程 $\tfrac{x^2-9}{2x-m}=1$ 可化为二元一次方程时，此时二元一次方程有一解，符合题意.}
+% 注：原卷此句作「当方程 $\frac{x^2-9}{2x-m}=1$ 可化为【一元】一次方程时，此时【一元】一次方程有一解」；
+%     本稿曾把两处「一元」都写成「二元」，2026-09-15 回原图核对时已订正。
+\step{当方程 $\tfrac{x^2-9}{2x-m}=1$ 可化为一元一次方程时，此时一元一次方程有一解，符合题意.}
 \step{由于 $x^2-9=(x+3)(x-3)$，则令 $x-\tfrac{m}{2}=x+3$ 或 $x-\tfrac{m}{2}=x-3$，解得 $m=-6$ 或 $m=6$.}
 \step{此时 $\tfrac{x^2-9}{2x-m}=1$ 为 $\tfrac{x-3}{2}=1$ 或 $\tfrac{x+3}{2}=1$，只有一解，符合题意.}
 \step{综上所述，集合 $M=\{-6,6,10\}$.}
@@ -260,7 +269,9 @@ A. $15$\qquad B. $16$\qquad C. $31$\qquad D. $32$
 \ans{（1）$B=\{x\mid 3\leqslant x\leqslant 9\}$；（2）$\{m\mid m<-1\}$；（3）$[1,2)\cup\left(2,\tfrac{5}{2}\right]$；（4）$\{m\mid 3\leqslant m\leqslant 4\}$；（5）$\{m\mid m<-1\}$}
 
 \ansspace[12]
-\item 已知数集 $X=\{x_1,x_2,\dots,x_n\}$（其中 $1\leqslant x_1<x_2<\dots<x_n,\,n\in\mathbb{N}^*,n\geqslant 2$）具有性质 $M$：对任意的 $i,j\,(1\leqslant i\leqslant j\leqslant n)$，$x_ix_j$ 与 $\tfrac{x_i}{x_j}$ 两数中至少有一个属于 $X$.
+% 注：原卷题干作「$x_ix_j$ 与 $\frac{x_j}{x_i}$ 两数中至少有一个属于 $X$」（$i\leqslant j$，故分式是【大比小】）；
+%     本稿曾把分式抄成 $\frac{x_i}{x_j}$（分子分母颠倒），2026-09-15 回原图核对时已订正。
+\item 已知数集 $X=\{x_1,x_2,\dots,x_n\}$（其中 $1\leqslant x_1<x_2<\dots<x_n,\,n\in\mathbb{N}^*,n\geqslant 2$）具有性质 $M$：对任意的 $i,j\,(1\leqslant i\leqslant j\leqslant n)$，$x_ix_j$ 与 $\tfrac{x_j}{x_i}$ 两数中至少有一个属于 $X$.
 \begin{enumerate}[label=(\arabic*)]
 \item 分别判断数集 $P=\{1,2,3\}$ 与 $Q=\{1,2,4\}$ 是否具有性质 $M$；
 \item 证明：$x_1=1$；
@@ -272,27 +283,41 @@ A. $15$\qquad B. $16$\qquad C. $31$\qquad D. $32$
 \ifanswer
 \solbegin
 \stepm{(1)}{对于集合 $P$：取 $x_2=2,\,x_3=3$，则 $x_2x_3=2\times 3=6\notin P$，$\tfrac{x_3}{x_2}=\tfrac{3}{2}\notin P$，所以数集 $P$ 不具有性质 $M$.}
-\step{对于集合 $Q$：$1\times 2=2\in Q$，$1\times 4=4\in Q$，$\tfrac{4}{2}=2\in Q$，$\tfrac{4}{4}=1\in Q$，则对 $Q$ 中任意 $x_i$、$x_j$，$x_ix_j$ 与 $\tfrac{x_i}{x_j}$ 中至少有一个属于 $Q$，所以数集 $Q$ 具有性质 $M$.}
-\stepm{(2)}{由已知 $x_2\geqslant 1$.}
+% 注：原卷此句作「即对 $Q$ 中任意 $x_1$、$x_2$，$x_1x_2$ 与 $\frac{x_2}{x_1}$ 中至少有一个属于 $Q$」；
+%     本稿曾把下标写成 $i$、$j$、分式抄成 $\frac{x_i}{x_j}$，2026-09-15 回原图核对时已按原卷订正。
+\step{对于集合 $Q$：$1\times 2=2\in Q$，$1\times 4=4\in Q$，$\tfrac{4}{2}=2\in Q$，$\tfrac{4}{4}=1\in Q$，则对 $Q$ 中任意 $x_1$、$x_2$，$x_1x_2$ 与 $\tfrac{x_2}{x_1}$ 中至少有一个属于 $Q$，所以数集 $Q$ 具有性质 $M$.}
+% 注：原卷此句作「由已知 $x_1\geqslant 1$」；本稿曾写成 $x_2\geqslant 1$，2026-09-15 回原图核对时已订正。
+\stepm{(2)}{由已知 $x_1\geqslant 1$.}
 \step{若 $x_1>1$，则 $x_n>1$，$x_nx_n>x_n$，所以 $x_nx_n\notin X$，又 $\tfrac{x_n}{x_n}=1\notin X$，所以数集 $X$ 不具有性质 $M$，不符合题意.}
 \step{所以 $x_1=1$.}
 \stepm{(3)}{数集 $X$ 具有性质 $M$，$n=5$，$x_2=3$.}
 \step{由 (2) 得 $x_1=1$.}
-\step{因为 $1<x_2<x_3<x_4<x_5$，所以 $x_i\cdot x_5>x_i\,(i=2,3,4,5)$，所以 $x_i\cdot x_5\notin X$.}
-\step{因为数集 $X$ 具有性质 $M$，所以 $\tfrac{x_5}{x_1}\in X$，所以 $x_5=1=\tfrac{x_5}{x_5}<\tfrac{x_5}{x_4}<\tfrac{x_5}{x_3}<\tfrac{x_5}{x_2}<x_5$，所以 $\tfrac{x_5}{x_4}=x_2$，$\tfrac{x_5}{x_3}=x_3$，$\tfrac{x_5}{x_2}=x_4$，所以 $x_5=x_2x_4=x_3x_4$，即 $x_5^2=x_2x_4^2$.}
-\step{因为 $x_2x_4>x_3x_4=x_5$，所以 $x_3x_4\notin X$.}
-\step{所以 $\tfrac{x_4}{x_3}\in X$，由 $1<\tfrac{x_2}{x_3}<\tfrac{x_2}{x_2}=x_3<1<\tfrac{x_2}{x_2}<x_3<x_5$，所以 $\tfrac{x_4}{x_3}=x_2$，所以 $\tfrac{x_5}{x_4}=\tfrac{x_5}{x_3}=\tfrac{x_5}{x_2}=x_5$，所以 $x_3=x_2^2=9,\,x_4=x_2x_3=3\times 9=27,\,x_5=x_3^2=9^2=81$.}
+% 注：以下两行照原卷——原卷作「所以 $x_i\cdot x_5>x_5\,(i=2,3,4,5)$」、「所以 $\frac{x_5}{x_i}\in X$」；
+%     本稿曾把前者的右端写成 $x_i$、把后者的下标写成 $x_1$，2026-09-15 回原图核对时已订正。
+\step{因为 $1<x_2<x_3<x_4<x_5$，所以 $x_i\cdot x_5>x_5\,(i=2,3,4,5)$，所以 $x_i\cdot x_5\notin X$.}
+\step{因为数集 $X$ 具有性质 $M$，所以 $\tfrac{x_5}{x_i}\in X$，所以 $x_1=1=\tfrac{x_5}{x_5}<\tfrac{x_5}{x_4}<\tfrac{x_5}{x_3}<\tfrac{x_5}{x_2}<x_5$.}
+\step{所以 $\tfrac{x_5}{x_4}=x_2$，$\tfrac{x_5}{x_3}=x_3$，$\tfrac{x_5}{x_2}=x_4$，即 $x_5=x_3^2=x_2x_4$.}
+% 注：原卷此句作「因为 $x_3x_4>x_2x_4=x_5$，所以 $x_3x_4\notin X$，所以 $\frac{x_4}{x_3}\in X$」；
+%     本稿曾把不等号两边写反（作 $x_2x_4>x_3x_4=x_5$）且漏了「所以 $\frac{x_4}{x_3}\in X$」，同上已订正。
+\step{因为 $x_3x_4>x_2x_4=x_5$，所以 $x_3x_4\notin X$，所以 $\tfrac{x_4}{x_3}\in X$.}
+% 注：原卷此句作「由 $1<\frac{x_4}{x_3}<\frac{x_5}{x_3}=x_3$，又 $1<\frac{x_3}{x_2}<x_3$，所以 $\frac{x_4}{x_3}=\frac{x_3}{x_2}=x_2$」，
+%     下一行作「所以 $\frac{x_5}{x_4}=\frac{x_4}{x_3}=\frac{x_3}{x_2}=x_2$」；
+%     本稿这两句整个走样（作「由 $1<\frac{x_2}{x_3}<\frac{x_2}{x_2}=x_3<1<\cdots$，所以 $\cdots=\frac{x_5}{x_2}=x_5$」），
+%     2026-09-15 回原图核对时已按原卷重录。
+\step{由 $1<\tfrac{x_4}{x_3}<\tfrac{x_5}{x_3}=x_3$，又 $1<\tfrac{x_3}{x_2}<x_3$，所以 $\tfrac{x_4}{x_3}=\tfrac{x_3}{x_2}=x_2$.}
+\step{所以 $\tfrac{x_5}{x_4}=\tfrac{x_4}{x_3}=\tfrac{x_3}{x_2}=x_2$，所以 $x_3=x_2^2=9,\,x_4=x_2x_3=3\times 9=27,\,x_5=x_3^2=9^2=81$.}
 \step{所以 $X=\{1,3,9,27,81\}$.}
 \solend
 
 \fi
 \ansspace[12]
 \ansneed{7cm}
-\item 已知集合 $M=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\in\mathbb{N}^*)$ 具有性质：对任意 $1\leqslant i\leqslant j\leqslant n\,(i,j\in\mathbb{N}^*)$，$a_i+a_j$ 与 $a_j-a_i$ 至少有一个属于 $M$，则称 $M$ 为“封闭集”.
+% 注：原卷本题的记号是 $N_+$（下标加号），本稿原写作 $\mathbb{N}^*$，2026-09-15 回原图核对时按原卷改回。
+\item 已知集合 $M=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\in\mathbb{N}_+)$ 具有性质：对任意 $1\leqslant i\leqslant j\leqslant n\,(i,j\in\mathbb{N}_+)$，$a_i+a_j$ 与 $a_j-a_i$ 至少有一个属于 $M$，则称 $M$ 为“封闭集”.
 \begin{enumerate}[label=(\arabic*)]
 \item 若集合 $P=\{2,5,8\}$，$Q=\{0,5,10\}$，判断 $P$、$Q$ 是否是“封闭集”，并说明理由；
 \item 若集合 $P=\{a_1,a_2,a_3\}(0\leqslant a_1<a_2<a_3)$ 是“封闭集”，且 $a_3=2026$，求集合 $P$；
-\item 设集合 $A=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\geqslant 4,\,n\in\mathbb{N}^*)$ 是“封闭集”，证明：$a_1+a_2+a_3+\dots+a_n=\tfrac{n}{2}\cdot a_n$.
+\item 设集合 $A=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\geqslant 4,\,n\in\mathbb{N}_+)$ 是“封闭集”，证明：$a_1+a_2+a_3+\dots+a_n=\tfrac{n}{2}\cdot a_n$.
 \end{enumerate}
 
 \ans{（1）$P$ 不是“封闭集”，$Q$ 是“封闭集”；（2）$\{0,1013,2026\}$；（3）略}
@@ -300,20 +325,27 @@ A. $15$\qquad B. $16$\qquad C. $31$\qquad D. $32$
 \ifanswer
 \solbegin
 \stepm{(1)}{集合 $P$ 不是“封闭集”，理由如下：在集合 $P=\{2,5,8\}$ 中，因为 $2+5=7\notin P$，$5-2=3\notin P$，所以集合 $P$ 不是“封闭集”.}
-\step{集合 $Q$ 是“封闭集”，理由如下：集合 $Q=\{0,5,10\}$ 中，因为 $0+5=5\in Q$，$0+10=10\in Q$，$10-5=5\in Q$，$0+0=0\in Q$.}
+% 注：原卷此句作「$0\pm 0=0\in Q$」；本稿曾写成「$0+0=0\in Q$」，2026-09-15 回原图核对时按原卷改回。
+\step{集合 $Q$ 是“封闭集”，理由如下：集合 $Q=\{0,5,10\}$ 中，因为 $0+5=5\in Q$，$0+10=10\in Q$，$10-5=5\in Q$，$0\pm 0=0\in Q$.}
 \step{$5+5=10\in Q$，$5-5=0\in Q$，$10-10=0\in Q$.}
 \step{所以集合 $Q$ 是“封闭集”.}
 \stepm{(2)}{因为 $a_1<a_2<a_3$，且 $P=\{a_1,a_2,a_3\}$ 是“封闭集”，$a_3+a_3>a_3$，所以 $a_3+a_3\notin P$，则 $a_3-a_3=0\in P$，所以 $a_1=0$.}
 \step{因为 $a_2+a_3>a_3$，所以 $a_2+a_3\notin P$.}
 \step{则 $(a_3-a_3)\in P,(a_3-a_2)\in P,(a_2-a_2)\in P,(a_3-a_1)\in P,(a_2-a_1)\in P$.}
-\step{$a_3-a_3<a_3-a_2<a_2-a_1$.}
-\step{由集合的元素互异性得 $a_3-a_3=a_2$，因为 $a_3=2026$，所以 $a_2=\tfrac{1}{2}a_3=1013$.}
+% 注：原卷此句作「$a_3-a_3<a_3-a_2<a_3-a_1$」；本稿曾把末项写成 $a_2-a_1$，
+%     下一句原卷作「由集合的元素互异性得 $a_3-a_2=a_2$」，本稿曾把 $a_3-a_2$ 写成 $a_3-a_3$
+%     （那样 $a_2=a_3=2026$，与本卷答案 $a_2=1013$ 冲突）。2026-09-15 回原图核对时已订正。
+\step{$a_3-a_3<a_3-a_2<a_3-a_1$.}
+\step{由集合的元素互异性得 $a_3-a_2=a_2$，因为 $a_3=2026$，所以 $a_2=\tfrac{1}{2}a_3=1013$.}
 \step{所以集合 $P=\{0,1013,2026\}$.}
 \stepm{(3)}{因为 $M=\{a_1,a_2,a_3,\dots,a_n\}(0\leqslant a_1<a_2<a_3<\dots<a_n,\,n\in\mathbb{N}^*)$ 是“封闭集”，所以 $a_n+a_n\notin A$，则 $a_n-a_n=0\in A$，所以 $a_1=0$.}
 \step{又 $0\leqslant a_1<a_2<\dots<a_n$，所以 $0\leqslant a_n-a_n<a_n-a_{n-1}<\dots<a_n-a_1$.}
-\step{又 $a_n+a_{n-1}>a_n\,(i=1,2,\dots,n-1)$，所以 $a_n+a_{n-1}\notin A$，则 $a_n-a_{n-1}\in A$.}
+% 注：原卷此行作「又 $a_n+a_{n-i}>a_n\,(i=1,2,\cdots,n-1)$，所以 $a_n+a_{n-i}\notin A$，则 $a_n-a_{n-i}\in A$」；
+%     本稿曾把三处下标 $n-i$ 都写成 $n-1$（丢了下标 $i$），2026-09-15 回原图核对时已订正。
+\step{又 $a_n+a_{n-i}>a_n\,(i=1,2,\dots,n-1)$，所以 $a_n+a_{n-i}\notin A$，则 $a_n-a_{n-i}\in A$.}
 \step{由集合元素的互异性得 $a_1=a_n-a_n,\,a_2=a_n-a_{n-1},\,a_3=a_n-a_{n-2},\,\dots,\,a_n=a_n-a_1$.}
-\step{所以 $a_1+a_2+a_3+\dots+a_n=(a_n-a_1)+(a_n-a_{n-1})+(a_n-a_{n-2})+\dots+(a_n-a_1)=na_n-(a_1+a_2+a_3+\dots+a_n)$.}
+% 注：原卷展开式首项作 $(a_n-a_n)$；本稿曾写成 $(a_n-a_1)$，2026-09-15 回原图核对时已订正。
+\step{所以 $a_1+a_2+a_3+\dots+a_n=(a_n-a_n)+(a_n-a_{n-1})+(a_n-a_{n-2})+\dots+(a_n-a_1)=na_n-(a_1+a_2+a_3+\dots+a_n)$.}
 \step{所以 $2(a_1+a_2+a_3+\dots+a_n)=na_n$，所以 $a_1+a_2+a_3+\dots+a_n=\tfrac{n}{2}\cdot a_n$.}
 \solend
 
