@@ -547,6 +547,8 @@ make one F=高一02_大同中学_集合综合练习    # 只编某一套
 make check      # 校验试卷版确实不含答案（逐份文本比对）
 make list       # 查看页数统计
 make clean      # 清理 LaTeX 临时文件
+make distclean  # 清理临时文件与中间 PDF（成品不动）
+make help       # 显示上面这份说明
 ```
 
 需 `xelatex`（TeX Live / MacTeX 均可）、`pdfinfo` 与 `pdftotext`（poppler）。
@@ -563,7 +565,8 @@ PDF 里直接消失，不留空白、也不报错。所以 `make test` / `make a
 ```
 
 往题里加新符号（★、℃、生僻字等）时，先照 `common.sty` 里 `\xeCJKDeclareCharClass` 的写法
-把对应码位划入 CJK 类——圈数字 `①②③` 就是这么处理的（现用了 293 次、遍布 11 份）。
+把对应码位划入 CJK 类——圈数字 `①②③` 就是这么处理的（现用了 **385 次**、遍布 **16 份**，
+按正文计、不含 `%` 注释；只有高一06 一份没用）。
 
 ## 说明
 

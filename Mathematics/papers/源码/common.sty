@@ -1,4 +1,4 @@
-% math_exams/common.sty —— 上海高一数学周末作业共享样式
+% papers/源码/common.sty —— 上海高一数学周末作业共享样式
 % 需要 ctex、amsmath、amssymb、enumitem、geometry
 
 \RequirePackage{ctex}
@@ -18,15 +18,16 @@
 % 同理，罗马数字 Ⅰ Ⅱ Ⅲ（U+2160–U+217F，常见于「方案Ⅰ/方案Ⅱ」「（Ⅰ）（Ⅱ）」）
 % 与字母式符号 ℃ ℉ №（U+2100–U+214F，常见于「温度/℃」轴标签）也不在默认 CJK
 % 范围内，同样会被静默丢弃。三个区间一次划清，避免逐轮踩坑。
-% 注：现有 12 份数学卷源码里，圈数字用了 293 次（遍布 11 份），本行主要是在为它兜底；
-%     后两个区间目前没有用到，属前瞻性预留。
+% 注：现有 17 份数学卷源码里，圈数字在正文（不含 % 注释）里用了 385 次、遍布 16 份
+%     （只有高一06 一份没用），本行主要是在为它兜底；后两个区间目前一份都没用到，属前瞻性预留。
 \xeCJKDeclareCharClass{CJK}{"2460 -> "24FF, "2160 -> "217F, "2100 -> "214F}
 
 % 中文标点
 \AtBeginDocument{\xeCJKsetup{CJKecglue={\hskip 0.15em plus 0.05em}}}
 
 % 试卷版/答案版控制
-% 用法 1（命令行）：xelatex -D answer yanan.tex
+% 用法 1（命令行，本仓库 Makefile 的 ans / one 目标走的就是这条）：
+%        xelatex "\def\isanswer{1}\input{高一06_延安中学_周末作业1.tex}"
 % 用法 2（源码顶部）：\def\isanswer{1}  然后再 \input 主文件
 \newif\ifanswer
 \answerfalse
