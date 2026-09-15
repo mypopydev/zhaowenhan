@@ -20,6 +20,7 @@
 #   make check              校验：试卷版/紧凑版不含答案，且紧凑版正文与试卷版一致
 #   make list               查看页数统计
 #   make trace              生成「题目溯源」报告（溯源.tex → ../溯源/题目溯源.pdf）
+#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（21 份 / 46 页）
 #   make clean              清理 LaTeX 临时文件
 #   make distclean          清理临时文件与中间 PDF
 #   make help               显示本帮助
@@ -51,7 +52,7 @@ TEX       := $(sort $(wildcard 高一*.tex))
 # 写成单行是为了让 shell 所见与 make 展开一致（多行续行在变量里会被折叠）。
 FONTCHK = miss=$$(grep -a 'Missing character' "$$LF.log" 2>/dev/null | sed 's/.*There is no //; s/ in font.*//' | sort -u | tr '\n' ' '); if [ -n "$$miss" ]; then printf '❌ %s 有字符没字形（PDF 里已静默消失）：%s\n' "$$LF" "$$miss"; printf '   处理：把该字符划入 CJK 字符类（见 common.sty 的 xeCJKDeclareCharClass）\n'; exit 1; fi
 
-.PHONY: all test ans compact one one-c check trace list clean distclean help
+.PHONY: all test ans compact one one-c check trace bundle list clean distclean help
 
 all: test ans
 
@@ -146,6 +147,14 @@ trace: 溯源.pdf
 	  "$$(grep -ac 'Missing character' 溯源.log)" \
 	  "$$(grep -ac 'Overfull .hbox' 溯源.log)" \
 	  "$$($(PDFINFO) 溯源.pdf | awk '/^Pages/{print $$2}')"
+
+# ===== 合订打印本（独立一条链，不进 all：理由同 trace）=====
+# 把 ../试卷紧凑/ 下的成品按文件名序合成一份 46 页的 PDF 便于打印。
+# 目标写成 phony：合并只需不到一秒，每次重跑比维护依赖更稳妥（不会有陈旧产物）。
+bundle:
+	@test -n "$(sort $(wildcard $(DEST_COMPACT)/*_试卷.pdf))" \
+	  || { echo "❌ $(DEST_COMPACT)/ 里还没有成品，先跑 make compact"; exit 1; }
+	@python3 $(TOOLS)/合并试卷.py
 
 list:
 	@for f in "$(DEST_TEST)"/*_试卷.pdf; do \
