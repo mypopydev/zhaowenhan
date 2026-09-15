@@ -72,7 +72,9 @@
 \ifanswer
 \solbegin
 \step{对于①，因为 $t\in M$，设 $t=a+\sqrt{3}b,\,a,b\in Q$，所以 $\sqrt{3}t=\sqrt{3}(a+\sqrt{3}b)=\sqrt{3}a+3\sqrt{3}b$，不妨取 $a=2,\,b=0$，则 $2\in M$，而 $\sqrt{6}\in\{x\mid x=\sqrt{3}t,\,t\in Q\}$，显然 $\sqrt{6}\notin M$，所以①与集合 $M$ 不相等；}
-\step{对于②，令 $t=a+\sqrt{3}b,\,a,b\in Q$，则 $t^2=(a+\sqrt{3}b)^2=a^2+3b^2+2\sqrt{3}ab$，显然 $-1+\sqrt{3}\in M$，但 $-1+\sqrt{3}\in\{x\mid x=t^2,\,t\in M\}$，即②与集合 $M$ 不相等；}
+% 注：原卷此句作「但 $-1+\sqrt{3}\notin\{x\mid x=t^2,\,t\in M\}$」；本稿曾把 $\notin$ 抄成 $\in$
+%     （那样②反而与 $M$ 相等，与后半句「②与集合 $M$ 不相等」自相矛盾），2026-09-15 回原图核对时已订正。
+\step{对于②，令 $t=a+\sqrt{3}b,\,a,b\in Q$，则 $t^2=(a+\sqrt{3}b)^2=a^2+3b^2+2\sqrt{3}ab$，显然 $-1+\sqrt{3}\in M$，但 $-1+\sqrt{3}\notin\{x\mid x=t^2,\,t\in M\}$，即②与集合 $M$ 不相等；}
 \step{对于③，当 $x_1=a+\sqrt{3}b,\,x_2=-a-\sqrt{3}b,\,a,b\in Q$ 时，此时 $x=x_1+x_2=0$，即 $0\in\{x\mid x=x_1+x_2,\,x_1\in M,\,x_2\in M\}$，而集合 $M$ 中不包含元素 $0$，所以③与集合 $M$ 不相等；}
 \step{对于④，令 $x_1=a_1+\sqrt{3}b_1\,(a_1,b_1\in Q,x_1\neq 0),\,x_2=a_2+\sqrt{3}b_2\,(a_2,b_2\in Q,x_2\neq 0)$，则 $x=x_1x_2=(a_1a_2+3b_1b_2)+\sqrt{3}(a_1b_2+a_2b_1)$，其中 $a_1a_2+3b_1b_2,\,a_1b_2+a_2b_1\in Q,\,x\neq 0$，所以④与集合 $M$ 相等；}
 \step{故与集合 $M$ 相等的集合序号是④.}
@@ -102,7 +104,9 @@
 \solend
 
 \fi
-\item 高一（13）班的同学发现对于一个有限集 $A$，一般都可以找到两个非空数集 $A_1$ 和 $A_2$，满足 $A_1\cap A_2=\varnothing$，且 $A_1\cup A_2=A$，记集合 $\{A_1,A_2\}$ 为 $A$ 的一个“划分集”. 若 $A$ 中有 $n\,(n\geqslant 2,\,n\in\mathbb{N}^*)$ 个元素，则不同的“划分集”共有 \blankline 个（用含 $n$ 的表达式填空）.
+% 注：原卷此句作「高一的同学发现……」（「高一」与「的」之间只有常规字距，逐字放大后无班号）；
+%     本稿曾写成「高一（13）班的同学发现」，2026-09-15 回原图核对时按原卷删去「（13）班」。
+\item 高一的同学发现对于一个有限集 $A$，一般都可以找到两个非空数集 $A_1$ 和 $A_2$，满足 $A_1\cap A_2=\varnothing$，且 $A_1\cup A_2=A$，记集合 $\{A_1,A_2\}$ 为 $A$ 的一个“划分集”. 若 $A$ 中有 $n\,(n\geqslant 2,\,n\in\mathbb{N}^*)$ 个元素，则不同的“划分集”共有 \blankline 个（用含 $n$ 的表达式填空）.
 
 \ans{$2^{n-1}-1$}
 
@@ -147,7 +151,14 @@ A. $1$\qquad B. $-1$\qquad C. $0$\qquad D. $2$
 
 \fi
 
+% 注：原卷此题印有一个韦恩图（矩形全集 $U$，内含相交的椭圆 $A$ 与椭圆 $B$，阴影为 $A\cup B$ 之外）；
+%     本稿此前漏排此图而题干仍作「如图」，2026-09-15 回原图核对时按原卷截图补入。
 \item 如图，已知全集 $U=\R$，集合 $A=\{x\mid (2x-3)(x+1)\leqslant 0\}$，$B=\{x\mid x>0\}$，则图中阴影部分表示的集合为（\quad）.
+
+\begin{center}
+% 插图取自原卷截图（裁去截图残影后 4× LANCZOS 放大），不用 TikZ 手绘
+\includegraphics[width=0.38\textwidth]{figures/venn_U_minus_AB.png}
+\end{center}
 
 A. $\{x\mid x\leqslant -1\}$\qquad B. $\{x\mid x<-1\}$\qquad C. $\left\{x\,\middle|\,x\leqslant 0\text{ 或 }x>\dfrac{3}{2}\right\}$\hspace{2em minus 0.2em}D. $\left\{x\,\middle|\,x<0\text{ 或 }x>\dfrac{3}{2}\right\}$
 
