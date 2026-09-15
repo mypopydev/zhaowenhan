@@ -14,7 +14,11 @@
 \begin{enumerate}
 \setcounter{enumi}{2}
 
-\item 用列举法表示集合 $A=\left\{y\,\middle|\,y=\dfrac{12}{3-x},\,x\in\mathbb{N},\,x\in\mathbb{Z}\right\}=$ \blankline[2em].
+% 注：本行照原卷录入——原卷作「$y=\dfrac{12}{3-x}\in N,\,x\in Z$」，即「$y=\frac{12}{3-x}$ 是自然数、$x$ 是整数」；
+%     本稿曾误写成「$x\in\mathbb{N},\,x\in\mathbb{Z}$」（把 $\in\mathbb{N}$ 挂到了 $x$ 上），
+%     那样只能得到 $\{4,6,12\}$，与本卷给的答案 $\{1,2,3,4,6,12\}$ 冲突。
+%     2026-09-15 回原图核对时已按原卷订正。
+\item 用列举法表示集合 $A=\left\{y\,\middle|\,y=\dfrac{12}{3-x}\in\mathbb{N},\,x\in\mathbb{Z}\right\}=$ \blankline[2em].
 
 \ans{$\{1,2,3,4,6,12\}$}
 
@@ -37,11 +41,17 @@
 
 \item 如果集合 $A=\{x\mid y=x^2,\,x\in\R\}$，$B=\{y\mid y=x^2,\,x\in\R\}$，则集合 $A$ 与 $B$ 的关系是 \blankline[2em].
 
-\ans{$B\subsetneq A$}
+% 注：本行答案照原卷作「$B\subset A$」（原卷的 $\subset$ 不带下划线，语义即真包含，与 $\subsetneq$ 等价）；
+%     本稿原写作 $\subsetneq$，2026-09-15 回原图核对时按原卷记号改回 $\subset$。
+\ans{$B\subset A$}
 
+% 注：本题答案照原卷作「$A\subset B$」（原卷此处的 $\subset$ 不带下划线，即真包含）——
+%     $A=\left\{\frac{m}{6}\,\middle|\,m\text{ 为奇数}\right\}$、$B=\left\{\frac{m}{6}\,\middle|\,m\in\Z\right\}$，确是 $A\subsetneq B$。
+%     本稿曾误抄成「$A\supsetneq B$（或 $A=B$ 之等价条件）」——方向与结论都反了，
+%     2026-09-15 回原图核对时已按原卷订正。
 \item 已知 $A=\left\{x\,\middle|\,x=\dfrac{k}{3}-\dfrac{1}{2},\,k\in\Z\right\}$，$B=\left\{x\,\middle|\,x=\dfrac{k}{6}+\dfrac{2}{3},\,k\in\Z\right\}$，则集合 $A$ 与 $B$ 的关系是 \blankline[2em].
 
-\ans{$A\supsetneq B$（或 $A=B$ 之等价条件）}
+\ans{$A\subset B$}
 
 \item 若非空集合 $\{x\mid m\leqslant x\leqslant 2m-\sqrt{m}\}$ 不存在非空真子集，则 $m$ 的取值集合为 \blankline[2em].
 
@@ -117,7 +127,9 @@ A. $15$ 个\qquad B. $16$ 个\qquad C. $31$ 个\qquad D. $32$ 个
 \item 已知集合 $A=\{x\mid -1<x<6\}$，$B=\{x\mid -m<x<2m+1\}$，其中 $m$ 为实常数.
 \begin{enumerate}[label=(\arabic*)]
 \item 若 $B\subseteq A$，求实数 $m$ 的取值范围；
-\item 若 $m>3$，求证：$A\subseteq B$.
+% 注：本小问原卷作「求证：$A\subset B$」（不带下划线，即真包含），本稿原写作 $\subseteq$，
+%     2026-09-15 回原图核对时按原卷记号订正。
+\item 若 $m>3$，求证：$A\subset B$.
 \end{enumerate}
 
 \ans{（1）$m\leqslant 1$；（2）略}
