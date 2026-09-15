@@ -35,8 +35,8 @@
 \DeclareOption{test}{\answerfalse}
 % 紧凑版开关（第三版输出）：\def\iscompact{1} 时试卷版不再输出解答题作答区。
 %   · 只影响 \ansspace（硬/软两版都归零）——题面、题号、插图、副标题一字不动；
-%   · \ansneed（压轴题前的换页保护）**保留**：实测它反而让全书更短
-%     （不换页时压轴题从页底开始、内容溢出到下一页，白费一页）；
+%   · \ansneed（压轴题前的换页保护）在紧凑模式下**也不生效**：实测保留它 19 份合计 46 页、
+%     去掉则 42 页——紧凑版以「最短」为目标，代价是压轴题可能被跨页切开（试卷版不受影响）；
 %   · 答案版本来就没有作答区，故不受影响、也不需要紧凑版。
 \newif\ifcompact
 \compactfalse
@@ -173,7 +173,7 @@
 % 若正好落在页底会被整段丢掉。先量一下 \pagegoal-\pagetotal，不够就换页。
 % 答案版不做此调整，以免改变已定稿答案稿的分页。
 \newcommand{\ansneed}[1]{%
-  \ifanswer\else
+  \ifanswer\else\ifcompact\else
   \par
   \begingroup
     \dimen@=#1\relax
@@ -183,7 +183,7 @@
     \fi
   \endgroup
   \par
-  \fi
+  \fi\fi
 }
 
 % ===== 数学常用符号快捷命令 =====

@@ -55,13 +55,13 @@
 
 | 系列 | 学校 | 作业 | 页数 试卷/紧凑/答案 | 原图 | 原文 |
 |------|------|------|:---:|:---:|------|
-| 高一02 | 大同中学 | 集合综合练习 | 3 / 3 / 8 | 8 | [链接](https://mp.weixin.qq.com/s/NvdeYz6-8KgQfImrs40L_Q) |
+| 高一02 | 大同中学 | 集合综合练习 | 3 / 2 / 8 | 8 | [链接](https://mp.weixin.qq.com/s/NvdeYz6-8KgQfImrs40L_Q) |
 | 高一03 | 格致中学 | 周末作业1 | 3 / 2 / 5 | 6 | [链接](https://mp.weixin.qq.com/s/fLqIJLEGpTq0-I5CoLrd_g) |
-| 高一04 | 位育中学 | 周末作业1 | 2 / 3 / 3 | 3 | [链接](https://mp.weixin.qq.com/s/sTXEEcN_lpv5jmpGgmfMVQ) |
+| 高一04 | 位育中学 | 周末作业1 | 2 / 2 / 3 | 3 | [链接](https://mp.weixin.qq.com/s/sTXEEcN_lpv5jmpGgmfMVQ) |
 | 高一05 | 七宝中学 | 周末作业9.5 | 4 / 2 / 7 | 9 | [链接](https://mp.weixin.qq.com/s/UY9w_gk3iw9gyu0GRXbE3A) |
-| 高一06 | 延安中学 | 周末作业1 | 2 / 2 / 3 | 4 | [链接](https://mp.weixin.qq.com/s/cnFq_79rKIUShDp0SzWEkw) |
+| 高一06 | 延安中学 | 周末作业1 | 2 / 1 / 3 | 4 | [链接](https://mp.weixin.qq.com/s/cnFq_79rKIUShDp0SzWEkw) |
 | 高一07 | 交附闵行 | 周练1 | 4 / 3 / 10 | 11 | [链接](https://mp.weixin.qq.com/s/jfnfEjbjjJy8Uw48nMQB1A) |
-| 高一08 | 七宝中学 | 周末作业1 | 4 / 3 / 9 | 9 | [链接](https://mp.weixin.qq.com/s/eojQb4OGTGHJyrnP3_3mww) |
+| 高一08 | 七宝中学 | 周末作业1 | 4 / 2 / 9 | 9 | [链接](https://mp.weixin.qq.com/s/eojQb4OGTGHJyrnP3_3mww) |
 | 高一09 | 进才中学 | 周末作业1 | 4 / 3 / 7 | 8 | [链接](https://mp.weixin.qq.com/s/65D0HFe1t_SzD3S1PGfyLg) |
 | 高一10 | 复附浦东 | 周末作业1 | 4 / 2 / 8 | 9 | [链接](https://mp.weixin.qq.com/s/MpB1b9nqJ3_NbSjNsocCTA) |
 | 高一11 | 复附浦东 | 周末作业2 | 4 / 2 / 7 | 7 | [链接](https://mp.weixin.qq.com/s/776AZF8AkckVhkXBAWgsfg) |
@@ -718,12 +718,12 @@ PDF 里直接消失，不留空白、也不报错。所以 `make test` / `make a
   留白只在**试卷版**输出，答案版不输出作答题区。
 - **紧凑试卷版**（`试卷紧凑/`）：**只去掉解答题后的作答题区**，其余与试卷版逐字一致
   （题面、题号、选项、插图、副标题、填空横线一概不动）。做法是 `common.sty` 里的第三个开关
-  `\def\iscompact{1}`——只让 `\ansspace` 归零，**压轴题前的换页保护 `\ansneed` 保留**：
-  后者实测会让总页数从 42 涨到 **46 页**（多 4 页），换来的是压轴题不被跨页切开，故取它。
-  19 份合计 **66 → 46 页**（省 20 页，30%）。答案版本来就没有作答区，故不另出紧凑版。
+  `\def\iscompact{1}`——`\ansspace` 与 `\ansneed` 在紧凑模式下都不生效（后者是压轴题前的
+  换页保护：**保留它 19 份合计 46 页、失效则 42 页**，紧凑版取最短的那一档；代价是压轴题可能
+  被跨页切开，试卷版不受影响）。19 份合计 **66 → 42 页**（省 24 页，36%），
+  **每一份都变短或持平**（如 高一05 4→2、高一06 2→1、高一07 4→3）。
+  答案版本来就没有作答区，故不另出紧凑版。
   校验方式见上面的 `make check`（`工具/正文指纹.py` 比对正文多重集 + 无答案泄漏）。
-  **注**：去掉作答区后分页会变，个别卷反而多一页（如 高一04 2→3 页）——作答区的硬支撑盒
-  原本起着「防止题目被切在页底」的作用。
   高一06 原卷只在部分题目下给【解析】（第 3、4、7 题只有【答案】），本稿按原卷把它的解析统一
   收在文末「参考答案」块里，故未逐题切成行内分步。
 - **排版告警已清零**：19 份三版（共 57 次编译）的 `Overfull`/`Underfull \hbox` 全为 0，也没有
