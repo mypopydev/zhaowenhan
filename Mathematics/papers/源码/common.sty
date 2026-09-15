@@ -72,6 +72,12 @@
   \par
 }
 
+% \keepwithprev{dim}：禁止在「上一段与本段之间」分页。
+% 用在**选择题的选项段**之前——不让 A/B/C/D 与题干分家（高一07 第 16 题原来就分家了：
+% 题干在页末、四个选项整页翻过去）。真放不下时 TeX 会把题干连选项一起挪到次页；
+% 三版都生效（答案版同样受益，且不影响答案与解析的排布）。
+\newcommand{\keepwithprev}{\nopagebreak[4]}
+
 % 大节标题（一、/二、/三、）
 \newcommand{\bigsec}[1]{%
   \needvspace{3\baselineskip}%
