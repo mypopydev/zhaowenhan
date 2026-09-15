@@ -33,9 +33,18 @@
 \answerfalse
 \DeclareOption{answer}{\answertrue}
 \DeclareOption{test}{\answerfalse}
+% 紧凑版开关（第三版输出）：\def\iscompact{1} 时试卷版不再输出解答题作答区。
+%   · 只影响 \ansspace（硬/软两版都归零）——题面、题号、插图、副标题一字不动；
+%   · \ansneed（压轴题前的换页保护）**保留**：实测它反而让全书更短
+%     （不换页时压轴题从页底开始、内容溢出到下一页，白费一页）；
+%   · 答案版本来就没有作答区，故不受影响、也不需要紧凑版。
+\newif\ifcompact
+\compactfalse
+\DeclareOption{compact}{\compacttrue}
 \ExecuteOptions{test}
 \ProcessOptions\relax
 \ifdefined\isanswer\answertrue\fi
+\ifdefined\iscompact\compacttrue\fi
 
 % 填空横线
 \newcommand{\blankline}[1][3em]{\underline{\hspace{#1}}}
@@ -135,7 +144,7 @@
   \vspace{\ansspace@skip}%
 }
 \newcommand{\ansspace@hard}[1][4]{%
-  \ifanswer\else
+  \ifanswer\else\ifcompact\else
     \par\vspace{0.5em}%
     \begingroup
       \baselineskip=1.2cm
@@ -147,17 +156,17 @@
       \noindent\rule{0pt}{0.92\baselineskip}\par
       \ifnum\ansspace@n>0 \ansspace@glue\fi
     \endgroup
-  \fi
+  \fi\fi
 }
 \newcommand{\ansspace@soft}[1][4]{%
-  \ifanswer\else
+  \ifanswer\else\ifcompact\else
     \par\vspace{0.5em}%
     \begingroup
       \baselineskip=1.2cm
       \ansspace@n=#1\relax
       \ansspace@glue
     \endgroup
-  \fi
+  \fi\fi
 }
 % \ansneed{dim}：若本页剩余高度不足 dim，就先另起一页（仅试卷版生效）。
 % 只用在每份卷子的压轴题之前：压轴题往往最需要版面，而它的作答区是“可丢弃胶水”，

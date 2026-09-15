@@ -33,6 +33,7 @@
 | 目录 | 内容 |
 |------|------|
 | `试卷/` | 试卷版 PDF，**仅题目、填空横线与解答题作答题区，不含任何答案**（19 份） |
+| `试卷紧凑/` | **紧凑试卷版** PDF，与 `试卷/` 同名同内容，只去掉解答题作答题区（19 份） |
 | `答案/` | 答案版 PDF，题目 + 行内【答案】+ 逐题【解析】（19 份；高一06 是唯一把解析集中在文末「参考答案」块的一份） |
 | `源码/` | LaTeX 源码（19 份 `.tex` + 共享样式 `common.sty` + `Makefile`） |
 | `工具/` | 题目溯源的脚本 `题目溯源.py`（用法与判据见文件头注释；中间结果写系统临时目录） |
@@ -52,29 +53,29 @@
   `高一b` 是同一内容的拍照卷（带「（补）」，保留作原件转录本）。两份源码/PDF 内容一字不差，
   只有卷面标题差「（补）」二字——详情见下表后的引注，对照关系见「材料流转」。
 
-| 系列 | 学校 | 作业 | 页数 试卷/答案 | 原图 | 原文 |
+| 系列 | 学校 | 作业 | 页数 试卷/紧凑/答案 | 原图 | 原文 |
 |------|------|------|:---:|:---:|------|
-| 高一02 | 大同中学 | 集合综合练习 | 3 / 8 | 8 | [链接](https://mp.weixin.qq.com/s/NvdeYz6-8KgQfImrs40L_Q) |
-| 高一03 | 格致中学 | 周末作业1 | 3 / 5 | 6 | [链接](https://mp.weixin.qq.com/s/fLqIJLEGpTq0-I5CoLrd_g) |
-| 高一04 | 位育中学 | 周末作业1 | 2 / 3 | 3 | [链接](https://mp.weixin.qq.com/s/sTXEEcN_lpv5jmpGgmfMVQ) |
-| 高一05 | 七宝中学 | 周末作业9.5 | 4 / 7 | 9 | [链接](https://mp.weixin.qq.com/s/UY9w_gk3iw9gyu0GRXbE3A) |
-| 高一06 | 延安中学 | 周末作业1 | 2 / 3 | 4 | [链接](https://mp.weixin.qq.com/s/cnFq_79rKIUShDp0SzWEkw) |
-| 高一07 | 交附闵行 | 周练1 | 4 / 10 | 11 | [链接](https://mp.weixin.qq.com/s/jfnfEjbjjJy8Uw48nMQB1A) |
-| 高一08 | 七宝中学 | 周末作业1 | 4 / 9 | 9 | [链接](https://mp.weixin.qq.com/s/eojQb4OGTGHJyrnP3_3mww) |
-| 高一09 | 进才中学 | 周末作业1 | 4 / 7 | 8 | [链接](https://mp.weixin.qq.com/s/65D0HFe1t_SzD3S1PGfyLg) |
-| 高一10 | 复附浦东 | 周末作业1 | 4 / 8 | 9 | [链接](https://mp.weixin.qq.com/s/MpB1b9nqJ3_NbSjNsocCTA) |
-| 高一11 | 复附浦东 | 周末作业2 | 4 / 7 | 7 | [链接](https://mp.weixin.qq.com/s/776AZF8AkckVhkXBAWgsfg) |
-| 高一12 | 交附闵行 | 周末作业9.11 | 4 / 9 | 11 | [链接](https://mp.weixin.qq.com/s/A0Lp5-gPWL-Y7b-lwM29Rg) |
-| 高一13 | 格致中学 | 周末作业2 | 3 / 6 | 7 | [链接](https://mp.weixin.qq.com/s/GcU0DDwonIGn8iVGwVRmpg) |
-| 高一14 | 华师大二附中 | 集合与逻辑单元练习 | 4 / 6 | 6 | [链接](https://mp.weixin.qq.com/s/TFZBptFACHRBw8QJxvVzpQ) |
-| 高一15 | 七宝中学 | 抱孩子练习9.8 | 3 / 5 | 7 | [链接](https://mp.weixin.qq.com/s/zSbB909v05eQrF3O5k4wbA) |
-| 高一16 | 大同中学 | 第二周周末练习1 | 4 / 8 | 4 | [链接](https://mp.weixin.qq.com/s/xHHpfaq-zxbKkmhA5AVBnA)（同一份作业的公众号原文，略去填空 1、2 题；正文取自拍照卷） |
-| 高一17 | 七宝中学 | 周末作业2 | 4 / 8 | 10 | [链接](https://mp.weixin.qq.com/s/hh8dfUg2m_LN7MlGkBTsAQ) |
-| 高一a | 大同中学 | 周中小练习1 | 3 / 7 | 4 | 家长拍摄的学生作业照片（**原卷未印校名**，判为大同——见「材料流转」的旁证） |
-| 高一b | 大同中学 | 第二周周末练习1 | 4 / 8 | 4 | 家长拍摄的学生作业照片（正文与 高一16 完全相同） |
-| 高一c | 大同中学 | 第二周周末练习2 | 3 / 9 | 4 | 家长拍摄的学生作业照片 |
+| 高一02 | 大同中学 | 集合综合练习 | 3 / 3 / 8 | 8 | [链接](https://mp.weixin.qq.com/s/NvdeYz6-8KgQfImrs40L_Q) |
+| 高一03 | 格致中学 | 周末作业1 | 3 / 2 / 5 | 6 | [链接](https://mp.weixin.qq.com/s/fLqIJLEGpTq0-I5CoLrd_g) |
+| 高一04 | 位育中学 | 周末作业1 | 2 / 3 / 3 | 3 | [链接](https://mp.weixin.qq.com/s/sTXEEcN_lpv5jmpGgmfMVQ) |
+| 高一05 | 七宝中学 | 周末作业9.5 | 4 / 2 / 7 | 9 | [链接](https://mp.weixin.qq.com/s/UY9w_gk3iw9gyu0GRXbE3A) |
+| 高一06 | 延安中学 | 周末作业1 | 2 / 2 / 3 | 4 | [链接](https://mp.weixin.qq.com/s/cnFq_79rKIUShDp0SzWEkw) |
+| 高一07 | 交附闵行 | 周练1 | 4 / 3 / 10 | 11 | [链接](https://mp.weixin.qq.com/s/jfnfEjbjjJy8Uw48nMQB1A) |
+| 高一08 | 七宝中学 | 周末作业1 | 4 / 3 / 9 | 9 | [链接](https://mp.weixin.qq.com/s/eojQb4OGTGHJyrnP3_3mww) |
+| 高一09 | 进才中学 | 周末作业1 | 4 / 3 / 7 | 8 | [链接](https://mp.weixin.qq.com/s/65D0HFe1t_SzD3S1PGfyLg) |
+| 高一10 | 复附浦东 | 周末作业1 | 4 / 2 / 8 | 9 | [链接](https://mp.weixin.qq.com/s/MpB1b9nqJ3_NbSjNsocCTA) |
+| 高一11 | 复附浦东 | 周末作业2 | 4 / 2 / 7 | 7 | [链接](https://mp.weixin.qq.com/s/776AZF8AkckVhkXBAWgsfg) |
+| 高一12 | 交附闵行 | 周末作业9.11 | 4 / 3 / 9 | 11 | [链接](https://mp.weixin.qq.com/s/A0Lp5-gPWL-Y7b-lwM29Rg) |
+| 高一13 | 格致中学 | 周末作业2 | 3 / 2 / 6 | 7 | [链接](https://mp.weixin.qq.com/s/GcU0DDwonIGn8iVGwVRmpg) |
+| 高一14 | 华师大二附中 | 集合与逻辑单元练习 | 4 / 3 / 6 | 6 | [链接](https://mp.weixin.qq.com/s/TFZBptFACHRBw8QJxvVzpQ) |
+| 高一15 | 七宝中学 | 抱孩子练习9.8 | 3 / 2 / 5 | 7 | [链接](https://mp.weixin.qq.com/s/zSbB909v05eQrF3O5k4wbA) |
+| 高一16 | 大同中学 | 第二周周末练习1 | 4 / 2 / 8 | 4 | [链接](https://mp.weixin.qq.com/s/xHHpfaq-zxbKkmhA5AVBnA)（同一份作业的公众号原文，略去填空 1、2 题；正文取自拍照卷） |
+| 高一17 | 七宝中学 | 周末作业2 | 4 / 3 / 8 | 10 | [链接](https://mp.weixin.qq.com/s/hh8dfUg2m_LN7MlGkBTsAQ) |
+| 高一a | 大同中学 | 周中小练习1 | 3 / 2 / 7 | 4 | 家长拍摄的学生作业照片（**原卷未印校名**，判为大同——见「材料流转」的旁证） |
+| 高一b | 大同中学 | 第二周周末练习1 | 4 / 2 / 8 | 4 | 家长拍摄的学生作业照片（正文与 高一16 完全相同） |
+| 高一c | 大同中学 | 第二周周末练习2 | 3 / 2 / 9 | 4 | 家长拍摄的学生作业照片 |
 
-合计 38 份 PDF、131 张原图（`高一16` 的 4 张是 `高一b` 同一组照片的副本）。答案版比试卷版
+合计 **57 份 PDF**（试卷 19 + 紧凑 19 + 答案 19）、131 张原图（`高一16` 的 4 张是 `高一b` 同一组照片的副本）。答案版比试卷版
 多出的篇幅，主要用于把解析排成分步版式（见下）。
 
 > **`高一16` 与 `高一b`**：连载 16 的公众号原文（6 张图）与拍照卷 `高一b` 经逐题核对是**同一份
@@ -645,15 +646,19 @@ make            # 编译全部：试卷版 -> ../试卷/，答案版 -> ../答�
 make test       # 只编试卷版
 make ans        # 只编答案版
 make one F=高一02_大同中学_集合综合练习    # 只编某一套
-make check      # 校验试卷版确实不含答案（逐份文本比对）
-make list       # 查看页数统计
+make compact    # 编译全部**紧凑试卷版** -> ../试卷紧凑/（去掉解答题作答区）
+make one-c F=高一02_大同中学_集合综合练习   # 只编某一套的紧凑版
+make check      # 校验：试卷版/紧凑版不含答案，且紧凑版正文与试卷版逐字一致
+make list       # 查看页数统计（试卷 / 紧凑 / 答案 三档）
 make clean      # 清理 LaTeX 临时文件
 make distclean  # 清理临时文件与中间 PDF（成品不动）
 make help       # 显示上面这份说明
 ```
 
 需 `xelatex`（TeX Live / MacTeX 均可）、`pdfinfo` 与 `pdftotext`（poppler）。
-`make check` 会抽取两版 PDF 的文本，确认试卷版中【答案】【解析】标记数为 0、答案版大于 0。
+`make check` 会抽取三版 PDF 的文本，确认试卷版与紧凑版中【答案】【解析】标记数均为 0、
+答案版大于 0，并**逐份比对「紧凑版 vs 试卷版」的正文**（忽略换行与页码的字符多重集必须相同，
+即紧凑版只少了作答区、一个字都没少）。
 
 **编译时附带缺字检查。** `xelatex` 遇到字体里没有的字形时，只往日志写一行
 `Missing character: There is no ★ (U+2605) in font …` 就继续编译，该字符被**静默丢弃**——
@@ -711,10 +716,17 @@ PDF 里直接消失，不留空白、也不报错。所以 `make test` / `make a
 - **解答题作答题区**：OCR 重排会丢掉原卷给解答题留的书写空间，故由 `\ansspace[n]` 按题量
   重新留白（2 小问约 5–6 行、3 小问约 7–8 行、含证明/压轴 8–10 行、5 小问 10–12 行，行高 1.2cm）。
   留白只在**试卷版**输出，答案版不输出作答题区。
-- **答案版排版**：解析统一改成分步版式（详见上节），因此答案版页数比试卷版多。
+- **紧凑试卷版**（`试卷紧凑/`）：**只去掉解答题后的作答题区**，其余与试卷版逐字一致
+  （题面、题号、选项、插图、副标题、填空横线一概不动）。做法是 `common.sty` 里的第三个开关
+  `\def\iscompact{1}`——只让 `\ansspace` 归零，**压轴题前的换页保护 `\ansneed` 保留**：
+  后者实测会让总页数从 42 涨到 **46 页**（多 4 页），换来的是压轴题不被跨页切开，故取它。
+  19 份合计 **66 → 46 页**（省 20 页，30%）。答案版本来就没有作答区，故不另出紧凑版。
+  校验方式见上面的 `make check`（`工具/正文指纹.py` 比对正文多重集 + 无答案泄漏）。
+  **注**：去掉作答区后分页会变，个别卷反而多一页（如 高一04 2→3 页）——作答区的硬支撑盒
+  原本起着「防止题目被切在页底」的作用。
   高一06 原卷只在部分题目下给【解析】（第 3、4、7 题只有【答案】），本稿按原卷把它的解析统一
   收在文末「参考答案」块里，故未逐题切成行内分步。
-- **排版告警已清零**：19 份两版（共 38 次编译）的 `Overfull`/`Underfull \hbox` 全为 0，也没有
+- **排版告警已清零**：19 份三版（共 57 次编译）的 `Overfull`/`Underfull \hbox` 全为 0，也没有
   `Missing character`。此前累计 8 处，成因与处置如下（行号是当时的源码行）：
 
   | 位置 | 幅度 | 成因 | 处置 |
