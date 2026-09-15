@@ -57,13 +57,30 @@
   \end{center}%
 }
 
+% \needvspace{dim}：若本页剩余高度不足 dim，就先另起一页。
+% 节标题靠它避免孤零零落在页末——试卷版里作答区是可丢弃胶水，挡不住标题落页底，
+% 故**三版都加这道守卫**（只影响分页，不动一个字）。
+\newcommand{\needvspace}[1]{%
+  \par
+  \begingroup
+    \dimen@=#1\relax
+    \ifdim\pagegoal<\maxdimen
+      \advance\dimen@ by \pagetotal
+      \ifdim\dimen@>\pagegoal \newpage \fi
+    \fi
+  \endgroup
+  \par
+}
+
 % 大节标题（一、/二、/三、）
 \newcommand{\bigsec}[1]{%
+  \needvspace{3\baselineskip}%
   \par\vspace{0.5em}\noindent{\zihao{4}\bfseries #1}\par\vspace{0.2em}%
 }
 
 % 子小节
 \newcommand{\smallsec}[1]{%
+  \needvspace{2.5\baselineskip}%
   \par\noindent{\zihao{-4}\bfseries #1}\par\vspace{0.1em}%
 }
 
@@ -168,23 +185,11 @@
     \endgroup
   \fi\fi
 }
-% \ansneed{dim}：若本页剩余高度不足 dim，就先另起一页（仅试卷版生效）。
+% \ansneed{dim}：若本页剩余高度不足 dim，就先另起一页（**仅试卷版、且非紧凑版**生效）。
 % 只用在每份卷子的压轴题之前：压轴题往往最需要版面，而它的作答区是“可丢弃胶水”，
-% 若正好落在页底会被整段丢掉。先量一下 \pagegoal-\pagetotal，不够就换页。
-% 答案版不做此调整，以免改变已定稿答案稿的分页。
-\newcommand{\ansneed}[1]{%
-  \ifanswer\else\ifcompact\else
-  \par
-  \begingroup
-    \dimen@=#1\relax
-    \ifdim\pagegoal<\maxdimen
-      \advance\dimen@ by \pagetotal
-      \ifdim\dimen@>\pagegoal \newpage \fi
-    \fi
-  \endgroup
-  \par
-  \fi\fi
-}
+% 若正好落在页底会被整段丢掉。
+% 答案版不做此调整，以免改变已定稿答案稿的分页（节标题那处守卫是另一回事，三版都在用）。
+\newcommand{\ansneed}[1]{\ifanswer\else\ifcompact\else\needvspace{#1}\fi\fi}
 
 % ===== 数学常用符号快捷命令 =====
 \newcommand{\R}{\mathbb{R}}
