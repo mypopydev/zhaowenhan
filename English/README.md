@@ -7,7 +7,7 @@
 - `mistakes/`   错题条目（按日期或知识点命名）
 - `weakpoints/` 薄弱知识点汇总（从错题提炼）
 - `review/`     复习计划与复盘记录
-- `vocabulary/` 英语单词默写表（LaTeX 重排，按 A–Z 字母分档，中译英 / 英译中题目 197 份 + 答案 196 份，题目与答案分离，见 `vocabulary/Makefile`）
+- `vocabulary/` 英语单词默写表（LaTeX 重排，按 A–Z 字母分档 + `extra/` 早期 A-advanced 专项，中译英 / 英译中题目 197 份 + 答案 197 份，题目与答案分离，见 `vocabulary/Makefile`）
 - `refs/`       参考资料（课程标准等大型 PDF，不入库）
 
 ## 单条错题建议字段

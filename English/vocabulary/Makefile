@@ -5,11 +5,12 @@
 #   L/en2cn_NN.tex        英→中题目
 #   L/ans_zh2en_NN.tex    中→英参考答案
 #   L/ans_en2cn_NN.tex    英→中参考答案
-#   extra/zh2en_01.tex    早期 A-advanced 专项
+#   extra/zh2en_01.tex    早期 A-advanced 专项题目
+#   extra/ans_zh2en_01.tex   早期 A-advanced 专项参考答案
 #
 # 常用命令：
 #   make                 编译题目（197 份）
-#   make ans             编译答案（196 份）
+#   make ans             编译答案（197 份）
 #   make zh2en / en2cn              只编某方向题目
 #   make ans-zh2en / ans-en2cn      只编某方向答案
 #   make letter L=S      只编 S 字母（题目+答案）
@@ -31,7 +32,7 @@ DIRS        := A B C D E F G H I J K L M N O P Q R S T U V W X Y Z extra
 
 ZH_SRC     := $(sort $(wildcard [A-Z]/zh2en_*.tex) $(wildcard extra/zh2en_*.tex))
 E2C_SRC    := $(sort $(wildcard [A-Z]/en2cn_*.tex))
-ANSZH_SRC  := $(sort $(wildcard [A-Z]/ans_zh2en_*.tex))
+ANSZH_SRC  := $(sort $(wildcard [A-Z]/ans_zh2en_*.tex) $(wildcard extra/ans_zh2en_*.tex))
 ANSE2C_SRC := $(sort $(wildcard [A-Z]/ans_en2cn_*.tex))
 ZH_PDF     := $(ZH_SRC:.tex=.pdf)
 E2C_PDF    := $(E2C_SRC:.tex=.pdf)
