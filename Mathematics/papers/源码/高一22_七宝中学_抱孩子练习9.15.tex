@@ -1,0 +1,363 @@
+% 高一22_七宝中学_抱孩子练习9.15.tex
+%   —— 高一上数学「2026-2027 年七宝中学高一上抱孩子练习 9.15」（试卷版/答案版）
+% 试卷版：xelatex 高一22_七宝中学_抱孩子练习9.15.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一22_七宝中学_抱孩子练习9.15.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一22_七宝中学_抱孩子练习9.15.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 22」），
+% 正文为 7 张 PNG 页——第 1、2、4、6 页 4762×6735，第 3、5、7 页 2560×3620
+% （同一篇各页分辨率不同，已逐页核过，非下载缺档）。原文本身就是一份**讲评版**——
+% 题目下方直接印出【答案】或【解析】。试题文字、答案与解析均照原卷录入，未改内容。
+% 卷面上的粉色斜水印「魔都数学加油站」属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年七宝中学高一上抱孩子练习 9.15」——「抱孩子练习」四字
+% 确系原卷所印（已放大 01.png 卷首核对），句末的「9.15」亦印在同一标题行内，本稿一并照录，
+% 未改作「周末作业」；年份区间按全稿惯例排 en dash。本条与 高一15（同校同系列，作「9.8」）
+% 的处理完全相同。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题，末节另印「附加题」，
+%      本稿照原卷分节，只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷填空、选择的答案直接印在题目下方（第 12 题更是把答案「A」直接印在题干末尾的
+%      括号内），本稿统一改为试卷版隐去、答案版以【答案】或【解析】给出（第 11、13 题原卷的
+%      答案写在解析末句「故选 A／C」里），使两版彻底分离；
+%   ④ 原卷的集合符号 $R$、$Z$、$N$ 有正体与粗体两种写法（第 15 题题干的 $\mathbf{N}$ 为粗体，
+%      其解析与第 16(2) 解析的 $N$、$Z$ 为正体），本稿按全稿惯例统一写作 $\R$、$\Z$、$\N$；
+%   ⑤ 原卷填空的横线**一律约两个字宽**（用像素量过，7 处均为 2.0 em），本稿按全稿惯例
+%      统一排 \blankline[4.4em]；
+%   ⑥ 第 13 题解析的 $y_{min}$ 下标原卷为正体，本稿写作 $y_{\min}$；第 19 题的 $card$
+%      原卷作斜体小写，本稿照原卷排 $card$（未改作下划线样式）；
+%   ⑦ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」。
+%
+% 原卷存疑四处（均已放大到能看清字形后核对，无法确证原意，本稿照抄原卷、未改）：
+%   ① 第 8 题【解析】方程组的第三行原卷印「$x_1+x_2=a>0$」——前两行已用过「$x_1+x_2$」，
+%      按两根均为正数的判据此处应为**两根之积** $x_1x_2=a>0$，原卷显系笔误，本稿照抄原卷；
+%   ② 第 15 题**题干的 $B$ 与原卷自己的答案、解析对不上**（本卷唯一一处「题设与答案互相矛盾」，
+%      全稿里也少见）。三处原文分别是——
+%        · 题干：$B=\{(x,y)\mid x=n,\ y=n^2-n+a+1,\ n\in\N\}$（已 4× 放大逐字核对，确系
+%          「$n^2-n+a+1$」——三个项依次是 $n^2$、$-n$、$+a$、$+1$，不是 $a$ 乘括号的形式）；
+%        · (1) 的答案：$\{(0,1),(4,13)\}$；
+%        · (2) 的解析：把 $B$ 改写成 $y=a(x^2-x+1)$，并写「因为 $a$ 为正整数，所以
+%          $3x+1\geqslant x^2-x+1$，解得 $0\leqslant x\leqslant4$」，最后得 $a=1$ 或 $4$。
+%      核对（$A\cap B$ 要求 $x$、$y$ 同时相等，故 $m=n$ 且 $3m+1=m^2-m+a+1$，即 $m^2-4m+a=0$）：
+%        · **按题干原样**：(1) 取 $a=1$ 时 $m^2-4m+1=0$ **无整数解**，$A\cap B$ 应为 $\varnothing$，
+%          与答案 $\{(0,1),(4,13)\}$ 不符；(2) 即为 $a=m(4-m)$，正整数解只有 $3$ 与 $4$，
+%          与「$1$ 或 $4$」也不符（多 3、少 1）——**两处都不合**；
+%        · **若读作 $y=a(n^2-n+1)$**（＝解析里那句 $y=a(x^2-x+1)$）：$a=1$ 时 $3k+1=k^2-k+1
+%          \Rightarrow k=0$ 或 $4$，恰得 $\{(0,1),(4,13)\}$，与 (1) 吻合；而
+%          $a=\dfrac{3x+1}{x^2-x+1}$ 在 $x=0,1,2,3,4$ 时取值 $1,4,\frac73,\frac{10}7,1$，
+%          正整数为 $1$ 或 $4$，与 (2) 吻合——**两处都合**，是唯一能同时解释答案与解析的读法；
+%        · **若读作 $y=n^2-n+a$**：只有 (1) 仍吻合，(2) 会变成 $a=3$ 或 $4$。
+%      即原卷题面那条式子**几乎可断定是 $y=a(n^2-n+1)$ 的误排**，但无法确证；本稿题干、答案、
+%      解析三处一律照抄原卷、未作弥合，只在源码里加注（题干、解析各一处）；
+%   ③ 第 16 题 (3) 的【解析】原卷误标为「（2）」（与 (2) 的答案重号），本稿照抄原卷
+%      （见源码中该处上方注释）；
+%   ④ 第 18 题题干原卷印「已知**实数** $M=\left\{(x,y)\left|\frac{y-3}{x-2}=a+1\right.\right\}$」
+%      ——此处应为「集合」，原卷显系笔误，本稿照抄原卷。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年七宝中学高一上抱孩子练习 9.15}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item “所有的 $a\in A$ 都不满足性质 $P$”的否定形式是 \blankline[4.4em].
+
+\ans{存在 $a\in A$ 满足性质 $P$}
+
+\item 若关于 $x$ 的方程 $m^2x^2+(2m+3)x+1=0$ 有两个互为倒数的根，则实数 $m$ 的值为 \blankline[4.4em].
+
+\ans{$1$}
+
+\item 对于集合 $M$、$N$，定义 $M-N=\{x\mid x\in M\text{ 且 }x\notin N\}$，
+
+$M\oplus N=(M-N)\cup(N-M)$，设 $A=\left\{x\left|x\geqslant-\dfrac94,x\in\R\right.\right\}$，$B=\{x\mid x<0,x\in\R\}$，则 $A\oplus B=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$A-B=\{x\mid x\geqslant0\}$，$B-A=\left\{x\left|x<-\dfrac94\right.\right\}$，}
+\step{所以 $A\oplus B=\left\{x\left|x<-\dfrac94\text{ 或 }x\geqslant0\right.\right\}$.}
+\solend
+
+\fi
+
+\item 若关于 $x$、$y$ 的二元一次方程组 $\begin{cases}mx+9y=m+6\\ x+my=m\end{cases}$ 无解，则实数 $m=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若关于 $x$、$y$ 的二元一次方程组 $\begin{cases}mx+9y=m+6\\ x+my=m\end{cases}$ 无解，}
+\step{则两个方程所代表的直线为平行直线，则 $m^2-9=0$，解得 $m=3$ 或 $m=-3$，}
+\step{经检验 $m=3$，两直线重合；$m=-3$ 时，两直线平行；故 $m=-3$.}
+\solend
+
+\fi
+
+\item 已知 $a,b$ 是方程 $x^2+(m-2)x+1=0$ 的两个根，则 $(1+ma+a^2)(1+mb+b^2)$ 的值为 \blankline[4.4em].
+
+\ans{$4$}
+
+\item 若关于 $x$ 的方程 $x^2+(a-3)x+a=0$ 的两根均为正数，则实数 $a$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为关于 $x$ 的方程 $x^2+(a-3)x+a=0$ 的两根均为正数，}
+% 注：原卷此行印「$x_1+x_2=a>0$」，按两根为正数的判据应为两根之积 $x_1x_2=a>0$，
+%     疑为原卷笔误，但无法确证原意，本稿照抄原卷、未改（详见文件头「原卷存疑」①）。
+\step{所以 $\begin{cases}\Delta=(a-3)^2-4a\geqslant0\\ x_1+x_2=3-a>0\\ x_1+x_2=a>0\end{cases}$，得 $0<a\leqslant1$，则实数 $a$ 的取值范围是 $(0,1]$.}
+\solend
+
+\fi
+
+\item 已知抛物线 $y=x^2-(m+2)x-4m$，在 $x$ 轴上截得线段的长为 $5$，则 $m$ 的值为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设函数与 $x$ 轴的交点的横坐标分别为 $x_1$、$x_2$，}
+\step{由题意得 $x_1+x_2=m+2$，$x_1\cdot x_2=-4m$，因为 $|x_1-x_2|=5$，}
+\step{所以 $(x_1-x_2)^2=(x_1+x_2)^2-4x_1\cdot x_2=(m+2)^2+16m=25$，}
+\step{解得 $m=1$ 或 $m=-21$，检验得均成立. 故 $m$ 的值为 $1$ 或 $-21$.}
+\solend
+
+\fi
+
+\item 方程 $\sqrt[3]{35+x}+\sqrt[3]{26-x}=1$ 的解集为 \blankline[4.4em].
+
+\ans{$\{-99,90\}$}
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item 下面四个条件中，使 $a>b$ 成立的充分而不必要的条件是\mbox{（\quad）}
+
+\keepwithprev
+A. $a>b+1$\qquad B. $a>b-1$\qquad C. $a^2>b^2$\qquad D. $a^3>b^3$
+
+\ans{$A$}
+
+\ifanswer
+\solbegin
+\step{由 $a>b+1>b\Rightarrow a>b$，但 $a>b$ 无法得出 $a>b+1$，$A$ 满足；}
+\step{由 $a>b-1$ 无法得 $a>b$，$B$ 不满足充分性；}
+\step{由 $a^2>b^2$ 无法得出 $a>b$，$C$ 不满足充分性；}
+\step{由 $a^3>b^3\Leftrightarrow a>b$，不满足“不必要”.}
+\step{故选 $A$.}
+\solend
+
+\fi
+
+\item 对于实数 $x$、$y$，命题 $p:x+y\neq4$，命题 $q:x\neq3$ 或 $y\neq1$，则 $p$ 是 $q$ 的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad B. 必要非充分条件
+
+C. 充要条件\qquad D. 既非充分也非必要条件
+
+\ans{$A$}
+
+\item 已知 $a>0$，则 $x_0$ 满足关于 $x$ 的方程 $ax=b$ 的充要条件是\mbox{（\quad）}
+
+\keepwithprev
+A. 存在 $x\in\R,\dfrac12ax^2-bx\geqslant\dfrac12ax_0^2-bx_0$\qquad B. 存在 $x\in\R,\dfrac12ax^2-bx\leqslant\dfrac12ax_0^2-bx_0$
+
+C. 对任意 $x\in\R,\dfrac12ax^2-bx\geqslant\dfrac12ax_0^2-bx_0$\qquad D. 对任意 $x\in\R,\dfrac12ax^2-bx\leqslant\dfrac12ax_0^2-bx_0$
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{由于 $a>0$，令函数 $y=\dfrac12ax^2-bx=\dfrac12a\left(x-\dfrac ba\right)^2-\dfrac{b^2}{2a}$，对应的开口向上，}
+\step{当 $x=\dfrac ba$ 时，取得最小值 $-\dfrac{b^2}{2a}$，而 $x_0$ 满足关于 $x$ 的方程 $ax=b$，那么 $x_0=\dfrac ba$，}
+\step{$y_{\min}=\dfrac12ax_0^2-bx_0=-\dfrac{b^2}{2a}$，}
+\step{那么对于任意的 $x\in\R$，都有 $y=\dfrac12ax^2-bx\geqslant-\dfrac{b^2}{2a}=\dfrac12ax_0^2-bx_0$，故选 $C$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{13}
+
+\item 已知 $\alpha:x<3m-1$ 或 $x>-m$，$\beta:x<2$ 或 $x\geqslant4$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $\alpha$ 是 $\beta$ 的充分条件，求实数 $m$ 的取值范围；
+\item 若 $\alpha$ 是 $\beta$ 的必要条件，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{设 $A=\{x\mid x<3m-1\text{ 或 }x>-m\}$，$B=\{x\mid x<2\text{ 或 }x\geqslant4\}$，}
+\step{因为 $\alpha$ 是 $\beta$ 的充分条件，所以 $A\sub B$，}
+\step{当 $3m-1>-m$ 时，即 $m>\dfrac14$，此时 $A=\R$，不满足题意；}
+\step{当 $3m-1\leqslant-m$ 时，即 $m\leqslant\dfrac14$，有 $\begin{cases}3m-1\leqslant2\\ -m\geqslant4\end{cases}$，解得 $m\leqslant-4$；}
+\step{综上，$m$ 的取值范围为 $(-\infty,-4]$.}
+\stepm{(2)}{因为 $\alpha$ 是 $\beta$ 的必要条件，所以 $B\sub A$，}
+\step{当 $3m-1>-m$ 时，即 $m>\dfrac14$，此时 $A=\R$，$B\sub A$ 成立；}
+\step{当 $3m-1\leqslant-m$ 时，即 $m\leqslant\dfrac14$，有 $\begin{cases}3m-1\geqslant2\\ -m<4\end{cases}$，无解.}
+\step{综上，$m$ 的取值范围为 $\left[\dfrac14,+\infty\right)$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 若 $A=\{(x,y)\mid x=m,y=3m+1,m\in\N\}$，
+
+% 注：本行的 $B$ 与原卷自己的答案、解析对不上（照抄原卷、未改）——
+%     按 $B$ 的这条式子，$A\cap B$ 要在 $m=n$ 时满足 $3m+1=m^2-m+a+1$、即 $m^2-4m+a=0$，
+%     则 (1) 取 $a=1$ 时无整数解（$A\cap B=\varnothing$）、(2) 的正整数解只有 $a=3$ 或 $4$；
+%     而原卷 (1) 的答案作 $\{(0,1),(4,13)\}$、(2) 的解析把 $B$ 改写成 $y=a(x^2-x+1)$ 后得
+%     $a=1$ 或 $4$——把本条读作 $y=a(n^2-n+1)$ 才能同时解释这两处。
+%     已 4× 放大核对，卷面确印「$n^2-n+a+1$」。详见文件头「原卷存疑」②。
+$B=\{(x,y)\mid x=n,y=n^2-n+a+1,n\in\N\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $a=1$ 时，求 $A\cap B$；
+\item 试判断是否存在正整数 $a$，使 $A\cap B\neq\varnothing$？若存在，求出 $a$ 的值，若不存在，请说明理由.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+% 注：本问的答案与下面的 (2) 解析都按 $B=\{(x,y)\mid y=a(x^2-x+1)\}$ 给出，与题干印的
+%     $y=n^2-n+a+1$ 对不上——原卷题设与答案自相矛盾，本稿两处均照抄原卷、未作弥合。
+%     换句话读：把 $x=0,1,2,3,4$ 代进 $a=\dfrac{3x+1}{x^2-x+1}$ 得 $1,4,\frac73,\frac{10}7,1$，
+%     正整数恰是下句结论的 $1$ 或 $4$，这正是「按 $y=a(n^2-n+1)$ 读才对得上」的证据。
+%     详见文件头「原卷存疑」②。
+\stepm{(1)}{$\{(0,1),(4,13)\}$；}
+\stepm{(2)}{由题意得 $A=\{(x,y)\mid y=3x+1,x\in\N\}$，}
+% 注：原卷在这一步把题干定义的 $B$ 改写成 $y=a(x^2-x+1)$——**这一改写与题干的
+%     $y=n^2-n+a+1$ 并不等价**，而本问的答案 $a=1$ 或 $4$ 正是据这条改写式得出的。
+%     照抄原卷、未改（详见文件头「原卷存疑」②与题干处的注）。
+\step{$B=\{(x,y)\mid y=a(x^2-x+1),x\in\N\}$，}
+\step{假设存在正整数 $a$，使得 $A\cap B\neq\varnothing$，}
+\step{即关于 $x$ 的方程 $a(x^2-x+1)=3x+1$ 有自然数解，}
+\step{因为 $x^2-x+1>0$，所以 $a=\dfrac{3x+1}{x^2-x+1}$，}
+\step{因为 $a$ 为正整数，所以 $3x+1\geqslant x^2-x+1$，解得 $0\leqslant x\leqslant4$，}
+\step{因为 $x\in\N$，$x$ 可取 $0$，$1$，$2$，$3$，$4$.}
+\step{代入验证得，当 $x=0$ 或 $x=4$ 时，$a=1$；当 $x=1$ 时，$a=4$；}
+\step{所以 $a=1$ 或 $a=4$，所以存在正整数 $a$ 为 $1$ 或 $4$ 时，使得 $A\cap B\neq\varnothing$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+% 本卷最后一个解答题，其后是「附加题」（均为填空，无作答区），故作答区仍用可丢弃胶水（\ansspace*）。
+\ansneed{7cm}
+
+\item 若存在满足下列三个条件的集合 $A$、$B$、$C$，则称偶数 $n$ 为“萌数”，
+
+①集合 $A$、$B$、$C$ 为集合 $M=\{1,2,3,4,\cdots,n\}$ 的 $3$ 个非空子集，$A$、$B$、$C$ 两两之间的交集为空集，且 $A\cup B\cup C=M$；
+
+②集合 $A$ 中的所有数均为奇数，集合 $B$ 中的所有数均为偶数，所有 $3$ 的倍数都在集合 $C$ 中；
+
+③集合 $A$、$B$、$C$ 所有元素的和分别为 $S_1$、$S_2$、$S_3$，且 $S_1=S_2=S_3$；注：$1+2+3+\cdots+n=\dfrac{n(n+1)}{2}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 写出当 $n=10$ 时满足条件①②的一切集合 $A$、$B$、$C$，且使 $A$、$B$ 中的元素最多；
+\item 判断：$n=8$ 是否为“萌数”？若为“萌数”，写出符合条件的集合 $A$、$B$、$C$，若不是“萌数”，说明理由；
+\item 证明：“$n=6k+2$，$n\in\N$”是“偶数 $n$ 为萌数”成立的必要条件.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $n=10$ 时，$M=\{1,2,\cdots,10\}$，}
+\step{由①得 $A\cap B=B\cap C=C\cap A=\varnothing$，即集合 $A$、$B$、$C$ 无公共元素，}
+\step{因为 $A\cup B\cup C=M$，所以集合 $A$、$B$、$C$ 需包含 $M$ 中的所有元素，}
+\step{由②得，因为所有 $3$ 的倍数都在集合 $C$ 中，所以 $C=\{3,6,9\}$，}
+\step{因为集合 $A$ 中的所有数均为奇数，所以 $A=\{1,5,7\}$，}
+\step{集合 $B$ 中的所有数均为偶数，所以 $B=\{2,4,8,10\}$；}
+\stepm{(2)}{因为所有 $3$ 的倍数都在集合 $C$ 中，所以 $3,6\in C$.}
+\step{因为 $1+2+3+\cdots+8=36$，}
+\step{所以 $S_1=12=5+7$，$S_2=4+8$，$S_3=1+2+3+6$，}
+\step{即 $n=8$ 为“萌数”，$A=\{5,7\},B=\{4,8\},C=\{1,2,3,6\}$；}
+% 注：以下这一整段是第 (3) 问的解析，原卷误标为「（2）」（与上一个 (2) 重号），
+%     无法确证原意，本稿照抄原卷、未改（详见文件头「原卷存疑」②）。
+\stepm{(2)}{当 $n=6k(k\in\N)$ 时，}
+\step{因为所有 $3$ 的倍数都在集合 $C$ 中，所以 $S_3\geqslant\dfrac{2k(3+6k)}{2}=3k+6k^2$，}
+\step{而 $S_3=\dfrac13(1+2+3+\cdots+6k)=\dfrac13\times\dfrac{6k(1+6k)}{2}=k+6k^2<3k+6k^2$，}
+\step{即 $n=6k(k\in\N)$ 时，偶数 $n$ 不为萌数；}
+\step{当 $n=6k+4(k\in\N)$ 时，}
+\step{因为 $S_3=\dfrac13(1+2+\cdots+6k+4)=\dfrac13\times\dfrac{(6k+4)(1+6k+4)}{2}\notin\Z$，}
+\step{所以 $n=6k+4(k\in\N)$ 时，偶数 $n$ 不为萌数；}
+\step{因此偶数 $n$ 为萌数时，“$n=6k+2$，$k\in\N$”}
+\step{是“偶数 $n$ 为萌数”成立的必要条件.}
+\solend
+
+\fi
+
+\ansspace*[9]
+
+\end{enumerate}
+
+\bigsec{附加题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 关于 $x$ 的方程 $x^2-(2m-2)x+5m+8=0$ 的两个解是一个直角三角形的两条直角边的长，已知这个直角三角形的斜边长为 $10$，则 $m$ 的值为 \blankline[4.4em].
+
+\ans{$8$}
+
+\item 已知实数 $M=\left\{(x,y)\left|\dfrac{y-3}{x-2}=a+1\right.\right\}$，$T=\{(x,y)\mid(a^2-1)x+(a-1)y=15\}$，若 $M\cap T=\varnothing$，则实数 $a$ 的值为 \blankline[4.4em].
+
+\ans{$\pm1$、$-4$、$\dfrac52$}
+
+\item 有限集合 $S$ 中元素的个数记作 $card(S)$，设 $A$、$B$ 都为有限集合，给出下列命题：
+
+① $A\cap B=\varnothing$ 的充要条件是 $card(A\cup B)=card(A)+card(B)$；
+
+② $A\sub B$ 的必要条件是 $card(A)\leqslant card(B)$；
+
+③ $A$ 不是 $B$ 的子集的充分条件是 $card(A)\leqslant card(B)$；
+
+④ $A=B$ 的充要条件是 $card(A)=card(B)$，
+
+以上真命题的序号是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{① $A\cap B=\varnothing$ 充要条件是 $card(A\cup B)=card(A)+card(B)$，故①正确；}
+\step{②集合 $A$ 中的元素都是集合 $B$ 中的元素，则 $card(A)\leqslant card(B)$，}
+\step{故②正确；}
+\step{③当 $A\sub B$ 时，则 $card(A)\leqslant card(B)$，}
+\step{由 $card(A)\leqslant card(B)$ 无法得到 $A$ 不是 $B$ 的子集，故③错误；}
+\step{④集合 $A$ 中的元素与集合 $B$ 中的元素完全相同，但两个集合的元素个数相同，}
+\step{并不意味着它们的元素相同，故④错误.}
+\step{故真命题的序号是①②.}
+\solend
+
+\fi
+
+\item 集合 $M=\{930,-5,-1,0,\pi\}$ 有 $5$ 个元素，设 $M$ 的所有非空子集为 $M_i(1,2,\cdots,31)$，每一个 $M_i$ 中所有元素乘积为 $m_i(i=1,2,\cdots,31)$，则 $m_1+m_2+m_3+\cdots+m_{31}=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{集合 $M$ 的所有非空子集为 $M_i(1,2,\cdots,31)$ 可以分成以下几种情况：}
+\step{①含元素 $0$ 的子集共有 $2^4=16$ 个，这些子集中所有元素的乘积 $m_i=0$；}
+\step{②不含元素 $0$，含有元素 $-1$，且含有其他元素的子集共有 $2^3-1=7$ 个；}
+\step{③不含元素 $0$，不含元素 $-1$，但含有其他元素的子集共有 $2^3-1=7$ 个；}
+\step{其中②③中除 $-1$ 外元素是一一对应的，则乘积互为相反数，故 $m_i$ 的和为 $0$；}
+\step{④只含元素 $-1$ 的子集，只有 $1$ 个，此时 $m_i=-1$；}
+\step{综上所述，所有子集中元素乘积 $m_1+m_2+m_3+\cdots+m_{31}=0+0+(-1)=-1$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\end{document}

@@ -44,7 +44,7 @@ SECT = '## 题目溯源'
 
 KEEP = re.compile(r'[\u4e00-\u9fff0-9★▲⊕①-⑳]')
 MARKERS = '★▲⊕' + ''.join(chr(c) for c in range(0x2460, 0x2474))   # ★▲⊕①–⑳
-HEADER, RUNHEAD = '题目溯源', '21 份口径（2026-09-15）'
+HEADER, RUNHEAD = '题目溯源', '22 份口径（2026-09-16）'
 
 # 与 工具/README转tex.py 的 UNI 保持一致（只列「映射成数学命令」的那些，★▲ 不映射）
 UNI = [('×', r'$\times$'), ('→', r'$\to$'), ('≥', r'$\geqslant$'), ('≤', r'$\leqslant$'),
@@ -140,7 +140,7 @@ def pdf_text():
         sys.exit('❌ 找不到 %s，先跑 make trace' % PDF)
     txt = subprocess.run(['pdftotext', '-layout', '-f', '3', PDF, '-'],
                          capture_output=True, text=True).stdout
-    # 页眉在 -layout 下是**一整行**「题目溯源 …… 21 份口径（2026-09-15）」，只删子串会把
+    # 页眉在 -layout 下是**一整行**「题目溯源 …… 22 份口径（2026-09-16）」，只删子串会把
     # 「题目溯源」留在 PDF 侧（+30/页），必须整行删。
     txt = re.sub(r'^\s*%s\s+%s\s*$' % (re.escape(HEADER), re.escape(RUNHEAD)),
                  '', txt, flags=re.M)

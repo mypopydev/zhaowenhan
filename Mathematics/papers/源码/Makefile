@@ -18,14 +18,15 @@
 #   make compact            编译全部（紧凑试卷版：去掉解答题作答区，压轴题换页保护保留）
 #   make one-c F=高一02_大同中学_集合综合练习   只编某一套的紧凑版
 #   make check              校验：试卷版/紧凑版不含答案，且紧凑版正文与试卷版一致
+#   make docs               校验：README 里的「当前态计数」与源码/成品是否一致
 #   make list               查看页数统计
 #   make trace              生成「题目溯源」报告（溯源.tex → ../溯源/题目溯源.pdf）
-#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（21 份 / 46 页）
+#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（22 份 / 48 页）
 #   make clean              清理 LaTeX 临时文件
 #   make distclean          清理临时文件与中间 PDF
 #   make help               显示本帮助
 #
-# 溯源报告（与 21 份试卷分开的一条链）：内容来自 ../README.md 的「题目溯源」一节，
+# 溯源报告（与 22 份试卷分开的一条链）：内容来自 ../README.md 的「题目溯源」一节，
 # 由 ../工具/README转tex.py 生成 溯源.tex（**不要手改 溯源.tex**——改内容改 README、
 # 改排版改那个脚本）。溯源.tex 不匹配 高一*.tex 通配符，故 test/ans/compact/one 都不碰它。
 # 编译后跑 ../工具/溯源比对.py 做两道校验，见该脚本头部。
@@ -52,7 +53,7 @@ TEX       := $(sort $(wildcard 高一*.tex))
 # 写成单行是为了让 shell 所见与 make 展开一致（多行续行在变量里会被折叠）。
 FONTCHK = miss=$$(grep -a 'Missing character' "$$LF.log" 2>/dev/null | sed 's/.*There is no //; s/ in font.*//' | sort -u | tr '\n' ' '); if [ -n "$$miss" ]; then printf '❌ %s 有字符没字形（PDF 里已静默消失）：%s\n' "$$LF" "$$miss"; printf '   处理：把该字符划入 CJK 字符类（见 common.sty 的 xeCJKDeclareCharClass）\n'; exit 1; fi
 
-.PHONY: all test ans compact one one-c check trace bundle list clean distclean help
+.PHONY: all test ans compact one one-c check docs trace bundle list clean distclean help
 
 all: test ans
 
@@ -126,7 +127,15 @@ check:
 	done; \
 	if [ $$fail -eq 0 ]; then echo "✅ 全部试卷版与紧凑版均无答案泄漏，且紧凑版正文与试卷版逐字一致"; else echo "❌ 有问题，请检查"; exit 1; fi
 
-# ===== 溯源报告（独立一条链，不进 all：all 会把 34 份成品 PDF 全重写、污染 diff）=====
+# ===== 文档计数核对（独立一条链，不进 check）=====
+# 核的是 README 与**源码**是否同步，与 check 的轴不同：check 读成品 PDF、管输出对不对
+#（答案不泄漏、紧凑版与试卷版逐字一致），本目标解析 源码/高一*.tex 与成品份数/页数、
+# 逐条比 README 里二十来处「当前态计数」。判据、为什么单列、以及「断言找不到即失败」的
+# 设计都在 工具/计数核对.py 的文件头，改 README 措辞时务必同步改那边的正则。
+docs:
+	@python3 $(TOOLS)/计数核对.py
+
+# ===== 溯源报告（独立一条链，不进 all：all 会把 36 份成品 PDF 全重写、污染 diff）=====
 # 依赖 ../README.md：README 改了，make trace 会自动重新生成 溯源.tex 再编译。
 溯源.tex: ../README.md ../工具/README转tex.py
 	@python3 ../工具/README转tex.py
@@ -149,7 +158,7 @@ trace: 溯源.pdf
 	  "$$($(PDFINFO) 溯源.pdf | awk '/^Pages/{print $$2}')"
 
 # ===== 合订打印本（独立一条链，不进 all：理由同 trace）=====
-# 把 ../试卷紧凑/ 下的成品按文件名序合成一份 46 页的 PDF 便于打印。
+# 把 ../试卷紧凑/ 下的成品按文件名序合成一份 48 页的 PDF 便于打印。
 # 目标写成 phony：合并只需不到一秒，每次重跑比维护依赖更稳妥（不会有陈旧产物）。
 bundle:
 	@test -n "$(sort $(wildcard $(DEST_COMPACT)/*_试卷.pdf))" \

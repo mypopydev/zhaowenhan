@@ -305,7 +305,7 @@ def cmd_compare(targets):
             if kind:
                 rows.append((kind, L, r, blk, y))
         rows.sort(key=lambda t: (t[0] != 'dup', -t[1]))
-        # 行首必须带卷号：全量重跑时 21 份混在一张表里，只印「第 X 题」根本认不出是哪一份
+        # 行首必须带卷号：全量重跑时 22 份混在一张表里，只印「第 X 题」根本认不出是哪一份
         head = '   %-6s 第%s题 %s' % (x['paper'].split('_')[0], x['lab'], x['sk'][:46])
         if not rows:
             print('%s —— 无命中' % head)

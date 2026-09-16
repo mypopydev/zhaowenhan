@@ -12,6 +12,10 @@
 *.bbl
 *.blg
 
+# Python 缓存（数学的工具脚本：跑 py_compile 或 import 后会生成 __pycache__ 与 .pyc）
+__pycache__/
+*.py[cod]
+
 # 编辑器 / 系统
 .DS_Store
 .idea/
