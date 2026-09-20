@@ -1,0 +1,301 @@
+% 高一23_格致中学_周末作业3.tex
+%   —— 高一上数学「2026-2027 年格致中学高一上周末作业 3」（试卷版/答案版）
+% 试卷版：xelatex 高一23_格致中学_周末作业3.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一23_格致中学_周末作业3.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一23_格致中学_周末作业3.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 23」，2026-09-18 发布，
+% 原文标题「27学年高一23——2026-2027年上海市格致中学高一上周末作业3」），
+% 正文为 5 张 PNG 页（1080×1527，同一篇各页同尺寸）。原文本身就是一份**讲评版**——
+% 题目下方直接印出【答案】或【解析】。试题文字、答案与解析均照原卷录入，未改内容。
+% 卷面上的粉色斜水印「魔都数学加油站」属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年格致中学高一上周末作业 3」（与 高一13 同校：
+% 公众号标题里有「上海市」三字，卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash，
+% 前缀照原卷保留「年」（同校的 高一13 亦作「年」）。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题，本稿照原卷分节，
+%      只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷选择的答案直接印在题干末尾的括号内（第 11、12、14 题），第 13 题的括号空着、
+%      答案写在解析末句「故选 C」里，本稿统一改为试卷版隐去、答案版以 \ans{} 给出
+%      （第 13 题另附【解析】），使两版彻底分离；
+%   ④ 原卷的集合／数集符号有斜体与正体两种写法（第 6 题题干与第 7 题解析的 $R$ 为斜体，
+%      第 18 题全集 $I=R$ 同），本稿按全稿惯例统一写作 $\R$；
+%   ⑤ 原卷填空的横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ⑥ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」。
+%
+% 本卷未发现原卷笔误或存疑处（第 16 题答案 $(-\infty,-1]\cup[0,\sqrt[3]{4}]$ 已独立验算相符，
+% 其中 $a\leqslant-1$ 与 $0\leqslant a\leqslant1$ 时 $A=\varnothing$ 亦合题意）。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年格致中学高一上周末作业 3}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 若 $a>b$ 与 $\dfrac1a>\dfrac1b$ 同时成立，则 $a$、$b$ 应满足的条件是 \blankline[4.4em].
+
+\ans{$a>0>b$}
+
+\item 已知集合 $M=\{(x,y)\mid x>1,y>1\}$，$N=\{(x,y)\mid x+y>2,(x-1)(y-1)>0\}$，则集合 $M$
+与 $N$ 的关系是 \blankline[4.4em].
+
+\ans{$M=N$}
+
+\item 若 $x_1+x_2=3$，$x_1^2+x_2^2=5$，则以 $x_1$、$x_2$ 为根的一元二次方程可以是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $x_1^2+x_2^2=5$，所以 $(x_1+x_2)^2-2x_1x_2=5$，因为 $x_1+x_2=3$，所以 $x_1x_2=2$，}
+\step{所以以 $x_1$、$x_2$ 为根的一元二次方程为 $x^2-3x+2=0$.}
+\solend
+
+\fi
+
+\item 设 $a$、$b\in\R$，已知关于 $x$ 的不等式 $(a+b)x+(b-2a)<0$ 的解集为 $(1,+\infty)$，求不等式
+$(a-b)x+3b-a>0$ 的解集为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若不等式 $(a+b)x+(b-2a)<0$ 的解集为 $(1,+\infty)$，}
+\step{则方程 $(a+b)x+(b-2a)=0$ 且 $a+b<0$，分析得 $a=2b<0$，}
+\step{则 $(a-b)x+3b-a>0$ 等价于 $bx+b>0$，即 $x+1<0$，解得 $x<-1$，}
+\step{即不等式 $(a-b)x+3b-a>0$ 的解集为 $(-\infty,-1)$.}
+\solend
+
+\fi
+
+\item 若对任意实数 $x$ 不等式 $ax>b$ 都成立，那么 $a$、$b$ 的取值范围为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $x=0$ 时，$b<0$，$a\in\R$；}
+\step{当 $x\neq0$ 时，若 $a=0$，则 $b<0$；}
+\step{若 $a>0$，则 $x>\dfrac ba$，不能恒成立；}
+\step{若 $a<0$，则 $x<\dfrac ba$，不能恒成立；}
+\step{即当 $x\neq0$ 时，若 $a=0$，$b<0$ 可使不等式恒成立，}
+\step{综上所述，若使不等式恒成立，则 $a=0$，$b<0$.}
+\solend
+
+\fi
+
+\item 设方程 $(x-a)(x-b)-x=0$ 两根是 $c$、$d$，则方程 $(x-c)(x-d)+x=0$ 的根是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若方程 $(x-a)(x-b)-x=0$ 两根为 $c$、$d$，}
+\step{即方程 $x^2-(a+b+1)x+ab=0$ 的两根为 $c$、$d$，则有 $c+d=a+b+1$ 和 $cd=ab$，}
+\step{方程 $(x-c)(x-d)+x=0$，变形得 $x^2-(c+d-1)x+cd=0$，}
+\step{将 $c+d=a+b+1$ 和 $cd=ab$ 代入得 $x^2-(a+b)x+ab=0$，}
+\step{变形得 $(x-a)(x-b)=0$，其两根为 $a$ 和 $b$，即 $x_1=a$，$x_2=b$.}
+\solend
+
+\fi
+
+\item 已知 $b<a<-3b$，则 $\left|\dfrac ab\right|$ 的取值范围为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $b<a<-3b$，得 $b<0$，所以 $1>\dfrac ab>-3$，所以 $0\leqslant\left|\dfrac ab\right|<3$，}
+\step{即 $\left|\dfrac ab\right|$ 的取值范围是 $[0,3)$.}
+\solend
+
+\fi
+
+\item 定义 $\mathit{min}\{a_1,a_2,\cdots,a_n\}$ 表示 $a_1$、$a_2$、$\cdots$、$a_n$ 中的最小值，
+$\mathit{max}\{a_1,a_2,\cdots,a_n\}$ 表示 $a_1$、$a_2$、$\cdots$、$a_n$ 中的最大值，
+设 $0<m<n<p<2$，已知 $n\geqslant3m$ 或 $m+2n\leqslant3$，则
+$\mathit{min}\{\mathit{max}\{n-m,p-n,2-p\}\}$ 的值为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $n-m=x$，$p-n=y$，$2-p=z$，且 $0<m<n<p<2$，}
+\step{则 $x>0$，$y>0$，$z>0$，所以 $\begin{cases}n=2-y-z\\ m=2-x-y-z\end{cases}$，}
+\step{若 $n\geqslant3m$，则 $2-y-z\geqslant3(2-x-y-z)$，故 $3x+2y+2z\geqslant4$，}
+\step{设 $M=\mathit{max}\{x,y,z\}$，因此
+$\begin{cases}3M\geqslant3x\\ 2M\geqslant2y\\ 2M\geqslant2z\end{cases}$，
+故 $7M\geqslant3x+2y+2z\geqslant4$，即 $M\geqslant\dfrac47$，}
+\step{若 $m+2n\leqslant3$，则 $2-x-y-z+2(2-y-z)\leqslant3$，即 $x+3y+3z\geqslant3$，}
+\step{则 $\begin{cases}M\geqslant x\\ 3M\geqslant3y\\ 3M\geqslant3z\end{cases}$，
+故 $7M\geqslant x+3y+3z\geqslant3$，当且仅当 $x=3y=3z=\dfrac37$ 时等号成立，}
+\step{综上所述，$\mathit{min}\{\mathit{max}\{n-m,p-n,2-p\}\}$ 的最小值为 $\dfrac37$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item 若 $x,y,z$ 互不相等，且 $x+y+z=0$，则其中不正确的为\mbox{（\quad）}
+
+\keepwithprev
+A. 必有两数之和为负数\qquad B. 必有两数之和为正数
+
+C. 必有两数之积为负数\qquad D. 必有两数之积为正数
+
+\ans{$C$}
+
+\item 已知实数 $a,b,c$ 满足 $c<b<a$ 且 $ac<0$，则下列不等式不成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $ab>ac$\qquad B. $c(b-a)<0$
+
+C. $c(b^2+1)<a(b^2+1)$\qquad D. $ac(a-c)<0$
+
+\ans{$B$}
+
+\item 已知 $a$、$b$、$c$ 是 $\triangle ABC$ 的三边长，关于 $x$ 的方程
+$\dfrac12x^2+\sqrt{b}x+c-\dfrac12a=0$ 的解集只有一个元素，且方程 $3cx+2b=2a$ 的根为 $x=0$，
+则 $\triangle ABC$ 的形状为\mbox{（\quad）}
+
+\keepwithprev
+A. 等腰但不等边三角形\qquad B. 直角三角形
+
+C. 等边三角形\qquad D. 钝角三角形
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{因为方程 $\dfrac12x^2+\sqrt{b}x+c-\dfrac12a=0$ 的解集只有一个元素，}
+\step{所以 $\Delta=(\sqrt{b})^2-4\times\dfrac12\times\left(c-\dfrac12a\right)=0$，即 $a+b=2c$ ①，}
+\step{又因为方程 $3cx+2b=2a$ 的根为 $x=0$，所以 $a=b$ ②，}
+\step{由①②得 $a=b=c$，即 $\triangle ABC$ 为等边三角形，故选 $C$.}
+\solend
+
+\fi
+
+\item 设 $a,b,x,y\in\R$，则“$x>y$ 且 $a>b$”是“$ax-ay-bx+by>0$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad B. 必要非充分条件
+
+C. 充要条件\qquad D. 既非充分又非必要条件
+
+\ans{$A$}
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{14}
+
+\item 设关于 $x$ 的不等式 $(2a-b)x+3a-4b<0$ 的解集为 $\left(-\infty,\dfrac49\right)$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求证：$b=\dfrac78a$ 且 $a>0$；
+\item 设关于 $x$ 的不等式 $(a-4b)x+2a-3b<0$ 的解集.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{略；}
+\stepm{(2)}{$\left(\dfrac14,+\infty\right)$}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知集合 $A=\{x\mid a<x<a^3\}$，$B=\{x\mid x^2-5x+4<0\}$，命题 $p:x\in A$，命题 $q:x\in B$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $1\in A$，求实数 $a$ 的取值范围.
+\item 若 $p$ 是 $q$ 的充分不必要条件，求实数 $a$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$\varnothing$；}
+\stepm{(2)}{$(-\infty,-1]\cup\left[0,\sqrt[3]{4}\right]$}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知命题 $p$：关于 $x$ 方程 $x^2+4x+m-2=0$ 有两个不相等的负根，命题 $q$：关于 $x$ 的方
+程 $4x^2+4x+|m-3|=0$ 无实数根.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若命题 $p$ 是真命题，求 $m$ 的取值范围；
+\item 若命题 $p,q$ 中有且仅有一个是真命题，求 $m$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$(2,6)$；}
+\stepm{(2)}{$(-\infty,2)\cup(2,4]\cup[6,+\infty)$}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item （1）设全集 $I=\R$，$A=\{x\mid x^2+px+q=0\}$，$B=\{x\mid x^2-3x+2=0\}$，已知 $A\cup B=B$，
+求实数 $p,q$ 满足的条件.
+
+（2）已知关于 $x$ 的一元二次方程 $(a-1)x^2-(a^2+1)x+(a^2+a)=0$ 的两根都是整数，求满
+足条件的整数 $a$ 的值.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$x^2-3x+2=(x-1)(x-2)=0$，解得 $x=1$ 或 $x=2$，即 $B=\{1,2\}$.}
+\step{因为 $A\cup B=B$，所以 $A\sub B$.}
+\step{若 $A=\{1,2\}$，则 $\begin{cases}1+p+q=0\\ 4+2p+q=0\end{cases}$，解得 $p=-3,q=2$；}
+\step{若 $A=\{1\}$，则 $\begin{cases}1+p+q=0\\ \Delta=p^2-4q=0\end{cases}$，解得 $p=-2,q=1$；}
+\step{若 $A=\{2\}$，则 $\begin{cases}4+2p+q=0\\ \Delta=p^2-4q=0\end{cases}$，解得 $p=-4,q=4$；}
+\step{若 $A=\varnothing$，则 $\Delta=p^2-4q<0$；}
+\stepm{(2)}{显然 $a\neq1$，原方程可变形为 $(x-a)[(a-1)x-(a+1)]=0$，}
+\step{其两根为 $a,\dfrac{a+1}{a-1}$，即要求 $\dfrac{a+1}{a-1}=\dfrac{a-1+2}{a-1}=1+\dfrac{2}{a-1}$ 为整数，}
+\step{因此符合条件的整数 $a$ 为 $-1,0,2,3$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 已知关于 $x$、$y$ 的方程组 $\begin{cases}2x^2+y^2=2\\ y=kx+1\end{cases}$，其中 $k\in\R$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $k=1$ 时，求该方程组的解；
+\item 证明：无论 $k$ 为何值，该方程组总有两组不同的解；
+\item 记该方程组的两组不同的解分别为
+$\begin{cases}x=x_1\\ y=y_1\end{cases}$ 和 $\begin{cases}x=x_2\\ y=y_2\end{cases}$，
+判断 $3(y_1+y_2)-2y_1y_2$ 是否为定值. 若为定值，请求出该值；若不是定值，请说明理由.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $k=1$ 时，消去 $y$ 得 $3x^2+2x-1=0$，解得 $x_1=-1$，$x_2=\dfrac13$，}
+\step{因此，方程组的解为 $\begin{cases}x=-1\\ y=0\end{cases}$ 或 $\begin{cases}x=\dfrac13\\[2pt] y=\dfrac43\end{cases}$；}
+\stepm{(2)}{消去 $y$，得 $(k^2+2)x^2+2kx-1=0$，}
+\step{因为 $\Delta=8k^2+8>0$，所以该方程有两个不同的解，}
+\step{故原方程组也对应有两组不同的解；}
+\stepm{(3)}{由韦达定理得 $x_1+x_2=-\dfrac{2k}{k^2+2}$，$x_1x_2=-\dfrac{1}{k^2+2}$，}
+\step{则 $y_1+y_2=k(x_1+x_2)+2=\dfrac{4}{k^2+2}$，}
+\step{$y_1y_2=k^2x_1x_2+k(x_1+x_2)+1=\dfrac{-2k^2+2}{k^2+2}$，}
+\step{所以 $3(y_1+y_2)-2y_1y_2=\dfrac{12}{k^2+2}-\dfrac{-4k^2+4}{k^2+2}=4$，}
+\step{因此，$3(y_1+y_2)-2y_1y_2$ 是定值，且定值为 $4$.}
+\solend
+
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}

@@ -323,7 +323,7 @@ def table_tex(header, aligns, data, index):
 
 # ---------------------------------------------------------------- 模板
 def preamble(body):
-    return r'''%% 溯源.tex —— 「题目溯源」报告（22 份口径）
+    return r'''%% 溯源.tex —— 「题目溯源」报告（24 份口径）
 %% **本文件由 工具/README转tex.py 从 ../README.md 的「题目溯源」一节自动生成，不要手改**：
 %% 改内容请改 README，改排版请改那个脚本，然后 `make trace` 重生成。
 %% 编译：xelatex 溯源.tex（跑两遍，第二遍才有目录与交叉引用）
@@ -347,7 +347,7 @@ def preamble(body):
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small\color{solblue} 题目溯源}
-\fancyhead[R]{\small 22 份口径（2026-09-16）}
+\fancyhead[R]{\small 24 份口径（2026-09-20）}
 \fancyfoot[C]{\small\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
@@ -358,8 +358,8 @@ def preamble(body):
 \vspace*{2.6cm}
 {\Huge\bfseries 题目溯源}\\[0.9em]
 {\Large 上海高一上数学 · 跨卷同题与真题出处考证}\\[2.6em]
-{\large 22 份试卷 387 道一级题干 $\times$ 参考库 16{,}273 道高考真题}\\[0.35em]
-{\large 跨卷两两 67{,}896 对 \quad|\quad 逐字同题 24 组、同模板变体 12 组}\\[3.2em]
+{\large 24 份试卷 419 道一级题干 $\times$ 参考库 16{,}273 道高考真题}\\[0.35em]
+{\large 跨卷两两 87{,}571 对 \quad|\quad 逐字同题 24 组、同模板变体 12 组}\\[3.2em]
 \begin{minipage}{0.8\textwidth}\small\raggedright
 本文件由 \texttt{工具/README转tex.py} 从 \texttt{README.md} 的「题目溯源」一节自动生成，
 内容与该节逐字一致。判定口径、阈值与踩过的坑见末节「方法与局限」；
