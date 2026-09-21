@@ -1,0 +1,312 @@
+% 高一27_交附闵行_周末作业9.18.tex
+%   —— 高一上数学「2026-2027 年交附闵行高一上周末作业 9.18」（试卷版/答案版）
+% 试卷版：xelatex 高一27_交附闵行_周末作业9.18.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一27_交附闵行_周末作业9.18.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一27_交附闵行_周末作业9.18.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 27」，2026-09-21 发布，
+% 原文标题「27学年高一27——2026-2027年上海市交附闵行高一上周末作业9.18」），
+% 正文为 7 张 PNG 页（1080×1527，各页同尺寸）。原文本身就是一份**讲评版**——
+% 题目下方直接印出【解析】（本卷无单独的【答案】行，填空题答案都写在解析里）。
+% 试题文字与解析均照原卷录入，未改内容。卷面的粉色斜水印「魔都数学加油站」属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年交附闵行高一上周末作业 9.18」（公众号标题里的「上海市」
+% 三字卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash，前缀照原卷保留「年」，
+% 作业名照原卷标题行带日期「9.18」。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷只印「一、填空题」「二、解答题」两个节标题（本卷无选择题），本稿照原卷分节，
+%      只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 填空题的答案嵌在解析里，本稿统一改为试卷版隐去、答案版以 \ans{} 给出；
+%   ④ 子集符号原卷作带下划线的 $\subseteq$（第 11(2)、12(2) 题）与真包含的 $\subset$
+%      （第 7 题解析的 $P\subset Q$、第 10 题解析的 $A\subset B$ 与 $\overline{B}\subset\overline{A}$），
+%      本稿分别照录为 $\sub$ 与 $\subset$；
+%   ⑤ 补集符号两种并用：第 10 题解析作上横线（$\overline{A}$、$\overline{B}$），
+%      第 11 题作 $\complement_R$，本稿照录（第 12 题全题未出现补集符号）；
+%   ⑥ 原卷的实数集 R 斜体与粗体混用（第 7 题的 $R$ 为斜体，第 9 题题干与解析的
+%      R 为粗体，第 13 题的 $R$ 为斜体），本稿按全稿惯例统一写作 $\R$；
+%   ⑦ 原卷填空的横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ⑧ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」。
+%
+% 本卷未发现原卷笔误或存疑处。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年交附闵行高一上周末作业 9.18}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知实数 $x$、$y$ 满足 $-4\leqslant x-y\leqslant-1$，$-1\leqslant4x-y\leqslant5$，
+则 $11x-5y$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $11x-5y=m(x-y)+n(4x-y)$，
+整理得 $11x-5y=(m+4n)x-(m+n)y$，}
+\step{所以 $\begin{cases}m+4n=11\\ m+n=5\end{cases}$，
+解得 $m=3$，$n=2$，即 $11x-5y=3(x-y)+2(4x-y)$，}
+\step{因为 $-4\leqslant x-y\leqslant-1$，$-1\leqslant4x-y\leqslant5$，}
+\step{所以 $-12\leqslant3(x-y)\leqslant-3$，$-2\leqslant2(4x-y)\leqslant10$，}
+\step{所以 $-14\leqslant3(x-y)+2(4x-y)\leqslant7$，
+即 $-14\leqslant11x-5y\leqslant7$，}
+\step{所以 $11x-5y$ 的取值范围是 $[-14,7]$.}
+\solend
+
+\fi
+
+\item 已知 $a(x-2)^2+b(x-2)+c=2x^2+3x+2$ 恒成立，则 $a-b+c=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原式转化为 $ax^2+(b-4a)x+4a-2b+c=2x^2+3x+2$ 恒成立，}
+\step{则 $\begin{cases}a=2\\ b-4a=3\\ 4a-2b+c=2\end{cases}$，
+解得 $\begin{cases}a=2\\ b=11\\ c=16\end{cases}$，所以 $a-b+c=2-11+16=7$.}
+\solend
+
+\fi
+
+\item 若不等式 $\dfrac{x^2-8x+20}{mx^2-mx-1}<0$ 对一切 $x\in\R$ 都成立，则实数 $m$ 的
+取值范围为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $x^2-8x+20=(x-4)^2+4\geqslant4>0$，所以 $mx^2-mx-1<0$，}
+\step{当 $m=0$ 时，$mx^2-mx-1=-1<0$，不等式成立；}
+\step{设 $y=mx^2-mx-1$，当 $m\neq0$ 时函数 $y$ 为二次函数，$y$ 要恒小于 $0$，}
+\step{抛物线开口向下且与 $x$ 轴没有交点，即 $m<0$ 且 $\Delta<0$，得 $-4<m\leqslant0$，}
+\step{故实数 $m$ 的取值范围为 $(-4,0]$.}
+\solend
+
+\fi
+
+\item 若集合 $\{x\mid(a-1)x^2+3x-2=0\}$ 有且仅有两个子集，则实数 $a$ 的值为
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $\{x\mid(a-1)x^2+3x-2=0\}$ 为单元素集，}
+\step{所以 $a-1=0$ 或 $\begin{cases}a-1\neq0\\ \Delta=9+8(a-1)=0\end{cases}$，
+所以 $a=1$ 或 $a=-\dfrac18$.}
+\solend
+
+\fi
+
+\item 全集 $U=\R$，已知集合 $P=[-2,10]$，$Q=\{x\mid x^2-2x+(1-m^2)\leqslant0\}$.
+若“$x\in Q$”是“$x\in P$”的必要非充分条件，则 $m$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若“$x\in Q$”是“$x\in P$”的必要非充分条件，则 $P\subset Q$，}
+\step{而 $Q=\{x\mid x^2-2x+(1-m^2)\leqslant0\}=[1-|m|,1+|m|]$，}
+\step{则 $\begin{cases}1-|m|\leqslant-2\\ 1+|m|\geqslant10\end{cases}$，
+解得 $|m|\geqslant9$，则有 $m\geqslant9$ 或 $m\leqslant-9$，}
+\step{即 $m$ 的取值范围为 $(-\infty,-9]\cup[9,+\infty)$.}
+\solend
+
+\fi
+
+\item 已知关于 $x$ 的不等式 $ax^2+bx+c\leqslant1$ 的解集为 $\{x\mid-1\leqslant x\leqslant3\}$.
+若关于 $x$ 的不等式 $ax^2+(b-1)x+c-2\leqslant0$ 有且仅有 $8$ 个整数解，则实数 $a$ 的
+取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由已知关于 $x$ 的不等式 $ax^2+bx+c\leqslant1$ 的解集为 $\{x\mid-1\leqslant x\leqslant3\}$，}
+\step{得 $a>0$，且方程 $ax^2+bx+c-1=0$ 的两根分别为 $-1$ 和 $3$，}
+\step{则 $\begin{cases}-1+3=-\dfrac ba\\[4pt] -1\times3=\dfrac{c-1}{a}\end{cases}$，
+得 $\begin{cases}b=-2a\\ c=1-3a\end{cases}$，}
+\step{不等式 $ax^2+(b-1)x+c-2\leqslant0$ 等价于 $ax^2-(2a+1)x-(3a+1)\leqslant0$，}
+\step{即 $\left[x-\left(3+\dfrac1a\right)\right](x+1)\leqslant0$，
+解得 $-1\leqslant x\leqslant3+\dfrac1a$，}
+\step{因为关于 $x$ 的不等式 $ax^2+(b-1)x+c-2\leqslant0$ 有且仅有 $8$ 个整数解，}
+\step{因此 $6\leqslant3+\dfrac1a<7$，即 $3\leqslant\dfrac1a<4$，
+解得 $\dfrac14<a\leqslant\dfrac13$，所以 $a$ 的取值范围为 $\left(\dfrac14,\dfrac13\right]$.}
+\solend
+
+\fi
+
+\item 已知 $f(x)=|x-1|+|x+2|,g(x)=-x^2+ax$，若对任意 $x_1\in\R$ 和任意
+$x_2\in\R$，都有 $f(x_1)>g(x_2)$ 恒成立，则实数 $a$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $f(x)=|x-1|+|x+2|\geqslant|x-1-x-2|=3$，所以 $f(x)$ 的最小值为 $3$.}
+\step{因为 $g(x)=-x^2+ax=-\left(x-\dfrac a2\right)^2+\dfrac{a^2}{4}$，
+所以 $g(x)$ 的最大值为 $\dfrac{a^2}{4}$.}
+\step{若对任意 $x_1\in\R$ 和任意 $x_2\in\R$，都有 $f(x_1)>g(x_2)$ 恒成立，}
+\step{则 $\dfrac{a^2}{4}<3$，即 $a^2-12<0$，解得 $a\in(-2\sqrt3,2\sqrt3)$，}
+\step{所以实数 $a$ 的取值范围是 $(-2\sqrt3,2\sqrt3)$.}
+\solend
+
+\fi
+
+\item 若“$|mx^2-4x+3|\geqslant2$”的必要非充分条件是“$x\leqslant1$ 或 $x\geqslant4$”，
+则实数 $m$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{记 $|mx^2-4x+3|\geqslant2$ 的解集为集合 $A$，$B=\{x\mid x\leqslant1$ 或 $x\geqslant4\}$，}
+\step{则 $\overline{A}$ 为 $|mx^2-4x+3|<2$ 的解集，
+$\overline{B}=\{x\mid1<x<4\}$；}
+\step{因为 $B$ 是 $A$ 的必要非充分条件，所以 $A\subset B$，得 $\overline{B}\subset\overline{A}$，}
+\step{即对任意 $x\in(1,4)$，都有 $|mx^2-4x+3|<2$ 恒成立.}
+\step{因为 $|mx^2-4x+3|<2$，$1<x<4$，所以 $-2<mx^2-4x+3<2$，}
+\step{化简得 $-5\left(\dfrac1x\right)^2+4\left(\dfrac1x\right)<m
+<-\left(\dfrac1x\right)^2+4\left(\dfrac1x\right)$；}
+\step{令 $t=\dfrac1x$，$g(t)=-5t^2+4t$，$h(t)=-t^2+4t$，且 $t\in\left(\dfrac14,1\right)$；}
+\step{所以 $g(t)=-5t^2+4t=-5\left(t-\dfrac25\right)^2+\dfrac45$，}
+\step{当 $t=\dfrac25$ 时，$g(t)$ 取得最大值 $\dfrac45$，}
+\step{$h(t)=-t^2+4t=-(t-2)^2+4$，}
+\step{当 $t=\dfrac14$ 时，$h(t)$ 取得最小值，即 $h(t)>h\!\left(\dfrac14\right)=\dfrac{15}{16}$；}
+\step{因为对任意 $t\in\left(\dfrac14,1\right)$，$g(t)<m<h(t)$ 恒成立，
+所以 $g\!\left(\dfrac25\right)<m\leqslant h\!\left(\dfrac14\right)$，}
+\step{即 $\dfrac45<m\leqslant\dfrac{15}{16}$，所以 $m$ 的取值范围是
+$\left(\dfrac45,\dfrac{15}{16}\right]$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item 已知：集合 $A=\{x\mid3<x\leqslant6\}$，$B=\{x\mid m\leqslant x\leqslant2m+1\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $m=2$，求 $\complement_R A$、$A\cap B$、$A\cup B$；
+\item 若 $A\sub B$，求实数 $m$ 的取值范围；
+\item 若 $A\cap B=\varnothing$，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$m=2$ 时，$B=\{x\mid2\leqslant x\leqslant5\}$，}
+\step{故 $\complement_R A=\{x\mid x\leqslant3$ 或 $x>6\}$，
+$A\cap B=\{x\mid3<x\leqslant5\}$，}
+\step{$A\cup B=\{x\mid2\leqslant x\leqslant6\}$；}
+\stepm{(2)}{$A\sub B$，得
+$\begin{cases}3\geqslant m\\ 6\leqslant2m+1\\ m\leqslant2m+1\end{cases}$，
+解得 $\dfrac52\leqslant m\leqslant3$，}
+\step{故实数 $m$ 的取值范围为 $\left[\dfrac52,3\right]$；}
+\stepm{(3)}{当 $m>2m+1$，即 $m<-1$ 时，$B=\varnothing$，得 $A\cap B=\varnothing$，}
+\step{当 $B\neq\varnothing$ 时，
+需满足 $\begin{cases}m\geqslant-1\\ 2m+1\leqslant3\end{cases}$
+或 $\begin{cases}m\geqslant-1\\ m>6\end{cases}$，
+解得 $-1\leqslant m\leqslant1$ 或 $m>6$，}
+\step{综上，实数 $m$ 的取值范围为 $(-\infty,1]\cup(6,+\infty)$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知集合 $A$ 为不等式 $\dfrac{2x-1}{x+2}<1$ 的解集.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求集合 $A$；
+\item 若 $B=\{x\mid|x-a|<3\}$，且 $A\cap B=A$，求实数 $a$ 的范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由不等式 $\dfrac{2x-1}{x+2}<1$ 得 $\dfrac{x-3}{x+2}<0$，
+即 $(x-3)(x+2)<0$，解得 $-2<x<3$，}
+\step{所以集合 $A=\{x\mid-2<x<3\}$；}
+\stepm{(2)}{$B=\{x\mid|x-a|<3\}=\{x\mid a-3<x<a+3\}$，}
+\step{因为 $A\cap B=A$，所以 $A\sub B$，}
+\step{所以 $\begin{cases}a-3\leqslant-2\\ a+3\geqslant3\end{cases}$，}
+\step{即实数 $a$ 的范围为 $[0,1]$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知一元二次方程 $ax^2+bx+c=0$（$a$、$b$、$c\in\R$，$a\neq0$）的两个实根为
+$x_1$、$x_2$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $a=1$，$b=-2$，$c>0$，求 $|x_1|+|x_2|$ 的值；
+\item 若 $b+c=0$，$ab<0$，用反证法证明 $x_1$、$x_2$ 中至少有一个大于等于 $2$；
+\item 若 $3a+2b+c=0$，$y=\dfrac ba$，求实数 $y$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $a=1$，$b=-2$，$c>0$ 时，$ax^2+bx+c=0$ 化为 $x^2-2x+c=0$，}
+\step{则两个实根 $x_1$、$x_2$ 由韦达定理得
+$\begin{cases}x_1+x_2=2\\ x_1x_2=c>0\end{cases}$，}
+\step{则 $|x_1|+|x_2|=x_1+x_2=2$；}
+\stepm{(2)}{假设 $x_1$、$x_2$ 都小于 $2$，因为 $b+c=0$，$ab<0$，}
+\step{所以 $c=-b$，且 $a$ 与 $b$ 异号，$ax^2+bx+c=0$ 的两个实根 $x_1$、$x_2$，}
+\step{由韦达定理得
+$\begin{cases}x_1+x_2=-\dfrac ba>0\\[4pt] x_1\cdot x_2=\dfrac ca=-\dfrac ba>0\end{cases}$，
+则 $x_1$ 与 $x_2$ 同正，}
+\step{且此时 $x_1+x_2=x_1\cdot x_2$，则 $\dfrac1{x_1}+\dfrac1{x_2}=1$，}
+\step{因为 $x_1$、$x_2$ 都小于 $2$，
+所以 $\dfrac1{x_1}+\dfrac1{x_2}>\dfrac12+\dfrac12=1$，
+这与 $\dfrac1{x_1}+\dfrac1{x_2}=1$ 矛盾，}
+\step{故假设不成立，所以 $x_1$、$x_2$ 中至少有一个大于等于 $2$；}
+\stepm{(3)}{因为 $3a+2b+c=0$，所以 $c=-(3a+2b)$，}
+\step{则 $ax^2+bx+c=0$ 可化为 $ax^2+bx-(3a+2b)=0$.}
+\step{因为一元二次方程 $ax^2+bx+c=0$（$a$、$b$、$c\in\R$，$a\neq0$）有两个实根，}
+\step{所以 $\Delta=b^2+4a(3a+2b)\geqslant0$，且 $a\neq0$，
+即 $(b+2a)(b+6a)\geqslant0$，}
+\step{则 $\left(\dfrac ba+2\right)\left(\dfrac ba+6\right)\geqslant0$，
+解得 $-\dfrac ba\leqslant2$ 或 $-\dfrac ba\geqslant6$，又 $y=\dfrac ba$，}
+\step{所以实数 $y$ 的取值范围为 $(-\infty,-6]\cup[-2,+\infty)$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 给定函数 $f(x)$，若实数 $x_0$ 使得 $f(x_0)=x_0$，则称 $x_0$ 为函数 $f(x)$ 的
+不动点，若实数 $x_0$ 使得 $f(f(x_0))=x_0$，则称 $x_0$ 为函数 $f(x)$ 的稳定点，函数的
+不动点一定是该函数的稳定点.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求函数 $g(x)=\dfrac{2x+6}{x+1}$ 的不动点；
+\item 设 $f(x)=x^2+ax-a$，$a\in\R$，且 $f(x)$ 恰好有两个稳定点 $x_1$ 和 $x_2$，
+求实数 $a$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{令 $g(x)=x$，得 $\dfrac{2x+6}{x+1}=x$，整理得 $x^2-x-6=0$，
+解得 $x=-2$ 或 $x=3$，}
+\step{经检验得均满足要求，故函数 $g(x)=\dfrac{2x+6}{x+1}$ 的不动点为 $-2$ 和 $3$.}
+\stepm{(2)}{令 $f(f(x))=x$，得 $(x^2+ax-a)^2+a(x^2+ax-a)-a=x$，}
+\step{即 $(x^2+ax-a)(x^2+ax-a+a)-(x+a)=0$，}
+\step{得 $(x+a)(x^3+ax^2-ax-1)=0$，}
+\step{所以有 $(x+a)(x-1)\left[x^2+(a+1)x+1\right]=0$，}
+\step{此方程恰好有两个不同的实数解.}
+\step{①当 $-a=1$，即 $a=-1$ 时，方程化为 $(x-1)^2(x^2+1)=0$，}
+\step{仅有一个实数解 $x=1$，不满足题意；}
+\step{②当 $a\neq-1$ 时，要么方程 $x^2+(a+1)x+1=0$ 无实数解，}
+\step{要么方程 $x^2+(a+1)x+1=0$ 仅有一个实数解为 $1$ 或者 $-a$.}
+\step{故 $(a+1)^2-4<0$ 或
+$\begin{cases}(a+1)^2-4=0\\ -a-1=2\end{cases}$
+或 $\begin{cases}(a+1)^2-4=0\\ -a-1=-2a\end{cases}$，}
+\step{解得 $-3\leqslant a<-1$ 或 $-1<a\leqslant1$.}
+\step{综上，当 $f(x)$ 恰好有两个稳定点时，}
+\step{实数 $a$ 的取值范围为 $[-3,-1)\cup(-1,1]$.}
+\solend
+
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}

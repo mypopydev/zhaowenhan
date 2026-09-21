@@ -1,0 +1,470 @@
+% 高一28_七宝中学_周末作业3.tex
+%   —— 高一上数学「2026-2027 年七宝中学高一上周末作业 3」（试卷版/答案版）
+% 试卷版：xelatex 高一28_七宝中学_周末作业3.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一28_七宝中学_周末作业3.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一28_七宝中学_周末作业3.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 28」，2026-09-21 发布，
+% 原文标题「27学年高一28——2026-2027年上海市七宝中学高一上周末作业3」），
+% 正文为 11 张 PNG 页（1080×1527，各页同尺寸）。原文本身就是一份**讲评版**——
+% 第 3—6 题下方只印【答案】（无解析），第 7 题起印【解析】。
+% 试题文字、答案与解析均照原卷录入，未改内容。卷面的粉色斜水印「魔都数学加油站」属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年七宝中学高一上周末作业 3」（公众号标题里的「上海市」
+% 三字卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash，前缀照原卷保留「年」
+% （同校的 高一17／高一22 亦作「年」）。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题，本稿照原卷分节，
+%      只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷第 3—6 题只印【答案】行、第 7 题起印【解析】（选择题第 13—16 题的答案都写在
+%      解析末句），本稿统一改为试卷版隐去、答案版以 \ans{}／\ifanswer 块给出，两版彻底分离；
+%   ④ 子集符号原卷两种并用：第 4 题 $(0,1)\subseteq A$、第 21 题解析 $S\subseteq A$ 作
+%      带下划线的 $\subseteq$，第 5、11 题的 $A\subset B$ 作真包含的 $\subset$，本稿分别照录；
+%   ⑤ 补集符号原卷作上横线（第 3 题【答案】的 $\overline{A}\cap B$），本稿照录；
+%   ⑥ 原卷的实数集 R 粗体（第 20 题题干 $k\in\mathbf R$），本稿按全稿惯例统一写作 $\R$；
+%   ⑦ 原卷填空的横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ⑧ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」。
+%
+% 原卷存疑一处（照抄原卷、未改，见源码中该处上方注释）：
+%   ① 第 17(2) 题【解析】由 $A\cup B=\{x\mid x>-2\}$、$A\cap B=\{x\mid1<x\leqslant3\}$
+%      推出 $B=\{x\mid1\leqslant x\leqslant3\}$，从而 $a=-4$，$b=3$——但 $B=[1,3]$ 时
+%      $A\cup B=(-2,-1)\cup[1,+\infty)$，并非 $\{x\mid x>-2\}$；按题设应有 $B=[-1,3]$
+%      （此时 $A\cap B=(1,3]$、$A\cup B=(-2,+\infty)$ 均吻合），即 $a=-2$、$b=-3$.
+%      原卷答案显系错误，本稿照抄未改。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年七宝中学高一上周末作业 3}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 设关于 $x$ 的不等式 $a_1x^2+b_1x+c_1>0$ 与 $a_2x^2+b_2x+c_2>0$ 的解集分别为
+$A$、$B$，则不等式组
+$\begin{cases}a_1x^2+b_1x+c_1\leqslant0\\ a_2x^2+b_2x+c_2>0\end{cases}$
+的解集可以用集合 $A$、$B$ 的运算表示为 \blankline[4.4em].
+
+\ans{$\overline{A}\cap B$}
+
+\item 已知关于 $x$ 的不等式 $2x^2+(a+1)x-a(a-1)<0$ 的解集为 $A$，求使得
+$(0,1)\sub A$ 的正实数 $a$ 的取值范围 \blankline[4.4em].
+
+\ans{$[3,+\infty)$}
+
+\item 已知集合 $A=\{x\mid x^2-(2a+1)x+a^2+a<0\}$，集合 $B=\{x\mid x^2-5x+4\geqslant0\}$，
+如果 $A\subset B$，则实数 $a$ 的取值范围是 \blankline[4.4em].
+
+\ans{$(-\infty,0]\cup[4,+\infty)$}
+
+\item 若关于 $x$ 的不等式 $(m^2-1)x+m+1\geqslant0$ 对任意 $x\in[-1,1]$ 恒成立，
+则 $m$ 的范围是 \blankline[4.4em].
+
+\ans{$\{-1\}\cup[0,2]$}
+
+\item 若关于 $x$ 的不等式组
+$\begin{cases}x^2-x-2>0\\ 2x^2+(5+2k)x+5k<0\end{cases}$
+的整数解只有 $-2$，则实数 $k$ 的范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $x^2-x-2>0$，得 $x>2$ 或 $x<-1$，}
+\step{由 $2x^2+(2k+5)x+5k<0$，得 $(2x+5)(x+k)<0$.}
+\step{①若 $-k<-\dfrac52$，即 $k>\dfrac52$ 时，解得 $-k<x<-\dfrac52$，}
+\step{此时原不等式的解集为 $\left(-k,-\dfrac52\right)$，不符合题意；}
+\step{②若 $k=\dfrac52$ 时，解得 $x\in\varnothing$，显然不符合题意；}
+\step{③若 $k<\dfrac52$ 时，解得 $-\dfrac52<x<-k$，则 $-2<-k\leqslant3$，
+即 $-3\leqslant k<2$.}
+\step{综上，实数 $k$ 的取值范围 $[-3,2)$.}
+\solend
+
+\fi
+
+\item 关于 $x$ 的不等式 $(x-4)\sqrt{x^2-3x-4}\geqslant0$ 的解集是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$(x-4)\sqrt{x^2-3x-4}\geqslant0
+\Longleftrightarrow\begin{cases}x-4\geqslant0\\ x^2-3x-4\geqslant0\end{cases}$
+或 $x=-1$，所以 $x=-1$ 或 $x\geqslant4$，}
+\step{故解集为 $\{-1\}\cup[4,+\infty)$.}
+\solend
+
+\fi
+
+\item 若 $a$、$b$、$c$、$d$ 满足 $c<d,a+d<b+c,a+b=c+d$，则 $a$、$b$、$c$、$d$ 的大小
+关系是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a+b=c+d$，则有 $a-c=d-b$，}
+\step{又 $a+d<b+c$，所以 $a-c<b-d$，所以 $a-c<0<b-d$，}
+\step{所以 $a<c$，$d<b$，又 $d>c$，所以 $a<c<d<b$.}
+\solend
+
+\fi
+
+\item 若不等式 $2x-1>m(x^2-1)$ 对满足 $|m|\leqslant2$ 的所有实数 $m$ 都成立，则实数
+$x$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $f(m)=(x^2-1)m-(2x-1)$，}
+\step{要使 $f(m)<0$ 在 $[-2,2]$ 上恒成立，
+当且仅当 $\begin{cases}f(2)<0\\ f(-2)<0\end{cases}$，}
+\step{即 $\begin{cases}2x^2-2x-1<0\\ -2x^2-2x+3<0\end{cases}$，
+解得 $\dfrac{-1+\sqrt7}{2}<x<\dfrac{1+\sqrt3}{2}$，}
+\step{故实数 $x$ 的取值范围是 $\left(\dfrac{\sqrt7-1}{2},\dfrac{\sqrt3+1}{2}\right)$.}
+\solend
+
+\fi
+
+\item 已知集合 $A=\{x\mid-2k+6<x<k^2-3\}$，$B=\{x\mid-k<x<k\}$，若 $A\subset B$，
+则实数 $k$ 的取值范围为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $A=\varnothing$ 时，$k^2-3\leqslant-2k+6$，
+解得 $-1-\sqrt{10}\leqslant k\leqslant-1+\sqrt{10}$；}
+\step{当 $A\neq\varnothing$ 时，$k<-1-\sqrt{10}$ 或 $k>-1+\sqrt{10}$，}
+\step{由题意 $B=\{x\mid-k<x<k\}\neq\varnothing$，从而 $k>0$，
+所以 $k>-1+\sqrt{10}$，}
+\step{因为 $A\subset B$，所以 $-k\leqslant-2k+6<x<k^2-3\leqslant k$，}
+\step{所以 $-k\leqslant-2k+6$ 且 $k^2-3\leqslant k$，且两个等号不能同时取到，}
+\step{即 $k\leqslant6$ 且 $k^2-k-3\leqslant0$，
+且 $k<-1-\sqrt{10}$ 或 $k>-1+\sqrt{10}$，}
+\step{解得 $-1+\sqrt{10}<k\leqslant\dfrac{1+\sqrt{13}}{2}$.}
+\step{当 $A=\varnothing$，$B\neq\varnothing$ 时，解得 $0<k\leqslant-1+\sqrt{10}$，}
+\step{当 $A\neq\varnothing$，$B\neq\varnothing$ 时，
+解得 $-1+\sqrt{10}<k\leqslant\dfrac{1+\sqrt{13}}{2}$，}
+\step{综上，$0<k\leqslant\dfrac{1+\sqrt{13}}{2}$，
+所以实数 $k$ 的取值范围为 $\left(0,\dfrac{1+\sqrt{13}}{2}\right]$.}
+\solend
+
+\fi
+
+\item 已知二次函数 $f(x)=ax^2+bx+c$，$-4\leqslant f(-1)\leqslant-1$，
+$2\leqslant f(1)\leqslant5$，$4\leqslant f(2)\leqslant9$，则 $f(3)$ 的取值范围为
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{二次函数 $f(x)=ax^2+bx+c$，则 $f(3)=9a+3b+c$.}
+\step{因为 $-4\leqslant f(-1)\leqslant-1$，$2\leqslant f(1)\leqslant5$，
+$4\leqslant f(2)\leqslant9$，}
+\step{所以 $-4\leqslant a-b+c\leqslant-1$，$2\leqslant a+c+b\leqslant5$，
+$4\leqslant4a+2b+c\leqslant9$，}
+\step{令 $9a+3b+c=am-bm+cm+an+cn+bn+4at+2bt+ct$，}
+\step{得 $\begin{cases}m+n+4t=9\\ n-m+2t=3\\ m+n+t=1\end{cases}$，
+解得 $t=\dfrac83$，$n=-2$，$m=\dfrac13$，}
+\step{那么 $-\dfrac43-10+\dfrac{32}{3}\leqslant9a+3b+c\leqslant-\dfrac13-4+24$，
+即 $-\dfrac23\leqslant9a+3b+c\leqslant\dfrac{59}{3}$，}
+\step{故 $f(3)$ 的取值范围为 $\left[-\dfrac23,\dfrac{59}{3}\right]$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 若 $a$、$b$ 为不等的正数，则
+$\left(ab^k+a^k b\right)-\left(a^{k+1}+b^{k+1}\right)(k\in\N^{*})$ 的符号\mbox{（\quad）}
+
+\keepwithprev
+A. 恒正\qquad\qquad\qquad B. 恒负
+
+C. 与 $a$、$b$ 大小无关\qquad D. 与 $k$ 的奇偶性有关
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{令 $a=1$，$b=2$，$k=2$ 得到 $ab^k+a^k b=6$，$a^{k+1}+b^{k+1}=9$，}
+\step{故 $(ab^k+a^k b)-(a^{k+1}+b^{k+1})<0$；}
+\step{令 $a=2$，$b=1$，$k=2$ 得到 $ab^k+a^k b=6$，$a^{k+1}+b^{k+1}=9$，}
+\step{故 $(ab^k+a^k b)-(a^{k+1}+b^{k+1})<0$；}
+\step{令 $a=2$，$b=1$，$k=1$ 得到 $ab^k+a^k b=4$，$a^{k+1}+b^{k+1}=5$，}
+\step{故 $(ab^k+a^k b)-(a^{k+1}+b^{k+1})<0$；}
+\step{故 $(ab^k+a^k b)-(a^{k+1}+b^{k+1})(k\in\N^{*})$ 的符号与 $k$ 的奇偶性无关，
+故选 $B$.}
+\solend
+
+\fi
+
+\item 若实数 $x$、$y$、$z$ 满足
+$\begin{cases}1-y<x<2-y\\ 1-y<z<2-y\end{cases}$，记 $P=xy+yz+xz+y^2$，
+$Q=x+2y+z$，则 $P$ 与 $Q$ 的大小关系是\mbox{（\quad）}
+
+\keepwithprev
+A. $P<Q$\qquad B. $P>Q$\qquad C. $P=Q$\qquad D. 不确定
+
+\ans{$A$}
+
+\ifanswer
+\solbegin
+\step{因为 $\begin{cases}1-y<x<2-y\\ 1-y<z<2-y\end{cases}$，
+所以 $\begin{cases}1<x+y<2\\ 1<y+z<2\end{cases}$，}
+\step{令 $x+y=m$，$y+z=n$，则 $\begin{cases}1<m<2\\ 1<n<2\end{cases}$，}
+\step{易得 $P=xy+yz+xz+y^2=(y+z)(x+y)=mn$，}
+\step{$Q=x+2y+z=x+y+y+z=m+n$，则 $\dfrac{m+n}{mn}=\dfrac1m+\dfrac1n$，}
+\step{因为 $m\in(1,2)$，$n\in(1,2)$，所以 $\dfrac1m+\dfrac1n\in(1,2)$，
+所以 $\dfrac{m+n}{mn}>1$，}
+\step{因为 $m$、$n$ 均为正值，所以 $m+n>mn$，即 $Q>P$. 故选 $A$.}
+\solend
+
+\fi
+
+\item 设 $a$、$b\in\R$，给出下列判断：
+
+\keepwithprev
+①若 $\dfrac1b-\dfrac1a=1$，则 $a-b\leqslant1$；
+
+②若 $a^3-b^3=1$，则 $a-b\leqslant1$；
+
+③若 $a$、$b$ 均为正数，且 $a^2-b^2=1$，则 $a-b\leqslant1$；
+
+④若 $a$、$b$ 均为正数，且 $\sqrt a-\sqrt b=1$，则 $a-b\geqslant1$.
+
+则所有正确判断的序号是\mbox{（\quad）}
+
+\keepwithprev
+A. ①②\qquad\qquad B. ③\qquad\qquad C. ③④\qquad\qquad D. ②④
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{①若 $\dfrac1b-\dfrac1a=1$，取 $a=2$，$b=\dfrac23$，则 $a-b=\dfrac43>1$，
+因此①不一定正确；}
+\step{②若 $a^3-b^3=1$，取 $a=\dfrac12$，$b=-\dfrac{\sqrt[3]{7}}{2}$，
+则 $a-b=\dfrac{1+\sqrt[3]{7}}{2}>1$，}
+\step{因此不一定正确；}
+\step{③若 $a$、$b$ 均为正数，且 $a^2-b^2=1$，则 $a=\sqrt{1+b^2}$，}
+\step{所以 $a-b=\sqrt{1+b^2}-b=\dfrac{1}{\sqrt{1+b^2}+b}\leqslant1$，因此正确；}
+\step{④若 $a$、$b$ 均为正数，且 $\sqrt a-\sqrt b=1$，则 $\sqrt a=1+\sqrt b$，}
+\step{两边平方得 $a=1+2\sqrt b+b$，所以 $a-b=1+2\sqrt b\geqslant1$，因此正确.}
+\step{故选 $C$.}
+\solend
+
+\fi
+
+\item 设 $a$、$b\in\R$，定义运算“$\wedge$”和“$\vee$”如下：
+$a\wedge b=\begin{cases}a,a\leqslant b\\ b,a>b\end{cases}$，
+$a\vee b=\begin{cases}b,a\leqslant b\\ a,a>b\end{cases}$，
+若正数 $a$、$b$、$c$、$d$ 满足 $ab\geqslant4$，$c+d\leqslant4$，则\mbox{（\quad）}
+
+\keepwithprev
+A. $a\wedge b\geqslant2$，$c\wedge d\leqslant2$\qquad
+B. $a\wedge b\geqslant2$，$c\vee d\geqslant2$
+
+C. $a\vee b\geqslant2$，$c\wedge d\leqslant2$\qquad
+D. $a\vee b\geqslant2$，$c\vee d\geqslant2$
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{不妨令 $a=1$，$b=4$，则 $a\wedge b\geqslant2$ 错误，故可排除 $A$、$B$；}
+\step{再令 $c=1$，$d=1$，满足条件 $c+d\leqslant4$，但不满足 $c\vee d\geqslant2$，
+故可排除 $D$；}
+\step{故选 $C$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）若关于 $x$ 的方程 $x^2+(p+2)x+1=0$ 没有负实数解，求实数 $p$ 的取值范围.
+
+（2）已知集合 $A=(-2,-1)\cup(1,+\infty)$，集合 $B=\{x\mid x^2+ax+b\leqslant0\}$，且
+$A\cup B=\{x\mid x>-2\}$，$A\cap B=\{x\mid1<x\leqslant3\}$，试求 $a,b$ 的值.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$(-\infty,0)$；}
+\stepm{(2)}{因为 $A\cup B=\{x\mid x>-2\}$，$A\cap B=\{x\mid1<x\leqslant3\}$，}
+% 注：本行起系原卷答案，与题设矛盾——B=[1,3] 时 A∪B=(-2,-1)∪[1,+∞)，
+%     并非 {x|x>-2}；按题设应有 B=[-1,3]，即 a=-2、b=-3。照抄原卷、未改，
+%     见文件头「原卷存疑」①。
+\step{所以 $B=\{x\mid1\leqslant x\leqslant3\}$，
+即 $1$，$3$ 是方程 $x^2+ax+b=0$ 的两个根，}
+\step{则 $1+3=-a$，$1\times3=b$，即 $a=-4$，$b=3$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知关于 $x$ 的不等式 $ax^2-3x+2>0$ 的解集为 $(-\infty,1)\cup(b,+\infty)$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求 $a,b$ 的值；
+\item 解关于 $x$ 的不等式 $ax^2-(ac+b)x+bc<0$.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得不等式 $ax^2-3x+2>0$ 的解集为 $\{x\mid x<1$ 或 $x>b\}$，}
+\step{即 $1$、$b$ 是方程 $ax^2-3x+2=0$ 的两根，}
+\step{则有 $\begin{cases}1\times b=\dfrac2a\\[4pt] 1+b=\dfrac3a\end{cases}$，
+解得 $\begin{cases}a=1\\ b=2\end{cases}$；}
+\stepm{(2)}{原不等式即 $x^2-(c+2)x+2c<0$，即 $(x-2)(x-c)<0$，}
+\step{方程 $x^2-(c+2)x+2c=0$ 有两根，$2$ 和 $c$，}
+\step{当 $c>2$ 时，不等式的解集为 $\{x\mid2<x<c\}$，}
+\step{当 $c<2$ 时，不等式的解集为 $\{x\mid c<x<2\}$，}
+\step{当 $c=2$ 时，不等式的解集为 $\varnothing$.}
+\step{综上，当 $c>2$ 时，不等式的解集为 $\{x\mid2<x<c\}$，}
+\step{当 $c<2$ 时，不等式的解集为 $\{x\mid c<x<2\}$，}
+\step{当 $c=2$ 时，不等式的解集为 $\varnothing$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知集合 $A=\{x\mid ax^2+5x-14=0\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $A$ 中只有 $1$ 个元素，求实数 $a$ 的取值范围；
+\item 若关于 $x$ 的方程 $x^2+3ax+1=0$ 存在两个不相等实根且
+$|x_1-x_2|=\sqrt5$. 求实数 $a$ 的值与集合 $A$.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $a=0$ 时，$5x-14=0$，解得 $x=\dfrac{14}{5}$，符合题意，}
+\step{当 $a\neq0$ 时，$\Delta=25-4\times(-14)a=0$，解得 $a=-\dfrac{25}{56}$，
+符合题意，}
+\step{故实数 $a$ 的取值范围为 $\left\{0,-\dfrac{25}{56}\right\}$；}
+\stepm{(2)}{因为关于 $x$ 的方程 $x^2+3ax+1=0$ 存在两个不相等实根，}
+\step{所以 $\Delta=(3a)^2-4>0$，且 $x_1+x_2=-3a$，$x_1x_2=1$，}
+\step{则 $(x_1-x_2)^2=(x_1+x_2)^2-4x_1x_2=5$，即 $(3a)^2-4=5$，
+故 $a=-1$ 或 $a=1$，}
+\step{当 $a=1$ 时，$A=\{x\mid x^2+5x-14=0\}=\{-7,2\}$，}
+\step{当 $a=-1$ 时，$A=\{x\mid-x^2+5x-14=0\}=\varnothing$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知关于 $x$ 的不等式 $(k^2-4k-5)x^2+(k+1)x+1>0(k\in\R)$ 的解集为 $M$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $M=\R$，求实数 $k$ 的取值范围；
+\item 若存在 $a<b<0$，使得 $M=(-\infty,a)\cup(b,+\infty)$，求实数 $k$ 的取值范围；
+\item 是否存在实数 $k$，满足：“对于任意 $n\in\N,n\geqslant1$，都有 $n\in M$；对于任意
+负整数 $m$，都有 $m\notin M$”，若存在，求出 $k$ 的值，若不存在，请说明理由.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $k^2-4k-5=0$ 时，解得 $k=5$ 或 $k=-1$，}
+\step{当 $k=-1$ 时，不等式化为 $1>0$，所以 $k=-1$ 时，解集为 $R$，符合题意；}
+\step{当 $k=5$ 时，不等式化为 $6x+1>0$，解集为 $\left(-\dfrac16,+\infty\right)$，}
+\step{不符合题意，舍去；}
+\step{当 $k^2-4k-5\neq0$ 时，}
+\step{$\begin{cases}k^2-4k-5>0\\ \Delta=(k+1)^2-4(k^2-4k-5)<0\end{cases}$，}
+\step{解得，$k<-1$ 或 $k>7$，}
+\step{综上，实数 $k$ 的取值范围为 $(-\infty,-1)\cup(7,+\infty)$；}
+\stepm{(2)}{由题意得方程 $(k^2-4k-5)x^2+(k+1)x+1=0$ 有两个不相等的负实根，}
+\step{且 $k^2-4k-5>0$，故有}
+\step{$\begin{cases}k^2-4k-5>0\\ \Delta=(k+1)^2-4(k^2-4k-5)>0\\[2pt]
+-\dfrac{k+1}{k^2-4k-5}<0\\[6pt] \dfrac{1}{k^2-4k-5}>0\end{cases}$，}
+\step{解得 $5<k<7$，即实数 $k$ 的取值范围为 $(5,7)$；}
+\stepm{(3)}{由题意得解集 $M=(t,+\infty),t\in[-1,1)$，}
+\step{当 $k^2-4k-5=0$ 时，解得 $k=5$ 或 $k=-1$，}
+\step{$k=5$ 时，不等式的解集为 $\left(-\dfrac16,+\infty\right)$，满足条件，}
+\step{$k=-1$ 时，$1>0$ 恒成立，不满足条件，}
+\step{当 $k^2-4k-5>0$ 时，此时对应的一元二次不等式的解集形式}
+\step{不是 $(t,+\infty)$ 的形式，不满足条件，}
+\step{当 $k^2-4k-5<0$ 时，此时对应的一元二次不等式的解集形式}
+\step{不是 $(t,+\infty)$ 的形式，不满足条件，}
+\step{综上，存在满足条件 $k$ 的值为 $5$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 已知集合 $A=\{1,2,3,\cdots,2n\}(n\in\N^{*})$. 对于 $A$ 的一个子集 $S$，若存在
+不大于 $n$ 的正整数 $m$，使得对于 $S$ 中的任意一对元素 $s_1,s_2$，都有
+$|s_1-s_2|\neq m$，则称 $S$ 具有性质 $P$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $n=10$ 时，试判断集合 $B=\{x\in A\mid x>9\}$ 和
+$C=\{x\in A\mid x=3k-1,k\in\N^{*}\}$ 是否具有性质 $P$？并说明理由.
+\item 若 $n=1000$ 时\\
+①若集合 $S$ 具有性质 $P$，那么集合 $T=\{2001-x\mid x\in S\}$
+是否一定具有性质 $P$？并说明理由；\\
+②若集合 $S$ 具有性质 $P$，求集合 $S$ 中元素个数的最大值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $n=10$ 时，集合 $A=\{1,2,3,\cdots,19,20\}$，
+$B=\{x\in A\mid x>9\}=\{10,11,\cdots,20\}$}
+\step{不具有性质 $P$.}
+\step{因为对任意不大于 $10$ 的正整数 $m$，}
+\step{都可以找到该集合中两个元素 $b_1=10$ 与 $b_2=10+m$，
+使得 $|b_1-b_2|=m$ 成立.}
+\step{集合 $C=\{x\in A\mid x=3k-1,k\in\N^{*}\}$ 具有性质 $P$.}
+\step{因此可取 $m=1<10$，对于该集合中任意一对元素 $c_1=3k_1-1$，$c_2=3k_2-1$，}
+\step{$k_1$、$k_2\in\N^{*}$，都有 $|c_1-c_2|=3|k_1-k_2|\neq1$.}
+\stepm{(2)}{当 $n=1000$ 时，则 $A=\{1,2,\cdots,2000\}$，}
+\step{①若集合 $S$ 具有性质 $P$，那么集合 $T=\{2001-x\mid x\in S\}$
+一定具有性质 $P$.}
+\step{首先因为 $T=\{2001-x\mid x\in S\}$，任取 $t=2001-x_0\in T$，
+其中 $x_0\in S$，}
+\step{因为 $S\sub A$，所以 $x_0\in\{1,2,\cdots,2000\}$，}
+\step{从而 $1\leqslant2001-x_0\leqslant2000$，即 $t\in A$，所以 $T\sub A$.}
+\step{由 $S$ 具有性质 $P$，得存在不大于 $1000$ 的正整数 $m$，}
+\step{使得对 $S$ 中的任意一对元素 $s_1,s_2$，都有 $|s_1-s_2|\neq m$.}
+\step{对于上述正整数 $m$，从集合 $T=\{2001-x\mid x\in S\}$ 中任取一对元素}
+\step{$t_1=2001-x_1$，$t_2=2001-x_2$，其中 $x_1$，$x_2\in S$，
+则有 $|t_1-t_2|=|x_1-x_2|\neq m$，}
+\step{所以集合 $T=\{2001-x\mid x\in S\}$ 具有性质 $P$.}
+\step{②设集合 $S$ 有 $k$ 个元素. 由第①问得，若集合 $S$ 具有性质 $P$，}
+\step{那么集合 $T=\{2001-x\mid x\in S\}$ 一定具有性质 $P$.}
+\step{任给 $x\in S$，$1\leqslant x\leqslant2000$，
+则 $x$ 与 $2001-x$ 中必有一个不超过 $1000$，}
+\step{所以集合 $S$ 与 $T$ 中必有一个集合中至少存在一半元素不超过 $1000$，}
+\step{不妨设 $S$ 中有 $t\left(t\geqslant\dfrac k2\right)$ 个元素
+$b_1$、$b_2$、$\cdots$、$b_t$ 不超过 $1000$.}
+\step{由集合 $S$ 具有性质 $P$，得存在正整数 $m\leqslant1000$，}
+\step{使得对 $S$ 中任意两个元素 $s_1,s_2$，都有 $|s_1-s_2|\neq m$，}
+\step{所以一定有 $b_1+m$、$b_2+m$、$\cdots$、$b_t+m\notin S$.}
+\step{又 $b_t+m\leqslant1000+1000=2000$，
+故 $b_1+m$、$b_2+m$、$\cdots$、$b_t+m\in A$，}
+\step{即集合 $A$ 中至少有 $t$ 个元素不在子集 $S$ 中，}
+\step{因此 $k+\dfrac k2\leqslant k+t\leqslant2000$，
+所以 $k+\dfrac k2\leqslant2000$，得 $k\leqslant1333$，}
+\step{当 $S=\{1,2,\cdots,665,666,1334,\cdots,1999,2000\}$ 时，}
+\step{取 $m=667$，则易得对集合 $S$ 中任意两个元素 $y_1$、$y_2$，}
+\step{都有 $|y_1-y_2|\neq667$，即集合 $S$ 具有性质 $P$，
+而此时集合 $S$ 中有 $1333$ 个元素.}
+\step{因此集合 $S$ 元素个数的最大值是 $1333$.}
+\solend
+
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}

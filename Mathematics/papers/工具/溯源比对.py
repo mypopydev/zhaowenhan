@@ -44,7 +44,7 @@ SECT = '## 题目溯源'
 
 KEEP = re.compile(r'[\u4e00-\u9fff0-9★▲⊕◆①-⑳]')
 MARKERS = '★▲⊕◆' + ''.join(chr(c) for c in range(0x2460, 0x2474))   # ★▲⊕◆①–⑳
-HEADER, RUNHEAD = '题目溯源', '24 份口径（2026-09-20）'
+HEADER, RUNHEAD = '题目溯源', '28 份口径（2026-09-22）'
 
 # 与 工具/README转tex.py 的 UNI 保持一致（只列「映射成数学命令」的那些，★▲ 不映射）
 UNI = [('×', r'$\times$'), ('→', r'$\to$'), ('≥', r'$\geqslant$'), ('≤', r'$\leqslant$'),
