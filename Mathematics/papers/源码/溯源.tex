@@ -6,13 +6,17 @@
 \usepackage{common}
 \usepackage{booktabs}
 \usepackage{xltabular}          % longtable + 固定列宽（宽表见 README 的「题目溯源」）
+\usepackage{colortbl}           % 宽表交替底纹（\rowcolors）：行高 3—4 行的表不串行
 \usepackage{fancyhdr}
+\usepackage{lastpage}           % 页脚「第 N 页 / 共 M 页」
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=solblue,urlcolor=solblue,
+            bookmarksopen=true,bookmarksopenlevel=1,pdfstartview=FitH,
             pdftitle={题目溯源},pdfsubject={上海高一上数学 · 跨卷同题与真题出处考证}}
 \setlength{\parskip}{0.28em}
 \setlength{\parindent}{0pt}
 \renewcommand{\arraystretch}{1.12}
+\definecolor{rowgray}{gray}{0.955}   % 交替底纹：比白纸略深一点，不抢正文
 
 %% pandoc 的列表里会插 \tightlist，它只在 pandoc 自带模板里定义，独立编译要自己补，
 %% 否则报 `Undefined control sequence \tightlist`（踩过）。定义与 pandoc 模板同文。
@@ -21,10 +25,13 @@
 
 \pagestyle{fancy}
 \fancyhf{}
+%% 右眉显示**当前节名**：翻到中间页时不至于不知道在哪一节（以前右眉是死的口径标签）。
 \fancyhead[L]{\small\color{solblue} 题目溯源}
-\fancyhead[R]{\small 28 份口径（2026-09-22）}
-\fancyfoot[C]{\small\thepage}
+\fancyhead[R]{\small\nouppercase{\rightmark}}
+\fancyfoot[L]{\small 28 份口径（2026-09-22）}
+\fancyfoot[C]{\small 第 \thepage 页 / 共 \pageref{LastPage} 页}
 \renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
 \begin{document}
 
@@ -34,7 +41,7 @@
 {\Huge\bfseries 题目溯源}\\[0.9em]
 {\Large 上海高一上数学 · 跨卷同题与真题出处考证}\\[2.6em]
 {\large 28 份试卷 488 道一级题干 $\times$ 参考库 16{,}273 道高考真题}\\[0.35em]
-{\large 跨卷两两 87{,}571 对 \quad|\quad 逐字同题 24 组、同模板变体 12 组}\\[3.2em]
+{\large 跨卷两两 118{,}828 对 \quad|\quad 逐字同题 26 组、同模板变体 14 组}\\[3.2em]
 \begin{minipage}{0.8\textwidth}\small\raggedright
 本文件由 \texttt{工具/README转tex.py} 从 \texttt{README.md} 的「题目溯源」一节自动生成，
 内容与该节逐字一致。判定口径、阈值与踩过的坑见末节「方法与局限」；
@@ -42,16 +49,23 @@
 \end{minipage}
 \end{titlepage}
 
+%% 目录本身也进书签（以前 9 个书签只有 9 节，目录不在里面）
+\pdfbookmark[1]{\contentsname}{toc}
 \tableofcontents
 \newpage
+\clearpage
 \section{核对摘要}
 
+\newcommand{\tabhdrA}{\rowcolor{white} 项 & 结果 \\}
+\rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{6.65cm}>{\raggedright\arraybackslash}p{8.51cm}@{}}
 \toprule
-项 & 结果 \\
+\tabhdrA
 \midrule
 \endfirsthead
 \multicolumn{2}{r}{\footnotesize（续上表）} \\
+\midrule
+\tabhdrA
 \midrule
 \endhead
 \bottomrule
@@ -196,6 +210,7 @@ C、D 两项各改一处，答案由 A 变 B，详见「真题出处」表末行
 （高一12／13／14／15／17）做了一轮\textbf{整卷回原图}核对（41 张图逐张放大比对），
 另查出 \textbf{5 处转录错误}，清单见文末「9 月中旬五份专记」里的回原图复核表。
 
+\clearpage
 \section{回原图逐题核对（2026-09-15 起，按批推进）}
 
 \textbf{页级核对（已全部完成）}：把公众号原文的图片逐张下载，与 \texttt{原图/\allowbreak{}} 里归档的文件比对------
@@ -225,12 +240,16 @@ C、D 两项各改一处，答案由 A 变 B，详见「真题出处」表末行
 高一24 第 15(2) 的原卷自身矛盾见专记）；2026-09-21 入库的 高一25---高一28 四份同样在转录时
 逐页回对过原图，2026-09-22 又独立做了一轮\textbf{回原图逐题核对}（见下表末四行）：
 
+\newcommand{\tabhdrB}{\rowcolor{white} 卷 & 原图/题数 & 核对结果 \\}
+\rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.39cm}>{\centering\arraybackslash}p{3.39cm}>{\raggedright\arraybackslash}p{7.96cm}@{}}
 \toprule
-卷 & 原图/题数 & 核对结果 \\
+\tabhdrB
 \midrule
 \endfirsthead
 \multicolumn{3}{r}{\footnotesize（续上表）} \\
+\midrule
+\tabhdrB
 \midrule
 \endhead
 \bottomrule
@@ -285,6 +304,7 @@ C、D 两项各改一处，答案由 A 变 B，详见「真题出处」表末行
 并已订正。今后只需在\textbf{改动过某题的区间}时，重新核那一处。
 \end{quote}
 
+\clearpage
 \section{材料流转}
 
 各市重点中学高一数学备课组的校本周末作业/周练 $\to$ 公众号「\textbf{魔都数学加油站}」（作者署名
@@ -311,12 +331,17 @@ C、D 两项各改一处，答案由 A 变 B，详见「真题出处」表末行
   没有对应的拍照卷。
 \end{itemize}
 
+\begingroup\small
+\newcommand{\tabhdrC}{\rowcolor{white} 连载 N & 原文标题里的学校 · 作业 & 发布 & 本地编号 & 状态 \\}
+\rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\centering\arraybackslash}p{1.45cm}>{\raggedright\arraybackslash}p{5.55cm}>{\raggedright\arraybackslash}p{1.10cm}>{\centering\arraybackslash}p{1.93cm}>{\raggedright\arraybackslash}p{3.86cm}@{}}
 \toprule
-连载 N & 原文标题里的学校 · 作业 & 发布 & 本地编号 & 状态 \\
+\tabhdrC
 \midrule
 \endfirsthead
 \multicolumn{5}{r}{\footnotesize（续上表）} \\
+\midrule
+\tabhdrC
 \midrule
 \endhead
 \bottomrule
@@ -351,6 +376,7 @@ C、D 两项各改一处，答案由 A 变 B，详见「真题出处」表末行
 --- & 大同中学 · 周中小练习1 & --- & 高一a（补） & 无连载号，家长拍照卷（原卷未印校名，判为大同） \\ \addlinespace[1pt]
 --- & 大同中学 · 第二周周末练习2 & --- & 高一c（补） & 无连载号，家长拍照卷 \\ \addlinespace[1pt]
 \end{xltabular}
+\endgroup
 
 \begin{itemize}
 \tightlist
@@ -375,6 +401,7 @@ C、D 两项各改一处，答案由 A 变 B，详见「真题出处」表末行
   中学}，文件名记为 \texttt{高一a\_大同中学\_周中小练习1（补）}（卷面标题仍照原卷、不带校名）。
 \end{itemize}
 
+\clearpage
 \section{上游是「共享题库」：26 组逐字同题 + 14 组同模板变体}
 
 把 \textbf{28 份试卷的 488 道}一级题干两两交叉比对（跨卷 \textbf{118,828 对}），校际重复分两档，两档的
@@ -389,12 +416,16 @@ C、D 两项各改一处，答案由 A 变 B，详见「真题出处」表末行
 $\oplus$ 为补跑高一10 新增，▲ 为 2026-09-15 末并入高一19---21 后的新增或改判，
 ◇ 为 2026-09-22 并入高一25---28 后新增）：
 
+\newcommand{\tabhdrD}{\rowcolor{white} 题目 & 份数 & 分布 \\}
+\rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{5.39cm}>{\centering\arraybackslash}p{1.61cm}>{\raggedright\arraybackslash}p{7.73cm}@{}}
 \toprule
-题目 & 份数 & 分布 \\
+\tabhdrD
 \midrule
 \endfirsthead
 \multicolumn{3}{r}{\footnotesize（续上表）} \\
+\midrule
+\tabhdrD
 \midrule
 \endhead
 \bottomrule
@@ -431,12 +462,17 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 这类\textbf{内容字符}------纯数字串不算；成员之间换了数字、问法或设定，\textbf{答案往往随之不同}。
 判据本身在本轮修过，见「方法与局限」）：
 
+\begingroup\small
+\newcommand{\tabhdrE}{\rowcolor{white} 题目 & 份数 & 分布 & 变在哪 \\}
+\rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.66cm}>{\centering\arraybackslash}p{1.50cm}>{\raggedright\arraybackslash}p{1.66cm}>{\raggedright\arraybackslash}p{7.49cm}@{}}
 \toprule
-题目 & 份数 & 分布 & 变在哪 \\
+\tabhdrE
 \midrule
 \endfirsthead
 \multicolumn{4}{r}{\footnotesize（续上表）} \\
+\midrule
+\tabhdrE
 \midrule
 \endhead
 \bottomrule
@@ -456,6 +492,7 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 ◇固定 \(B=\allowbreak \{x\mid\allowbreak  x^2-3x+\allowbreak 2=\allowbreak 0\}\) 与含参 \(A\)，\(A\subseteq\allowbreak  B\) 求 \(a\) & 2 & 04 第 15 题、26 第 8 题 & \(r=\allowbreak 0.813\)／公共串 15 字；\(B\) 一式不差，含参的那个都在 \(A\)（04 版 \(x^2-ax+\allowbreak 4=\allowbreak 0\)、26 版 \((a-1)x^2+\allowbreak 3x-2=\allowbreak 0\)），都要讨论 \(A=\allowbreak \varnothing\) 的单元素情形；因 \(a\) 出现的位置不同（一次项系数／二次项系数），答案不同（\(\{a\mid\allowbreak -4<a\leqslant\allowbreak 4\}\)／另一组区间） \\ \addlinespace[1pt]
 ◇「\(A\) 固定、\(B=\allowbreak \{x\mid\allowbreak  ax+c=\allowbreak 0\}\) 含参，\(B\subseteq\allowbreak  A\) 求 \(a\) 的取值集合」 & 2 & 15 第 6 题、25 第 6 题 & \(r=\allowbreak 0.719\)／公共串 15 字；\textbf{只共享句型骨架}（\(A\) 由 \(\{1,\allowbreak 2\}\) 换成 \(x^2+x-6=\allowbreak 0\) 的解集 \(\{-3,\allowbreak 2\}\)、\(B\) 由 \(ax=\allowbreak 6\) 换成 \(ax-2=\allowbreak 0\)、条件由 \(A\cup\allowbreak  B=A\) 换成 \(B\subseteq\allowbreak  A\)），与末两组同型，证据强度弱于前面几组，单列备查 \\ \addlinespace[1pt]
 \end{xltabular}
+\endgroup
 
 \textbf{有 3 行从本表移出、改列「判据之外手工补记」}------它们共享的只是句型骨架（「含参集合 + 包含
 关系 + 求 \(a\) 范围」），集合与条件都不相同，两版的\textbf{公共串短于 12 字}，任何文本判据都捞不到：
@@ -483,12 +520,17 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 （★ 为 2026-09-15 重跑新增；▲ 为 2026-09-15 末并入高一19---21 那一轮新增；分数是本轮口径，
 与上一轮有 $\pm$0.02 的出入。）
 
+\begingroup\small
+\newcommand{\tabhdrF}{\rowcolor{white} 题目 & 份数 & 分布 & \(r\)／LCS \\}
+\rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{6.78cm}>{\centering\arraybackslash}p{1.10cm}>{\raggedright\arraybackslash}p{4.68cm}>{\centering\arraybackslash}p{1.75cm}@{}}
 \toprule
-题目 & 份数 & 分布 & \(r\)／LCS \\
+\tabhdrF
 \midrule
 \endfirsthead
 \multicolumn{4}{r}{\footnotesize（续上表）} \\
+\midrule
+\tabhdrF
 \midrule
 \endhead
 \bottomrule
@@ -501,6 +543,7 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 ▲含参区间与包含关系（含参的那个一在 \(B\)、一在 \(A\)） & 2 & 02 第 18 题、03 第 16 题 & 0.448／\textbf{4} \\ \addlinespace[1pt]
 ▲\(A\) 为固定区间、\(B\) 含参时的包含关系 & 2 & 05 第 7 题、c 第 5 题 & 0.635／\textbf{9} \\ \addlinespace[1pt]
 \end{xltabular}
+\endgroup
 
 后 3 对（▲）是\textbf{从变体档移下来的}，缘由见变体表下的那段说明：它们的公共串只有 4---9 字，
 短于候选取线（LCS $\geqslant$ 12），\textbf{根本进不了候选池}------不是判据放宽或收紧能救回来的。
@@ -552,6 +595,7 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 题库、区统考、教材习题），而非各校独立原创。旁证是这些题在菁优网、1010jiajiao、百度题库、
 作业帮上都能搜到近乎一致的版本。
 
+\clearpage
 \section{能考据到的高考出处：29 道真题（32 条对应／38 个题位）}
 
 拿 1952--2026 年的\textbf{全部高考真题}逐字比对（参考库 \texttt{\textasciitilde{}/\allowbreak{}Sources/\allowbreak{}AI/\allowbreak{}Gaokao-\allowbreak{}Math-\allowbreak{}Problems-\allowbreak{}Compilation}，
@@ -592,12 +636,16 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 机判另给出 4 条候选，回原文复核后判为假命中，见「核对摘要」的注）。
 \end{quote}
 
+\newcommand{\tabhdrG}{\rowcolor{white} 本库题目 & 出处 & 关系 \\}
+\rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.71cm}>{\raggedright\arraybackslash}p{4.23cm}>{\raggedright\arraybackslash}p{7.80cm}@{}}
 \toprule
-本库题目 & 出处 & 关系 \\
+\tabhdrG
 \midrule
 \endfirsthead
 \multicolumn{3}{r}{\footnotesize（续上表）} \\
+\midrule
+\tabhdrG
 \midrule
 \endhead
 \bottomrule
@@ -652,6 +700,7 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 \(A\)、\(B\) 必有 \(A\subseteq B\) 或 \(A\supseteq B\)」，官方答案 36------与 高一b 第 11 题
 源码注记的记载一致（网上流传的「选出 2 个」版本是讹传）。
 
+\clearpage
 \section{考据不出来的：绝大多数}
 
 把 \textbf{28 份}试卷里的\textbf{自定义名词}逐个在全库检索：
@@ -681,17 +730,22 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 也就是说，这些「新定义压轴题」\textbf{都不是高考真题}，应属校本自编，或取材自模考／竞赛／自招
 与教辅。
 
+\clearpage
 \section{非高考但能考据到来源的题}
 
 高考真题库里查不到的题，有一部分能在\textbf{教辅/题库/校际试卷}里找到同题或同定义版本
 （2026-09-15 第二轮复核时逐题做了网络检索，取「同题面」或「同定义＋同小问」为准）：
 
+\newcommand{\tabhdrH}{\rowcolor{white} 题 & 考据结果 \\}
+\rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{6.97cm}>{\raggedright\arraybackslash}p{8.18cm}@{}}
 \toprule
-题 & 考据结果 \\
+\tabhdrH
 \midrule
 \endfirsthead
 \multicolumn{2}{r}{\footnotesize（续上表）} \\
+\midrule
+\tabhdrH
 \midrule
 \endhead
 \bottomrule
@@ -709,6 +763,7 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 等整题无同题）。另有一处卷面小疵顺带记下：\textbf{高一02 第 15 题}的两个条件原卷编号印作「①」「④」（跳过②③），
 本稿照原卷录入、未擅改。
 
+\clearpage
 \section{附加题专查（五份 14 题）}
 
 全稿共 \textbf{5 份卷带附加题、合计 14 道}：\texttt{高一09}（进才）、\texttt{高一a}（大同中学）、
@@ -719,12 +774,16 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 （高一a 附加题第 2 题的下标 \(i\) 一处笔误已订正），2026-09-15 逐题考据如下
 （\textbf{高一22 的四道是 2026-09-16 入库时补入的}）：
 
+\newcommand{\tabhdrI}{\rowcolor{white} 卷·题 & 内容 & 考据结果 \\}
+\rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.04cm}>{\raggedright\arraybackslash}p{4.91cm}>{\raggedright\arraybackslash}p{7.78cm}@{}}
 \toprule
-卷·题 & 内容 & 考据结果 \\
+\tabhdrI
 \midrule
 \endfirsthead
 \multicolumn{3}{r}{\footnotesize（续上表）} \\
+\midrule
+\tabhdrI
 \midrule
 \endhead
 \bottomrule
@@ -760,6 +819,7 @@ b 附加 20、15 附加 19、15 附加 20、22 附加 20），b 附加 19 与 b 
 按实改写：上表里能对上真题的是\textbf{三道}（两道原题照录 + 一道改编），并非「零道」。
 \end{quote}
 
+\clearpage
 \section{方法与局限}
 
 \begin{itemize}

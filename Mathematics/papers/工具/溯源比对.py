@@ -43,6 +43,16 @@ PDF = os.path.join(PAPERS, '溯源', '题目溯源.pdf')
 SECT = '## 题目溯源'
 
 KEEP = re.compile(r'[\u4e00-\u9fff0-9★▲⊕◆①-⑳]')
+# 扉页那几个数（与 工具/README转tex.py 的 COVER_RE 保持一致）：README 抽出来后必须真的
+# 印到 PDF 首页——2026-09-22 之前它们写死在脚本里，口径从 24 份走到 28 份时静默过期了一整轮
+# （扉页还印着 87,571 对 / 24 组 / 12 组），而 A、B 两闸都不看扉页。
+COVER_RE = {
+    '份': (r'\*\*(\d+) 份试卷的 (\d+) 道\*\*', '{0} 份试卷 {1} 道'),
+    '库': (r'参考库的 \*\*([\d,]+) 道\*\*高考真题', '{0} 道高考真题'),
+    '对': (r'跨卷两两 \*\*([\d,]+) 对\*\*', '跨卷两两 {0} 对'),
+    '档': (r'\*\*逐字同题 (\d+) 组 \+ 同模板变体 (\d+) 组\*\*',
+           '逐字同题 {0} 组、同模板变体 {1} 组'),
+}
 MARKERS = '★▲⊕◆' + ''.join(chr(c) for c in range(0x2460, 0x2474))   # ★▲⊕◆①–⑳
 HEADER, RUNHEAD = '题目溯源', '28 份口径（2026-09-22）'
 
@@ -94,8 +104,11 @@ def readme_side():
 
 
 # ---------------------------------------------------------------- 闸 A：README ↔ tex
+# rowcolors／rowcolor 也要整行跳过：`\rowcolors{1}{…}` 里的那个 1 是**参数不是正文**，
+# 留在 tex 侧就会让 A 闸凭空多出 N 个「1」（每张表一个）。表头文本本身走 \tabhdrA 宏，
+# 由 \newcommand 那一行提供唯一一次计数，见 README转tex.py 的 table_tex。
 STRUCT = re.compile(r'^\s*\\(begin|end|toprule|midrule|bottomrule|endhead|endfirsthead'
-                    r'|endlastfoot|multicolumn|item|label)\b')
+                    r'|endlastfoot|multicolumn|item|label|rowcolors|rowcolor)\b')
 
 
 def tex_side():
@@ -140,15 +153,47 @@ def pdf_text():
         sys.exit('❌ 找不到 %s，先跑 make trace' % PDF)
     txt = subprocess.run(['pdftotext', '-layout', '-f', '3', PDF, '-'],
                          capture_output=True, text=True).stdout
-    # 页眉在 -layout 下是**一整行**「题目溯源 …… 22 份口径（2026-09-16）」，只删子串会把
+    # 页眉在 -layout 下是**一整行**「题目溯源 …… <当前节名>」，只删子串会把
     # 「题目溯源」留在 PDF 侧（+30/页），必须整行删。
-    txt = re.sub(r'^\s*%s\s+%s\s*$' % (re.escape(HEADER), re.escape(RUNHEAD)),
+    # （2026-09-22 起右眉改显示当前节名、口径标签下移到页脚；页脚是另一整行
+    #  「<口径标签> …… 第 N 页 / 共 M 页」，同样整行删。）
+    # ⚠ 中间的分隔符必须写 [ \t]+ 不能写 \s+：\s 会跨行，于是「题目溯源」那一行的
+    #   \s+ 一路吃到下一节的标题行，把「3 材料流转」一起删掉（踩过：B 闸连报 6 个缺小节）。
+    #   右眉可能为空（节首那页的 \rightmark 还没换），故「后面还有内容」要写成可选。
+    txt = re.sub(r'^[ \t\f]*%s([ \t]+.*)?$' % re.escape(HEADER), '', txt, flags=re.M)
+    txt = re.sub(r'^[ \t]*%s[ \t]+第 \d+ 页 / 共 \d+ 页[ \t]*$' % re.escape(RUNHEAD),
                  '', txt, flags=re.M)
     txt = txt.replace('（续上表）', '')
     txt = re.sub(r'^\s*\d+\s*$', '', txt, flags=re.M)          # 页码行
     for h in headings():                                       # 章节标题前的自动序号
         txt = re.sub(r'^\s*\d+\s+%s' % re.escape(h), h, txt, flags=re.M)
     return txt
+
+
+def cover_strings():
+    """扉页上应该出现的几串数字（从 README 抽，格式化方式与 README转tex.py 一致）"""
+    txt = io.open(README, encoding='utf-8').read()
+    out = []
+    for k, (pat, fmt) in COVER_RE.items():
+        m = re.search(pat, txt)
+        if not m:
+            sys.exit('❌ README 里读不出扉页数字（%s）——核对摘要表的措辞改了？'
+                     '同步改 COVER_RE（两处）' % k)
+        out.append(fmt.format(*[g.replace('{,}', ',') for g in m.groups()]))
+    return out
+
+
+def check_cover():
+    """C 闸：扉页数字必须是从 README 抽的当前值（防止再写死、再过期）"""
+    txt = subprocess.run(['pdftotext', '-layout', '-f', '1', '-l', '1', PDF, '-'],
+                         capture_output=True, text=True).stdout
+    flat = re.sub(r'\s+', '', txt)
+    miss = [s for s in cover_strings() if re.sub(r'\s+', '', s) not in flat]
+    if miss:
+        print('   ❌ 扉页缺（或已过期）：%s' % '、'.join(miss))
+        return False
+    print('   扉页数字（%s）：与 README 一致 ✅' % '、'.join(cover_strings()))
+    return True
 
 
 def check_b():
@@ -176,6 +221,7 @@ def check_b():
     print('   小节 %d 个、特征词 %d 个：%s' % (len(headings()), len(probes), '都在 ✅' if ok else '有缺 ❌'))
     print('   标记符计数（★▲⊕①–⑳）：%s'
           % ('与 README 一致 ✅' if not md else '差 %s ❌' % md))
+    ok = check_cover() and ok
     if d:
         print('   多重集残差 %d 种（pdftotext 对密集多列宽表会并/拆/丢几个字符，'
               '默认模式 −91、-layout −6，属抽取噪声；量级要人工看一眼）：' % len(d))

@@ -47,6 +47,7 @@ OUT = os.path.join(PAPERS, '源码', '溯源.tex')
 
 SECT = '## 题目溯源'          # 只转这一节（到下一个 `## ` 为止）
 TITLE = '题目溯源'
+RUN_DATE = '2026-09-22'      # 口径标签上的日期；溯源比对.py 的 RUNHEAD 要与之保持一致
 
 # geometry 边距 2.5cm、A4 → 文本宽 16cm；longtable 每列两侧各 \tabcolsep
 TEXTWIDTH_CM = 21.0 - 2 * 2.5
@@ -55,6 +56,17 @@ PT_PER_CM = 28.4527
 
 CELLSEP = 'CELLSEP'
 PLACEHOLDER = 'TABPLACEHOLDER%d'
+
+# 扉页那几个数（份数 / 题数 / 参考库 / 跨卷对数 / 两档组数）**一律从 README 的「核对摘要」表抽**，
+# 不在脚本里写死——写死过一次：2026-09-22 并入高一25—28 后，扉页还印着「87,571 对、24 组、12 组」
+# （口径已到 118,828 对、26 组、14 组），而 计数核对.py 管不到扉页，静默过期了一整轮。
+# 溯源比对.py 里有一道闸盯这些数是否真的印到了 PDF 首页。
+COVER_RE = {
+    '份': r'\*\*(\d+) 份试卷的 (\d+) 道\*\*',
+    '库': r'参考库的 \*\*([\d,]+) 道\*\*高考真题',
+    '对': r'跨卷两两 \*\*([\d,]+) 对\*\*',
+    '档': r'\*\*逐字同题 (\d+) 组 \+ 同模板变体 (\d+) 组\*\*',
+}
 
 # Unicode → LaTeX。左边一列在**数学模式外**出现时才替换。
 # 不在表里的三类：
@@ -80,6 +92,25 @@ UNI = [
 #   2026-09-15 第一版就踩了这个（出处表那一行的 $\varnothing\subsetneq M\subsetneq\mathbb R$）。
 BREAK_AFTER = [r'\subseteq', r'\subsetneq', r'\setminus', r'\geqslant', r'\leqslant',
                r'\subset', r'\mid', r'\cup', r'\cap', r'\to', r'\times', '=', '+', ',']
+
+
+def thousands(s):
+    """1234567 → '1{,}234{,}567'（LaTeX 里直接写 1,234,567 会被当 punct，间距不对）"""
+    n = int(str(s).replace(',', ''))
+    return '{:,}'.format(n).replace(',', '{,}')
+
+
+def readme_stats():
+    """从 README「核对摘要」表抽出扉页要用的 6 个数，返回 (文本, 数表)"""
+    txt = io.open(README, encoding='utf-8').read()
+    m = {k: re.search(v, txt) for k, v in COVER_RE.items()}
+    miss = [k for k, v in m.items() if not v]
+    if miss:
+        sys.exit('❌ README 里读不出扉页数字（%s）——核对摘要表的措辞改了？'
+                 '同步改 COVER_RE' % '、'.join(miss))
+    return {'份': m['份'].group(1), '题': m['份'].group(2),
+            '库': thousands(m['库'].group(1)), '对': thousands(m['对'].group(1)),
+            '逐字': m['档'].group(1), '变体': m['档'].group(2)}
 
 
 # ---------------------------------------------------------------- 切分与分块
@@ -305,12 +336,24 @@ def table_tex(header, aligns, data, index):
            'r': r'>{\raggedleft\arraybackslash}'}
     spec = ''.join(pre[a] + 'p{%.2fcm}' % w for a, w in zip(aligns, ws))
 
-    L = [r'\begin{xltabular}{\textwidth}{@{}%s@{}}' % spec,
+    # 表头：两处都排（首页 endfirsthead、续页 endhead）。以前续页只有「（续上表）」没有表头，
+    # 翻到宽表的第二页就看不出列的含义了；表头用 `\rowcolor{white}` 从交替底纹里摘出来。
+    # 但**不能直接把表头文本写两遍**——溯源比对.py 的 A 闸是「README ↔ tex 字符多重集」，
+    # 写两遍就多一份，闸必然挂。故定义一次宏、用两次：
+    # 宏名只含字母（\tabhdrA…），被 A 闸的「删 LaTeX 命令」一步整条抹掉，不留残字；
+    # 而定义那一行里的表头文本照常被数一次，与 README 侧一一对应。
+    mac = r'\tabhdr' + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[index]
+
+    L = [r'\newcommand{%s}{\rowcolor{white} %s \\}' % (mac, ' & '.join(htex)),
+         r'\rowcolors{1}{white}{rowgray}',
+         r'\begin{xltabular}{\textwidth}{@{}%s@{}}' % spec,
          r'\toprule',
-         ' & '.join(htex) + r' \\',
+         mac,
          r'\midrule',
          r'\endfirsthead',
          r'\multicolumn{%d}{r}{\footnotesize（续上表）} \\' % len(header),
+         r'\midrule',
+         mac,
          r'\midrule',
          r'\endhead',
          r'\bottomrule',
@@ -318,12 +361,17 @@ def table_tex(header, aligns, data, index):
     for r in rows:
         L.append(' & '.join(r) + r' \\ \addlinespace[1pt]')
     L += [r'\end{xltabular}']
+    # 4 列及以上的表降到 \small：少折两行，宽表不至于长得看不到头
+    if len(header) >= 4:
+        L = [r'\begingroup\small'] + L + [r'\endgroup']
     return '\n'.join(L)
 
 
 # ---------------------------------------------------------------- 模板
-def preamble(body):
-    return r'''%% 溯源.tex —— 「题目溯源」报告（28 份口径）
+def preamble(body, st):
+    # 模板里用 @@…@@ 占位再 replace，不用 `%` 格式化——LaTeX 的注释里全是单个 `%`
+    # （\providecommand{\tightlist}{%} 这种），`%` 运算符会把它们当转换符。
+    head = r'''%% 溯源.tex —— 「题目溯源」报告（@@FEN@@ 份口径）
 %% **本文件由 工具/README转tex.py 从 ../README.md 的「题目溯源」一节自动生成，不要手改**：
 %% 改内容请改 README，改排版请改那个脚本，然后 `make trace` 重生成。
 %% 编译：xelatex 溯源.tex（跑两遍，第二遍才有目录与交叉引用）
@@ -331,13 +379,17 @@ def preamble(body):
 \usepackage{common}
 \usepackage{booktabs}
 \usepackage{xltabular}          % longtable + 固定列宽（宽表见 README 的「题目溯源」）
+\usepackage{colortbl}           % 宽表交替底纹（\rowcolors）：行高 3—4 行的表不串行
 \usepackage{fancyhdr}
+\usepackage{lastpage}           % 页脚「第 N 页 / 共 M 页」
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=solblue,urlcolor=solblue,
+            bookmarksopen=true,bookmarksopenlevel=1,pdfstartview=FitH,
             pdftitle={题目溯源},pdfsubject={上海高一上数学 · 跨卷同题与真题出处考证}}
 \setlength{\parskip}{0.28em}
 \setlength{\parindent}{0pt}
 \renewcommand{\arraystretch}{1.12}
+\definecolor{rowgray}{gray}{0.955}   % 交替底纹：比白纸略深一点，不抢正文
 
 %% pandoc 的列表里会插 \tightlist，它只在 pandoc 自带模板里定义，独立编译要自己补，
 %% 否则报 `Undefined control sequence \tightlist`（踩过）。定义与 pandoc 模板同文。
@@ -346,10 +398,13 @@ def preamble(body):
 
 \pagestyle{fancy}
 \fancyhf{}
+%% 右眉显示**当前节名**：翻到中间页时不至于不知道在哪一节（以前右眉是死的口径标签）。
 \fancyhead[L]{\small\color{solblue} 题目溯源}
-\fancyhead[R]{\small 28 份口径（2026-09-22）}
-\fancyfoot[C]{\small\thepage}
+\fancyhead[R]{\small\nouppercase{\rightmark}}
+\fancyfoot[L]{\small @@FEN@@ 份口径（@@DATE@@）}
+\fancyfoot[C]{\small 第 \thepage 页 / 共 \pageref{LastPage} 页}
 \renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
 
 \begin{document}
 
@@ -358,8 +413,8 @@ def preamble(body):
 \vspace*{2.6cm}
 {\Huge\bfseries 题目溯源}\\[0.9em]
 {\Large 上海高一上数学 · 跨卷同题与真题出处考证}\\[2.6em]
-{\large 28 份试卷 488 道一级题干 $\times$ 参考库 16{,}273 道高考真题}\\[0.35em]
-{\large 跨卷两两 87{,}571 对 \quad|\quad 逐字同题 24 组、同模板变体 12 组}\\[3.2em]
+{\large @@FEN@@ 份试卷 @@TI@@ 道一级题干 $\times$ 参考库 @@KU@@ 道高考真题}\\[0.35em]
+{\large 跨卷两两 @@DUI@@ 对 \quad|\quad 逐字同题 @@ZIZU@@ 组、同模板变体 @@BIANTI@@ 组}\\[3.2em]
 \begin{minipage}{0.8\textwidth}\small\raggedright
 本文件由 \texttt{工具/README转tex.py} 从 \texttt{README.md} 的「题目溯源」一节自动生成，
 内容与该节逐字一致。判定口径、阈值与踩过的坑见末节「方法与局限」；
@@ -367,12 +422,22 @@ def preamble(body):
 \end{minipage}
 \end{titlepage}
 
+%% 目录本身也进书签（以前 9 个书签只有 9 节，目录不在里面）
+\pdfbookmark[1]{\contentsname}{toc}
 \tableofcontents
 \newpage
-''' + body + r'''
+'''
+    tail = r'''
 
 \end{document}
 '''
+    # 注意括号：`head + body + tail` 要整体再 replace——只给 tail 加 replace 的话，
+    # 扉页那几个占位符会原样留在 tex 里（踩过一次）。
+    return (head + body + tail) \
+        .replace('@@FEN@@', st['份']).replace('@@TI@@', st['题']) \
+        .replace('@@KU@@', st['库']).replace('@@DUI@@', st['对']) \
+        .replace('@@ZIZU@@', st['逐字']).replace('@@BIANTI@@', st['变体']) \
+        .replace('@@DATE@@', RUN_DATE)
 
 
 # ---------------------------------------------------------------- 主流程
@@ -391,11 +456,14 @@ def main():
 
     body = pandoc('\n'.join(md), shift=-2)
     body = strip_labels(body)
+    # 每个 \section 前另起一页：以前节与节连排，会出现「上节的表格续页 + 正文 + 下一节标题」
+    # 挤在同一页（39 页那版第 18 页就是），翻到中间页看不出自己在哪一节。
+    body = re.sub(r'(?m)^\\section\{', r'\\clearpage\n\\section{', body)
     body = break_paths(map_unicode(body))
     for i, (h, a, d) in enumerate(tables):
         body = body.replace(PLACEHOLDER % i, table_tex(h, a, d, i))
 
-    tex = preamble(body)
+    tex = preamble(body, readme_stats())
     io.open(OUT, 'w', encoding='utf-8').write(tex)
     print('✅ 生成 %s' % os.path.relpath(OUT, PAPERS))
     print('   README 该节 %d 行 → %d 张表、正文 %d 行' % (len(lines), len(tables), len(body.split(chr(10)))))
