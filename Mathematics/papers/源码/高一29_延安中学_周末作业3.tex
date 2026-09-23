@@ -1,0 +1,318 @@
+% 高一29_延安中学_周末作业3.tex
+%   —— 高一上数学「2026-2027 年延安中学高一上周末作业 3」（试卷版/答案版）
+% 试卷版：xelatex 高一29_延安中学_周末作业3.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一29_延安中学_周末作业3.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一29_延安中学_周末作业3.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 29」），正文为 6 张 PNG 页——
+% 第 2、3 页 4762×6735，第 1、4、5、6 页 2560×3620（同一篇各页分辨率不同，已逐页核过，
+% 非下载缺档）。原文本身就是一份**讲评版**——题目下方直接印出【答案】或【解析】。
+% 试题文字、答案与解析均照原卷录入，未改内容。卷面上的粉色斜水印「魔都数学加油站」属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年延安中学高一上周末作业 3」——作业名与数字之间**有一个空格**
+% （与同校的 高一06「周末作业 1」、高一19「周末作业 2」的写法一致，已 4× 放大核对），
+% 本稿照录；年份区间按全稿惯例排 en dash。
+%
+% 题型与题号：一、填空题 3—12（10 题）、二、选择题 13—14、三、解答题 15—20（6 题），共 18 题；
+% 全卷**无插图**（逐页确认，正文也没有「如图」二字）。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题，本稿照原卷分节，
+%      只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷填空、选择的答案直接印在题目下方（第 13、14 题是印在【解析】末句「故选 X」里，
+%      第 19 题甚至只给了【答案】、没有解析），本稿统一改为试卷版隐去、答案版以【答案】或
+%      【解析】给出，使两版彻底分离；
+%   ④ 原卷的集合符号 $R$、$Z$、$N$ 有正体与粗体两种写法（第 5、12、14、19 题作粗体
+%      $\mathbf{R}$／$\mathbf{N}$，第 3、16、18 题作正体 $R$／$Z$），本稿按全稿惯例统一写作
+%      $\R$、$\Z$、$\N$；
+%   ⑤ 原卷填空的横线**一律约两个字宽**（用像素量过，10 处都是 2.0 em），本稿按全稿惯例
+%      统一排 \blankline[4.4em]；
+%   ⑥ 原卷多处逗号用**半角**（如第 6 题「$2<x\leqslant5,\beta$」、第 9 题「$2\in B,3\in B$」、
+%      第 17 题「$B=\{…\},A=\{…\}$」），本稿按全稿惯例一律排全角；第 18 题题干
+%      「$(m\in R)$」的半角括号亦按全稿惯例处理；
+%   ⑦ 原卷选择题的选项标号用**全角句点**「A．」（已 8× 放大核对，见 `原图/…/03.png`），
+%      本稿按全稿惯例排「A.」；
+%   ⑧ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」。
+%
+% 原卷存疑三处（均已 4× 放大核对，无法确证原意，本稿照抄原卷、未改）：
+%   ① 第 6 题【解析】**自相矛盾**：推出「$m\leqslant2$」，紧接着却把结论写成「实数 $m$ 的
+%      取值范围是 $[2,+\infty)$」。按充分条件的定义（$\alpha$ 的集合 $(2,5]$ 应含于
+%      $\beta$ 的集合 $(m,+\infty)$）应得 $m\leqslant2$、即 $(-\infty,2]$——前一句对、
+%      后一句错，且两者不可能同真。本稿两句照抄；
+%   ② 第 14 题【解析】的**补集记号前后不一**：题干与解析首行作 $\overline{B}$，
+%      解析后文改作 $C_UB$（$C$ 带下标 $U$），两者同义、写法不同，本稿两处都照原样录入；
+%   ③ 第 18 题题干作「必要**非**充分条件」，其解析作「必要**不**充分条件」（同义异写）；
+%      另第 15 题解析「$m=-2$ 时，方程的**解**为 $R$」与同段后文「方程的**解集**为 $R$」
+%      措辞不一（前者少一个「集」字）。两处均照抄原卷。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest{2026--2027 年延安中学高一上周末作业 3}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知集合 $A=\{(x,y)\mid y=2x+1,x\in\R\}$，若 $(3,a)\in A$，则实数 $a=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{将 $x=3$ 代入 $y=2x+1$，则 $y=2\times3+1=7$，由题意得 $a=7$.}
+\solend
+
+\fi
+
+\item 满足 $\{1,2\}\subset A\sub\{1,2,3,4,5\}$ 的集合 $A$ 有 \blankline[4.4em] 个.
+
+\ans{$7$}
+
+\item 集合 $A=\{x\mid ax^2+3x+1=0,x\in\R\}$，若 $A$ 中只有一个元素，实数 $a$ 的值为 \blankline[4.4em].
+
+\ans{$0$ 或 $\dfrac94$}
+
+\item 设 $\alpha:2<x\leqslant5$，$\beta:x>m$，若 $\alpha$ 是 $\beta$ 的充分条件，则实数 $m$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+% 注：本行原卷印「由题意得 $m\leqslant2$. 故实数 $m$ 的取值范围是 $[2,+\infty)$」——前一句与后一句
+%     互相矛盾（前一句才对），无法确证原意，本稿照抄原卷、未改（详见文件头「原卷存疑」①）。
+\step{由题意得 $m\leqslant2$. 故实数 $m$ 的取值范围是 $[2,+\infty)$.}
+\solend
+
+\fi
+
+\item 陈述句“对于任意 $x\in(0,+\infty)$，都有 $ax>x^2+4$ 成立”的否定形式为 \blankline[4.4em].
+
+\ans{存在 $x\in(0,+\infty)$，$ax\leqslant x^2+4$}
+
+\item 设 $a,b$ 是实数，若关于 $x,y$ 的方程组 $\begin{cases}3x-y+2=0\\ ax-y+b=0\end{cases}$ 的解集为 $\varnothing$，则实数 $a,b$ 所满足的条件为 \blankline[4.4em].
+
+\ans{$a=3,b\neq2$}
+
+\item 已知集合 $A=\{x\mid x^2-8x+15=0\}$，$B=\{x\mid x^2+ax+b=0\}$，若 $A\cap B=\{3\}$，
+
+$A\cup B=\{2,3,5\}$，则 $ab=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$A=\{x\mid x^2-8x+15=0\}=\{3,5\}$，因为 $A\cap B=\{3\}$，$A\cup B=\{2,3,5\}$，}
+\step{所以 $2\in B$, $3\in B$，即 $2$，$3$ 是方程 $x^2+ax+b=0$ 的解，}
+\step{所以 $2+3=-a$, $2\times3=b$，解得 $a=-5$, $b=6$，}
+\step{当 $a=-5$, $b=6$ 时，方程 $x^2-5x+6=0$ 的根为 $2$，$3$，此时 $B=\{2,3\}$，}
+\step{符合题意，所以 $ab=(-5)\times6=-30$.}
+\solend
+
+\fi
+
+\item 已知关于 $x,y$ 的方程组 $\begin{cases}a_1x+b_1y=c_1\\ a_2x+b_2y=c_2\end{cases}$ 解集为 $\{(2,-5)\}$，则关于 $x,y$ 的方程组
+
+$\begin{cases}a_1x+3b_1y=4c_1\\ a_2x+3b_2y=4c_2\end{cases}$ 解集为 \blankline[4.4em].
+
+\ans{$\left\{\left(8,-\dfrac{20}{3}\right)\right\}$}
+
+\item 定义一种集合运算 $A\otimes B=\{x\mid x\in(A\cup B)\text{ 且 }x\notin(A\cap B)\}$，设 $M=\{x\mid -2<x<3\}$，
+
+$N=\{x\mid 1<x<4\}$，则 $M\otimes N$ 所表示的集合是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $M=\{x\mid -2<x<3\}$，$N=\{x\mid 1<x<4\}$，}
+\step{所以 $M\cup N=\{x\mid -2<x<4\}$，$M\cap N=\{x\mid 1<x<3\}$，}
+\step{则 $M\otimes N=\{x\mid -2<x\leqslant1\text{ 或 }3\leqslant x<4\}$.}
+\solend
+
+\fi
+
+\item 已知 $t\in\R$，集合 $A=\{x\mid 1\leqslant x\leqslant10,x\in\N\}$，$B=\{x\mid t<x<t+20\}$，若对于任意
+
+$a\in A$，都存在 $b\in B$，使得 $a+b=2024$，则 $t$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为集合 $A=\{x\mid 1\leqslant x\leqslant10,x\in\N\}=\{1,2,3,4,5,6,7,8,9,10\}$，}
+\step{要使任意 $a\in A$，都存在 $b\in B$，使得 $a+b=2024$，则 $2023\in B$, $2014\in B$，}
+\step{即 $\begin{cases}t<2014<t+20\\ t<2023<t+20\end{cases}$，解得 $2003<t<2014$，}
+\step{所以 $t$ 的取值范围是 $2003<t<2014$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知不等式 $m-1<x<m+1$ 成立的充分条件是 $\dfrac13<x<\dfrac12$，则实数 $m$ 的取值范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $\left\{m\left|m<-\dfrac12\text{ 或 }m>\dfrac43\right.\right\}$\qquad B. $\left\{m\left|m<-\dfrac12\text{ 或 }m\geqslant\dfrac43\right.\right\}$
+
+C. $\left\{m\left|-\dfrac12<m<\dfrac43\right.\right\}$\qquad D. $\left\{m\left|-\dfrac12\leqslant m\leqslant\dfrac43\right.\right\}$
+
+\ans{$D$}
+
+\ifanswer
+\solbegin
+\step{由题意得 $\left(\dfrac13,\dfrac12\right)\subseteq(m-1,m+1)$，所以 $\begin{cases}m-1\leqslant\dfrac13\\ m+1\geqslant\dfrac12\end{cases}$，且等号不能同时成立，}
+\step{解得 $-\dfrac12\leqslant m\leqslant\dfrac43$. 故选 $D$.}
+\solend
+
+\fi
+
+\item 设全集 $U=\R$，集合 $A,B$ 是 $\R$ 的两个子集，对于任意 $x\in\R$，定义
+
+$m=\begin{cases}0&x\notin A\\ 1&x\in A\end{cases}$，$n=\begin{cases}0&x\notin B\\ 1&x\in B\end{cases}$，给出下列两个命题：
+
+①对于任意 $x\in\R$，都有 $m+n=1\Leftrightarrow A=\overline{B}$；
+
+②对于任意 $x\in\R$，都有 $mn=m\Leftrightarrow A\subseteq B$.
+
+则\mbox{（\quad）}
+
+\keepwithprev
+A. ①②都是真命题\qquad B. ①②都是假命题
+
+C. ①是真命题，②是假命题\qquad D. ①是假命题，②是真命题
+
+\ans{$A$}
+
+\ifanswer
+\solbegin
+\step{命题①，对于任意 $x\in\R$，都有 $m+n=1\Leftrightarrow A=\overline{B}$；}
+\step{若 $m+n=1$，则 $\begin{cases}m=1\\ n=0\end{cases}$ 即 $x\in A$, $x\notin B$，或 $\begin{cases}m=0\\ n=1\end{cases}$, $x\notin A$, $x\in B$，}
+% 注：原卷以下改用 $C_UB$ 记补集（与题干及本行上方的 $\overline{B}$ 同义异写），照抄原卷、未改
+%     （详见文件头「原卷存疑」②）。
+\step{即 $A=C_UB$，}
+\step{若 $A=C_UB$，则 $x\in A$ 时 $x\notin B$ 即 $\begin{cases}m=1\\ n=0\end{cases}$ 即 $m+n=1$，}
+\step{或 $x\notin A$ 时 $x\in B$ 即 $\begin{cases}m=0\\ n=1\end{cases}$ 即 $m+n=1$，故总有 $m+n=1$，}
+\step{故命题①为真命题；}
+\step{命题②，对于任意 $x\in\R$，都有 $mn=m\Leftrightarrow A\subseteq B$.}
+\step{若 $x\in A$，则 $m=1$，而 $mn=m$，故 $n=1$ 即 $x\in B$，故 $A\subseteq B$；}
+\step{若 $A\subseteq B$，则当 $x\in A$, $x\in B$ 一定成立，即 $m=n=1$，此时 $mn=m$，}
+\step{当 $x\notin A$ 时，$m=0$，此时 $mn=m$ 也成立，故命题②为真命题；}
+\step{故选 $A$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{14}
+
+\item 设 $m$ 为实数，求关于 $x$ 的方程 $m^2x-m^2=4x-m-6$ 的解集.
+
+\ifanswer
+\solbegin
+\step{方程可化为 $(m^2-4)x=m^2-m-6$，}
+\step{当 $m^2-4=0$ 时，$m=\pm2$，}
+\step{若 $m=2$，则方程为 $0=-4$，显然不成立，方程无解；}
+% 注：本行原卷作「方程的解为 $R$」（少一个「集」字），与下方「方程的解集为 $R$」措辞不一，
+%     无法确证原意，本稿照抄原卷、未改（详见文件头「原卷存疑」③）。
+\step{若 $m=-2$，则方程为 $0=0$，方程的解为 $\R$；}
+\step{当 $m\neq\pm2$ 时，解方程得 $x=\dfrac{m^2-m-6}{m^2-4}=\dfrac{m-3}{m-2}$；}
+\step{综上，$m=2$ 时，方程的解集为 $\varnothing$；}
+\step{$m=-2$ 时，方程的解集为 $\R$；}
+\step{$m\neq\pm2$ 时，方程的解集为 $\left\{\dfrac{m-3}{m-2}\right\}$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知全集 $U=\Z$，集合 $A=\{2,3,a^2+2a-3\}$，$B=\{2,a+1\}$，是否存在实数 $a$，使得
+
+$A\cap\overline{B}=\{5\}$？
+
+\ifanswer
+\solbegin
+\step{存在实数 $a$，使得 $A\cap\overline{B}=\{5\}$. 理由如下：}
+\step{由题意 $A=\{2,3,5\}$，}
+\step{所以 $a^2+2a-3=5\Rightarrow a^2+2a-8=0\Rightarrow(a+4)(a-2)=0\Rightarrow a=-4$ 或 $a=2$，}
+\step{又因为当 $a=-4$ 时，$B=\{2,a+1\}=\{2,-3\}$, $A\cap\overline{B}=\{3,5\}$ 不符合条件，}
+\step{故舍去；}
+\step{当 $a=2$ 时，$B=\{2,a+1\}=\{2,3\}$, $A\cap\overline{B}=\{5\}$，符合条件；}
+\step{综上，存在实数 $a(a=2)$，使得 $A\cap\overline{B}=\{5\}$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知集合 $A=\{x\mid ax+2=0\}$，$B=\{x\mid x^2-7x+12=0\}$，若 $A\subseteq B$，求实数 $a$.
+
+\ifanswer
+\solbegin
+\step{因为 $B=\{x\mid x^2-7x+12=0\}=\{3,4\}$, $A=\{x\mid ax+2=0\}$，且 $A\subseteq B$.}
+\step{当 $a=0$ 时，$A=\varnothing\subseteq B$，合乎题意；}
+\step{当 $a\neq0$ 时，$A=\{x\mid ax+2=0\}=\left\{-\dfrac2a\right\}$，}
+\step{因为 $A\subseteq B$，所以 $-\dfrac2a=3$ 或 $-\dfrac2a=4$，解得 $a=-\dfrac23$ 或 $a=-\dfrac12$.}
+\step{综上所述，$a=0$, $-\dfrac23$, $-\dfrac12$.}
+\solend
+
+\fi
+
+\ansspace[5]
+
+\item 已知集合 $A=\{x\mid -2\leqslant x-1\leqslant5\}$，集合 $B=\{x\mid m+1\leqslant x\leqslant2m-1\}$（$m\in\R$）.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $A\cap B=\varnothing$，求实数 $m$ 的取值范围；
+\item 设命题 $p:x\in A$；命题 $q:x\in B$，若命题 $p$ 是命题 $q$ 的必要非充分条件，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得 $A=\{x\mid -2\leqslant x-1\leqslant5\}=\{x\mid -1\leqslant x\leqslant6\}$，又 $A\cap B=\varnothing$，}
+\step{当 $B=\varnothing$ 时，$m+1>2m-1$，解得 $m<2$，}
+\step{当 $B\neq\varnothing$ 时，$m+1\leqslant2m-1$，$m+1>6$ 或 $2m-1<-1$，解得 $m>5$，}
+\step{综上所述，实数 $m$ 的取值范围为 $(-\infty,2)\cup(5,+\infty)$；}
+% 注：题干作「必要非充分条件」，本行原卷作「必要不充分条件」（同义异写），照抄原卷、未改
+%     （详见文件头「原卷存疑」③）。
+\stepm{(2)}{因为命题 $p$ 是命题 $q$ 的必要不充分条件，所以集合 $B$ 是集合 $A$ 的真子集，}
+\step{若 $B=\varnothing$，得 $m+1>2m-1$，解得 $m<2$；}
+\step{若 $B\neq\varnothing$，得 $\begin{cases}m+1\leqslant2m-1\\ m+1\geqslant-1\\ 2m-1\leqslant6\end{cases}$（后两式等号不能同时成立），}
+\step{解得 $2\leqslant m\leqslant\dfrac72$，}
+\step{综上所述，实数 $m$ 的取值范围为 $\left(-\infty,\dfrac72\right]$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 集合 $A=\{x\mid x^2-ax+a^2-19=0,x\in\R\}$，$B=\{x\mid x^2+4x-a=0,x\in\R\}$，$A\cup B=A$，求实数 $a$ 的取值范围.
+
+\ans{$a<-4$}
+
+\ansspace[5]
+
+% 压轴题：其后已无内容，故作答区全用可丢弃胶水（\ansspace*），并在题目前先量一下版面。
+\ansneed{7cm}
+
+\item 设 $a$、$b$、$c\in(0,1)$. 求证：$(1-a)b$、$(1-b)c$、$(1-c)a$ 不同时大于 $\dfrac14$.
+
+\ifanswer
+\solbegin
+\step{假设三式同时大于 $\dfrac14$，即 $(1-a)b>\dfrac14$，$(1-b)c>\dfrac14$，$(1-c)a>\dfrac14$，}
+\step{三式同向相乘，得 $(1-a)a(1-b)b(1-c)c>\dfrac{1}{64}(*)$，}
+\step{又 $(1-a)a\leqslant\left(\dfrac{1-a+a}{2}\right)^2=\dfrac14$，同理 $(1-b)b\leqslant\dfrac14$，$(1-c)c\leqslant\dfrac14$，}
+\step{所以 $(1-a)a(1-b)b(1-c)c\leqslant\dfrac{1}{64}$，与 $*$ 式矛盾，即假设不成立，}
+\step{故结论正确.}
+\solend
+
+\fi
+
+\ansspace*[9]
+
+\end{enumerate}
+
+\end{document}
