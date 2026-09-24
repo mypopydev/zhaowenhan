@@ -13,8 +13,10 @@
 #   make distclean      清理中间文件与生成的 PDF
 #   make list / help    查看清单 / 用法
 #
-# 可复现构建：编译时把源文件 mtime 作为 SOURCE_DATE_EPOCH 传给 TeX Live，
-# 由它固定 PDF 内嵌时间戳与文档 ID —— 源码不变时重编得到逐字节相同的 PDF，
+# 可复现构建：编译时由 Makefile 做两件事 —— ① 以源文件 mtime 作为 SOURCE_DATE_EPOCH
+# 传给 TeX Live（固定 PDF 的 /ID），② 用 -usepretex 注入 docinfo special，覆盖 XeTeX
+# 默认写入的「编译时刻」（/Creator 精确到分、不归 SOURCE_DATE_EPOCH 管）并把
+# /CreationDate 定为源文件日期。源码不变时重编得到逐字节相同的 PDF，
 # 因此「重编一遍」不会在 git 里产生无意义的二进制 diff。
 
 SHELL       := /bin/bash
@@ -33,10 +35,16 @@ MAIN    := $(filter-out $(RECHECK),$(PDF))
 all: $(PDF)
 
 # ---- 编译规则（可复现）----
+#  1) SOURCE_DATE_EPOCH = 源文件 mtime → 固定 PDF 的 /ID
+#  2) -usepretex 注入 docinfo special → 覆盖 XeTeX 默认写入的编译时刻
+#     （/Creator 是精确到分的墙钟时间，不归 SOURCE_DATE_EPOCH 管），
+#     并把 /CreationDate 固定为源文件日期
 %.pdf: %.tex
-	@printf '>> %s\n' "$<"
-	@SOURCE_DATE_EPOCH=$$(stat -f %m "$<" 2>/dev/null || stat -c %Y "$<") \
-		$(LATEXMK) $(LATEXMKOPTS) "$<"
+	@ep=$$(stat -f %m "$<" 2>/dev/null || stat -c %Y "$<"); \
+	d=$$(date -u -r "$$ep" +%Y%m%d%H%M%SZ 2>/dev/null || date -u -d "@$$ep" +%Y%m%d%H%M%SZ); \
+	printf '>> %s\n' "$<"; \
+	SOURCE_DATE_EPOCH=$$ep $(LATEXMK) $(LATEXMKOPTS) \
+		-usepretex="\\special{pdf:docinfo<</Creator(English/mistakes)/Producer(xdvipdfmx)/CreationDate(D:$$d)>>}" "$<"
 
 # ---- 校验 ----
 check: all
