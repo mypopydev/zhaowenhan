@@ -19,9 +19,11 @@
 \newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
 \newcommand{\lvl}[1]{\makebox[1.5em][l]{\small\textbf{#1}}}
 \newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% ★ 固定宽度槽位：带星/不带星行正文左边缘一致
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
 % 错词（带星）/ 正确（不带星）：\anss{题号}{等级}{单词}{词性}{中文释义}
-\newcommand{\anss}[5]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STAR\ \textbf{#3} #4 & #5}
-\newcommand{\ansx}[5]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\textbf{#3} #4 & #5}
+\newcommand{\anss}[5]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STARSLOT{\STAR}\textbf{#3} #4 & #5}
+\newcommand{\ansx}[5]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STARSLOT{}\textbf{#3} #4 & #5}
 
 \begin{document}
 \pagestyle{plain}

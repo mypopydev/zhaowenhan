@@ -23,9 +23,11 @@
 \newcommand{\blank}{\underline{\hspace{3.0cm}}}
 % 原卷做错的词：题号后加红星
 \newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% ★ 固定宽度槽位：带星/不带星行正文左边缘一致
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
 % \zhs / \zhx：带星 / 不带星（行首悬挂缩进，换行不错位）
-\newcommand{\zhs}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STAR\ #2}
-\newcommand{\zhx}[2]{\hangindent=2.2em\hangafter=1\num{#1}#2}
+\newcommand{\zhs}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{\STAR}#2}
+\newcommand{\zhx}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{}#2}
 
 \begin{document}
 \pagestyle{plain}
