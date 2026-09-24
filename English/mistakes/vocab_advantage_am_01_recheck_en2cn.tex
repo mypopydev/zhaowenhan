@@ -1,0 +1,102 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\blank}{\underline{\hspace{3.0cm}}}
+\newcommand{\lvl}[1]{\makebox[1.5em][l]{\small\textbf{#1}}}
+% 原卷做错的词：等级后加红星
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% ★ 固定宽度槽位：带星/不带星行正文左边缘一致
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
+\newcommand{\ens}[4]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STARSLOT{\STAR}\textbf{#3} #4}
+\newcommand{\enx}[4]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STARSLOT{}\textbf{#3} #4}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语单词默写 \quad 二刷（英 $\to$ 中）}\\[0.25em]
+{\large advantage -- a.m.}\\[0.22em]
+{\small 2029届高一英语词汇手册 · \STAR 为 2026-09 原卷做错的 12 个词}
+\end{center}
+
+\vspace{0.35em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.2cm}} & 日期：\underline{\hspace{2.2cm}} & 得分：\underline{\hspace{1.5cm}}\,/\enspace 50 \\
+\end{tabular}
+
+\vspace{0.45em}
+\noindent{\small 说明：根据英文单词与词性，在横线上写出中文释义，题号沿用原卷。\STAR\ 为原卷曾写错/空白的词（12 个）。}
+
+\vspace{0.25em}
+\noindent{\small 等级（课程标准）：$\ast\ast$ 选择性必修\quad $\ast$ 必修\quad $\circ$ 课标未列\quad 无标记为义务教育}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.5}
+\noindent\begin{tabular}{@{}p{5.05cm}@{\hspace{0.15cm}}p{3.15cm}@{\hspace{0.5cm}}p{5.05cm}@{\hspace{0.15cm}}p{3.15cm}@{}}
+\toprule
+等级 / 英文单词 / 词性 & 中文释义 & 等级 / 英文单词 / 词性 & 中文释义 \\
+\midrule
+\enx{1}{}{advantage}{n.} & \blank & \enx{26}{\ensuremath{\ast\ast}}{airline}{n.} & \blank \\
+\enx{2}{\ensuremath{\ast}}{adventure}{n.} & \blank & \ens{27}{}{alarm}{n./v.} & \blank \\
+\enx{3}{\ensuremath{\ast\ast}}{advertise}{v.} & \blank & \enx{28}{\ensuremath{\circ}}{album}{n.} & \blank \\
+\enx{4}{\ensuremath{\ast\ast}}{ancestor}{n.} & \blank & \enx{29}{\ensuremath{\ast\ast}}{alcohol}{n.} & \blank \\
+\ens{5}{\ensuremath{\ast\ast}}{amateur}{n./adj.} & \blank & \enx{30}{\ensuremath{\ast\ast}}{alert}{adj./n.} & \blank \\
+\enx{6}{\ensuremath{\ast\ast}}{advocate}{v./n.} & \blank & \enx{31}{\ensuremath{\ast}}{annual}{adj.} & \blank \\
+\ens{7}{\ensuremath{\ast}}{affair}{n.} & \blank & \enx{32}{}{alive}{adj.} & \blank \\
+\enx{8}{}{analyse}{v.} & \blank & \enx{33}{\ensuremath{\circ}}{allowance}{n.} & \blank \\
+\ens{9}{\ensuremath{\circ}}{affection}{n.} & \blank & \enx{34}{}{ancient}{adj.} & \blank \\
+\enx{10}{}{afford}{v.} & \blank & \ens{35}{}{along}{adv.} & \blank \\
+\enx{11}{\ensuremath{\ast\ast}}{afterwards}{adv.} & \blank & \ens{36}{\ensuremath{\circ}}{alter}{v.} & \blank \\
+\enx{12}{}{against}{prep.} & \blank & \enx{37}{\ensuremath{\circ}}{alphabet}{n.} & \blank \\
+\enx{13}{\ensuremath{\ast\ast}}{angle}{n.} & \blank & \enx{38}{\ensuremath{\ast\ast}}{alongside}{prep.} & \blank \\
+\enx{14}{\ensuremath{\ast\ast}}{agency}{n.} & \blank & \enx{39}{\ensuremath{\ast\ast}}{alternative}{n./adj.} & \blank \\
+\enx{15}{\ensuremath{\ast\ast}}{agenda}{n.} & \blank & \enx{40}{\ensuremath{\circ}}{aged}{adj.} & \blank \\
+\enx{16}{\ensuremath{\circ}}{anchor}{n.} & \blank & \ens{41}{\ensuremath{\ast}}{agreement}{n.} & \blank \\
+\ens{17}{\ensuremath{\circ}}{aggressive}{adj.} & \blank & \enx{42}{\ensuremath{\circ}}{antipollution}{n.} & \blank \\
+\ens{18}{\ensuremath{\ast\ast}}{anticipate}{vt.} & \blank & \enx{43}{\ensuremath{\ast\ast}}{anxiety}{n.} & \blank \\
+\ens{19}{\ensuremath{\circ}}{agreeable}{adj.} & \blank & \enx{44}{\ensuremath{\ast\ast}}{ambulance}{n.} & \blank \\
+\enx{20}{\ensuremath{\ast}}{agriculture}{n.} & \blank & \ens{45}{\ensuremath{\circ}}{add up}{v.} & \blank \\
+\enx{21}{}{aid}{n./v.} & \blank & \enx{46}{\ensuremath{\ast\ast}}{ambitious}{adj.} & \blank \\
+\enx{22}{\ensuremath{\circ}}{AIDS}{n.} & \blank & \enx{47}{\ensuremath{\ast\ast}}{ankle}{n.} & \blank \\
+\enx{23}{}{aim}{v./n.} & \blank & \enx{48}{\ensuremath{\ast}}{anniversary}{n.} & \blank \\
+\enx{24}{\ensuremath{\circ}}{air-conditioned}{adj.} & \blank & \ens{49}{\ensuremath{\circ}}{announcer}{n.} & \blank \\
+\enx{25}{\ensuremath{\circ}}{aircraft}{n.} & \blank & \enx{50}{\ensuremath{\ast\ast}}{antique}{n./adj.} & \blank \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,50
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox\ 双写字母\quad\checkmarkbox\ 词族派生（n./adj.）\quad\checkmarkbox\ 首字母串写\quad\checkmarkbox\ 近义混淆
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
+
+\end{document}

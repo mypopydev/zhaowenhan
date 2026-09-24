@@ -1,0 +1,94 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\blank}{\underline{\hspace{3.0cm}}}
+\newcommand{\lvl}[1]{\makebox[1.5em][l]{\small\textbf{#1}}}
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% ★ 固定宽度槽位：带星/不带星行正文左边缘一致
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
+% 错词（带星）/ 正确（不带星）：\anss{题号}{等级}{单词}{词性}{中文释义}
+\newcommand{\anss}[5]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STARSLOT{\STAR}\textbf{#3} #4 & #5}
+\newcommand{\ansx}[5]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STARSLOT{}\textbf{#3} #4 & #5}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语单词默写 \quad 二刷 · 参考答案}\\[0.25em]
+{\large advantage -- a.m. \quad（中 $\to$ 英 / 英 $\to$ 中 通用）}\\[0.22em]
+{\small 2029届高一英语词汇手册 · \STAR 为 2026-09 原卷做错的 12 个词}
+\end{center}
+
+\vspace{0.35em}
+\noindent{\small 说明：全 50 词，题号沿用原卷。中 $\to$ 英只考英文单词（括号内为词性）；英 $\to$ 中只考中文释义。}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.5}
+\noindent\begin{tabular}{@{}p{4.9cm}@{\hspace{0.15cm}}p{3.3cm}@{\hspace{0.5cm}}p{4.9cm}@{\hspace{0.15cm}}p{3.3cm}@{}}
+\toprule
+\textbf{题号 / 等级 / 英文单词} & \textbf{中文释义} & \textbf{题号 / 等级 / 英文单词} & \textbf{中文释义} \\
+\midrule
+\ansx{1}{}{advantage}{n.}{好处} & \ansx{26}{\ensuremath{\ast\ast}}{airline}{n.}{航线} \\
+\ansx{2}{\ensuremath{\ast}}{adventure}{n.}{奇遇} & \anss{27}{}{alarm}{n./v.}{使惊恐} \\
+\ansx{3}{\ensuremath{\ast\ast}}{advertise}{v.}{登广告} & \ansx{28}{\ensuremath{\circ}}{album}{n.}{唱片集} \\
+\ansx{4}{\ensuremath{\ast\ast}}{ancestor}{n.}{祖先} & \ansx{29}{\ensuremath{\ast\ast}}{alcohol}{n.}{含酒精的饮料} \\
+\anss{5}{\ensuremath{\ast\ast}}{amateur}{n./adj.}{业余爱好} & \ansx{30}{\ensuremath{\ast\ast}}{alert}{adj./n.}{使警觉} \\
+\ansx{6}{\ensuremath{\ast\ast}}{advocate}{v./n.}{拥护} & \ansx{31}{\ensuremath{\ast}}{annual}{adj.}{年度的} \\
+\anss{7}{\ensuremath{\ast}}{affair}{n.}{私事} & \ansx{32}{}{alive}{adj.}{有活力的} \\
+\ansx{8}{}{analyse}{v.}{分析} & \ansx{33}{\ensuremath{\circ}}{allowance}{n.}{津贴} \\
+\anss{9}{\ensuremath{\circ}}{affection}{n.}{感情} & \ansx{34}{}{ancient}{adj.}{古代人} \\
+\ansx{10}{}{afford}{v.}{提供} & \anss{35}{}{along}{adv.}{沿着} \\
+\ansx{11}{\ensuremath{\ast\ast}}{afterwards}{adv.}{后来} & \anss{36}{\ensuremath{\circ}}{alter}{v.}{（使）变样} \\
+\ansx{12}{}{against}{prep.}{以…为背景} & \ansx{37}{\ensuremath{\circ}}{alphabet}{n.}{字母表} \\
+\ansx{13}{\ensuremath{\ast\ast}}{angle}{n.}{角度} & \ansx{38}{\ensuremath{\ast\ast}}{alongside}{prep.}{在旁边} \\
+\ansx{14}{\ensuremath{\ast\ast}}{agency}{n.}{代理处} & \ansx{39}{\ensuremath{\ast\ast}}{alternative}{n./adj.}{供选择的} \\
+\ansx{15}{\ensuremath{\ast\ast}}{agenda}{n.}{日常工作事项} & \ansx{40}{\ensuremath{\circ}}{aged}{adj.}{老的} \\
+\ansx{16}{\ensuremath{\circ}}{anchor}{n.}{锚} & \anss{41}{\ensuremath{\ast}}{agreement}{n.}{契约} \\
+\anss{17}{\ensuremath{\circ}}{aggressive}{adj.}{积极进取的} & \ansx{42}{\ensuremath{\circ}}{antipollution}{n.}{防止（环境）污染} \\
+\anss{18}{\ensuremath{\ast\ast}}{anticipate}{vt.}{预料} & \ansx{43}{\ensuremath{\ast\ast}}{anxiety}{n.}{焦虑} \\
+\anss{19}{\ensuremath{\circ}}{agreeable}{adj.}{令人愉快的} & \ansx{44}{\ensuremath{\ast\ast}}{ambulance}{n.}{救护车} \\
+\ansx{20}{\ensuremath{\ast}}{agriculture}{n.}{农艺} & \anss{45}{\ensuremath{\circ}}{add up}{v.}{合计} \\
+\ansx{21}{}{aid}{n./v.}{援助} & \ansx{46}{\ensuremath{\ast\ast}}{ambitious}{adj.}{有抱负的} \\
+\ansx{22}{\ensuremath{\circ}}{AIDS}{n.}{艾滋病} & \ansx{47}{\ensuremath{\ast\ast}}{ankle}{n.}{脚踝} \\
+\ansx{23}{}{aim}{v./n.}{瞄准} & \ansx{48}{\ensuremath{\ast}}{anniversary}{n.}{周年的} \\
+\ansx{24}{\ensuremath{\circ}}{air-conditioned}{adj.}{装有空调设备的} & \anss{49}{\ensuremath{\circ}}{announcer}{n.}{宣布者} \\
+\ansx{25}{\ensuremath{\circ}}{aircraft}{n.}{航空器} & \ansx{50}{\ensuremath{\ast\ast}}{antique}{n./adj.}{古董的} \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,50
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox\ 双写字母\quad\checkmarkbox\ 词族派生（n./adj.）\quad\checkmarkbox\ 首字母串写\quad\checkmarkbox\ 近义混淆
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
+
+\end{document}

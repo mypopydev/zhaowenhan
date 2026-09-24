@@ -1,0 +1,99 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\blank}{\underline{\hspace{3.0cm}}}
+\newcommand{\lvl}[1]{\makebox[1.5em][l]{\small\textbf{#1}}}
+% 原卷做错的词：题号后加红星
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% ★ 固定宽度槽位：带星/不带星行正文左边缘一致
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
+\newcommand{\zhs}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{\STAR}#2}
+\newcommand{\zhx}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{}#2}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语单词默写 \quad 二刷（中 $\to$ 英）}\\[0.25em]
+{\large advantage -- a.m.}\\[0.22em]
+{\small 2029届高一英语词汇手册 · \STAR 为 2026-09 原卷做错的 12 个词}
+\end{center}
+
+\vspace{0.35em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.2cm}} & 日期：\underline{\hspace{2.2cm}} & 得分：\underline{\hspace{1.5cm}}\,/\enspace 50 \\
+\end{tabular}
+
+\vspace{0.45em}
+\noindent{\small 说明：根据中文释义默写出英文单词，题号沿用原卷。\STAR\ 为原卷曾写错/空白的词（12 个），本次需重点复现；无星号的词用于检验是否遗忘。}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.5}
+\noindent\begin{tabular}{@{}p{4.9cm}@{\hspace{0.25cm}}p{3.3cm}@{\hspace{0.5cm}}p{4.9cm}@{\hspace{0.25cm}}p{3.3cm}@{}}
+\toprule
+中文释义 & 英文默写 & 中文释义 & 英文默写 \\
+\midrule
+\zhx{1}{好处} & \blank & \zhx{26}{航线} & \blank \\
+\zhx{2}{奇遇} & \blank & \zhs{27}{使惊恐} & \blank \\
+\zhx{3}{登广告} & \blank & \zhx{28}{唱片集} & \blank \\
+\zhx{4}{祖先} & \blank & \zhx{29}{含酒精的饮料} & \blank \\
+\zhs{5}{业余爱好} & \blank & \zhx{30}{使警觉} & \blank \\
+\zhx{6}{拥护} & \blank & \zhx{31}{年度的} & \blank \\
+\zhs{7}{私事} & \blank & \zhx{32}{有活力的} & \blank \\
+\zhx{8}{分析} & \blank & \zhx{33}{津贴} & \blank \\
+\zhs{9}{感情} & \blank & \zhx{34}{古代人} & \blank \\
+\zhx{10}{提供} & \blank & \zhs{35}{沿着} & \blank \\
+\zhx{11}{后来} & \blank & \zhs{36}{（使）变样} & \blank \\
+\zhx{12}{以…为背景} & \blank & \zhx{37}{字母表} & \blank \\
+\zhx{13}{角度} & \blank & \zhx{38}{在旁边} & \blank \\
+\zhx{14}{代理处} & \blank & \zhx{39}{供选择的} & \blank \\
+\zhx{15}{日常工作事项} & \blank & \zhx{40}{老的} & \blank \\
+\zhx{16}{锚} & \blank & \zhs{41}{契约} & \blank \\
+\zhs{17}{积极进取的} & \blank & \zhx{42}{防止（环境）污染} & \blank \\
+\zhs{18}{预料} & \blank & \zhx{43}{焦虑} & \blank \\
+\zhs{19}{令人愉快的} & \blank & \zhx{44}{救护车} & \blank \\
+\zhx{20}{农艺} & \blank & \zhs{45}{合计} & \blank \\
+\zhx{21}{援助} & \blank & \zhx{46}{有抱负的} & \blank \\
+\zhx{22}{艾滋病} & \blank & \zhx{47}{脚踝} & \blank \\
+\zhx{23}{瞄准} & \blank & \zhx{48}{周年的} & \blank \\
+\zhx{24}{装有空调设备的} & \blank & \zhs{49}{宣布者} & \blank \\
+\zhx{25}{航空器} & \blank & \zhx{50}{古董的} & \blank \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,50
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox\ 双写字母\quad\checkmarkbox\ 词族派生（n./adj.）\quad\checkmarkbox\ 首字母串写\quad\checkmarkbox\ 近义混淆
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
+
+\end{document}
