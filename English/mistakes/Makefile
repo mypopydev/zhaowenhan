@@ -94,4 +94,4 @@ list:
 	@printf '%s\n' $(PDF) | sed 's/^/  /'
 
 help:
-	@sed -n '2,26p' $(firstword $(MAKEFILE_LIST)) | sed 's/^# \{0,1\}//'
+	@awk 'NR>1 && /^#/ {sub(/^# ?/,""); print; next} NR>1 {exit}' $(firstword $(MAKEFILE_LIST))
