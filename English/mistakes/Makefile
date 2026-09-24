@@ -9,6 +9,7 @@
 # 常用命令：
 #   make                编译全部 tex → pdf
 #   make check          校验：无 Overfull／Underfull／Missing character，且页数符合预期
+#   make docs           自检：README 关于本目录的声明 ↔ 实际文件/页数/元数据（计数核对.py）
 #   make clean          清理 LaTeX 中间文件
 #   make distclean      清理中间文件与生成的 PDF
 #   make list / help    查看清单 / 用法
@@ -30,7 +31,7 @@ PDF := $(TEX:.tex=.pdf)
 RECHECK := $(filter %_recheck_zh2en.pdf %_recheck_en2cn.pdf %_recheck_ans.pdf,$(PDF))
 MAIN    := $(filter-out $(RECHECK),$(PDF))
 
-.PHONY: all check clean distclean list help
+.PHONY: all check docs clean distclean list help
 
 all: $(PDF)
 
@@ -65,6 +66,10 @@ check: all
 	done; \
 	if [ $$fail -eq 0 ]; then echo "✅ 全部 $$n 份通过（页数与日志均符合预期）"; else echo "❌ 存在不符合预期的文件"; exit 1; fi
 
+# ---- 文档自查（README 声明 ↔ 实际）----
+docs: all
+	@python3 计数核对.py
+
 # ---- 清理 ----
 clean:
 	@rm -f *.aux *.log *.out *.toc *.lof *.lot *.fls *.fdb_latexmk *.synctex.gz *.xdv
@@ -81,4 +86,4 @@ list:
 	@printf '%s\n' $(PDF) | sed 's/^/  /'
 
 help:
-	@sed -n '2,25p' $(firstword $(MAKEFILE_LIST)) | sed 's/^# \{0,1\}//'
+	@sed -n '2,26p' $(firstword $(MAKEFILE_LIST)) | sed 's/^# \{0,1\}//'

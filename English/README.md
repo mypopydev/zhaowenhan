@@ -27,6 +27,7 @@
 cd mistakes
 make            # 编译全部 13 份 tex → pdf
 make check      # 校验：页数符合预期（订正表 2 页 / 二刷卷 1 页 / 时态语态 3 页）、日志 0 处 Overfull／Missing character
+make docs       # 自检：README 声明 ↔ 实际文件/页数/PDF 元数据（计数核对.py）
 make clean      # 清理 LaTeX 临时文件
 make distclean  # 清理临时文件与生成的 PDF（原卷扫描件不动，它没有对应 .tex）
 make list       # 查看清单（订正表 / 二刷卷份数、原卷件数）
