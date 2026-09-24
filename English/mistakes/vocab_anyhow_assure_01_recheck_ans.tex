@@ -1,0 +1,94 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\blank}{\underline{\hspace{3.0cm}}}
+\newcommand{\lvl}[1]{\makebox[1.5em][l]{\small\textbf{#1}}}
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% ★ 固定宽度槽位：带星/不带星行正文左边缘一致
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
+% 错词（带星）/ 正确（不带星）：\anss{题号}{等级}{单词}{词性}{中文释义}
+\newcommand{\anss}[5]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STARSLOT{\STAR}\textbf{#3} #4 & #5}
+\newcommand{\ansx}[5]{\hangindent=2.2em\hangafter=1\num{#1}\lvl{#2}\STARSLOT{}\textbf{#3} #4 & #5}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语单词默写 \quad 二刷 · 参考答案}\\[0.25em]
+{\large anyhow -- assure \quad（中 $\to$ 英 / 英 $\to$ 中 通用）}\\[0.22em]
+{\small 2029届高一英语词汇手册 · \STAR 为 2026-09 原卷做错的 22 个词}
+\end{center}
+
+\vspace{0.35em}
+\noindent{\small 说明：全 50 词，题号沿用原卷。中 $\to$ 英只考英文单词（括号内为词性）；英 $\to$ 中只考中文释义。}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.5}
+\noindent\begin{tabular}{@{}p{4.9cm}@{\hspace{0.15cm}}p{3.3cm}@{\hspace{0.5cm}}p{4.9cm}@{\hspace{0.15cm}}p{3.3cm}@{}}
+\toprule
+\textbf{题号 / 等级 / 英文单词} & \textbf{中文释义} & \textbf{题号 / 等级 / 英文单词} & \textbf{中文释义} \\
+\midrule
+\ansx{1}{\ensuremath{\ast\ast}}{anyhow}{adv.}{无论如何} & \anss{26}{\ensuremath{\circ}}{arithmetic}{n.}{算术} \\
+\ansx{2}{\ensuremath{\ast\ast}}{apart}{adv.}{相间隔} & \ansx{27}{\ensuremath{\ast\ast}}{arctic}{adj.}{北极的} \\
+\ansx{3}{\ensuremath{\circ}}{ape}{n.}{模仿者} & \anss{28}{\ensuremath{\ast\ast}}{arise}{vi.}{出现} \\
+\ansx{4}{\ensuremath{\circ}}{apology}{n.}{认错} & \anss{29}{}{arms}{n.}{武器（总称）} \\
+\ansx{5}{}{apartment}{n.}{公寓大楼} & \anss{30}{\ensuremath{\ast}}{arrangement}{n.}{筹备} \\
+\anss{6}{\ensuremath{\circ}}{apparent}{adj.}{显然的} & \ansx{31}{\ensuremath{\ast\ast}}{arrival}{n.}{到达} \\
+\ansx{7}{\ensuremath{\ast\ast}}{appetite}{n.}{欲望} & \ansx{32}{\ensuremath{\ast\ast}}{arrow}{n.}{箭} \\
+\anss{8}{\ensuremath{\ast\ast}}{appeal}{v./n.}{有吸引力} & \ansx{33}{\ensuremath{\ast\ast}}{artificial}{adj.}{人造的} \\
+\anss{9}{\ensuremath{\ast\ast}}{apparently}{adv.}{表面看来} & \ansx{34}{\ensuremath{\circ}}{aside}{adv.}{在旁边} \\
+\ansx{10}{\ensuremath{\circ}}{applause}{n.}{喝彩} & \ansx{35}{\ensuremath{\circ}}{arouse}{v.}{引起} \\
+\ansx{11}{\ensuremath{\circ}}{appearance}{n.}{外观} & \anss{36}{\ensuremath{\circ}}{aspirin}{n.}{阿司匹林} \\
+\anss{12}{}{appear}{v.}{看来好像} & \anss{37}{\ensuremath{\circ}}{assign}{v.}{指派} \\
+\anss{13}{\ensuremath{\circ}}{appliance}{n.}{器械} & \anss{38}{\ensuremath{\circ}}{assemble}{v.}{集合} \\
+\ansx{14}{\ensuremath{\circ}}{appoint}{vt.}{委派} & \ansx{39}{\ensuremath{\ast\ast}}{assumption}{n.}{假定} \\
+\anss{15}{\ensuremath{\ast}}{apply}{v.}{使（自己）致力于} & \ansx{40}{\ensuremath{\circ}}{astronomer}{n.}{天文学家} \\
+\ansx{16}{\ensuremath{\ast\ast}}{applicant}{n.}{申请人} & \ansx{41}{\ensuremath{\ast\ast}}{association}{n.}{协会} \\
+\ansx{17}{\ensuremath{\ast\ast}}{appointment}{n.}{预约} & \ansx{42}{\ensuremath{\ast\ast}}{Atlantic}{adj./n.}{大西洋的} \\
+\ansx{18}{\ensuremath{\ast}}{application}{n.}{申请（表）} & \anss{43}{\ensuremath{\ast\ast}}{athletic}{adj.}{运动的} \\
+\anss{19}{\ensuremath{\ast}}{approach}{v./n.}{方法} & \anss{44}{}{attend}{v.}{护理} \\
+\anss{20}{\ensuremath{\circ}}{approximately}{adv.}{近似} & \anss{45}{\ensuremath{\ast\ast}}{attain}{vt.}{达到（年龄、水平等）} \\
+\anss{21}{\ensuremath{\ast\ast}}{approve}{vt.}{批准} & \anss{46}{\ensuremath{\ast\ast}}{attach}{vt.}{系，贴} \\
+\anss{22}{\ensuremath{\circ}}{appreciation}{n.}{欣赏} & \ansx{47}{\ensuremath{\ast\ast}}{atom}{n.}{原子} \\
+\ansx{23}{\ensuremath{\ast\ast}}{arch}{n.}{拱形} & \ansx{48}{\ensuremath{\ast\ast}}{attempt}{n./v.}{企图} \\
+\ansx{24}{\ensuremath{\ast\ast}}{appropriate}{adj.}{适当的} & \ansx{49}{\ensuremath{\ast\ast}}{atmosphere}{n.}{气氛} \\
+\ansx{25}{\ensuremath{\ast\ast}}{architect}{n.}{建筑师} & \anss{50}{\ensuremath{\circ}}{assure}{v.}{确保} \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,50
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox\ 双写字母\quad\checkmarkbox\ 词族派生（n./adj.）\quad\checkmarkbox\ 首字母串写\quad\checkmarkbox\ 近义混淆
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
+
+\end{document}
