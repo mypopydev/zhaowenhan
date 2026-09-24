@@ -27,6 +27,9 @@ PDFINFO     := pdfinfo
 
 TEX := $(sort $(wildcard *.tex))
 PDF := $(TEX:.tex=.pdf)
+# check 判定警告要看 .log：缺失时（如刚 make clean 过）按需补编一次
+LOG := $(PDF:.pdf=.log)
+
 # 二刷卷（1 页）与其余（订正表 2 页 / tense_voice_01 3 页）
 RECHECK := $(filter %_recheck_zh2en.pdf %_recheck_en2cn.pdf %_recheck_ans.pdf,$(PDF))
 MAIN    := $(filter-out $(RECHECK),$(PDF))
@@ -47,8 +50,12 @@ all: $(PDF)
 	SOURCE_DATE_EPOCH=$$ep $(LATEXMK) $(LATEXMKOPTS) \
 		-usepretex="\\special{pdf:docinfo<</Creator(English/mistakes)/Producer(xdvipdfmx)/CreationDate(D:$$d)>>}" "$<"
 
+# 日志缺失时按需重建该份（-B 只作用于这一份；可复现构建保证 PDF 字节不变）
+$(LOG): %.log: %.tex
+	@$(MAKE) --no-print-directory -B $(@:.log=.pdf) >/dev/null 2>&1
+
 # ---- 校验 ----
-check: all
+check: all $(LOG)
 	@fail=0; n=0; \
 	for f in $(PDF); do \
 		n=$$((n+1)); \
@@ -57,7 +64,8 @@ check: all
 		if [[ "$$f" == *_recheck_* ]]; then want=1; \
 		elif [[ "$$f" == "tense_voice_01.pdf" ]]; then want=3; \
 		else want=2; fi; \
-		bad=$$(grep -cE 'Overfull|Underfull|Missing character' "$$log" 2>/dev/null); \
+		if [ ! -f "$$log" ]; then bad=日志缺失; \
+		else bad=$$(grep -cE 'Overfull|Underfull|Missing character' "$$log"); fi; \
 		if [ "$$p" != "$$want" ] || [ "$$bad" != "0" ]; then \
 			echo "  ⚠ $$f: $$p 页（应 $$want 页）、日志问题 $$bad 处"; fail=1; \
 		else \
