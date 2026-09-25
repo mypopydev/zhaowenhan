@@ -54,7 +54,7 @@ COVER_RE = {
            '逐字同题 {0} 组、同模板变体 {1} 组'),
 }
 MARKERS = '★▲⊕◆' + ''.join(chr(c) for c in range(0x2460, 0x2474))   # ★▲⊕◆①–⑳
-HEADER, RUNHEAD = '题目溯源', '29 份口径（2026-09-23）'
+HEADER, RUNHEAD = '题目溯源', '30 份口径（2026-09-25）'
 
 # 与 工具/README转tex.py 的 UNI 保持一致（只列「映射成数学命令」的那些，★▲ 不映射）
 UNI = [('×', r'$\times$'), ('→', r'$\to$'), ('≥', r'$\geqslant$'), ('≤', r'$\leqslant$'),
@@ -82,7 +82,13 @@ def headings():
 
 
 def _demath(m):
-    s = re.sub(r'\\[a-zA-Z]+', '', m.group(0))
+    s = m.group(0)
+    # 数学模式里的 UNI 命令**要先反映射成符号再抹命令**：`$\oplus$` 在 PDF 里排出来是 ⊕
+    # （属 MARKERS，B 闸要数），若在这里被当成一条普通命令抹掉，README 侧就少算一个 ⊕，
+    # B 闸会凭空报「⊕ +N」（2026-09-25 并入高一30 时就是这么撞上的）。
+    for ch, cmd in UNI:
+        s = s.replace(cmd.strip('$'), ch)
+    s = re.sub(r'\\[a-zA-Z]+', '', s)
     return re.sub(r'[{}$^_\\]', '', s)
 
 
@@ -114,8 +120,12 @@ STRUCT = re.compile(r'^\s*\\(begin|end|toprule|midrule|bottomrule|endhead|endfir
 def tex_side():
     t = io.open(TEX, encoding='utf-8').read()
     body = t[t.index(r'\tableofcontents'):t.index(r'\end{document}')]
-    for ch, cmd in UNI:                                 # 先反映射，否则映射过的符号算丢字
-        body = body.replace(cmd, ch)
+    # 先反映射，否则映射过的符号算丢字。
+    # ⚠ 只替换**命令本身**、不要求它独占一个 `$…$`：单元格里常被插了断行点，
+    #   排出来是 `$M\oplus\allowbreak N=…$`，写成 `body.replace('$\oplus$', '⊕')` 就匹配不上，
+    #   A 闸会报「⊕ −2」（2026-09-25 撞过）。（`$` 后一步会被统一抹掉，留着无妨。）
+    for ch, cmd in UNI:
+        body = re.sub(re.escape(cmd.strip('$')) + r'(?![a-zA-Z])', ch, body)
     out = []
     for l in body.split('\n'):
         if l.strip().startswith('%') or STRUCT.match(l):
