@@ -1,9 +1,10 @@
 # 数学错题集 —— 编译 Makefile
 #
 # 目录约定（Mathematics/mistakes/）：
-#   赵文瀚-数学错题集N-YYYYMMDD.tex   错题集（题目 + 来源 + 手写填空栏）
-#   ../papers/源码/common.sty          共享样式（以相对路径复用，勿在本目录另写 style）
-#   ../papers/源码/figures/*.png       复用插图（如 venn_AB_complement.png）
+#   赵文瀚-数学错题集N-YYYYMMDD.tex      错题集（题目 + 来源 + 手写填空栏）
+#   赵文瀚-数学错题集N-YYYYMMDD_原卷.pdf  源 PDF 归档（微信导出的原样副本，**不参与编译**）
+#   ../papers/源码/common.sty             共享样式（以相对路径复用，勿在本目录另写 style）
+#   ../papers/源码/figures/*.png          复用插图（如 venn_AB_complement.png）
 #
 # 常用命令：
 #   make            编译 tex → pdf
@@ -91,6 +92,7 @@ list:
 		printf '  %s —— %s 页\n' "$$f" "$$($(PDFINFO) "$$f" 2>/dev/null | awk '/^Pages/{print $$2}')"; \
 	done
 	@printf '%s\n' $(TEX) | sed 's/^/  源：/'
+	@printf '  另含原卷归档 %s 个（不参与编译）\n' "$$(ls -1 *_原卷*.pdf 2>/dev/null | wc -l | tr -d ' ')"
 
 help:
 	@awk 'NR>1 && /^#/ {sub(/^# ?/,""); print; next} NR>1 {exit}' $(firstword $(MAKEFILE_LIST))
