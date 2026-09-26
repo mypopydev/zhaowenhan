@@ -252,6 +252,13 @@ def check_source(md):
 
     add('套数', claim(md, r'全部 \*\*(\d+) 套\*\*', '套数'), n_tex - COPIES,
         f'{n_tex} 个 .tex − {COPIES} 个对号副本')
+    # 「套数」在 README 里还有**第二处、措辞不同**的表述——「编译方式」节里复述的定义式
+    # 「N 个 `.tex` 减去 2 个对号副本 = M 套」。早年只核了上面那条，这处静默停在「26 … 24」
+    # （实为 38 … 36，2026-09-26 才发现），故把定义式两半各断一条。
+    add('套数（定义式：.tex 数）',
+        claim(md, r'(\d+) 个 `\.tex` 减去 2 个对号副本', '定义式 tex 数'), n_tex)
+    add('套数（定义式：套数）',
+        claim(md, r'减去 2 个对号副本 = (\d+) 套', '定义式套数'), n_tex - COPIES)
     if os.path.exists(ROOT_README):
         root = io.open(ROOT_README, encoding='utf-8').read()
         add('套数（根 README 复述处）', claim(root, r'已入库的 (\d+) 套卷子', '根 README 套数'),
