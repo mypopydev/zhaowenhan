@@ -84,6 +84,12 @@ TITLE = re.compile(r'\\examtitlest(?:\[\d\])?\{(.*?)\}')
 SUBTITLE = re.compile(r'\\examtitlest(?:\[\d\])?\{.*?\}\{(.*?)\}')
 ANS_FULL = re.compile(r'\\ans\{[^}]*（1）')
 
+# 副标题口径（2026-09-26 起）：原卷自印的两份照录，其余**按本卷实际内容**补出、且只许用
+# 「知识模块」一节里的模块名、以「、」连接（见 README「说明」的「标题行」节）。
+SELFSUB = {'高一14': '集合与逻辑单元练习', '高一24': '集合与逻辑、等式的性质'}
+MODULES = ['集合与常用逻辑用语', '函数与导数', '三角函数', '数列',
+           '立体几何', '解析几何', '概率统计', '不等式', '向量']
+
 # 对号副本数：高一16≡高一b、高一18≡高一c，一套副本只算一套（README「试卷清单」的口径）
 COPIES = 2
 
@@ -223,9 +229,11 @@ def check_source(md):
     n_sub_std = n_diff = 0
     n_ans_full = 0
     no_diff = []
+    bad_sub = []
 
     for f, raw in raws:
         b = body(raw)
+        bn = os.path.basename(f).split('_')[0]
         c = len(CIRCLED.findall(b))
         n_circ += c
         n_circ_files += (c > 0)
@@ -241,12 +249,22 @@ def check_source(md):
             n_nian += 1
         else:
             raise AssertionError(f'标题既无「学年度」也无「年」：{f}')
+        # 副标题：高一14／高一24 是原卷自印、照录；其余按本卷实际内容补出，且只许由「知识模块」
+        # 一节里的模块名以「、」连接（不许自造名、不许重复）——见 README「说明」的「标题行」节。
         st = SUBTITLE.search(raw)
-        n_sub_std += (st and st.group(1) == '集合与常用逻辑用语')
+        sub = st.group(1) if st else ''
+        if bn in SELFSUB:
+            if sub != SELFSUB[bn]:
+                bad_sub.append(f'{bn}（原卷自印应为「{SELFSUB[bn]}」，实为「{sub}」）')
+        else:
+            n_sub_std += 1
+            parts = sub.split('、')
+            if not all(p in MODULES for p in parts) or len(set(parts)) != len(parts):
+                bad_sub.append(f'{bn}（「{sub}」）')
         if DIFFSEC.search(header(raw)):
             n_diff += 1
         else:
-            no_diff.append(os.path.basename(f).split('_')[0])
+            no_diff.append(bn)
 
     n_keep, odd = classify_keep(raws)
 
@@ -277,7 +295,9 @@ def check_source(md):
         n_keep['命题段'])
     add('标题前缀「学年度」份数', claim(md, r'作「学年度」的 (\d+) 份', '学年度'), n_xue)
     add('标题前缀「年」份数', claim(md, r'作「年」的 (\d+) 份', '年'), n_nian)
-    add('副标题（惯例）份数', claim(md, r'标题的 (\d+) 份都是本稿补出', '副标题'), n_sub_std)
+    add('副标题（本稿补出）份数', claim(md, r'标题的 (\d+) 份都是本稿补出', '副标题份数'), n_sub_std)
+    add('副标题只用「知识模块」名', 0, len(bad_sub),
+        '违规：' + '、'.join(bad_sub) if bad_sub else '全部合规（其余为高一14／高一24 原卷自印值）')
     add('源码头带 ② 的份数', claim(md, r'其中 \*\*(\d+) 份\*\*另有 ②', '带②份数'), n_diff)
     # README 点名「高一a 是唯一没有 ② 的一份」——这是可核的，故连名单一起断言
     # （只核份数的话，「少了两份、但总份数恰好没变」这类错就漏了）。
