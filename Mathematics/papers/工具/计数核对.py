@@ -308,8 +308,13 @@ def check_output(md):
     add('三版合计 PDF 数', claim(md, r'合计 \*\*(\d+) 份 PDF\*\*', 'PDF 合计'), len(t) + len(c) + len(a))
     add('原图张数', claim(md, r'用于溯源（(\d+) 张', '原图张数'),
         len(glob.glob(os.path.join(PAPERS, '原图', '*', '*'))))
-    add('溯源报告页数', claim(md, r'`题目溯源\.pdf`，(\d+) 页', '溯源页数'),
-        pdf_pages(os.path.join(PAPERS, '溯源', '题目溯源.pdf')))
+    # 溯源报告的页数在 README 里写了**两遍**，措辞不同：「目录结构」表一处（`` `题目溯源.pdf`，N 页 ``）、
+    # 「编译方式」节一处（`` `溯源/题目溯源.pdf`（N 页） ``）。早年只核了前者，后者静默过期过一整轮
+    # （2026-09-26 才发现），故两处各断一条。
+    trace_pages = pdf_pages(os.path.join(PAPERS, '溯源', '题目溯源.pdf'))
+    add('溯源报告页数', claim(md, r'`题目溯源\.pdf`，(\d+) 页', '溯源页数'), trace_pages)
+    add('溯源报告页数（「编译方式」节）',
+        claim(md, r'`溯源/题目溯源\.pdf`（(\d+) 页）', '溯源页数2'), trace_pages)
     add('溯源节抽出行数', claim(md, r'一节抽出 (\d+) 行', '溯源节行数'), trace_section_lines(md))
     bundle = os.path.join(PAPERS, '试卷紧凑', '合并打印版.pdf')
     add('合订本份数', claim(md, r'——(\d+) 份合订', '合订份数'), len(c) - COPIES)
