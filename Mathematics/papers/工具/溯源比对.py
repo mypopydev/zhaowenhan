@@ -11,9 +11,12 @@
 ------------------------
 **A. README ↔ 源码/溯源.tex（精确，决定退出码）**
   把两边都归一化成「有意义字符」（汉字、数字、`★▲⊕①–⑳`）后比字符多重集，必须**完全相同**。
-  这条闸不经 PDF 抽取，所以没有噪声，能抓住转换器的一切丢字：漏掉的表格单元、没生效的
-  `**强调**`（`**` 会原样留在纸上）、被 `\\allowbreak` 拆坏的数学命令（`\\subsetneq` 曾被
-  拆成 `\\subset\\allowbreak neq`）……
+  这条闸不经 PDF 抽取，所以没有噪声，能抓住转换器的一切丢字：漏掉的表格单元、
+  被 `\\allowbreak` 拆坏的数学命令（`\\subsetneq` 曾被拆成 `\\subset\\allowbreak neq`）……
+  **另单列一条硬约束**：tex 正文（``\\texttt{}`` 之外）不得出现字面 `**`——那是 pandoc
+  没解析的加粗，会原样印到纸上。**多重集这一路看不见它**（`*` 不是「有意义字符」，两侧都被
+  滤掉）：2026-09-26 就有 9 处 `**` 已印进溯源 PDF 而闸全绿——`**第二轮（2026-09-26）**由…`
+  这种「闭合 `**` 紧贴全角 `）`」的写法 pandoc 不解析，把括号移出加粗即可。
   两个要注意的地方：
     · tex 侧要**先把 `UNI` 的映射反回来**（`$\\oplus$` → `⊕`），否则映射过的符号会被当成丢字；
     · tex 侧只取 `\\tableofcontents` 之后的正文——扉页那段说明是手写的，不属于 README 的内容。
@@ -117,9 +120,44 @@ STRUCT = re.compile(r'^\s*\\(begin|end|toprule|midrule|bottomrule|endhead|endfir
                     r'|endlastfoot|multicolumn|item|label|rowcolors|rowcolor)\b')
 
 
-def tex_side():
+def tex_body():
+    """tex 正文（`\\tableofcontents` 之后到 `\\end{document}`）——扉页那段说明是手写的，
+    不属于 README 的内容。"""
     t = io.open(TEX, encoding='utf-8').read()
-    body = t[t.index(r'\tableofcontents'):t.index(r'\end{document}')]
+    return t[t.index(r'\tableofcontents'):t.index(r'\end{document}')]
+
+
+def _strip_texttt(s):
+    """去掉 ``\\texttt{…}``，**按花括号配平**：里面可能嵌 `{}`
+    （如 `content/**/*.tex` 被排成 `\\texttt{content/\\allowbreak{}**/\\allowbreak{}*.tex}`）。"""
+    out, i, n = [], 0, len(s)
+    while i < n:
+        if s.startswith(r'\texttt{', i):
+            k, d = i + len(r'\texttt{'), 1
+            while k < n and d > 0:
+                d += (s[k] == '{') - (s[k] == '}')
+                k += 1
+            i = k
+        else:
+            out.append(s[i])
+            i += 1
+    return ''.join(out)
+
+
+def stray_bold(tex):
+    """tex 正文里（``\\texttt{}`` 之外）字面 `**` 的处数。
+
+    pandoc 对某些「`**` 紧贴全角标点」的写法会**拒绝解析加粗**、把 `**` 原样印到纸上。
+    实测：`**第二轮（2026-09-26）**由…`——闭合 `**` 前紧贴全角 `）` 就不解析；
+    写成 `**第二轮**（2026-09-26）由…`（把括号移出加粗）即可。
+    **字符多重集那一路看不见它**（`*` 不是「有意义字符」，两侧都被滤掉），
+    2026-09-26 因此放过了 9 处已经印进溯源 PDF 的 `**`，故单列这一条。
+    """
+    return len(re.findall(r'\*\*', _strip_texttt(tex)))
+
+
+def tex_side():
+    body = tex_body()
     # 先反映射，否则映射过的符号算丢字。
     # ⚠ 只替换**命令本身**、不要求它独占一个 `$…$`：单元格里常被插了断行点，
     #   排出来是 `$M\oplus\allowbreak N=…$`，写成 `body.replace('$\oplus$', '⊕')` 就匹配不上，
@@ -138,22 +176,34 @@ def tex_side():
 
 
 def check_a():
+    body = tex_body()
+    stray = stray_bold(body)
     a = ''.join(KEEP.findall(readme_side()))
     b = ''.join(KEEP.findall(tex_side()))
     ca, cb = collections.Counter(a), collections.Counter(b)
     d = {ch: cb[ch] - ca[ch] for ch in set(ca) | set(cb) if ca[ch] != cb[ch]}
     print('A. README ↔ 溯源.tex ：%d / %d 个有意义字符' % (len(a), len(b)))
-    if not d:
-        print('   ✅ 字符多重集完全一致——转换过程没有丢字、没有残留 `**`、数学命令完好')
+    if not d and not stray:
+        print('   ✅ 字符多重集完全一致（没有丢字），且 tex 里没有字面 `**`（没有没生效的加粗）')
         return True
-    print('   ❌ 差异 %d 种：' % len(d))
-    for ch, v in sorted(d.items(), key=lambda t: -abs(t[1]))[:20]:
-        print('      %s  README %d → tex %d  (%+d)' % (ch, ca[ch], cb[ch], v))
-    sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
-    for tag, i1, i2, j1, j2 in [x for x in sm.get_opcodes() if x[0] != 'equal'][:6]:
-        print('      [%s] README「…%s⟨%s⟩%s…」 tex「…%s⟨%s⟩%s…」'
-              % (tag, a[max(0, i1 - 12):i1], a[i1:i2], a[i2:i2 + 12],
-                 b[max(0, j1 - 12):j1], b[j1:j2], b[j2:j2 + 12]))
+    if d:
+        print('   ❌ 差异 %d 种：' % len(d))
+        for ch, v in sorted(d.items(), key=lambda t: -abs(t[1]))[:20]:
+            print('      %s  README %d → tex %d  (%+d)' % (ch, ca[ch], cb[ch], v))
+        sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
+        for tag, i1, i2, j1, j2 in [x for x in sm.get_opcodes() if x[0] != 'equal'][:6]:
+            print('      [%s] README「…%s⟨%s⟩%s…」 tex「…%s⟨%s⟩%s…」'
+                  % (tag, a[max(0, i1 - 12):i1], a[i1:i2], a[i2:i2 + 12],
+                     b[max(0, j1 - 12):j1], b[j1:j2], b[j2:j2 + 12]))
+    if stray:
+        print('   ❌ tex 里有 %d 处字面 `**`——pandoc 没解析的加粗，会原样印到纸上。' % stray)
+        shown = 0
+        for l in body.split('\n'):
+            if shown >= 6:
+                break
+            if '**' in _strip_texttt(l):
+                print('      %s' % l.strip()[:110])
+                shown += 1
     return False
 
 
