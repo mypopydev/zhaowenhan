@@ -20,7 +20,7 @@ README 的「目录结构」「试卷清单」「答案版为什么这样排」�
 
 判据
 ----
-每一条都是「README 里的一处断言 ↔ 一个可复算的实测值」。另有**两条不来自 README 的结构约束**，
+每一条都是「README 里的一处断言 ↔ 一个可复算的实测值」。另有**三条不来自 README 的结构约束**，
 直接约束源码形态（每枚 `\keepwithprev` 必须能归入「选项段」「小问」或「命题段」；每处 `\mbox{（\quad）`
 所在的题目里必须有一枚守卫），期望值都写 0——它们是源码质量的回归守卫，不是文档同步。
 两侧都从**当前工作区**现算：
@@ -112,6 +112,22 @@ def trace_section_lines(md):
     while j < len(lines) and not lines[j].startswith('## '):
         j += 1
     return j - (i + 1)
+
+
+def missing_heduimian(md):
+    """每个「### …专记」小节都必须含一段「**核对面**」。返回缺失的小节标题清单。
+
+    「核对面」＝该卷回原图核对的那一段（几轮、谁做的、查出什么）。2026-09-26 立的口径：
+    13 份专记份份都要有。这条以前没有闸，结果 6 份是空的、分四轮才补齐，故单列一条结构约束。
+    """
+    lines = md.split('\n')
+    heads = [i for i, l in enumerate(lines) if l.startswith('### ') and '专记' in l]
+    miss = []
+    for n, i in enumerate(heads):
+        j = heads[n + 1] if n + 1 < len(heads) else len(lines)
+        if '**核对面**' not in '\n'.join(lines[i:j]):
+            miss.append(lines[i][4:].strip())
+    return miss
 
 
 def claim(md, pattern, name, conv=int):
@@ -274,6 +290,11 @@ def check_source(md):
                 unpaired.append(os.path.basename(f).split('_')[0])
     add('选择题干与 \\keepwithprev 配对', 0, len(unpaired),
         '缺守卫：' + '、'.join(sorted(set(unpaired))) if unpaired else '全部配对')
+
+    # README 结构：每个「### …专记」小节都要有「**核对面**」段（2026-09-26 立的口径）
+    miss = missing_heduimian(md)
+    add('专记都有「核对面」段', 0, len(miss),
+        '缺：' + '、'.join(miss) if miss else '全部有')
 
 
 # ----------------------------------------------------------------- 成品侧
