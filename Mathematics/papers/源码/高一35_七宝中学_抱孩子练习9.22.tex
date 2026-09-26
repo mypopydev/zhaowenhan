@@ -1,0 +1,476 @@
+% 高一35_七宝中学_抱孩子练习9.22.tex
+%   —— 高一上数学「2026-2027 年七宝中学高一上抱孩子练习 9.22」（试卷版/答案版）
+% 试卷版：xelatex 高一35_七宝中学_抱孩子练习9.22.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一35_七宝中学_抱孩子练习9.22.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一35_七宝中学_抱孩子练习9.22.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 35」，2026-09-25 发布，
+% 原文标题「27学年高一35——2026-2027年上海市七宝中学高一上抱孩子练习9.22」），
+% 正文为 12 张 PNG 页。**同一篇里各页分辨率不一致**（2560×3620 与 4762×6735 两档混排），
+% 取 mmbiz.qpic.cn/<hash>/0 的原图档。原文本身就是一份**讲评版**——有的题下方印【答案】、
+% 有的印【解析】，还有三道选择题的答案直接印在题干末尾的括号里。
+% 试题文字、答案与解析均照原卷录入，未改内容。卷面的粉色斜水印属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年七宝中学高一上抱孩子练习 9.22」（公众号标题里的「上海市」
+% 三字卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash，前缀照原卷保留「年」，
+% 作业名照原卷标题行带日期「9.22」。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」「附加题」四个节标题，
+%      本稿照原卷分节，只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷第 4、5、8 题与第 15、16 题只印【答案】行，其余各题印【解析】，
+%      第 11、12 题的答案直接印在题干末尾的括号内；本稿统一改为试卷版隐去、
+%      答案版以 \ans{}／\ifanswer 块给出，两版彻底分离；
+%   ④ 数集记号原卷两套并用：第 8、12、19 题作粗体的 $\mathbf{R}$，第 18 题作斜体的 $R$，
+%      本稿按全稿惯例统一写作 $\R$；
+%   ⑤ 原卷填空的横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ⑥ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」（本卷实为不等式
+%      专题，与 高一27／高一28 同样只标主章节，见文末「高一35 专记」）；
+%   ⑦ 本卷**无插图**（全卷检索确认无「如图」）。
+%
+% 原卷存疑三处（均照抄原卷、未改，见源码中该处上方注释）：
+%   ① 第 7 题【解析】的等价不等式首因子印作 $(x-3)$，与题干的 $(x+3)$ 不一致
+%      （其解集 $(-\infty,-3]\cup\{-1\}\cup(1,2]$ 是按 $x+3$ 解出的）；
+%   ② 第 15 题题干作「已知关于集合 $x$ 的不等式」（应为「关于 $x$」）；
+%   ③ 第 18 题【解析】有「则 $\dfrac12$ 是方程 $x^2+bx+c=0$ 的两实数根」（疑漏「$\pm$」）。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年七宝中学高一上抱孩子练习 9.22}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知关于 $x$ 的不等式 $ax^2+2x+c>0$ 的解集为 $\left(-\dfrac13,\dfrac12\right)$，
+则不等式 $-cx^2+2x-a>0$ 的解集为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为不等式 $ax^2+2x+c>0$ 的解集为 $\left(-\dfrac13,\dfrac12\right)$，}
+\step{所以 $-\dfrac2a=-\dfrac13+\dfrac12$，$\dfrac ca=-\dfrac16$，
+解得 $a=-12$，$c=2$，}
+\step{故不等式 $-cx^2+2x-a>0$ 即 $-2x^2+2x+12>0$，}
+\step{故 $x^2-x-6<0$，解得 $-2<x<3$，故不等式的解集是 $(-2,3)$.}
+\solend
+
+\fi
+
+\item 关于 $x$ 的不等式 $ax^2+bx+c<0$（$a\neq0$）的解集为
+$(-\infty,\alpha)\cup(\beta,+\infty)$（$\alpha<\beta<0$），
+则不等式 $cx^2+bx+a>0$ 的解集是 \blankline[4.4em].
+
+\ans{$\left(\dfrac1\beta,\dfrac1\alpha\right)$}
+
+\item 已知命题 $P$：函数 $y=x^2-kx+1$ 的图像在 $x$ 轴的上方；命题 $Q$：不等式
+$|4x-1|<k$ 的解集非空. 若命题 $P$ 和命题 $Q$ 有且仅有一个是真命题，则实数 $k$ 的取值范围为
+\blankline[4.4em].
+
+\ans{$(-2,0]\cup[2,+\infty)$}
+
+\item 关于 $x$ 的分式方程 $\dfrac{2x+3}{1-x}-\dfrac{a-3}{x-1}=1$ 的解满足不等式
+$\dfrac{x-1}2+2>\dfrac{1+x}3$，则 $a$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{解关于 $x$ 的分式方程 $\dfrac{2x+3}{1-x}-\dfrac{a-3}{x-1}=1$，
+得 $x=\dfrac{1-a}3$（$a\neq-2$），}
+\step{解不等式，得 $x>-7$.}
+\step{因为关于 $x$ 的分式方程 $\dfrac{2x+3}{1-x}-\dfrac{a-3}{x-1}=1$ 的解满足不等式
+$\dfrac{x-1}2+2>\dfrac{1+x}3$，}
+\step{所以 $\dfrac{1-a}3>-7$，所以 $a<22$，}
+\step{所以 $a$ 的取值范围是 $a<22$ 且 $a\neq-2$.}
+\solend
+
+\fi
+
+\item 关于 $x$ 的不等式
+$\dfrac{(x+3)(x-2)^{999}(x+1)^2}{(x-1)^{2015}(x-4)^{2016}}\leqslant0$ 的解集为
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+% 注：下一行原卷把等价不等式的首因子印作 $(x-3)$，与题干的 $(x+3)$ 不一致
+%     （其解集是按 $x+3$ 解出的），照录未改，见文件头「原卷存疑」①。
+\step{原不等式等价于
+$\begin{cases}(x-3)(x-2)^{999}(x+1)^2(x-1)^{2015}(x-4)^{2016}\leqslant0\\
+x-1\neq0\\ x-4\neq0\end{cases}$，}
+\step{结合高次不等式奇穿偶不穿的性质求解不等式组得解集为
+$(-\infty,-3]\cup\{-1\}\cup(1,2]$.}
+\solend
+
+\fi
+
+\item 关于 $x$ 的不等式 $-9\leqslant\dfrac{3x^2+px+6}{x^2-x+1}\leqslant6$ 对一切
+$x\in\R$ 都成立，则 $p$ 的取值范围 \blankline[4.4em].
+
+\ans{$p=-6$}
+
+\item 使不等式 $x^2+(a-6)x+9>0$（$|a|\leqslant1$）恒成立的 $x$ 的取值范围是
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $f(a)=x^2+(a-6)x+9$，其中 $-1\leqslant a\leqslant1$；}
+\step{则不等式 $x^2+(a-6)x+9>0$ 恒成立，所以
+$\begin{cases}f(1)>0\\ f(-1)>0\end{cases}$，
+即 $\begin{cases}x^2-5x+9>0\\ x^2-7x+9>0\end{cases}$，}
+\step{解得 $x<\dfrac{7-\sqrt{13}}2$ 或 $x>\dfrac{7+\sqrt{13}}2$，}
+\step{所以 $x$ 的取值范围是
+$\left(-\infty,\dfrac{7-\sqrt{13}}2\right)\cup\left(\dfrac{7+\sqrt{13}}2,+\infty\right)$.}
+\solend
+
+\fi
+
+\item 关于 $x$ 的一元二次不等式 $x^2-8x+a\leqslant0$ 的解集中有且仅有 $3$ 个整数，
+则实数 $a$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $f(x)=x^2-8x+a$，其对称轴为 $x=4$，}
+\step{所以不等式 $f(x)\leqslant0$ 的 $3$ 个整数解为 $3$、$4$、$5$，}
+\step{所以 $\begin{cases}f(2)>0\\ f(3)\leqslant0\end{cases}$
+（或 $\begin{cases}f(5)\leqslant0\\ f(6)>0\end{cases}$），
+即 $\begin{cases}4-16+a>0\\ 9-24+a\leqslant0\end{cases}$，}
+\step{解得 $12<a\leqslant15$，即 $a$ 的取值范围是 $(12,15]$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+% 注：下一题的答案「C」原卷直接印在题干末尾的括号内，本稿按全稿惯例另提为 \ans{}。
+\item 若 $a>b>c$，且 $a+b+c=0$，则\mbox{（\quad）}
+
+\keepwithprev
+A. $a|b|>c|b|$\qquad B. $a^2>b^2>c^2$\qquad
+C. $ab>ac$\qquad D. $ac>bc$
+
+\ans{$C$}
+
+% 同上：答案「C」原卷印在题干末尾的括号内。
+\item 设 $a\in\R$，若 $x>0$ 时均有 $[(a-1)x-1](x^2-ax-1)\geqslant0$，则 $a$ 的值为
+\mbox{（\quad）}
+
+\keepwithprev
+A. $a=1$\qquad B. $a=0$\qquad
+C. $a=\dfrac32$\qquad D. $a=\dfrac32$ 或 $a=0$
+
+\ans{$C$}
+
+\item 已知集合 $A=\{x\mid ax^2+bx+c>0\}$，$B=\{x\mid bx^2+cx+a>0\}$，
+$C=\{x\mid cx^2+ax+b>0\}$，其中 $a$、$b$、$c$ 为实数，现有两个结论：
+①若 $A\cap B\cap C=(p,+\infty)$，则 $p=0$；②存在实数 $q$，使得
+$A\cap B\cap C=(-\infty,q)$，则下列判断中正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. ①和②都正确\qquad B. ①和②都错误\qquad
+C. ①正确，②错误\qquad D. ①错误，②正确
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{①由 $A\cap B\cap C=(p,+\infty)$，即不等式组
+$\begin{cases}ax^2+bx+c>0\\ bx^2+cx+a>0\\ cx^2+ax+b>0\end{cases}$ 的解集为
+$(p,+\infty)$，}
+\step{先证明 $a$、$b$、$c$ 都不小于零：}
+\step{不妨假设 $a<0$，考虑不等式 $ax^2+bx+c>0$，}
+\step{因为不等式组有解集，故不等式 $ax^2+bx+c>0$ 必定有解，}
+\step{设方程 $ax^2+bx+c=0$ 的两实数根为 $m$、$n$（$m<n$），}
+\step{则不等式 $ax^2+bx+c>0$ 的解集为 $\{x\mid m<x<n\}$，}
+\step{由 $A\cap B\cap C=(p,+\infty)$，即不等式组的解集为不等式 $ax^2+bx+c>0$ 的子集，
+与解集为 $(p,+\infty)$ 矛盾，}
+\step{故假设错误，$a\geqslant0$，同理可得 $b\geqslant0$，$c\geqslant0$，}
+\step{再证明 $a$、$b$、$c$ 至少有一个为零：}
+\step{不妨设 $a$、$b$、$c$ 均为正数，则
+$y=ax^2+bx+c$、$y=bx^2+cx+a$、$y=cx^2+ax+b$ 的图象均开口向上，}
+\step{不等式组的解集应该还有 $x<q$ 的部分，与已知矛盾，故假设错误，
+所以 $a$、$b$、$c$ 中至少有一个为零.}
+\step{显然 $a$、$b$、$c$ 不全为 $0$，分类讨论如下：}
+\step{若 $a$、$b$、$c$ 中的两个为 $0$，不妨设 $a=b=0$，$c>0$，则不等式组为
+$\begin{cases}c>0\\ cx>0\\ cx^2>0\end{cases}$，}
+\step{解集为 $(0,+\infty)$，此时 $p=0$；}
+\step{若 $a$、$b$、$c$ 中的 $1$ 个为 $0$，不妨设 $a=0$，$b$、$c>0$，则不等式组为
+$\begin{cases}bx+c>0\\ bx^2+cx>0\\ cx^2+b>0\end{cases}$，}
+\step{其中不等式 $bx+c>0$ 的解集为 $\left\{x\mid x>-\dfrac cb\right\}$，}
+\step{不等式 $bx^2+cx>0$ 的解集为
+$\left(-\infty,-\dfrac cb\right)\cup(0,+\infty)$，不等式 $cx^2+b>0$ 恒成立，}
+\step{因为 $-\dfrac cb<0$，所以不等式组的解集为 $(0,+\infty)$，此时 $p=0$，①正确；}
+\step{②假设存在实数 $q$，使 $A\cap B\cap C=(-\infty,q)$，}
+\step{即不等式组 $\begin{cases}ax^2+bx+c>0\\ bx^2+cx+a>0\\ cx^2+ax+b>0\end{cases}$ 的解集为
+$(-\infty,q)$，}
+\step{先证明 $a$、$b$、$c$ 都不小于零：不妨假设 $a<0$，考虑不等式 $ax^2+bx+c>0$，}
+\step{因为不等式组有解集，故不等式 $ax^2+bx+c>0$ 必定有解，}
+\step{设方程 $ax^2+bx+c=0$ 的两实数根为 $m$、$n$（$m<n$），则不等式 $ax^2+bx+c>0$ 的解集为
+$\{x\mid m<x<n\}$，}
+\step{又不等式组的解集为不等式 $ax^2+bx+c>0$ 的子集，与解集为 $(-\infty,q)$ 矛盾，
+故假设错误，所以 $a\geqslant0$，同理可得 $b\geqslant0$，$c\geqslant0$，}
+\step{再证明 $a$、$b$、$c$ 至少有一个为零：}
+\step{不妨设 $a$、$b$、$c$ 均为正数，则三个二次函数的图象均开口向上，
+不等式组的解集应该还有 $x>p$ 的部分，与已知矛盾，}
+\step{故假设错误，所以 $a$、$b$、$c$ 至少有一个为零.}
+\step{显然 $a$、$b$、$c$ 不全为 $0$，分类讨论如下：}
+\step{若 $a$、$b$、$c$ 中的两个为 $0$，不妨设 $a=b=0$，$c>0$，则不等式组为
+$\begin{cases}c>0\\ cx>0\\ cx^2>0\end{cases}$，}
+\step{解集为 $(0,+\infty)$，与解集为 $(-\infty,q)$ 矛盾，}
+\step{若 $a$、$b$、$c$ 中的 $1$ 个为 $0$，不妨设 $a=0$，$b$、$c>0$，则不等式组为
+$\begin{cases}bx+c>0\\ bx^2+cx>0\\ cx^2+b>0\end{cases}$，}
+\step{其中不等式 $bx+c>0$ 的解集为 $\left\{x\mid x>-\dfrac cb\right\}$，
+不等式 $bx^2+cx>0$ 的解集为
+$\left(-\infty,-\dfrac cb\right)\cup(0,+\infty)$，不等式 $cx^2+b>0$ 恒成立，}
+\step{因为 $-\dfrac cb<0$，所以不等式组的解集为 $(0,+\infty)$，
+与解集为 $(-\infty,q)$ 矛盾，}
+\step{所以不存在实数 $q$，使得 $A\cap B\cap C=(-\infty,q)$，②错误；}
+\step{故选 $C$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{13}
+
+\item 已知关于 $x$ 的不等式 $\dfrac{ax-5}{x^2-a}<0$ 的解集是 $M$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $a=4$ 时，求集合 $M$；
+\item 若 $3\in M$，$5\notin M$，求实数 $a$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $a=4$ 时，不等式为 $\dfrac{4x-5}{x^2-4}<0$，}
+\step{即 $(4x-5)(x+2)(x-2)<0$，解得 $x<-2$ 或 $\dfrac54<x<2$，}
+\step{所以 $M=\left\{x\mid x<-2\text{ 或 }\dfrac54<x<2\right\}$；}
+\stepm{(2)}{若 $3\in M$，则 $\dfrac{3a-5}{9-a}<0$；若 $5\notin M$，则
+$\dfrac{5a-5}{25-a}\geqslant0$ 或 $25-a=0$，}
+\step{联立，解得 $1\leqslant a<\dfrac53$ 或 $9<a\leqslant25$，}
+\step{所以实数 $a$ 的取值范围是 $\left[1,\dfrac53\right)\cup(9,25]$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+% 注：下一题题干原卷作「已知关于集合 $x$ 的不等式」（应为「关于 $x$」），
+%     照录未改，见文件头「原卷存疑」②。
+\item 已知关于集合 $x$ 的不等式
+$\left|x-\dfrac{(a+1)^2}2\right|\leqslant\dfrac{(a-1)^2}2$ 和 $x^2-7x+6\leqslant0$
+的解集依次为 $A$、$B$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求集合 $A$、$B$；
+\item 若 $A\sub B$，求此时 $a$ 的取值范围.
+\end{enumerate}
+
+\ans{（1）$A=[2a,a^2+1]$，$B=[1,6]$；（2）$\left[\dfrac12,\sqrt5\right]$}
+
+\ansspace[6]
+
+\item 解下列关于 $x$ 的不等式：
+
+\begin{enumerate}[label=(\arabic*)]
+\item $\dfrac{a(x+1)(x-2)}{x(x-2)}>0$；
+\item $(a-2)x^2+(2a-1)x+6>0$；
+\item $\dfrac1x>2a-x$.
+\end{enumerate}
+
+\ans{（1）$a>0:(-\infty,-1)\cup(0,2)\cup(2,+\infty)$；$a<0:(-1,0)$；$a=0:\varnothing$；
+（2）$a=2:(-2,+\infty)$；$a>2:(-\infty,-2)\cup\left(\dfrac3{2-a},+\infty\right)$；
+$a<2:\left(-2,\dfrac3{2-a}\right)$；
+（3）$a<1:(0,+\infty)$；$a=1:(0,1)\cup(1,+\infty)$；
+$a>1:\left(0,a-\sqrt{a^2-1}\right)\cup\left(a+\sqrt{a^2-1},+\infty\right)$}
+
+\ansspace[8]
+
+\end{enumerate}
+
+\bigsec{附加题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 设 $0<b<a+1$，若关于 $x$ 的不等式 $(x-b)^2>(ax)^2$ 的解集中整数解恰有 $3$ 个，
+则实数 $a$ 的范围为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{关于 $x$ 的不等式 $(x-b)^2>(ax)^2$，等价于
+$(a^2-1)x^2+2bx-b^2<0$，}
+\step{转化为 $[(a+1)x-b]\cdot[(a-1)x+b]<0$，}
+\step{因为不等式的解集中整数解恰有 $3$ 个，所以 $a-1>0$，即 $a>1$，}
+\step{又 $0<b<a+1$，所以不等式的解集为
+$\dfrac{-b}{a-1}<x<\dfrac b{a+1}<1$，}
+\step{所以解集中整数解为 $-2$、$-1$、$0$ 三个，
+所以 $-3\leqslant\dfrac{-b}{a-1}<-2$，}
+\step{所以 $2<\dfrac b{a-1}\leqslant3$，即 $2a-2<b\leqslant3a-3$，}
+\step{又 $b<1+a$，所以 $2a-2<1+a$，解得 $a<3$，}
+\step{综上所述，实数 $a$ 的取值范围是 $(1,3)$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 若集合 $S=\{x\mid(x+a)(x^2+bx+c)=0,x\in\R\}$，
+
+$T=\{x\mid(ax+1)(cx^2+bx+1)=0,x\in\R\}$，$\dfrac12\in S$，$-2\in T$，且集合 $S$、$T$ 均
+恰有两个元素，则由所有三元数对 $(a,b,c)$ 组成的集合为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $a=0$，$S=\{x\mid x(x^2+bx+c)=0,x\in\R\}$，
+$T=\{x\mid cx^2+bx+1=0,x\in\R\}$，}
+\step{则 $0\in S$，又 $\dfrac12\in S$，$-2\in T$，所以有
+$\begin{cases}\dfrac14+\dfrac12b+c=0\\ 4c-2b+1=0\end{cases}$，
+解得 $\begin{cases}b=0\\ c=-\dfrac14\end{cases}$.}
+\step{验证：当 $a=0$，$b=0$，$c=-\dfrac14$ 时，
+$S=\left\{x\mid x\left(x^2-\dfrac14\right)=0,x\in\R\right\}
+=\left\{0,-\dfrac12,\dfrac12\right\}$，}
+\step{不满足集合 $S$ 恰有两个元素，故 $a\neq0$；}
+\step{若 $c=0$，由 $S=\{x\mid(x+a)x(x+b)=0,x\in\R\}$，
+$T=\{x\mid(ax+1)(bx+1)=0,x\in\R\}$，}
+\step{则 $0\in S$，$-a\in S$，$-b\in S$，又 $\dfrac12\in S$，
+则 $S=\left\{0,\dfrac12\right\}$，}
+\step{又 $-a\neq0$，所以 $-a=\dfrac12$，即 $a=-\dfrac12$.}
+\step{由 $-2\in T$，则 $(-2a+1)(-2b+1)=0$，即 $2(1-2b)=0$，解得 $b=\dfrac12$，}
+\step{验证：当 $a=-\dfrac12$，$b=\dfrac12$，$c=0$ 时，
+$S=\left\{x\mid\left(x-\dfrac12\right)x\left(x+\dfrac12\right)=0,x\in\R\right\}
+=\left\{0,-\dfrac12,\dfrac12\right\}$，}
+\step{也不满足集合 $S$ 恰有两个元素，故 $c\neq0$；}
+\step{由上可得，$a\neq0$ 且 $c\neq0$，则 $-a\in S$，$-\dfrac1a\in T$，}
+\step{且方程 $x^2+bx+c=0$ 与 $cx^2+bx+1=0$ 有相同的判别式 $\Delta=b^2-4c$，
+即两方程根的个数相同.}
+\step{由集合 $S$、$T$ 均恰有两个元素，则 $\Delta=b^2-4c\geqslant0$.}
+% 下面两步是原卷在解析里对题干已有定义的重复陈述（第 9 页），照录。
+\step{$S=\{x\mid(x+a)(x^2+bx+c)=0,x\in\R\}$，}
+\step{$T=\{x\mid(ax+1)(cx^2+bx+1)=0,x\in\R\}$，}
+\step{因为 $\dfrac12\in S$，所以 $\dfrac12$ 是方程 $x+a=0$ 或 $x^2+bx+c=0$ 的根，}
+\step{由 $-\dfrac1a\in T$，且 $-2\in T$，则 $-2$ 是方程 $ax+1=0$ 或 $cx^2+bx+1=0$ 的根，}
+\step{①当 $a=-\dfrac12$ 时，$\dfrac12$ 是方程 $x+a=0$ 的根，$-a=\dfrac12\in S$，
+则 $-\dfrac1a=2\in T$，}
+\step{又 $-2\in T$，则 $T=\{-2,2\}$，由
+$T=\left\{x\mid\left(-\dfrac12x+1\right)(cx^2+bx+1)=0,x\in\R\right\}$，}
+\step{则 $-2$ 是方程 $cx^2+bx+1=0$ 的根，则 $4c-2b+1=0$，}
+\step{(i) 若 $\Delta=b^2-4c=0$，联立
+$\begin{cases}4c-2b+1=0\\ b^2-4c=0\end{cases}$，解得 $b=1$，$c=\dfrac14$，}
+\step{验证：当 $a=-\dfrac12$，$b=1$，$c=\dfrac14$ 时，
+$S=\left\{x\mid\left(x-\dfrac12\right)\left(x^2+x+\dfrac14\right)=0,x\in\R\right\}
+=\left\{-\dfrac12,\dfrac12\right\}$，}
+\step{$T=\left\{x\mid\left(-\dfrac12x+1\right)\left(\dfrac14x^2+x+1\right)=0,x\in\R\right\}
+=\{-2,2\}$，满足题意；}
+\step{(ii) 若 $\Delta=b^2-4c>0$，方程 $cx^2+bx+1=0$ 有两个不相等的实数根，}
+\step{又 $T=\{-2,2\}$，则方程 $cx^2+bx+1=0$ 的两根必为 $-2$ 和 $2$，}
+\step{故由韦达定理得 $\begin{cases}-2+2=-\dfrac bc\\ -2\times2=\dfrac1c\end{cases}$，
+解得 $b=0$，$c=-\dfrac14$；}
+\step{验证：当 $a=-\dfrac12$，$b=0$，$c=-\dfrac14$ 时，
+$S=\left\{x\mid\left(x-\dfrac12\right)\left(x^2-\dfrac14\right)=0,x\in\R\right\}
+=\left\{-\dfrac12,\dfrac12\right\}$，}
+\step{$T=\left\{x\mid\left(-\dfrac12x+1\right)\left(-\dfrac14x^2+1\right)=0,x\in\R\right\}
+=\{-2,2\}$，满足题意；}
+\step{②当 $a=\dfrac12$ 时，$-\dfrac1a=-2$，即 $-2$ 是方程 $ax+1=0$ 的根，}
+\step{则 $-a=-\dfrac12\in S$，又 $\dfrac12\in S$，
+则 $S=\left\{-\dfrac12,\dfrac12\right\}$，}
+% 下一行同样是原卷对已有定义的重复陈述（第 10 页），照录。
+\step{$S=\{x\mid(x+a)(x^2+bx+c)=0,x\in\R\}$，}
+\step{则 $\dfrac12$ 是方程 $x^2+bx+c=0$ 的根，
+则 $\dfrac14+\dfrac12b+c=0$，即 $4c+2b+1=0$，}
+\step{(i) 若 $\Delta=b^2-4c=0$，联立
+$\begin{cases}4c+2b+1=0\\ b^2-4c=0\end{cases}$，解得 $b=-1$，$c=\dfrac14$，}
+\step{验证：当 $a=\dfrac12$，$b=-1$，$c=\dfrac14$ 时，
+$S=\left\{x\mid\left(x+\dfrac12\right)\left(x^2-x+\dfrac14\right)=0,x\in\R\right\}
+=\left\{-\dfrac12,\dfrac12\right\}$，}
+\step{$T=\left\{x\mid\left(\dfrac12x+1\right)\left(\dfrac14x^2-x+1\right)=0,x\in\R\right\}
+=\{-2,2\}$，满足题意；}
+\step{(ii) 若 $\Delta=b^2-4c>0$，方程 $x^2+bx+c=0$ 有两不等的实数根，}
+\step{又 $S=\left\{-\dfrac12,\dfrac12\right\}$，则方程 $x^2+bx+c=0$ 的两根必为
+$-\dfrac12$ 和 $\dfrac12$，}
+\step{故由韦达定理得
+$\begin{cases}-\dfrac12+\dfrac12=-b\\ -\dfrac12\times\dfrac12=c\end{cases}$，
+解得 $b=0$，$c=-\dfrac14$；}
+\step{验证：当 $a=\dfrac12$，$b=0$，$c=-\dfrac14$ 时，
+$S=\left\{x\mid\left(x+\dfrac12\right)\left(x^2-\dfrac14\right)=0,x\in\R\right\}
+=\left\{-\dfrac12,\dfrac12\right\}$，}
+\step{$T=\left\{x\mid\left(\dfrac12x+1\right)\left(-\dfrac14x^2+1\right)=0,x\in\R\right\}
+=\{-2,2\}$，满足题意；}
+% 注：下一句原卷作「则 $\dfrac12$ 是方程 $x^2+bx+c=0$ 的两实数根」（疑漏「$\pm$」），
+%     照录未改，见文件头「原卷存疑」③。
+\step{③当 $a\neq-\dfrac12$ 且 $a\neq\dfrac12$ 时，}
+\step{则 $\dfrac12$ 不是方程 $x+a=0$ 的根，$-2$ 也不是方程 $ax+1=0$ 的根，}
+\step{由 $\dfrac12\in S$，$-2\in T$，则 $\dfrac12$ 是方程 $x^2+bx+c=0$ 的两实数根，}
+\step{且 $-2$ 是方程 $cx^2+bx+1=0$ 的根，则
+$\begin{cases}\dfrac14+\dfrac12b+c=0\\ 4c-2b+1=0\end{cases}$，
+解得 $b=0$，$c=-\dfrac14$，}
+\step{验证：当 $a\neq-\dfrac12$ 且 $a\neq\dfrac12$，$b=0$，$c=-\dfrac14$ 时，
+有 $-a\neq\dfrac12$，$-a\neq-\dfrac12$，}
+\step{$S=\left\{x\mid(x+a)\left(x^2-\dfrac14\right)=0,x\in\R\right\}
+=\left\{-a,-\dfrac12,\dfrac12\right\}$ 有三个元素，故不满足题意；}
+\step{综上所述，满足题意的所有三元数对 $(a,b,c)$ 有
+$\left(-\dfrac12,1,\dfrac14\right)$、$\left(-\dfrac12,0,-\dfrac14\right)$、
+$\left(\dfrac12,-1,\dfrac14\right)$、$\left(\dfrac12,0,-\dfrac14\right)$.}
+\solend
+
+\fi
+
+\ansspace*[10]
+
+\item 设 $a\in\R$，已知关于 $x$ 的方程 $(x+1)^2(x+a)^2=a^2+3$ 存在四个实数根
+$x_1$、$x_2$、$x_3$、$x_4$，且
+$(x_1+1)(x_2+1)(x_3+1)(x_4+1)=6(a+1)$，
+则 $x_1+x_2+x_3+x_4=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{记 $t_i=x_i+1$，则问题转化为：已知关于 $t$ 的方程 $t^2(t-1+a)^2=a^2+3$，}
+\step{且 $t_1t_2t_3t_4=6(a+1)$，求 $t_1+t_2+t_3+t_4-4$ 的值.}
+\step{由 $t^2(t-1+a)^2=a^2+3$ 得 $t(t-1+a)=\pm\sqrt{a^2+3}$，}
+\step{$t^2+(a-1)t+\sqrt{a^2+3}=0$ 或 $t^2+(a-1)t-\sqrt{a^2+3}=0$，}
+\step{不妨设前者的两根为 $t_1$、$t_2$，后者的两根为 $t_3$、$t_4$，}
+\step{则由韦达定理得 $t_1t_2=\sqrt{a^2+3}$，$t_3t_4=-\sqrt{a^2+3}$，}
+\step{所以 $t_1t_2t_3t_4=\sqrt{a^2+3}\times\left(-\sqrt{a^2+3}\right)=6(a+1)$，
+即 $a^2+6a+9=0$，}
+\step{解得 $a=-3$，所以 $t_1+t_2+t_3+t_4-4=-2(a-1)-4=4$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 集合 $M$、$N$、$S$ 都是非空集合，现规定如下运算：
+
+$M\odot N\odot S=\{x\mid x\in(M\cap N)\cup(N\cap S)\cup(S\cap M)$ 且
+$x\notin M\cap N\cap S\}$. 假设集合 $A=\{x\mid a<x<b\}$，$B=\{x\mid c<x<d\}$，
+$C=\{x\mid e<x<f\}$，其中实数 $a$、$b$、$c$、$d$、$e$、$f$ 满足：
+$a<c<e<0<b<d<f$. 计算 $A\odot B\odot C=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为集合 $A=\{x\mid a<x<b\}$，$B=\{x\mid c<x<d\}$，$C=\{x\mid e<x<f\}$，}
+\step{又因为 $a<c<e<0<b<d<f$，}
+\step{所以 $A\cap B=\{x\mid c<x<b\}$，$B\cap C=\{x\mid e<x<d\}$，
+$C\cap A=\{x\mid e<x<b\}$，}
+\step{$A\cap B\cap C=\{x\mid e<x<b\}$，
+故 $A\odot B\odot C=\{x\mid c<x\leqslant e\text{ 或 }b\leqslant x<d\}$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,430 @@
+% 高一31_上海中学_周练1.tex
+%   —— 高一上数学「2026-2027 年上海中学高一上周练 1」（试卷版/答案版）
+% 试卷版：xelatex 高一31_上海中学_周练1.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一31_上海中学_周练1.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一31_上海中学_周练1.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 31」，2026-09-25 发布，
+% 原文标题「27学年高一31——2026-2027年上海市上海中学高一上周练1」），
+% 正文为 10 张 PNG 页。**同一篇里各页分辨率不一致**（2560×3620 与 4762×6735 两档混排），
+% 取 mmbiz.qpic.cn/<hash>/0 的原图档。原文本身就是一份**讲评版**——全卷没有单独的【答案】行，
+% 每题下方直接印【解析】，答案写在解析末句（选择题作「故选 B／C／D」）。
+% 试题文字与解析均照原卷录入，未改内容。卷面的粉色斜水印属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年上海中学高一上周练 1」（公众号标题里的「上海市」
+% 三字卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash，前缀照原卷保留「年」。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题，本稿照原卷分节，
+%      只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷通篇只印【解析】（无【答案】行），本稿统一改为试卷版隐去、答案版以 \ifanswer{}
+%      块给出，两版彻底分离（选择题的 \ans{} 由解析末句「故选 D」抽出）；
+%   ④ 子集符号原卷两种并用：第 10 题条件①与第 11 题题干／选项 A、第 15(2) 题作带下划线的
+%      $\subseteq$，第 11 题选项 B、C 作真包含的 $\subset$，本稿分别照录为 $\sub$ 与 $\subset$；
+%   ⑤ 数集记号原卷作斜体的 $R$、$Z$（第 9、10、17 题），本稿按全稿惯例统一写作 $\R$、$\Z$；
+%   ⑥ 原卷填空的横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ⑦ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」；
+%   ⑧ 本卷**无插图**（全卷检索确认无「如图」）；
+%   ⑨ 并列各项**原卷一律用逗号或不加标点**（如「$a,b$」「$(0,0,0),(1,0,1)$」
+%      「选项AB不成立」），本稿按全稿惯例在中文化并列的场合改排顿号
+%      （「$a$、$b$」「选项 A、B 不成立」）；原卷第 9 题的「$|S|$、$|T|$」与
+%      第 10 题解析的「条件③、④」本就作顿号，即原卷自相混用，故此处只作统一、不改字。
+%
+% 原卷存疑两处（均照抄原卷、未改，见源码中该处上方注释）：
+%   ① 第 11 题【解析】首句作「因为 $A=\{0,1\}$ 是 $A$ 的一个子集，所以 $A\in B$」
+%      ——按 $B=\{x\mid x\subseteq A\}$ 的写法，此处「$A$ 的一个子集」指的是 $A$ 自己，
+%      结论 $A\in B$ 是对的，但表述绕；照录未改；
+%   ② 第 18(3)【解析】有「当 $x\in\{7,2,3,4\}$ 时」——按上下文（前一句的 $x\in\{1,2,3,4\}$）
+%      应为 $\{1,2,3,4\}$，疑系把 1 误排成 7；照录未改。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年上海中学高一上周练 1}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 集合 $A=\{x\mid y=\sqrt{1-x^2}\}$，$B=\{y\mid y=x^2+1,x\in A\}$，
+则 $A\cup B=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$A$ 的代表元是 $x$，由 $1-x^2\geqslant0$ 得 $A=[-1,1]$；}
+\step{$B$ 的代表元是 $y$，由 $0\leqslant x^2\leqslant1$ 得 $B=[1,2]$，
+所以 $A\cup B=[-1,2]$.}
+\solend
+
+\fi
+
+\item 关于 $x$ 的不等式 $ax^2-(a+1)x+1\leqslant0$（$a<0$）的解集为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原不等式即 $(ax-1)(x-1)\leqslant0$，因为 $a<0$，
+所以 $\left(x-\dfrac1a\right)(x-1)\geqslant0$.}
+\step{又 $\dfrac1a<0<1$，所以 $x\leqslant\dfrac1a$ 或 $x\geqslant1$，
+故解集为 $\left(-\infty,\dfrac1a\right]\cup[1,+\infty)$.}
+\solend
+
+\fi
+
+\item 集合 $A=\left\{(x,y)\mid\dfrac{y-3}{x-1}=2\right\}$，$B=\{(x,y)\mid y=ax+2\}$
+满足 $A\cap B=\varnothing$，则 $a$ 的取值集合为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$A=\{(x,y)\mid y=2x+1,x\neq1\}$，即直线 $y=2x+1$ 去掉点 $(1,3)$.}
+\step{当 $a=2$ 时两直线平行，无公共点；}
+\step{当 $a\neq2$ 时两直线交于横坐标为 $\dfrac1{2-a}$ 的点，}
+\step{此时 $A\cap B=\varnothing$ 当且仅当该交点恰为被挖去的点 $(1,3)$，
+即 $\dfrac1{2-a}=1$，$a=1$，}
+\step{故 $a$ 的取值集合为 $\{1,2\}$.}
+\solend
+
+\fi
+
+\item 设 $a$、$b$ 是两个实数，下列条件中能推出“$a$、$b$ 中至少有一个大于 $1$”的条件是
+\blankline[4.4em].
+
+（1）$a+b>2$；（2）$a^2+b^2>2$；（3）$ab>1$；（4）$a^3+b^3>2$.
+
+\ifanswer
+\solbegin
+\step{假设 $a\leqslant1$ 且 $b\leqslant1$（即结论的否定），则 $a+b\leqslant2$；}
+\step{又 $1-a^3=(1-a)(a^2+a+1)$，其中
+$a^2+a+1=\left(a+\dfrac12\right)^2+\dfrac34>0$，故 $a^3\leqslant1$，}
+\step{同理 $b^3\leqslant1$，从而 $a^3+b^3\leqslant2$；这分别与（1）（4）矛盾，}
+\step{故（1）（4）能推出结论.（2）（3）均可取 $a=b=-2$ 排除.}
+\solend
+
+\fi
+
+\item 对一个集合 $A$，若存在两个非空集合 $A_1$、$A_2$ 满足 $A_1\cap A_2=\varnothing$ 且
+$A_1\cup A_2=A$，则称集合 $\{A_1,A_2\}$ 为 $A$ 的一个“划分集”. 若集合 $A$ 有 $n$ 个元素
+（$n\geqslant2$），则不同的“划分集”共有 \blankline[4.4em] 个.
+
+\ifanswer
+\solbegin
+\step{集合中的每个元素都有属于 $A_1$ 或属于 $A_2$ 两种情况，故共有 $2^n$ 种情况，}
+\step{排除全都属于 $A_1$ 或 $A_2$ 的两种情况，考虑对称情况，}
+\step{故不同的“划分集”共有 $\dfrac12(2^n-2)=2^{n-1}-1$ 个.}
+\solend
+
+\fi
+
+\item 集合 $M=\{x\mid x^2-4ax+2a+6=0\}$，$N=(0,+\infty)$，若 $M\cap N=\varnothing$，
+则 $a$ 的取值范围为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\Delta=8(2a-3)(a+1)$.}
+\step{当 $-1<a<\dfrac32$ 时，$M=\varnothing$；}
+\step{当方程有实根且两根均非正时，$\Delta\geqslant0$，$4a\leqslant0$，$2a+6\geqslant0$，
+解得 $-3\leqslant a\leqslant-1$.}
+\step{端点 $a=-3$、$-1$ 符合，$a=\dfrac32$ 时正根为 $3$，不符合，
+故 $a\in\left[-3,\dfrac32\right)$.}
+\solend
+
+\fi
+
+\item 设 $a$、$b$、$c\in\R$，
+$S=\{x\mid(x+a)(x^2+bx+c)=0,x\in\R\}$，
+
+$T=\{x\mid(ax+1)(cx^2+bx+1)=0,x\in\R\}$.
+若 $|S|$、$|T|$ 分别为集合 $S$、$T$ 的元素个数，则 $|S|+|T|$ 的所有可能取值组成的集合为
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$x\neq0$ 时，$(ax+1)(cx^2+bx+1)
+=x^3\left(\dfrac1x+a\right)\left(\dfrac1{x^2}+\dfrac bx+c\right)$，}
+\step{故 $S$、$T$ 的非零元按倒数一一对应，设其个数均为 $k$；}
+\step{$0\notin T$，且 $0\in S\Leftrightarrow ac=0$.
+当 $ac=0$ 时 $k\in\{0,1,2\}$，}
+\step{当 $ac\neq0$ 时 $x=-a\neq0$ 是 $S$ 的非零元，$k\in\{1,2,3\}$.}
+\step{因此 $|S|+|T|$ 分别可取 $2k+1\in\{1,3,5\}$ 与 $2k\in\{2,4,6\}$.}
+\step{依次取 $(a,b,c)=(0,0,0)$、$(1,0,1)$、$(0,-2,1)$、$(1,-2,1)$、$(0,0,-1)$、$(1,-5,6)$，}
+\step{可分别实现 $1$、$2$、$3$、$4$、$5$、$6$，}
+\step{则 $|S|+|T|$ 的所有可能取值组成的集合为 $\{1,2,3,4,5,6\}$.}
+\solend
+
+\fi
+
+\item 对于集合 $A$，若非空集合 $X$ 满足以下四个条件：
+
+① $X\sub\{(a,b)\mid a\in A,b\in A\}$；
+
+② 任意 $a\in A$ 都有 $(a,a)\in X$；
+
+③ 任意 $a$、$b\in A$，若 $(a,b)\in X$ 且 $(b,a)\in X$，则 $a=b$；
+
+④ 任意 $a$、$b$、$c\in A$，若 $(a,b)\in X$ 且 $(b,c)\in X$，则 $(a,c)\in X$，
+
+就称集合 $X$ 为集合 $A$ 的一个“偏序集”，以下说法正确的有 \blankline[4.4em].
+
+（1）设 $A=\{1,2\}$，则满足是集合 $A$ 的一个“偏序集”的集合 $X$ 共有 $3$ 个；
+
+（2）设 $A=\{1,2,3\}$，则集合 $X=\{(1,1),(1,2),(2,1),(2,2),(3,3)\}$ 是集合 $A$ 的一个
+“偏序集”；
+
+（3）设 $A=\{1,2,3\}$，则含有 $5$ 个元素且是集合 $A$ 的“偏序集”的集合 $X$ 共有 $6$ 个；
+
+（4）$R'=\{(a,b)\mid a\in\R,b\in\R,a\leqslant b\}$ 是实数集 $\R$ 的一个“偏序集”.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$X$ 必含 $(1,1)$、$(2,2)$，而 $(1,2)$、$(2,1)$ 至多含一个，}
+\step{故共有 $1+2=3$ 个，正确.}
+\stepm{(2)}{$(1,2)$、$(2,1)\in X$ 而 $1\neq2$，不满足条件③，错误.}
+\stepm{(3)}{除三个 $(a,a)$ 外，还需从 $6$ 个非对角有序对中选取两个，
+共 $\dfrac{6\times5}2=15$ 种，}
+\step{其中互为反向的有 $3$ 种，形如 $(a,b)$、$(b,c)$ 且 $a$、$b$、$c$ 互不相同的有
+$3\times2=6$ 种，}
+\step{两类不重合；其余均满足条件③、④，故共有 $15-3-6=6$ 个，正确.}
+\stepm{(4)}{$a\leqslant a$；$a\leqslant b$，$b\leqslant a\Rightarrow a=b$；
+$a\leqslant b$，$b\leqslant c\Rightarrow a\leqslant c$，故满足四个条件，}
+\step{正确.}
+\step{故正确的是（1）（3）（4）.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item 已知集合 $A=\{0,1\}$，$B=\{x\mid x\sub A\}$，那么下列说法正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. $A\sub B$\qquad B. $A\subset B$\qquad C. $B\subset A$\qquad D. $A\in B$
+
+\ans{$D$}
+
+\ifanswer
+\solbegin
+% 注：下一句原卷作「因为 $A=\{0,1\}$ 是 $A$ 的一个子集，所以 $A\in B$」——表述绕但结论对，
+%     照录未改，见文件头「原卷存疑」①。
+\step{$B=\{\varnothing,\{0\},\{1\},\{0,1\}\}$.}
+\step{因为 $A=\{0,1\}$ 是 $A$ 的一个子集，所以 $A\in B$.}
+\step{又 $0\in A$ 而 $0\notin B$，故选项 A、B 不成立；
+$\varnothing\in B$，而 $\varnothing\notin A$，故选项 C 不成立；}
+\step{故选 $D$.}
+\solend
+
+\fi
+
+\item “$x\neq1$”是“$x^2-1\neq0$”的\mbox{（\quad）}条件.
+
+\keepwithprev
+A. 充分非必要\qquad B. 必要非充分
+
+C. 充要\qquad D. 既非充分也非必要
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{$x^2-1\neq0\Leftrightarrow x\neq1$ 且 $x\neq-1\Rightarrow x\neq1$.}
+\step{反之不成立，如 $x=-1$ 时，$x\neq1$，但 $x^2-1=0$.}
+\step{因此“$x\neq1$”是“$x^2-1\neq0$”的必要非充分条件，故选 $B$.}
+\solend
+
+\fi
+
+\item 若命题“存在 $x>\dfrac12$，使得 $x^2-mx+4\leqslant0$”是假命题，
+则 $m$ 的取值范围为\mbox{（\quad）}
+
+\keepwithprev
+A. $\{m\mid m>-4\}$\qquad B. $\{m\mid m<4\}$\qquad
+C. $\{m\mid-4<m<4\}$\qquad D. $\{m\mid m>4\}$
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{由题意得 $\forall x>\dfrac12$，$x^2-mx+4>0$ 恒成立，
+只需 $m<\left(x+\dfrac4x\right)_{\min}$，}
+\step{因为 $x+\dfrac4x\geqslant2\sqrt{x\cdot\dfrac4x}=4$，当且仅当 $x=\dfrac4x$
+（$x>\dfrac12$）时，即当 $x=2$ 时取等号，}
+\step{所以 $m$ 的取值范围为 $\{m\mid m<4\}$. 故选 $B$.}
+\solend
+
+\fi
+
+\item 若存在 $b$ 满足 $0<b<a+1$，且关于 $x$ 的不等式 $(x-b)^2>(ax)^2$ 的解集中的整数解
+恰有 $3$ 个，则实数 $a$ 的取值范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $\{a\mid-1<a<0\}$\qquad B. $\{a\mid0<a<1\}$\qquad
+C. $\{a\mid1<a<3\}$\qquad D. $\{a\mid3<a<5\}$
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{由 $(x-b)^2>(ax)^2$，得 $(a^2-1)x^2+2bx-b^2<0$，}
+\step{不等式 $(a^2-1)x^2+2bx-b^2<0$ 的解集在方程 $(a^2-1)x^2+2bx-b^2=0$ 的两根之间，
+则 $a^2-1>0$，又因为 $0<b<a+1$，所以 $a>1$，}
+\step{$\Delta=4b^2+4b^2(a^2-1)=4a^2b^2>0$，}
+\step{解不等式 $(a^2-1)x^2+2bx-b^2<0$，得 $-\dfrac b{a-1}<x<\dfrac b{a+1}$，}
+\step{所以不等式 $(a^2-1)x^2+2bx-b^2<0$ 的解集为
+$\left\{x\mid-\dfrac b{a-1}<x<\dfrac b{a+1}\right\}$，}
+\step{因为 $0<b<a+1$，所以 $0<\dfrac b{a+1}<1$，}
+\step{所以原不等式的解集中的整数解为 $-2$、$-1$、$0$，
+所以 $-3\leqslant-\dfrac b{a-1}<-2$，}
+\step{即 $2(a-1)<b\leqslant3(a-1)$，}
+\step{因为 $a>1$，$0<b<a+1$，所以 $2(a-1)<a+1$，解得 $a<3$，故 $1<a<3$.}
+\step{故选 $C$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{14}
+
+\item 设集合 $A=\{x\mid x^2-5x+6=0\}$，
+$B=\left\{x\mid x^2-2(a+1)x+a^2+2a+\dfrac34=0\right\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $A\cap B=\{2\}$，求实数 $a$ 的值；
+\item 若 $A\cap B=B$，求实数 $a$ 的值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\step{$A=\{2,3\}$，
+$x^2-2(a+1)x+a^2+2a+\dfrac34=\left(x-a-\dfrac12\right)\left(x-a-\dfrac32\right)$，}
+\step{故 $B=\left\{a+\dfrac12,a+\dfrac32\right\}$，且两个元素互异；}
+\stepm{(1)}{$2\in B$，故 $a=\dfrac32$ 或 $a=\dfrac12$.}
+\step{当 $a=\dfrac32$ 时 $B=\{2,3\}$，不合题意；当 $a=\dfrac12$ 时 $B=\{1,2\}$；
+因此 $a=\dfrac12$.}
+\stepm{(2)}{$A\cap B=B\Leftrightarrow B\sub A$.
+因为 $A$、$B$ 均有两个元素，所以 $B=A=\{2,3\}$，}
+\step{即 $a+\dfrac12=2$，$a+\dfrac32=3$，解得 $a=\dfrac32$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 方程 $(m-1)x^2-2mx+m+2=0$，分别在以下条件下求实数 $m$ 的取值范围.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 方程有 $2$ 个不相等的正实数根；
+\item 方程的 $2$ 个根分别在区间 $(0,1)$ 和 $(1,2)$ 内；
+\item 方程在区间 $(-1,2)$ 上有且仅有一个实数根.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\step{记 $F(x)=(m-1)x^2-2mx+m+2$，}
+\stepm{(1)}{$m\neq1$，且 $\Delta=4m^2-4(m-1)(m+2)=4(2-m)$，}
+\step{由两根不相等且均为正数，$\Delta>0$，$\dfrac{2m}{m-1}>0$，$\dfrac{m+2}{m-1}>0$，}
+\step{解得 $m\in(-\infty,-2)\cup(1,2)$.}
+\stepm{(2)}{$F(0)=m+2$，$F(1)=1$，$F(2)=m-2$，}
+\step{由于 $1$ 位于两根之间且 $F(1)>0$，抛物线开口向下，}
+\step{同时 $F(0)<0$，$F(2)<0$，因此 $m-1<0$，$m+2<0$，$m-2<0$，}
+\step{即 $m<-2$.}
+\step{反之，当 $m<-2$ 时，$F(0)<0<F(1)$，$F(1)>0>F(2)$，}
+\step{方程在 $(0,1)$ 与 $(1,2)$ 内各有一根. 故 $m<-2$.}
+\stepm{(3)}{当 $m=1$ 时，方程为 $-2x+3=0$，根 $x=\dfrac32\in(-1,2)$，符合条件.}
+\step{当 $m\neq1$ 时，$F(-1)=4m+1$，$F(2)=m-2$，$\Delta=4(2-m)$.}
+\step{端点函数值异号时，$(4m+1)(m-2)<0\Leftrightarrow-\dfrac14<m<2$，}
+\step{此时二次函数图象在区间 $(-1,2)$ 内恰与 $x$ 轴相交一次.}
+\step{当 $m=-\dfrac14$ 时，两根为 $-1$、$\dfrac75$，区间内恰有根 $\dfrac75$.}
+\step{当 $m=2$ 时，方程为 $(x-2)^2=0$，根 $2$ 不属于该开区间，不符合.}
+\step{当 $m>2$ 时 $\Delta<0$，方程无实根.}
+\step{当 $m<-\dfrac14$ 时，抛物线开口向下，且 $F(-1)<0$，$F(1)=1>0$，$F(2)<0$，}
+\step{方程在 $(-1,1)$ 与 $(1,2)$ 内各有一个根，区间 $(-1,2)$ 内有两个根.}
+\step{$m>2$ 与 $m<-\dfrac14$ 这两种情形均不符合.}
+\step{因此 $m\in\left[-\dfrac14,2\right)$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 对于集合 $A=\{x\mid x=14m+36n,m,n\in\Z\}$，证明：$x\in A$ 的充要条件是
+$x=2k$（$k\in\Z$）.
+
+\ifanswer
+\solbegin
+\step{必要性：若 $x\in A$，则存在 $m$、$n\in\Z$，使得
+$x=14m+36n=2(7m+18n)$.}
+\step{令 $k=7m+18n\in\Z$，则 $x=2k$.}
+\step{充分性：若 $x=2k$（$k\in\Z$），}
+\step{由 $2=14\times(-5)+36\times2$，得 $x=2k=14(-5k)+36(2k)$，}
+\step{因为 $-5k$、$2k\in\Z$，所以 $x\in A$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item $A=\{1,2,3,\cdots,12\}$，$M=\{(x,y)\mid x\in A,y\in A\}$，从 $M$ 中选出 $n$ 个不同的
+有序数对构成一个序列：$(x_1,y_1),\cdots,(x_n,y_n)$，其中 $(x_i,y_i)$ 称为该序列的第 $i$ 项
+（$i=1,2,3,\cdots,n$）. 若该序列的相邻项 $(x_i,y_i)$、$(x_{i+1},y_{i+1})$ 满足
+$\begin{cases}|x_{i+1}-x_i|=4\\ |y_{i+1}-y_i|=5\end{cases}$ 或
+$\begin{cases}|x_{i+1}-x_i|=5\\ |y_{i+1}-y_i|=4\end{cases}$
+（$i=1,2,3,\cdots,n-1$），则该序列称为 $k$ 列.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $k$ 列的第一项为 $(5,5)$，直接写出它的第二项；
+\item 若 $\varGamma$ 为 $k$ 列，且 $\varGamma$ 中的项满足：当 $i$ 为奇数时，
+$x_i\in\{1,2,3,10,11,12\}$；当 $i$ 为偶数时，$x_i\in\{4,5,6,7,8,9\}$.
+判断：$(1,1)$ 与 $(2,3)$ 能否同时在 $\varGamma$ 中，并说明理由；
+\item 证明：$M$ 中所有元素组成的序列（共 $144$ 项）一定不能构成 $k$ 列.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $|x_2-5|=4$，$|y_2-5|=5$ 时，$x_2\in\{1,9\}$，$y_2\in\{0,10\}$，}
+\step{而 $0\notin A$，故 $y_2=10$.}
+\step{当 $|x_2-5|=5$，$|y_2-5|=4$ 时，同理 $x_2=10$，$y_2\in\{1,9\}$.}
+\step{所以第二项为 $(1,10)$、$(9,10)$、$(10,1)$、$(10,9)$ 中的任意一个.}
+\stepm{(2)}{$(1,1)$ 与 $(2,3)$ 的横坐标均属于 $\{1,2,3,10,11,12\}$，}
+\step{因而若它们在 $\varGamma$ 中，所在项的序号均为奇数.}
+\step{相邻两项的横、纵坐标变化量一个为奇数、另一个为偶数，}
+\step{所以 $x_i+y_i$ 与 $x_{i+1}+y_{i+1}$ 的奇偶性相反.}
+\step{因此所有奇数项的横、纵坐标之和具有相同的奇偶性，}
+\step{但 $1+1$ 为偶数，$2+3$ 为奇数，矛盾.}
+\step{所以 $(1,1)$ 与 $(2,3)$ 不能同时在 $\varGamma$ 中.}
+\stepm{(3)}{假设 $M$ 中 $144$ 个元素能排成 $k$ 列，将 $M$ 中的点分为两类：}
+\step{$P=\{(x,y)\in M\mid x\in\{1,2,3,4,10,11,12\}\}$，}
+\step{$Q=\{(x,y)\in M\mid x\in\{5,6,7,8,9\}\}$，}
+\step{设 $(x,y)\in P$，与它相邻的点为 $(x',y')$，则 $x'=x\pm4$ 或 $x'=x\pm5$，且 $x'\in A$.}
+% 注：下一句原卷作「当 $x\in\{7,2,3,4\}$ 时」，按上下文应为 $\{1,2,3,4\}$，
+%     疑系把 1 误排成 7，照录未改，见文件头「原卷存疑」②。
+\step{当 $x\in\{7,2,3,4\}$ 时，$x-4$、$x-5\leqslant0$，只能 $x'=x+4$ 或 $x+5$，}
+\step{此时 $x'\in\{5,6,7,8,9\}$；}
+\step{当 $x\in\{10,11,12\}$ 时，$x+4$、$x+5>12$，只能 $x'=x-4$ 或 $x-5$，}
+\step{此时 $x'\in\{5,6,7,8\}$；}
+\step{所以与 $P$ 中任一点相邻的点必属于 $Q$，$P$ 中任意两个点不能成为相邻项.}
+\step{$P$ 中有 $7\times12=84$ 个点，$Q$ 中有 $5\times12=60$ 个点.}
+\step{将 $60$ 个 $Q$ 类点排成一列后，}
+\step{它们的前面、相邻两点之间及后面共形成 $61$ 个位置.}
+\step{为使两个 $P$ 类点不相邻，每个位置至多放入一个 $P$ 类点，}
+\step{所以序列中至多出现 $61$ 个 $P$ 类点，但 $M$ 中有 $84$ 个 $P$ 类点，矛盾，}
+\step{故 $M$ 中所有元素一定不能构成 $k$ 列.}
+\solend
+
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}

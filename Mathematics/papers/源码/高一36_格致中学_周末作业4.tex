@@ -1,0 +1,347 @@
+% 高一36_格致中学_周末作业4.tex
+%   —— 高一上数学「2026-2027 年格致中学高一上周末作业 4」（试卷版/答案版）
+% 试卷版：xelatex 高一36_格致中学_周末作业4.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一36_格致中学_周末作业4.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一36_格致中学_周末作业4.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 36」，2026-09-25 发布，
+% 原文标题「27学年高一36——2026-2027年上海市格致中学高一上周末作业4」），
+% 正文为 6 张 PNG 页。**同一篇里各页分辨率不一致**（2560×3620 与 4762×6735 两档混排），
+% 取 mmbiz.qpic.cn/<hash>/0 的原图档。原文本身就是一份**讲评版**——有的题下方印【答案】、
+% 有的印【解析】，第 12 题的答案还直接印在题干末尾的括号里。
+% 试题文字、答案与解析均照原卷录入，未改内容。卷面的粉色斜水印属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年格致中学高一上周末作业 4」（公众号标题里的「上海市」
+% 三字卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash，前缀照原卷保留「年」。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题，本稿照原卷分节，
+%      只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷第 6、15、17、18 题只印【答案】行，其余各题印【解析】，第 12 题的答案直接印在
+%      题干末尾的括号内；本稿统一改为试卷版隐去、答案版以 \ans{}／\ifanswer 块给出，
+%      两版彻底分离；
+%   ④ 数集记号原卷两套并用：第 3、5、7、8、10、11、13 题作斜体的 $R$、$N$、$Z$、$Q$，
+%      第 18 题作粗体的 $\mathbf{R}$，本稿按全稿惯例统一写作 $\R$、$\N$、$\Z$、$\Q$；
+%   ⑤ 补集符号原卷作上横线（第 5 题的 $\overline{A}$），本稿照录；
+%   ⑥ 原卷填空的横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ⑦ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」（本卷含不少不等式
+%      内容，与 高一27／高一28 同样只标主章节，见文末「高一36 专记」）；
+%   ⑧ 本卷**无插图**（全卷检索确认无「如图」）。
+%
+% 原卷存疑两处（均照抄原卷、未改，见源码中该处上方注释）：
+%   ① 第 11 题【解析】末句作「$a$、$b$ 中至少有一个**数**为 1」，与选项 C 的
+%      「至少有一个为 1」差一个「数」字；
+%   ② 第 14 题题干称「给出如下**四个**命题」，实际只列了 ①②③ 三条。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年格致中学高一上周末作业 4}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 设 $A=\{x\mid x=\sqrt{5k+1},k\in\N\}$，$B=\{x\mid x\leqslant5,x\in\Q\}$，
+则 $A\cap B=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$A=\{x\mid x=\sqrt{5k+1},k\in\N\}
+=\{1,\sqrt6,\sqrt{11},4,\sqrt{21},\sqrt{26},\sqrt{31},6,\cdots\}$，
+$B=\{x\mid x\leqslant5,x\in\Q\}$，}
+\step{所以 $A\cap B=\{1,4\}$.}
+\solend
+
+\fi
+
+\item 已知关于 $x$ 的不等式 $-1<\dfrac{ax+1}{x-1}<1$ 的解集是 $\{x\mid-2<x<0\}$，
+则所有满足条件的实数 $a$ 组成的集合是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $-1<\dfrac{ax+1}{x-1}<1$ 等价于
+$\left|\dfrac{ax+1}{x-1}\right|<1$，等价于 $|ax+1|<|x-1|$，}
+\step{等价于 $(ax+1)^2<(x-1)^2$，等价于 $(a^2-1)x^2+2(a+1)x<0$，}
+\step{因为其解集是 $\{x\mid-2<x<0\}$，所以 $a^2>1$ 且方程
+$(a^2-1)x^2+2(a+1)x=0$ 的两根为 $-2$ 与 $0$，}
+\step{所以 $\begin{cases}a^2>1\\ 4(a^2-1)-4(a+1)=0\end{cases}$，解得 $a=2$，}
+\step{满足条件的实数 $a$ 组成的集合为 $\{2\}$.}
+\solend
+
+\fi
+
+\item 已知全集 $U=\R$，集合 $A=\{x\mid x^2+(x-1)|x+1|=1\}$，
+则 $\overline{A}=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{①当 $x\geqslant-1$ 时，方程化为 $x^2+(x-1)(x+1)=1$，解得 $x=\pm1$，符合题意；}
+\step{②当 $x<-1$ 时，方程化为 $x^2+(x-1)[-(x+1)]=1$，即 $1=1$，方程恒成立，}
+\step{综上所述，集合 $A=\{x\mid x\leqslant-1\text{ 或 }x=1\}$，}
+\step{所以 $\overline{A}=\{x\mid-1<x<1\text{ 或 }x>1\}$.}
+\solend
+
+\fi
+
+\item 命题“$|x-y|=|x|-|y|$”是命题“$|x+y|=|x|+|y|$”的 \blankline[4.4em] 条件.
+
+\ans{充分非必要}
+
+\item 若不等式 $(a-1)x^2-(a-1)x-1<0$ $x\in\R$ 恒成立，则实数 $a$ 的取值范围是
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $a-1=0$，则 $(a-1)x^2-(a-1)x-1<0$ 即 $-1<0$ 对一切的 $x\in\R$ 恒成立；}
+\step{否则，$a-1<0$ 且 $\Delta=[-(a-1)]^2+4(a-1)<0$，解得 $-3<a<1$.}
+\step{故实数 $a$ 的取值范围是 $(-3,1]$.}
+\solend
+
+\fi
+
+\item 已知集合 $A=\{x\mid x^2+2x-8\geqslant0\}$，$B=\{x\mid x^2-2ax+4\leqslant0\}$，
+若 $a>0$，且 $A\cap B\cap\N$ 中恰有 $2$ 个元素，则 $a$ 的取值范围为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $A$ 中不等式变形得 $(x-2)(x+4)\geqslant0$，解得 $x\leqslant-4$ 或 $x\geqslant2$，
+即 $A=(-\infty,-4]\cup[2,+\infty)$，}
+\step{设 $f(x)=x^2-2ax+4$，则 $f(x)$ 的轴对称 $x=a>0$，
+且对应方程的根 $x_1$、$x_2$ 满足 $\begin{cases}x_1x_2=4\\ x_1+x_2>0\end{cases}$，}
+\step{所以 $0<x_1\leqslant2\leqslant x_2$（取 $x_1\leqslant x_2$），
+所以 $A\cap B\cap\N$ 中恰有的整数为 $2$、$3$，}
+\step{所以 $\begin{cases}f(3)=9-6a+4\leqslant0\\ f(4)=16-8a+4>0\end{cases}$，
+解得 $\dfrac{13}6\leqslant a<\dfrac52$，}
+\step{所以 $a$ 的取值范围为 $\left[\dfrac{13}6,\dfrac52\right]$.}
+\solend
+
+\fi
+
+\item 已知实数 $a$、$b$、$c$ 满足 $a+b+c=0$，且 $a>b>c$，
+则 $\dfrac ca$ 的范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $a+b+c=0$，且 $a>b>c$，所以 $a+a+c=2a+c>0$，所以 $a>0$，
+$\dfrac ca>-2$，}
+\step{同理 $a+c+c=a+2c<0$，所以 $a<-2c$，所以 $c<0$，
+$-2<\dfrac ac<0$，$\dfrac ca<-\dfrac12$，}
+\step{所以 $-2<\dfrac ca<-\dfrac12$，所以 $\dfrac ca$ 的范围为
+$\left(-2,-\dfrac12\right)$.}
+\solend
+
+\fi
+
+\item 在整数集 $\Z$ 中，被整数 $t$ 除所得余数为 $k$（$t>k\geqslant0$）的所有整数组成一个
+“类”，记为 $[k]_t=\{at+k\mid a\in\Z\}$，$k=0,1,2,\cdots,t-1$，
+如 $[3]_5=\{5a+3\mid a\in\Z\}$，则下列结论：①$[1]_2=[1]_4\cup[3]_4$；
+②$\Z=[0]_2\cup[0]_3$；③整数 $a$、$b$ 满足 $a\in[1]_5$ 且 $b\in[2]_5$ 的充要条件是
+$a+b\in[3]_5$；④$[0]_3\cap[1]_2=[3]_6$. 其中正确的序号为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{对于①，若 $m\in[1]_2$，则 $m=2k+1$，$k\in\Z$，若 $k=2n$，则 $m=4n+1$，
+故 $m\in[1]_4$，若 $k=2n+1$，则 $m=4n+3$，故 $m\in[3]_4$，}
+\step{所以 $[1]_2$ 是 $[1]_4\cup[3]_4$ 的子集；若 $m\in[1]_4\cup[3]_4$，
+则 $m=4k+1$ 或 $m=4k+3$，}
+\step{若 $m=4k+1$，则 $m=2(2k)+1$；若 $m=4k+3$，则 $m=2(2k+1)+1$，所以 $m\in[1]_2$，
+故 $[1]_4\cup[3]_4$ 是 $[1]_2$ 的子集，}
+\step{所以 $[1]_2=[1]_4\cup[3]_4$，故①正确；}
+\step{对于②，因为 $1\in\Z$，而 $1\notin[0]_2$ 且 $1\notin[0]_3$，
+所以 $\Z\neq[0]_2\cup[0]_3$，故②错误；}
+\step{对于③，因为 $3+5=8$，$8\in[3]_5$，而 $3\notin[1]_5$，$5\notin[2]_5$，
+所以整数 $a$、$b$ 满足 $a\in[1]_5$ 且 $b\in[2]_5$ 不是 $a+b\in[3]_5$ 的必要条件，
+故③错误；}
+\step{对于④，若 $m\in[3]_6$，则 $m=6k+3=3(2k+1)=2(3k+1)+1$，
+所以 $m\in[0]_3$，且 $m\in[1]_2$，所以 $[0]_3\cap[1]_2=[3]_6$，故④正确.}
+\step{故正确的是①④.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item 设 $a$、$b\in\R$，则“$ab+1=a+b$”的充要条件是\mbox{（\quad）}
+
+\keepwithprev
+A. $a$、$b$ 都为 $1$\qquad B. $a$、$b$ 都不为 $1$\qquad
+C. $a$、$b$ 中至少有一个为 $1$\qquad D. $a$、$b$ 都不为 $0$
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{因为 $ab+1=a+b$，所以
+$a(b-1)-(b-1)=0\Rightarrow(b-1)(a-1)=0$，解得 $a=1$ 或 $b=1$，}
+% 注：下一句原卷作「至少有一个**数**为 1」，与选项 C 差一个「数」字，照录未改，
+%     见文件头「原卷存疑」①。
+\step{所以 $a$、$b$ 中至少有一个数为 $1$. 故选 $C$.}
+\solend
+
+\fi
+
+% 注：本题的答案「B」原卷直接印在题干末尾的括号内，且没有单独的【答案】/【解析】段，
+%     本稿按全稿惯例另提为 \ans{}。
+\item 如果命题 $A$ 成立可以推出命题 $B$ 不成立，那么下列说法正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 命题 $A$ 成立可以推出命题 $B$ 成立
+
+B. 命题 $B$ 成立可以推出命题 $A$ 不成立
+
+C. 命题 $B$ 不成立可以推出命题 $A$ 成立
+
+D. 命题 $A$ 不成立可以推出命题 $B$ 不成立
+
+\ans{$B$}
+
+\item $a_1$、$b_1$、$c_1$、$a_2$、$b_2$、$c_2$ 均为非零实数，不等式
+$a_1x^2+b_1x+c_1>0$ 和 $a_2x^2+b_2x+c_2>0$ 的解集分别为集合 $M$ 和 $N$，
+那么“$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$”是“$M=N$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad B. 必要非充分条件\qquad
+C. 充要条件\qquad D. 既非充分又非必要条件
+
+\ans{$D$}
+
+\ifanswer
+\solbegin
+\step{因为 $\varnothing\subset M\subset\R$，$\varnothing\subset N\subset\R$，
+所以 $M\neq\varnothing$，$N\neq\varnothing$，}
+\step{当 $\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}<0$ 时，
+$a_1x^2+b_1x+c_1>0$ 等价于 $a_2x^2+b_2x+c_2<0$，所以 $M=N$ 不成立，故不充分；}
+\step{当 $M=N=\varnothing$ 时，不一定有
+$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$，故不必要；故选 $D$.}
+\solend
+
+\fi
+
+% 注：下一题题干称「给出如下**四个**命题」，实际只列了 ①②③ 三条，原卷如此，
+%     照录未改，见文件头「原卷存疑」②。
+\item 设非空集合 $S=\{x\mid m\leqslant x\leqslant l\}$ 满足：当 $x\in S$ 时，有 $x^2\in S$，
+给出如下四个命题：①若 $m=1$，则 $S=\{1\}$；②若 $m=-\dfrac12$，则
+$\dfrac14\leqslant l\leqslant1$；③若 $l=\dfrac12$，则 $-\dfrac{\sqrt2}2\leqslant m\leqslant0$；
+其中正确的命题个数是\mbox{（\quad）}
+
+\keepwithprev
+A. $0$\qquad B. $1$\qquad C. $2$\qquad D. $3$
+
+\ans{$D$}
+
+\ifanswer
+\solbegin
+\step{因为非空集合 $S=\{x\mid m\leqslant x\leqslant l\}$ 满足：当 $x\in S$ 时，有 $x^2\in S$，
+所以 $m\in S$，$l\in S$，则 $m^2\in S$，$l^2\in S$，}
+\step{且 $m^2\geqslant m$，$l^2\leqslant1$，即 $m\leqslant0$ 或 $m\geqslant1$，
+$0\leqslant l\leqslant1$ 且 $m\leqslant1$，}
+\step{对于①，当 $m=1$ 时，$l=1$，所以 $S=\{1\}$，故①正确；}
+\step{对于②，当 $m=-\dfrac12$ 时，$m^2=\dfrac14$，所以 $\dfrac14\leqslant l\leqslant1$，
+故②正确；}
+\step{对于③，当 $l=\dfrac12$ 时，$m^2\in S$，所以 $m^2\leqslant\dfrac12$，
+所以 $-\dfrac{\sqrt2}2\leqslant m\leqslant0$，故③正确；故选 $D$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{14}
+
+\item 已知 $x>y>0$，$A=\sqrt{\dfrac{y^2+1}{x^2+1}}$，$B=\dfrac yx$，试比较 $A$ 与 $B$
+的大小.
+
+\ans{$A>B$}
+
+\ansspace[6]
+
+\item 已知关于 $x$ 的不等式 $\dfrac{mx-7}{x^2-m}<0$ 的解集为 $S$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $m=9$ 时，求集合 $S$；
+\item 若 $5\in S$ 且 $7\notin S$，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $m=9$ 时，$\dfrac{mx-7}{x^2-m}=\dfrac{9x-7}{x^2-9}<0$，
+转化为 $(x+3)\left(x-\dfrac79\right)(x-3)<0$，}
+\step{解得 $x<-3$ 或 $\dfrac79<x<3$，故不等式的解集为
+$(-\infty,-3)\cup\left(\dfrac79,3\right)$；}
+\stepm{(2)}{若 $5\in S$ 且 $7\notin S$，则
+$\begin{cases}\dfrac{5m-7}{25-m}<0\\[4pt]
+\dfrac{7m-7}{49-m}\geqslant0\text{ 或 }49-m=0\end{cases}$，}
+\step{解得 $1\leqslant m<\dfrac75$ 或 $25<m\leqslant49$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 分别求实数 $m$ 的取值范围，使得关于 $x$ 的方程 $x^2+(m-2)x+m+6=0$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 一个实根大于 $2$，另一个实根小于 $2$；
+\item 两个实根都大于 $1$.
+\end{enumerate}
+
+\ans{（1）$m\in(-\infty,-2)$；（2）$m\in\left(-\dfrac52,-2\right]$}
+
+\ansspace[6]
+
+\item 设常数 $a\in\R$，解不等式 $a<|x-a|<1$.
+
+\ans{若 $a<0$，解集为 $(a-1,a+1)$；若 $0\leqslant a<1$，解集为
+$(a-1,0)\cup(2a,a+1)$；若 $a\geqslant1$，解集为 $\varnothing$}
+
+\ansspace[6]
+
+\item 命题甲：关于 $x$ 的方程 $x^2+x+m=0$ 有两个相异负根；命题乙：不等式
+$m^2+pm>4m+p-3$ 对 $p\in[0,1]$ 恒成立.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若这两个命题至少有一个成立，求实数 $m$ 的取值范围；
+\item 若这两个命题有且仅有一个成立，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\step{命题甲：关于 $x$ 的方程 $x^2+x+m=0$ 有两个相异负根；}
+\step{若命题甲为真命题时，只需
+$\begin{cases}x_1\cdot x_2=m>0\\ x_1+x_2=-1<0\\ \Delta=1-4m>0\end{cases}$，
+解得 $0<m<\dfrac14$；}
+\step{命题乙：不等式 $m^2+pm>4m+p-3$ 对 $p\in[0,1]$ 恒成立.}
+\step{若命题乙为真命题时，则 $p(1-m)<(m-1)(m-3)$ 在 $p\in[0,1]$ 恒成立，}
+\step{$1-m>0$ 即 $m<1$ 时，$p<3-m$，即 $m<(3-p)_{\min}$，故 $m<2$，从而 $m<1$，}
+\step{$m=1$ 时，显然不成立，}
+\step{$1-m<0$ 即 $m>1$ 时，$p>3-m$，即 $m>(3-p)_{\max}$，故 $m>3$，}
+\step{故命题乙是真命题时，$m<1$ 或 $m>3$；}
+\stepm{(1)}{若这两个命题至少有一个成立，则甲 $\cup$ 乙，
+$m\in(-\infty,1)\cup(3,+\infty)$；}
+\stepm{(2)}{若这两个命题有且仅有一个成立，则甲假乙真或甲真乙假，}
+\step{故 $\begin{cases}m\geqslant\dfrac14\text{ 或 }m\leqslant0\\[4pt]
+m>3\text{ 或 }m<1\end{cases}$
+或 $\begin{cases}0<m<\dfrac14\\ 1\leqslant m\leqslant3\end{cases}$，}
+\step{故 $m\in(-\infty,0]\cup\left[\dfrac14,1\right)\cup(3,+\infty)$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\end{enumerate}
+
+\end{document}

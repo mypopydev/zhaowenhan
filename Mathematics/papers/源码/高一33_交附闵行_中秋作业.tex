@@ -1,0 +1,528 @@
+% 高一33_交附闵行_中秋作业.tex
+%   —— 高一上数学「2026-2027 年交附闵行高一上中秋作业」（试卷版/答案版）
+% 试卷版：xelatex 高一33_交附闵行_中秋作业.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一33_交附闵行_中秋作业.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一33_交附闵行_中秋作业.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 33」，2026-09-25 发布，
+% 原文标题「27学年高一33——2026-2027年上海市交附闵行高一上中秋作业」），
+% 正文为 13 张 PNG 页。**同一篇里各页分辨率不一致**——第 3、6、9、10 页 4762×6735，
+% 其余九页 2560×3620（已逐页打开确认，非下载缺档），取 mmbiz.qpic.cn/<hash>/0 的原图档。
+% 原文本身就是一份**讲评版**：第 3 题下方印【答案】，其余各题印【解析】。
+% 试题文字、答案与解析均照原卷录入，未改内容。卷面的粉色斜水印属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年交附闵行高一上中秋作业」（公众号标题里的「上海市」
+% 三字卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash，前缀照原卷保留「年」。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题，本稿照原卷分节，
+%      只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 第 3 题原卷印【答案】④、其余各题印【解析】（选择题的答案写在解析末句
+%      「故选 B／D」里），本稿统一改为试卷版隐去、答案版以 \ans{}／\ifanswer 块给出，
+%      两版彻底分离；
+%   ④ 数集记号原卷两套并用：第 3、9、17 题作斜体的 $R$（第 18 题原卷全程用区间、并未出现 $R$），
+%      第 6 题两处作粗体的 $\mathbf{R}^+$，第 21 题作斜体的 $N^*$，
+%      本稿按全稿惯例统一写作 $\R$、$\N^*$；
+%   ⑤ 原卷填空的横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ⑥ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」（本卷实为不等式
+%      专题，与 高一27／高一28 同样只标主章节，见文末「高一33 专记」）；
+%   ⑦ 本卷**无插图**（全卷检索确认无「如图」）；
+%   ⑧ 第 9 题题干原卷把「（$a\in R$）」印在 cases 大括号**内**的右下角，本稿移到花括号外，
+%      作「（$a\in\R$）」（内容等价，只为排版清楚）。
+%
+% 原卷存疑三处（均照抄原卷、未改，见源码中该处上方注释）：
+%   ① 第 9 题【解析】自相矛盾：一处的整数解推到「$-3<-a\leqslant5$，得 $-5\leqslant a<3$」
+%      （按「仅有的整数解是 $-3$」应为 $-3<-a\leqslant-2$、即 $2\leqslant a<3$），
+%      末行结论也跟着作 $\{a\mid-5\leqslant a<3\text{ 或 }4<a\leqslant5\}$；
+%   ② 第 19 题题干作「建造一**面**高为 $3m$……的保管员室」（按文意应为「一间」）；
+%   ③ 第 5 题【解析】末句作「则 $\dfrac2a+b$ 的最小值为 $9$」（所求的其实是
+%      $\left(\dfrac2a+b\right)\left(2a+\dfrac1b\right)$）。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年交附闵行高一上中秋作业}{集合与常用逻辑用语}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知 $a$、$b\in\R$，且 $ab>0$，则下列不等式中，恒成立的序号是 \blankline[4.4em].
+
+① $a^2+b^2>2ab$\qquad ② $a+b\geqslant2\sqrt{ab}$\qquad
+③ $\dfrac1a+\dfrac1b>\dfrac1{\sqrt{ab}}$\qquad
+④ $\dfrac ba+\dfrac ab\geqslant2$
+
+\ans{④}
+
+\item 若实数 $x>1$，$y>\dfrac12$ 且 $x+2y=3$，则 $\dfrac4{x-1}+\dfrac1{2y-1}$ 的最小值为
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$x+2y=3$，则 $x-1+2y-1=1$，}
+\step{从而 $\dfrac4{x-1}+\dfrac1{2y-1}
+=(x-1+2y-1)\left(\dfrac4{x-1}+\dfrac1{2y-1}\right)$}
+\step{$=5+\dfrac{4(2y-1)}{x-1}+\dfrac{x-1}{2y-1}
+\geqslant5+2\sqrt{\dfrac{4(2y-1)}{x-1}\cdot\dfrac{x-1}{2y-1}}=9$，}
+\step{当且仅当 $\dfrac{4(2y-1)}{x-1}=\dfrac{x-1}{2y-1}$，
+即 $x=\dfrac53$，$y=\dfrac23$ 时取等号，}
+\step{故 $\dfrac4{x-1}+\dfrac1{2y-1}$ 的最小值为 $9$.}
+\solend
+
+\fi
+
+\item 已知 $a>0$，$b>0$，则 $\left(\dfrac2a+b\right)\left(2a+\dfrac1b\right)$ 的最小值是
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\left(\dfrac2a+b\right)\left(2a+\dfrac1b\right)
+=4+2ab+\dfrac2{ab}+1=5+2ab+\dfrac2{ab}
+\geqslant5+2\sqrt{2ab\cdot\dfrac2{ab}}=9$，}
+% 注：下一句原卷作「则 $\dfrac2a+b$ 的最小值为 $9$」（所求其实是那个乘积），
+%     照抄未改，见文件头「原卷存疑」③。
+\step{当且仅当 $2ab=\dfrac2{ab}$ 且 $2a+\dfrac1b=1$ 时取等号，
+则 $\dfrac2a+b$ 的最小值为 $9$.}
+\solend
+
+\fi
+
+\item 已知 $a$、$b\in\R^+$，且 $ab=2$，则 $\dfrac b{2+a^2}+\dfrac a{2+b^2}$ 的最小值是
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\dfrac b{2+a^2}+\dfrac a{2+b^2}=\dfrac b{ab+a^2}+\dfrac a{ab+b^2}
+=\dfrac b{a(a+b)}+\dfrac a{b(a+b)}$}
+\step{$=\dfrac{(a+b)^2-4}{2(a+b)}=\dfrac{a+b}2-\dfrac2{a+b}$，}
+\step{令 $t=a+b$，则原式可设为 $y=\dfrac t2-\dfrac2t$ 的函数，}
+\step{当 $t>0$ 时，此函数为严格增函数，}
+\step{因为 $a$、$b\in\R^+$ 且 $ab=2$，$t=a+b\geqslant2\sqrt{ab}=2\sqrt2$，}
+\step{当且仅当 $a=b=\sqrt2$ 时，$t$ 的最小值为 $2\sqrt2$，}
+\step{$y=\dfrac t2-\dfrac2t$ 在 $t\in[2\sqrt2,+\infty)$ 上严格增，}
+\step{所以原式的最小值为 $\dfrac{2\sqrt2}2-\dfrac2{2\sqrt2}=\dfrac{\sqrt2}2$，
+则 $\dfrac b{2+a^2}+\dfrac a{2+b^2}$ 的最小值是 $\dfrac{\sqrt2}2$.}
+\solend
+
+\fi
+
+\item 已知正实数 $a$、$b$ 满足 $3a+2b=3$，则 $\dfrac{3a}b+\dfrac2a$ 的最小值为
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{正实数 $a$、$b$ 满足 $3a+2b=3$，有
+$\dfrac{3a}b+\dfrac2a=\dfrac{3-2b}b+\dfrac2a=\dfrac3b+\dfrac2a-2$，}
+\step{得 $\dfrac3b+\dfrac2a=\dfrac13\left(\dfrac3b+\dfrac2a\right)(3a+2b)
+=\dfrac13\left(12+\dfrac{9a}b+\dfrac{4b}a\right)
+\geqslant\dfrac13\left(12+2\sqrt{\dfrac{9a}b\cdot\dfrac{4b}a}\right)=8$，}
+\step{当且仅当 $\dfrac{9a}b=\dfrac{4b}a$，即 $a=\dfrac12$，$b=\dfrac34$ 时取等号，
+故 $\dfrac{3a}b+\dfrac2a$ 的最小值为 $6$.}
+\solend
+
+\fi
+
+\item 已知实数 $x$、$y$ 满足 $3x^2+3y^2-2xy=4$，则 $x+y$ 的最大值为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $3x^2+3y^2-2xy=4$，则 $3[(x+y)^2-2xy]-2xy=4$，}
+\step{设 $s=x+y$，则 $3s^2-8xy=4$，即 $xy=\dfrac{3s^2-4}8$，}
+\step{对任意实数 $x$、$y$，有 $xy\leqslant\left(\dfrac{x+y}2\right)^2=\dfrac{s^2}4$，
+即 $\dfrac{3s^2-4}8\leqslant\dfrac{s^2}4$，}
+\step{得 $s^2\leqslant4$，即 $-2\leqslant s\leqslant2$，}
+\step{当 $x=y=1$ 时，满足原等式，且 $x+y=2$ 成立，因此 $x+y$ 的最大值为 $2$.}
+\solend
+
+\fi
+
+% 注：下一题【解析】有两处与「仅有的整数解」的推理对不上（两处口径彼此自洽），
+%     照抄原卷、未改，见文件头「原卷存疑」①。
+\item 已知关于 $x$ 的不等式组
+$\begin{cases}\dfrac{x+2}{4-x}<0\\[2pt] 2x^2+(2a+7)x+7a<0\end{cases}$（$a\in\R$）
+仅有一个整数解，则 $a$ 的取值范围为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $\dfrac{x+2}{4-x}<0$ 的解集为 $\{x\mid x>4\text{ 或 }x<-2\}$，}
+\step{不等式 $2x^2+(2a+7)x+7a<0$ 可化为 $(x+a)\left(x+\dfrac72\right)<0$.}
+\step{当 $-a<-\dfrac72$ 时，$a>\dfrac72$，不等式的解集为
+$\left\{x\mid-a<x<-\dfrac72\right\}$.}
+\step{关于 $x$ 的不等式组仅有一个整数解，即 $\{x\mid x>4\text{ 或 }x<-2\}$ 与
+$\left\{x\mid-a<x<-\dfrac72\right\}$ 的交集中只有一个整数，}
+\step{此整数解只能为 $-4$，故有 $-5\leqslant-a<-4$，得 $4<a\leqslant5$.
+综合得 $4<a\leqslant5$.}
+\step{当 $-a>-\dfrac72$ 时，$a<\dfrac72$ 时，不等式的解集为
+$\left\{x\mid-\dfrac72<x<-a\right\}$.}
+\step{$\{x\mid x>4\text{ 或 }x<-2\}$ 与 $\left\{x\mid-\dfrac72<x<-a\right\}$ 的交集中
+只有一个整数解，}
+\step{此整数解只能为 $-3$，故有 $-3<-a\leqslant5$，得 $-5\leqslant a<3$.
+综合得 $-5\leqslant a<3$.}
+\step{$a=\dfrac72$ 时，$-a=-\dfrac72$，不等式 $(x+a)\left(x+\dfrac72\right)<0$ 的解集为
+$\varnothing$，}
+\step{不满足关于 $x$ 的不等式组仅有一个整数解.}
+\step{综上，$a$ 的取值范围为 $\{a\mid-5\leqslant a<3\text{ 或 }4<a\leqslant5\}$.}
+\solend
+
+\fi
+
+\item 求 $z=\dfrac{x^2+2xy}{x^2+y^2}$（$x>0,y>0$）的最大值为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $2xy=\dfrac1\lambda\cdot2\lambda x\cdot y
+\leqslant\dfrac1\lambda\left((\lambda x)^2+y^2\right)=\lambda x^2+\dfrac1\lambda y^2$，
+$\lambda>0$，}
+\step{当且仅当 $y=\lambda x$ 时取等号，}
+\step{所以 $z=\dfrac{x^2+2xy}{x^2+y^2}
+\leqslant\dfrac{x^2+\lambda x^2+\frac1\lambda y^2}{x^2+y^2}
+=\dfrac{(1+\lambda)x^2+\frac1\lambda y^2}{x^2+y^2}$（*），}
+\step{要想此式为定值，则分子分母对应系数成比例，即 $\dfrac{1+\lambda}1=\dfrac{\frac1\lambda}1$，}
+\step{解得 $\lambda=\dfrac{\sqrt5-1}2$，将 $\lambda=\dfrac{\sqrt5-1}2$ 代入（*）式，}
+\step{得 $z\leqslant\dfrac{\left(1+\frac{\sqrt5-1}2\right)x^2+\frac2{\sqrt5-1}y^2}{x^2+y^2}
+=\dfrac{\frac{\sqrt5+1}2x^2+\frac{\sqrt5+1}2y^2}{x^2+y^2}=\dfrac{\sqrt5+1}2$，}
+\step{当且仅当 $y=\dfrac{\sqrt5-1}2x$ 时取等号，}
+\step{故 $z=\dfrac{x^2+2xy}{x^2+y^2}$（$x>0,y>0$）的最大值为 $\dfrac{\sqrt5+1}2$.}
+\solend
+
+\fi
+
+\item 已知正数 $a$、$b$ 满足 $a^2b+ab^2+8a+2b-9ab=0$，则 $a+b$ 的最大值是
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $a^2b+ab^2+8a+2b-9ab=0\Rightarrow ab(a+b)+8a+2b=9ab$，}
+\step{$a>0$，$b>0$，所以 $(a+b)+\dfrac8b+\dfrac2a=9$，}
+\step{故 $\left(\dfrac8b+\dfrac2a\right)(a+b)=9(a+b)-(a+b)^2$，}
+\step{因为 $\left(\dfrac8b+\dfrac2a\right)(a+b)=8+2+\dfrac{8a}b+\dfrac{2b}a
+\geqslant10+2\sqrt{\dfrac{8a}b\cdot\dfrac{2b}a}=18$，}
+\step{当且仅当 $\dfrac{8a}b=\dfrac{2b}a$，即 $b=2a$ 时取等号，
+故 $9(a+b)-(a+b)^2\geqslant18$，}
+\step{解得 $3\leqslant a+b\leqslant6$，故 $a+b$ 的最大值是 $6$.}
+\solend
+
+\fi
+
+% 这道题的解析里有好几层叠分式，块高约 6cm；页末放不下时断点会落在分式内部，
+% 取出来的正文就在页末留下一枚孤零零的「）」（切页审计的 C 类），故题前先量一次页高。
+\needvspace{6cm}
+\item 已知正实数 $a$、$b$、$c$、$d$ 满足 $c>d$ 且 $a+4b=1$，则
+$\dfrac{a^2c^2+bc^2}{ab}+\dfrac1{cd-d^2}$ 的最小值为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\dfrac{a^2c^2+bc^2}{ab}=\dfrac{c^2(a^2+b)}{ab}
+=c^2\left(\dfrac ab+\dfrac1a\right)=c^2\left(\dfrac ab+\dfrac{a+4b}a\right)$}
+\step{$=c^2\left(\dfrac ab+\dfrac{4b}a+1\right)\geqslant5c^2$，当且仅当 $\dfrac ab=\dfrac{4b}a$，
+即 $a=\dfrac13$，$b=\dfrac16$ 时取等号成立.}
+\step{因为 $\dfrac1{cd-d^2}=\dfrac1{d(c-d)}
+\geqslant\dfrac1{\left(\frac{d+c-d}2\right)^2}=\dfrac4{c^2}$，}
+\step{当且仅当 $d=c-d$ 时取等号成立，}
+\step{所以 $\dfrac{a^2c^2+bc^2}{ab}+\dfrac1{cd-d^2}\geqslant5c^2+\dfrac4{c^2}
+\geqslant4\sqrt5$，}
+\step{当且仅当 $5c^2=\dfrac4{c^2}$，即 $c^2=\dfrac2{\sqrt5}$ 时取等号，}
+\step{故 $\dfrac{a^2c^2+bc^2}{ab}+\dfrac1{cd-d^2}$ 的最小值为 $4\sqrt5$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知 $a$、$b$ 均为大于 $0$ 的实数，下列不等式中不恒成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $(a+b)\left(\dfrac1a+\dfrac1b\right)\geqslant4$\qquad
+B. $\sqrt a+\sqrt{a+3}\geqslant\sqrt{a+1}+\sqrt{a+2}$
+
+C. $\dfrac{b+1}{a+b+1}>\dfrac b{a+b}$\qquad
+D. $a^2+\dfrac1{a^2}\geqslant a+\dfrac1a$
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{因为 $a>0$，$b>0$，}
+\step{对于 $A$，$(a+b)\left(\dfrac1a+\dfrac1b\right)=\dfrac ba+\dfrac ab+2
+\geqslant2\sqrt{\dfrac ba\cdot\dfrac ab}+2=4$，}
+\step{当且仅当 $a=b$ 时取等号，$A$ 不符合题意；}
+\step{对于 $B$，$\left(\sqrt a+\sqrt{a+3}\right)^2-\left(\sqrt{a+1}+\sqrt{a+2}\right)^2$}
+\step{$=2\left[\sqrt{a(a+3)}-\sqrt{(a+1)(a+2)}\right]$，}
+\step{因为 $a(a+3)-(a+1)(a+2)=-2<0$，所以 $0<a(a+3)<(a+1)(a+2)$，}
+\step{所以 $\sqrt{a(a+3)}<\sqrt{(a+1)(a+2)}$，
+所以 $\sqrt a+\sqrt{a+3}<\sqrt{a+1}+\sqrt{a+2}$，}
+\step{即 $\sqrt a+\sqrt{a+3}\geqslant\sqrt{a+1}+\sqrt{a+2}$ 恒不成立，故 $B$ 符合题意；}
+\step{对于 $C$，$\dfrac{b+1}{a+b+1}-\dfrac b{a+b}
+=\dfrac{(b+1)(a+b)-b(a+b+1)}{(a+b+1)(a+b)}$}
+\step{$=\dfrac a{(a+b+1)(a+b)}>0$，所以 $\dfrac{b+1}{a+b+1}>\dfrac b{a+b}$，}
+\step{即 $\dfrac{b+1}{a+b+1}>\dfrac b{a+b}$ 恒成立，故 $C$ 不符合题意；}
+\step{对于 $D$，$a^2+\dfrac1{a^2}-a-\dfrac1a
+=\left(a+\dfrac1a\right)^2-\left(a+\dfrac1a\right)-2$，}
+\step{设 $t=a+\dfrac1a\geqslant2\sqrt{a\cdot\dfrac1a}=2$，当且仅当 $a=\dfrac1a$，
+即 $a=1$ 时取得等号，}
+\step{所以 $a^2+\dfrac1{a^2}-a-\dfrac1a=t^2-t-2$，$t\geqslant2$，}
+\step{所以当 $t=2$ 时，$a^2+\dfrac1{a^2}-a-\dfrac1a$ 有最小值为 $0$，}
+\step{所以 $a^2+\dfrac1{a^2}-a-\dfrac1a\geqslant0$，
+即 $a^2+\dfrac1{a^2}\geqslant a+\dfrac1a$ 恒成立，故 $D$ 不符合题意.}
+\step{故选 $B$.}
+\solend
+
+\fi
+
+\item 已知 $x>0$，$y>0$，且 $3xy+x+3y=3$，则 $x+3y$ 的最小值为\mbox{（\quad）}
+
+\keepwithprev
+A. $1$\qquad B. $2$\qquad C. $3$\qquad D. $4$
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{$x>0$，$y>0$，且 $3xy+x+3y=3$，}
+\step{由于 $3xy\leqslant\left(\dfrac{x+3y}2\right)^2$，
+所以 $3=3xy+x+3y\leqslant\left(\dfrac{x+3y}2\right)^2+x+3y$，}
+\step{即 $3\leqslant\left(\dfrac{x+3y}2\right)^2+x+3y$，
+所以 $(x+3y)^2+4(x+3y)-12\geqslant0$，}
+\step{解得 $x+3y\geqslant2$ 或 $x+3y\leqslant-6$，$x>0$，$y>0$，
+则 $x+3y$ 的最小值为 $2$.}
+\step{故选 $B$.}
+\solend
+
+\fi
+
+\item 设 $\max\{a,b\}$ 表示 $a$ 与 $b$ 的最大值，若 $x$、$y$ 都是正数，
+$z=\max\left\{x+4y,\dfrac4x+\dfrac1y\right\}$，则 $z$ 的最小值为\mbox{（\quad）}
+
+\keepwithprev
+A. $2$\qquad B. $4$\qquad C. $8$\qquad D. $16$
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{因为 $z=\max\left\{x+4y,\dfrac4x+\dfrac1y\right\}$，所以 $z\geqslant x+4y$，
+$z\geqslant\dfrac4x+\dfrac1y$，}
+\step{所以 $z^2\geqslant(x+4y)\left(\dfrac4x+\dfrac1y\right)
+=8+\dfrac{16y}x+\dfrac xy\geqslant8+2\sqrt{\dfrac{16y}x\cdot\dfrac xy}=16$，}
+\step{当且仅当 $\dfrac{16y}x=\dfrac xy$，即 $x=4y$ 时取等号，则 $z$ 的最小值为 $4$.
+故选 $B$.}
+\solend
+
+\fi
+
+\item 已知 $x$、$y$、$z$ 都是正数，则 $x+\dfrac1y$，$y+\dfrac1z$，$z+\dfrac1x$
+这三个数\mbox{（\quad）}
+
+\keepwithprev
+A. 都大于 $2$\qquad B. 都小于 $2$
+
+C. 至多有一个大于 $2$\qquad D. 至少有一个不小于 $2$
+
+\ans{$D$}
+
+\ifanswer
+\solbegin
+\step{将三式相加得 $\left(x+\dfrac1y\right)+\left(y+\dfrac1z\right)+\left(z+\dfrac1x\right)
+=\left(x+\dfrac1x\right)+\left(y+\dfrac1y\right)+\left(z+\dfrac1z\right)$.}
+\step{由 $x$、$y$、$z>0$，故 $x+\dfrac1x\geqslant2$，$y+\dfrac1y\geqslant2$，
+$z+\dfrac1z\geqslant2$，}
+\step{于是三数之和 $S\geqslant2+2+2=6$，等号成立当且仅当 $x=y=z=1$.}
+\step{若三个数都小于 $2$，则 $S<6$，与 $S\geqslant6$ 矛盾，
+故三数中至少有一个不小于 $2$，$D$ 正确.}
+\step{$A$、$B$：取 $x=y=z=1$，此时三数依次为 $2$，$2$，$2$，}
+\step{既不都大于 $2$，也不都小于 $2$，$A$、$B$ 均错误.}
+\step{$C$：取 $x=1$，$y=2$，$z=3$，则 $y+\dfrac1z=2+\dfrac13=\dfrac73>2$，}
+\step{$z+\dfrac1x=3+1=4>2$，已有两个数大于 $2$，$C$ 错误.}
+\step{故选 $D$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 解关于 $x$ 的不等式：$ax^2-ax+1>0$.
+
+\ifanswer
+\solbegin
+\step{①当 $a=0$ 时，有 $1>0$ 恒成立，则解集为 $\R$；}
+\step{②当 $a<0$ 时，$\Delta=a^2-4a>0$，则 $ax^2-ax+1=0$ 有两根，}
+\step{分别为 $x_1=\dfrac{a-\sqrt{a^2-4a}}{2a}$，$x_2=\dfrac{a+\sqrt{a^2-4a}}{2a}$，
+且 $x_1>x_2$，}
+\step{则解集为 $\left(\dfrac{a+\sqrt{a^2-4a}}{2a},\dfrac{a-\sqrt{a^2-4a}}{2a}\right)$；}
+\step{③当 $a>0$ 时，}
+\step{(i) 若 $\Delta=a^2-4a>0$，即 $a>4$ 时，此时 $x_1<x_2$，}
+\step{则解集为 $\left(-\infty,\dfrac{a-\sqrt{a^2-4a}}{2a}\right)
+\cup\left(\dfrac{a+\sqrt{a^2-4a}}{2a},+\infty\right)$；}
+\step{(ii) 若 $\Delta=a^2-4a=0$，即 $a=4$ 时，有 $4x^2-4x+1=(2x-1)^2>0$，}
+\step{则解集为 $\left(-\infty,\dfrac12\right)\cup\left(\dfrac12,+\infty\right)$；}
+\step{(iii) 若 $\Delta=a^2-4a<0$，即 $0<a<4$ 时，$ax^2-ax+1>0$ 恒成立，则解集为 $\R$；}
+\step{综上所述，当 $a<0$ 时，解集为
+$\left(\dfrac{a+\sqrt{a^2-4a}}{2a},\dfrac{a-\sqrt{a^2-4a}}{2a}\right)$；}
+\step{当 $0\leqslant a<4$ 时，解集为 $\R$；}
+\step{当 $a=4$ 时，解集为
+$\left(-\infty,\dfrac12\right)\cup\left(\dfrac12,+\infty\right)$；}
+\step{当 $a>4$ 时，解集为
+$\left(-\infty,\dfrac{a-\sqrt{a^2-4a}}{2a}\right)
+\cup\left(\dfrac{a+\sqrt{a^2-4a}}{2a},+\infty\right)$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 解不等式 $ax^2-(a+1)x+1<0$.
+
+\ifanswer
+\solbegin
+\step{当 $a=0$ 时，不等式的解为 $x>1$，故不等式的解集为 $(1,+\infty)$；}
+\step{当 $a\neq0$ 时，分解因式 $a\left(x-\dfrac1a\right)(x-1)<0$，}
+\step{当 $a<0$ 时，原不等式等价于 $\left(x-\dfrac1a\right)(x-1)>0$，}
+\step{不等式的解集为 $\left(-\infty,\dfrac1a\right)\cup(1,+\infty)$；}
+\step{当 $0<a<1$ 时，不等式的解为 $\left(1,\dfrac1a\right)$；}
+\step{当 $a>1$ 时，不等式的解为 $\left(\dfrac1a,1\right)$；}
+\step{当 $a=1$ 时，不等式的解集为 $\varnothing$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+% 注：下一题题干作「建造一**面**高为 $3m$……的保管员室」（按文意应为「一间」），
+%     照抄未改，见文件头「原卷存疑」②。
+\item 中欧班列是推进“一带一路”沿线国家道路联通、贸易畅通的重要举措，作为中欧铁路在
+东北地区的始发站，沈阳某火车站正在不断建设，目前车站准备在某仓库外，利用其一侧原有
+墙体，建造一面高为 $3m$，底面积为 $12m^2$，且背面靠墙的长方体形状的保管员室，由于保管员
+室的后背靠墙，无需建造费. 因此，甲工程队给出的报价如下：屋子前面新建墙体的报价为每平方米
+$400$ 元，左右两面新建墙体的报价为每平方米 $150$ 元，屋顶和地面以及其他报价共计
+$7200$ 元，设屋子的左右两面墙的长度均为 $xm$（$2\leqslant x\leqslant4$）.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当左右两面墙的长度为多少米时，甲工程队的报价最低?
+\item 现有乙工程队也参与此保管员室建造竞标，其给出的整体报价为
+$\dfrac{900a(1+x)}x$ 元（$a>0$），若无论左右两面墙的长度为多少米，乙工程队都能竞标
+成功，求 $a$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{设甲工程队的总造价为 $y$ 元，左右两面墙的长度均为 $xm$
+（$2\leqslant x\leqslant4$），}
+\step{则屋子前面新建墙体长为 $\dfrac{12}xm$，}
+\step{则 $y=3\left(150\times2x+400\times\dfrac{12}x\right)+7200$，}
+\step{即 $y=900\left(x+\dfrac{16}x\right)+7200
+\geqslant900\times2\sqrt{x\cdot\dfrac{16}x}+7200=14400$，}
+\step{当且仅当 $x=\dfrac{16}x$，即 $x=4$ 时取等号，}
+\step{故当左右两面墙的长度为 $4$ 米时，甲工程队的报价最低为 $14400$ 元；}
+\stepm{(2)}{由题意得
+$900\left(x+\dfrac{16}x\right)+7200>\dfrac{900a(1+x)}x$
+对任意的 $x\in[2,4]$ 恒成立，}
+\step{即 $\dfrac{(x+4)^2}x>\dfrac{a(1+x)}x$，所以 $\dfrac{(x+4)^2}{x+1}>a$，}
+\step{又 $\dfrac{(x+4)^2}{x+1}=x+1+\dfrac9{x+1}+6
+\geqslant2\sqrt{(x+1)\cdot\dfrac9{x+1}}+6=12$，}
+\step{当 $x+1=\dfrac9{x+1}$，$x\in[2,4]$，即 $x=2$ 时，
+$\dfrac{(x+4)^2}{x+1}$ 的最小值为 $12$，}
+\step{又 $a>0$，所以 $0<a<12$，所以 $a$ 的取值范围是 $(0,12)$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 完成下列证明：
+
+\begin{enumerate}[label=(\arabic*)]
+\item 已知 $x$、$y$、$z$ 都是正数，求证：$(x+y)(y+z)(z+x)\geqslant8xyz$；
+\item 已知 $a>0$，$b>0$，$a+b=ab$. 求证：
+$\left(1+\dfrac1a\right)\left(1+\dfrac1b\right)\leqslant\dfrac94$.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $x>0$，$y>0$，$z>0$，}
+\step{所以 $x+y\geqslant2\sqrt{xy}>0$，$y+z\geqslant2\sqrt{yz}>0$，
+$x+z\geqslant2\sqrt{xz}>0$，}
+\step{当且仅当 $x=y=z$ 时取等号，}
+\step{所以 $(x+y)(y+z)(z+x)\geqslant8\sqrt{xy}\sqrt{yz}\sqrt{xz}=8xyz$，}
+\step{所以 $(x+y)(y+z)(z+x)\geqslant8xyz$；}
+\stepm{(2)}{$a>0$，$b>0$，则 $ab=a+b\geqslant2\sqrt{ab}$，}
+\step{当且仅当 $a=b=2$ 时取等号，故 $ab\geqslant4$，}
+\step{故 $\left(1+\dfrac1a\right)\left(1+\dfrac1b\right)
+=1+\dfrac1a+\dfrac1b+\dfrac1{ab}
+=1+\dfrac{a+b}{ab}+\dfrac1{ab}=2+\dfrac1{ab}
+\leqslant2+\dfrac14=\dfrac94$，}
+\step{所以 $\left(1+\dfrac1a\right)\left(1+\dfrac1b\right)\leqslant\dfrac94$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 教材中的基本不等式可以推广到 $n$ 阶：$n$ 个正数的算术平均值不小于它们的几何平均值.
+也即：若 $a_1$、$a_2$、$\cdots$、$a_n>0$，则有
+$\dfrac{a_1+a_2+\cdots+a_n}n\geqslant\sqrt[n]{a_1a_2\cdots a_n}$，
+$n\in\N^*$，$n\geqslant2$，当且仅当 $a_1=a_2=\cdots=a_n$ 时取等号，
+利用此结论解决下列问题：
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $x$、$y$、$z>0$，求 $\dfrac yx+\dfrac{2z}y+\dfrac{4x}z$ 的最小值；
+\item 若 $x\in\left(0,\dfrac23\right)$，求 $x^3(2-3x)$ 的最大值，
+并求取得最大值时的 $x$ 的值；
+\item 对任意 $k\in\N^*$，判断 $\left(1+\dfrac1k\right)^k$ 与
+$\left(1+\dfrac1{k+1}\right)^{k+1}$ 的大小关系并加以证明.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $x$、$y$、$z>0$，
+$\dfrac{\frac yx+\frac{2z}y+\frac{4x}z}3
+\geqslant\sqrt[3]{\dfrac yx\cdot\dfrac{2z}y\cdot\dfrac{4x}z}=2$，}
+\step{所以 $\dfrac yx+\dfrac{2z}y+\dfrac{4x}z\geqslant6$，}
+\step{当且仅当 $\dfrac yx=\dfrac{2z}y=\dfrac{4x}z$，即 $2x=y=z$ 时取等号，}
+\step{所以 $\dfrac yx+\dfrac{2z}y+\dfrac{4x}z$ 的最小值为 $6$.}
+\stepm{(2)}{$x^3(2-3x)=x\cdot x\cdot x\cdot(2-3x)
+\leqslant\left(\dfrac{x+x+x+2-3x}4\right)^4=\dfrac1{16}$，}
+\step{当且仅当 $x=2-3x$，即 $x=\dfrac12\in\left(0,\dfrac23\right)$ 时取等号，}
+\step{所以当 $x=\dfrac12$ 时，$x^3(2-3x)$ 取得最大值为 $\dfrac1{16}$.}
+\stepm{(3)}{大小关系为 $\left(1+\dfrac1k\right)^k<\left(1+\dfrac1{k+1}\right)^{k+1}$，
+证明如下：}
+\step{当 $k=1$ 时，左式 $=(1+1)^1=2$，右式 $=\left(1+\dfrac12\right)^2=\dfrac94$，
+且 $2<\dfrac94$；}
+\step{当 $k\geqslant2$ 时，
+$\left(1+\dfrac1k\right)^k
+=\left(1+\dfrac1k\right)\times\left(1+\dfrac1k\right)\times\cdots
+\times\left(1+\dfrac1k\right)$}
+\step{$=\left(1+\dfrac1k\right)\times\left(1+\dfrac1k\right)\times\cdots
+\times\left(1+\dfrac1k\right)\times1$}
+\step{$\leqslant\left(
+\dfrac{\left(1+\frac1k\right)+\left(1+\frac1k\right)+\cdots
++\left(1+\frac1k\right)+1}{k+1}\right)^{k+1}$}
+\step{$=\left(\dfrac{1\times k+\frac1k\times k+1}{k+1}\right)^{k+1}
+=\left(\dfrac{k+1+1}{k+1}\right)^{k+1}
+=\left(1+\dfrac1{k+1}\right)^{k+1}$，}
+\step{显然 $1+\dfrac1k\neq1$，等号不能取，
+所以 $\left(1+\dfrac1k\right)^k<\left(1+\dfrac1{k+1}\right)^{k+1}$；}
+\step{综上，$\left(1+\dfrac1k\right)^k<\left(1+\dfrac1{k+1}\right)^{k+1}$ 恒成立.}
+\solend
+
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
