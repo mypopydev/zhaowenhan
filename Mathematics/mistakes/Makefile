@@ -34,8 +34,11 @@ LOG := $(PDF:.pdf=.log)
 
 # 每题末尾一个「我的错答」填空栏 → 栏数即题数
 WANT_ITEMS := 16
-# 期望页数：首次 `make` 后按实际页数回填；0 = 暂不校验
+# 期望页数：首次 `make` 后按实际页数回填
 WANT_PAGES := 4
+# ⚠ 这两个期望值（以及 check 的判据）现在按**单份错题集**写死：本目录若添第二份、而它的题数或
+#   页数与这份不同，check 会误报。届时改成「按份」的表（以文件名为键）。两个值任一个为 0 时
+#   该项检查跳过（页数早已如此，题数同理）。
 
 .PHONY: all check clean distclean list help
 
@@ -66,15 +69,16 @@ check: all $(LOG)
 		na=$$($(PDTOTEXT) "$$f" - 2>/dev/null | grep -c -e '【答案】' -e '【解析】' -e '参考答案'); \
 		of=$$(grep -a -c 'Overfull' "$$log" 2>/dev/null); \
 		uf=$$(grep -a -c 'Underfull' "$$log" 2>/dev/null); \
-		[ "$$miss" = "0" ] || { echo "  ❌ $$f 缺字 $$miss 处（PDF 里已静默消失）"; fail=1; }; \
-		[ "$$na" = "0" ] || { echo "  ❌ $$f 疑似答案泄漏 $$na 处"; fail=1; }; \
-		[ "$$nq" = "$(WANT_ITEMS)" ] || { echo "  ❌ $$f 题数 $$nq，应为 $(WANT_ITEMS)"; fail=1; }; \
+		[ "$$miss" = "0" ] || { printf '  ❌ %s 缺字 %s 处（PDF 里已静默消失）\n' "$$f" "$$miss"; fail=1; }; \
+		[ "$$na" = "0" ] || { printf '  ❌ %s 疑似答案泄漏 %s 处\n' "$$f" "$$na"; fail=1; }; \
+		if [ "$(WANT_ITEMS)" != "0" ] && [ "$$nq" != "$(WANT_ITEMS)" ]; then \
+			printf '  ❌ %s 题数 %s，应为 %s\n' "$$f" "$$nq" "$(WANT_ITEMS)"; fail=1; fi; \
 		if [ "$(WANT_PAGES)" != "0" ] && [ "$$p" != "$(WANT_PAGES)" ]; then \
-			echo "  ❌ $$f 页数 $$p，应为 $(WANT_PAGES)"; fail=1; fi; \
+			printf '  ❌ %s 页数 %s，应为 %s\n' "$$f" "$$p" "$(WANT_PAGES)"; fail=1; fi; \
 		printf '  %s：%s 页 / 题数 %s / 缺字 %s / 答案泄漏 %s / Overfull %s / Underfull %s\n' \
 			"$$f" "$$p" "$$nq" "$$miss" "$$na" "$$of" "$$uf"; \
 	done; \
-	if [ $$fail -eq 0 ]; then echo "✅ 全部通过（缺字 0 / 无答案泄漏 / 题数 $(WANT_ITEMS)）"; \
+	if [ $$fail -eq 0 ]; then printf '✅ 全部通过（缺字 0 / 无答案泄漏 / 题数 %s）\n' "$(WANT_ITEMS)"; \
 	else echo "❌ 有不符合预期项"; exit 1; fi
 
 # ---- 清理 ----
