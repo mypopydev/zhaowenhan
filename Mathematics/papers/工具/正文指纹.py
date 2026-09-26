@@ -12,6 +12,10 @@
 多字节汉字，实测对同一段文字给出不同哈希（高一c 就误报过一次）；Python 按字符处理才稳。
 
 页码必须去掉：紧凑版页数比试卷版少，页脚印的「2」「3」自然不同，留着就会被当成内容差异。
+**取文必须加 `-layout`**（2026-09-26 改的）：不加时是「原始」阅读顺序，pdftotext 会把页脚的
+页码**并进相邻那行正文**——高一32 末页的页码「4」被粘成 `…最小值.4`、紧凑版粘成 `.3`，
+于是「整行只有数字才算页码」的过滤器就漏掉了它，同一份源码编出的两版竟报「正文不一致」。
+`-layout` 保留版面，页码独占一行、过滤得掉；38 份实测——默认模式 1 份假报，`-layout` 0 份。
 """
 import re
 import subprocess
@@ -21,7 +25,8 @@ from collections import Counter
 
 
 def fingerprint(pdf):
-    txt = subprocess.run(['pdftotext', pdf, '-'], capture_output=True, text=True).stdout
+    txt = subprocess.run(['pdftotext', '-layout', pdf, '-'],
+                         capture_output=True, text=True).stdout
     txt = '\n'.join(l for l in txt.split('\n') if not re.fullmatch(r'\s*\d*\s*', l))  # 去页码行
     chars = sorted(Counter(re.sub(r'\s+', '', txt)).elements())
     return hashlib.md5(''.join(chars).encode('utf-8')).hexdigest()

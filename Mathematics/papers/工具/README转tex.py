@@ -15,7 +15,7 @@
   · **表格绝不能交给 pandoc**：它出的是 `longtable{@{}lcl@{}}`，`l` 列**根本不换行**，
     逐卷核对表里有一格长达 1145「汉字宽」，交给它必然冲出页面。9 张表由本脚本自己生成
     `xltabular`，列宽按内容算。
-  · **Unicode 数学符号 pandoc 不会转**（实测 `× → · ≥ ② ▲ ★ ① ⊕ ↔ ≤ ² ∧ ± ₀ ⇒` 原样输出），
+  · **Unicode 数学符号 pandoc 不会转**（实测 `× → · ≥ ② ▲ ★ ① ⊕ ↔ ≤ ≈ ² ∧ ± ₀ ⇒` 原样输出），
     由本脚本后处理。**只动数学模式外**的符号——README 里 `≥` 有时在 `$…$` 内
     （`$r\\ge0.71$`）、有时在正文（`≥ 12 字`），一律替换会把前者弄坏。
 
@@ -77,6 +77,7 @@ COVER_RE = {
 #   ③ 行内代码（\texttt）里的符号 —— 见 map_unicode 的保护段。
 UNI = [
     ('×', r'$\times$'), ('→', r'$\to$'), ('≥', r'$\geqslant$'), ('≤', r'$\leqslant$'),
+    ('≈', r'$\approx$'),
     ('⊕', r'$\oplus$'), ('↔', r'$\leftrightarrow$'), ('⇒', r'$\Rightarrow$'),
     ('⟹', r'$\Longrightarrow$'), ('∧', r'$\wedge$'), ('±', r'$\pm$'),
     ('²', r'$^{2}$'), ('₀', r'$_{0}$'),
@@ -124,7 +125,16 @@ def read_section():
     j = i + 1
     while j < len(lines) and not lines[j].startswith('## '):
         j += 1
-    return lines[i + 1:j]
+    sec = lines[i + 1:j]
+    # 表格必须顶层。写成引用块（行首 `> |`）时 split_blocks 认不出，会整块丢给 pandoc；
+    # pandoc 在 quote 环境里排 longtable，编译报 `No counter 'none' defined`，PDF 只编到一半、
+    # 而 A 闸（字符多重集）却仍可能过——2026-09-26 踩过，症状是 B 闸「PDF 侧只抽出 5 千字」。
+    bad = [k for k, l in enumerate(sec, i + 2) if re.match(r'^\s*>\s*\|', l)]
+    if bad:
+        sys.exit('❌ README「%s」节第 %s 行把表格写进了引用块（行首 `> |`）。\n'
+                 '   请把表格移出引用块——本仓库的表一律顶层，README转tex.py 才认得出并按列宽生成 '
+                 'xltabular。' % (SECT, '、'.join(map(str, bad))))
+    return sec
 
 
 def split_blocks(lines):

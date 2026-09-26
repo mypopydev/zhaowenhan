@@ -95,6 +95,25 @@ def readme_text():
     return io.open(README, encoding='utf-8').read()
 
 
+def trace_section_lines(md):
+    """README「## 题目溯源」一节的正文行数（不含标题行本身）。
+
+    README 的「编译方式」一节写着「`## 题目溯源` 一节抽出 N 行」，N 就是本函数的值；
+    这个数原先没有任何闸，2026-09-26 发现它已从 709 静默漂到 797——改 README 该节时
+    没人会想起还有这句话。口径与 工具/README转tex.py 的 read_section() 完全一致：
+    标题行之后、下一个 `## ` 之前。
+    """
+    lines = md.split('\n')
+    try:
+        i = lines.index('## 题目溯源')
+    except ValueError:
+        raise AssertionError('README 里找不到 `## 题目溯源`——README转tex.py 的切入点，先补回这一节')
+    j = i + 1
+    while j < len(lines) and not lines[j].startswith('## '):
+        j += 1
+    return j - (i + 1)
+
+
 def claim(md, pattern, name, conv=int):
     """从 README 里抠出一处断言；找不到就抛错（见模块头「设计 1」）。"""
     m = re.search(pattern, md)
@@ -270,6 +289,7 @@ def check_output(md):
         len(glob.glob(os.path.join(PAPERS, '原图', '*', '*'))))
     add('溯源报告页数', claim(md, r'`题目溯源\.pdf`，(\d+) 页', '溯源页数'),
         pdf_pages(os.path.join(PAPERS, '溯源', '题目溯源.pdf')))
+    add('溯源节抽出行数', claim(md, r'一节抽出 (\d+) 行', '溯源节行数'), trace_section_lines(md))
     bundle = os.path.join(PAPERS, '试卷紧凑', '合并打印版.pdf')
     add('合订本份数', claim(md, r'——(\d+) 份合订', '合订份数'), len(c) - COPIES)
     add('合订本页数', claim(md, r'份合订、(\d+) 页', '合订页数'), pdf_pages(bundle))

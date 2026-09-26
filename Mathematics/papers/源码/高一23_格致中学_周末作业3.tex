@@ -26,8 +26,18 @@
 %   ⑤ 原卷填空的横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
 %   ⑥ 原卷未印副标题，本稿按全稿惯例补出副标题「集合与常用逻辑用语」。
 %
-% 本卷未发现原卷笔误或存疑处（第 16 题答案 $(-\infty,-1]\cup[0,\sqrt[3]{4}]$ 已独立验算相符，
-% 其中 $a\leqslant-1$ 与 $0\leqslant a\leqslant1$ 时 $A=\varnothing$ 亦合题意）。
+% 原卷存疑三处（均照抄原卷、未改，见源码中各处上方的注释；三处都由 2026-09-26 的第二轮
+% 独立核对查出并复核过）：
+%   ① 第 10 题【解析】的取等条件原卷印作 $x=3y=3z=\dfrac37$，而按 $7M\geqslant x+3y+3z$
+%      的取等条件应为 $M=x=y=z$（再由 $x+3y+3z=3$ 得 $x=y=z=\dfrac37$）——终值 $\dfrac37$
+%      本身无误，是书写自相矛盾；
+%   ② 第 11 题原卷把答案标作 C，但按题设（$x$、$y$、$z$ 互不相等且 $x+y+z=0$）不正确的
+%      应是 D——取 $0$、$1$、$-1$ 时三数之积为 $0$、$0$、$-1$，并不存在「两数之积为正数」；
+%   ③ 第 15(2) 的答案原卷印作 $\left(\dfrac14,+\infty\right)$，而由 (1) 的 $b=\dfrac78a$、
+%      $a>0$ 代入解得 $x>-\dfrac14$，应为 $\left(-\dfrac14,+\infty\right)$——原卷显系漏了负号。
+%
+% 另：第 16 题答案 $(-\infty,-1]\cup[0,\sqrt[3]{4}]$ 已独立验算相符，
+% 其中 $a\leqslant-1$ 与 $0\leqslant a\leqslant1$ 时 $A=\varnothing$ 亦合题意。
 
 \documentclass[a4paper,11pt]{article}
 \usepackage{common}
@@ -125,6 +135,8 @@ $\begin{cases}3M\geqslant3x\\ 2M\geqslant2y\\ 2M\geqslant2z\end{cases}$，
 故 $7M\geqslant3x+2y+2z\geqslant4$，即 $M\geqslant\dfrac47$，}
 \step{若 $m+2n\leqslant3$，则 $2-x-y-z+2(2-y-z)\leqslant3$，即 $x+3y+3z\geqslant3$，}
 \step{则 $\begin{cases}M\geqslant x\\ 3M\geqslant3y\\ 3M\geqslant3z\end{cases}$，
+% 注：下一行的取等条件原卷印作 $x=3y=3z=\dfrac37$；按 $7M\geqslant x+3y+3z$ 的取等条件
+%     应为 $M=x=y=z$（再由 $x+3y+3z=3$ 得 $x=y=z=\dfrac37$），原卷显系笔误，照录未改。
 故 $7M\geqslant x+3y+3z\geqslant3$，当且仅当 $x=3y=3z=\dfrac37$ 时等号成立，}
 \step{综上所述，$\mathit{min}\{\mathit{max}\{n-m,p-n,2-p\}\}$ 的最小值为 $\dfrac37$.}
 \solend
@@ -145,6 +157,9 @@ A. 必有两数之和为负数\qquad B. 必有两数之和为正数
 
 C. 必有两数之积为负数\qquad D. 必有两数之积为正数
 
+% 注：上一行的答案「C」是原卷所印；按题设（$x$、$y$、$z$ 互不相等且 $x+y+z=0$）
+%     不正确的应是 D——取 $0$、$1$、$-1$ 时三数之积为 $0$、$0$、$-1$，并不存在
+%     「两数之积为正数」，故 D 不成立，原卷答案与题设不符，照录未改。
 \ans{$C$}
 
 \item 已知实数 $a,b,c$ 满足 $c<b<a$ 且 $ac<0$，则下列不等式不成立的是\mbox{（\quad）}
@@ -203,6 +218,9 @@ C. 充要条件\qquad D. 既非充分又非必要条件
 \ifanswer
 \solbegin
 \stepm{(1)}{略；}
+% 注：下一行的答案原卷印作 $\left(\dfrac14,+\infty\right)$；由 (1) 的 $b=\dfrac78a$、$a>0$
+%     代入 $(a-4b)x+2a-3b<0$ 得 $-\dfrac{5a}2x-\dfrac{5a}8<0$，解得 $x>-\dfrac14$，
+%     应为 $\left(-\dfrac14,+\infty\right)$——原卷显系漏了负号，照录未改。
 \stepm{(2)}{$\left(\dfrac14,+\infty\right)$}
 \solend
 
