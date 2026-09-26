@@ -1,0 +1,438 @@
+% 高一37_七宝中学_周末作业4.tex
+%   —— 高一上数学「2026-2027 年七宝中学高一上周末作业 4」（试卷版/答案版）
+% 试卷版：xelatex 高一37_七宝中学_周末作业4.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一37_七宝中学_周末作业4.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一37_七宝中学_周末作业4.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 37」，署名「破晓」，
+% 2026-09-26 21:29 发布，原文标题「27学年高一37——2026-2027年上海市七宝中学高一上周末作业4」，
+% 原文链接 https://mp.weixin.qq.com/s/_9_76vulEWVXdsV7fbBKjQ ），正文为 10 张 PNG 页。**同一篇里各页分辨率不一致**（2560×3620 与 4762×6735 两档混排：
+% 第 3、4、6 页为 4762×6735，第 1、2、5、7、8、9、10 页为 2560×3620），取原图档。
+% 原文本身就是一份**讲评版**——第 3、5、6、7、8、9、10、17 题下方只印【答案】行，第 4、11、
+% 12 题与第 14—16、18—21 题下方印【解析】，第 13 题的答案直接印在题干末尾的括号内（「（ A ）」）。
+% 试题文字、答案与解析均照原卷录入，未改内容。卷面的粉色斜水印「魔都数学加油站」属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年七宝中学高一上周末作业 4」（公众号标题里的「上海市」三字
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash，前缀照原卷保留「年」
+% （同校的 高一17／高一22／高一28 亦作「年」）。
+%
+% 与原卷的排版差异（均已在 README「说明」中交代）：
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题，本稿照原卷分节，
+%      只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷是「讲评版」：第 3、5、6、7、8、9、10、17 题只印【答案】行，第 4、11、12 题与
+%      第 14—16、18—21 题印【解析】，第 13 题的答案直接印在题干末尾的括号内；本稿统一改为试卷版
+%      隐去、答案版以 \ans{}／\ifanswer 块给出，两版彻底分离。其中第 14、15、16 题的答案原卷
+%      写在【解析】末句（「故选 C／D／B」），本稿按 高一28／高一36 的成例另提为 \ans{}；
+%   ④ 原卷并列的字母（「a,b」「a,b,x,y」）不加标点或作半角逗号，本稿按全稿惯例改排顿号
+%      （$a$、$b$）；半角括号、逗号一律排全角；
+%   ⑤ 原卷填空的横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ⑥ 原卷未印副标题，本稿按**本卷实际内容**补出副标题「不等式」（依据见下条）；
+%   ⑦ 全卷无插图（原卷 10 页均为文字与公式，题干亦无「如图」），故本稿不含 \includegraphics；
+%   ⑧ 全卷未出现实数集／自然数集等数集符号，也没有子集、补集符号，故无记号归一的差异。
+%
+% 副标题（\examtitlest 第二个参数）：本卷卷面未印副标题，由本稿补出。取值按 2026-09-26 起的
+%   新口径「只用本卷实际内容的模块名」定为「不等式」——依据：全卷 19 题（第 3—21 题）中，
+%   第 3、4、6、7、8、9、10、11、12、13、14、15、16、17、18、19、20 题共 17 题直接是不等式
+%   （解不等式、恒成立、绝对值不等式、基本不等式与最值），第 21 题以集合语言给出（性质 $M$）、
+%   其结论仍是不等式证明，**只有第 5 题**（$A=\{x\mid x^2<a\}$、$A\cap B=\varnothing$ 求 $a$
+%   的范围）是纯集合题——不等式题占 18/19，故按「几乎全是不等式」定作「不等式」，不并标
+%   「集合与常用逻辑用语」（与 高一33／高一34 的判法一致）。
+%
+% 原卷笔误/存疑（照抄原卷、未改，见源码中该处上方注释）：
+%   ① 第 21(3) 题【解析】中间一步印作
+%      $\dfrac{1}{a_i}-\dfrac{1}{a_{n+i}}\geqslant\dfrac{1}{25}$（$i=1,2,3,\cdots,n-1$）——
+%      由上一行 $a_{i+1}-a_i\geqslant\dfrac{a_ia_{i+1}}{25}$ 应得
+%      $\dfrac{1}{a_i}-\dfrac{1}{a_{i+1}}\geqslant\dfrac{1}{25}$，原卷下标记为 $n+i$ 显系笔误；
+%      本稿照录未改。
+%   ② 第 17 题 (1) 小问末尾原卷印作冒号「：」，而同题 (2) 小问作句点「.」（全卷其余各题的
+%      小问句末标点均为「；」或「.」）；本稿照录未改。
+%   ③ 第 20(3) 题**题干与解析对参数的假设不一致**：题干作「若**实数** $a$、$b$、$x$、$y$
+%      满足 $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$」（未设 $a>b$），而解析作「若**正实数** …，
+%      **且 $a>b$**」——解析自行加强了条件；照录未改（见该处上方注释）。
+%   ④ 第 21(3) 题解析有推理缺口：「由 $\dfrac{1}{a_1}\geqslant\dfrac{n-1}{25}$，
+%      $a_1\geqslant1$，得 $1>\dfrac{n-1}{25}$」——由 $a_1\geqslant1$ 只能得
+%      $\dfrac{1}{a_1}\leqslant1$ 即 $\dfrac{n-1}{25}\leqslant1$，要取严格「$>$」须另证
+%      $n=26$ 不可能；照录未改（对结论 $n<10$ 无影响，见该处上方注释）。
+%   ⑤ 第 21(2) 题设问作「并求出 $a_3$ 的**值**」（单数），而结论为 $a_3=4,5,6,7$ **四个值**；
+%      照录未改（见该处上方注释）。
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年七宝中学高一上周末作业 4}{不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 关于 $x$ 的不等式 $\left|\dfrac{2x^2+3}{x}\right|\geqslant4$ 的解集是 \blankline[4.4em].
+
+\ans{$(-\infty,0)\cup(0,+\infty)$}
+
+\item 已知 $a>0$，则 $a+\dfrac{8}{2a+1}$ 的最小值是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a>0$，则 $a+\dfrac{8}{2a+1}=a+\dfrac{4}{a+\dfrac12}
+=\left(a+\dfrac12+\dfrac{4}{a+\dfrac12}\right)-\dfrac12\geqslant2\sqrt4-\dfrac12=\dfrac72$，}
+\step{当且仅当 $a=\dfrac32$ 时取等号，所以 $a+\dfrac{8}{2a+1}$ 的最小值为 $\dfrac72$.}
+\solend
+
+\fi
+
+\item 若 $A=\{x\mid x^2<a\}$，$B=\{x\mid x>2\}$ 且 $A\cap B=\varnothing$，则 $a$ 的取值范围
+是 \blankline[4.4em].
+
+\ans{$(-\infty,4]$}
+
+\item 若关于 $x$ 的不等式 $\dfrac{x^2-ax+2}{x^2-x+1}<3$ 对于任意实数 $x$ 都成立的 $a$ 的取值
+范围是 $(a_1,a_2)$，则 $a_1+a_2=$ \blankline[4.4em].
+
+\ans{$6$}
+
+\item 设关于 $x$ 的不等式 $\dfrac{5x+3a}{2x-a}\geqslant2$ 的解集为 $P$，若 $2\notin P$，且
+$4\in P$，则实数 $a$ 的范围是 \blankline[4.4em].
+
+\ans{$\left[-\dfrac45,-\dfrac25\right)\cup[4,8)$}
+
+\item 关于 $x$ 的不等式 $|x+3|-|x-1|\leqslant|a-3|$ 对任意实数 $x$ 恒成立，则实数 $a$ 的取值
+范围为 \blankline[4.4em].
+
+\ans{$(-\infty,-1]\cup[7,+\infty)$}
+
+\item 已知实数 $a$、$b$ 满足 $2a^2+b^2=4$，求 $a\sqrt{2+b^2}$ 的最大值 \blankline[4.4em].
+
+\ans{$\dfrac{3\sqrt2}{2}$}
+
+\item 设集合 $\{x\mid|x-1|+|x-2|+|x-10|+|x-11|<m\}\neq\varnothing$，则实数 $m$ 的取值范围
+是 \blankline[4.4em].
+
+\ans{$(18,+\infty)$}
+
+\item 设 $a>b>0$，则 $a^2+\dfrac{1}{ab}+\dfrac{1}{a(a-b)}$ 的最小值为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a^2+\dfrac{1}{ab}+\dfrac{1}{a(a-b)}=a^2+\dfrac{1}{b(a-b)}
+\geqslant a^2+\dfrac{1}{\left(\dfrac{b+a-b}{2}\right)^2}$}
+\step{$=a^2+\dfrac{4}{a^2}\geqslant2\sqrt{a^2\times\dfrac{4}{a^2}}=4$，}
+\step{当且仅当 $a=\sqrt2$，$b=\dfrac{\sqrt2}{2}$ 时，
+$a^2+\dfrac{1}{ab}+\dfrac{1}{a(a-b)}$ 的最小值是 $4$.}
+\solend
+
+\fi
+
+\item 若 $a>0$，$b>0$，$c>0$，$a+b+c=2$，则 $\dfrac{4}{a+b}+\dfrac{a+b}{c}$ 的最小值
+为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $a>0$，$b>0$，$c>0$，$a+b+c=2$，}
+\step{所以 $\dfrac{4}{a+b}+\dfrac{a+b}{c}=\dfrac{4}{a+b}+\dfrac{2-c}{c}
+=\dfrac{4}{a+b}+\dfrac2c-1$}
+\step{$=\left(\dfrac{4}{a+b}+\dfrac2c\right)[(a+b)+c]\times\dfrac12-1
+=\left[\dfrac{4c}{a+b}+\dfrac{2(a+b)}{c}+6\right]\times\dfrac12-1$}
+\step{$\geqslant(2\sqrt8+6)\times\dfrac12-1=2\sqrt2+2$，}
+\step{当且仅当 $\dfrac{4c}{a+b}=\dfrac{2(a+b)}{c}$，即 $a+b=\sqrt2c$，}
+\step{即 $a+b=4-2\sqrt2$，$c=2\sqrt2-2$ 时取等号，}
+\step{则 $\dfrac{4}{a+b}+\dfrac{a+b}{c}$ 的最小值为 $2\sqrt2+2$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+% 注：本题的答案「A」原卷直接印在题干末尾的括号内（「（ A ）」），且没有单独的
+%     【答案】/【解析】段，本稿按全稿惯例另提为 \ans{}，见文件头「与原卷的排版差异」③。
+\item 下列各式最小值为 $2$ 的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac{1}{x^2}+x^2$\qquad B. $\dfrac ab+\dfrac ba$\qquad
+C. $\sqrt{x^2+2}+\dfrac{1}{\sqrt{x^2+2}}$\qquad D. $x+\dfrac1x$
+
+\ans{$A$}
+
+\item 设 $a$、$b$、$c$ 为互不相等的正数，且 $a^2+c^2=2bc$，则下列关系中可能成立的是
+\mbox{（\quad）}
+
+\keepwithprev
+A. $a>b>c$\qquad B. $c>a>b$\qquad C. $b>a>c$\qquad D. $a>c>b$
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{因为 $a$、$c$ 均为正数，且 $a\neq c$，}
+\step{所以 $a^2+c^2>2ac$，则 $2bc>2ac$，所以 $b>a$，故 $A$、$B$ 错误，}
+\step{若 $b>c$，则 $a^2+c^2=2bc>2c^2$，即 $a^2>c^2$，得 $a>c$，则 $b>a>c$，}
+\step{若 $c>b$，则 $c>b>a$，无答案，故选 $C$.}
+\solend
+
+\fi
+
+\item 由不全相等的正数 $x_i(i=1,2,\cdots,n)$ 形成 $n$ 个数：$x_1+\dfrac{1}{x_2}$，
+$x_2+\dfrac{1}{x_3}$，$\cdots$，$x_{n-1}+\dfrac{1}{x_n}$，$x_n+\dfrac{1}{x_1}$，关于这 $n$ 个数，
+下列说法正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 这 $n$ 个数都不大于 $2$\qquad B. 这 $n$ 个数都不小于 $2$
+
+C. 至多有 $n-1$ 个数不小于 $2$\qquad D. 至多有 $n-1$ 个数不大于 $2$
+
+\ans{$D$}
+
+\ifanswer
+\solbegin
+\step{由题意，$n$ 个数的和为
+$x_1+\dfrac{1}{x_2}+x_2+\dfrac{1}{x_3}+\cdots+x_{n-1}+\dfrac{1}{x_n}+x_n+\dfrac{1}{x_1}\geqslant2n$，}
+\step{由于正数 $x_i(i=1,2,\cdots,n)$ 不全相等，故 $A$ 错；}
+\step{取 $x_i=i(i=1,2,\cdots,n)$，故 $B$ 错；}
+\step{取 $x_i=i+1(i=1,2,\cdots,n)$，故 $C$ 错；}
+\step{取 $x_1=\dfrac12$，$x_i=1(i=2,\cdots,n)$，$D$ 成立；}
+\step{故选 $D$.}
+\solend
+
+\fi
+
+\item 已知 $k$ 为正整数，$x$、$y$、$z$ 均为正实数，若 $k(xy+yz+zx)>5(x^2+y^2+z^2)$，
+则对此不等式描述正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $k=5$，则至少存在一个以 $x$、$y$、$z$ 为边长的等边三角形
+
+B. 若 $k=6$，则对任意满足不等式的 $x$、$y$、$z$，都存在以 $x$、$y$、$z$ 为边长的三角形
+
+C. 若 $k=7$，则对任意满足不等式的 $x$、$y$、$z$，都存在以 $x$、$y$、$z$ 为边长的三角形
+
+D. 若 $k=8$，则对满足不等式的 $x$、$y$、$z$，不存在以 $x$、$y$、$z$ 为边长的直角三角形
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{对于 $A$，由不等式 $x^2+y^2+z^2\geqslant xy+yz+zx$，排除 $A$；}
+\step{对于 $C$，对 $x=1$，$y=2$，$z=3$，得 $7(2+3+6)>5(1^2+2^2+3^2)$，不等式成立，}
+\step{但是不能构成三角形，排除 $C$；}
+\step{对于 $D$，$k=8$ 时，取 $x=3$，$y=4$，$z=5$，}
+\step{$8(12+15+20)=376>5(3^2+4^2+5^2)=250$，不等式成立，}
+\step{且存在以 $3$，$4$，$5$ 为边长的直角三角形，排除 $D$.}
+\step{故选 $B$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知 $f(x)=|x+a^2|+|x-a-1|$.
+
+\begin{enumerate}[label=(\arabic*)]
+% 注：本小问末尾原卷印作冒号「：」（下一个小问作句点「.」），全卷其余各题的小问句末
+%     标点均为「；」或「.」——原卷如此，照录未改，见文件头「原卷笔误/存疑」②。
+\item 若 $a=1$，求关于 $x$ 的不等式 $f(x)\leqslant5$ 的解集：
+\item 若 $f(4)<13$，求 $a$ 的取值范围.
+\end{enumerate}
+
+\ans{（1）$[-2,3]$；（2）$(-2,3)$}
+
+\ansspace[6]
+
+\item 解下列关于 $x$ 的不等式：
+
+\begin{enumerate}[label=(\arabic*)]
+\item $x^2+2x+a<0$；
+\item $\dfrac{ax-1}{x-2}>0$.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{①当 $\Delta=4-4a\leqslant0$，即 $a\geqslant1$ 时，原不等式的解集为 $\varnothing$；}
+\step{②当 $\Delta=4-4a>0$，即 $a<1$ 时，}
+\step{原不等式的解集为 $(-1-\sqrt{1-a},-1+\sqrt{1-a})$，}
+\step{综上，当 $a\geqslant1$ 时，原不等式的解集为 $\varnothing$；}
+\step{当 $a<1$ 时，原不等式的解集为 $(-1-\sqrt{1-a},-1+\sqrt{1-a})$；}
+\stepm{(2)}{原不等式可化为 $(ax-1)(x-2)>0$，}
+\step{①当 $a=0$ 时，原不等式可化为 $x-2<0$，所以 $x<2$，}
+\step{所以原不等式的解集为 $(-\infty,2)$；}
+\step{②当 $a<0$ 时，$\dfrac1a<2$，所以原不等式的解集为 $\left(\dfrac1a,2\right)$；}
+\step{③当 $a>0$ 时，}
+\step{若 $\dfrac1a<2$，即 $a>\dfrac12$ 时，原不等式的解集为
+$\left(-\infty,\dfrac1a\right)\cup(2,+\infty)$；}
+\step{若 $\dfrac1a=2$，即 $a=\dfrac12$ 时，原不等式的解集为 $\{x\mid x\neq2\}$；}
+\step{若 $\dfrac1a>2$，即 $0<a<\dfrac12$ 时，原不等式的解集为
+$(-\infty,2)\cup\left(\dfrac1a,+\infty\right)$.}
+\step{综上，当 $a<0$ 时，原不等式的解集为 $\left(\dfrac1a,2\right)$；}
+\step{当 $a=0$ 时，原不等式的解集为 $(-\infty,2)$；}
+\step{当 $0<a<\dfrac12$ 时，原不等式的解集为 $(-\infty,2)\cup\left(\dfrac1a,+\infty\right)$；}
+\step{当 $a=\dfrac12$ 时，原不等式的解集为 $\{x\mid x\neq2\}$；}
+\step{当 $a>\dfrac12$ 时，原不等式的解集为 $\left(-\infty,\dfrac1a\right)\cup(2,+\infty)$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 经过长期观测得到：在交通繁忙的时段内，某公路段汽车的车流量 $y$（千辆/小时）与汽车的
+平均速度 $v$（千米/小时）之间的函数关系为：$y=\dfrac{920v}{v^2+3v+1600}(v>0)$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 在该时段内，当汽车的平均速度 $v$ 为多少时，车流量最大？最大车流量为多少？（保留
+分数形式）
+\item 若要求在该时段内车流量超过 $10$ 千辆/小时，则汽车的平均速度应在什么范围内？
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得 $y=\dfrac{920v}{v^2+3v+1600}
+=\dfrac{920}{v+\dfrac{1600}{v}+3}\leqslant\dfrac{920}{83}$，}
+\step{当且仅当 $v=\dfrac{1600}{v}$，即 $v=40$ 时取等号，所以 $y_{max}=\dfrac{920}{83}$（千辆/时），}
+\step{当 $v=40km/h$ 时，车流量最大，最大车流量约为 $\dfrac{920}{83}$ 千辆/时.}
+\stepm{(2)}{由条件得 $\dfrac{920v}{v^2+3v+1600}>10$，整理得 $v^2-89v+1600<0$，}
+\step{即 $(v-25)(v-64)<0$，解得 $25<v<64$，}
+\step{所以如果要求在该时段内车流量超过 $10$ 千辆/时，}
+\step{则汽车的平均速度应大于 $25km/h$ 且小于 $64km/h$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 正数 $a$、$b$ 满足 $a+b=1$，求 $\dfrac1a+\dfrac2b$ 的最小值. 其中一种解法是：
+
+$\dfrac1a+\dfrac2b=\left(\dfrac1a+\dfrac2b\right)(a+b)=1+\dfrac ba+\dfrac{2a}b+2\geqslant3+2\sqrt2$，
+当且仅当 $\dfrac ba=\dfrac{2a}b$ 且 $a+b=1$ 时，
+
+即 $a=\sqrt2-1$ 且 $b=2-\sqrt2$ 时取等号.
+
+学习上述解法并解决下列问题：
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若正实数 $x$、$y$ 满足 $\dfrac1x+\dfrac4y=1$，求 $x+y$ 的最小值，并指出等号成立的条件；
+\item 设 $y=|x-1|+|x-2|$ 的最小值为 $m$，且正数 $a$、$b$ 满足 $a+b=3m$，求
+$\dfrac{b^2+7}{a}+\dfrac{a^2}{b}$ 的最小值；
+% 注：本小问题干原卷作「若**实数** $a$、$b$、$x$、$y$ 满足 …」（未设 $a>b$），而同题【解析】
+%     作「若**正实数** …，**且 $a>b$**」——题干与解析对参数的假设不一致，解析自行加强了条件；
+%     照录未改，见文件头「原卷笔误/存疑」③。
+\item 若实数 $a$、$b$、$x$、$y$ 满足 $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$，试比较 $a^2-b^2$ 和
+$(x-y)^2$ 的大小；利用该结论求代数式 $M=\sqrt{4m+5}-\sqrt{m+1}$ 的最小值，并指出等号
+成立时 $m$ 的值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{若正实数 $x$、$y$ 满足 $\dfrac1x+\dfrac4y=1$，}
+\step{$x+y=(x+y)\left(\dfrac1x+\dfrac4y\right)=5+\dfrac yx+\dfrac{4x}y\geqslant5+4=9$，}
+\step{当且仅当 $\dfrac yx=\dfrac{4x}y$ 且 $\dfrac1x+\dfrac4y=1$，即 $x=3$，$y=6$ 时取等号，}
+\step{所以 $x+y$ 的最小值 $9$，当且仅当 $x=3$，$y=6$ 时取等号.}
+\stepm{(2)}{函数 $y=|x-1|+|x-2|$ 的最小值为 $1$，则 $a+b=3$，}
+\step{$\dfrac{b^2+7}{a}+\dfrac{a^2}{b}=\dfrac{b^2}{a}+\dfrac{a^2}{b}+\dfrac7a
+=\dfrac{(3-a)^2}{a}+\dfrac{(3-b)^2}{b}+\dfrac7a$}
+\step{$=\dfrac{a^2-6a+9}{a}+\dfrac{b^2-6b+9}{b}+\dfrac7a
+=a-6+\dfrac9a+b-6+\dfrac9b+\dfrac7a$}
+\step{$=(a+b)+\dfrac{16}{a}+\dfrac9b-12=\dfrac{16}{a}+\dfrac9b-9
+=\dfrac13\left(\dfrac{16}{a}+\dfrac9b\right)(a+b)-9$}
+\step{$=\dfrac13\left(\dfrac{16b}{a}+\dfrac{9a}{b}+25\right)-9$}
+\step{$\geqslant\dfrac13\left(2\sqrt{\dfrac{16b}{a}\cdot\dfrac{9a}{b}}+25\right)-9
+=\dfrac13(24+25)-9=\dfrac{22}{3}$，}
+\step{当且仅当 $\dfrac{16b}{a}=\dfrac{9a}{b}$ 且 $a+b=3$，即 $a=\dfrac{12}{7}$，
+$b=\dfrac97$ 时取等号；}
+\step{所以，所求最小值为 $\dfrac{22}{3}$.}
+% 注：本行原卷作「若**正实数** $a$、$b$、$x$、$y$ 满足 …，**且 $a>b$**」，比题干多出
+%     「正实数」与「$a>b$」两个假设；照录未改，见文件头「原卷笔误/存疑」③。
+\stepm{(3)}{若正实数 $a$、$b$、$x$、$y$ 满足 $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$，且 $a>b$，}
+\step{$a^2-b^2=(a^2-b^2)\left(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}\right)
+=x^2+y^2-\left(\dfrac{b^2x^2}{a^2}+\dfrac{a^2y^2}{b^2}\right)$}
+\step{因为 $\dfrac{b^2x^2}{a^2}+\dfrac{a^2y^2}{b^2}
+\geqslant2\sqrt{\dfrac{b^2x^2}{a^2}\cdot\dfrac{a^2y^2}{b^2}}=2|xy|$，
+当 $\dfrac{b^2x^2}{a^2}=\dfrac{a^2y^2}{b^2}$ 时取等号，}
+\step{所以 $a^2-b^2=(a^2-b^2)\left(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}\right)
+=x^2+y^2-\left(\dfrac{b^2x^2}{a^2}+\dfrac{a^2y^2}{b^2}\right)$}
+\step{$\leqslant x^2+y^2-2|xy|\leqslant x^2+y^2-2xy=(x-y)^2$，
+所以 $a^2-b^2\leqslant(x-y)^2$.}
+\step{代数式 $M=\sqrt{4m+5}-\sqrt{m+1}$，}
+\step{令 $x=\sqrt{4m+5}$，$y=\sqrt{m+1}$，则 $x^2-4y^2=1$，$a^2=1$，$b^2=\dfrac14$，}
+\step{所以 $M=\sqrt{4m+5}-\sqrt{m+1}=x-y\geqslant\sqrt{a^2-b^2}=\dfrac{\sqrt3}{2}$，}
+\step{当且仅当 $\dfrac14x^2=4y^2$，即 $x=4y$ 时取等号，}
+\step{又因为 $x^2-4y^2=1$，解得 $x=\dfrac{2\sqrt3}{3}$，$y=\dfrac{\sqrt3}{6}$，}
+\step{即 $\sqrt{4m+5}=\dfrac{2\sqrt3}{3}$，所以 $m=-\dfrac{11}{12}$，}
+\step{所以 $M=\sqrt{4m+5}-\sqrt{m+1}$ 的最小值为 $\dfrac{\sqrt3}{2}$，
+此时 $m=-\dfrac{11}{12}$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 已知集合 $A=\{a_1,a_2,\cdots,a_n\}$ 中的元素都是正整数，且 $a_1<a_2<\cdots<a_n$. 若对任意
+$x$、$y\in A$，且 $x\neq y$，都有 $|x-y|\geqslant\dfrac{xy}{25}$ 成立，已知集合 $A$ 具有性质 $M$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 判断集合 $\{1,2,3\}$ 是否具有性质 $M$；
+% 注：本小问设问作「并求出 $a_3$ 的**值**」（单数），而结论为 $a_3=4,5,6,7$ **四个值**；
+%     照录未改，见文件头「原卷笔误/存疑」⑤。
+\item 已知集合 $\{2,3,a_3,10\}$ 具有性质 $M$，且正整数 $a_3\in(3,10)$，求证：
+$\dfrac13-\dfrac{1}{a_3}\geqslant\dfrac{1}{25}$ 且 $\dfrac{1}{a_3}-\dfrac{1}{10}\geqslant\dfrac{1}{25}$，
+并求出 $a_3$ 的值；
+\item 已知集合 $A$ 具有性质 $M$，求证：$\dfrac{1}{a_i}-\dfrac{1}{a_n}\geqslant\dfrac{n-i}{25}
+(i=1,2,\cdots,n)$，并写出 $n$ 的最大值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $|1-2|>\dfrac{1\times2}{25}$，$|1-3|>\dfrac{1\times3}{25}$，
+$|2-3|>\dfrac{2\times3}{25}$，}
+\step{所以集合 $\{1,2,3\}$ 具有性质 $M$；}
+\stepm{(2)}{因为 $\{2,3,a_3,10\}$ 具有性质 $M$，且正整数 $a_3\in(3,10)$，}
+\step{所以 $|3-a_3|\geqslant\dfrac{3a_3}{25}$，所以 $a_3-3\geqslant\dfrac{3a_3}{25}$，
+得 $\dfrac13-\dfrac{1}{a_3}\geqslant\dfrac{1}{25}$，}
+\step{所以 $\dfrac13-\dfrac{1}{25}\geqslant\dfrac{1}{a_3}$，}
+\step{$|10-a_3|\geqslant\dfrac{10a_3}{25}$，所以 $10-a_3\geqslant\dfrac{10a_3}{25}$，
+得 $\dfrac{1}{a_3}-\dfrac{1}{10}\geqslant\dfrac{1}{25}$，}
+\step{所以 $\dfrac{1}{a_3}\geqslant\dfrac{1}{10}+\dfrac{1}{25}$，}
+\step{即 $\dfrac13-\dfrac{1}{25}\geqslant\dfrac{1}{a_3}\geqslant\dfrac{1}{10}+\dfrac{1}{25}
+\Rightarrow\dfrac{75}{22}\leqslant a_3\leqslant\dfrac{50}{7}$，}
+\step{又因为 $a_3$ 为整数，所以 $a_3=4,5,6,7$；}
+\stepm{(3)}{由题意得 $|a_i-a_{i+1}|\geqslant\dfrac{a_ia_{i+1}}{25}(i=1,2,3\cdots,n-1)$，}
+\step{又 $a_1<a_2<\cdots<a_n$，所以
+$a_{i+1}-a_i\geqslant\dfrac{a_ia_{i+1}}{25}(i=1,2,3,\cdots,n-1)$，}
+% 注：下一行原卷作 $\dfrac{1}{a_i}-\dfrac{1}{a_{n+i}}\geqslant\dfrac{1}{25}$——由上一行
+%     $a_{i+1}-a_i\geqslant\dfrac{a_ia_{i+1}}{25}$ 应得 $\dfrac{1}{a_i}-\dfrac{1}{a_{i+1}}$，
+%     原卷下标记为 $n+i$ 显系笔误；照录未改，见文件头「原卷笔误/存疑」①。
+\step{所以 $\dfrac{1}{a_i}-\dfrac{1}{a_{n+i}}\geqslant\dfrac{1}{25}(i=1,2,3,\cdots,n-1)$，}
+\step{所以 $\dfrac{1}{a_1}-\dfrac{1}{a_2}+\dfrac{1}{a_2}-\dfrac{1}{a_3}+\cdots
++\dfrac{1}{a_{n-1}}-\dfrac{1}{a_n}\geqslant\dfrac{n-1}{25}$，}
+\step{即 $\dfrac{1}{a_1}-\dfrac{1}{a_n}\geqslant\dfrac{n-1}{25}$；}
+% 注：下一行原卷由 $a_1\geqslant1$ 直接得严格不等式 $1>\dfrac{n-1}{25}$（故 $n<26$）——
+%     由 $a_1\geqslant1$ 只能得 $\dfrac{1}{a_1}\leqslant1$ 即 $\dfrac{n-1}{25}\leqslant1$，
+%     要取严格「$>$」须另证 $n=26$ 不可能；照录未改（对结论 $n<10$ 无影响），
+%     见文件头「原卷笔误/存疑」④。
+\step{由 $\dfrac{1}{a_1}\geqslant\dfrac{n-1}{25}$，$a_1\geqslant1$，得 $1>\dfrac{n-1}{25}$，
+所以 $n<26$，}
+\step{同理，由 $\dfrac{1}{a_i}-\dfrac{1}{a_n}\geqslant\dfrac{n-i}{25}$，得
+$\dfrac{1}{a_i}>\dfrac{n-i}{25}$，又 $a_i\geqslant i$，所以 $\dfrac1i>\dfrac{n-i}{25}$，}
+\step{所以 $25>i(n-i)$，$(i=1,2,3,\cdots,n-1)$，}
+\step{当 $n\geqslant10$ 时，取 $i=5$ 得 $i(n-i)=5(n-5)\geqslant25$，矛盾，所以 $n<10$，}
+\step{又当 $n\leqslant9$ 时，$i(n-i)\leqslant\left(\dfrac{i+n-i}{2}\right)^2=\dfrac{n^2}{4}<25$，}
+\step{所以 $n\leqslant9$，即集合 $A$ 中元素个数的最大值为 $9$.}
+\solend
+
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}

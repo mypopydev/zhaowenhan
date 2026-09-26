@@ -21,12 +21,12 @@
 #   make docs               校验：README 里的「当前态计数」与源码/成品是否一致
 #   make list               查看页数统计
 #   make trace              生成「题目溯源」报告（溯源.tex → ../溯源/题目溯源.pdf）
-#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（24 份 / 52 页）
+#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（40 份 / 91 页）
 #   make clean              清理 LaTeX 临时文件
 #   make distclean          清理临时文件与中间 PDF
 #   make help               显示本帮助
 #
-# 溯源报告（与 22 份试卷分开的一条链）：内容来自 ../README.md 的「题目溯源」一节，
+# 溯源报告（与 42 份试卷分开的一条链）：内容来自 ../README.md 的「题目溯源」一节，
 # 由 ../工具/README转tex.py 生成 溯源.tex（**不要手改 溯源.tex**——改内容改 README、
 # 改排版改那个脚本）。溯源.tex 不匹配 高一*.tex 通配符，故 test/ans/compact/one 都不碰它。
 # 编译后跑 ../工具/溯源比对.py 做两道校验，见该脚本头部。
@@ -135,7 +135,7 @@ check:
 docs:
 	@python3 $(TOOLS)/计数核对.py
 
-# ===== 溯源报告（独立一条链，不进 all：all 会把 36 份成品 PDF 全重写、污染 diff）=====
+# ===== 溯源报告（独立一条链，不进 all：all 会把 42 份成品 PDF 全重写、污染 diff）=====
 # 依赖 ../README.md：README 改了，make trace 会自动重新生成 溯源.tex 再编译。
 溯源.tex: ../README.md ../工具/README转tex.py
 	@python3 ../工具/README转tex.py
@@ -158,7 +158,7 @@ trace: 溯源.pdf
 	  "$$($(PDFINFO) 溯源.pdf | awk '/^Pages/{print $$2}')"
 
 # ===== 合订打印本（独立一条链，不进 all：理由同 trace）=====
-# 把 ../试卷紧凑/ 下的成品按文件名序合成一份 52 页的 PDF 便于打印。
+# 把 ../试卷紧凑/ 下的成品按文件名序合成一份 91 页的 PDF 便于打印。
 # 目标写成 phony：合并只需不到一秒，每次重跑比维护依赖更稳妥（不会有陈旧产物）。
 bundle:
 	@test -n "$(sort $(wildcard $(DEST_COMPACT)/*_试卷.pdf))" \
