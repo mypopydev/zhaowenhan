@@ -1,0 +1,563 @@
+% 高一41_上海中学_周练2.tex
+%   —— 高一上数学「2026-2027 年上海中学高一上周练 2」（试卷版/答案版）
+% 试卷版：xelatex 高一41_上海中学_周练2.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一41_上海中学_周练2.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一41_上海中学_周练2.tex}"
+%
+% ① 原始材料
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」连载「27学年高一 41」，署名「破晓」，
+% 2026-09-28 20:28 发布，原文标题「27学年高一41——2026-2027年上海市上海中学高一上周练2」，
+% 原文链接 https://mp.weixin.qq.com/s/Ji6NvQ-OPLYY07Uj5w0ggw ），正文为 15 张 PNG 页。
+% **同一篇里各页分辨率不一致**（2560×3620 与 4762×6735 两档混排——第 2、3、4、6、8、11、12、13、14 页
+% 为 4762×6735，第 1、5、7、9、10、15 页为 2560×3620），取 mmbiz.qpic.cn/<hash>/0 的原图档。
+% 原文本身就是一份**讲评版**——全卷没有单独的【答案】行，每题下方直接印【解析】，答案写在解析
+% 末句（四道选择题分别作「故选 C／B／C／C」）。处理口径与同校同系列的 高一31（上海中学 周练1）一致。
+% 试卷文字与解析均照原卷录入，未改内容；卷面的粉色斜水印（「魔都数学加油站」字样）属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年上海中学高一上周练 2」（公众号标题里的「上海市」三字
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash，前缀照原卷保留「年」。
+%
+% 篇幅与题号：本篇 15 页，卷面自「一、填空题」的**第 3 题**起编，终于「三、解答题」的
+% **第 19 题**，共 17 题（填空 3—12、选择 13—16、解答 17—19）。第 1、2 题未在该文中发布——
+% 这是该公众号连载讲评版的通例（高一02—高一09、高一31、高一36、高一38—高一40 等均自第 3 题起编），
+% **不是截断**，故本稿题号亦自 3 起。
+%
+% ② 与原卷的排版差异（均已在 README「说明」中交代）
+%   ① 原文自**第 3 题**起（第 1、2 题未在该文中发布），故本稿题号亦自 3 起；
+%   ② 原卷本就印有「一、填空题」「二、选择题」「三、解答题」三节标题，本稿照原卷分节，
+%      只把标题改排成全稿统一的「大节标题」样式；
+%   ③ 原卷通篇只印【解析】（无【答案】行），本稿统一改为试卷版隐去、答案版以 \ifanswer{}
+%      块给出，两版彻底分离；**只给 4 道选择题另提 \ans{}**（由解析末句「故选 X」抽出，
+%      照 高一31 口径），填空与解答题不另提；
+%   ④ 集合包含符号原卷两种并用：第 13 题题干与解析的 $A\subset B$（**无下划线**，解析称
+%      「$A$ 是 $B$ 的真子集」）作真包含 $\subset$；第 14、16 题解析与第 17 题解析的
+%      $A\subseteq B$ 等（**带下划线**）作 $\sub$；本稿分别照录、不归一；
+%   ⑤ 数集记号原卷作斜体的 $R$（第 5、10 题）、$N$（第 16 题），本稿按全稿惯例统一写作 $\R$、$\N$；
+%   ⑥ 原卷填空的横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ⑦ 原卷未印副标题，本稿按**本卷实际内容**补出副标题「集合与常用逻辑用语、不等式」——
+%      17 题里不等式约 9—11 题（含参不等式、恒成立、最值与根的分布、绝对值不等式），
+%      集合与常用逻辑用语 6 题（含「理想集合」「封闭子集族」两处新定义），两类都在 1/3 以上；
+%   ⑧ 本卷**无插图**（全卷检索确认无「如图」）；
+%   ⑨ 并列各项原卷多用半角逗号或不加标点（第 12 题的七组集合、第 14 题的 $A$、$B$、$C$、
+%      第 4 题的 $m=0,n=1$ 等），本稿按全稿惯例在中文化并列的场合改排顿号；数学内部的逗号
+%      （如 $\{2,9\}$、$\{1,2,\cdots,12\}$）保留；
+%   ⑩ 半角括号、逗号、问号一律排全角；句末按全稿惯例排半角句点「.」；有三处印刷行行末
+%      **原卷无标点**（句中截断：第 3 题解析第 5 行、第 4 题解析第 3 行、第 15 题解析第 13 行），
+%      本稿照录未补。
+%
+% ③ 原卷存疑七处（均照抄原卷、未改；源码中该处上方另有行内 `%` 注）
+%   ① 第 3 题【解析】印作 $k=\dfrac{3-\sqrt{73}}2$（正根舍去），而由它上一行的 $k-\dfrac1k=3$
+%      应得 $k=\dfrac{3-\sqrt{13}}2$（该题末句亦作 $\sqrt{13}$）——$73$ 疑系 $13$ 之误，
+%      原卷同一题内前后不一致（末句答案不受影响）；
+%   ② 第 9 题【解析】印作「解得 $t\leqslant1$ 或 $t\leqslant-3$，所以 $t\leqslant1$」，按它上一行
+%      的 $t\leqslant-2t-1$ 应解得 $t\leqslant-\dfrac13$，$-3$ 疑系笔误（因与 $t\leqslant1$
+%      取并，末句 $t\leqslant1$ 不受影响）；同题解析又写「因为 $t\leqslant1$ 且 $t\neq-1$，
+%      所以 $t\leqslant-2$ 或 $-1<t\leqslant1$」，**未交代 $t\neq-1$ 的来由**，而 $t=-1$ 时
+%      方程确有根 $b=1\in[-1,4]$、按定义应合题意——即末句答案 $(-\infty,-2]\cup(-1,1]$
+%      **漏了 $t=-1$**（正确应为 $(-\infty,-2]\cup[-1,1]$）；
+%   ③ 第 10 题【解析】末句作「综上，实数 $m$ 的取值范围 $\left(0,\dfrac{\sqrt5+1}2\right]$」，
+%      **漏排「为」**（本卷其余各处均作「取值范围为」）；
+%   ④ 第 11 题设问作「则 $t=$ \blankline」，只留**一个**空，而其【解析】给出**三个**值
+%      $10$、$-\dfrac{40}{11}$、$-\dfrac{16}5$（三者回代均成立）；
+%   ⑤ 第 12 题【解析】首组印作 $A\cap\overline B\cap\overline C=\{7\}$——按题给的 $U$、$A$、
+%      $B$、$C$ 实算应为 $\{1\}$（该题解析末段亦作 $\{1\}$）；若作 $\{7\}$ 则与同行的
+%      $\overline A\cap\overline B\cap C=\{7,10\}$ 相交、与紧接的「两两不相交」矛盾。
+%      答案 $128$ 不受影响；
+%   ⑥ 第 13 题【解析】第二条作「取 $x=x_0$，则 $p$ 真而 $q$ 假，所以 $p\Rightarrow q$，
+%      $p$ 不是 $q$ 的充分条件」——$p\Rightarrow q$ 与后半句自相矛盾（由「$p$ 真而 $q$ 假」
+%      应为 $p\nRightarrow q$）；放大原图核实该处印的就是普通的 $\Rightarrow$（无否定斜线），
+%      非排版丢失；
+%   ⑦ 第 15 题【解析】作「当 $d\leqslant\dfrac12$ 时用**第二式**，当 $d>\dfrac12$ 时用**第二式**」，
+%      两处字形相同、均印「第二式」；按文意（$d\leqslant\dfrac12$ 时对上式用 $\dfrac d4$、
+%      $d>\dfrac12$ 时用 $\dfrac{1-d}4$）前一处应为「第一式」。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年上海中学高一上周练 2}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 若关于 $x$ 的不等式 $3-2x\leqslant kx^2+k\leqslant4-2x$ 有唯一解，则实数 $k=$
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原不等式即 $3\leqslant kx^2+2x+k\leqslant4$. 记 $g(x)=kx^2+2x+k$.}
+\step{当 $k=0$ 时，解集为 $\left[\dfrac32,2\right]$，不唯一.}
+\step{当 $k>0$ 时，$g(x)=k\left(x+\dfrac1k\right)^2+k-\dfrac1k$ 的最小值为 $k-\dfrac1k$.}
+\step{若 $k-\dfrac1k>4$，无解；}
+\step{若 $k-\dfrac1k<4$，则 $g(x)\leqslant4$ 的解集为闭区间 $[x_1,x_2]$}
+\step{（$x_1<x_2$，$g(x_1)=g(x_2)=4$），而 $g(x_1)=4>3$，}
+\step{故 $g(x)<3$ 的部分（若有）是严格位于 $(x_1,x_2)$ 内部的一个开区间，}
+\step{靠近 $x_1$ 的一段仍是解，解不唯一.}
+\step{故 $k-\dfrac1k=4$，此时只有 $x=-\dfrac1k$ 满足，解得 $k=2+\sqrt5$（负根舍去）.}
+\step{当 $k<0$ 时，$g(x)$ 的最大值为 $k-\dfrac1k$.}
+\step{若 $k-\dfrac1k<3$，无解；}
+\step{若 $k-\dfrac1k>3$，则 $g(x)\geqslant3$ 的解集为闭区间 $[x_3,x_4](x_3<x_4)$，}
+\step{而 $g(x_3)=3<4$，$g(x)>4$ 的部分（若有）严格位于其内部，}
+\step{靠近 $x_3$ 的一段仍是解，解不唯一.}
+\step{故 $k-\dfrac1k=3$，此时只有 $x=-\dfrac1k$ 满足 $g(x)\geqslant3$，且
+$g\left(-\dfrac1k\right)=3\leqslant4$，}
+% 注：下一行原卷印作 $k=\dfrac{3-\sqrt{73}}2$，但由上一行的 $k-\dfrac1k=3$ 得
+%     $k^2-3k-1=0$，应解出 $k=\dfrac{3-\sqrt{13}}2$（与再下一行的末句一致），
+%     疑系原卷把 13 误排成 73；照录未改。
+\step{解得 $k=\dfrac{3-\sqrt{73}}2$（正根舍去）.}
+\step{所以 $k=2+\sqrt5$ 或 $\dfrac{3-\sqrt{13}}2$.}
+\solend
+
+\fi
+
+\item 已知 $\left|x^2-mx-n\right|\leqslant1$，$\forall x\in[a,b]$，则 $b-a$ 的取值范围为
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{记 $p(x)=x^2-mx-n$，中点 $c=\dfrac{a+b}2\in[a,b]$，$L=b-a>0$.}
+\step{由条件，$p(a)\leqslant1$，$p(b)\leqslant1$，$p(c)\geqslant-1$.}
+\step{而 $p(a)+p(b)-2p(c)=a^2+b^2-2c^2-m(a+b-2c)$}
+\step{$=a^2+b^2-\dfrac{(a+b)^2}2=\dfrac{(b-a)^2}2$，故
+$\dfrac{L^2}2\leqslant1+1-2\times(-1)=4$，$L\leqslant2\sqrt2$.}
+\step{反之，对任意 $0<L\leqslant2\sqrt2$，取 $m=0$、$n=1$、$a=-\dfrac L2$、$b=\dfrac L2$，}
+\step{则 $x\in[a,b]$ 时 $-1\leqslant x^2-1\leqslant\dfrac{L^2}4-1\leqslant1$，满足条件.}
+\step{所以 $b-a$ 的取值范围为 $(0,2\sqrt2]$.}
+\solend
+
+\fi
+
+\item 已知函数 $f(x)=x^2+ax+b+\left|x^2-ax-b\right|$ 的最小值为 $2b^2$，则 $b$ 的取值范围为
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{函数 $f(x)=x^2+ax+b+\left|x^2-ax-b\right|$（$x\in\R$），函数 $f(x)$ 的最小值为 $2b^2$，}
+\step{则设 $g(x)=\dfrac{x^2+ax+b+\left|x^2-ax-b\right|}2$，函数 $g(x)$ 的最小值为 $b^2$，}
+\step{所以 $g(0)=\dfrac{b+|b|}2\geqslant b^2$，解得 $0\leqslant b\leqslant1$，
+$g(x)=\begin{cases}x^2,&x\in(-\infty,x_1)\cup(x_2,+\infty)\\ax+b,&x\in[x_1,x_2]\end{cases}$，}
+\step{其中 $x_1=\dfrac{a-\sqrt{a^2+4b}}2<0$，$x_2=\dfrac{a+\sqrt{a^2+4b}}2>0$，}
+\step{当 $a>0$ 时，$g(x)_{\min}=g(x_1)=x_1^2=b^2$，故 $x_1=-b$，即
+$\dfrac{a-\sqrt{a^2+4b}}2=-b$，}
+\step{化简得 $b(a+b-1)=0$，故 $b=0$ 或 $b=1-a<1$，}
+\step{当 $a=0$ 时，$g(x)_{\min}=b=b^2$，解得 $b=0$ 或 $b=1$，}
+\step{当 $a<0$ 时，$g(x)_{\min}=g(x_2)=x_2^2=b^2$，故 $x_2=b$，即
+$\dfrac{a+\sqrt{a^2+4b}}2=b$，}
+\step{化简得 $b(b-a-1)=0$，故 $b=0$ 或 $b=a+1<1$，}
+\step{综上，$b$ 的取值范围是 $[0,1]$.}
+\solend
+
+\fi
+
+\item 设 $a$、$b$ 为实数. 若 $x\geqslant0$ 时恒有 $-x^4\leqslant-x^3+ax+b\leqslant-2x^2+1$，
+则 $ab=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{取 $x=0$，得 $0\leqslant b\leqslant1$；取 $x=1$，得 $a+b=0$.}
+\step{于是左侧不等式化为 $(x-1)(x^3-b)\geqslant0$.}
+\step{若 $0\leqslant b<1$，则 $0\leqslant\sqrt[3]b<1$，取 $\sqrt[3]b<x<1$，则
+$x\geqslant0$，$x-1<0$，$x^3-b>0$，}
+\step{乘积小于 $0$，矛盾. 故 $b=1$、$a=-1$.}
+\step{回代后，左侧差为 $(x-1)^2(x^2+x+1)\geqslant0$，右侧差为 $x(x-1)^2\geqslant0$，}
+\step{均对 $x\geqslant0$ 成立.}
+\step{因此 $ab=-1$.}
+\solend
+
+\fi
+
+\item 已知 $x^2-2x+4\geqslant|x-2|+|x-a-2|$ 对任意实数 $x$ 成立，则实数 $a$ 的最小值为
+\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{取 $x=1$，得 $3\geqslant1+|a+1|$，即 $|a+1|\leqslant2$，所以 $a\geqslant-3$.}
+\step{当 $a=-3$ 时，令 $t=x-2$，}
+\step{原不等式左边减右边为
+$t^2+2t+4-|t|-|t+3|=\begin{cases}(t+2)^2+3,&t\leqslant-3\\(t+1)^2,&-3\leqslant t\leqslant0\\t^2+1,&t\geqslant0\end{cases}$，}
+\step{三种情形均非负，故 $a=-3$ 可以取到，最小值为 $-3$.}
+\solend
+
+\fi
+
+\item 已知实数 $a<b$. 若不等式 $a\leqslant\dfrac35x^2-3x+5\leqslant b$ 的解集为 $[a,b]$，
+则 $b-a=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{令 $f(x)=\dfrac35x^2-3x+5=\dfrac35\left(x-\dfrac52\right)^2+\dfrac54$，
+其图象关于直线 $x=\dfrac52$ 对称，}
+\step{故解集关于 $x=\dfrac52$ 对称，解集为 $[a,b]$，则 $a+b=5$ 且 $\dfrac52\in[a,b]$，}
+\step{于是 $a\leqslant f\left(\dfrac52\right)=\dfrac54$，左边不等式恒成立，
+此时解集就是 $f(x)\leqslant b$ 的解集，}
+\step{其端点 $a,b$ 是方程 $f(x)=b$ 的两根，故 $f(a)=b=5-a$，即 $\dfrac35a^2-2a=0$，}
+\step{解得 $a=0$ 或 $a=\dfrac{10}3$.}
+\step{$a=\dfrac{10}3$ 时 $b=\dfrac53<a$，与 $a<b$ 矛盾（也不满足 $a\leqslant\dfrac54$），舍去，}
+\step{所以 $a=0$，$b=5$，故 $b-a=5$.}
+\solend
+
+\fi
+
+\item 对于给定的实数 $t$，若非空数集 $A$ 满足：$\forall a\in A$，存在 $b\in[t,t^2+3]$
+使得 $a=b^2+2tb$，则称集合 $A$ 是 $t$ 的“理想集合”. 已知集合 $\{2t+1,3t+2\}$
+是实数 $t$ 的“理想集合”，则 $t$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若集合 $\{2t+1,3t+2\}$ 是 $t$ 的“理想集合”，}
+\step{则关于 $b$ 的方程 $a=b^2+2tb$ 在 $[t,t^2+3]$ 内有解.}
+\step{若 $a=2t+1$，即 $b^2+2tb=2t+1$，得 $(b-1)(b+2t+1)=0$，}
+\step{解得 $b=1$ 或 $b=-2t-1$，则 $t\leqslant1\leqslant t^2+3$ 或 $t\leqslant-2t-1\leqslant t^2+3$，}
+% 注：下一句原卷作「解得 $t\leqslant1$ 或 $t\leqslant-3$，所以 $t\leqslant1$；」——
+%     按上一句的 $t\leqslant-2t-1$ 应解得 $t\leqslant-\frac13$，原卷的 $-3$ 疑系笔误；
+%     照录未改。
+\step{解得 $t\leqslant1$ 或 $t\leqslant-3$，所以 $t\leqslant1$；}
+\step{若 $a=3t+2$，即 $b^2+2tb-(3t+2)=0$，}
+\step{构建 $h(b)=b^2+2tb-(3t+2)$，$b\in[t,t^2+3]$，}
+\step{原题意等价于 $h(b)$ 在 $[t,t^2+3]$ 内有零点，}
+\step{那么根的判别式 $\Delta=4t^2+4(3t+2)\geqslant0$，解得 $t\leqslant-2$ 或 $t\geqslant-1$，}
+% 注：下一句原卷作「因为 $t\leqslant1$ 且 $t\neq-1$，所以 $t\leqslant-2$ 或 $-1<t\leqslant1$，」——
+%     原卷未说明 $t\neq-1$ 的由来，而 $t=-1$ 时方程 $b^2-2b+1=0$ 有根 $b=1\in[-1,4]$，
+%     实际满足定义；照录未改。
+\step{因为 $t\leqslant1$ 且 $t\neq-1$，所以 $t\leqslant-2$ 或 $-1<t\leqslant1$，}
+\step{若 $t\leqslant-2$，则 $2\in[t,t^2+3]$，且 $h(0)=-(3t+2)>0$，$h(2)=t+2\leqslant0$，}
+\step{得 $h(b)$ 在 $[t,t^2+3]$ 内有零点，符合题意；}
+\step{若 $-1<t\leqslant1$，则 $1,2\in[t,t^2+3]$ 且 $h(1)=-t-1<0$，$h(2)=t+2>0$，}
+\step{得 $h(b)$ 在 $[t,t^2+3]$ 内有零点，符合题意.}
+\step{综上所述，实数 $t$ 的取值范围为 $(-\infty,-2]\cup(-1,1]$.}
+\solend
+
+\fi
+
+\item 若存在 $t\in\R$ 使得对任意 $x\in[0,m]$，不等式 $[(x-1)^2-t](x-t)\leqslant0$ 恒成立，
+则实数 $m$ 的取值范围为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $t\leqslant0$，则 $(x-1)^2-t\geqslant0$ 恒成立，}
+\step{此时不等式 $[(x-1)^2-t](x-t)\leqslant0$ 的解集为 $x\leqslant t$，与 $x\in[0,m]$ 矛盾，舍去；}
+\step{若 $t>0$，则不等式 $[(x-1)^2-t](x-t)\leqslant0
+\Rightarrow(x-1-\sqrt t)(x-1+\sqrt t)(x-t)\leqslant0$，}
+\step{①当 $t<1-\sqrt t$，即 $t\in\left(0,\dfrac{3-\sqrt5}2\right)$ 时，}
+\step{此时原不等式的解集为 $(-\infty,t]\cup[1-\sqrt t,1+\sqrt t]$，}
+\step{要满足题意需 $0<m\leqslant t$（区间 $[1-\sqrt t,1+\sqrt t]$ 恒正），
+即 $m\in\left(0,\dfrac{3-\sqrt5}2\right)$，}
+\step{②当 $t=1-\sqrt t$，即 $t=\dfrac{3-\sqrt5}2$，此时原不等式的解集为 $(-\infty,1+\sqrt t]$，}
+\step{要满足题意需 $m\leqslant1+\sqrt t$，即 $m\in\left(0,\dfrac{\sqrt5+1}2\right]$；}
+\step{③当 $1+\sqrt t>t>1-\sqrt t$，即 $t\in\left(\dfrac{3-\sqrt5}2,\dfrac{3+\sqrt5}2\right)$ 时，}
+\step{此时不等式的解集为 $(-\infty,1-\sqrt t]\cup[t,1+\sqrt t]$，}
+\step{要满足题意需 $\begin{cases}1-\sqrt t>0\\1-\sqrt t\geqslant m\end{cases}$
+（区间 $[t,1+\sqrt t]$ 恒正），}
+\step{即 $t\in\left(\dfrac{3-\sqrt5}2,1\right)$ 时，$m\leqslant1-\sqrt t$，}
+\step{易得 $y=1-\sqrt t$ 严格减，得 $y\in\left(0,\dfrac{3-\sqrt5}2\right)$，
+即 $m\in\left(0,\dfrac{3-\sqrt5}2\right)$；}
+\step{④当 $t=1+\sqrt t$，即 $t=\dfrac{3+\sqrt5}2$，此时不等式的解集为 $(-\infty,1-\sqrt t]$，}
+\step{要满足题意，需 $0<1-\sqrt t$，显然不符合题意，舍去，}
+\step{⑤ $t>1+\sqrt t$，即 $t>\dfrac{3+\sqrt5}2$，
+此时不等式的解集为 $(-\infty,1-\sqrt t]\cup[1+\sqrt t,t]$，}
+\step{同上需满足 $0<1-\sqrt t$，仍不符合题意，舍去，}
+\step{综上，实数 $m$ 的取值范围 $\left(0,\dfrac{\sqrt5+1}2\right]$.}
+\solend
+
+\fi
+
+\item 已知集合 $A=[t,t+2]\cup[t+5,t+8]$，$0\notin A$. 若存在实数 $K$ 使得对任意 $a\in A$
+都有 $\dfrac Ka\in A$，则 $t=$ \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $0\notin A$ 得 $t>0$，或 $t+8<0$，或 $t+2<0<t+5$，}
+\step{即 $t>0$，$t<-8$ 或 $-5<t<-2$；}
+\step{显然 $K\neq0$（否则 $\dfrac Ka=0\notin A$）.}
+\step{又对 $a\in A$ 有 $\dfrac Ka\in A$ 且 $a=\dfrac K{K/a}$，
+所以当 $a$ 取遍 $A$ 时，$\dfrac Ka$ 也恰好取遍 $A$.}
+\step{又当 $a$ 取遍某一段时，$\dfrac Ka$ 取遍一个区间，
+它不能跨过 $t+2$ 与 $t+5$ 之间的空隙，}
+\step{只能恰为某一段，且端点对应端点；}
+\step{①$t>0$ 或 $t<-8$：$A$ 中的数同号，必有 $K>0$，且 $a$ 越大 $\dfrac Ka$ 越小，}
+\step{所以最小数 $t$ 与最大数 $t+8$ 对应，
+左段右端点 $t+2$ 与右段左端点 $t+5$ 对应：}
+\step{$K=t(t+8)=(t+2)(t+5)$，解得 $t=10$（符合 $t>0$；故 $t<-8$ 时无解），}
+\step{$K=180$.}
+\step{②$-5<t<-2$ 且 $K>0$：$\dfrac Ka$ 与 $a$ 同号，两段各自对应自身，且次序颠倒：}
+\step{$K=t(t+2)=(t+5)(t+8)$，解得 $t=-\dfrac{40}{11}$，$K=\dfrac{720}{121}$.}
+\step{③$-5<t<-2$ 且 $K<0$：$\dfrac Ka$ 与 $a$ 异号，两段互相对应，}
+\step{且在每一段内 $a$ 越大 $\dfrac Ka$ 越大，
+所以 $t$ 与 $t+5$、$t+2$ 与 $t+8$ 对应：}
+\step{$K=t(t+5)=(t+2)(t+8)$，解得 $t=-\dfrac{16}5$，$K=-\dfrac{144}{25}$.}
+\step{回代检验：三种情形下对应端点之积都等于 $K$，两段恰好按上述方式一一对应，}
+\step{且 $0\notin A$，所以 $t=10$ 或 $-\dfrac{40}{11}$ 或 $-\dfrac{16}5$.}
+\solend
+
+\fi
+
+\item 已知全集 $U=\{1,2,3,4,5,6,7,8,9,10\}$，$A=\{1,2,3,6,8,9\}$，$B=\{2,4,5,8,9\}$，
+$C=\{3,4,6,7,8,10\}$. 集合 $S$ 是由 $U$ 的一些子集组成的集合，两位同学提供了关于 $S$
+的信息：小晗：我知道 $A,B,C\in S$；小睿：对任意 $X,Y\in S$，有
+$X\cup Y\in S$、$X\cap Y\in S$、$\overline X\in S$. 则集合 $S$ 中至少有 \blankline[4.4em] 个元素.
+
+\ifanswer
+\solbegin
+\step{由补集与交集的条件，以下七组都属于 $S$：}
+% 注：下一组原卷首项作 $A\cap\overline B\cap\overline C=\{7\}$——按 $A=\{1,2,3,6,8,9\}$ 等
+%     实际算得 $A\cap\overline B\cap\overline C=\{1\}$（本解析末段「如 $A=\{1\}\cup\{2,9\}\cup\{3,6\}\cup\{8\}$」
+%     也作 $\{1\}$），且若作 $\{7\}$ 将与同行的 $\overline A\cap\overline B\cap C=\{7,10\}$ 相交、
+%     与「两两不相交」矛盾；原卷如此，照录未改。
+\step{$A\cap\overline B\cap\overline C=\{7\}$、$A\cap B\cap\overline C=\{2,9\}$、
+$A\cap\overline B\cap C=\{3,6\}$、}
+\step{$\overline A\cap B\cap C=\{4\}$、$\overline A\cap B\cap\overline C=\{5\}$、
+$\overline A\cap\overline B\cap C=\{7,10\}$、$A\cap B\cap C=\{8\}$、}
+\step{七组均非空、两两不相交，合起来恰为 $U$（$\overline A\cap\overline B\cap\overline C=\varnothing$）.}
+\step{每组可选或不选，不同选法得到不同的并集，且都属于 $S$；}
+\step{空集由 $A\cap\overline A$ 得到，因而 $S$ 至少有 $2^7=128$ 个元素.}
+\step{另一方面，取 $S$ 为这七组的所有并集（含空集）组成的集合，}
+\step{它包含 $A,B,C$（如 $A=\{1\}\cup\{2,9\}\cup\{3,6\}\cup\{8\}$）；}
+\step{两个这样的并集的并（交）仍是若干组的并，}
+\step{一个这样的并集的补集是其余各组的并，所以满足题设的三种运算条件.}
+\step{故 $S$ 中至少有 $128$ 个元素.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知数集 $A\subset B$，则 $p:x\notin A$ 是 $q:x\notin B$ 的\mbox{（\quad）}条件.
+
+\keepwithprev
+A. 充要\qquad B. 充分非必要
+
+C. 必要非充分\qquad D. 既非充分又非必要
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{由 $A\subset B$，若 $x\notin B$，则 $x\notin A$，即 $q\Rightarrow p$，所以 $p$ 是 $q$ 的必要条件.}
+\step{又 $A$ 是 $B$ 的真子集，存在 $x_0\in B$ 且 $x_0\notin A$.}
+% 注：下一句原卷作「所以 $p\Rightarrow q$，$p$ 不是 $q$ 的充分条件」——$p\Rightarrow q$ 与后半句
+%     「$p$ 不是 $q$ 的充分条件」自相矛盾（由 $x=x_0$ 得 $p$ 真而 $q$ 假，应为 $p\nRightarrow q$）；
+%     放大原图核实，此处印的就是普通的 $\Rightarrow$（无否定斜线），非排版丢失，照录未改。
+\step{取 $x=x_0$，则 $p$ 真而 $q$ 假，所以 $p\Rightarrow q$，$p$ 不是 $q$ 的充分条件.}
+\step{故 $p$ 是 $q$ 的必要非充分条件，故选 $C$.}
+\solend
+
+\fi
+
+\item 已知非空集合 $A$、$B$ 满足 $A\cup B=\{1,2,3,\cdots,12\}$，且 $A\cap B$ 的元素个数不大于 $1$.
+定义集合 $A+B=\{x+y\mid x\in A,y\in B\}$，$A-B=\{x-y\mid x\in A,y\in B\}$，
+$A\setminus B=\{x\mid x\in A,x\notin B\}$. 下列说法中错误的是\mbox{（\quad）}
+
+\keepwithprev
+A. 集合 $A$、$B$ 的元素个数之和为 $12$ 或 $13$\qquad B. 集合 $A-B$ 的元素个数不超过 $21$
+
+C. 集合 $A+B$ 的元素个数不超过 $22$\qquad D. 集合 $A\setminus B$ 的元素个数不超过 $11$
+
+\ans{$B$}
+
+\ifanswer
+\solbegin
+\step{A 正确. $A$、$B$ 的元素个数之和等于 $A\cup B$ 与 $A\cap B$ 的元素个数之和，}
+\step{即 $12+0$ 或 $12+1$，为 $12$ 或 $13$.}
+\step{B 错误. 取 $A=\{1,2,\cdots,11\}$，$B=\{1,12\}$，则 $A\cup B=\{1,2,\cdots,12\}$，$A\cap B=\{1\}$，}
+\step{满足题设，且 $A-B=\{-11,-10,\cdots,10\}$，有 $22$ 个元素.}
+\step{C 正确. $A+B$ 中的数只可能是 $2,3,\cdots,24$，共 $23$ 个；}
+\step{若 $2$、$24$ 都出现，则 $1$、$12$ 都属于 $A\cap B$，与题设矛盾，故至多有 $22$ 个.}
+\step{D 正确. $B$ 非空，任取 $y_0\in B$，则 $y_0\notin A\setminus B$，而 $A\setminus B\sub\{1,2,\cdots,12\}$，}
+\step{所以 $A\setminus B$ 的元素个数不超过 $11$.}
+\step{故选 $B$.}
+\solend
+
+\fi
+
+\item 函数 $f$ 满足 $f(0)=f(1)=2$，且对任意 $x$、$y\in[0,1]$，$x\neq y$，均有
+$|f(x)-f(y)|<\dfrac{|x-y|}{4}$. 常数 $k$ 满足对任意满足前述要求的函数 $f$ 和任意 $x$、$y\in[0,1]$，
+均有 $|f(x)-f(y)|<k$，则实数 $k$ 的最小值为\mbox{（\quad）}
+
+\keepwithprev
+A. $1$\qquad B. $\dfrac14$\qquad C. $\dfrac18$\qquad D. $\dfrac1{16}$
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{当 $x=y$ 时差为 $0$. 下面设 $x<y$，$d=y-x$.}
+\step{由条件得 $|f(x)-f(y)|<\dfrac d4$，}
+\step{又 $f(0)=f(1)=2$，}
+\step{所以 $|f(x)-f(y)|\leqslant|f(x)-f(0)|+|f(y)-f(1)|\leqslant\dfrac x4+\dfrac{1-y}4=\dfrac{1-d}4$.}
+% 注：下一句原卷两处都印成「第二式」（「当 $d\leqslant\frac12$ 时用第二式，当 $d>\frac12$ 时用第二式」）。
+%     按文意（$d\leqslant\frac12$ 时对上式用 $\frac d4$、$d>\frac12$ 时用 $\frac{1-d}4$），前一处的「第二式」
+%     应为「第一式」；放大原图核实两处字形完全相同，原卷如此，照录未改。
+\step{当 $d\leqslant\dfrac12$ 时用第二式，当 $d>\dfrac12$ 时用第二式，均得 $|f(x)-f(y)|<\dfrac18$，}
+\step{所以 $k=\dfrac18$ 满足要求（$k=1$、$\dfrac14$ 也满足，但不是最小值）.}
+\step{另一方面，设 $0<c<\dfrac14$，令
+$h(t)=\begin{cases}t,&0\leqslant t\leqslant\dfrac14\\ \dfrac12-t,&\dfrac14<t\leqslant\dfrac34\\ t-1,&\dfrac34<t\leqslant1\end{cases}$，$f(t)=2+ch(t)$，}
+\step{同一段内 $|h(x)-h(y)|=|x-y|$；}
+\step{跨段时在分界点 $\dfrac14$、$\dfrac34$ 处拆开，用三角不等式得 $|h(x)-h(y)|\leqslant|x-y|$；}
+\step{于是 $x\neq y$ 时 $|f(x)-f(y)|=c|h(x)-h(y)|\leqslant c|x-y|<\dfrac{|x-y|}4$，}
+\step{又 $f(0)=f(1)=2$，故此函数满足题设.}
+\step{而 $\left|f\left(\dfrac14\right)-f\left(\dfrac34\right)\right|=\dfrac c2$，取 $c$ 足够接近 $\dfrac14$，}
+\step{差值可以大于任意给定的小于 $\dfrac18$ 的数，所以小于 $\dfrac18$ 的 $k$ 都不满足要求}
+\step{（如取 $c=\dfrac15$，差值为 $\dfrac1{10}>\dfrac1{16}$，故 D 不满足要求）.}
+\step{所以 $k$ 的最小值为 $\dfrac18$，故选 $C$.}
+\solend
+
+\fi
+
+\item 已知函数 $f(x)=x^2+(a+3)x-a-3$，若集合 $A=\{x\mid x\in\N,f(x)<0\}$ 中恰有一个元素，
+则实数 $a$\mbox{（\quad）}
+
+\keepwithprev
+A. 有最大值，无最小值\qquad B. 既有最大值，也有最小值
+
+C. 有最小值，无最大值\qquad D. 既无最大值，也无最小值
+
+\ans{$C$}
+
+\ifanswer
+\solbegin
+\step{$f(0)=-a-3$，$f(1)=1>0$，$f(2)=a+7$，$f(3)=2a+15$，}
+\step{注意 $\N$ 含 $0$，而 $1\notin A$.}
+\step{当 $a\geqslant-7$ 时，对整数 $n\geqslant2$，$f(n)=(n-2)^2+(a+7)(n-1)\geqslant0$，故 $A\sub\{0\}$，}
+\step{恰有一个元素当且仅当 $f(0)=-a-3<0$，即 $a>-3$，此时 $A=\{0\}$；}
+\step{当 $-\dfrac{15}2\leqslant a<-7$ 时，$f(0)=-a-3>0$，$f(2)=a+7<0$；}
+\step{对整数 $n\geqslant3$，$f(n)=(n-3)\left(n-\dfrac32\right)+\left(a+\dfrac{15}2\right)(n-1)\geqslant0$，故 $A=\{2\}$；}
+\step{当 $a<-\dfrac{15}2$ 时，$f(2)<0$，$f(3)<0$，不合题意.}
+\step{因此 $a\in\left[-\dfrac{15}2,-7\right)\cup(-3,+\infty)$.}
+\step{左端点 $-\dfrac{15}2$ 可取，故有最小值；$a$ 可任意增大，故无最大值. 故选 $C$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知 $\alpha:\dfrac{x+m}{x-3m+1}>0$，$\beta:\dfrac{x+4}{2-x}\leqslant0$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $\alpha$ 是 $\beta$ 的充分条件，求实数 $m$ 的取值范围；
+\item 若 $\alpha$ 是 $\beta$ 的必要条件，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\step{$\beta:\dfrac{x+4}{x-2}\geqslant0$，解集为 $B=(-\infty,-4]\cup(2,+\infty)$.}
+\step{由 $\dfrac{x+m}{x-3m+1}>0\Leftrightarrow(x+m)(x-3m+1)>0$，$\alpha$ 的两个临界值为 $-m$ 与 $3m-1$.}
+\step{记 $u=\min\{-m,3m-1\}$，$v=\max\{-m,3m-1\}$，}
+\step{则 $\alpha$ 的解集为 $A=(-\infty,u)\cup(v,+\infty)$（$m=\dfrac14$ 时 $u=v=-\dfrac14$，仍成立）.}
+\stepm{(1)}{$\alpha$ 是 $\beta$ 的充分条件 $\Leftrightarrow A\sub B$.}
+\step{在数轴上，$(-\infty,u)\sub B\Leftrightarrow u\leqslant-4$，$(v,+\infty)\sub B\Leftrightarrow v\geqslant2$.}
+\step{若 $m>\dfrac14$，则 $u=-m$，$v=3m-1$，由 $-m\leqslant-4$ 且 $3m-1\geqslant2$ 得 $m\geqslant4$；}
+\step{若 $m<\dfrac14$，则 $u=3m-1$，$v=-m$，由 $3m-1\leqslant-4$ 且 $-m\geqslant2$ 得 $m\leqslant-2$；}
+\step{若 $m=\dfrac14$，$u=-\dfrac14>-4$，不合题意；}
+\step{所以 $m$ 的取值范围是 $(-\infty,-2]\cup[4,+\infty)$.}
+\stepm{(2)}{$\alpha$ 是 $\beta$ 的必要条件 $\Leftrightarrow B\sub A$.}
+\step{在数轴上，$(-\infty,-4]\sub A\Leftrightarrow u>-4$（若 $u\leqslant-4$，则 $u\in B$ 但 $u\notin A$），}
+\step{$(2,+\infty)\sub A\Leftrightarrow v\leqslant2$.}
+\step{若 $m>\dfrac14$，由 $-m>-4$ 且 $3m-1\leqslant2$ 得 $\dfrac14<m\leqslant1$；}
+\step{若 $m<\dfrac14$，由 $3m-1>-4$ 且 $-m\leqslant2$ 得 $-1<m<\dfrac14$；}
+\step{若 $m=\dfrac14$，$u=v=-\dfrac14$，满足；}
+\step{所以 $m$ 的取值范围是 $(-1,1]$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 设函数 $f(x)=ax^2+12x+5(a<0)$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $y=f(x)$ 与坐标轴的三个交点恰是一个直角三角形的三个顶点，求 $a$ 的值；
+\item 解不等式 $|f(x)|\leqslant5$；
+\item 对于给定的负数 $a$，定义 $m(a)$ 为集合 $\{k\mid\forall x\in[0,k],|f(x)|\leqslant8\}$ 的最大元. 当 $a$
+变化时，求 $m(a)$ 的最大值以及对应的 $a$ 的值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$f(0)=5$，与 $y$ 轴交于 $C(0,5)$. $a<0$，$\Delta=144-20a>0$，}
+\step{设与 $x$ 轴交于 $A(x_1,0)$，$B(x_2,0)$，则 $x_1x_2=\dfrac5a<0$，两点分居原点两侧.}
+\step{若直角在 $A$ 处，则 $CA\perp x$ 轴，得 $x_1=0$，与 $f(0)=5\neq0$ 矛盾；}
+\step{同理直角不在 $B$ 处，所以直角在 $C$ 处，}
+\step{由勾股定理 $(x_1-x_2)^2=(x_1^2+25)+(x_2^2+25)$，得 $x_1x_2=-25$，}
+\step{即 $\dfrac5a=-25$，$a=-\dfrac15$；}
+\stepm{(2)}{$|f(x)|\leqslant5\Leftrightarrow-5\leqslant ax^2+12x+5\leqslant5$.}
+\step{由 $ax^2+12x\leqslant0$ 即 $x(ax+12)\leqslant0$，又 $a<0$，得 $x\leqslant0$ 或 $x\geqslant-\dfrac{12}a$.}
+\step{由 $ax^2+12x+10\geqslant0$，判别式 $144-40a>0$，}
+\step{由 $a<0$，得 $\dfrac{-6+\sqrt{36-10a}}a\leqslant x\leqslant\dfrac{-6-\sqrt{36-10a}}a$.}
+\step{因为 $\sqrt{36-10a}>6$，所以 $\dfrac{-6+\sqrt{36-10a}}a<0$，}
+\step{且 $\dfrac{-6-\sqrt{36-10a}}a=\dfrac{6+\sqrt{36-10a}}{-a}>\dfrac{12}{-a}=-\dfrac{12}a$.}
+\step{取交集，得解集为
+$\left[\dfrac{-6+\sqrt{36-10a}}a,0\right]\cup\left[-\dfrac{12}a,\dfrac{-6-\sqrt{36-10a}}a\right]$.}
+\stepm{(3)}{$f(x)=a\left(x+\dfrac6a\right)^2+5-\dfrac{36}a$，对称轴 $x=-\dfrac6a>0$，最大值为 $5-\dfrac{36}a$.}
+\step{在 $[0,+\infty)$ 上，$f(x)$ 从 $f(0)=5$ 先增大到最大值，再减小，}
+\step{且 $x$ 足够大时 $f(x)<-8$.}
+\step{①当 $5-\dfrac{36}a>8$，即 $-12<a<0$ 时，}
+\step{方程 $ax^2+12x+5=8$ 即 $ax^2+12x-3=0$ 的判别式 $144+12a>0$，}
+\step{两根均为正. 设较小正根为 $x_0$（在对称轴左侧），}
+\step{则 $x\in[0,x_0]$ 时 $5\leqslant f(x)\leqslant8$，而 $x$ 略大于 $x_0$ 时 $f(x)>8$，}
+\step{故 $m(a)=\dfrac{-6+\sqrt{36+3a}}a=\dfrac3{6+\sqrt{36+3a}}<\dfrac12$.}
+\step{②当 $5-\dfrac{36}a\leqslant8$，即 $a\leqslant-12$ 时，$f(x)\leqslant8$ 恒成立.}
+\step{方程 $ax^2+12x+5=-8$ 的两根之积 $\dfrac{13}a<0$，设其正根为 $x_0$，}
+\step{则 $x\in[0,x_0]$ 时 $-8\leqslant f(x)\leqslant8$，而 $x>x_0$ 时 $f(x)<-8$，}
+\step{故 $m(a)=\dfrac{-6-\sqrt{36-13a}}a=\dfrac{13}{\sqrt{36-13a}-6}$.}
+\step{$a$ 越小，$\sqrt{36-13a}$ 越大，$m(a)$ 越小，}
+\step{所以 $a\leqslant-12$ 时 $m(a)\leqslant m(-12)=\dfrac{13}{8\sqrt3-6}=\dfrac{3+4\sqrt3}6$.}
+\step{因为 $\dfrac{3+4\sqrt3}6>\dfrac12$，所以 $m(a)$ 的最大值为 $\dfrac{3+4\sqrt3}6$，此时 $a=-12$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 已知 $a$、$b$、$c$ 为正整数. 考虑关于 $x$ 的一元二次方程 $ax^2+bx+c=0$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若此方程在 $(-1,0)$ 上有两个不等实根，求 $a+b+c$ 的最小值；
+\item 已知 $n$ 为给定正整数，若此方程在 $\left(-\dfrac1n,0\right)$ 上有两个不等实根，求 $a+b+c$ 的最小
+值（用含有 $n$ 的代数式表示）.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{令 $t=-\dfrac1x-1$，则 $x\in(-1,0)\Leftrightarrow-\dfrac1x>1\Leftrightarrow t>0$，且 $x=-\dfrac1{1+t}$.}
+\step{代入原方程，两边乘以 $(1+t)^2$，得 $ct^2-(b-2c)t+(a-b+c)=0$.}
+\step{由于 $t>0$ 与 $x\in(-1,0)$ 通过 $x=-\dfrac1{1+t}$ 一一对应，且 $(1+t)^2>0$，}
+\step{原方程在 $(-1,0)$ 上有两个不等实根，等价于此方程有两个不等正根.}
+\step{记整数 $d=b-2c$，$e=a-b+c$.}
+\step{由韦达定理，两根之和 $\dfrac dc>0$，两根之积 $\dfrac ec>0$，故 $d\geqslant1$，$e\geqslant1$；}
+\step{又判别式 $d^2-4ce>0$，得 $d^2>4ce\geqslant4$，所以 $d\geqslant3$.}
+\step{由 $b=d+2c$，$a=e+d+c$，得 $a+b+c=e+2d+4c\geqslant1+6+4=11$.}
+\step{取 $c=e=1$，$d=3$，即 $a=5$，$b=5$，$c=1$：}
+\step{方程 $5x^2+5x+1=0$ 的两根 $\dfrac{-5\pm\sqrt5}{10}$ 都在 $(-1,0)$ 内.}
+\step{所以 $a+b+c$ 的最小值为 $11$.}
+\stepm{(2)}{令 $t=-\dfrac1x-n$，则 $x\in\left(-\dfrac1n,0\right)\Leftrightarrow t>0$，且 $x=-\dfrac1{n+t}$.}
+\step{代入原方程，两边乘以 $(n+t)^2$，得 $ct^2-dt+e=0$，}
+\step{其中整数 $d=b-2nc$，$e=a-nb+n^2c$.}
+\step{同（1），此方程有两个不等正根，故 $e\geqslant1$，$d\geqslant3$.}
+\step{由 $b=d+2nc$，$a=e+nd+n^2c$，}
+\step{得 $a+b+c=e+(n+1)d+(n+1)^2c\geqslant1+3(n+1)+(n+1)^2=n^2+5n+5$.}
+\step{取 $c=e=1$，$d=3$，即 $a=n^2+3n+1$，$b=2n+3$，$c=1$：}
+\step{方程 $t^2-3t+1=0$ 有两个不等正根 $\dfrac{3\pm\sqrt5}2$，}
+\step{对应的 $x=-\dfrac1{n+t}$ 是原方程在 $\left(-\dfrac1n,0\right)$ 内的两个不等实根.}
+\step{所以 $a+b+c$ 的最小值为 $n^2+5n+5$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\end{enumerate}
+
+\end{document}

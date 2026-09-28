@@ -21,7 +21,7 @@
 #   make docs               校验：README 里的「当前态计数」与源码/成品是否一致
 #   make list               查看页数统计
 #   make trace              生成「题目溯源」报告（溯源.tex → ../溯源/题目溯源.pdf）
-#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（40 份 / 91 页）
+#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（41 份 / 93 页）
 #   make clean              清理 LaTeX 临时文件
 #   make distclean          清理临时文件与中间 PDF
 #   make help               显示本帮助
@@ -158,7 +158,7 @@ trace: 溯源.pdf
 	  "$$($(PDFINFO) 溯源.pdf | awk '/^Pages/{print $$2}')"
 
 # ===== 合订打印本（独立一条链，不进 all：理由同 trace）=====
-# 把 ../试卷紧凑/ 下的成品按文件名序合成一份 91 页的 PDF 便于打印。
+# 把 ../试卷紧凑/ 下的成品按文件名序合成一份 93 页的 PDF 便于打印。
 # 目标写成 phony：合并只需不到一秒，每次重跑比维护依赖更稳妥（不会有陈旧产物）。
 bundle:
 	@test -n "$(sort $(wildcard $(DEST_COMPACT)/*_试卷.pdf))" \

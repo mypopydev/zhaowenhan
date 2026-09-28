@@ -281,6 +281,15 @@ def check_source(md):
         root = io.open(ROOT_README, encoding='utf-8').read()
         add('套数（根 README 复述处）', claim(root, r'已入库的 (\d+) 套卷子', '根 README 套数'),
             n_tex - COPIES, '两份文档各写一遍，只改一份是常见漏改')
+        # 根 README 还把**定义式的两半**也复述了一遍（「N 个 `.tex` 里 高一16≡高一b…一套副本只算
+        # 一套，故 M」）。此前只核了上面那条「N 套」，这两半在 2026-09-28 被发现静默停在
+        # 「38 个 `.tex` … 故 36」（当时实为 42 … 40）——正是「只核一处、另一处漂掉」的同型，
+        # 故这里也各断一条。
+        add('套数（根 README 定义式：.tex 数）',
+            claim(root, r'：(\d+) 个 `\.tex` 里', '根 README 定义式 tex 数'), n_tex,
+            '根 README 也复述了定义式两半')
+        add('套数（根 README 定义式：套数）',
+            claim(root, r'一套副本只算一套，故 (\d+)', '根 README 定义式套数'), n_tex - COPIES)
     add('源码 .tex 份数', claim(md, r'LaTeX 源码（(\d+) 份试卷', '源码份数'), n_tex)
     add('圈数字次数', claim(md, r'\*\*(\d+) 次\*\*、遍布 \*\*', '圈数字次数'), n_circ)
     add('圈数字份数', claim(md, r'次\*\*、遍布 \*\*(\d+) 份\*\*', '圈数字份数'), n_circ_files)
