@@ -1,0 +1,88 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\blank}{\underline{\hspace{2.1cm}}}
+% 原卷做错的条：题号后加红星
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% ★ 固定宽度槽位：带星/不带星行正文左边缘一致
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
+\newcommand{\zhs}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{\STAR}#2}
+\newcommand{\zhx}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{}#2}
+% 表格正文列：左对齐，避免 p 列两端对齐造成的 Underfull
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语短语默写 \quad 二刷（中 $\to$ 英）}\\[0.25em]
+{\large 小蓝 P11--20}\\[0.22em]
+{\small 2029届高一英语 · \STAR 为 2026-09 原卷做错的 20 条}
+\end{center}
+
+\vspace{0.35em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.2cm}} & 日期：\underline{\hspace{2.2cm}} & 得分：\underline{\hspace{1.5cm}}\,/\enspace 25 \\
+\end{tabular}
+
+\vspace{0.45em}
+\noindent{\small 说明：根据中文短语与提示词默写出英文短语，题号沿用原卷。\STAR\ 为原卷判错的条（20 条），本次需重点复现；无星号的条用于检验是否遗忘。}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.5}
+\noindent\begin{tabular}{@{}L{5.1cm}@{\hspace{0.25cm}}L{2.7cm}@{\hspace{0.5cm}}L{5.1cm}@{\hspace{0.25cm}}L{2.7cm}@{}}
+\toprule
+中文短语（提示词） & 英文默写 & 中文短语（提示词） & 英文默写 \\
+\midrule
+\zhs{1}{被大学录取（admit）} & \blank & \zhs{14}{助听器} & \blank \\
+\zhs{2}{校准手表} & \blank & \zhs{15}{广播中，播放着} & \blank \\
+\zhx{3}{热爱做某事（adore）} & \blank & \zhx{16}{这里不允许吸烟。（allow）} & \blank \\
+\zhs{4}{摆架子} & \blank & \zhx{17}{和…相处很好（along）} & \blank \\
+\zhs{5}{力争上游（aim）} & \blank & \zhs{18}{在报纸上登广告} & \blank \\
+\zhs{6}{对…警觉（alert）} & \blank & \zhs{19}{决定事情的轻重缓急（agenda）} & \blank \\
+\zhs{7}{占…优势；占…上风（advantage）} & \blank & \zhs{20}{提早两周交付租金（advance）} & \blank \\
+\zhs{8}{遵医嘱（advice）} & \blank & \zhx{21}{最先进的工业国家} & \blank \\
+\zhs{9}{经济改革的拥护者} & \blank & \zhs{22}{他们很不赞同这个主意。（against）} & \blank \\
+\zhs{10}{主张教师高薪（advocate）} & \blank & \zhs{23}{警察在追捕嫌疑犯人。（after）} & \blank \\
+\zhs{11}{绝不能等闲视之（afford）} & \blank & \zhs{24}{他站在时代的前头。（ahead）} & \blank \\
+\zhx{12}{更不用说} & \blank & \zhs{25}{每八个小时设一次闹钟} & \blank \\
+\zhs{13}{未成年（age）} & \blank & \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,25
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox\ 介词搭配（to / of）\quad\checkmarkbox\ 固定搭配（over / in / the）\quad\checkmarkbox\ 漏词多词\quad\checkmarkbox\ 名词单复数
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
+
+\end{document}

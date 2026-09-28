@@ -1,0 +1,169 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=2cm,headheight=15pt}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{wrongbg}{RGB}{253,235,233}
+\definecolor{rulegray}{RGB}{200,200,200}
+
+\setlength{\emergencystretch}{3em}
+\setlength{\fboxsep}{3pt}
+\setlength{\parindent}{0pt}
+
+\newcommand{\blank}{\underline{\hspace{2.8cm}}}
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.8ex}\rule{0.8ex}{0pt}}}
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% 错答（红色）
+\newcommand{\W}[1]{\textcolor{wrongred}{#1}}
+% 正确答案（加粗）
+\newcommand{\A}[1]{\textbf{#1}}
+% 判定标记
+\newcommand{\OK}{\textcolor{wrongred}{\ensuremath{\checkmark}}}
+\newcommand{\NO}{\textcolor{wrongred}{$\times$}}
+% 表格正文列：左对齐，避免 p 列两端对齐造成的 Underfull
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize 英语短语默写 小蓝 P11--20（错题订正）}
+\fancyhead[R]{\footnotesize 赵文瀚}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries 英语短语默写 小蓝 P11--20}\\[0.25em]
+{\large 错题订正与复盘}\\[0.35em]
+{\footnotesize 2029 届高一英语 · 小蓝短语默写 P11--20（共 25 条）· 2026-09}
+\end{center}
+
+\vspace{-0.2em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.8pt}}
+
+\vspace{0.5em}
+\noindent\fcolorbox{black!15}{black!4}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    \small 日期：2026-09\qquad 来源：小蓝短语默写 P11--20（共 25 条）\qquad 姓名：赵文瀚\\[0.3em]
+    原卷判错：\textcolor{wrongred}{\textbf{20}}\,/\enspace 25\qquad
+    判对：\textbf{5}\,/\enspace 25\qquad
+    重做日期：\underline{\hspace{2.4cm}}}}
+
+\vspace{0.6em}
+\noindent{\footnotesize 说明：下表按原卷题号列全 25 条。\W{红色}＝还原的原卷错答（原卷为学生黑笔），\A{加粗}＝红笔订正；\OK\ 表示原卷判对，\NO\ 表示判错。\STAR\ 表示该题暴露出成系统的搭配/词形问题，需优先攻破。}
+
+\vspace{0.4em}
+\renewcommand{\arraystretch}{1.0}
+\noindent{\footnotesize\begin{tabular}{@{}L{0.72cm}@{\hspace{0.08cm}}L{2.03cm}@{\hspace{0.08cm}}L{1.45cm}@{\hspace{0.08cm}}L{4.6cm}@{\hspace{0.08cm}}L{4.7cm}@{\hspace{0.08cm}}L{0.75cm}@{\hspace{0.08cm}}L{1.55cm}@{\hspace{0.08cm}}L{0.9cm}@{}}
+\toprule
+\textbf{题号} & \textbf{中文短语} & \textbf{提示词} & \textbf{我的作答} & \textbf{正确答案} & \textbf{判定} & \textbf{错误类型} & \textbf{二刷} \\
+\midrule
+1  & 被大学录取           & admit     & \W{be admitted \textbf{by} the college} & \A{be admitted \textbf{to} the college} & \NO & 介词搭配 & \checkmarkbox \\
+2  & 校准手表             & —         & \W{aimer} & \A{adjust the watch（make adjustment to）} & \NO & 词汇误记 & \checkmarkbox \\
+3  & 热爱做某事           & adore     & adore doing sth.      & — & \OK & — & \checkmarkbox \\
+4  & 摆架子               & —         & \W{（空白）}          & \A{put on airs}       & \NO & 未作答 & \checkmarkbox \\
+5  & 力争上游             & aim       & \W{（空白）}          & \A{aim higher}        & \NO & 未作答 & \checkmarkbox \\
+6  & 对…警觉 \STAR        & alert     & \W{be alert \textbf{of} sth.} & \A{be alert \textbf{to} sth.} & \NO & 介词搭配 & \checkmarkbox \\
+7  & 占…优势；占…上风 \STAR & advantage & \W{take advantage of over} & \A{have an advantage over} & \NO & 固定搭配 & \checkmarkbox \\
+8  & 遵医嘱 \STAR         & advice    & \W{take doctors advice} & \A{take the doctor's advice} & \NO & 固定搭配 & \checkmarkbox \\
+9  & 经济改革的拥护者 \STAR & —        & \W{advocate of finance reforming} & \A{advocate of economic reform} & \NO & 用词错误 & \checkmarkbox \\
+10 & 主张教师高薪         & advocate  & \W{advocate teachers' high \textbf{paying} salaries} & \A{advocate teachers' high salaries} & \NO & 多词 & \checkmarkbox \\
+11 & 绝不能等闲视之 \STAR  & afford    & \W{can't afford waiting to wait（两词均被红笔划去）} & \A{can't afford to ignore the warning} & \NO & 固定搭配 & \checkmarkbox \\
+12 & 更不用说             & —         & let alone             & — & \OK & — & \checkmarkbox \\
+13 & 未成年               & age       & \W{under age}         & \A{be under age（underage）} & \NO & 漏词 & \checkmarkbox \\
+14 & 助听器               & —         & \W{A（只写出冠词）} & \A{a hearing aid} & \NO & 未完成 & \checkmarkbox \\
+15 & 广播中，播放着       & —         & \W{on}                & \A{on the air}        & \NO & 未完成 & \checkmarkbox \\
+16 & 这里不允许吸烟。     & allow     & Smoking isn't allowed here & — & \OK & — & \checkmarkbox \\
+17 & 和…相处很好          & along     & get along well with …  & — & \OK & — & \checkmarkbox \\
+18 & 在报纸上登广告 \STAR  & —        & \W{advertise on the newspaper} & \A{put an advertisement in the newspaper} & \NO & 固定搭配 & \checkmarkbox \\
+19 & 决定事情的轻重缓急 \STAR & agenda & \W{decide the importance of agenda} & \A{set the agenda} & \NO & 固定搭配 & \checkmarkbox \\
+20 & 提早两周交付租金     & advance   & \W{pay rent \textbf{for} 2 weeks in advance} & \A{pay rent two weeks in advance} & \NO & 多词 & \checkmarkbox \\
+21 & 最先进的工业国家     & —         & the most advanced industrial country & — & \OK & — & \checkmarkbox \\
+22 & 他们很不赞同这个主意。 & against & \W{They're against this idea} & \A{They're \textbf{strongly} against this idea} & \NO & 漏词 & \checkmarkbox \\
+23 & 警察在追捕嫌疑犯人。 & after     & \W{The police are after the \textbf{suspect}（拼写不清）} & \A{The police are after the \textbf{suspect}} & \NO & 拼写错误 & \checkmarkbox \\
+24 & 他站在时代的前头。   & ahead     & \W{He's ahead of the age.（the 前有涂改残留 a）} & \A{He's ahead of the times} & \NO & 用词错误 & \checkmarkbox \\
+25 & 每八个小时设一次闹钟 \STAR & —   & \W{set an clock per 8 hours.（clock 划去、线下补 alarm）} & \A{set the alarm clock every 8 hours} & \NO & 固定搭配 & \checkmarkbox \\
+\bottomrule
+\end{tabular}}
+
+\vspace{0.3em}
+\noindent{\footnotesize\textbf{原卷旁注}：（一）第 4、5 行原卷无黑笔作答（仅红笔有答案），第 14、15 行只写了 \emph{A}／\emph{on}，重做前请对照 {\xeCJKsetup{CJKecglue={}}\texttt{phrase\_01\_p11\_20\_01\_原卷\_1.jpg}} 核对。（二）第 9 题学生写 \emph{finance reforming}，红笔上方补 \emph{Economy}，规范答案 \emph{advocate of economic reform}；第 10 题红笔只有划线与勾、未写替换词。（三）第 11 题 \emph{waiting}／\emph{wait} 均被红笔划去；第 24 题学生写 \emph{He's ahead of the age.}（\emph{the} 前有涂改残留的 \emph{a}），\emph{age} 非标准搭配，标准答 \emph{He's ahead of the times.}（仅见红斜线）。（四）第 23 题手写疑似 \emph{suspidam}，红笔订为 \emph{suspect}。（五）页顶红批 \emph{Guaranteed admission（保送）／college application（大学申请）} 系第 1 题近义补充。}
+
+\newpage
+\begin{center}
+{\Large\bfseries 错因归类与复盘}
+\end{center}
+\vspace{-0.4em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.8pt}}
+
+\vspace{0.5em}
+\noindent 说明：按错误性质归类 20 条错题，供汇总对账；逐条二刷结果见第 1 页「二刷」列。
+
+\vspace{0.5em}
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabular}{@{}p{4.6cm} p{10.3cm} c@{}}
+\toprule
+\textbf{错误类型} & \textbf{题号} & \textbf{条数} \\
+\midrule
+固定搭配错误 & {\small 7, 8, 11, 18, 19, 25} & 6 \\
+未作答／未完成 & {\small 4, 5, 14, 15} & 4 \\
+介词搭配（to / of） & {\small 1, 6} & 2 \\
+漏词 & {\small 13, 22} & 2 \\
+多词（多写了冗余词） & {\small 10, 20} & 2 \\
+用词错误（近义误用） & {\small 9, 24} & 2 \\
+词汇误记（写成他词） & {\small 2} & 1 \\
+拼写错误 & {\small 23} & 1 \\
+\midrule
+\textbf{合计} & \textbf{20 条} & \textbf{20} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.5em}
+\noindent\textbf{关联知识点标签}
+\vspace{0.25em}
+
+\noindent\begin{tabular}{@{}p{8.2cm}@{\hspace{0.4cm}}p{8.2cm}@{}}
+\begin{minipage}[t]{\linewidth}
+\small
+\STAR\ \textbf{介词搭配}：be admitted \textbf{to}、be alert \textbf{to}（不是 by / of）\\[0.2em]
+\STAR\ \textbf{固定搭配}：have an advantage \textbf{over}、put an advertisement \textbf{in} the newspaper、set the agenda、can't afford \textbf{to} do、take/follow the doctor's advice\\[0.2em]
+\STAR\ \textbf{advocate 用法}：advocate（doing）sth.；advocate of economic reform
+\end{minipage} &
+\begin{minipage}[t]{\linewidth}
+\small
+\STAR\ \textbf{时段与频率}：pay rent two weeks \textbf{in advance}（不用 for）；set the alarm clock \textbf{every} 8 hours\\[0.2em]
+\STAR\ \textbf{程度副词}：be \textbf{strongly} against\\[0.2em]
+\STAR\ \textbf{冠词与拼写}：\textbf{a} hearing aid（不用 an）；suspect（拼写）\\[0.2em]
+\STAR\ \textbf{范围}：小蓝短语 P11--20（a- 家族：admit / advantage / advice / advocate / afford / age / agenda / advance）
+\end{minipage} \\
+\end{tabular}
+
+\vspace{0.65em}
+\noindent\fcolorbox{black!15}{black!4}{%
+  \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    \textbf{复盘记录}\\[0.35em]
+    最薄弱的板块：\underline{\hspace{9.0cm}}\\[0.55em]
+    主要错误原因：\checkmarkbox 固定搭配不牢\quad \checkmarkbox 介词记混\quad \checkmarkbox 漏词/多词\quad \checkmarkbox 用词/拼写\quad \checkmarkbox 空白未答\\[0.55em]
+    本次复习的改进措施：\underline{\hspace{10.1cm}}\\[0.55em]
+    \hspace{3.2em}\underline{\hspace{10.1cm}}\\[0.55em]
+    下次复习日期：\underline{\hspace{2.2cm}}\qquad
+    当前掌握度：\checkmarkbox 仍薄弱\quad \checkmarkbox 基本掌握\quad \checkmarkbox 已掌握
+  }}
+
+\end{document}

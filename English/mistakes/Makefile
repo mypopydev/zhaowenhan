@@ -4,6 +4,9 @@
 #   vocab_NN_<范围>_01.tex              错词订正表            —— 2 页
 #   vocab_NN_<范围>_01_recheck_*.tex     二刷卷 中→英 / 英→中 / 答案 —— 各 1 页
 #   vocab_NN_<范围>_01_原卷*.jpg         原卷扫描件（归档，不参与编译）
+#   phrase_NN_<范围>_01.tex             短语默写订正表        —— 2 页
+#   phrase_NN_<范围>_01_recheck_*.tex    二刷卷 中→英 / 英→中 / 答案 —— 各 1 页
+#   phrase_NN_<范围>_01_原卷*.jpg        原卷扫描件（归档，不参与编译）
 #   tense_voice_01.tex                  时态语态错题重做      —— 3 页
 #
 # 常用命令：
@@ -55,14 +58,16 @@ $(LOG): %.log: %.tex
 	@$(MAKE) --no-print-directory -B $(@:.log=.pdf) >/dev/null 2>&1
 
 # ---- 校验 ----
+# 页数预期：各套订正表 2 页；二刷卷 1 页；时态语态 3 页
 check: all $(LOG)
 	@fail=0; n=0; \
 	for f in $(PDF); do \
 		n=$$((n+1)); \
 		log="$${f%.pdf}.log"; \
 		p=$$($(PDFINFO) "$$f" 2>/dev/null | awk '/^Pages/{print $$2}'); \
-		if [[ "$$f" == *_recheck_* ]]; then want=1; \
-		elif [[ "$$f" == "tense_voice_01.pdf" ]]; then want=3; \
+		want=2; \
+		if [[ "$$f" == "tense_voice_01.pdf" ]]; then want=3; \
+		elif [[ "$$f" == *_recheck_* ]]; then want=1; \
 		else want=2; fi; \
 		if [ ! -f "$$log" ]; then bad=日志缺失; \
 		else bad=$$(grep -cE 'Overfull|Underfull|Missing character' "$$log"); fi; \

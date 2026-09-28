@@ -78,9 +78,9 @@ def main() -> int:
     check(all((p.with_suffix(".pdf")).exists() for p in tex),
           f"{len(tex)} 份 tex 都有对应 PDF")
 
-    print("\n=== 3. 三套默写的结构 ===")
-    sets = re.findall(r"`(vocab_\d\d_[a-z_0-9]+)`", readme)
-    check(len(sets) == 3, f"README 列出的套数 = 3", f"实际 {sets}")
+    print("\n=== 3. 各套材料的结构 ===")
+    sets = re.findall(r"`((?:vocab|phrase)_\d\d_[a-z_0-9]+)`", readme)
+    check(len(sets) == 4, f"README 列出的套数 = 4", f"实际 {sets}")
     for pre in sets:
         files = {p.name for p in HERE.glob(f"{pre}*")}
         need = {f"{pre}.tex", f"{pre}.pdf",
