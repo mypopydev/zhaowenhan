@@ -1216,16 +1216,29 @@ PDF 里直接消失，不留空白、也不报错。所以 `make test` / `make a
   （这条精确、无噪声，能抓住漏单元、没生效的 `**`、被断行点拆坏的 `\subsetneq` 之类）；
   **B. 小节与特征词齐不齐、`★▲⊕①–⑳` 计数是否与 README 一致**（PDF 侧靠 `pdftotext` 抽，
   而它对密集多列宽表会并/拆/丢几个字符——实测净差 −14 个数字、占 0.3%，故这一闸只报不判）。
-- **可复现构建（2026-09-28 加）**：`源码/Makefile` 给上面这两遍编译**钉死了 `SOURCE_DATE_EPOCH`**
-  （取值＝本报告页脚那个口径日期、即 `README转tex.py` 的 `RUN_DATE` 的**当天零点**），于是
-  `溯源.tex` 不变时两次 `make trace` 出的 PDF **逐字节相同**——不再有「只差 `CreationDate` 的
-  假修改」（此前每跑一次 `make trace` 就把 PDF 时间戳刷新一次，`git status` 里常驻一条噪声；
-  判它「是否只差元数据」的老办法是 `pdftoppm` 逐页**像素比对**，别只看字节）。
-  实测（TeX Live 2026）**只设这一项就够**，不必像 `mistakes/` 那样再注入 `pdf:docinfo`
-  special——那是为了覆盖 XeTeX 写进 `/Creator` 的编译时刻，而这一版的 `/Creator` 已是固定的
-  「LaTeX with hyperref」。**这条闸由 `计数核对.py` 盯着**：Makefile 里的 epoch 与 `RUN_DATE`
-  必须是同一天（改一处要改两处）。**注意 `make test/ans/compact/one` 这几条链仍未钉 epoch**，
-  故重编某一套卷子仍会产生「只差时间戳」的 diff。
+- **可复现构建（2026-09-28 加，六条链都吃）**：源码不变时**反复编译出的 PDF 逐字节相同**，
+  于是「某份 PDF 进了 `git status`」就等于「内容真的变了」，不再有「只差时间戳」的假修改。
+  一共三件事，缺一不可——
+
+  1. **钉死 `SOURCE_DATE_EPOCH`**（`源码/Makefile`，取值＝口径日期 `RUN_DATE` 的**当天零点**
+     ——2026-09-28 → `1790553600`）：xdvipdfmx 认它，把 `/CreationDate` 与 `/ID` 定死；
+  2. **每遍编译前清掉该卷的辅助文件**（`.aux/.out/.toc/.log`）：`xelatex` 单遍编译会读上一次
+     留在盘上的 `.aux`，于是同一份源码会因「上一次编的是哪一版」而出不同字节（实测脏状态
+     `1606d04f…`／干净状态 `1c7f3d40…`，两者**正文与像素完全相同**、只差元数据；干净状态连编
+     三遍字节全同，是不动点）。本库各卷都没有 `\ref`／`\label`／目录，故单遍＝内容正确；
+     **若将来某卷开始用 `\ref` 或目录，要改成「清干净后编两遍」**，否则引用会印成 `??`；
+  3. **`common.sty` 里钉住 `/Creator`**：XeTeX 默认往 `/Creator` 写**编译时刻、精确到分**
+     （如「 XeTeX output 2026.09.29:0654」），**这一项不归 `SOURCE_DATE_EPOCH` 管**——只差 4 个
+     字节，正文与逐页像素都完全相同、肉眼与像素比对都查不出，但足以让 git 里冒出假 diff。
+     用一句 `\special{pdf:docinfo<</Creator(Mathematics/papers - XeLaTeX)>>}` 覆盖掉即可
+     （写在 `\AtBeginDocument` 里）。
+
+  `溯源.tex` 那条链本来就不受第 3 条影响（它载入了 hyperref，`/Creator` 早已是固定的
+  「LaTeX with hyperref」），且它靠**两遍**编译收敛 `\pageref{LastPage}`，故不清辅助文件。
+  **两条闸由 `计数核对.py` 盯着**：Makefile 里的 epoch 与 `RUN_DATE` 必须是同一天；
+  `common.sty` 里那条 `pdf:docinfo` special 必须还在（口令：可复现构建）。
+  判「是否只差元数据」的老办法仍是 `pdftoppm` 逐页**像素比对**——但上面第 3 条说明
+  **像素比对也对 `/Creator` 是盲的**，所以别拿它当可复现的验收手段，直接比 md5。
 
 **`make bundle` 出合订打印本。** `工具/合并试卷.py` 把 `试卷紧凑/` 下 28 份成品按**文件名序**
 （`高一02`…`高一28`、`高一a`、`高一b`、`高一c` —— 字典序正好给出这个顺序）合成

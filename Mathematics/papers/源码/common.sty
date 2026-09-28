@@ -31,6 +31,18 @@
 % 中文标点
 \AtBeginDocument{\xeCJKsetup{CJKecglue={\hskip 0.15em plus 0.05em}}}
 
+% ===== 可复现构建：把 PDF 的 /Creator 钉死（2026-09-28）=====
+% XeTeX 默认往 /Creator 写**编译时刻、精确到分**（如「 XeTeX output 2026.09.29:0654」），
+% 而这一项**不归 SOURCE_DATE_EPOCH 管**——于是同一份源码跨一分钟重编，PDF 就多出几字节差异
+% （实测只差 4 个字节、正文与像素完全相同，但足以让 git 里冒出假 diff）。
+% 这里用 pdf:docinfo special 覆盖成固定串（xdvipdfmx 认这个 special，写在 \AtBeginDocument 即可）；
+% 日期那一半由 源码/Makefile 的 SOURCE_DATE_EPOCH 负责（它还管着 /ID）——两者合起来才是
+% 「源码不变 ⇒ PDF 逐字节相同」。溯源报告那份本来就不受影响：它载入了 hyperref，
+% /Creator 早已被 hyperref 写成固定的「LaTeX with hyperref」。
+% 计数核对.py 有一条断言盯着这里还在不在（口令：可复现构建）。
+% 串里只用 ASCII（`special` 的内容进 PDF 字符串，放宏会被原样展开成乱码——踩过）。
+\AtBeginDocument{\special{pdf:docinfo<</Creator(Mathematics/papers - XeLaTeX)>>}}
+
 % 试卷版/答案版控制
 % 用法 1（命令行，本仓库 Makefile 的 ans / one 目标走的就是这条）：
 %        xelatex "\def\isanswer{1}\input{高一06_延安中学_周末作业1.tex}"

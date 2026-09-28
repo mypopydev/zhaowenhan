@@ -48,6 +48,29 @@ DEST_ANS  := ../答案
 DEST_TRACE := ../溯源
 TEX       := $(sort $(wildcard 高一*.tex))
 
+# ===== 可复现构建：钉死 SOURCE_DATE_EPOCH（2026-09-28 加）=====
+# **全部 xelatex 调用都带上它**（test／ans／one／compact／one-c／溯源 六条链）：
+# xdvipdfmx 认这个变量，把 /CreationDate、/ID 一次定死，于是**源码不变时反复编译出的 PDF
+# 逐字节相同**——`make trace`、`make one` 这些目标重跑多少遍都不再往 `git status` 里塞
+# 「只差时间戳」的假修改（于是「某份 PDF 进了 status」就等于「内容真的变了」）。
+# 判「是否只差元数据」仍以 `pdftoppm` 逐页像素比对为准（正文指纹对 \overline、A↔B 换位是盲的），
+# 见 README「编译方式」。
+# 实测（TeX Live 2026）**只设这一项就够**：不必像 mistakes/ 那样再注入 pdf:docinfo special
+# ——那是为了覆盖 XeTeX 写进 /Creator 的编译时刻，而这一版 /Creator 已是固定的
+# 「LaTeX with hyperref」；本库源码里也没有 \today 之类会随日期变化的排版。
+# 取值 = 全库统一的构建基准日＝口径日期（工具/README转tex.py 的 RUN_DATE）的**当天零点**：
+# 人可读 2026-09-28、epoch 1790553600（UTC 零点）。
+# ⚠ 改 RUN_DATE 时这里要跟着改——计数核对.py 有一条断言比对两者是不是同一天。
+SOURCE_DATE_EPOCH := 1790553600
+
+# 每遍编译前**清掉该卷的辅助文件**（.aux/.out/.toc/.log）——这是可复现的最后一块：
+# xelatex 单遍编译读上一次留在盘上的 .aux，于是同一份源码会因「上一次编的是哪一版」而出不同字节
+# （实测：脏状态 1606d04f…／干净状态 1c7f3d40…，两者**正文与像素完全相同**、只差元数据；
+# 干净状态连编三遍字节全同，是不动点）。本库各卷都没有 \ref/\label/目录（只有溯源报告用
+# \pageref{LastPage}），所以单遍＝内容正确，可以放心从干净状态起；溯源报告那条链**不动**
+# （它靠两遍收敛 \pageref）。顺带好处：缺字检查读的 .log 一定是本次编译写的。
+# ⚠ 若将来某卷开始用 \ref/目录，要改成「清干净后编两遍」，否则引用会印成 ??。
+
 # 缺字检查（test / ans / one 共用）：扫 $$LF.log，命中 Missing character 即中止。
 # 调用前须把 LF 设成当前这套的名字（不含 .tex），如 LF=$$b。
 # 写成单行是为了让 shell 所见与 make 展开一致（多行续行在变量里会被折叠）。
@@ -62,7 +85,8 @@ test:
 	@n=0; for f in $(TEX); do \
 		b=$${f%.tex}; LF=$$b; n=$$((n+1)); \
 		printf '  试卷版  %s\n' "$$b"; \
-		$(XELATEX) $(OPTS) "$$f" >/dev/null || { echo "❌ $$b 编译失败"; exit 1; }; \
+		rm -f "$$b".aux "$$b".out "$$b".toc "$$b".log; \
+		SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) $(XELATEX) $(OPTS) "$$f" >/dev/null || { echo "❌ $$b 编译失败"; exit 1; }; \
 		$(FONTCHK); \
 		cp "$$b.pdf" "$(DEST_TEST)/$${b}_试卷.pdf" || exit 1; \
 		rm -f "$$b.pdf"; \
@@ -74,7 +98,8 @@ ans:
 	@n=0; for f in $(TEX); do \
 		b=$${f%.tex}; LF=$$b; n=$$((n+1)); \
 		printf '  答案版  %s\n' "$$b"; \
-		$(XELATEX) $(OPTS) "\def\isanswer{1}\input{$$f}" >/dev/null || { echo "❌ $$b 编译失败"; exit 1; }; \
+		rm -f "$$b".aux "$$b".out "$$b".toc "$$b".log; \
+		SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) $(XELATEX) $(OPTS) "\def\isanswer{1}\input{$$f}" >/dev/null || { echo "❌ $$b 编译失败"; exit 1; }; \
 		$(FONTCHK); \
 		cp "$$b.pdf" "$(DEST_ANS)/$${b}_答案.pdf" || exit 1; \
 		rm -f "$$b.pdf"; \
@@ -84,8 +109,10 @@ ans:
 one:
 	@if [ -z "$(F)" ]; then echo "用法: make one F=高一02_大同中学_集合综合练习"; exit 1; fi
 	@test -f "$(F).tex" || { echo "无此文件: $(F).tex"; exit 1; }
-	@LF="$(F)"; $(XELATEX) $(OPTS) "$(F).tex" >/dev/null && $(FONTCHK) && cp "$(F).pdf" "$(DEST_TEST)/$(F)_试卷.pdf" || exit 1
-	@LF="$(F)"; $(XELATEX) $(OPTS) "\def\isanswer{1}\input{$(F).tex}" >/dev/null && $(FONTCHK) && cp "$(F).pdf" "$(DEST_ANS)/$(F)_答案.pdf" || exit 1
+	@rm -f "$(F)".aux "$(F)".out "$(F)".toc "$(F)".log
+	@LF="$(F)"; SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) $(XELATEX) $(OPTS) "$(F).tex" >/dev/null && $(FONTCHK) && cp "$(F).pdf" "$(DEST_TEST)/$(F)_试卷.pdf" || exit 1
+	@rm -f "$(F)".aux "$(F)".out "$(F)".toc "$(F)".log
+	@LF="$(F)"; SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) $(XELATEX) $(OPTS) "\def\isanswer{1}\input{$(F).tex}" >/dev/null && $(FONTCHK) && cp "$(F).pdf" "$(DEST_ANS)/$(F)_答案.pdf" || exit 1
 	@rm -f "$(F).pdf"
 	@echo "✅ $(F) 两版已更新"
 
@@ -94,7 +121,8 @@ compact:
 	@n=0; for f in $(TEX); do \
 		b=$${f%.tex}; LF=$$b; n=$$((n+1)); \
 		printf '  紧凑版  %s\n' "$$b"; \
-		$(XELATEX) $(OPTS) "\def\iscompact{1}\input{$$f}" >/dev/null || { echo "❌ $$b 编译失败"; exit 1; }; \
+		rm -f "$$b".aux "$$b".out "$$b".toc "$$b".log; \
+		SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) $(XELATEX) $(OPTS) "\def\iscompact{1}\input{$$f}" >/dev/null || { echo "❌ $$b 编译失败"; exit 1; }; \
 		$(FONTCHK); \
 		cp "$$b.pdf" "$(DEST_COMPACT)/$${b}_试卷.pdf" || exit 1; \
 		rm -f "$$b.pdf"; \
@@ -105,7 +133,8 @@ one-c:
 	@if [ -z "$(F)" ]; then echo "用法: make one-c F=高一02_大同中学_集合综合练习"; exit 1; fi
 	@test -f "$(F).tex" || { echo "无此文件: $(F).tex"; exit 1; }
 	@mkdir -p "$(DEST_COMPACT)"
-	@LF="$(F)"; $(XELATEX) $(OPTS) "\def\iscompact{1}\input{$(F).tex}" >/dev/null && $(FONTCHK) && cp "$(F).pdf" "$(DEST_COMPACT)/$(F)_试卷.pdf" || exit 1
+	@rm -f "$(F)".aux "$(F)".out "$(F)".toc "$(F)".log
+	@LF="$(F)"; SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) $(XELATEX) $(OPTS) "\def\iscompact{1}\input{$(F).tex}" >/dev/null && $(FONTCHK) && cp "$(F).pdf" "$(DEST_COMPACT)/$(F)_试卷.pdf" || exit 1
 	@rm -f "$(F).pdf"
 	@echo "✅ $(F) 紧凑版已更新"
 
@@ -147,18 +176,7 @@ trace: 溯源.pdf
 	@python3 $(TOOLS)/溯源比对.py
 	@echo "✅ 溯源报告 -> $(DEST_TRACE)/题目溯源.pdf"
 
-# ===== 溯源报告的可复现构建（2026-09-28 加）=====
-# 钉死 SOURCE_DATE_EPOCH：xdvipdfmx 认它，把 /CreationDate、/ID 这些一次定死，
-# 于是 溯源.tex 不变时两次编译**逐字节相同**——`make trace` 不再产生「只有时间戳不同」的 diff。
-# 实测（TeX Live 2026）**只设这一项就够**：不必像 mistakes/ 那样再注入 pdf:docinfo special
-# （那是为了覆盖 XeTeX 写进 /Creator 的编译时刻，而这一版 /Creator 已是固定的
-# 「LaTeX with hyperref」）。若不设，每次重编 PDF 的 CreationDate 都是当下时刻，
-# git 里就常驻一条假的「已修改」。
-# 取值 = 溯源报告页脚那个口径日期（README转tex.py 的 RUN_DATE）**当天零点**：
-# 人可读日期 2026-09-28、epoch 1790553600（UTC 零点）。
-# ⚠ 改 RUN_DATE 时这里要一起改——计数核对.py 有一条断言比对两者是不是同一天。
-SOURCE_DATE_EPOCH := 1790553600
-
+# 溯源报告同样走可复现构建（SOURCE_DATE_EPOCH 定义在文件上半部分的变量区，六条链共用）
 溯源.pdf: 溯源.tex common.sty
 	@# 两遍：第二遍才有目录与交叉引用。每遍都跑缺字检查（★▲⊕ 这些最容易静默丢）。
 	@LF=溯源; SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) $(XELATEX) $(OPTS) 溯源.tex >/dev/null && $(FONTCHK) || exit 1

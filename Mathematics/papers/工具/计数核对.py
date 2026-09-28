@@ -447,6 +447,17 @@ def check_repro():
     d = datetime.datetime.fromtimestamp(int(m1.group(1)), datetime.timezone.utc).strftime('%Y-%m-%d')
     add('溯源可复现构建：SOURCE_DATE_EPOCH ↔ 口径日期', m2.group(1), d,
         'Makefile 里的 epoch 与 README转tex.py 的 RUN_DATE 必须是同一天（改一处要改两处）')
+    # 可复现构建的另一半：XeTeX 默认往 /Creator 写**编译时刻、精确到分**，SOURCE_DATE_EPOCH
+    # 管不到它——靠 common.sty 里那条 pdf:docinfo special 覆盖成固定串。那条 special 一旦被删
+    # 或改坏，「重编一遍 ⇒ 字节不变」就静默失效（实测只差 4 个字节，正文与逐页像素都完全相同，
+    # 肉眼看不出、像素比对也查不出），故在这里断言它还在。
+    sty = io.open(os.path.join(PAPERS, '源码', 'common.sty'), encoding='utf-8').read()
+    m3 = re.search(r'\\special\{pdf:docinfo<<(/Creator\([^)]*\))', sty)
+    if not m3:
+        raise AssertionError('源码/common.sty 里找不到钉 /Creator 的 pdf:docinfo special'
+                             '（可复现构建的一半靠它，见该处注释与 README「编译方式」）')
+    add('可复现构建：common.sty 里钉住了 /Creator', '/Creator(Mathematics/papers - XeLaTeX)',
+        m3.group(1), 'XeTeX 默认写的编译时刻（到分）不归 SOURCE_DATE_EPOCH 管')
 
 
 # ----------------------------------------------------------------- ① 机判清单
