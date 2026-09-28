@@ -92,6 +92,8 @@ MODULES = ['集合与常用逻辑用语', '函数与导数', '三角函数', '�
 
 # 对号副本数：高一16≡高一b、高一18≡高一c，一套副本只算一套（README「试卷清单」的口径）
 COPIES = 2
+# 对号副本的**名单**（与 COPIES 互为印证；加卷时若多了一对副本，两处都要改）。
+COPY_NAMES = ('高一16', '高一18')
 
 results = []          # (名称, README 值, 实测值, 说明)
 
@@ -328,6 +330,67 @@ def check_zhenti(md):
     add('真题出处：算式两端的道数与条数', (dd_ar, tj_ar), (zb_dd, zb_tj))
 
 
+# ----------------------------------------------------------------- 附加题账目
+# 「附加题专查」一节原先写「全稿共 5 份卷带附加题、合计 14 道」——那个「全稿」随加卷过期了
+# （2026-09-28 查：实为 7 份 / 22 道）。份数与题数都按源码里 `\bigsec{…附加…}` 那一段的
+# **顶层** `\item` 数出来（嵌套小问不算；注意 `\item（本题 5 分）` 这类 `\item` 后直接接全角
+# 括号、无空格，所以判据用 `\\item(?![A-Za-z])`），对号副本（高一16≡高一b）不计入套数。
+FUJIA_HEAD = re.compile(r'\\bigsec\{[^}]*附加[^}]*\}')
+
+
+def fujia_facts():
+    """{卷号: 附加题道数}——只收真有 `\\bigsec{…附加…}` 的源码（含对号副本）。"""
+    out = {}
+    for f in srcs():
+        body_ = body(load(f))
+        m = FUJIA_HEAD.search(body_)
+        if not m:
+            continue
+        rest = body_[m.end():]
+        b = rest.index('\\begin{enumerate}') + len('\\begin{enumerate}')
+        depth, i = 1, b
+        while i < len(rest) and depth > 0:          # 找与顶层 enumerate 配对的那个 \end
+            if rest.startswith('\\begin{enumerate}', i):
+                depth += 1; i += len('\\begin{enumerate}')
+            elif rest.startswith('\\end{enumerate}', i):
+                depth -= 1
+                if depth == 0:
+                    break
+                i += len('\\end{enumerate}')
+            else:
+                i += 1
+        n = d = 0
+        for line in rest[b:i].split('\n'):
+            if re.match(r'\s*\\begin\{enumerate\}', line):
+                d += 1
+            elif re.match(r'\s*\\end\{enumerate\}', line):
+                d -= 1
+            elif d == 0 and re.match(r'\\item(?![A-Za-z])', line):
+                n += 1
+        out[os.path.basename(f).split('_')[0]] = n
+    return out
+
+
+def check_fujia(md):
+    counts = fujia_facts()
+    assert len(COPY_NAMES) == COPIES, 'COPY_NAMES 与 COPIES 不一致（加卷时两处都要改）'
+    real = {k: v for k, v in counts.items() if k not in COPY_NAMES}   # 套：排除对号副本
+    m = re.search(r'全稿现共 (\d+) 份卷带附加题、合计 (\d+) 道', md)
+    if not m:
+        raise AssertionError('README 里找不到这处断言：附加题的全稿份数／题数')
+    add('附加题：全稿份数（↔ 源码）', int(m.group(1)), len(real),
+        '、'.join(f'{k} {v}' for k, v in sorted(real.items())))
+    add('附加题：全稿题数（↔ 源码）', int(m.group(2)), sum(real.values()))
+    m2 = re.search(r'最早带附加题的五份、合计 (\d+) 道\*\*：', md)
+    if not m2:
+        raise AssertionError('README 里找不到这处断言：附加题专查那节的「五份、合计 N 道」')
+    sent = md[m2.end():md.index('。', m2.end())]
+    names = re.findall(r'`(高一[0-9a-c]+)`', sent)
+    add('附加题：该节点名的卷都真有附加题', [], [n for n in names if n not in counts])
+    add('附加题：该节五份的题数（↔ 源码）', int(m2.group(1)),
+        sum(counts[n] for n in names if n in counts), '、'.join(names))
+
+
 # ----------------------------------------------------------------- 源码侧
 def check_source(md):
     raws = [(f, load(f)) for f in srcs()]      # 每个文件只读一次，后文都从这份文本上算
@@ -484,6 +547,7 @@ def main():
         check_source(md)
         check_output(md)
         check_zhenti(md)
+        check_fujia(md)
     except AssertionError as e:
         print(f'❌ {e}')
         print('   处理：改了 README 措辞就要同步改本脚本里的正则（见文件头「设计 1」）。')
