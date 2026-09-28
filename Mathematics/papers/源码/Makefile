@@ -147,10 +147,22 @@ trace: 溯源.pdf
 	@python3 $(TOOLS)/溯源比对.py
 	@echo "✅ 溯源报告 -> $(DEST_TRACE)/题目溯源.pdf"
 
+# ===== 溯源报告的可复现构建（2026-09-28 加）=====
+# 钉死 SOURCE_DATE_EPOCH：xdvipdfmx 认它，把 /CreationDate、/ID 这些一次定死，
+# 于是 溯源.tex 不变时两次编译**逐字节相同**——`make trace` 不再产生「只有时间戳不同」的 diff。
+# 实测（TeX Live 2026）**只设这一项就够**：不必像 mistakes/ 那样再注入 pdf:docinfo special
+# （那是为了覆盖 XeTeX 写进 /Creator 的编译时刻，而这一版 /Creator 已是固定的
+# 「LaTeX with hyperref」）。若不设，每次重编 PDF 的 CreationDate 都是当下时刻，
+# git 里就常驻一条假的「已修改」。
+# 取值 = 溯源报告页脚那个口径日期（README转tex.py 的 RUN_DATE）**当天零点**：
+# 人可读日期 2026-09-28、epoch 1790553600（UTC 零点）。
+# ⚠ 改 RUN_DATE 时这里要一起改——计数核对.py 有一条断言比对两者是不是同一天。
+SOURCE_DATE_EPOCH := 1790553600
+
 溯源.pdf: 溯源.tex common.sty
 	@# 两遍：第二遍才有目录与交叉引用。每遍都跑缺字检查（★▲⊕ 这些最容易静默丢）。
-	@LF=溯源; $(XELATEX) $(OPTS) 溯源.tex >/dev/null && $(FONTCHK) || exit 1
-	@LF=溯源; $(XELATEX) $(OPTS) 溯源.tex >/dev/null && $(FONTCHK) || exit 1
+	@LF=溯源; SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) $(XELATEX) $(OPTS) 溯源.tex >/dev/null && $(FONTCHK) || exit 1
+	@LF=溯源; SOURCE_DATE_EPOCH=$(SOURCE_DATE_EPOCH) $(XELATEX) $(OPTS) 溯源.tex >/dev/null && $(FONTCHK) || exit 1
 	@# 注意 $$( ) ：写 $( ) 会被 make 当成变量展开（踩过，打印出来是空的）
 	@printf '  缺字 %s 处 / Overfull %s 处 / 页数 %s\n' \
 	  "$$(grep -ac 'Missing character' 溯源.log)" \

@@ -1216,6 +1216,16 @@ PDF 里直接消失，不留空白、也不报错。所以 `make test` / `make a
   （这条精确、无噪声，能抓住漏单元、没生效的 `**`、被断行点拆坏的 `\subsetneq` 之类）；
   **B. 小节与特征词齐不齐、`★▲⊕①–⑳` 计数是否与 README 一致**（PDF 侧靠 `pdftotext` 抽，
   而它对密集多列宽表会并/拆/丢几个字符——实测净差 −14 个数字、占 0.3%，故这一闸只报不判）。
+- **可复现构建（2026-09-28 加）**：`源码/Makefile` 给上面这两遍编译**钉死了 `SOURCE_DATE_EPOCH`**
+  （取值＝本报告页脚那个口径日期、即 `README转tex.py` 的 `RUN_DATE` 的**当天零点**），于是
+  `溯源.tex` 不变时两次 `make trace` 出的 PDF **逐字节相同**——不再有「只差 `CreationDate` 的
+  假修改」（此前每跑一次 `make trace` 就把 PDF 时间戳刷新一次，`git status` 里常驻一条噪声；
+  判它「是否只差元数据」的老办法是 `pdftoppm` 逐页**像素比对**，别只看字节）。
+  实测（TeX Live 2026）**只设这一项就够**，不必像 `mistakes/` 那样再注入 `pdf:docinfo`
+  special——那是为了覆盖 XeTeX 写进 `/Creator` 的编译时刻，而这一版的 `/Creator` 已是固定的
+  「LaTeX with hyperref」。**这条闸由 `计数核对.py` 盯着**：Makefile 里的 epoch 与 `RUN_DATE`
+  必须是同一天（改一处要改两处）。**注意 `make test/ans/compact/one` 这几条链仍未钉 epoch**，
+  故重编某一套卷子仍会产生「只差时间戳」的 diff。
 
 **`make bundle` 出合订打印本。** `工具/合并试卷.py` 把 `试卷紧凑/` 下 28 份成品按**文件名序**
 （`高一02`…`高一28`、`高一a`、`高一b`、`高一c` —— 字典序正好给出这个顺序）合成

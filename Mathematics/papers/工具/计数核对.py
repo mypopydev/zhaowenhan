@@ -61,6 +61,7 @@ README 的「目录结构」「试卷清单」「答案版为什么这样排」�
 
 退出码：全部一致 0，有任一不一致 1（经 `make docs` 调用时为 2，那是 make 的惯例，判成败只看非 0）。
 """
+import datetime
 import glob
 import importlib
 import io
@@ -431,6 +432,23 @@ def check_tongti(md, reg):
         f'{n_grp} 组；放行 {len(TONGPAI_NOT_SAME)} 个已注明「不是同一道题」的成员')
 
 
+# ----------------------------------------------------------------- 溯源可复现构建
+# 溯源报告用固定 SOURCE_DATE_EPOCH 编译（见 源码/Makefile 的说明），PDF 的 /CreationDate 因此
+# 恒等于那个 epoch。这里断言：**Makefile 里钉死的 epoch 与 README转tex.py 的口径日期（RUN_DATE）
+# 是同一天**——两处都是「本轮口径的日期」，改一处忘另一处，PDF 元数据就会与页脚的口径标签自相矛盾。
+def check_repro():
+    mf = io.open(os.path.join(PAPERS, '源码', 'Makefile'), encoding='utf-8').read()
+    gen = io.open(os.path.join(HERE, 'README转tex.py'), encoding='utf-8').read()
+    m1 = re.search(r'(?m)^SOURCE_DATE_EPOCH\s*:?=\s*(\d+)', mf)
+    m2 = re.search(r"(?m)^RUN_DATE\s*=\s*'(\d{4}-\d{2}-\d{2})'", gen)
+    if not m1 or not m2:
+        raise AssertionError('读不到 源码/Makefile 的 SOURCE_DATE_EPOCH 或 README转tex.py 的 RUN_DATE'
+                             '（溯源报告的可复现构建靠这两处，改了名字要同步改这里的正则）')
+    d = datetime.datetime.fromtimestamp(int(m1.group(1)), datetime.timezone.utc).strftime('%Y-%m-%d')
+    add('溯源可复现构建：SOURCE_DATE_EPOCH ↔ 口径日期', m2.group(1), d,
+        'Makefile 里的 epoch 与 README转tex.py 的 RUN_DATE 必须是同一天（改一处要改两处）')
+
+
 # ----------------------------------------------------------------- ① 机判清单
 # ① 「与高考库比对」的命中清单（工具/真题命中清单.txt，由 题目溯源.py 生成）里，**每一个报过的
 # 本库题位都必须在 README 里 disposition**：要么登记进「真题出处」表（说明它确实是那道真题的
@@ -709,6 +727,7 @@ def main():
         check_zhenti(md)
         check_hitlist(md, zhenti_slots([r[0] for r in zhenti_rows(md)]))
         check_fujia(md)
+        check_repro()
     except AssertionError as e:
         print(f'❌ {e}')
         print('   处理：改了 README 措辞就要同步改本脚本里的正则（见文件头「设计 1」）。')
