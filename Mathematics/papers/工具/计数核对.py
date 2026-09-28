@@ -221,6 +221,113 @@ def add(name, expected, actual, note=''):
     results.append((name, expected, actual, note))
 
 
+# ----------------------------------------------------------------- 真题出处账目
+# 「真题出处」那张表是这一族数的**唯一真值源**：道数／条数／题位都从它逐行数出来。这三个数
+# 在 README 里各写三遍（「核对摘要」那一行、本节标题、本节正文），此前**一处闸都没有**，
+# 2026-09-28 才发现它们错了一整轮——上一轮（并入高一37—高一40）只加了表行、没改本节标题
+# （标题停在「36 道／41 条／45 个题位」），而摘要那句「三个数与表逐行数出来的完全相同」
+# 当时已是假的（摘要写 48 个题位、表逐行数是 50）。故这里按表全量复算，再与三处声明互校。
+ZHENTI_HEAD = '| 本库题目 | 出处 | 关系 |'
+# 表首格里的「本库题位」形态：高一06 第 9 题 / 高一15 附加 17 题 / 高一a 附加题第 2 题
+ZHENTI_SLOT = re.compile(r'高一[0-9a-c]+\s*(?:附加)?\s*(?:题)?\s*(?:第)?\s*\d+\s*题')
+
+
+def zhenti_facts(md):
+    """按「真题出处」表逐行数出：(表行数, 题位数, 原题照录数, 改编数, 借定义数)。
+
+    道数不在这里算——同一份卷里的两道不同真题（2009 北京卷（文）的「填空 6 孤立元」与
+    「选择 8」）无法只凭出处栏字符串机械区分，硬造一套归一化只会又添一处易碎的口径；
+    道数由正文那句 `a × 3 ＋ b × 2 ＋ c × 1` 的 a ＋ b ＋ c 给出，并与三处声明互相牵制
+    （任一处写错都会与另两处或与表对不上）。
+    """
+    lines = md.split('\n')
+    if lines.count(ZHENTI_HEAD) != 1:
+        raise AssertionError(f'README 里 `{ZHENTI_HEAD}` 应恰好出现一次，实为 {lines.count(ZHENTI_HEAD)} 次')
+    i = lines.index(ZHENTI_HEAD) + 2          # 跳过 `|---|` 分隔行
+    rows = []
+    while i < len(lines) and lines[i].startswith('|'):
+        rows.append([c.strip() for c in lines[i].strip().strip('|').split('|')])
+        i += 1
+    if len(rows) < 10:
+        raise AssertionError(f'「真题出处」表只读到 {len(rows)} 行，像是被改坏了')
+    n_row = len(rows)
+    n_slot = sum(len(ZHENTI_SLOT.findall(r[0])) for r in rows)
+    rel = [re.sub(r'[\*★▲◆◇●]', '', r[2]) for r in rows]
+    n_dd = sum(1 for r in rel if r.startswith('原题照录'))
+    n_bj = sum(1 for r in rel if r.startswith('借'))
+    return n_row, n_slot, n_dd, n_row - n_dd - n_bj, n_bj
+
+
+def _zhenti_g(pat, s, name, n=1, flags=0):
+    m = re.search(pat, s, flags)
+    if not m:
+        raise AssertionError(f'README 里找不到这处断言：{name}\n  正则：{pat}')
+    g = m.groups()
+    return int(g[0]) if n == 1 else tuple(int(x) for x in g[:n])
+
+
+def check_zhenti(md):
+    lines = md.split('\n')
+    n_row, n_slot, n_dd, n_gb, n_bj = zhenti_facts(md)
+    sm = next(l for l in lines if l.startswith('| 定到具体高考试卷 |'))      # 摘要那一行
+    ti = next(l for l in lines if l.startswith('### 能考据到的高考出处：'))    # 本节标题
+    zb = '\n'.join(lines[lines.index(ti) + 1:lines.index(ZHENTI_HEAD)])     # 本节正文
+
+    sm_dd = _zhenti_g(r'\*\*(\d+) 道真题\*\*', sm, '摘要：真题道数')
+    sm_tj, sm_dd2, sm_gb2, sm_bj2 = _zhenti_g(
+        r'\*\*(\d+) 条对应\*\*：原题照录 (\d+)、改编 (\d+)、借定义／借集合另出题 (\d+)',
+        sm, '摘要：条数／按关系分', n=4)
+    sm_tw = _zhenti_g(r'对应本库 \*\*(\d+) 个题位\*\*', sm, '摘要：题位数')
+    sm_3 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*三份\*\*', sm, '摘要：被三份用到的道数')
+    sm_2 = _zhenti_g(r'\*\*(\d+) 道\*\*各被两份用到', sm, '摘要：被两份用到的道数')
+
+    ti_dd, ti_tj, ti_tw = _zhenti_g(r'出处：(\d+) 道真题（(\d+) 条对应／(\d+) 个题位）',
+                                    ti, '节标题：道数/条数/题位', n=3)
+
+    zb_dd = _zhenti_g(r'\*\*真题有 (\d+) 道\*\*', zb, '节正文：真题道数')
+    zb_tw, zb_tj = _zhenti_g(r'对应本库 \*\*(\d+) 个题位\*\*、\*\*(\d+) 条对应关系\*\*',
+                             zb, '节正文：题位数/条数', n=2)
+    zb_dd2, zb_gb2, zb_bj2, zb_tj2 = _zhenti_g(
+        r'原题照录 \*\*(\d+)\*\* 条、改编 \*\*(\d+)\*\* 条、借定义／借集合另出题 \*\*(\d+)\*\* 条 ＝ (\d+) 条',
+        zb, '节正文：按关系分', n=4)
+    a3, b2, c1, tw_sum = _zhenti_g(
+        r'(\d+) × 3 ＋ (\d+) × 2 ＋ (\d+) × 1 ＝ \*\*(\d+) 个题位\*\*', zb, '节正文：题位算式', n=4)
+    dd_sum = a3 + b2 + c1
+    zb_3 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*三份\*\*试卷用到', zb, '节正文：被三份用到')
+    m2 = re.search(r'\*\*(\d+) 道\*\*各被两份用到（(.*?)）\s*\n\s*→', zb, re.S)
+    if not m2:
+        raise AssertionError('README 里找不到这处断言：节正文「被两份用到」及其名单')
+    zb_2, names2 = int(m2.group(1)), m2.group(2)
+    m3 = re.search(r'试卷用到（(.*?)），\s*\n', zb, re.S)
+    if not m3:
+        raise AssertionError('README 里找不到这处断言：节正文「被三份用到」的名单')
+    dd_ar, extra_dec, tj_ar = _zhenti_g(
+        r'故 (\d+) ＋ (\d+) ＝ \*\*(\d+) 条对应\*\*', zb, '节正文：条数算式', n=3)
+    m = re.search(r'第二种／第三种改法(.*?)→', zb, re.S)
+    if not m:
+        raise AssertionError('README 里找不到这处断言：节正文「第二种／第三种改法」的括号')
+    extra_calc = m.group(1).count('两种') + 2 * m.group(1).count('三种')
+
+    add('真题出处：条数（三处 ↔ 表行数）', (sm_tj, ti_tj, zb_tj), (n_row,) * 3,
+        f'表 {n_row} 行；三处为摘要／节标题／节正文')
+    add('真题出处：题位数（三处 ＋ 算式 ↔ 表）', (sm_tw, ti_tw, zb_tw, tw_sum), (n_slot,) * 4,
+        '表首格逐个数出的本库题位')
+    add('真题出处：真题道数（三处 ↔ 算式 a+b+c）',
+        (sm_dd, ti_dd, zb_dd, dd_sum), (dd_sum,) * 4,
+        f'{a3} 道被三份 ＋ {b2} 道被两份 ＋ {c1} 道单独')
+    add('真题出处：按关系分（摘要／节正文 ↔ 表）',
+        ((sm_dd2, sm_gb2, sm_bj2), (zb_dd2, zb_gb2, zb_bj2)),
+        ((n_dd, n_gb, n_bj),) * 2, '原题照录／改编／借定义')
+    add('真题出处：按关系分之和 ＝ 条数', sm_dd2 + sm_gb2 + sm_bj2, n_row)
+    add('真题出处：真题侧份数分布（摘要 ↔ 节正文 ↔ 算式）',
+        (sm_3, sm_2, zb_3, zb_2), (a3, b2, a3, b2))
+    add('真题出处：被三份用到的名单条数', zb_3, m3.group(1).count('；') + 1)
+    add('真题出处：被两份用到的名单条数', zb_2, names2.count('、') + 1, '名单里逐个点名的真题')
+    add('真题出处：多改法条数', (extra_dec, dd_ar + extra_dec), (extra_calc, tj_ar),
+        '「两种」记 1 条、「三种」记 2 条；右边同时核「道数 ＋ 多改法 ＝ 条数」')
+    add('真题出处：算式两端的道数与条数', (dd_ar, tj_ar), (zb_dd, zb_tj))
+
+
 # ----------------------------------------------------------------- 源码侧
 def check_source(md):
     raws = [(f, load(f)) for f in srcs()]      # 每个文件只读一次，后文都从这份文本上算
@@ -376,6 +483,7 @@ def main():
     try:
         check_source(md)
         check_output(md)
+        check_zhenti(md)
     except AssertionError as e:
         print(f'❌ {e}')
         print('   处理：改了 README 措辞就要同步改本脚本里的正则（见文件头「设计 1」）。')
