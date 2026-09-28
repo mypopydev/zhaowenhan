@@ -85,6 +85,9 @@ LIB = os.environ.get(
     'GAOKAO_MATH_LIB',
     '/Users/barryjzhao/Sources/AI/Gaokao-Math-Problems-Compilation/content')
 OUT = os.path.join(tempfile.gettempdir(), '题目溯源')
+# ① 的命中清单落盘到仓库里（**入库的交付物**）：计数核对.py 的「机判清单」那几条闸要读它。
+# 只记新增的钩子；跑『比对』（不带卷号）时会整份重写。
+HITLIST = os.path.join(HERE, '真题命中清单.txt')
 
 # 对号副本：高一16 的正文就是 高一b、高一18 的正文就是 高一c（源码逐字相同），
 # 只差卷面标题的「（补）」二字。重复计入既会把份数/题数算大，更会在跨卷两两里
@@ -296,6 +299,7 @@ def cmd_compare(targets):
         our_t = our[:]
 
     print('① 与高考库比对（%d 道 × %d 道）' % (len(our_t), len(lib)))
+    hits = {}
     for x in our_t:
         rows = []
         for y in lib:
@@ -307,6 +311,7 @@ def cmd_compare(targets):
         rows.sort(key=lambda t: (t[0] != 'dup', -t[1]))
         # 行首必须带卷号：全量重跑时 22 份混在一张表里，只印「第 X 题」根本认不出是哪一份
         head = '   %-6s 第%s题 %s' % (x['paper'].split('_')[0], x['lab'], x['sk'][:46])
+        hits[(x['paper'].split('_')[0], x['lab'])] = ['%s｜%s' % (y['src'], y['sec']) for *_, y in rows]
         if not rows:
             print('%s —— 无命中' % head)
             continue
@@ -315,6 +320,17 @@ def cmd_compare(targets):
             print('      %-3s LCS=%-3d r=%.3f cjk=%-2d 出处=%s｜%s'
                   % (kind.upper(), L, r, cjk(blk), y['src'], y['sec']))
             print('          公共串：%s' % blk[:56])
+
+    if targets:
+        print('   （指定了卷号，未重写 %s）' % os.path.basename(HITLIST))
+    else:
+        with io.open(HITLIST, 'w', encoding='utf-8') as fh:
+            fh.write('# ① 与高考库比对的命中清单 —— 由 题目溯源.py 的 `比对` 生成，**勿手改**\n')
+            fh.write('# 口径：本库 %d 道 × 高考库 %d 道；每行「卷#题位<TAB>出处（多个用；隔开）或 无命中」\n'
+                     % (len(our), len(lib)))
+            for (paper, lab), hs in hits.items():
+                fh.write('%s#%s\t%s\n' % (paper, lab, '；'.join(hs) if hs else '无命中'))
+        print('   命中清单 -> %s（%d 个题位）' % (HITLIST, len(hits)))
 
     print()
     print('② 跨卷两两（%d 道 → %d 对）' % (len(our), len(our) * (len(our) - 1) // 2))

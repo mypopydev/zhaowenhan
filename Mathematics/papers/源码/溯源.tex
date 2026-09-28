@@ -71,7 +71,7 @@
 \bottomrule
 \endlastfoot
 核对范围 & \textbf{41 份试卷的 718 道}一级题干（其中最早入库的 12 份 211 道），逐题比对参考库的 \textbf{16,273 道}高考真题；跨卷两两 \textbf{257,403 对}。\textbf{高一16／高一18 不计入}------它们分别与 高一b／高一c 同卷，重复计入只会造出成对的假同题 \\ \addlinespace[1pt]
-定到具体高考试卷 & \textbf{39 道真题}（\textbf{44 条对应}：原题照录 22、改编 20、借定义／借集合另出题 2），对应本库 \textbf{52 个题位}------其中 \textbf{3 道}真题被\textbf{三份}试卷用到（2015 上海卷（春）：高一13／17／25；2003 上海卷（秋理）：高一17／20／36；2010 湖南卷（文）填空 7：高一08／高一a／高一39），\textbf{7 道}各被两份用到。三个数与「真题出处」表\textbf{逐行数出来的完全相同}，拆解与该表的出处一并见该节；\textbf{2026-09-28 起这几处数与那张表已由 \texttt{工具/\allowbreak{}计数核对.py} 逐行复算守住} \\ \addlinespace[1pt]
+定到具体高考试卷 & \textbf{41 道真题}（\textbf{46 条对应}：原题照录 22、改编 21、借定义／借集合另出题 3），对应本库 \textbf{54 个题位}------其中 \textbf{3 道}真题被\textbf{三份}试卷用到（2015 上海卷（春）：高一13／17／25；2003 上海卷（秋理）：高一17／20／36；2010 湖南卷（文）填空 7：高一08／高一a／高一39），\textbf{7 道}各被两份用到。三个数与「真题出处」表\textbf{逐行数出来的完全相同}，拆解与该表的出处一并见该节；\textbf{2026-09-28 起这几处数与那张表已由 \texttt{工具/\allowbreak{}计数核对.py} 逐行复算守住} \\ \addlinespace[1pt]
 跨卷同题（校际重复） & \textbf{逐字同题 43 组 + 同模板变体 14 组}（另有 8 对分数够不上变体线、但读过原文确属真同题，手工补记），两档成员共 \textbf{110 道}（逐字 87 ＋ 只出现在变体档的 23）------其中逐字档的 \textbf{87 道已逐题对照 \texttt{原图/\allowbreak{}} 的原卷核实过}（含本轮新增的 8 个题位） \\ \addlinespace[1pt]
 与真题同题型但非同一题 & 约 40 道（上一轮逐条判读；本轮只跑机判，未逐条重判），未计入 \\ \addlinespace[1pt]
 其余 & 真题库里既无 $\geqslant$12 字的逐字串、也无「\(r\ge0.71\) 且最长串 $\geqslant$ 12」的候选 $\to$ 非高考真题 \\ \addlinespace[1pt]
@@ -217,7 +217,8 @@ C、D 两项各改一处，答案由 A 变 B，详见「真题出处」表末行
 跨卷 245,350 $\to$ \textbf{257,403 对}。这一轮\textbf{一处达线的命中都没有}，是「只增不改」的又一例
 （同 2026-09-20 的高一23／24、2026-09-23 的高一29）------
 ① \textbf{真题零新增}：高一41 的 17 题在真题库里全部无命中（最接近的只有「恒成立，则实数 \(a\) 的
-取值范围是」这类套话），故「真题」仍是 39 道／44 条对应／\textbf{52 个题位}；
+取值范围是」这类套话），故「真题」仍是 \textbf{41 道／46 条对应／54 个题位}（另有两条是同日下一段补登的）
+------见下面「2026-09-28 又\ldots」那一段；
 ② \textbf{跨卷同题零新增}：逐字同题仍是 43 组、同模板变体仍是 14 组、两档成员仍是 110 道，
 高一41 与库内各卷\textbf{一组都没比出来}（同校的 高一31 周练1 与它也不例外）；
 ③ \textbf{补登两个此前漏登的题位}------这一轮顺核「逐字同题组的成员是否都进了真题出处表」才发现：
@@ -226,6 +227,23 @@ C、D 两项各改一处，答案由 A 变 B，详见「真题出处」表末行
 两者都不改道数／条数，只把题位由 50 补到 \textbf{52}、把 2010 湖南卷（文）从「两份用到」提为
 \textbf{三份用到}、1999 广东卷／全国卷从「一份」提为\textbf{两份}。这两个题位当时机判都报过
 （高一39 附加 21 题那条更是明写 \texttt{出处=2010\ 年湖南卷（文）｜填空题}），只是没人登记进表。
+\end{quote}
+
+\begin{quote}
+\textbf{2026-09-28 同日又把①机判清单接进闸}（起因是核「高一35／高一39 两份附加题在专记里是否齐全」）：
+先把 \texttt{题目溯源.py} ①「与高考库比对」的命中\textbf{落盘}成 \texttt{工具/\allowbreak{}真题命中清单.txt}（718 个题位一行），
+再把\textbf{每个报过的题位}都摊开回原文判一遍------结果\textbf{新查出 2 道真题／2 条对应}：
+① \textbf{高一20 第 8 题 ＝ 2023 年全国乙卷（理）选择}（共用 \(U=\R\)、\(M=\{x\mid x<1\}\)、
+\(N=\{x\mid-1<x<2\}\) 这一对集合与「用交、并、补表示某个集合」的问法，只换所求集合，
+\(r=0.727\)、LCS 22），判\textbf{借同一对集合另问}；
+② \textbf{高一21 第 4 题 ＝ 2009 年上海卷（秋文）填空}（真题 \(A=\{x\mid x\leqslant1\}\)、
+\(B=\{x\mid x\geqslant a\}\)、\(A\cup B=\R\) 求 \(a\)，本卷把端点与字母对调，答案由 \(a\leqslant1\)
+变 \(a\geqslant1\)；\(r=0.912\)、LCS 16），判\textbf{改编}。
+其余 \textbf{17 条判为不算}（只共用通用句式或某一个集合的取法），逐条记进新建的
+「\textbf{① 机判报了、但未计入本表的题位}」表------以后每轮跑完 ① 若多出一个报过的题位，
+\texttt{计数核对.py} 就会报错，逼人在这张表或出处表里 disposition，不再有「报了没人看」的余地。
+以上使「真题」由 39 道增到 \textbf{41 道}、对应由 44 条增到 \textbf{46 条}、题位由 52 个增到 \textbf{54 个}
+（\textbf{改编} 20 $\to$ 21、\textbf{借定义／借集合} 2 $\to$ 3，原题照录 22 不变）；逐字同题 43 组与变体 14 组不变。
 \end{quote}
 
 本轮核对\textbf{发现并订正了 11 处}（都是核对过程本身查出来的，不是新发现而是纠错）：
@@ -765,30 +783,31 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 作业帮上都能搜到近乎一致的版本。
 
 \clearpage
-\section{能考据到的高考出处：39 道真题（44 条对应／52 个题位）}
+\section{能考据到的高考出处：41 道真题（46 条对应／54 个题位）}
 
 拿 1952--2026 年的\textbf{全部高考真题}逐字比对（参考库 \texttt{\textasciitilde{}/\allowbreak{}Sources/\allowbreak{}AI/\allowbreak{}Gaokao-\allowbreak{}Math-\allowbreak{}Problems-\allowbreak{}Compilation}，
-含上海春/秋/文/理及各地方卷；去噪后有效题干 \textbf{16,273 道}），能定到具体试卷的\textbf{真题有 39 道}，
-对应本库 \textbf{52 个题位}、\textbf{44 条对应关系}：
+含上海春/秋/文/理及各地方卷；去噪后有效题干 \textbf{16,273 道}），能定到具体试卷的\textbf{真题有 41 道}，
+对应本库 \textbf{54 个题位}、\textbf{46 条对应关系}：
 
 \begin{itemize}
 \tightlist
 \item
-  \textbf{按关系分}：原题照录 \textbf{22} 条、改编 \textbf{20} 条、借定义／借集合另出题 \textbf{2} 条 ＝ 44 条；
+  \textbf{按关系分}：原题照录 \textbf{22} 条、改编 \textbf{21} 条、借定义／借集合另出题 \textbf{3} 条 ＝ 46 条；
 \item
   \textbf{真题侧}：\textbf{3 道}真题被\textbf{三份}试卷用到（2015 上海卷（春）：高一13／17／25；
   2003 上海卷（秋理）：高一17／20／36；2010 湖南卷（文）填空 7：高一08／高一a／高一39），
   \textbf{7 道}各被两份用到（2009 北京卷（文）填空 6「孤立元」、2017 江苏卷、2012 新课标卷（理）、
   1999 广东卷／全国卷、2008 山东卷（文/理）、2009 北京卷（理）「性质 \(P\)」、2009 天津卷（理））
-  $\to$ 3 $\times$ 3 ＋ 7 $\times$ 2 ＋ 29 $\times$ 1 ＝ \textbf{52 个题位}；\textbf{5 条}对应关系是同一道真题的第二种／第三种改法
+  $\to$ 3 $\times$ 3 ＋ 7 $\times$ 2 ＋ 31 $\times$ 1 ＝ \textbf{54 个题位}；\textbf{5 条}对应关系是同一道真题的第二种／第三种改法
   （2012 新课标卷（理）选择 1 两种、2015 上海卷（春）三种、2003 上海卷（秋理）两种、
-  2009 天津卷（理）两种）$\to$ 4 道真题共多出 1 ＋ 2 ＋ 1 ＋ 1 ＝ \textbf{5 条}，故 39 ＋ 5 ＝ \textbf{44 条对应}。
+  2009 天津卷（理）两种）$\to$ 4 道真题共多出 1 ＋ 2 ＋ 1 ＋ 1 ＝ \textbf{5 条}，故 41 ＋ 5 ＝ \textbf{46 条对应}。
 \end{itemize}
 
 判定口径是「脱去 LaTeX 与标点后的骨架文本最长公共子串」+ 整段相似度，下表每一条都逐字看过原文：
 （★ 为 2026-09-15 全量重跑新增，含旧卷漏检 2 条；▲ 为并入高一19---21 后新增；● 为 2026-09-16
 并入高一22 后新增------那一轮三条\textbf{全是原题照录}；◆ 为 2026-09-20 并入高一23／24 后新增------
-那一轮一条，系\textbf{改编}；◇ 为 2026-09-22 并入高一25---28 后新增------那一轮两条，\textbf{全是原题照录}。）
+那一轮一条，系\textbf{改编}；◇ 为 2026-09-22 并入高一25---28 后新增------那一轮两条，\textbf{全是原题照录}。
+\textbf{■} 为 2026-09-28 顺核①机判命中清单时补登的两条------清单里另外 17 条判为不算，逐条见下。）
 
 \begin{quote}
 \textbf{本节原与「核对摘要」那一行的口径不同}（摘要写「26 道／31 个题位」，本节写「24 道／27 个题位」）。
@@ -824,7 +843,7 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 
 \newcommand{\tabhdrH}{\rowcolor{white} 本库题目 & 出处 & 关系 \\}
 \rowcolors{1}{white}{rowgray}
-\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.77cm}>{\raggedright\arraybackslash}p{4.16cm}>{\raggedright\arraybackslash}p{7.81cm}@{}}
+\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.69cm}>{\raggedright\arraybackslash}p{4.21cm}>{\raggedright\arraybackslash}p{7.83cm}@{}}
 \toprule
 \tabhdrH
 \midrule
@@ -879,6 +898,8 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 ◇高一36 第 14 题 & \textbf{2010 年福建卷（文）选择} & \textbf{原题照录}（非空集合 \(S=\allowbreak \{x\mid\allowbreak  m\leqslant\allowbreak  x\leqslant\allowbreak  l\}\) 满足 \(x\in S\Rightarrow x^2\in S\) 的三个命题；\(r=\allowbreak 0.963\)、最长公共子串 38 字，答案同为 D）。\textbf{真题作「如下三个命题」}，可确证本卷题干的「四个命题」是笔误（见「高一36 专记」） \\ \addlinespace[1pt]
 ◇高一37 第 8 题 & \textbf{2009 年重庆卷（理）选择} & \textbf{改编}：左侧 \(\lvert x+\allowbreak 3\rvert-\lvert x-1\rvert\) 与真题\textbf{一字未动}（那正是本题的核心------左式最大值 \(4\) 的来源），右侧由 \(a^2-3a\) 改为 \(\lvert a-3\rvert\)、由选择改成填空，答案随之由「\(a\leqslant\allowbreak -1\) 或 \(a\geqslant\allowbreak 4\)」变为「\(a\leqslant\allowbreak -1\) 或 \(a\geqslant\allowbreak 7\)」。机判只报了「对任意实数 \(x\) 恒成立，则实数 \(a\) 的取值范围为」这类套话串（\(r=\allowbreak 0.892\)），但同源证据不止于此 \\ \addlinespace[1pt]
 ◇高一37 第 11 题 & \textbf{2010 年四川卷（文）选择} & \textbf{原题照录}（设 \(a>b>0\)，则 \(a^2+\allowbreak \dfrac1{ab}+\allowbreak \dfrac1{a(a-b)}\) 的最小值是------\textbf{题干一字不差}、答案同为 \(4\)，只去掉四个选项改成填空）。\textbf{同卷（理）版是另一道题}（条件作 \(a>b>c>0\)、式子里多出 \(-10ac+\allowbreak 25c^2\)、答案 B），机判把它也报了一条，复核后判\textbf{假命中}、不计 \\ \addlinespace[1pt]
+■高一20 第 8 题 & \textbf{2023 年全国乙卷（理）选择} & \textbf{借同一对集合另问}（真题 \(U=\allowbreak \R\)、\(M=\allowbreak \{x\mid\allowbreak  x<1\}\)、\(N=\allowbreak \{x\mid\allowbreak -1<x<2\}\) 与问法「用交、并、补表示某个集合」都与本卷相同，只把所求集合换成 \(\{x\mid\allowbreak  x\geqslant\allowbreak 2\}\)；\(r=\allowbreak 0.727\)、最长公共子串 22 字） \\ \addlinespace[1pt]
+■高一21 第 4 题 & \textbf{2009 年上海卷（秋文）填空} & \textbf{改编}（真题 \(A=\allowbreak \{x\mid\allowbreak  x\leqslant\allowbreak 1\}\)、\(B=\allowbreak \{x\mid\allowbreak  x\geqslant\allowbreak  a\}\)、\(A\cup\allowbreak  B=\allowbreak \R\) 求 \(a\)；本卷把端点与字母对调成 \(A=\allowbreak \{x\mid\allowbreak  x<a\}\)、\(B=\allowbreak \{x\mid\allowbreak  x\geqslant\allowbreak 1\}\)，答案随之由 \(a\leqslant\allowbreak 1\) 变 \(a\geqslant\allowbreak 1\)。\(r=\allowbreak 0.912\)、最长公共子串 16 字。同题位另有一条 \textbf{2007 福建卷（理）} 的机判候选，只共用 \(A=\allowbreak \{x\mid\allowbreak  x<a\}\) 与 \(A\cup\allowbreak  B=\allowbreak \R\) 的框架，见下面「① 机判报了、但未计入」表） \\ \addlinespace[1pt]
 ◇高一37 第 19 题 & \textbf{2005 年北京卷（春季·文/理）解答} & \textbf{改编}：分子 \(920\)、分母 \(v^2+\allowbreak 3v+\allowbreak 1600\)、第 (2) 问的设问与答案「\(25<v<64\)」\textbf{全同}；唯一出入是第 (1) 问的作答要求由「精确到 \(0.1\) 千辆/小时」改为「保留分数形式」（答案随之由 \(\approx11.1\) 写成 \(\dfrac{920}{83}\)）。真题文、理两卷印的是同一道，故出处写作「文/理」 \\ \addlinespace[1pt]
 \end{xltabular}
 
@@ -897,6 +918,44 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 子集中选出 \textbf{4 个}不同的子集，需同时满足 ① \(\varnothing\)、\(U\) 都要选出 ② 任意两个子集
 \(A\)、\(B\) 必有 \(A\subseteq B\) 或 \(A\supseteq B\)」，官方答案 36------与 高一b 第 11 题
 源码注记的记载一致（网上流传的「选出 2 个」版本是讹传）。
+
+\textbf{① 机判报了、但未计入本表的题位}（2026-09-28 建表：把 题目溯源.py ①「与高考库比对」报过的
+\textbf{每一个本库题位}都摊开判一遍并留档；判据是「共享的是那道真题的\textbf{核心设定}，还是通用句式」------
+前者登记进上表，后者记在这里。这张表已由 \texttt{工具/\allowbreak{}计数核对.py} 按 \texttt{工具/\allowbreak{}真题命中清单.txt} 守着，
+\textbf{以后每轮跑完 ① 若多出一个报过的题位，闸就会报错、逼人在这里或上表里 disposition}）：
+
+\newcommand{\tabhdrI}{\rowcolor{white} 机判报过的题位 & 机判出处 & 为什么不计入 \\}
+\rowcolors{1}{white}{rowgray}
+\begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.82cm}>{\raggedright\arraybackslash}p{4.23cm}>{\raggedright\arraybackslash}p{7.69cm}@{}}
+\toprule
+\tabhdrI
+\midrule
+\endfirsthead
+\multicolumn{3}{r}{\footnotesize（续上表）} \\
+\midrule
+\tabhdrI
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+高一02 第 18 题 & 2018 上海卷（春）填空 & 只共用 \(A=\allowbreak \{x\mid\allowbreak 0<x<2\}\) 这个区间；\(B\)（真题是固定区间、本卷是含参）与问法都不同 \\ \addlinespace[1pt]
+高一04 第 15 题 & 1999 上海卷（文）、（理）解答 & 只共用「\(A\subseteq\allowbreak  B\)，求实数 \(a\) 的取值范围」这句套话 \\ \addlinespace[1pt]
+高一05 第 7 题 & 2007 北京卷（理）填空 & 只共用「若 \(A\cap\allowbreak  B=\allowbreak \varnothing\)，则实数 \(a\) 的取值范围是」这句套话 \\ \addlinespace[1pt]
+高一06 第 7 题 & 2021 全国乙卷（理）选择 & 借了真题第一集合 \(S=\allowbreak \{s\mid\allowbreak  s=\allowbreak 2n+\allowbreak 1\}\) 的取法，但 \(T\) 换了（\(2n-1\) vs \(4n+\allowbreak 1\)）、问法也换（判 \(S\)、\(T\) 的包含关系 vs 求 \(S\cap\allowbreak  T\)）；与已登记的 高一17 第 9 题不是同一版 \\ \addlinespace[1pt]
+高一11 第 4 题 & 2001 新课标卷（文）、2007 安徽卷（文）选择 & 各只共用其中一个二次方程（\(x^2+x=\allowbreak 0\)／\(x^2=\allowbreak 1\)） \\ \addlinespace[1pt]
+高一11 第 5 题 & 2009 新课标卷（文）、2009 海南宁夏新课标卷（理）、2018 全国 II 卷（文）选择 & 只共用「已知集合 \(A=\allowbreak \{1,\allowbreak 3,\allowbreak 5,\allowbreak \cdots\}\)」这个开头 \\ \addlinespace[1pt]
+高一11 第 20 题 & 2017 北京卷（文）选择 & 只共用「集合 \(A=\allowbreak \{x\mid\allowbreak  x<-2\) 或 \(x\cdots\}\)」 \\ \addlinespace[1pt]
+高一15 第 4 题 & 2009 上海卷（秋文）填空 & 只共用「且 \(A\cup\allowbreak  B=\allowbreak \R\)，则实数 \(a\) 的取值范围是」这句套话 \\ \addlinespace[1pt]
+高一19 第 3 题 & 2013 湖北卷（文）、2016 浙江卷（文）、2018 浙江卷、2021 全国乙卷（文）选择 & 只共用「已知全集 \(U=\allowbreak \{1,\allowbreak 2,\allowbreak 3,\allowbreak 4,\allowbreak 5\}\)」 \\ \addlinespace[1pt]
+高一20 第 3 题 & 2007 北京卷（理）填空 & 只共用「\(\varnothing\)，则实数 \(a\) 的取值范围是」这句套话 \\ \addlinespace[1pt]
+高一26 第 7 题 & 2019 江苏卷 填空 & 只共用「\(B=\allowbreak \{x\mid\allowbreak  x>0,\allowbreak \ x\in\R\}\)，则 \(A\cap\allowbreak  B=\allowbreak \)」 \\ \addlinespace[1pt]
+高一26 第 8 题 & 1999 上海卷（文）解答 & 只共用「若 \(A\subseteq\allowbreak  B\)，求实数 \(a\) 的取值范围」这句套话 \\ \addlinespace[1pt]
+高一28 第 5 题 & 2007 北京卷（理）填空 & 只共用 \(B=\allowbreak \{x\mid\allowbreak  x^2-5x+\allowbreak 4\geqslant\allowbreak 0\}\) 这个常见集合 \\ \addlinespace[1pt]
+高一28 第 18 题 & 2007 上海卷（春）填空 & 只共用「\(>0\) 的解集为 \((-\infty,\allowbreak \cdots\)」 \\ \addlinespace[1pt]
+高一30 第 19 题 & 2017 北京卷（文）选择 & 只共用「集合 \(A=\allowbreak \{x\mid\allowbreak  x<-2\) 或 \(x\cdots\}\)」（2026-09-25 那一轮已判过） \\ \addlinespace[1pt]
+高一36 第 9 题 & 2014 浙江卷（文）填空 & 只共用「已知实数 \(a\)、\(b\)、\(c\) 满足 \(a+b+c=\allowbreak 0\)」；真题问的是平方和条件下的最值，与本卷 \(\dfrac ca\) 的范围无关（2026-09-26 那一轮已判过） \\ \addlinespace[1pt]
+高一40 第 9 题 & 2012 福建卷（文）填空 & 真题是 \(x^2-ax+\allowbreak 2a>0\) 在 \(\R\) 上恒成立、本卷是 \(x^2-ax-2<0\) 在 \((1,\allowbreak 2)\) 内恒成立，除套话外全不同（2026-09-27 那一轮已判过） \\ \addlinespace[1pt]
+\end{xltabular}
 
 \clearpage
 \section{考据不出来的：绝大多数}
@@ -935,16 +994,16 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 高考真题库里查不到的题，有一部分能在\textbf{教辅/题库/校际试卷}里找到同题或同定义版本
 （2026-09-15 第二轮复核时逐题做了网络检索，取「同题面」或「同定义＋同小问」为准）：
 
-\newcommand{\tabhdrI}{\rowcolor{white} 题 & 考据结果 \\}
+\newcommand{\tabhdrJ}{\rowcolor{white} 题 & 考据结果 \\}
 \rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{6.97cm}>{\raggedright\arraybackslash}p{8.18cm}@{}}
 \toprule
-\tabhdrI
+\tabhdrJ
 \midrule
 \endfirsthead
 \multicolumn{2}{r}{\footnotesize（续上表）} \\
 \midrule
-\tabhdrI
+\tabhdrJ
 \midrule
 \endhead
 \bottomrule
@@ -980,16 +1039,16 @@ $\oplus$\(A=\allowbreak \{x\mid\allowbreak  x^2-3x-4=\allowbreak 0\}\)、\(B=\al
 （高一a 附加题第 2 题的下标 \(i\) 一处笔误已订正），2026-09-15 逐题考据如下
 （\textbf{高一22 的四道是 2026-09-16 入库时补入的}）：
 
-\newcommand{\tabhdrJ}{\rowcolor{white} 卷·题 & 内容 & 考据结果 \\}
+\newcommand{\tabhdrK}{\rowcolor{white} 卷·题 & 内容 & 考据结果 \\}
 \rowcolors{1}{white}{rowgray}
 \begin{xltabular}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.04cm}>{\raggedright\arraybackslash}p{4.91cm}>{\raggedright\arraybackslash}p{7.78cm}@{}}
 \toprule
-\tabhdrJ
+\tabhdrK
 \midrule
 \endfirsthead
 \multicolumn{3}{r}{\footnotesize（续上表）} \\
 \midrule
-\tabhdrJ
+\tabhdrK
 \midrule
 \endhead
 \bottomrule

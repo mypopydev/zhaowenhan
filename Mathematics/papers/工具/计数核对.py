@@ -62,6 +62,7 @@ README 的「目录结构」「试卷清单」「答案版为什么这样排」�
 退出码：全部一致 0，有任一不一致 1（经 `make docs` 调用时为 2，那是 make 的惯例，判成败只看非 0）。
 """
 import glob
+import importlib
 import io
 import os
 import re
@@ -430,6 +431,65 @@ def check_tongti(md, reg):
         f'{n_grp} 组；放行 {len(TONGPAI_NOT_SAME)} 个已注明「不是同一道题」的成员')
 
 
+# ----------------------------------------------------------------- ① 机判清单
+# ① 「与高考库比对」的命中清单（工具/真题命中清单.txt，由 题目溯源.py 生成）里，**每一个报过的
+# 本库题位都必须在 README 里 disposition**：要么登记进「真题出处」表（说明它确实是那道真题的
+# 题位），要么列在「① 机判报了、但未计入本表的题位」那张台账里。
+# 2026-09-28 建这道闸——此前 ① 的命中只印在屏幕上、没人逐条看过：当天照它把 19 条候选摊开判，
+# 查出 **2 道一直没登记的真题**（2023 全国乙卷（理）、2009 上海卷（秋文））。
+HITLIST = os.path.join(HERE, '真题命中清单.txt')
+NOTIN_HEAD = '| 机判报过的题位 | 机判出处 | 为什么不计入 |'
+
+
+def _hitlist_rows():
+    if not os.path.exists(HITLIST):
+        raise AssertionError(f'读不到 {HITLIST}——先跑一次 `python3 工具/题目溯源.py 比对` 生成它')
+    out = []
+    for line in io.open(HITLIST, encoding='utf-8'):
+        line = line.rstrip('\n')
+        if not line or line.startswith('#'):
+            continue
+        k, _, v = line.partition('\t')
+        paper, _, lab = k.partition('#')
+        if not paper or not lab:
+            raise AssertionError(f'{os.path.basename(HITLIST)} 有读不懂的行：{line[:60]}')
+        out.append(((paper, lab), v))
+    return out
+
+
+def _notin_slots(md):
+    """README「① 机判报了、但未计入本表的题位」台账里的题位集合（只看每行第一格）。"""
+    lines = md.split('\n')
+    if lines.count(NOTIN_HEAD) != 1:
+        raise AssertionError(f'README 里 `{NOTIN_HEAD}` 应恰好出现一次，实为 {lines.count(NOTIN_HEAD)} 次')
+    i = lines.index(NOTIN_HEAD) + 2
+    out = set()
+    while i < len(lines) and lines[i].startswith('|'):
+        out |= zhenti_slots([lines[i].strip().strip('|').split('|')[0]])
+        i += 1
+    return out
+
+
+def check_hitlist(md, reg):
+    rows = _hitlist_rows()
+    sys.path.insert(0, HERE)
+    got = {(x['paper'].split('_')[0], x['lab'])
+           for x in importlib.import_module('题目溯源').our_stems()}
+    src_keys = {f'{p}#{l}' for p, l in got}
+    lst_keys = {f'{p}#{l}' for (p, l), _ in rows}
+    add('① 机判清单：题位与源码一致（清单未陈旧）', [], sorted(src_keys ^ lst_keys),
+        f'清单 {len(lst_keys)} 个题位、源码现算 {len(src_keys)} 个；加卷/改题后要重跑 `比对` 重写清单')
+    noted = _notin_slots(md)
+    hit = {k for k, v in rows if v != '无命中'}
+    def name(k):
+        return f'{k[0]} {k[1]} 题' if k[1].startswith('附加') else f'{k[0]} 第 {k[1]} 题'
+    add('① 机判清单：报过的题位都已 disposition', [],
+        sorted(name(k) for k in hit - reg - noted),
+        f'{len(hit)} 个题位有命中：登记进出处表 {len(hit & reg)} 个、记进「未计入」台账 {len(hit & noted)} 个')
+    add('① 机判清单：台账里的题位都真是机判报过的', [],
+        sorted(name(k) for k in noted - hit), '台账里不许出现机判没报过的题位')
+
+
 # ----------------------------------------------------------------- 附加题账目
 # 「附加题专查」一节原先写「全稿共 5 份卷带附加题、合计 14 道」——那个「全稿」随加卷过期了
 # （2026-09-28 查：实为 7 份 / 22 道）。份数与题数都按源码里 `\bigsec{…附加…}` 那一段的
@@ -647,6 +707,7 @@ def main():
         check_source(md)
         check_output(md)
         check_zhenti(md)
+        check_hitlist(md, zhenti_slots([r[0] for r in zhenti_rows(md)]))
         check_fujia(md)
     except AssertionError as e:
         print(f'❌ {e}')
