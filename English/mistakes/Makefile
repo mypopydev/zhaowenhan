@@ -7,6 +7,9 @@
 #   phrase_NN_<范围>_01.tex             短语默写订正表        —— 2 页
 #   phrase_NN_<范围>_01_recheck_*.tex    二刷卷 中→英 / 英→中 / 答案 —— 各 1 页
 #   phrase_NN_<范围>_01_原卷*.jpg        原卷扫描件（归档，不参与编译）
+#   grammar_NN_<范围>_01.tex            语法专项订正表        —— 2 页
+#   grammar_NN_<范围>_01_recheck_*.tex   二刷卷 重做 / 答案    —— 1--2 页（按套，见 check 规则）
+#   grammar_NN_<范围>_01_原卷*.jpg|pdf   原卷／来源件（归档，不参与编译）
 #   tense_voice_01.tex                  时态语态错题重做      —— 3 页
 #
 # 常用命令：
@@ -58,7 +61,7 @@ $(LOG): %.log: %.tex
 	@$(MAKE) --no-print-directory -B $(@:.log=.pdf) >/dev/null 2>&1
 
 # ---- 校验 ----
-# 页数预期：各套订正表 2 页；二刷卷 1 页；时态语态 3 页
+# 页数预期：各套订正表 2 页；二刷卷 1 页（grammar_01 的重做卷与答案卷为 2 页）；时态语态 3 页
 check: all $(LOG)
 	@fail=0; n=0; \
 	for f in $(PDF); do \
@@ -67,6 +70,7 @@ check: all $(LOG)
 		p=$$($(PDFINFO) "$$f" 2>/dev/null | awk '/^Pages/{print $$2}'); \
 		want=2; \
 		if [[ "$$f" == "tense_voice_01.pdf" ]]; then want=3; \
+		elif [[ "$$f" == grammar_01_*_recheck_* ]]; then want=2; \
 		elif [[ "$$f" == *_recheck_* ]]; then want=1; \
 		else want=2; fi; \
 		if [ ! -f "$$log" ]; then bad=日志缺失; \

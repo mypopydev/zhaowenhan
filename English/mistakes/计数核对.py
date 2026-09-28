@@ -79,16 +79,16 @@ def main() -> int:
           f"{len(tex)} 份 tex 都有对应 PDF")
 
     print("\n=== 3. 各套材料的结构 ===")
-    sets = re.findall(r"`((?:vocab|phrase)_\d\d_[a-z_0-9]+)`", readme)
-    check(len(sets) == 4, f"README 列出的套数 = 4", f"实际 {sets}")
+    sets = re.findall(r"`((?:vocab|phrase|grammar)_\d\d_[a-z_0-9]+)`", readme)
+    check(len(sets) == 5, f"README 列出的套数 = 5", f"实际 {sets}")
     for pre in sets:
         files = {p.name for p in HERE.glob(f"{pre}*")}
-        need = {f"{pre}.tex", f"{pre}.pdf",
-                f"{pre}_recheck_zh2en.tex", f"{pre}_recheck_zh2en.pdf",
-                f"{pre}_recheck_en2cn.tex", f"{pre}_recheck_en2cn.pdf",
-                f"{pre}_recheck_ans.tex", f"{pre}_recheck_ans.pdf"}
+        # 语法卷的二刷是「重做 / 答案」，其余套是「中→英 / 英→中 / 答案」
+        subs = ([f"{pre}_recheck_q", f"{pre}_recheck_ans"] if pre.startswith("grammar_")
+                else [f"{pre}_recheck_zh2en", f"{pre}_recheck_en2cn", f"{pre}_recheck_ans"])
+        need = {f"{pre}.tex", f"{pre}.pdf"} | {f"{s}.{e}" for s in subs for e in ("tex", "pdf")}
         scan = [f for f in files if "原卷" in f]
-        check(need <= files, f"{pre}: 订正表 + 二刷卷 3 份齐备", f"缺 {sorted(need - files)}")
+        check(need <= files, f"{pre}: 订正表 + 二刷卷（{len(subs)} 份）齐备", f"缺 {sorted(need - files)}")
         check(len(scan) >= 1, f"{pre}: 有原卷扫描件（{len(scan)} 个）")
         scan_tex = [f for f in scan if f.endswith(".tex")]
         check(not scan_tex, f"{pre}: 原卷只有扫描件、无同名 .tex（distclean 不会误删）",
@@ -97,13 +97,22 @@ def main() -> int:
     print("\n=== 4. 页数（对照 README 与 Makefile 的 check 规则）===")
     check("订正表 2 页" in readme and "二刷卷 1 页" in readme and "时态语态 3 页" in readme,
           "README 写明页数规则")
-    check("want=1" in mk and "want=3" in mk and "else want=2" in mk,
+    check('== grammar_01_*_recheck_* ]]; then want=2' in mk
+          and 'tense_voice_01.pdf" ]]; then want=3' in mk
+          and '*_recheck_* ]]; then want=1' in mk,
           "Makefile 的 check 规则与之一致")
     for texf in tex:
         pdf = texf.with_suffix(".pdf")
         if not pdf.exists():
             continue
-        want = 1 if "_recheck_" in pdf.name else (3 if pdf.name == "tense_voice_01.pdf" else 2)
+        if pdf.name == "tense_voice_01.pdf":
+            want = 3
+        elif pdf.name.startswith("grammar_01_") and "_recheck_" in pdf.name:
+            want = 2                      # grammar_01 的重做/答案卷各 2 页
+        elif "_recheck_" in pdf.name:
+            want = 1
+        else:
+            want = 2                      # 各套订正表（含语法卷）2 页
         got = pdf_pages(pdf)
         check(got == want, f"{pdf.name}: {got} 页（应 {want}）")
 
