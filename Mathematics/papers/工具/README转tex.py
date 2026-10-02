@@ -47,7 +47,7 @@ OUT = os.path.join(PAPERS, '源码', '溯源.tex')
 
 SECT = '## 题目溯源'          # 只转这一节（到下一个 `## ` 为止）
 TITLE = '题目溯源'
-RUN_DATE = '2026-09-28'      # 口径标签上的日期；溯源比对.py 的 RUNHEAD 要与之保持一致
+RUN_DATE = '2026-10-02'      # 口径标签上的日期；溯源比对.py 的 RUNHEAD 要与之保持一致
 
 # geometry 边距 2.5cm、A4 → 文本宽 16cm；longtable 每列两侧各 \tabcolsep
 TEXTWIDTH_CM = 21.0 - 2 * 2.5
