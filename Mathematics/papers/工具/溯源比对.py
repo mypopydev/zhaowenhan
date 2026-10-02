@@ -57,7 +57,7 @@ COVER_RE = {
            '逐字同题 {0} 组、同模板变体 {1} 组'),
 }
 MARKERS = '★▲⊕◆' + ''.join(chr(c) for c in range(0x2460, 0x2474))   # ★▲⊕◆①–⑳
-HEADER, RUNHEAD = '题目溯源', '43 份口径（2026-10-02）'
+HEADER, RUNHEAD = '题目溯源', '47 份口径（2026-10-02）'
 
 # 与 工具/README转tex.py 的 UNI 保持一致（只列「映射成数学命令」的那些，★▲ 不映射）
 UNI = [('×', r'$\times$'), ('→', r'$\to$'), ('≥', r'$\geqslant$'), ('≤', r'$\leqslant$'),

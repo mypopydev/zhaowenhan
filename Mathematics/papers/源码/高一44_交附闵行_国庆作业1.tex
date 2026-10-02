@@ -1,0 +1,306 @@
+% 高一44_交附闵行_国庆作业1.tex
+%   —— 高一上数学「2026-2027 年交附闵行高一上国庆作业1」（试卷版/答案版）
+% 试卷版：xelatex 高一44_交附闵行_国庆作业1.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一44_交附闵行_国庆作业1.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一44_交附闵行_国庆作业1.tex}"
+%
+% 原始材料是微信公众号图文（公众号「魔都数学加油站」，作者「破晓」，2026-10-02 17:56 发布，
+% 连载「27学年高一44」，原文标题「27学年高一44——2026-2027年上海市交附闵行高一上国庆作业1」，
+% https://mp.weixin.qq.com/s/AuATWjVwTs4ilc95IicDqQ），正文为 8 张 PNG 页。
+% 第 01—07 页均为 4762×6735，第 08 页为 2560×3620。原文各题下直接印有【解析】，为讲评版。
+% 题目文字与解析照原卷录入，未改内容。卷面的粉色斜水印属水印，未录入。
+%
+% 卷首标题：原卷印作「2026-2027 年交附闵行高一上国庆作业1」（公众号标题里的「上海市」
+% 三字卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash，前缀照原卷保留「年」。
+%
+% 与原卷的排版差异：
+%   ① 原卷只印「一、填空题」「二、解答题」两节标题，本稿照原卷分节，只改排成全稿统一的大节样式；
+%   ② 原文自第 3 题起，题号照原卷从 3 起；
+%   ③ 原卷填空横线约两个字宽，本稿按全稿惯例排为 \blankline[4.4em]；
+%   ④ 原卷未印副标题，本稿按本卷实际内容补出「集合与常用逻辑用语、不等式、函数与导数」；
+%   ⑤ 原卷题目下直接印【解析】，本稿把解析统一置于 \ifanswer 块内；解答题按全稿惯例补出仅试卷版显示的作答留白；
+%   ⑥ 原卷实数集记号作 R，本稿按全稿惯例写作 \R。
+%
+% 原卷存疑处（均照抄原卷、未改，见正文对应位置上方注释）：
+%   ① 第 4 题按题面条件，A={a,b}, B={d} 与原卷解析给出的 A={a,b,d}, B={d} 均满足，
+%      题面并不能唯一确定 A；原卷解析排除前一种情形的理由与题面条件不符。
+%   ② 第 10 题【解析】对 A^* 的文字解释与定义相反；①用「A 集合下界趋向负无穷大」推出 A^*=∅，
+%      ④所举的 P 含有小于 1 的元素，与题干「若 x<1，则 x∉P」相矛盾，均照录。
+%   ③ 第 13 题【解析】把年产量（万吨）与单价（元/斤）直接相乘作为收入（万元），未作单位换算；本稿照录；
+%   ④ 第 3 题【解析】在 a>0 时只讨论 Δ>0、得 0<a<1，漏掉 a=1 的负重根；末行范围却含 1；
+%   ⑤ 第 10 题②以 M、P 的最大值论证一般集合，未处理不一定有最大值的情形；
+%   ⑥ 第 12 题(2)取 m=-3 时 B 含端点 x=-1，但 A={x|x<-1} 不含 -1；故 B⊆A 应要求 m<-3，原解析将端点纳入。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年交附闵行高一上国庆作业1}{集合与常用逻辑用语、不等式、函数与导数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知命题 $p$：「方程 $ax^2+2x+1=0$ 至少有一个负实根」，若 $p$ 为真命题的一个必要不充分条件为 $a\leqslant m+1$，则实数 $m$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若命题 $p$：「方程 $ax^2+2x+1=0$ 至少有一个负实根」为真命题，}
+\step{当 $a=0$ 时，$2x+1=0$，$x=-\dfrac12$，符合题意；}
+\step{当 $a<0$ 时，$\Delta=4-4a>0$，$x_1+x_2=-\dfrac2a>0$，$x_1x_2=\dfrac1a<0$，}
+\step{此时方程 $ax^2+2x+1=0$ 有一个正根和一个负根，符合题意；}
+% 注：当 a=1 时，Δ=0，方程有负重根 x=-1，也满足“至少有一个负实根”；原解析本步只列 Δ>0 的情形，但末行范围含 a=1，照录。
+\step{当 $a>0$ 时，$\Delta=4-4a>0$，解得 $0<a<1$，此时 $x_1+x_2=-\dfrac2a<0$，$x_1x_2=\dfrac1a>0$，}
+\step{此时方程 $ax^2+2x+1=0$ 有两个负根，符合题意；}
+\step{综上所述，$p$ 为真命题时，$a$ 的取值范围是 $(-\infty,1]$，}
+\step{若 $p$ 为真命题的一个必要不充分条件为 $a\leqslant m+1$，则 $m+1>1$，}
+\step{所以 $m>0$，即实数 $m$ 的取值范围是 $(0,+\infty)$.}
+\solend
+
+\fi
+
+\item 已知全集 $U=\{a,b,c,d,e\}$，集合 $A$、$B$ 满足 $A\cap\overline{B}=\{a,b\}$，$\overline{A\cup B}=\{c,e\}$，则 $A=$\blankline[4.4em].
+
+% 注：按题面条件，$A=\{a,b\}$、$B=\{d\}$ 也满足 $A\cap\overline B=\{a,b\}$、
+%     $\overline{A\cup B}=\{c,e\}$；原卷解析将该情形判为不符合题意，照录未改。
+\ifanswer
+\solbegin
+\step{因为 $U=\{a,b,c,d,e\}$，$\overline{A\cup B}=\{c,e\}$，所以 $A\cup B=\{a,b,d\}$，}
+\step{因为 $A\cap\overline B=\{a,b\}$，}
+\step{所以 $A$ 中有 $a$、$b$ 这两个元素，$A$ 中没有 $c$、$e$ 这两个元素；}
+\step{而 $B$ 中没有 $a$、$b$、$c$、$e$ 这四个元素，}
+\step{若 $d\in A$，$d\in B$，则 $A=\{a,b,d\}$，$B=\{d\}$，所以 $\overline B=\{a,b,c,e\}$，}
+\step{满足 $A\cup B=\{a,b,d\}$，也满足 $A\cap\overline B=\{a,b\}$，符合题意，则 $A=\{a,b,d\}$；}
+\step{若 $d\in A$，$d\notin B$，则 $A=\{a,b,d\}$，$B=\varnothing$，所以 $\overline B=\{a,b,c,d,e\}$，}
+\step{此时 $A\cap\overline B=\{a,b,d\}$，不符合题意；}
+\step{若 $d\notin A$，$d\in B$，则 $A=\{a,b\}$，$B=\{d\}$，所以 $\overline B=\{a,b,c,e\}$，}
+\step{此时 $A\cap\overline B=\{a,b\}$，不符合题意；}
+\step{若 $d\notin A$，$d\notin B$，则 $A\cup B\neq\{a,b,d\}$，不符合题意；}
+\step{综上，$A=\{a,b,d\}$.}
+\solend
+
+\fi
+
+\item 已知 $p$：$\dfrac{x-1}{x-3}\leqslant0$，$q$：$|x+2a|<2$，若 $p$ 是 $q$ 的充分不必要条件，则实数 $a$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $p$：$\dfrac{x-1}{x-3}\leqslant0$，解得 $1\leqslant x<3$，}
+\step{由 $q$：$|x+2a|<2$，解得 $-2-2a<x<2-2a$，}
+\step{若 $p$ 是 $q$ 的充分不必要条件，则 $\begin{cases}-2-2a<1\\ 2-2a\geqslant3\end{cases}$，}
+\step{解得 $-\dfrac32<a\leqslant-\dfrac12$，}
+\step{所以实数 $a$ 的取值范围是 $\left(-\dfrac32,-\dfrac12\right]$.}
+\solend
+
+\fi
+
+\item 已知 $a$、$b$、$c\in\R$，有四个推理：① $a>b\Rightarrow am^2>bm^2$；② $\dfrac ac>\dfrac bc\Rightarrow a>b$；③ $a>b$，$ab>0\Rightarrow\dfrac1a<\dfrac1b$；④ $a^2>b^2$，$ab>0\Rightarrow\dfrac1a<\dfrac1b$，其中正确的序号是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{对于①，当 $m=0$ 时，显然不等式不成立，故①错误；}
+\step{对于②，当 $a=-3$，$b=-2$，$c=-1$ 时，$\dfrac ac>\dfrac bc$ 满足，$a>b$ 不满足，故②错误；}
+\step{对于④，由 $ab>0$，得 $a$、$b$ 同号，故当 $a$、$b$ 同号，$a^2>b^2$ 等价于 $a<b<0$，故 $\dfrac1a>\dfrac1b$，故④错误；}
+\step{改正确的是③.}
+\solend
+
+\fi
+
+\item 关于 $x$ 的方程 $x^2+ax+a^2-8=0$ 有两个实根 $x_1$、$x_2$，且 $\dfrac1{x_1}+\dfrac1{x_2}=-\dfrac12$，则 $a$ 的值为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $\Delta=a^2-4(a^2-8)=32-3a^2\geqslant0$，解得 $a^2\leqslant\dfrac{32}{3}$，}
+\step{由韦达定理得 $x_1+x_2=-a$，$x_1x_2=a^2-8$，}
+\step{则 $\dfrac1{x_1}+\dfrac1{x_2}=\dfrac{x_1+x_2}{x_1x_2}=\dfrac{-a}{a^2-8}=-\dfrac12$，}
+\step{即 $a^2-2a-8=(a-4)(a+2)=0$，解得 $a=4$ 或 $a=-2$，}
+\step{又 $a^2\leqslant\dfrac{32}{3}$，则 $a=-2$.}
+\solend
+
+\fi
+
+\item 若不等式 $|x-a|+|x+2a|\geqslant a+1$ 对于任意实数 $x$ 恒成立，则满足条件的实数 $a$ 的取值范围是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $|x-a|+|x+2a|\geqslant |(x-a)-(x+2a)|=3|a|\geqslant a+1$，}
+\step{所以 $\begin{cases}a\geqslant0\\3a\geqslant a+1\end{cases}$ 或 $\begin{cases}a<0\\-3a\geqslant a+1\end{cases}$，}
+\step{解得 $a\geqslant\dfrac12$ 或 $a\leqslant-\dfrac14$，}
+\step{综上，满足条件的实数 $a$ 的取值范围是 $\left(-\infty,-\dfrac14\right]\cup\left[\dfrac12,+\infty\right)$.}
+\solend
+
+\fi
+
+\item 已知正数 $a$、$b$、$c$ 满足 $c<1$，$a+b=4$，则 $\dfrac2{ab}+\dfrac1{bc(1-c)}$ 的最小值为 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $c(1-c)\leqslant\left(\dfrac{c+1-c}{2}\right)^2=\dfrac14$，当 $c=\dfrac12$ 时取等号，}
+\step{则 $\dfrac2{ab}+\dfrac1{bc(1-c)}\geqslant\dfrac2{ab}+\dfrac4b$，}
+\step{$=\dfrac{a+b}{2ab}+\dfrac4b=\dfrac1{2a}+\dfrac9{2b}$，}
+\step{$=\dfrac18\left(\dfrac1a+\dfrac9b\right)(a+b)$，}
+\step{$=\dfrac18\left(10+\dfrac ba+\dfrac{9a}b\right)\geqslant\dfrac18\left(10+2\sqrt{\dfrac ba\cdot\dfrac{9a}b}\right)=2$，}
+\step{当 $b=3a=3$ 时取等号，}
+\step{综上，当 $a=1$，$b=3$，$c=\dfrac12$ 时，$\dfrac2{ab}+\dfrac1{bc(1-c)}$ 的最小值为 $2$.}
+\solend
+
+\fi
+
+\item 对于非空实数集合 $A$，记 $A^*=\{y\mid\text{对任意 }x\in A\text{，}y\geqslant x\}$，设非空实数集合 $P$ 满足条件「若 $x<1$，则 $x\notin P$」且 $M\subseteq P$，给出下列命题：
+
+①若全集为实数 $\R$，对于任意非空实数集合 $A$，必有 $\overline A=A^*$；
+
+②对于任意给定合题设条件的集合 $M$、$P$，必有 $P^*\subseteq M^*$；
+
+③存在符合题设条件的集合 $M$、$P$，使得 $M^*\cap P=\varnothing$；
+
+④存在符合题设条件的集合 $M$、$P$，使得 $M\cap P^*\neq\varnothing$；
+
+其中所有正确命题的序号是 \blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由非空实数集合 $A$，记 $A^*=\{y\mid\text{对任意 }x\in A\text{，}y\geqslant x\}$，}
+% 注：原卷此处对 $A^*$ 的文字说明与定义不一致，且①的下界论证不能推出 $A^*=\varnothing$，照录。
+\step{则 $A^*$ 中元素为不小于 $A$ 中所有值的数，即不大于 $A$ 中最小元素的集合；}
+\step{①当 $A$ 集合下界趋向负无穷大时，$A^*=\varnothing$，故①错误；}
+% 注：题设的 M、P 为任意非空实数集合，未保证最大值存在；即使无最大值，P^*⊆M^* 仍由 M⊆P 直接得出，照录原解析的最大值论证。
+\step{②对于 $M\subseteq P$，假设 $M$ 中最大值为 $m$，$P$ 最大值为 $p$，则 $p\geqslant m$，}
+\step{因此 $M^*$ 表示大于 $m$ 所有值的集合，$P^*$ 表示大于 $p$ 的数的集合，}
+\step{则 $P^*\subseteq M^*$，故②正确；}
+\step{③令 $M=P=\{x\mid1\leqslant x<\dfrac32\}$，则 $M^*=\{x\mid x\geqslant\dfrac32\}$，}
+\step{故 $M^*\cap P=\varnothing$，故③正确；}
+% 注：下一例原卷取值含有小于 1 的元素，与题干「若 $x<1$，则 $x\notin P$」不符，照录未改。
+\step{④令 $M=\{x\mid0\leqslant x\leqslant\dfrac12\}$，$P=\{x\mid0<x<\dfrac12\}$，则 $P^*=\left\{x\mid x\geqslant\dfrac12\right\}$，}
+\step{则 $M\cap P^*\neq\varnothing$，故④正确；}
+\step{故所有正确命题的序号是②③④.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{二、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item
+\begin{enumerate}[label=(\arabic*)]
+\item 已知 $30<x<42$，$16<y<42$，求 $x+y$、$x-2y$、$\dfrac xy$ 的取值范围.
+\item 已知 $P=x^2+2x$，$Q=2y-y^2-5$，比较 $P$ 与 $Q$ 的大小.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由 $30<x<42$，①；$16<y<42$，②，得 $46<x+y<84$，}
+\step{由②得 $-84<-2y<-32$，③，由①、③得 $-54<x-2y<10$，}
+\step{由②得 $\dfrac1{42}<\dfrac1y<\dfrac1{16}$，④，由①、④得 $\dfrac57<\dfrac xy<\dfrac{21}{8}$，}
+\stepm{(2)}{因为 $P-Q=(x^2+2x)-(2y-y^2-5)$}
+\step{$=(x+1)^2+(y-1)^2+3>0$，}
+\step{所以 $P>Q$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知命题 $p$：「$\exists x\in\R$，$ax^2+2x-1=0$」为假命题.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求实数 $a$ 的取值集合 $A$；
+\item 设集合 $B=\{x\mid3m-4\leqslant2x-4\leqslant2m\}$，若「$x\in A$」是「$x\in B$」的必要不充分条件，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{命题 $p$：「$\exists x\in\R$，$ax^2+2x-1=0$」为假命题，}
+\step{即方程 $ax^2+2x-1=0$ 无实根，}
+\step{若 $a=0$，则 $2x-1=0$ 有实根，不符合题意；}
+\step{若 $a\neq0$，则 $\Delta=4+4a<0$，解得 $a<-1$，}
+\step{故实数 $a$ 的取值集合为 $A=\{a\mid a<-1\}$.}
+\stepm{(2)}{若 $B\neq\varnothing$，所以 $m+2>\dfrac{3m}{2}$，得 $m<4$，}
+% 注：B 的右端点 x=m+2 属于 B，A={x|x<-1} 不含 -1；m=-3 时 B 仍含 -1，不是 A 的子集，故原解析的 ≤ 端点不成立，照录。
+\step{集合 $B$ 是集合 $A$ 的真子集，只要 $m+2\leqslant-1$，即 $m\leqslant-3$；}
+\step{若 $B=\varnothing$，所以 $m+2<\dfrac{3m}{2}$，得 $m>4$，}
+\step{综上，实数 $m$ 的取值集合是 $\{m\mid m\leqslant-3\text{ 或 }m>4\}$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 如果种植一种水果，每年施肥和灌溉等需投入 $4$ 万元. 为提高产量同时改善水果口味以赢得市场，计划在今年投入 $x$ 万元用于改良品种. 根据其他果农种植经验发现，该水果年产量 $t$（万吨）与用于改良品种的资金投入 $x$（万元）之间的关系大致为 $t=3-\dfrac{m}{x+1}$（$x\geqslant0$，$m$ 为常数），若不改良品种，年产量为 $1$ 万吨. 该水果初始售价为每斤 $4$ 元，改良品种后，售价每斤提高 $\dfrac{x}{5}$ 元，假设产量和价格不受其他因素的影响.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求 $m$ 的值；
+\item 设该果农种植该水果所获得的年利润为 $y$（万元），求当该果农种植该水果所获得的利润不低于 $4$ 万元时，实数 $x$ 的取值范围；
+\item 该果农一年内应投入多少万元用于改良品种，才能使得年利润最大？最大利润是多少？
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{若不改良品种，年产量为 $1$ 万吨，则 $x=0$ 时，$t=1$，即 $3-\dfrac m1=1$，}
+\step{解得 $m=2$；}
+% 注：原卷下一步直接用「万吨」乘「元/斤」作为「万元」收入，未作单位换算，照录未改。
+\stepm{(2)}{因为年产量 $t=3-\dfrac2{x+1}$ 万吨，改良后售价 $p=\left(4+\dfrac x5\right)$ 元/斤，总成本 $4+x$ 万元，}
+\step{所以利润 $y=\left(3-\dfrac2{x+1}\right)\left(4+\dfrac x5\right)-(4+x)$，}
+\step{$=12+\dfrac{3x}{5}-\dfrac8{x+1}-\dfrac{2x}{5(x+1)}-4-x$，}
+\step{$=8-\dfrac{2x}{5}-\dfrac8{x+1}-\dfrac{2x}{5(x+1)}$，}
+\step{若利润不低于 $4$ 万元，则 $y\geqslant4$，}
+\step{即 $8-\dfrac{2x}{5}-\dfrac8{x+1}-\dfrac{2x}{5(x+1)}\geqslant4$，}
+\step{整理得 $x^2-8x+10\leqslant0$，解得 $4-\sqrt6\leqslant x\leqslant4+\sqrt6$，}
+\step{所以 $x\in[4-\sqrt6,4+\sqrt6]$；}
+\stepm{(3)}{因为 $y=8-\dfrac{2x}{5}-\dfrac8{x+1}-\dfrac{2x}{5(x+1)}$，}
+\step{所以 $y=8-\left[\dfrac{2(x+1)}5+\dfrac{38}{5(x+1)}\right]$，}
+\step{$\leqslant8-2\sqrt{\dfrac{2(x+1)}5\cdot\dfrac{38}{5(x+1)}}=8-\dfrac{4\sqrt{19}}5$，}
+\step{当且仅当 $\dfrac{2(x+1)}5=\dfrac{38}{5(x+1)}$，即 $x=\sqrt{19}-1$ 时取等号，}
+\step{所以该果农一年内应投入 $\sqrt{19}-1$ 万元用于改良品种，获得最大利润 $8-\dfrac{4\sqrt{19}}5$ 万元.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\item 设函数 $f(x)=ax^2+(b-2)x+c+3$（$a\neq0$）.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $c=0$ 时，不等式 $f(x)<0$ 的解集为 $(-3,-1)$，求实数 $a$、$b$ 的值；
+\item 若 $b=-a-1$，求关于 $x$ 的不等式 $f(x)>-4x+c+4$ 的解集；
+\item 若 $f(x)\geqslant(2a-2)x+b+3$ 对 $\forall x\in\R$ 恒成立，求 $\dfrac{b^2}{3a^2+c^2}$ 的最大值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $c=0$ 时，$f(x)=ax^2+(b-2)x+3$，$f(x)<0$ 的解集为 $(-3,-1)$，}
+\step{故方程 $ax^2+(b-2)x+3=0$ 的两根为 $-3$、$-1$，}
+\step{由韦达定理，$\begin{cases}-3+(-1)=-\dfrac{b-2}{a}\\ (-3)(-1)=\dfrac3a\end{cases}$，}
+\step{解得 $a=1$，$b=6$；}
+\stepm{(2)}{将 $b=-a-1$ 代入不等式 $f(x)>-4x+c+4$，}
+\step{整理得 $ax^2+(1-a)x-1>0$，即 $(x-1)(ax+1)>0$，}
+\step{当 $a>0$ 时，$-\dfrac1a<1$，不等式解集为 $\left(-\infty,-\dfrac1a\right)\cup(1,+\infty)$；}
+\step{当 $a<0$ 时，}
+\step{若 $a<-1$，则 $-\dfrac1a<1$，不等式解集为 $\left(-\dfrac1a,1\right)$；}
+\step{若 $a=-1$，不等式化为 $-(x-1)^2>0$，无实数解，不等式解集为 $\varnothing$；}
+\step{若 $-1<a<0$，则 $-\dfrac1a>1$，不等式解集为 $\left(1,-\dfrac1a\right)$；}
+\stepm{(3)}{整理不等式 $f(x)\geqslant(2a-2)x+b+3$ 得 $ax^2+(b-2a)x-b+c\geqslant0$，}
+\step{对 $\forall x\in\R$ 恒成立，故 $a>0$ 且判别式 $\Delta=(b-2a)^2-4a(-b+c)\leqslant0$，}
+\step{化简得 $4ac\geqslant b^2+4a^2$，即 $c\geqslant\dfrac{b^2+4a^2}{4a}$，}
+\step{令 $t=\dfrac ba$（$t\in\R$），则 $b=ta$，代入得 $c\geqslant\dfrac{a(t^2+4)}4$，}
+\step{将 $b=ta$，$c\geqslant\dfrac{a(t^2+4)}4$ 代入 $\dfrac{b^2}{3a^2+c^2}$，}
+\step{得 $\dfrac{b^2}{3a^2+c^2}\leqslant\dfrac{t^2a^2}{3a^2+\dfrac{a^2(t^2+4)^2}{16}}=\dfrac{16t^2}{48+(t^2+4)^2}$，}
+\step{令 $u=t^2\geqslant0$，表达式为 $\dfrac{16u}{u^2+8u+64}$，}
+\step{由基本不等式 $u+\dfrac{64}{u}\geqslant2\sqrt{64}=16$（当且仅当 $u=8$ 时取等号），}
+\step{故 $\dfrac{16u}{u^2+8u+64}\leqslant\dfrac23$，}
+\step{当 $t^2=8$，$c=3a$ 时取等号，故 $\dfrac{b^2}{3a^2+c^2}$ 的最大值为 $\dfrac23$.}
+\solend
+
+\fi
+
+\ansspace[8]
+
+\end{enumerate}
+
+\end{document}
