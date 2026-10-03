@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""README转tex.py —— 把 README.md 的「题目溯源」一节排成一份独立的 LaTeX 报告
+"""README转tex.py —— 把 README.md 的“题目溯源”一节排成一份独立的 LaTeX 报告
 
 用法
 ----
@@ -13,7 +13,7 @@
     处理得干净：`**加粗**`→`\\textbf{}`、`` `代码` ``→`\\texttt{}`（连 `\\item`、`_`、`%`
     都转义正确）、`>`→`quote` 环境、有序/无序列表、`$…$`→`\\(…\\)`。
   · **表格绝不能交给 pandoc**：它出的是 `longtable{@{}lcl@{}}`，`l` 列**根本不换行**，
-    逐卷核对表里有一格长达 1145「汉字宽」，交给它必然冲出页面。9 张表由本脚本自己生成
+    逐卷核对表里有一格长达 1145“汉字宽”，交给它必然冲出页面。9 张表由本脚本自己生成
     `xltabular`，列宽按内容算。
   · **Unicode 数学符号 pandoc 不会转**（实测 `× → · ≥ ② ▲ ★ ① ⊕ ↔ ≤ ≈ ² ∧ ± ₀ ⇒` 原样输出），
     由本脚本后处理。**只动数学模式外**的符号——README 里 `≥` 有时在 `$…$` 内
@@ -21,16 +21,16 @@
 
 踩过的坑
 --------
-  ① **表格列宽不能用「最大值」算**：逐卷核对表第 3 列有一格长 1145 单位，按最大值分配
-     会把前两列（「高一05」「9 张 / 18 题」）饿死到不可读。改用「表头宽与列内容宽的
-     **P60** 的较大者」，再夹逼到 [1.1cm, 52% 文本宽]。
+  ① **表格列宽不能用“最大值”算**：逐卷核对表第 3 列有一格长 1145 单位，按最大值分配
+     会把前两列（“高一05”“9 张 / 18 题”）饿死到不可读。改用“表头宽与列内容宽的
+     **P60** 的较大者”，再夹逼到 [1.1cm, 52% 文本宽]。
   ② **列间距要扣**：longtable 每列两侧各有 `\\tabcolsep`（默认 6pt），5 列就是 2.1cm。
      不扣就会撑出文本宽——这是 xltabular 最常见的溢出原因。
   ③ **单元格要批量送 pandoc**：逐个单元格调用 pandoc 是 350 次进程、十几秒。用哨兵行
      `CELLSEP` 把 350 格拼成一份文档一次转换，再按哨兵切回来（实测哨兵原样通过）。
   ④ **数学模式内的长公式不会断行**：`p{}` 列里 `$…$` 是一个原子，TeX 不给断点。故在
      单元格的数学里于 `=` `+` `,` `\\mid` `\\cup` `\\cap` `\\subseteq` 等之后插 `\\allowbreak`。
-     验收标准是「编译日志无 Overfull \\hbox」。
+     验收标准是“编译日志无 Overfull \\hbox”。
   ⑤ **①–⑳ 不要映射**：它们已在 `common.sty` 的 `xeCJKDeclareCharClass` 里走中文字体，
      映射成数学命令反而会把中文引号排坏。★▲ 同理走字符类（`common.sty` 里已补两段）。
 """
@@ -59,13 +59,13 @@ CELLSEP = 'CELLSEP'
 # 成了 `TABPLACEHOLDER10` 的**前缀**——表数涨到 11 张时，替换第 2 张表那一步会把第 11 张的
 # 占位符一起吃掉（`TABPLACEHOLDER10` → `<第2张表的 tex>0`），结果**最后一张表整块丢失、
 # 第 2 张表在文里出现两遍**，而且 A 闸（README ↔ tex 字符多重集）**照样能过**——
-# 因为「丢的内容」与 README 的差异要到 B 闸才露出来。2026-09-28 加第 11 张表
-# （①机判「未计入」台账）时才踩到：症状是 A 闸报「少 1400 字」、B 闸报「缺小节／缺特征词」、
+# 因为“丢的内容”与 README 的差异要到 B 闸才露出来。2026-09-28 加第 11 张表
+# （①机判“未计入”台账）时才踩到：症状是 A 闸报“少 1400 字”、B 闸报“缺小节／缺特征词”、
 # 页数从 62 掉到 57。零填充后不存在谁是谁的前缀。
 PLACEHOLDER = 'TABPLACEHOLDER%03d'
 
-# 扉页那几个数（份数 / 题数 / 参考库 / 跨卷对数 / 两档组数）**一律从 README 的「核对摘要」表抽**，
-# 不在脚本里写死——写死过一次：2026-09-22 并入高一25—28 后，扉页还印着「87,571 对、24 组、12 组」
+# 扉页那几个数（份数 / 题数 / 参考库 / 跨卷对数 / 两档组数）**一律从 README 的“核对摘要”表抽**，
+# 不在脚本里写死——写死过一次：2026-09-22 并入高一25—28 后，扉页还印着“87,571 对、24 组、12 组”
 # （口径已到 118,828 对、26 组、14 组），而 计数核对.py 管不到扉页，静默过期了一整轮。
 # 溯源比对.py 里有一道闸盯这些数是否真的印到了 PDF 首页。
 COVER_RE = {
@@ -80,7 +80,7 @@ COVER_RE = {
 #   ① ①–⑳、★、▲ —— 走 common.sty 的 xeCJKDeclareCharClass（中文字体里有这些字形）。
 #      ★ 试过映射成 $\bigstar$，排出来是 ⋆（U+22C6），与 README 的 ★（U+2605）不是同一个字，
 #      故不映射、改走字符类——这样 PDF 里的字形与 README 完全一致。
-#   ② – — · 「」（）等标点 —— 字体里有字形，动了反而会把中文标点排坏。
+#   ② – — · 角引号、括号等标点 —— 字体里有字形，动了反而会把中文标点排坏。
 #   ③ 行内代码（\texttt）里的符号 —— 见 map_unicode 的保护段。
 UNI = [
     ('×', r'$\times$'), ('→', r'$\to$'), ('≥', r'$\geqslant$'), ('≤', r'$\leqslant$'),
@@ -94,8 +94,8 @@ UNI = [
     ('⋯', r'$\cdots$'), ('…', r'$\ldots$'),
 ]
 
-# 数学模式内可作断点的符号（见「坑④」）
-# ⚠ 必须按长度降序、且加「后不接字母」守卫：`\subset` 是 `\subsetneq`／`\subseteq` 的前缀，
+# 数学模式内可作断点的符号（见“坑④”）
+# ⚠ 必须按长度降序、且加“后不接字母”守卫：`\subset` 是 `\subsetneq`／`\subseteq` 的前缀，
 #   先替换短的会把 `\subsetneq` 拆成 `\subset\allowbreak neq`，排出来是 `⊄=`。
 #   2026-09-15 第一版就踩了这个（出处表那一行的 $\varnothing\subsetneq M\subsetneq\mathbb R$）。
 BREAK_AFTER = [r'\subseteq', r'\subsetneq', r'\setminus', r'\geqslant', r'\leqslant',
@@ -109,7 +109,7 @@ def thousands(s):
 
 
 def readme_stats():
-    """从 README「核对摘要」表抽出扉页要用的 6 个数，返回 (文本, 数表)"""
+    """从 README“核对摘要”表抽出扉页要用的 6 个数，返回 (文本, 数表)"""
     txt = io.open(README, encoding='utf-8').read()
     m = {k: re.search(v, txt) for k, v in COVER_RE.items()}
     miss = [k for k, v in m.items() if not v]
@@ -135,10 +135,10 @@ def read_section():
     sec = lines[i + 1:j]
     # 表格必须顶层。写成引用块（行首 `> |`）时 split_blocks 认不出，会整块丢给 pandoc；
     # pandoc 在 quote 环境里排 longtable，编译报 `No counter 'none' defined`，PDF 只编到一半、
-    # 而 A 闸（字符多重集）却仍可能过——2026-09-26 踩过，症状是 B 闸「PDF 侧只抽出 5 千字」。
+    # 而 A 闸（字符多重集）却仍可能过——2026-09-26 踩过，症状是 B 闸“PDF 侧只抽出 5 千字”。
     bad = [k for k, l in enumerate(sec, i + 2) if re.match(r'^\s*>\s*\|', l)]
     if bad:
-        sys.exit('❌ README「%s」节第 %s 行把表格写进了引用块（行首 `> |`）。\n'
+        sys.exit('❌ README“%s”节第 %s 行把表格写进了引用块（行首 `> |`）。\n'
                  '   请把表格移出引用块——本仓库的表一律顶层，README转tex.py 才认得出并按列宽生成 '
                  'xltabular。' % (SECT, '、'.join(map(str, bad))))
     return sec
@@ -202,7 +202,7 @@ def disp_width(md_text):
 
 
 def col_widths(header, data):
-    """列宽（cm）。见「坑①」「坑②」"""
+    """列宽（cm）。见“坑①”“坑②”"""
     n = len(header)
     need = []
     for k in range(n):
@@ -233,7 +233,7 @@ def pandoc(md, shift=None):
 
 
 def cells_to_tex(texts):
-    """一批单元格文本 → 逐格 LaTeX（一次 pandoc，见「坑③」）"""
+    """一批单元格文本 → 逐格 LaTeX（一次 pandoc，见“坑③”）"""
     if not texts:
         return []
     md = ('\n\n%s\n\n' % CELLSEP).join(texts)
@@ -252,9 +252,9 @@ def strip_labels(tex):
 
 
 def map_unicode(tex):
-    """把数学模式外的 Unicode 符号换成 LaTeX 命令（见「坑⑤」）
+    """把数学模式外的 Unicode 符号换成 LaTeX 命令（见“坑⑤”）
 
-    先按「受保护段 / 普通段」切开，只对普通段替换。受保护段有三类：
+    先按“受保护段 / 普通段”切开，只对普通段替换。受保护段有三类：
       `\\(…\\)` `\\[…\\]` 数学，以及 `\\texttt{…}`（代码里塞 `$\\bigstar$` 会直接报错）。
     """
     segs, buf, i, n = [], [], 0, len(tex)
@@ -292,9 +292,9 @@ def map_unicode(tex):
 
 
 def breakable(tex):
-    """单元格数学里插断行点（见「坑④」）；只处理 `\\(…\\)` 内。
+    """单元格数学里插断行点（见“坑④”）；只处理 `\\(…\\)` 内。
 
-    BREAK_AFTER 已按长度降序，配合「后不接字母」守卫，`\\subsetneq` 不会被 `\\subset` 吃掉。
+    BREAK_AFTER 已按长度降序，配合“后不接字母”守卫，`\\subsetneq` 不会被 `\\subset` 吃掉。
     """
     pat = re.compile('(' + '|'.join(re.escape(t) for t in BREAK_AFTER) + r')(?![A-Za-z])')
 
@@ -353,11 +353,11 @@ def table_tex(header, aligns, data, index):
            'r': r'>{\raggedleft\arraybackslash}'}
     spec = ''.join(pre[a] + 'p{%.2fcm}' % w for a, w in zip(aligns, ws))
 
-    # 表头：两处都排（首页 endfirsthead、续页 endhead）。以前续页只有「（续上表）」没有表头，
+    # 表头：两处都排（首页 endfirsthead、续页 endhead）。以前续页只有“（续上表）”没有表头，
     # 翻到宽表的第二页就看不出列的含义了；表头用 `\rowcolor{white}` 从交替底纹里摘出来。
-    # 但**不能直接把表头文本写两遍**——溯源比对.py 的 A 闸是「README ↔ tex 字符多重集」，
+    # 但**不能直接把表头文本写两遍**——溯源比对.py 的 A 闸是“README ↔ tex 字符多重集”，
     # 写两遍就多一份，闸必然挂。故定义一次宏、用两次：
-    # 宏名只含字母（\tabhdrA…），被 A 闸的「删 LaTeX 命令」一步整条抹掉，不留残字；
+    # 宏名只含字母（\tabhdrA…），被 A 闸的“删 LaTeX 命令”一步整条抹掉，不留残字；
     # 而定义那一行里的表头文本照常被数一次，与 README 侧一一对应。
     mac = r'\tabhdr' + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[index]
 
@@ -388,17 +388,17 @@ def table_tex(header, aligns, data, index):
 def preamble(body, st):
     # 模板里用 @@…@@ 占位再 replace，不用 `%` 格式化——LaTeX 的注释里全是单个 `%`
     # （\providecommand{\tightlist}{%} 这种），`%` 运算符会把它们当转换符。
-    head = r'''%% 溯源.tex —— 「题目溯源」报告（@@FEN@@ 份口径）
-%% **本文件由 工具/README转tex.py 从 ../README.md 的「题目溯源」一节自动生成，不要手改**：
+    head = r'''%% 溯源.tex —— “题目溯源”报告（@@FEN@@ 份口径）
+%% **本文件由 工具/README转tex.py 从 ../README.md 的“题目溯源”一节自动生成，不要手改**：
 %% 改内容请改 README，改排版请改那个脚本，然后 `make trace` 重生成。
 %% 编译：xelatex 溯源.tex（跑两遍，第二遍才有目录与交叉引用）
 \documentclass[a4paper,11pt]{article}
 \usepackage{common}
 \usepackage{booktabs}
-\usepackage{xltabular}          % longtable + 固定列宽（宽表见 README 的「题目溯源」）
+\usepackage{xltabular}          % longtable + 固定列宽（宽表见 README 的“题目溯源”）
 \usepackage{colortbl}           % 宽表交替底纹（\rowcolors）：行高 3—4 行的表不串行
 \usepackage{fancyhdr}
-\usepackage{lastpage}           % 页脚「第 N 页 / 共 M 页」
+\usepackage{lastpage}           % 页脚“第 N 页 / 共 M 页”
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=solblue,urlcolor=solblue,
             bookmarksopen=true,bookmarksopenlevel=1,pdfstartview=FitH,
@@ -473,7 +473,7 @@ def main():
 
     body = pandoc('\n'.join(md), shift=-2)
     body = strip_labels(body)
-    # 每个 \section 前另起一页：以前节与节连排，会出现「上节的表格续页 + 正文 + 下一节标题」
+    # 每个 \section 前另起一页：以前节与节连排，会出现“上节的表格续页 + 正文 + 下一节标题”
     # 挤在同一页（39 页那版第 18 页就是），翻到中间页看不出自己在哪一节。
     body = re.sub(r'(?m)^\\section\{', r'\\clearpage\n\\section{', body)
     body = break_paths(map_unicode(body))

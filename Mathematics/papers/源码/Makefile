@@ -18,20 +18,20 @@
 #   make compact            编译全部（紧凑试卷版：去掉解答题作答区，压轴题换页保护保留）
 #   make one-c F=高一02_大同中学_集合综合练习   只编某一套的紧凑版
 #   make check              校验：试卷版/紧凑版不含答案，且紧凑版正文与试卷版一致
-#   make docs               校验：README 里的「当前态计数」与源码/成品是否一致
+#   make docs               校验：README 里的“当前态计数”与源码/成品是否一致
 #   make list               查看页数统计
-#   make trace              生成「题目溯源」报告（溯源.tex → ../溯源/题目溯源.pdf）
+#   make trace              生成“题目溯源”报告（溯源.tex → ../溯源/题目溯源.pdf）
 #   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（47 份 / 105 页）
 #   make clean              清理 LaTeX 临时文件
 #   make distclean          清理临时文件与中间 PDF
 #   make help               显示本帮助
 #
-# 溯源报告（与 47 份试卷分开的一条链）：内容来自 ../README.md 的「题目溯源」一节，
+# 溯源报告（与 47 份试卷分开的一条链）：内容来自 ../README.md 的“题目溯源”一节，
 # 由 ../工具/README转tex.py 生成 溯源.tex（**不要手改 溯源.tex**——改内容改 README、
 # 改排版改那个脚本）。溯源.tex 不匹配 高一*.tex 通配符，故 test/ans/compact/one 都不碰它。
 # 编译后跑 ../工具/溯源比对.py 做两道校验，见该脚本头部。
 #
-# 编译时附带「缺字检查」：xelatex 对字体里没有的字形只报 Missing character 然后
+# 编译时附带“缺字检查”：xelatex 对字体里没有的字形只报 Missing character 然后
 # 静默丢弃该字符（PDF 里直接消失、不报错），故每条编完立即扫日志，命中就中止构建。
 # 要新增符号（★ ℃ 生僻字等）时，先在 common.sty 里把它划入 CJK 字符类。
 
@@ -52,24 +52,24 @@ TEX       := $(sort $(wildcard 高一*.tex))
 # **全部 xelatex 调用都带上它**（test／ans／one／compact／one-c／溯源 六条链）：
 # xdvipdfmx 认这个变量，把 /CreationDate、/ID 一次定死，于是**源码不变时反复编译出的 PDF
 # 逐字节相同**——`make trace`、`make one` 这些目标重跑多少遍都不再往 `git status` 里塞
-# 「只差时间戳」的假修改（于是「某份 PDF 进了 status」就等于「内容真的变了」）。
-# 判「是否只差元数据」仍以 `pdftoppm` 逐页像素比对为准（正文指纹对 \overline、A↔B 换位是盲的），
-# 见 README「编译方式」。
+# “只差时间戳”的假修改（于是“某份 PDF 进了 status”就等于“内容真的变了”）。
+# 判“是否只差元数据”仍以 `pdftoppm` 逐页像素比对为准（正文指纹对 \overline、A↔B 换位是盲的），
+# 见 README“编译方式”。
 # 实测（TeX Live 2026）**只设这一项就够**：不必像 mistakes/ 那样再注入 pdf:docinfo special
 # ——那是为了覆盖 XeTeX 写进 /Creator 的编译时刻，而这一版 /Creator 已是固定的
-# 「LaTeX with hyperref」；本库源码里也没有 \today 之类会随日期变化的排版。
+# “LaTeX with hyperref”；本库源码里也没有 \today 之类会随日期变化的排版。
 # 取值 = 全库统一的构建基准日＝口径日期（工具/README转tex.py 的 RUN_DATE）的**当天零点**：
 # 人可读 2026-10-02、epoch 1790899200（UTC 零点）。
 # ⚠ 改 RUN_DATE 时这里要跟着改——计数核对.py 有一条断言比对两者是不是同一天。
 SOURCE_DATE_EPOCH := 1790899200
 
 # 每遍编译前**清掉该卷的辅助文件**（.aux/.out/.toc/.log）——这是可复现的最后一块：
-# xelatex 单遍编译读上一次留在盘上的 .aux，于是同一份源码会因「上一次编的是哪一版」而出不同字节
+# xelatex 单遍编译读上一次留在盘上的 .aux，于是同一份源码会因“上一次编的是哪一版”而出不同字节
 # （实测：脏状态 1606d04f…／干净状态 1c7f3d40…，两者**正文与像素完全相同**、只差元数据；
 # 干净状态连编三遍字节全同，是不动点）。本库各卷都没有 \ref/\label/目录（只有溯源报告用
 # \pageref{LastPage}），所以单遍＝内容正确，可以放心从干净状态起；溯源报告那条链**不动**
 # （它靠两遍收敛 \pageref）。顺带好处：缺字检查读的 .log 一定是本次编译写的。
-# ⚠ 若将来某卷开始用 \ref/目录，要改成「清干净后编两遍」，否则引用会印成 ??。
+# ⚠ 若将来某卷开始用 \ref/目录，要改成“清干净后编两遍”，否则引用会印成 ??。
 
 # 缺字检查（test / ans / one 共用）：扫 $$LF.log，命中 Missing character 即中止。
 # 调用前须把 LF 设成当前这套的名字（不含 .tex），如 LF=$$b。
@@ -159,7 +159,7 @@ check:
 # ===== 文档计数核对（独立一条链，不进 check）=====
 # 核的是 README 与**源码**是否同步，与 check 的轴不同：check 读成品 PDF、管输出对不对
 #（答案不泄漏、紧凑版与试卷版逐字一致），本目标解析 源码/高一*.tex 与成品份数/页数、
-# 逐条比 README 里二十来处「当前态计数」。判据、为什么单列、以及「断言找不到即失败」的
+# 逐条比 README 里二十来处“当前态计数”。判据、为什么单列、以及“断言找不到即失败”的
 # 设计都在 工具/计数核对.py 的文件头，改 README 措辞时务必同步改那边的正则。
 docs:
 	@python3 $(TOOLS)/计数核对.py

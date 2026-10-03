@@ -17,7 +17,7 @@
 # 可复现构建：① 以源文件 mtime 作 SOURCE_DATE_EPOCH（固定 PDF 的 /ID）；
 # ② -usepretex 注入 docinfo special，覆盖 XeTeX 默认写入的编译时刻（/Creator 精确到分、
 # 不归 SOURCE_DATE_EPOCH 管）并把 /CreationDate 定为源文件日期。源码不变时重编得到
-# 逐字节相同的 PDF，因此「重编一遍」不会在 git 里产生无意义的二进制 diff。
+# 逐字节相同的 PDF，因此“重编一遍”不会在 git 里产生无意义的二进制 diff。
 #
 # 注意：`-cd` 让 latexmk 把 CWD 切到本目录，.tex 里的相对路径 `../papers/源码/…`
 # 才是相对本目录解析（从别处直接跑 xelatex 会解析错）。
@@ -32,12 +32,12 @@ TEX := $(sort $(wildcard *.tex))
 PDF := $(TEX:.tex=.pdf)
 LOG := $(PDF:.pdf=.log)
 
-# 每题末尾一个「我的错答」填空栏 → 栏数即题数
+# 每题末尾一个“我的错答”填空栏 → 栏数即题数
 WANT_ITEMS := 16
 # 期望页数：首次 `make` 后按实际页数回填
 WANT_PAGES := 4
 # ⚠ 这两个期望值（以及 check 的判据）现在按**单份错题集**写死：本目录若添第二份、而它的题数或
-#   页数与这份不同，check 会误报。届时改成「按份」的表（以文件名为键）。两个值任一个为 0 时
+#   页数与这份不同，check 会误报。届时改成“按份”的表（以文件名为键）。两个值任一个为 0 时
 #   该项检查跳过（页数早已如此，题数同理）。
 
 .PHONY: all check clean distclean list help
