@@ -298,7 +298,7 @@ def zhenti_facts(md):
     return n_row, n_slot, n_dd, n_row - n_dd - n_bj, n_bj, len(groups), dist
 
 
-FENSHU = {3: '三份', 2: '两份', 1: '单独'}
+FENSHU = {4: '四份', 3: '三份', 2: '两份', 1: '单独'}
 
 
 def _zhenti_g(pat, s, name, n=1, flags=0):
@@ -345,6 +345,7 @@ def check_zhenti(md):
         r'\*\*(\d+) 条对应\*\*：原题照录 (\d+)、改编 (\d+)、借定义／借集合另出题 (\d+)',
         sm, '摘要：条数／按关系分', n=4)
     sm_tw = _zhenti_g(r'对应本库 \*\*(\d+) 个题位\*\*', sm, '摘要：题位数')
+    sm_4 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*四份\*\*', sm, '摘要：被四份用到的道数')
     sm_3 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*三份\*\*', sm, '摘要：被三份用到的道数')
     sm_2 = _zhenti_g(r'\*\*(\d+) 道\*\*各被两份用到', sm, '摘要：被两份用到的道数')
 
@@ -357,15 +358,20 @@ def check_zhenti(md):
     zb_dd2, zb_gb2, zb_bj2, zb_tj2 = _zhenti_g(
         r'原题照录 \*\*(\d+)\*\* 条、改编 \*\*(\d+)\*\* 条、借定义／借集合另出题 \*\*(\d+)\*\* 条 ＝ (\d+) 条',
         zb, '节正文：按关系分', n=4)
-    a3, b2, c1, tw_sum = _zhenti_g(
-        r'(\d+) × 3 ＋ (\d+) × 2 ＋ (\d+) × 1 ＝ \*\*(\d+) 个题位\*\*', zb, '节正文：题位算式', n=4)
-    dd_sum = a3 + b2 + c1
+    a4, a3, b2, c1, tw_sum = _zhenti_g(
+        r'(\d+) × 4 ＋ (\d+) × 3 ＋ (\d+) × 2 ＋ (\d+) × 1 ＝ \*\*(\d+) 个题位\*\*',
+        zb, '节正文：题位算式', n=5)
+    dd_sum = a4 + a3 + b2 + c1
+    zb_4 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*四份\*\*试卷用到', zb, '节正文：被四份用到')
     zb_3 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*三份\*\*试卷用到', zb, '节正文：被三份用到')
     m2 = re.search(r'\*\*(\d+) 道\*\*各被两份用到（(.*?)）\s*\n\s*→', zb, re.S)
     if not m2:
         raise AssertionError('README 里找不到这处断言：节正文“被两份用到”及其名单')
     zb_2, names2 = int(m2.group(1)), m2.group(2)
-    m3 = re.search(r'试卷用到（(.*?)），\s*\n', zb, re.S)
+    m4 = re.search(r'\*\*\d+ 道\*\*真题被\*\*四份\*\*试卷用到（(.*?)），\s*\n', zb, re.S)
+    if not m4:
+        raise AssertionError('README 里找不到这处断言：节正文“被四份用到”的名单')
+    m3 = re.search(r'\*\*\d+ 道\*\*真题被\*\*三份\*\*试卷用到（(.*?)），\s*\n', zb, re.S)
     if not m3:
         raise AssertionError('README 里找不到这处断言：节正文“被三份用到”的名单')
     dd_ar, extra_dec, tj_ar = _zhenti_g(
@@ -375,7 +381,7 @@ def check_zhenti(md):
         raise AssertionError('README 里找不到这处断言：节正文“第二种／第三种改法”的括号')
     extra_calc = m.group(1).count('两种') + 2 * m.group(1).count('三种')
 
-    d3, d2, d1 = dist.get(3, 0), dist.get(2, 0), dist.get(1, 0)
+    d4, d3, d2, d1 = dist.get(4, 0), dist.get(3, 0), dist.get(2, 0), dist.get(1, 0)
     add('真题出处：条数（三处 ↔ 表行数）', (sm_tj, ti_tj, zb_tj), (n_row,) * 3,
         f'表 {n_row} 行；三处为摘要／节标题／节正文')
     add('真题出处：题位数（三处 ＋ 算式 ↔ 表）', (sm_tw, ti_tw, zb_tw, tw_sum), (n_slot,) * 4,
@@ -384,14 +390,16 @@ def check_zhenti(md):
         (sm_dd, ti_dd, zb_dd, dd_sum), (n_dao,) * 4,
         f'按出处栏归并（同卷两道真题靠题号区分）；算式 {a3} ＋ {b2} ＋ {c1} ＝ {dd_sum}')
     # 题位数与“份数分布”互为印证：Σ(份数 × 该份数的真题道数) 必须等于题位数
-    add('真题出处：题位 ＝ Σ(份数 × 道数)（表内自洽）', n_slot, 3 * d3 + 2 * d2 + d1)
+    add('真题出处：题位 ＝ Σ(份数 × 道数)（表内自洽）', n_slot, 4 * d4 + 3 * d3 + 2 * d2 + d1)
     add('真题出处：按关系分（摘要／节正文 ↔ 表）',
         ((sm_dd2, sm_gb2, sm_bj2), (zb_dd2, zb_gb2, zb_bj2)),
         ((n_dd, n_gb, n_bj),) * 2, '原题照录／改编／借定义')
     add('真题出处：按关系分之和 ＝ 条数', sm_dd2 + sm_gb2 + sm_bj2, n_row)
     add('真题出处：真题侧份数分布（摘要／节正文／算式 ↔ 表归并）',
-        (sm_3, sm_2, zb_3, zb_2, a3, b2, c1), (d3, d2, d3, d2, d3, d2, d1),
-        f'表归并得 {d3} 道被三份、{d2} 道被两份、{d1} 道单独')
+        (sm_4, sm_3, sm_2, zb_4, zb_3, zb_2, a4, a3, b2, c1),
+        (d4, d3, d2, d4, d3, d2, d4, d3, d2, d1),
+        f'表归并得 {d4} 道被四份、{d3} 道被三份、{d2} 道被两份、{d1} 道单独')
+    add('真题出处：被四份用到的名单条数', zb_4, m4.group(1).count('；') + 1)
     add('真题出处：被三份用到的名单条数', zb_3, m3.group(1).count('；') + 1)
     add('真题出处：被两份用到的名单条数', zb_2, names2.count('、') + 1, '名单里逐个点名的真题')
     add('真题出处：多改法条数', (extra_dec, dd_ar + extra_dec), (extra_calc, tj_ar),
@@ -530,7 +538,7 @@ def check_liuzhuan(md, n_tex):
 
 
 # ----------------------------------------------------------------- 副标题分布与其他随加卷漂移的数
-# “其余 47 份由本稿补出……其中 30 份作‘集合与常用逻辑用语’，另 17 份实为两章或纯不等式”
+# "其余 48 份由本稿补出……其中 31 份作'集合与常用逻辑用语'，另 17 份实为两章或纯不等式"
 # 这两个数由源码的 `\examtitlest{…}{副标题}` 现算；根 README 里又复述了一遍。
 # 另有两处“当前态”的份数是靠人改的（自定义名词那句的份数、“标题行”那句的套数），一并接进闸。
 def check_subtitle_dist(md, root, n_tex):
@@ -947,7 +955,7 @@ def check_kuajuan(md):
 
 
 def check_yuantu(md, zhuti_vols):
-    """“页级核对”那一段的 44 份／376 张、最早 13 份 95 张与“其余”名单。"""
+    """'页级核对'那一段的 45 份／388 张、最早 13 份 95 张与'其余'名单。"""
     sec = md[md.index('### 回原图逐题核对'):md.index(ZHUTI_HEAD)]
     sm_n, sm_z = _zhenti_g(r'有原文链接的现为 \*\*(\d+) 份 / (\d+) 张\*\*', sec,
                            '回原图：有链接的份数/张数', n=2)
@@ -969,7 +977,7 @@ def check_yuantu(md, zhuti_vols):
         f'最早一批 {e_n} 份 {e_z} 张 ＋ 其余 {n_rest} 份 {z_rest} 张')
     add('回原图：“其余”名单都在有链接的份里', [],
         sorted(set(v for v, _ in rest) - set(link)), f'{n_rest} 份')
-    # “47 套卷子都过了一遍”：逐题核对表 ∪ 写在专记里的五份，再去掉两份对号副本
+    # "48 套卷子都过了一遍"：逐题核对表 ∪ 写在专记里的五份，再去掉两份对号副本
     add('回原图：过了一遍的套数', claim(md, r'(\d+) 套卷子都过了一遍', '回原图：套数'),
         len((zhuti_vols | set(ZHUANJI5)) - set(COPY_NAMES)),
         f'逐题核对表 {len(zhuti_vols)} 行 ＋ 专记 {len(ZHUANJI5)} 份 − {COPIES} 份副本')

@@ -21,12 +21,12 @@
 #   make docs               校验：README 里的“当前态计数”与源码/成品是否一致
 #   make list               查看页数统计
 #   make trace              生成“题目溯源”报告（溯源.tex → ../溯源/题目溯源.pdf）
-#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（47 份 / 105 页）
+#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（48 份 / 108 页）
 #   make clean              清理 LaTeX 临时文件
 #   make distclean          清理临时文件与中间 PDF
 #   make help               显示本帮助
 #
-# 溯源报告（与 47 份试卷分开的一条链）：内容来自 ../README.md 的“题目溯源”一节，
+# 溯源报告（与 48 份试卷分开的一条链）：内容来自 ../README.md 的“题目溯源”一节，
 # 由 ../工具/README转tex.py 生成 溯源.tex（**不要手改 溯源.tex**——改内容改 README、
 # 改排版改那个脚本）。溯源.tex 不匹配 高一*.tex 通配符，故 test/ans/compact/one 都不碰它。
 # 编译后跑 ../工具/溯源比对.py 做两道校验，见该脚本头部。
@@ -59,9 +59,10 @@ TEX       := $(sort $(wildcard 高一*.tex))
 # ——那是为了覆盖 XeTeX 写进 /Creator 的编译时刻，而这一版 /Creator 已是固定的
 # “LaTeX with hyperref”；本库源码里也没有 \today 之类会随日期变化的排版。
 # 取值 = 全库统一的构建基准日＝口径日期（工具/README转tex.py 的 RUN_DATE）的**当天零点**：
-# 人可读 2026-10-02、epoch 1790899200（UTC 零点）。
+# 人可读 2026-10-03、epoch 1790985600（UTC 零点）。
+# 下文带日期的实测记录均为当时记录，保留为历史背景，不代表当前基准日。
 # ⚠ 改 RUN_DATE 时这里要跟着改——计数核对.py 有一条断言比对两者是不是同一天。
-SOURCE_DATE_EPOCH := 1790899200
+SOURCE_DATE_EPOCH := 1790985600
 
 # 每遍编译前**清掉该卷的辅助文件**（.aux/.out/.toc/.log）——这是可复现的最后一块：
 # xelatex 单遍编译读上一次留在盘上的 .aux，于是同一份源码会因“上一次编的是哪一版”而出不同字节
@@ -164,7 +165,7 @@ check:
 docs:
 	@python3 $(TOOLS)/计数核对.py
 
-# ===== 溯源报告（独立一条链，不进 all：all 会重写 49 份试卷版与 49 份答案版 PDF）=====
+# ===== 溯源报告（独立一条链，不进 all：all 会重写 50 份试卷版与 50 份答案版 PDF，对应 50 个 .tex 输入）=====
 # 依赖 ../README.md：README 改了，make trace 会自动重新生成 溯源.tex 再编译。
 溯源.tex: ../README.md ../工具/README转tex.py
 	@python3 ../工具/README转tex.py
@@ -188,7 +189,7 @@ trace: 溯源.pdf
 	  "$$($(PDFINFO) 溯源.pdf | awk '/^Pages/{print $$2}')"
 
 # ===== 合订打印本（独立一条链，不进 all：理由同 trace）=====
-# 把 ../试卷紧凑/ 下的成品按文件名序合成一份 105 页的 PDF 便于打印。
+# 把 ../试卷紧凑/ 下的成品按文件名序合成一份 108 页的 PDF 便于打印。
 # 目标写成 phony：合并只需不到一秒，每次重跑比维护依赖更稳妥（不会有陈旧产物）。
 bundle:
 	@test -n "$(sort $(wildcard $(DEST_COMPACT)/*_试卷.pdf))" \
