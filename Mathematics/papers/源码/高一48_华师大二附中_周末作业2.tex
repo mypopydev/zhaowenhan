@@ -54,7 +54,7 @@
 
 \ifanswer
 \solbegin
-\step{由 $\alpha:4\leqslant x\leqslant8$，$\beta:m+1\leqslant x\leqslant2m+4$，$m\in\R$，}
+\step{由 $\alpha:4\leqslant x\leqslant8$，$\beta:m+1\leqslant x\leqslant2m+4$，且 $m\in\R$，}
 \step{因为 $\alpha$ 是 $\beta$ 的充分不必要条件，所以}
 \step{\[
 \begin{cases}
@@ -76,9 +76,10 @@ m+1\leqslant4,\\
 \step{$A\cap B=\{3\}$，得 $A$、$B$ 中含有元素 $3$；}
 \step{$\overline A\cap B=\{4,6,8\}$，得 $B$ 中含有 $4$、$6$、$8$，集合 $A$ 中不含 $4$、$6$、$8$；}
 \step{$A\cap\overline B=\{1,5\}$，得 $A$ 中含有 $1$、$5$，集合 $\overline B$ 中含有 $1$、$5$；}
-\step{对于 $0$，假设集合 $A$ 中含有 $0$，由 $A\cap B=\{3\}$ 得 $B$ 不含 $0$，则 $A\cap\overline B$ 必含元素 $0$，与 $A\cap\overline B=\{1,5\}$ 矛盾；}
-\step{同理可得集合 $A$ 中不含元素 $2$、$7$、$9$，综上，$A=\{1,3,5\}$，}
-\step{故 $\overline A=\{0,2,4,6,7,8,9\}$.}
+\step{对于 $0$，假设集合 $A$ 中含有 $0$，由 $A\cap B=\{3\}$ 得 $B$ 不含 $0$，}
+\step{则 $A\cap\overline B$ 必含元素 $0$，与 $A\cap\overline B=\{1,5\}$ 矛盾；}
+\step{同理可得集合 $A$ 中不含元素 $2$、$7$、$9$，}
+\step{综上所述，$A=\{1,3,5\}$，故 $\overline A=\{0,2,4,6,7,8,9\}$.}
 \solend
 
 \fi
@@ -122,22 +123,23 @@ x_1x_2=1>0
 \ifanswer
 \solbegin
 \step{由 $A=\{x\mid x<-1\text{ 或 }x>3\}$，得 $\complement_R A=[-1,3]$；}
-\step{因为 $(\complement_R A)\cap B\neq\varnothing$，$B=\{x\mid m-2\leqslant x\leqslant m+2\}$，}
-\step{所以 $-1\leqslant m+2$ 且 $3\geqslant m-2$，解得 $-3\leqslant m\leqslant5$，}
-\step{故 $m$ 的取值范围是 $\{m\mid-3\leqslant m\leqslant5\}$.}
+\step{因为 $(\complement_R A)\cap B\neq\varnothing$，$B=\{x\mid m-2\leqslant x\leqslant m+2\}$，所以 $-1\leqslant m+2$ 且 $3\geqslant m-2$，}
+\step{解得 $-3\leqslant m\leqslant5$，故 $m$ 的取值范围是 $\{m\mid-3\leqslant m\leqslant5\}$.}
 \solend
 
 \fi
 
-\item 已知 $a_1$、$b_1$、$c_1$、$a_2$、$b_2$、$c_2$ 均为非零实数，关于 $x$ 的方程 $a_1x^2+b_1x+c_1=0$ 和 $a_2x^2+b_2x+c_2=0$ 的解集分别为集合 $M$ 和 $N$，则“$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$”是“$M=N$”的\blankline[4.4em]条件.
+% 原卷如此，照录未改（第 9 题题干与解析首式原卷两处均印作 $b_1x^2$）
+\item 已知 $a_1$、$b_1$、$c_1$、$a_2$、$b_2$、$c_2$ 均为非零实数，关于 $x$ 的方程 $a_1x^2+b_1x^2+c_1=0$ 和 $a_2x^2+b_2x+c_2=0$ 的解集分别为集合 $M$ 和 $N$，则“$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$”是“$M=N$”的\blankline[4.4em]条件.
 
 \ifanswer
 \solbegin
 \step{设 $\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}=\lambda$（$\lambda\neq0$），则}
-\step{$a_1x^2+b_1x+c_1=0\Leftrightarrow\lambda a_2x^2+\lambda b_2x+\lambda c_2=0\Leftrightarrow a_2x^2+b_2x+c_2=0$，}
+% 原卷如此，照录未改（第 9 题解析首式原卷印作 $b_1x^2$）
+\step{$a_1x^2+b_1x^2+c_1=0\Leftrightarrow\lambda a_2x^2+\lambda b_2x+\lambda c_2=0\Leftrightarrow a_2x^2+b_2x+c_2=0$，}
 \step{所以 $M=N$，即充分性成立；}
 \step{若 $M=N=\varnothing$，则 $\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$ 不一定成立，即必要性不成立；}
-\step{故“$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$”是“$M=N$”的充分不必要条件.}
+\step{故“$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$”是“$M=N$”的充分非必要条件.}
 \solend
 
 \fi
@@ -187,7 +189,7 @@ x_1x_2=1>0
 
 \item 设 $A$ 是非空数集，若对任意 $x,y\in A$，都有 $x+y\in A$，$xy\in A$，则称集合 $A$ 为一个“完美集”，给出以下命题：
 
-①若 $A$ 是一个“完美集”，且 $A\subset\R$，则 $\complement_R A$ 也为“完美集”；
+①若 $A$ 是一个“完美集”，且 $A\neq R$，则 $\complement_R A$ 也为“完美集”；
 
 ②若 $A_1$、$A_2$ 都是“完美集”，且 $A_1\cap A_2\neq\varnothing$，则 $A_1\cap A_2$ 也是“完美集”；
 
@@ -199,7 +201,9 @@ x_1x_2=1>0
 
 \ifanswer
 \solbegin
-\step{假设 $\complement_R A$ 也是“完美集”，设 $0\in A$，在 $\complement_R A$ 中任取一个 $x$，$x\neq0$，}
+\step{对于①，若 $A$ 是"完美集"，且 $A\neq R$，}
+% 原卷如此，照录未改（第 12 题①此两处原卷作 $\complement_U A$，全卷其余处作 $\complement_R$）
+\step{假设 $\complement_U A$ 也是“完美集”，设 $0\in A$，在 $\complement_U A$ 中任取一个 $x$，$x\neq0$，}
 \step{此时可证得 $-x\in A$，否则若 $-x\in\complement_R A$，由于 $\complement_R A$ 也具有性质 $P$，}
 \step{则 $x+(-x)=0\in\complement_R A$，与 $0\in A$ 矛盾，故 $-x\in A$；}
 \step{由于 $A$ 具有性质 $P$，$\complement_R A$ 也具有性质 $P$，所以 $(-x)^2\in A$，}
@@ -209,9 +213,11 @@ x_1x_2=1>0
 \step{对于②，若 $A_1$、$A_2$ 都是“完美集”，且 $A_1\cap A_2\neq\varnothing$，}
 \step{取 $x,y\in A_1\cap A_2$，则 $x\in A_1$，$x\in A_2$，$y\in A_1$，$y\in A_2$，}
 \step{又 $A_1$、$A_2$ 具有性质 $P$，所以 $x+y\in A_1$，$x+y\in A_2$，}
-\step{所以 $x+y\in A_1\cap A_2$，$xy\in A_1\cap A_2$，$A_1\cap A_2$ 是“完美集”，②正确；}
-\step{对于③，若 $A$ 是“完美集”，集合 $A=\{0\}$ 是“完美集”，故 $A$ 可以是有限集，③正确；}
-\step{对于④，若 $A_1$、$A_2$ 都是“完美集”，取 $A_1=\{x\mid x=2k,\,k\in\Z\}$，$A_2=\{x\mid x=3k,\,k\in\Z\}$，}
+\step{所以 $x+y\in A_1\cap A_2$，$xy\in A_1\cap A_2$，所以 $A_1\cap A_2$ 是“完美集”，故②正确；}
+\step{对于③，若 $A$ 是“完美集”，集合 $A=\{0\}$ 是“完美集”，故 $A$ 可以是有限集，}
+\step{故③正确；}
+\step{对于④，若 $A_1$、$A_2$ 都是“完美集”，}
+\step{取 $A_1=\{x\mid x=2k,\,k\in\Z\}$，$A_2=\{x\mid x=3k,\,k\in\Z\}$，}
 \step{$2\in A_1$，$3\in A_2$，但 $2+3\notin A_1\cup A_2$，故④错误；}
 \step{故正确的是②③.}
 \solend
@@ -225,7 +231,7 @@ x_1x_2=1>0
 \begin{enumerate}
 \setcounter{enumi}{12}
 
-\item 已知 $a$、$b\in\R$，则“$|a-b|<1$”是“$|a|+|b|<1$”的\mbox{（\quad）}
+\item 已知 $a$、$b\in\R$，则“$|a-b|<1$”是“$|a|+|b|<1$”的\mbox{（\quad）}条件.
 
 \keepwithprev
 A. 充分非必要\qquad B. 必要非充分
@@ -236,7 +242,7 @@ C. 充分必要\qquad D. 既非充分又非必要
 
 \ifanswer
 \solbegin
-\step{因为 $|a-b|\leqslant|a|+|b|$（当且仅当 $ab\leqslant0$ 时取等），}
+\step{因为 $|a-b|\leqslant|a|+|b|$（当且仅当 $ab\leqslant0$ 时取等号），}
 \step{所以 $|a-b|\leqslant|a|+|b|<1$，}
 \step{所以“$|a-b|<1$”是“$|a|+|b|<1$”的必要条件；}
 \step{当 $a=1$，$b=0.9$ 时，$|a-b|=0.1<1$，$|a|+|b|=1.9>1$，}
@@ -257,18 +263,18 @@ C. $B\cup(\complement_U A)=U$\qquad D. $A\cap(\complement_U B)=A$
 
 \ifanswer
 \solbegin
-\step{当 $k=2n$，$n\in\N$ 时，集合 $A=\{x\mid x=6n,\,n\in\N\}=B$；}
-\step{当 $k=2n+1$，$n\in\N$ 时，集合 $A=\{x\mid x=6n+3,\,n\in\N\}$，$B\subseteq A$，}
+\step{由题意，当 $k=2n$，$n\in\N$，集合 $A=\{x\mid x=6n,\,n\in\N\}$，$A=B$，}
+\step{当 $k=2n+1$，$n\in\N$，集合 $A=\{x\mid x=6n+3,\,n\in\N\}$，$B\subseteq A$，}
 \step{所以 $A\cup B=A$，$A$错误；}
 \step{$B\cap(\complement_U A)=\varnothing$，$B$正确；}
-\step{因为 $B\subseteq A$，所以 $B\cup(\complement_U A)\neq U$，$C$错误；}
+\step{由 $B\subseteq A$，所以 $B\cup(\complement_U A)\neq U$，$C$错误；}
 \step{因为 $B\subseteq A$，所以 $A\cap(\complement_U B)\neq A$，$D$错误；}
 \step{故选 $B$.}
 \solend
 
 \fi
 
-\item 设 $p:\dfrac{x^3-4x}{2x}\leqslant0$，$q:x^2-(2m+1)x+m^2+m\leqslant0$，若 $p$ 是 $q$ 的必要不充分条件，则实数 $m$ 的取值范围是\mbox{（\quad）}
+\item 设 $p:\dfrac{x^3-4x}{2x}\leqslant0$，$q:x^2-(2m+1)x+m^2+m\leqslant0$，若 $p$ 是 $q$ 的必要不充分条件，则实数 $m$ 的取值范围为\mbox{（\quad）}
 
 \keepwithprev
 A. $[-2,1]$\qquad B. $[-3,1]$
@@ -279,16 +285,10 @@ C. $[-2,0)\cup(0,1]$\qquad D. $[-2,-1)\cup(0,1]$
 
 \ifanswer
 \solbegin
-\step{$p:\dfrac{x^3-4x}{2x}\leqslant0\Leftrightarrow x^2-4\leqslant0$（$x\neq0$），解得 $-2\leqslant x\leqslant2$，$x\neq0$；}
+\step{$p:\dfrac{x^3-4x}{2x}\leqslant0\Leftrightarrow x^2-4\leqslant0$（$x\neq0$），解得 $-2\leqslant x\leqslant2$ 且 $x\neq0$，}
 \step{$q:x^2-(2m+1)x+m^2+m\leqslant0$，解得 $m\leqslant x\leqslant m+1$；}
-\step{若 $p$ 是 $q$ 的必要不充分条件，则}
-\step{\[
-\begin{cases}
-0<m\leqslant1,\\
--2\leqslant m<-1
-\end{cases}
-\]}
-\step{故选 $D$.}
+\step{若 $p$ 是 $q$ 的必要不充分条件，则 $\begin{cases}0<m\\ m+1\leqslant2\end{cases}$ 或 $\begin{cases}-2\leqslant m\\ m+1<0\end{cases}$，}
+\step{解得 $0<m\leqslant1$ 或 $-2\leqslant m<-1$，故选 $D$.}
 \solend
 
 \fi
@@ -310,9 +310,10 @@ C. ①真②真\qquad D. ①假②假
 
 \ifanswer
 \solbegin
-\step{对于①，在取 $M$ 中的元素 $x_0=a_0+b_0\sqrt2$，}
-\step{则存在 $y_0\in\Q\cap\left(a_0+b_0\sqrt2-\dfrac1{2025},a_0+b_0\sqrt2+\dfrac1{2025}\right)$ 满足题意，①正确；}
-\step{对于②，取 $A=[-1,1]$，$B=[-2,2]$，$A$ 是 $B$ 的一个 $\dfrac12$-邻集，但反之不成立，②错误；}
+\step{对于①，任取 $M$ 中的元素 $x_0=a_0+b_0\sqrt2$，}
+\step{则存在 $y_0\in\Q\cap\left(a_0+b_0\sqrt2-\dfrac1{2025},a_0+b_0\sqrt2+\dfrac1{2025}\right)$ 满足题意，故①正确；}
+\step{对于②，取 $A=[-1,1]$，$B=[-2,2]$，$A$ 是 $B$ 的 $\dfrac12$-邻集，但反之不成立，}
+\step{故②错误；}
 \step{故选 $A$.}
 \solend
 
@@ -334,14 +335,16 @@ C. ①真②真\qquad D. ①假②假
 
 \ifanswer
 \solbegin
-\step{由 $x^2-3x+2=0$，得 $C=\{1,2\}$；}
+\step{$C=\{1,2\}$.}
 \stepm{(1)}{因为 $A\cap C=A$，所以 $A\subseteq C$；}
 \step{当 $A=\varnothing$ 时，$a=0$；}
 \step{当 $A\neq\varnothing$ 时，$A=\left\{\dfrac1a\right\}$，则 $\dfrac1a=1$ 或 $\dfrac1a=2$，即 $a=1$ 或 $a=\dfrac12$；}
 \step{综上，$a\in\left\{0,1,\dfrac12\right\}$；}
 \stepm{(2)}{因为 $B\cup C=C$，所以 $B\subseteq C$；}
 \step{①当 $B=\varnothing$ 时，$\Delta=4(b+1)^2-4(b+3)<0$，$-2<b<1$；}
-\step{②当 $B$ 为单元素集合时，$\Delta=4(b+1)^2-4(b+3)=0$，$b=-2$ 或 $b=1$；}
+\step{②若 $B\neq\varnothing$，}
+% 原卷如此，照录未改（第 17 题解析此处原卷作“单元数集合”）
+\step{当 $B$ 为单元数集合时，$\Delta=4(b+1)^2-4(b+3)=0$，$b=-2$ 或 $b=1$；}
 \step{当 $b=-2$ 时，$B=\{1\}$，符合题意；当 $b=1$ 时，$B=\{-2\}$，不符合题意，舍去；}
 \step{当 $B=\{1,2\}$ 时，}
 \step{\[
@@ -363,7 +366,7 @@ b=-1
 
 \ansspace[6]
 
-\item 集合 $A=\{x\mid -2\leqslant x\leqslant5\}$，集合 $B=\{x\mid m+1\leqslant2x\leqslant2m-1\}$.
+\item 集合 $A=\{x\mid -2\leqslant x\leqslant5\}$，集合 $B=\{x\mid m+1\leqslant x\leqslant2m-1\}$.
 
 \begin{enumerate}[label=(\arabic*)]
 \item 若 $B\subseteq A$，求实数 $m$ 的取值范围；
@@ -373,25 +376,13 @@ b=-1
 \ifanswer
 \solbegin
 \stepm{(1)}{①当 $B=\varnothing$ 时，$B\subseteq A$，此时 $m+1>2m-1$，解得 $m<2$；}
-\step{②当 $B\neq\varnothing$ 时，为使 $B\subseteq A$，$m$ 需满足}
-\step{\[
-\begin{cases}
-\dfrac{m+1}{2}\geqslant-2,\\
-\dfrac{2m-1}{2}\leqslant5
-\end{cases}
-\]}
-\step{解得 $-5\leqslant m\leqslant\dfrac{11}{2}$；}
-\step{综上，当 $m\leqslant\dfrac{11}{2}$ 时，$B\subseteq A$；}
-\stepm{(2)}{当 $B=\varnothing$ 时，由（1）得 $m<2$；}
-\step{当 $B\neq\varnothing$，$A\cap B\neq\varnothing$，$m$ 需满足}
-\step{\[
-\begin{cases}
-\dfrac{m+1}{2}\leqslant5,\\
-\dfrac{2m-1}{2}\geqslant-2
-\end{cases}
-\]}
-\step{解得 $m\geqslant2$；}
-\step{综上，$A\cap B\neq\varnothing$，实数 $m$ 的取值范围为 $\{m\mid2\leqslant m\leqslant9\}$.}
+\step{②当 $B\neq\varnothing$ 时，为使 $B\subseteq A$，$m$ 需满足 $\begin{cases}m+1\leqslant2m-1\\ m+1\geqslant-2\\ 2m-1\leqslant5\end{cases}$，解得 $2\leqslant m\leqslant3$，}
+\step{综上所述，实数 $m$ 的取值范围为 $\{m\mid m\leqslant3\}$.}
+\stepm{(2)}{当 $B=\varnothing$ 时，由（1）得 $m<2$，}
+\step{当 $B\neq\varnothing$ 时，为使 $A\cap B=\varnothing$，$m$ 需满足 $\begin{cases}m+1\leqslant2m-1\\ m+1>5\end{cases}$ 或 $\begin{cases}m+1\leqslant2m-1\\ 2m-1<-2\end{cases}$，}
+\step{解得 $m>4$，}
+\step{综上，当 $m<2$ 或 $m>4$ 时，$A\cap B=\varnothing$，}
+\step{所以若 $A\cap B\neq\varnothing$，则实数 $m$ 的取值范围是 $\{m\mid2\leqslant m\leqslant4\}$.}
 \solend
 
 \fi
@@ -416,14 +407,8 @@ b=-1
 \step{对于集合 $B$，$\Delta=4(a+1)^2-4(a^2-5)=8(a+3)$；}
 \step{当 $\Delta<0$，即 $a<-3$ 时，$B=\varnothing$，此时 $B\subseteq A$；}
 \step{当 $\Delta=0$，即 $a=-3$ 时，$B=\{2\}$，此时 $B\subseteq A$；}
-\step{当 $\Delta>0$，即 $a>-3$ 时，则 $B=A=\{1,2\}$，此时}
-\step{\[
-\begin{cases}
-2(a+1)=-3,\\
-a^2-5=2
-\end{cases}
-\]}
-\step{该方程组无解；}
+\step{当 $\Delta>0$，即 $a>-3$ 时，则 $B=A=\{1,2\}$，}
+\step{此时 $\begin{cases}2(a+1)=-3,\\a^2-5=2\end{cases}$，该方程组无解；}
 \step{综上，实数 $a$ 的取值范围是 $(-\infty,-3]$.}
 \solend
 
@@ -442,14 +427,18 @@ a^2-5=2
 \ifanswer
 \solbegin
 \stepm{(1)}{$\overline A=(-\infty,-2]\cup[6,+\infty)$.}
-\stepm{(2)}{因为命题乙：$C=\{x\mid x^2+(a+2)x+1=0\}$，$D=\{x\mid x>0\}$，且 $C\cap D=\varnothing$，}
+\stepm{(2)}{因为命题乙：集合 $C=\{x\mid x^2+(a+2)x+1=0\}$，$D=\{x\mid x>0\}$，}
+\step{且 $C\cap D=\varnothing$，}
 \step{所以 $C=\varnothing$ 或集合 $C$ 中元素是非正数；}
+\step{又 $C=\{x\mid x^2+(a+2)x+1=0\}$，}
+\step{所以 $C$ 中元素是方程 $x^2+(a+2)x+1=0$ 的解，}
 \step{当 $C=\varnothing$ 时，$\Delta=(a+2)^2-4<0$，解得 $-4<a<0$；}
 \step{当集合 $C$ 中元素是非正数时，设 $x_1$、$x_2$ 是方程 $x^2+(a+2)x+1=0$ 的根，}
 \step{因为 $x_1x_2=1$，所以 $\Delta=(a+2)^2-4\geqslant0$，且 $x_1+x_2=-a-2<0$，解得 $a\geqslant0$；}
-\step{综上，当命题乙是真命题时，实数 $a$ 的取值范围为 $\{a\mid a>-4\}$；}
-\stepm{(3)}{因为命题甲：集合 $A=\{x\mid-2<x<6\}$，$B=\{x\mid x+a-1>0\}=\{x\mid x>1-a\}$，且 $A\cup B=\{x\mid x>-2\}$，}
-\step{所以 $-2\leqslant1-a<6$，解得 $-5<a\leqslant3$，所以当命题甲是真命题，实数 $a$ 的取值范围是 $\{a\mid-5<a\leqslant3\}$；}
+\step{所以当命题乙是真命题时，实数 $a$ 的取值范围为 $\{a\mid a>-4\}$；}
+\stepm{(3)}{因为命题甲：集合 $A=\{x\mid-2<x<6\}$，$B=\{x\mid x+a-1>0\}=\{x\mid x>1-a\}$，}
+\step{且 $A\cup B=\{x\mid x>-2\}$，所以 $-2\leqslant1-a<6$，解得 $-5<a\leqslant3$，}
+\step{所以当命题甲是真命题，实数 $a$ 的取值范围为 $\{a\mid-5<a\leqslant3\}$；}
 \step{因为命题甲和乙中有且只有一个真命题，}
 \step{所以命题甲是真命题、命题乙是假命题，或命题甲是假命题、命题乙是真命题；}
 \step{当命题甲是真命题、命题乙是假命题时，}
@@ -468,7 +457,8 @@ a>-4
 \end{cases}
 \]}
 \step{得到 $a>3$；}
-\step{所以命题甲和乙中有且只有一个真命题时，实数 $a$ 的取值范围为 $\{a\mid-5<a\leqslant-4\text{ 或 }a>3\}$.}
+\step{所以命题甲和乙中有且只有一个真命题时，}
+\step{实数 $a$ 的取值范围为 $\{a\mid-5<a\leqslant-4\text{ 或 }a>3\}$.}
 \solend
 
 \fi
@@ -491,7 +481,8 @@ a>-4
 \ifanswer
 \solbegin
 \stepm{(1)}{$B=\{0\}$ 是封闭集，$C=\{-1,0,1\}$ 不是封闭集，理由如下：}
-\step{对于集合 $B=\{0\}$，因为 $0+0=0\in B$，$0\times0=0\in B$，所以 $B=\{0\}$ 是封闭集；}
+\step{对于集合 $B=\{0\}$，因为 $0+0=0\in B$，$0\times0=0\in B$，}
+\step{所以 $B=\{0\}$ 是封闭集；}
 \step{对于集合 $C=\{-1,0,1\}$，因为 $-1+(-1)=-2\notin C$，$1+1=2\notin C$，}
 \step{所以集合 $C=\{-1,0,1\}$ 不是封闭集；}
 \stepm{(2)}{命题 $p$ 是假命题，命题 $q$ 是真命题，理由如下：}
@@ -501,19 +492,21 @@ a>-4
 x_1+y_1=2(k_1+k_2)\in A_1,\quad x_1y_1=2(2k_1k_2)\in A_1,
 \]}
 \step{因此集合 $A_1$ 是封闭集，同理集合 $A_2$ 也是封闭集；}
-\step{取 $x_2=2$，$y_2=3$，则 $x_2,y_2\in(A_1\cup A_2)$，但 $x_2+y_2=5\notin(A_1\cup A_2)$，}
+\step{取 $x_2=2$，$y_2=3$，则 $x_2,y_2\in(A_1\cup A_2)$，而 $x_2+y_2=5\notin(A_1\cup A_2)$，}
 \step{因此集合 $A_1\cup A_2$ 不是封闭集，命题 $p$ 是假命题；}
-\step{对于命题 $q$：若 $A_1\cap A_2\neq\varnothing$，令 $a,b\in(A_1\cap A_2)$，则有 $a,b\in A_1$，}
-\step{又集合 $A_1$ 是封闭集，则 $a+b\in A_1$，$ab\in A_1$，同理 $a+b\in A_2$，$ab\in A_2$，}
-\step{因此 $a+b\in(A_1\cap A_2)$，$ab\in(A_1\cap A_2)$，所以 $A_1\cap A_2$ 是封闭集；}
+\step{对于命题 $q$：若 $A_1\cap A_2\neq\varnothing$，不妨令 $a,b\in(A_1\cap A_2)$，}
+\step{则有 $a,b\in A_1$，又集合 $A_1$ 是封闭集，则 $a+b\in A_1$，$ab\in A_1$，}
+\step{同理 $a+b\in A_2$，$ab\in A_2$，因此 $a+b\in(A_1\cap A_2)$，$ab\in(A_1\cap A_2)$，}
+\step{所以 $A_1\cap A_2$ 是封闭集；}
 \step{反之，若 $A_1\cap A_2$ 是封闭集，则 $A_1\cap A_2$ 是非空集合，即 $A_1\cap A_2\neq\varnothing$，}
-\step{所以 $A_1\cap A_2\neq\varnothing$ 是 $A_1\cap A_2$ 是封闭集合的充要条件，命题 $q$ 是真命题；}
+\step{所以 $A_1\cap A_2$ 是 $A_1\cap A_2$ 是封闭集的充要条件，命题 $q$ 是真命题；}
 \stepm{(3)}{非空集合 $A$ 是封闭集合，当 $A=\R$ 时，$\overline A=\varnothing$，因此 $\overline A$ 不是封闭集合；}
 \step{当 $A\neq\R$ 时，假设 $\overline A$ 是封闭集合，}
 \step{设 $0\in A$，在 $\overline A$ 中任取一个 $x$，$x\neq0$，则 $-x\in A$，}
 \step{否则 $-x\in\overline A$，此时 $x+(-x)=0\in\overline A$，与 $0\in A$ 矛盾，}
 \step{因此 $(-x)^2\in A$，$x^2\in\overline A$，而 $(-x)^2=x^2$，与 $A\cap\overline A=\varnothing$ 矛盾，}
-\step{则当 $0\in A$ 时，$\overline A$ 不是封闭集合，同理当 $0\in\overline A$ 时，$\overline A$ 不是封闭集合，}
+% 原卷如此，照录未改（第 21 题(3)此句原卷两处“则”）
+\step{则当 $0\in A$ 时，则 $\overline A$ 不是封闭集合，同理当 $0\in\overline A$ 时，$\overline A$ 不是封闭集合，}
 \step{所以 $A$ 的补集不是封闭集.}
 \solend
 
