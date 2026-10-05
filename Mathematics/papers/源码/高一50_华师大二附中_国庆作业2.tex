@@ -1,0 +1,418 @@
+% 高一50_华师大二附中_国庆作业2.tex
+%   —— 高一上数学"2026-2027 年华师大二附中高一上国庆作业 2"（讲评版）
+% 试卷版：xelatex 高一50_华师大二附中_国庆作业2.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一50_华师大二附中_国庆作业2.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一50_华师大二附中_国庆作业2.tex}"
+%
+% 原始材料：微信公众号"魔都数学加油站"文章，作者破晓；连载"27学年高一50"，
+% 原文标题"27学年高一50——2026-2027年上海市华师大二附中高一上国庆作业2不等式章节练习"；
+% 原文链接：https://mp.weixin.qq.com/s/EXxaLnbjgKBcN_Dm6EQe_g。页面用 JS 渲染，
+% 未见明确发布日期，页面内时间戳约为 2026-10-05 21:37。
+% 正文为 12 张 PNG 页（第 01、03、11、12 页 2560×3620，第 02、04—10 页 4762×6735），
+% 12 页均为试卷正文页，逐页按页序读取；卷面粉色斜水印"魔都数学加油站"及公众号
+% 页脚未录入。题号：填空题 3—12、选择题 13—16、解答题 17—21，共 19 题，
+% 原文自第 3 题起编。本卷无题目插图（全卷无"如图/右图/图中"字样）。
+%
+% 卷首标题：原卷印作"2026-2027 年华师大二附中高一上国庆作业 2"，副标题印作
+% "不等式章节练习"（公众号标题中的"上海市"卷面标题行没有，本稿照卷面），
+% 年份区间按全稿惯例排 en dash；副标题原卷已印，本稿照录、不另行拆分模块名。
+%
+% 与原卷的排版差异：
+%   ① 原文自第 3 题起编，本稿保留原题号；
+%   ② 原卷每题下印【解析】（第 9、12 题仅印【答案】），本稿按全稿惯例将解析置于
+%      答案版；仅印【答案】的第 9、12 题只给 \ans{}、不另配解析，其余各题只给
+%      解析、不另提 \ans{}；
+%   ③ 填空横线按全稿惯例排为 \blankline[4.4em]。
+%
+% 原卷笔误/存疑（均照录未改，见各处 % 注）：
+%   ① 第 12 题题干"……≥1(m,n>0) 的构成的区间长度之和"，"的构成的"疑衍一"的"字；
+%   ② 第 17 题(1)解析末"即 a 的取值范围为[0.2]"，按上下文应为 [0,2]，区间逗号漏印；
+%   ③ 第 18 题(1)解析 a+b-(ab+1)=a(1-b)-(1-b)-(1-b)=(a-1)(1-b)，中间多印一处
+%      -(1-b)（恒等变形应为 a(1-b)-(1-b)），最终结果 (a-1)(1-b) 正确；
+%   ④ 第 20 题(1)解析"当 5≤x≤11 时"与题干 f(x) 第二段定义域 (5,11] 端点不一致。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年华师大二附中高一上国庆作业 2}{不等式章节练习}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知正数 $a$、$b$ 满足 $4a+b=1$，则 $\dfrac1a+\dfrac1b$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{正数 $a$、$b$ 满足 $4a+b=1$，}
+\step{$\dfrac1a+\dfrac1b=(4a+b)\left(\dfrac1a+\dfrac1b\right)=5+\dfrac ba+\dfrac{4a}b\geqslant5+2\sqrt{\dfrac ba\cdot\dfrac{4a}b}=9$，}
+\step{当且仅当 $\dfrac ba=\dfrac{4a}b$，即 $a=\dfrac16$，$b=\dfrac13$ 时取等号，故 $\dfrac1a+\dfrac1b$ 的最小值为 $9$.}
+\solend
+
+\fi
+
+\item 已知函数 $y=(k^2+4k-5)x^2+4(1-k)x+3$ 的图像都在 $x$ 轴上方，则实数 $k$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $k^2+4k-5=0$ 时，即 $(k+5)(k-1)=0$ 时，解得 $k=-5$ 或 $k=1$，}
+\step{当 $k=-5$ 时，$y=24x+3$ 的图像不可能都在 $x$ 轴上方，不符合题意，舍去，}
+\step{当 $k=1$ 时，$y=3$ 的图像都在 $x$ 轴上方，符合题意，可取，}
+\step{当 $k^2+4k-5\neq0$ 时，}
+\step{若函数 $y=(k^2+4k-5)x^2+4(1-k)x+3$ 的图像都在 $x$ 轴上方，}
+\step{则只需 $k^2+4k-5>0$ 且 $\Delta=16(1-k)^2-12(k^2+4k-5)<0$，}
+\step{即 $(k+5)(k-1)>0$ 且 $(k-1)(k-19)<0$，解得 $1<k<19$，}
+\step{综上所述，$1\leqslant k<19$，即实数 $k$ 的取值范围为 $[1,19)$.}
+\solend
+
+\fi
+
+\item 设函数 $f(x)=x^2+ax+b$（$a,b\in\R$），若关于 $x$ 的不等式 $0\leqslant f(x)\leqslant6-x$ 的解集为 $[2,3]\cup\{6\}$，则 $a+b=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $x=6$ 满足不等式得 $0\leqslant f(6)\leqslant0$，即 $36+6a+b=0$，所以 $b=-36-6a$，}
+\step{所以 $f(x)=x^2+ax+b=x^2+ax-6a-36=(x-6)(x+6+a)\geqslant0$，}
+\step{所以 $f(x)=0$ 的两根为 $6$、$-6-a$，}
+\step{而 $f(x)\leqslant6-x$ 可化为 $x^2+(a+1)x-6(a+7)\leqslant0$，即 $(x-6)(x+a+7)\leqslant0$，}
+\step{所以方程 $(x-6)(x+a+7)=0$ 的两根为 $6$、$-7-a$，且 $-7-a<-6-a$，}
+\step{不等式 $0\leqslant f(x)\leqslant6-x$ 的解集为 $[2,3]\cup\{6\}$，得 $\begin{cases}-7-a=2\\-6-a=3\end{cases}$，解得 $a=-9$，}
+\step{所以 $b=-36-6a=18$，所以 $a+b=18-9=9$.}
+\solend
+
+\fi
+
+\item 已知关于 $x$ 的不等式 $ax^2+bx+c>0$ 的解集为 $(-\infty,-2)\cup(3,+\infty)$，
+① $a>0$；② 不等式 $bx+c>0$ 的解集是 $\{x\mid x<-6\}$；③ $a+b+c>0$；
+④ 不等式 $cx^2-bx+a<0$ 的解集为 $\left(-\infty,-\dfrac13\right)\cup\left(\dfrac12,+\infty\right)$；
+以上命题正确的序号是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为关于 $x$ 的不等式 $ax^2+bx+c>0$ 的解集为 $(-\infty,-2)\cup(3,+\infty)$，}
+\step{所以 $a>0$，①正确；}
+\step{由题意得 $-2$ 和 $3$ 是关于 $x$ 的方程 $ax^2+bx+c=0$ 的两根，}
+\step{由根与系数的关系得 $\begin{cases}-2+3=-\dfrac ba\\[2pt]-2\times3=\dfrac ca\end{cases}$，则 $b=-a$，$c=-6a$，}
+\step{所以不等式 $bx+c>0$，即 $-ax-6a>0$，解得 $x<-6$，②正确；}
+\step{因为 $a+b+c=-6a<0$，③错误；}
+\step{不等式 $cx^2-bx+a<0$，即 $-6ax^2+ax+a<0$，即 $6x^2-x-1>0$，}
+\step{解得 $x<-\dfrac13$ 或 $x>\dfrac12$，④正确.}
+\step{故正确的是①②④.}
+\solend
+
+\fi
+
+\item 已知集合 $A=\{x\mid x^2-2x-24<0,\,x\in\R\}$，$B=\{x\mid x^2-4ax+3a^2<0,\,x\in\R\}$。若 $A\cap B=\varnothing$，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{集合 $A=\{x\mid x^2-2x-24<0,\,x\in\R\}=(-4,6)$，}
+\step{$B=\{x\mid x^2-4ax+3a^2<0,\,x\in\R\}=\{x\mid(x-a)(x-3a)<0,\,x\in\R\}$，}
+\step{当 $a>0$ 时，$B=(a,3a)$，因为 $A\cap B=\varnothing$，所以 $\begin{cases}a>0\\a\geqslant6\end{cases}$，所以 $a\geqslant6$；}
+\step{当 $a=0$ 时，则 $B=\varnothing$，满足题意；}
+\step{当 $a<0$ 时，$B=(3a,a)$，}
+\step{因为 $A\cap B=\varnothing$，所以 $\begin{cases}a<0\\a\leqslant-4\end{cases}$，所以 $a\leqslant-4$，}
+\step{综上所述，实数 $a$ 的取值范围是 $(-\infty,-4]\cup\{0\}\cup[6,+\infty)$.}
+\solend
+
+\fi
+
+\item 已知 $b>0$，且 $-4b\leqslant a-c\leqslant-b\leqslant4a-c\leqslant5b$，则 $\dfrac{9a-c}{b}$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $-4b\leqslant a-c\leqslant-b\leqslant4a-c\leqslant5b$，得 $\begin{cases}-4b\leqslant a-c\leqslant-b\\-b\leqslant4a-c\leqslant5b\end{cases}$，}
+\step{令 $9a-c=m(a-c)+n(4a-c)=(m+4n)a-(m+n)c$，}
+\step{则 $\begin{cases}m+4n=9\\-m-n=-1\end{cases}$，解得 $\begin{cases}m=-\dfrac53\\[3pt]n=\dfrac83\end{cases}$，所以 $9a-c=-\dfrac53(a-c)+\dfrac83(4a-c)$，}
+\step{由 $\begin{cases}-4b\leqslant a-c\leqslant-b\\-b\leqslant4a-c\leqslant5b\end{cases}$，得 $\dfrac53b\leqslant-\dfrac53(a-c)\leqslant\dfrac{20}3b$，$-\dfrac83b\leqslant\dfrac83(4a-c)\leqslant\dfrac{40}3b$，}
+\step{两式相加得 $-b\leqslant9a-c\leqslant20b$，因为 $b>0$，所以 $-1\leqslant\dfrac{9a-c}{b}\leqslant20$，}
+\step{所以 $\dfrac{9a-c}{b}$ 的取值范围是 $[-1,20]$.}
+\solend
+
+\fi
+
+\item 不等式 $|x+1|-|x-1|<m$ 的解集是 $\R$ 的非空真子集，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ans{$(-2,2]$}
+
+\item 设集合 $A=\{x\mid x^2+2x-3>0\}$，集合 $B=\{x\mid x^2-2ax-1\leqslant0,\,a>0\}$。若 $A\cap B$ 中恰含有一个整数，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $A$ 中不等式变形得 $(x-1)(x+3)>0$，解得 $x<-3$ 或 $x>1$，}
+\step{即 $A=\{x\mid x<-3\text{ 或 }x>1\}$，}
+\step{函数 $y=f(x)=x^2-2ax-1$ 的对称轴为 $x=a>0$，$f(-3)=6a+8>0$，}
+\step{由对称性得，要使 $A\cap B$ 恰有一个整数，即这个整数解为 $2$，}
+\step{所以 $f(2)\leqslant0$ 且 $f(3)>0$，即 $\begin{cases}4-4a-1\leqslant0\\9-6a-1>0\end{cases}$，解得 $\begin{cases}a\geqslant\dfrac34\\[2pt]a<\dfrac43\end{cases}$，即 $\dfrac34\leqslant a<\dfrac43$，}
+\step{则 $a$ 的取值范围为 $\left[\dfrac34,\dfrac43\right)$.}
+\solend
+
+\fi
+
+\item 设 $a>b>c>0$，则 $2a^2+\dfrac1{ab}+\dfrac1{a(a-b)}-10ac+25c^2$ 的最小值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$2a^2+\dfrac1{ab}+\dfrac1{a(a-b)}-10ac+25c^2=(a-5c)^2+a^2-ab+ab+\dfrac1{ab}+\dfrac1{a(a-b)}$}
+\step{$=(a-5c)^2+ab+\dfrac1{ab}+a(a-b)+\dfrac1{a(a-b)}\geqslant0+2+2=4$，}
+\step{当且仅当 $a-5c=0$，$ab=1$，$a(a-b)=1$ 时取等号，}
+\step{即 $a=\sqrt2$，$b=\dfrac{\sqrt2}2$，$c=\dfrac{\sqrt2}5$ 时取等号，故最小值为 $4$.}
+\solend
+
+\fi
+
+% 原卷如此，照录未改（第 12 题题干"≥1(m,n>0) 的构成的区间长度之和"，"的构成的"疑衍一"的"字）
+\item 定义区间 $(c,d]$、$[c,d)$、$(c,d)$、$[c,d]$ 的长度均为 $d-c$，则满足不等式
+$\dfrac1{mx-1}+\dfrac1{nx-1}\geqslant1$（$m,n>0$）的构成的区间长度之和为\blankline[4.4em].
+
+\ans{$\dfrac1m+\dfrac1n$}
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 对任意实数 $a$、$b$、$c$，给出下列命题：①"$a=b$"是"$ac=bc$"的充要条件；
+②"$a+5$ 是无理数"是"$a$ 是无理数"的充要条件；③"$a>b$"是"$a^2>b^2$"的充分条
+件；④"$a<4$"是"$a<3$"的必要条件；其中真命题的个数是\mbox{（\quad）}
+
+\keepwithprev
+A. 1 个\qquad B. 2 个\qquad C. 3 个\qquad D. 4 个
+
+\ifanswer
+\solbegin
+\step{①由"$a=b$"得 $ac=bc$，但当 $ac=bc$ 时，不能得到 $a=b$，}
+\step{故"$a=b$"是"$ac=bc$"的充分不必要条件，故①错误；}
+\step{②因为 $5$ 是有理数，所以当 $a+5$ 是无理数时，$a$ 必为无理数，反之也成立，}
+\step{故②正确；}
+\step{③取 $a=1$，$b=-2$，此时 $a^2<b^2$，故③错误；}
+\step{④当 $a<4$ 时，不能推出 $a<3$；当 $a<3$ 时，有 $a<4$ 成立，}
+\step{故"$a<4$"是"$a<3$"的必要不充分条件，故④正确.}
+\step{综上，正确的命题有 $2$ 个. 故选 $B$.}
+\solend
+
+\fi
+
+\item 设 $a_1$、$b_1$、$c_1$、$a_2$、$b_2$、$c_2$ 均为非零实数，不等式 $a_1x^2+b_1x+c_1>0$ 和 $a_2x^2+b_2x+c_2>0$ 的解集分别为集合 $M$ 和 $N$，那么"$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$"是"$M=N$"的\mbox{（\quad）}条件
+
+\keepwithprev
+A. 充分非必要\qquad B. 必要非充分
+
+C. 充要\qquad\qquad D. 既非充分又非必要
+
+\ifanswer
+\solbegin
+\step{若"$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}<0$"时，}
+\step{则不等式 $a_1x^2+b_1x+c_1<0$ 等价于 $a_2x^2+b_2x+c_2>0$，则"$M\neq N$"；}
+\step{即"$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$"是"$M=N$"的不充分条件；}
+\step{但当"$M=N=\varnothing$"时，如 $x^2+x+1<0$ 和 $x^2+x+2<0$，}
+\step{"$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$"不成立，即"$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$"是"$M=N$"的不必要条件；}
+\step{故"$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$"是"$M=N$"的既不充分又不必要条件，故选 $D$.}
+\solend
+
+\fi
+
+\item 对三个正实数 $a$、$b$、$c$，下列说法正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 存在 $(a,b,c)$ 的一组值，使得 $a+\dfrac1b$、$b+\dfrac1c$、$c+\dfrac1a$ 均小于 $2$
+
+B. 存在 $(a,b,c)$ 的一组值，使得 $a+\dfrac1b$、$b+\dfrac1c$、$c+\dfrac1a$ 中恰有两个小于 $2$
+
+C. 对 $(a,b,c)$ 的任意值，$a+\dfrac1b$、$b+\dfrac1c$、$c+\dfrac1a$ 都不小于 $2$
+
+D. 对 $(a,b,c)$ 的任意值，$a+\dfrac1b$、$b+\dfrac1c$、$c+\dfrac1a$ 中至多有两个不小于 $2$
+
+\ifanswer
+\solbegin
+\step{取 $a=1$，$b=2$，$c=\dfrac12$，则 $a+\dfrac1b=\dfrac32$，$b+\dfrac1c=4$，$c+\dfrac1a=\dfrac32$，}
+\step{即存在 $(a,b,c)$，使得 $a+\dfrac1b$、$b+\dfrac1c$、$c+\dfrac1a$ 中恰有两个小于 $2$. 故选 $B$.}
+\solend
+
+\fi
+
+\item 记方程①：$x^2+a_1x+1=0$，方程②：$x^2+a_2x+2=0$，方程③：$x^2+a_3x+4=0$，其中 $a_1$、$a_2$、$a_3$ 是正实数且满足 $a_2^2=a_1a_3$，则下列选项中，能推出方程③有两个不相等的实根的是\mbox{（\quad）}
+
+\keepwithprev
+A. 方程①有实根，且②有实根\qquad B. 方程①有实根，且②无实根
+
+C. 方程①无实根，且②有实根\qquad D. 方程①无实根，且②无实根
+
+\ifanswer
+\solbegin
+\step{当方程①无实根，且②有实根时，$\Delta_1=a_1^2-4<0$，$\Delta_2=a_2^2-8\geqslant0$，}
+\step{即 $a_1^2<4$，$a_2^2\geqslant8$，因为 $a_2^2=a_1a_3$，所以 $a_3=\dfrac{a_2^2}{a_1}$，则 $a_3^2=\left(\dfrac{a_2^2}{a_1}\right)^2=\dfrac{a_2^4}{a_1^2}>\dfrac{8^2}4=16$，}
+\step{即方程③的判别式 $\Delta_3=a_3^2-16>0$，此时方程③有两个不相等的实根，故选 $C$.}
+\solend
+
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知关于 $x$ 的不等式 $\left|\dfrac12x-a\right|\leqslant2$ 的解集为集合 $A$，$B=\left\{x\,\middle|\,\dfrac{x-4}{x}\leqslant0\right\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $x\in A$ 是 $x\in B$ 的必要不充分条件，求 $a$ 的取值范围；
+\item 若 $A\cap B=\varnothing$，求 $a$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由 $\left|\dfrac12x-a\right|\leqslant2$，即 $-2\leqslant\dfrac12x-a\leqslant2$，解得 $2a-4\leqslant x\leqslant2a+4$，}
+\step{所以 $A=\{x\mid2a-4\leqslant x\leqslant2a+4\}$，}
+\step{由 $\dfrac{x-4}{x}\leqslant0$，等价于 $\begin{cases}x(x-4)\leqslant0\\x\neq0\end{cases}$，解得 $0<x\leqslant4$，}
+\step{所以 $B=\left\{x\,\middle|\,\dfrac{x-4}{x}\leqslant0\right\}=\{x\mid0<x\leqslant4\}$，}
+\step{因为 $x\in A$ 是 $x\in B$ 的必要不充分条件，所以 $B$ 真包含于 $A$，}
+% 原卷如此，照录未改（此处原卷印作 $[0.2]$，按上下文应为 $[0,2]$，区间逗号漏印）
+\step{所以 $\begin{cases}2a+4\geqslant4\\2a-4\leqslant0\end{cases}$，解得 $0\leqslant a\leqslant2$，即 $a$ 的取值范围为 $[0.2]$；}
+\stepm{(2)}{因为 $A\cap B=\varnothing$，显然 $A\neq\varnothing$，所以 $2a+4\leqslant0$ 或 $2a-4>4$，}
+\step{解得 $a\leqslant-2$ 或 $a>4$，即 $a$ 的取值范围为 $(-\infty,-2]\cup(4,+\infty)$.}
+\solend
+
+\fi
+
+\ansspace[6]
+
+\item 已知 $a$、$b$、$c\in(0,1)$，求证：
+
+\begin{enumerate}[label=(\arabic*)]
+\item $a+b<ab+1$；
+\item 利用（1）的结论证明：$a+b+c<abc+2$；
+\item 猜想一般结论.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $a$、$b\in(0,1)$，所以 $a-1<0$，$1-b>0$，}
+% 原卷如此，照录未改（中间多印一处 $-(1-b)$，恒等变形应为 $a(1-b)-(1-b)$）
+\step{所以 $a+b-(ab+1)=a(1-b)-(1-b)-(1-b)=(a-1)(1-b)<0$，}
+\step{所以 $a+b<ab+1$.}
+\stepm{(2)}{因为 $a$、$b$、$c\in(0,1)$，所以 $ab\in(0,1)$，$c\in(0,1)$，}
+\step{由（1）得 $a+b+c<(ab+c)+1<abc+1+1=abc+2$.}
+\stepm{(3)}{猜想：一般地，若 $a_1$、$a_2$、$a_3$、$\cdots$、$a_n\in(0,1)$，}
+\step{则有 $a_1+a_2+a_3+\cdots+a_n<a_1a_2a_3\cdots a_n+(n-1)$.}
+\solend
+
+\fi
+
+\ansspace[5]
+
+\item 定义区间 $(m,n)$、$[m,n]$、$(m,n]$、$[m,n)$ 的长度均为 $n-m$，其中 $n>m$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若关于 $x$ 的不等式 $2ax^2-12x-3>0$ 的解集构成的区间的长度为 $\sqrt6$，求实数 $a$ 的值；
+\item 已知 $A=\left\{x\,\middle|\,\dfrac7{x+1}>1\right\}$，$B=\left\{x\left|\;\begin{cases}tx+3t>0\\tx^2+3tx-4<0\end{cases}\right.\right\}$，若 $A\cap B$ 构成的各区间长度和为 $6$，求实数 $t$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $a=0$ 时，不等式为 $-12x-3>0$，显然不符合题意；}
+\step{当 $a\neq0$ 时，方程 $2ax^2-12x-3=0$ 的两根设为 $x_1$、$x_2$，}
+\step{则 $\Delta=144+24a>0$ 且 $a<0$，得 $-6<a<0$，}
+\step{因为 $x_1+x_2=\dfrac6a$，$x_1x_2=-\dfrac3{2a}$，}
+\step{所以 $6=|x_1-x_2|^2=(x_1+x_2)^2-4x_1x_2=\dfrac{36}{a^2}+\dfrac6a$，得 $a=-2$ 或 $a=3$（舍），}
+\step{所以 $a=-2$.}
+\stepm{(2)}{先解不等式 $\dfrac7{x+1}>1$，整理得 $\dfrac{-x+6}{x+1}>0$，即 $(x+1)(x-6)<0$，}
+\step{所以不等式 $\dfrac7{x+1}>1$ 的解集 $A=(-1,6)$，}
+\step{又 $B\subseteq(0,+\infty)$，$A\cap B\subseteq(0,6)$，}
+\step{所以不等式组的解集各区间长度和为 $6$，所以当 $x\in(0,6)$ 时恒成立.}
+\step{当 $x\in(0,6)$ 时，不等式 $tx+3t>0$ 恒成立，得 $t>0$；}
+\step{当 $x\in(0,6)$ 时，不等式 $tx^2+3tx-4<0$ 恒成立，即 $t<\dfrac4{x^2+3x}$ 恒成立，}
+\step{而 $x\in(0,6)$ 时，$\dfrac4{x^2+3x}$ 的取值范围为 $\left(\dfrac2{27},+\infty\right)$，所以实数 $t\leqslant\dfrac2{27}$；}
+\step{综上所述，$t$ 的取值范围为 $\left(0,\dfrac2{27}\right]$.}
+\solend
+
+\fi
+
+\ansspace[7]
+
+\item 为改善天鹅"晨晨"、"晖晖"的生活环境，华师大二附中计划向小池塘投放水质净化剂，已知每投放 $a$ 个单位（$0<a\leqslant4$ 且 $a\in\R$）的试剂，它在水中释放的浓度 $y$（克/升）随着时间 $x$（天）变化的函数关系式近似为 $y=af(x)$，其中
+\[
+f(x)=
+\begin{cases}
+\dfrac{1+x}{7-x}, & x\in[0,5]\\[2pt]
+\dfrac{11-x}{2}, & x\in(5,11]
+\end{cases}
+\]
+若多次投放，则某一时刻水中的试剂浓度为每次投放的试剂在相应时刻所释放的浓度之和，根据试验，当水中净化剂的浓度不低于 $4$（克/升）时，它才能净化有效.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若只投放一次 $4$ 个单位的净化剂，则有效时间最多能持续几天？
+\item 若先投放 $2$ 个单位的净化剂，$6$ 天后再投放 $m$ 个单位的净化剂，要使接下来的 $5$ 天中，净化剂能够持续有效，试求 $m$ 的最小值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为一次投放 $4$ 个单位的净化剂，}
+\step{所以水中释放的浓度为 $y=4f(x)=\begin{cases}\dfrac{4+4x}{7-x}, & 0\leqslant x\leqslant5\\[2pt]22-2x, & 5<x\leqslant11\end{cases}$，}
+\step{当 $0\leqslant x\leqslant5$ 时，$\dfrac{4(1+x)}{7-x}\geqslant4$，解得 $3\leqslant x\leqslant5$；}
+% 原卷如此，照录未改（此处"当 5≤x≤11 时"与题干 f(x) 第二段定义域 (5,11] 端点不一致）
+\step{当 $5\leqslant x\leqslant11$ 时，$22-2x\geqslant4$，解得 $5\leqslant x\leqslant9$，}
+\step{综上，$3\leqslant x\leqslant9$，一次投放 $4$ 个单位的净化剂，则有效时间可持续 $7$ 天.}
+\stepm{(2)}{设从第一次投放起，经过 $x$（$6\leqslant x\leqslant11$）天后浓度为}
+\step{\[
+g(x)=(11-x)+m\left[\dfrac{1+x-6}{7-(x-6)}\right]=11-x+m\cdot\dfrac{x-5}{13-x}.
+\]}
+\step{因为 $6\leqslant x\leqslant11$，所以 $13-x>0$，$x-5>0$，所以 $11-x+m\cdot\dfrac{x-5}{13-x}\geqslant4$，}
+\step{即 $m\geqslant\dfrac{(13-x)(x-7)}{x-5}$，令 $x-5=t$，$t\in[1,6]$，}
+\step{所以 $m\geqslant-\dfrac{(t-2)(t-8)}{t}=10-\left(t+\dfrac{16}t\right)$，}
+\step{因为 $t+\dfrac{16}t\geqslant2\sqrt{16}=8$，所以 $m\geqslant2$，}
+\step{当且仅当 $t=\dfrac{16}t$，$t=4$ 即 $x=9$ 时取等号，}
+\step{故为使接下来的 $5$ 天中能够持续有效 $m$ 的最小值为 $2$.}
+\solend
+
+\fi
+
+\ansspace[7]
+
+\item 对于函数 $f(x)$，若存在 $x_0\in\R$，使 $f(x_0)=x_0$ 成立，则称 $x_0$ 为 $f(x)$ 的不动点.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求函数 $y=x^2-x-3$ 的不动点；
+\item 若函数 $y=x^2-(a+2)x+1$ 有两个不相等的不动点 $x_1$、$x_2$，求 $\dfrac{x_1}{x_2}+\dfrac{x_2}{x_1}$ 的取值范围；
+\item 若函数 $g(x)=mx^2-(m+1)x+m+1$ 在区间 $(0,2)$ 上有唯一的不动点，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得 $x^2-x-3=x$，即 $x^2-2x-3=0$，解得 $x_1=-1$，$x_2=3$，}
+\step{所以不动点为 $-1$ 和 $3$.}
+\stepm{(2)}{由题意得 $x^2-(a+2)x+1=x$ 有两个不相等的实数根 $x_1$、$x_2$，}
+\step{即方程 $x^2-(a+3)x+1=0$ 有两个不相等的实数根 $x_1$、$x_2$，}
+\step{所以 $\Delta=(a+3)^2-4=a^2+6a+5>0$，解得 $a<-5$ 或 $a>-1$，}
+\step{且 $x_1+x_2=a+3$，$x_1x_2=1$，}
+\step{所以 $\dfrac{x_1}{x_2}+\dfrac{x_2}{x_1}=\dfrac{x_1^2+x_2^2}{x_1x_2}=(x_1+x_2)^2-2x_1x_2=(a+3)^2-2\in(2,+\infty)$，}
+\step{所以 $\dfrac{x_1}{x_2}+\dfrac{x_2}{x_1}$ 的取值范围为 $(2,+\infty)$.}
+\stepm{(3)}{由 $g(x)=mx^2-(m+1)x+m+1=x$，得 $mx^2-(m+2)x+m+1=0$，}
+\step{由于函数 $g(x)$ 在 $(0,2)$ 上有且只有一个不动点，}
+\step{即 $mx^2-(m+2)x+m+1=0$ 在 $(0,2)$ 上有且只有一个解，}
+\step{令 $h(x)=mx^2-(m+2)x+m+1$，}
+\step{① $h(0)\cdot h(2)<0$，则 $(m+1)(m-1)<0$，解得 $-1<m<1$；}
+\step{② $h(0)=0$，即 $m=-1$ 时，方程可化为 $-x^2-x=0$，另一个根为 $-1$，}
+\step{不符合题意，舍去；}
+\step{③ $h(2)=0$，即 $m=1$ 时，方程可化为 $x^2-3x+2=0$，}
+\step{另一个根为 $1$，满足；}
+\step{④ $\Delta=0$，即 $(m+2)^2-4m(m+1)=0$，解得 $m=\pm\dfrac{2\sqrt3}3$，}
+\step{当 $m=-\dfrac{2\sqrt3}3$ 时，方程的根为 $x=-\dfrac{-(m+2)}{2m}=\dfrac{m+2}{2m}=\dfrac{1-\sqrt3}2$，}
+\step{不符合题意，舍去；}
+\step{当 $m=\dfrac{2\sqrt3}3$ 时，方程的根为 $x=-\dfrac{-(m+2)}{2m}=\dfrac{m+2}{2m}=\dfrac{1+\sqrt3}2$，满足.}
+\step{综上，$m$ 的取值范围是 $(-1,1]\cup\left\{\dfrac{2\sqrt3}3\right\}$.}
+\solend
+
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
