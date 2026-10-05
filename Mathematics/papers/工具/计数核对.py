@@ -601,6 +601,142 @@ def check_repro():
 # 查出 **2 道一直没登记的真题**（2023 全国乙卷（理）、2009 上海卷（秋文））。
 HITLIST = os.path.join(HERE, '真题命中清单.txt')
 NOTIN_HEAD = '| 机判报过的题位 | 机判出处 | 为什么不计入 |'
+NOHIT_LEDGER_HEADING = '### 机判无命中题位人工复核'
+NOHIT_LEDGER_HEAD = '| 题位 key | 批次 | 人工状态 | 核查摘要/证据 | 正式出处表定位 |'
+NOHIT_STATUSES = ('待核', '已确认-高考', '已确认-非高考', '已核查-暂未确证来源')
+NOHIT_KEY = re.compile(r'^高一(?:\d{2}|[abc])#(?:\d+|附加\d+)$')
+NOHIT_PLACEHOLDERS = {'', '—', '-', '待核', '无', '暂无'}
+NON_GAOKAO_HEAD = '| 题 | 考据结果 |'
+FUJIA_TRACE_HEAD = '| 卷·题 | 内容 | 考据结果 |'
+
+
+def _nohit_batch(key):
+    m = re.match(r'^高一(\d{2}|[abc])#', key)
+    if not m:
+        return None
+    vol = m.group(1)
+    if vol in ('a', 'b', 'c'):
+        return 'H'
+    n = int(vol)
+    if 2 <= n <= 9:
+        return 'A'
+    if 10 <= n <= 15:
+        return 'B'
+    if n == 17 or 19 <= n <= 24:
+        return 'C'
+    if 25 <= n <= 30:
+        return 'D'
+    if 31 <= n <= 36:
+        return 'E'
+    if 37 <= n <= 41:
+        return 'F'
+    if 42 <= n <= 48:
+        return 'G'
+    return None
+
+
+def _other_registered_slots(md):
+    registered = {'非高考来源表': set(), '附加题专查': set()}
+    for row in table_rows(md, NON_GAOKAO_HEAD):
+        if len(row) != 2:
+            raise AssertionError(f'非高考来源表应为两列，实为 {len(row)} 列：{row[0][:40]}')
+        registered['非高考来源表'] |= {
+            f'{paper}#{lab}' for paper, lab in zhenti_slots([row[0]])}
+    for row in table_rows(md, FUJIA_TRACE_HEAD):
+        if len(row) != 3:
+            raise AssertionError(f'附加题考据表应为三列，实为 {len(row)} 列：{row[0][:40]}')
+        m = re.search(r'(?:高一)?(\d{1,2}|[abc])\s*附加\s*(?:题\s*)?(?:第\s*)?(\d+)?', row[0])
+        if m:
+            vol = m.group(1)
+            paper = '高一' + (vol.zfill(2) if vol.isdigit() else vol)
+            registered['附加题专查'].add(f'{paper}#附加{m.group(2) or "1"}')
+    return registered
+
+
+def validate_nohit_ledger(md, expected_keys, gaokao_registered, other_registered):
+    """Validate the README's manually maintained dispositions for hitlist no-hit positions."""
+    issues = []
+    lines = md.splitlines()
+    headings = [i for i, line in enumerate(lines) if line == NOHIT_LEDGER_HEADING]
+    if len(headings) != 1:
+        return [f'ledger heading should appear exactly once; found {len(headings)}'], {}
+
+    start = headings[0] + 1
+    end = start
+    while end < len(lines) and not lines[end].startswith('### '):
+        end += 1
+    section = lines[start:end]
+    header_positions = [i for i, line in enumerate(section) if line == NOHIT_LEDGER_HEAD]
+    if len(header_positions) != 1:
+        return [f'ledger table header should appear exactly once; found {len(header_positions)}'], {}
+
+    header = header_positions[0]
+    data_start = header + 1
+    while data_start < len(section) and not section[data_start].strip():
+        data_start += 1
+    if data_start >= len(section):
+        return ['ledger table is missing its separator row'], {}
+    divider = [cell.strip() for cell in section[data_start].strip().strip('|').split('|')]
+    if len(divider) != 5 or not all(re.fullmatch(r':?-{3,}:?', cell) for cell in divider):
+        issues.append('ledger table separator must have five columns')
+        data_start -= 1
+    else:
+        data_start += 1
+
+    counts = collections.Counter()
+    seen = []
+    for row_number, line in enumerate(section[data_start:], start=data_start + start + 1):
+        if not line.strip():
+            break
+        if not line.lstrip().startswith('|'):
+            break
+        cells = [cell.strip() for cell in line.strip().strip('|').split('|')]
+        if len(cells) != 5:
+            issues.append(f'row {row_number}: expected five columns, found {len(cells)}')
+            continue
+        key, batch, status, evidence, source_ref = cells
+        seen.append(key)
+        if not NOHIT_KEY.fullmatch(key):
+            issues.append(f'row {row_number}: malformed key {key!r}')
+        if key not in expected_keys:
+            issues.append(f'row {row_number}: extra key {key!r}')
+        want_batch = _nohit_batch(key)
+        if want_batch is None or batch != want_batch:
+            issues.append(f'row {row_number}: batch for {key!r} should be {want_batch!r}, found {batch!r}')
+        if status not in NOHIT_STATUSES:
+            issues.append(f'row {row_number}: unknown status {status!r}')
+            continue
+        counts[status] += 1
+        has_evidence = evidence not in NOHIT_PLACEHOLDERS
+        has_reference = source_ref not in NOHIT_PLACEHOLDERS
+        if status == '待核':
+            if has_reference:
+                issues.append(f'row {row_number}: pending key {key!r} cannot have a formal reference')
+        elif status == '已核查-暂未确证来源':
+            if not has_evidence:
+                issues.append(f'row {row_number}: reviewed-unconfirmed key {key!r} needs a review note')
+            if has_reference:
+                issues.append(f'row {row_number}: reviewed-unconfirmed key {key!r} cannot have a formal reference')
+        elif status == '已确认-高考':
+            if not has_evidence:
+                issues.append(f'row {row_number}: confirmed key {key!r} needs evidence')
+            if not has_reference or '真题出处表' not in source_ref:
+                issues.append(f'row {row_number}: confirmed key {key!r} needs a 真题出处表 reference')
+            if key not in gaokao_registered:
+                issues.append(f'row {row_number}: confirmed Gaokao key {key!r} is not registered')
+        elif status == '已确认-非高考':
+            if not has_evidence:
+                issues.append(f'row {row_number}: confirmed key {key!r} needs evidence')
+            if source_ref not in ('非高考来源表', '附加题专查'):
+                issues.append(f'row {row_number}: confirmed key {key!r} needs a non-Gaokao source-table reference')
+            elif key not in other_registered.get(source_ref, set()):
+                issues.append(f'row {row_number}: source-table mismatch for confirmed non-Gaokao key {key!r} at {source_ref}')
+
+    duplicates = sorted(key for key, n in collections.Counter(seen).items() if n > 1)
+    issues.extend(f'duplicate key {key!r}' for key in duplicates)
+    missing = sorted(expected_keys - set(seen))
+    issues.extend(f'missing key {key!r}' for key in missing)
+    return issues, dict(counts)
 
 
 def _hitlist_rows():
@@ -650,6 +786,18 @@ def check_hitlist(md, reg):
         f'{len(hit)} 个题位有命中：登记进出处表 {len(hit & reg)} 个、记进“未计入”台账 {len(hit & noted)} 个')
     add('① 机判清单：台账里的题位都真是机判报过的', [],
         sorted(name(k) for k in noted - hit), '台账里不许出现机判没报过的题位')
+
+    expected_nohit = {f'{paper}#{lab}' for (paper, lab), v in rows if v == '无命中'}
+    gaokao_registered = {f'{paper}#{lab}' for paper, lab in reg}
+    other_registered = _other_registered_slots(md)
+    ledger_issues, counts = validate_nohit_ledger(
+        md, expected_nohit, gaokao_registered, other_registered)
+    confirmed = counts.get('已确认-高考', 0) + counts.get('已确认-非高考', 0)
+    summary = (f'待核 {counts.get("待核", 0)}、已确认 {confirmed}'
+               f'（高考 {counts.get("已确认-高考", 0)} / 非高考 {counts.get("已确认-非高考", 0)}）、'
+               f'已核查-暂未确证来源 {counts.get("已核查-暂未确证来源", 0)}')
+    add('① 机判清单：无命中题位人工复核台账', [], ledger_issues,
+        f'{len(expected_nohit)} 个当前无命中题位；{summary}')
 
 
 # ----------------------------------------------------------------- 附加题账目
