@@ -1,0 +1,88 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\blank}{\underline{\hspace{1.6cm}}}
+% 判错的条：题号后加红星
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+% ★ 固定宽度槽位：带星/不带星行正文左边缘一致
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
+\newcommand{\ens}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{\STAR}\textbf{#2}}
+\newcommand{\enx}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{}\textbf{#2}}
+% 表格正文列：左对齐，避免 p 列两端对齐造成的 Underfull
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语短语默写 \quad 二刷（英 $\to$ 中）}\\[0.25em]
+{\large 小蓝 P21--30}\\[0.22em]
+{\small 2029届高一英语 · \STAR 为 2026-10 原卷判错的 16 条}
+\end{center}
+
+\vspace{0.35em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.2cm}} & 日期：\underline{\hspace{2.2cm}} & 得分：\underline{\hspace{1.5cm}}\,/\enspace 25 \\
+\end{tabular}
+
+\vspace{0.45em}
+\noindent{\small 说明：根据英文短语，在横线上写出中文释义，题号沿用原卷。\STAR\ 为原卷判错的条（16 条）。}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.5}
+\noindent\begin{tabular}{@{}L{5.6cm}@{\hspace{0.25cm}}L{2.2cm}@{\hspace{0.5cm}}L{5.6cm}@{\hspace{0.25cm}}L{2.2cm}@{}}
+\toprule
+英文短语 & 中文释义 & 英文短语 & 中文释义 \\
+\midrule
+\enx{1}{have no alternative but to do} & \blank & \ens{14}{require an apology} & \blank \\
+\ens{2}{amateur cyclist} & \blank & \enx{15}{apologize to sb. for sth.} & \blank \\
+\enx{3}{among other things} & \blank & \ens{16}{The government appeals to everyone to save water.} & \blank \\
+\ens{4}{amuse oneself with games} & \blank & \ens{17}{Does the idea of working for a joint venture company appeal to you?} & \blank \\
+\enx{5}{analyse data} & \blank & \ens{18}{arrive at a conclusion} & \blank \\
+\ens{6}{be angry about procrastination} & \blank & \ens{19}{apply for leave} & \blank \\
+\ens{7}{answer for} & \blank & \enx{20}{appoint sb. to a post} & \blank \\
+\ens{8}{one victory after another} & \blank & \ens{21}{I'd appreciate it very much if …} & \blank \\
+\enx{9}{show sb. around} & \blank & \enx{22}{show appreciation for …} & \blank \\
+\enx{10}{anticipate the rise in sales next year} & \blank & \ens{23}{don't approve of my dropping out of school} & \blank \\
+\ens{11}{be anxious for …} & \blank & \enx{24}{arch one's back} & \blank \\
+\ens{12}{burst into applause} & \blank & \ens{25}{arrange for a doctor to see him} & \blank \\
+\ens{13}{it appears to me that} & \blank & \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,25
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox\ 介词搭配（to / for / of）\quad\checkmarkbox\ 固定搭配（appeal to / arrange for）\quad\checkmarkbox\ 漏词\quad\checkmarkbox\ 用词词形
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
+
+\end{document}
