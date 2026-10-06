@@ -33,6 +33,10 @@
      验收标准是“编译日志无 Overfull \\hbox”。
   ⑤ **①–⑳ 不要映射**：它们已在 `common.sty` 的 `xeCJKDeclareCharClass` 里走中文字体，
      映射成数学命令反而会把中文引号排坏。★▲ 同理走字符类（`common.sty` 里已补两段）。
+  ⑥ **ASCII 直引号要成对换成 ``…''**：README 按全稿约定用 ASCII `"`，pandoc 原样吐出，
+     而这字符落到西文字体 LMRoman10，该字体 U+0022 只有一个字形（右向），PDF 里首尾都成
+     `”` —— 看上去“引号不配对”（2026-10-05 从“高一 43 第 18 题末段"105（千米/时）"”发现）。
+     见 `pair_quotes()`；换 ``…'' 而非弯引号，是为了跟随 pandoc 已经产出的那 845 处多数写法。
 """
 import io
 import os
@@ -251,11 +255,11 @@ def strip_labels(tex):
     return re.sub(r'(\\section\{[^{}]*\})\\label\{[^{}]*\}', r'\1', tex)
 
 
-def map_unicode(tex):
-    """把数学模式外的 Unicode 符号换成 LaTeX 命令（见“坑⑤”）
+def split_protected(tex):
+    """按“受保护段 / 普通段”切开，返回 [(是否受保护, 文本), …]。
 
-    先按“受保护段 / 普通段”切开，只对普通段替换。受保护段有三类：
-      `\\(…\\)` `\\[…\\]` 数学，以及 `\\texttt{…}`（代码里塞 `$\\bigstar$` 会直接报错）。
+    受保护段有三类：`\\(…\\)` `\\[…\\]` 数学，以及 `\\texttt{…}`（代码里塞
+    `$\\bigstar$` 会直接报错）。`map_unicode` 与 `pair_quotes` 共用这一份切分。
     """
     segs, buf, i, n = [], [], 0, len(tex)
     while i < n:
@@ -280,12 +284,53 @@ def map_unicode(tex):
         segs.append((True, tex[i:end]))
         i = end
     segs.append((False, ''.join(buf)))
-    out = []
+    return segs
+
+
+def pair_quotes(tex):
+    """把普通段里成对的 ASCII 直引号 `"` 换成 TeX 的 ``…''（见“坑⑥”）。
+
+    **为什么必须在这里做**：README 按全稿约定用 ASCII 直引号（`"`），pandoc 原样吐出
+    `"`，而这个字符不在 xeCJK 的 CJK 字符类里，落到西文字体 LMRoman10 —— 该字体在
+    U+0022 上只有一个字形（右向），于是 PDF 里首尾都成了 `”`，看上去“引号不配对”。
+    pandoc 遇到 README 里本来就写成弯引号 `“…”` 的地方，会自己转成 ``…''（正常），
+    所以同一份报告里两种写法并存、只有 ASCII 那批坏掉——2026-10-05 从
+    “高一 43 第 18 题末段"105（千米/时）"”那一行看出来的。
+
+    用 ``…'' 而不是换成弯引号 `“…”`：报告里 pandoc 已经产出 845 处 ``…''，跟随多数、
+    不引入第三种写法。**只动普通段**（数学与 `\\texttt{}` 内保持原样），并按文档顺序
+    交替开/闭；全篇 ASCII 引号必须是偶数，否则直接报错（配错会排出一串同向引号）。
+    """
+    segs = split_protected(tex)
+    total = sum(s.count('"') for prot, s in segs if not prot)
+    if total % 2:
+        raise AssertionError('溯源.tex 生成后普通段里有 %d 个 ASCII 直引号（奇数），'
+                             '无法成对替换——README 里有一处引号没配平' % total)
+    out, opening = [], True
     for prot, s in segs:
         if prot:
             out.append(s)
+            continue
+        buf = []
+        for ch in s:
+            if ch == '"':
+                buf.append('``' if opening else "''")
+                opening = not opening
+            else:
+                buf.append(ch)
+        out.append(''.join(buf))
+    return ''.join(out)
+
+
+def map_unicode(tex):
+    """把数学模式外的 Unicode 符号换成 LaTeX 命令（见“坑⑤”）"""
+    UNI_FIX = tuple(UNI)
+    out = []
+    for prot, s in split_protected(tex):
+        if prot:
+            out.append(s)
         else:
-            for a, b in UNI:
+            for a, b in UNI_FIX:
                 s = s.replace(a, b)
             out.append(s)
     return ''.join(out)
@@ -479,6 +524,12 @@ def main():
     body = break_paths(map_unicode(body))
     for i, (h, a, d) in enumerate(tables):
         body = body.replace(PLACEHOLDER % i, table_tex(h, a, d, i))
+    # 引号成对替换必须放在**表格插回来之后**：台账表里有 7 格带 ASCII 直引号，
+    # 只处理正文会漏掉它们（2026-10-05 首版就是这样，`grep -c '"' 溯源.tex` 还剩 7 行）。
+    body = pair_quotes(body)
+    if '"' in body:
+        raise AssertionError('溯源.tex 正文里仍残留 ASCII 直引号（多半在数学或 \\texttt{} 内）'
+                             '——它会被排成同向的 ” 而看不出开合，请检查 README 该处写法')
 
     tex = preamble(body, readme_stats())
     io.open(OUT, 'w', encoding='utf-8').write(tex)
