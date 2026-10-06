@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=1.9cm}
+\linespread{1.25}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{tipblue}{RGB}{0,95,160}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
+% 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体
+\newcommand{\prompt}[1]{\emph{\textcolor{tipblue}{\small（#1）}}}
+
+\begin{document}
+\pagestyle{plain}
+\begin{center}
+{\LARGE\bfseries 上海高考高分翻译背诵 \quad 94}\\[0.25em]
+{\large 24一模　2026-09-24 \quad\ 中英对照（背诵 · 答案）}\\[0.35em]
+{\footnotesize 来源：微信公众号「发现之旅 速来记单词」· 2026-09-24 · 赵文瀚}
+\end{center}
+
+\vspace{0.4em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.0cm}} & 日期：\underline{\hspace{2.0cm}} & 得分：\underline{\hspace{1.4cm}}\,/\enspace 4 \\
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\small 中 $\to$ 英默写卷的参考答案；亦可直接用于背诵与回译自查。}
+
+\vspace{0.8em}
+\num{1}\textbf{我听说你的表弟是个不折不扣的“社牛”,是吗?}\prompt{hear}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}I’ve heard that your cousin is a real social butterfly, isn’t he?
+
+\num{2}\textbf{长颈鹿皮肤上橙棕色的斑点使它们可以在野外隐藏自己。}\prompt{.it...}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}The orange-brown spots on the giraffes make it possible for them to hide themselves in the wild.
+
+\num{3}\textbf{和普通巴士不同,这款智能巴士可以自动规划路线,避让行人和车辆,将乘客送达目的地。}\prompt{avoid}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}Unlike regular buses, the smart bus can plan routes automatically, avoid pedestrians and vehicles, and deliver passengers to their destinations.
+
+\num{4}\textbf{今年参展的不少中国品牌产品通过对东方文化的深度挖掘，将传统与时尚融合，赢得了年轻族的青睐。}\prompt{integrate}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}Digging deep into Eastern culture, many Chinese brands taking part in this year’s exhibition have integrated tradition with fashion, thus winning the favor of the young generation.
+
+\end{document}

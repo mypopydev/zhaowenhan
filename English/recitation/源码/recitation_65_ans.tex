@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=1.9cm}
+\linespread{1.25}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{tipblue}{RGB}{0,95,160}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
+% 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体
+\newcommand{\prompt}[1]{\emph{\textcolor{tipblue}{\small（#1）}}}
+
+\begin{document}
+\pagestyle{plain}
+\begin{center}
+{\LARGE\bfseries 上海高考高分翻译背诵 \quad 65}\\[0.25em]
+{\large 25一模黄浦　2026-08-25 \quad\ 中英对照（背诵 · 答案）}\\[0.35em]
+{\footnotesize 来源：微信公众号「发现之旅 速来记单词」· 2026-08-25 · 赵文瀚}
+\end{center}
+
+\vspace{0.4em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.0cm}} & 日期：\underline{\hspace{2.0cm}} & 得分：\underline{\hspace{1.4cm}}\,/\enspace 4 \\
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\small 中 $\to$ 英默写卷的参考答案；亦可直接用于背诵与回译自查。}
+
+\vspace{0.8em}
+\num{1}\textbf{这款饮料由水果和蔬菜汁混合而成，味道很好。}\prompt{combination}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}This drink, a combination of fruit and vegetable juices, tastes great.
+
+\num{2}\textbf{下了一周雨后，天气变得阳光明媚，还真令人感到愉悦。}\prompt{which}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}After a week of rain, the weather turned bright and sunny, which is a real delight.
+
+\num{3}\textbf{无论从哪个方面看，写作都是一个有百利而一害，且适用于每个普通人的技能。}\prompt{apply}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}From any perspective, writing is a skill that brings nothing but benefits and applies to every ordinary person.
+
+\num{4}\textbf{包括新手小白和高级玩家在内的多位受访者表示，他们热衷于攀岩是因为这项运动需要他们富有创造性地解决问题。}\prompt{range}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}Many respondents,, ranging from beginners to advanced climbers, said that they love climbing because it require creative problem-solving.
+
+\end{document}

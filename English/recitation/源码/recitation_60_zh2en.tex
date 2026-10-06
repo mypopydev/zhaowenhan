@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=1.9cm}
+\linespread{1.25}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{tipblue}{RGB}{0,95,160}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
+% 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体
+\newcommand{\prompt}[1]{\emph{\textcolor{tipblue}{\small（#1）}}}
+
+\begin{document}
+\pagestyle{plain}
+\begin{center}
+{\LARGE\bfseries 上海高考高分翻译背诵 \quad 60}\\[0.25em]
+{\large 26一模闵行　2026-08-20 \quad\ 默写（中 $\to$ 英）}\\[0.35em]
+{\footnotesize 来源：微信公众号「发现之旅 速来记单词」· 2026-08-20 · 赵文瀚}
+\end{center}
+
+\vspace{0.4em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.0cm}} & 日期：\underline{\hspace{2.0cm}} & 得分：\underline{\hspace{1.4cm}}\,/\enspace 4 \\
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\small 根据中文句子与提示词写出英文翻译，题号沿用原文。}
+
+\vspace{0.8em}
+\num{1}\textbf{我的曾祖母现在依然保留着使用手帕的习惯。}\prompt{stick}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\num{2}\textbf{你收集的资料越充分，报告就越有说服力。}\prompt{The more…, the more…}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\num{3}\textbf{凭借过硬的专业素养，面试后，多家研发机构向这位毕业生伸出了橄榄枝。}\prompt{Thanks to}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\num{4}\textbf{爱深厚的农耕文化的与生态旅游资源驱动，这座偏远村庄如今已蜕变为宜居宜游的美丽乡村。}\prompt{fuel}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\end{document}

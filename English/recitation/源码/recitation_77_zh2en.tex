@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=1.9cm}
+\linespread{1.25}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{tipblue}{RGB}{0,95,160}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
+% 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体
+\newcommand{\prompt}[1]{\emph{\textcolor{tipblue}{\small（#1）}}}
+
+\begin{document}
+\pagestyle{plain}
+\begin{center}
+{\LARGE\bfseries 上海高考高分翻译背诵 \quad 77}\\[0.25em]
+{\large 25一模闵行　2026-09-07 \quad\ 默写（中 $\to$ 英）}\\[0.35em]
+{\footnotesize 来源：微信公众号「发现之旅 速来记单词」· 2026-09-07 · 赵文瀚}
+\end{center}
+
+\vspace{0.4em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.0cm}} & 日期：\underline{\hspace{2.0cm}} & 得分：\underline{\hspace{1.4cm}}\,/\enspace 4 \\
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\small 根据中文句子与提示词写出英文翻译，题号沿用原文。}
+
+\vspace{0.8em}
+\num{1}\textbf{这位幼儿园退休教师最近迷上了烹饪。}\prompt{fond}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\num{2}\textbf{健康顾问建议服用药草来促进康复。}\prompt{recommend}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\num{3}\textbf{社区志愿者在共享单车的把手上安装了防风手套,好贴心呀!}\prompt{It}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\num{4}\textbf{随着一系列优惠政策落地,电动车企业对推动电池技术走向国际市场很乐观}\prompt{。(With}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\end{document}

@@ -1,0 +1,41 @@
+{
+ "title": "上海高考高分翻译背诵-100-24一模",
+ "issue": "100",
+ "date": "2026-09-30",
+ "url": "",
+ "items": [
+  {
+   "no": 1,
+   "zh": "两个小朋友分别得到一盒蜡笔和一本书作为奖励。",
+   "hint": "reward",
+   "en": "The two children were rewarded with a box of crayons and a book respectively.",
+   "alt": []
+  },
+  {
+   "no": 2,
+   "zh": "一个人名利心越重，就越不可能脚踏实地做事。",
+   "hint": "desperate",
+   "en": "The more desperate one is for fame and fortune, the less likely one is to settle down to real work.",
+   "alt": []
+  },
+  {
+   "no": 3,
+   "zh": "他的古画修复水平如此之高，使得那幅尘封已久的画作重现光彩。",
+   "hint": "such",
+   "en": "His skill in restoring ancient paintings is such that he restored the long-sealed painting to its former glory.",
+   "alt": []
+  },
+  {
+   "no": 4,
+   "zh": "许多年过去了，他才渐渐淡忘人生中那尴尬的一幕:在大庭广众之下，他看到血晕倒了。",
+   "hint": "where",
+   "en": "It was not until many years later that he gradually came to forget the embarrassing moment where he fainted at the sight of blood in public.",
+   "alt": []
+  }
+ ],
+ "proverb": {
+  "en": "Moreover, a few glimmers of hope can be discerned amid the gloom.",
+  "zh": "然而透过阴霾，仍然可以看见一丝曙光。"
+ },
+ "warns": []
+}

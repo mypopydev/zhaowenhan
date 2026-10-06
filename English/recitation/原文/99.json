@@ -1,0 +1,41 @@
+{
+ "title": "上海高考高分翻译背诵-99-24一模",
+ "issue": "99",
+ "date": "2026-09-29",
+ "url": "",
+ "items": [
+  {
+   "no": 1,
+   "zh": "这个保安负责又睿智，让公司避免了损失。",
+   "hint": "save",
+   "en": "The security guard is responsible and wise enough to save the company from losses.",
+   "alt": []
+  },
+  {
+   "no": 2,
+   "zh": "他每月从生活费中留出一笔钱，以防患于未然。",
+   "hint": "case",
+   "en": "He sets  aside some money from his monthly living expenses in case of emergency.",
+   "alt": []
+  },
+  {
+   "no": 3,
+   "zh": "为了吸引听众的注意，这个心理专家在开始讲座前，分享了他自己悲伤却励志的成长故事。",
+   "hint": "draw",
+   "en": "To draw the listeners’ attention, the psychological expert shared his sad but inspiring growth stories before starting the lecture.",
+   "alt": []
+  },
+  {
+   "no": 4,
+   "zh": "这个导览机器人在很多方面有了改进，不仅可以为参观者提供需要的信息，甚至还能带他们去目的地。",
+   "hint": "which",
+   "en": "The guide robot has been improved in many aspects, which means it can not only provide visitors with the information they need, but also lead them to their destinations.",
+   "alt": []
+  }
+ ],
+ "proverb": {
+  "en": "Keep a low profile and a spotless reputation.",
+  "zh": "保持低调形象和无可挑剔的声誉。"
+ },
+ "warns": []
+}

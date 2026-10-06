@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=1.9cm}
+\linespread{1.25}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{tipblue}{RGB}{0,95,160}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
+% 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体
+\newcommand{\prompt}[1]{\emph{\textcolor{tipblue}{\small（#1）}}}
+
+\begin{document}
+\pagestyle{plain}
+\begin{center}
+{\LARGE\bfseries 上海高考高分翻译背诵 \quad 86}\\[0.25em]
+{\large 某市重　2026-09-16 \quad\ 中英对照（背诵 · 答案）}\\[0.35em]
+{\footnotesize 来源：微信公众号「发现之旅 速来记单词」· 2026-09-16 · 赵文瀚}
+\end{center}
+
+\vspace{0.4em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.0cm}} & 日期：\underline{\hspace{2.0cm}} & 得分：\underline{\hspace{1.4cm}}\,/\enspace 4 \\
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\small 中 $\to$ 英默写卷的参考答案；亦可直接用于背诵与回译自查。}
+
+\vspace{0.8em}
+\num{1}\textbf{全职绘画博主，亦或“独立画师”，这条路好走吗?}\prompt{in other words}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}Is this an easy path to take to be a full-time painting blogger—in other words, an independent painter?
+
+\num{2}\textbf{长颈鹿俯身饮水，这优雅又笨拙的瞬间，会让你忍俊不禁。}\prompt{moment when}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}The elegant and awkward moment when giraffes bend down to drink water would make you laugh.
+
+\num{3}\textbf{“十五五”规划中明确要求,政府应因地制宜、有条不紊地改善农村娱乐设施。}\prompt{require}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}The 15th Five-Year Plan requires the government to methodically improve recreational facilities in rural areas in light of local conditions.
+
+\num{4}\textbf{上海大歌剧院建设已进入冲刺阶段，其极具象征意义的“中国扇”造型将惊艳亮相，势必刷屏网络。}\prompt{bound}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}Entering its construction home stretch, the Shanghai Grand Opera House will be unveiled in its iconic “Chinese fan” design, bound to go viral across the Internet.
+
+\end{document}

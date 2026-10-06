@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=1.9cm}
+\linespread{1.25}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{tipblue}{RGB}{0,95,160}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
+% 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体
+\newcommand{\prompt}[1]{\emph{\textcolor{tipblue}{\small（#1）}}}
+
+\begin{document}
+\pagestyle{plain}
+\begin{center}
+{\LARGE\bfseries 上海高考高分翻译背诵 \quad 80}\\[0.25em]
+{\large SSP高考专刊　2026-09-10 \quad\ 中英对照（背诵 · 答案）}\\[0.35em]
+{\footnotesize 来源：微信公众号「发现之旅 速来记单词」· 2026-09-10 · 赵文瀚}
+\end{center}
+
+\vspace{0.4em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.0cm}} & 日期：\underline{\hspace{2.0cm}} & 得分：\underline{\hspace{1.4cm}}\,/\enspace 4 \\
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\small 中 $\to$ 英默写卷的参考答案；亦可直接用于背诵与回译自查。}
+
+\vspace{0.8em}
+\num{1}\textbf{那座村庄物资匮乏因为它不通车。}\prompt{inaccessible}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}The village suffers from material shortages because it is inaccessible to transportation.
+
+\num{2}\textbf{如果你能帮我解决我现在的维修问题,我会非常感激。}\prompt{appreciate}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}I would appreciate it if you could help me solve the current maintenance problem.
+
+\num{3}\textbf{老师要求我们务必在期末考试前全面复习所有科目的知识点,以便在考试中取得优异的成绩。}\prompt{see}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}The teacher required that we see to it that we go over all the key points of every subject comprehensively before the final exam so as to achieve excellent results.
+
+\num{4}\textbf{约有400名学生参加了学校在5月8日举办的一年一度的科学论坛,在论坛上学生们可以展示他们的创新项目。}\prompt{estimate}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}An estimated four hundred students participated in the annual science forum held at the school on May 8th, where they could display their innovative projects.
+
+\end{document}

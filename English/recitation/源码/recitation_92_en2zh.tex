@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=1.9cm}
+\linespread{1.25}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{tipblue}{RGB}{0,95,160}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
+% 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体
+\newcommand{\prompt}[1]{\emph{\textcolor{tipblue}{\small（#1）}}}
+
+\begin{document}
+\pagestyle{plain}
+\begin{center}
+{\LARGE\bfseries 上海高考高分翻译背诵 \quad 92}\\[0.25em]
+{\large 24一模　2026-09-22 \quad\ 回译（英 $\to$ 中）}\\[0.35em]
+{\footnotesize 来源：微信公众号「发现之旅 速来记单词」· 2026-09-22 · 赵文瀚}
+\end{center}
+
+\vspace{0.4em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.0cm}} & 日期：\underline{\hspace{2.0cm}} & 得分：\underline{\hspace{1.4cm}}\,/\enspace 4 \\
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\small 根据英文句子写出中文原句，题号沿用原文。}
+
+\vspace{0.8em}
+\num{1}How pleasant it is to enjoy the night views of Shanghai while drinking coffee.
+
+\vspace{0.25em}
+
+\wline
+
+\num{2}The case is too complex to explain clearly in a short while.
+
+\vspace{0.25em}
+
+\wline
+
+\num{3}The meeting between Chinese and American leaders in San Francisco is of great importance, drawing worldwide attention and promoting the development of bilateral relations.
+
+\vspace{0.25em}
+
+\wline
+
+\num{4}Only by adhering to our ideals and beliefs and bracing for failure will all difficulties that seem insurmountable be resolved/overcome.
+
+\vspace{0.25em}
+
+\wline
+
+\end{document}
