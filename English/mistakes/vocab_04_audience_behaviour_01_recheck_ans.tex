@@ -1,0 +1,95 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\blank}{\underline{\hspace{2.4cm}}}
+% 原卷做错的词：题号后加红星
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
+\newcommand{\ens}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{\STAR}\textbf{#2}}
+\newcommand{\enx}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{}\textbf{#2}}
+\newcommand{\anss}[3]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{\STAR}\textbf{#3} & #2}
+\newcommand{\ansx}[3]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{}\textbf{#3} & #2}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语单词默写 4\quad 二刷 · 参考答案}\\[0.25em]
+{\large 词汇手册 W4（pp.31--40）\quad audience -- behaviour}\\[0.22em]
+{\small 2029届高一英语词汇手册 · \STAR 为 2026-10 原卷做错的 7 个词}
+\end{center}
+
+\vspace{0.35em}
+\noindent{\small 说明：全 50 词，题号沿用原卷。中 $\to$ 英只考英文拼写；英 $\to$ 中只考中文释义。}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.45}
+\noindent\begin{tabular}{@{}L{5.1cm}@{\hspace{0.15cm}}L{2.9cm}@{\hspace{0.5cm}}L{5.1cm}@{\hspace{0.15cm}}L{2.9cm}@{}}
+\toprule
+\textbf{题号 / 英文} & \textbf{中文释义} & \textbf{题号 / 英文} & \textbf{中文释义} \\
+\midrule
+\ansx{1}{观众}{audience} & \ansx{26}{几乎不}{barely} \\
+\ansx{2}{视听的}{audiovisual} & \ansx{27}{讨价还价}{bargain} \\
+\anss{3}{职权}{authority} & \ansx{28}{理发师}{barber} \\
+\ansx{4}{自治的}{autonomous} & \ansx{29}{障碍（物）}{barrier} \\
+\ansx{5}{可利用的}{available} & \ansx{30}{（狗，狐等的）叫声}{bark} \\
+\ansx{6}{（城市中的）大街}{avenue} & \ansx{31}{地下室}{basement} \\
+\ansx{7}{等候}{await} & \ansx{32}{光秃的}{bare} \\
+\ansx{8}{自动的}{automatic} & \ansx{33}{面包（糕饼）店}{bakery} \\
+\ansx{9}{意识到的}{aware} & \ansx{34}{盆}{basin} \\
+\ansx{10}{可怕的}{awful} & \anss{35}{根据 n.}{basis} \\
+\ansx{11}{难处理的}{awkward} & \anss{36}{击球}{bat} \\
+\ansx{12}{唤醒}{awaken} & \ansx{37}{洗澡 vi.}{bathe} \\
+\ansx{13}{令人惊叹的}{awesome} & \ansx{38}{公元前}{B.C.} \\
+\ansx{14}{奖状}{award} & \ansx{39}{战役}{battle} \\
+\anss{15}{中等的}{average} & \ansx{40}{忍受}{bear} \\
+\ansx{16}{单身男子}{bachelor} & \ansx{41}{野兽}{beast} \\
+\anss{17}{落后的}{backward} & \ansx{42}{胡须}{beard} \\
+\ansx{18}{细菌（单数）}{bacterium} & \ansx{43}{美人}{beauty} \\
+\ansx{19}{细菌（复数）}{bacteria} & \anss{44}{乞丐}{beggar} \\
+\ansx{20}{培根}{bacon} & \ansx{45}{行为}{behaviour} \\
+\ansx{21}{绷带}{bandage} & \ansx{46}{节拍}{beat} \\
+\ansx{22}{岸}{bank} & \ansx{47}{电池（组）}{battery} \\
+\anss{23}{取缔}{ban} & \ansx{48}{（海或湖泊的）湾}{bay} \\
+\ansx{24}{带状物}{band} & \ansx{49}{棒球（运动）}{baseball} \\
+\ansx{25}{条，棒}{bar} & \ansx{50}{行李}{baggage} \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,50
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox\ 空白未背到\quad\checkmarkbox\ 拼写（双写/ar--er）\quad\checkmarkbox\ 词形混淆（base/basis）\quad\checkmarkbox\ 近形混淆（bat/beat）
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
+
+\end{document}

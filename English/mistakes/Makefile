@@ -61,7 +61,8 @@ $(LOG): %.log: %.tex
 	@$(MAKE) --no-print-directory -B $(@:.log=.pdf) >/dev/null 2>&1
 
 # ---- 校验 ----
-# 页数预期：各套订正表 2 页；二刷卷 1 页（grammar_01 的重做卷与答案卷为 2 页）；时态语态 3 页
+# 页数预期：各套订正表 2 页；二刷卷 1 页（grammar_01 的重做卷与答案卷为 2 页）；
+#             时态语态 3 页；vocab_04_audience_behaviour_01 全列 50 词，订正表 3 页
 check: all $(LOG)
 	@fail=0; n=0; \
 	for f in $(PDF); do \
@@ -70,6 +71,7 @@ check: all $(LOG)
 		p=$$($(PDFINFO) "$$f" 2>/dev/null | awk '/^Pages/{print $$2}'); \
 		want=2; \
 		if [[ "$$f" == "tense_voice_01.pdf" ]]; then want=3; \
+		elif [[ "$$f" == "vocab_04_audience_behaviour_01.pdf" ]]; then want=3; \
 		elif [[ "$$f" == grammar_01_*_recheck_* ]]; then want=2; \
 		elif [[ "$$f" == *_recheck_* ]]; then want=1; \
 		else want=2; fi; \

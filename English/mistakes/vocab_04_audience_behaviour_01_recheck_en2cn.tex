@@ -1,0 +1,100 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\blank}{\underline{\hspace{2.4cm}}}
+% 原卷做错的词：题号后加红星
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
+\newcommand{\ens}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{\STAR}\textbf{#2}}
+\newcommand{\enx}[2]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{}\textbf{#2}}
+\newcommand{\anss}[3]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{\STAR}\textbf{#3} & #2}
+\newcommand{\ansx}[3]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{}\textbf{#3} & #2}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语单词默写 4\quad 二刷（英 $\to$ 中）}\\[0.25em]
+{\large 词汇手册 W4（pp.31--40）\quad audience -- behaviour}\\[0.22em]
+{\small 2029届高一英语词汇手册 · \STAR 为 2026-10 原卷做错的 7 个词}
+\end{center}
+
+\vspace{0.35em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.2cm}} & 日期：\underline{\hspace{2.2cm}} & 得分：\underline{\hspace{1.5cm}}\,/\enspace 50 \\
+\end{tabular}
+
+\vspace{0.45em}
+\noindent{\small 说明：根据英文单词写出中文释义，题号沿用原卷。\STAR\ 为原卷判错的词（7 个）。}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.5}
+\noindent\begin{tabular}{@{}L{5.4cm}@{\hspace{0.25cm}}L{2.8cm}@{\hspace{0.5cm}}L{5.4cm}@{\hspace{0.25cm}}L{2.8cm}@{}}
+\toprule
+英文单词 & 中文释义 & 英文单词 & 中文释义 \\
+\midrule
+\enx{1}{audience} & \blank & \enx{26}{barely} & \blank \\
+\enx{2}{audiovisual} & \blank & \enx{27}{bargain} & \blank \\
+\ens{3}{authority} & \blank & \enx{28}{barber} & \blank \\
+\enx{4}{autonomous} & \blank & \enx{29}{barrier} & \blank \\
+\enx{5}{available} & \blank & \enx{30}{bark} & \blank \\
+\enx{6}{avenue} & \blank & \enx{31}{basement} & \blank \\
+\enx{7}{await} & \blank & \enx{32}{bare} & \blank \\
+\enx{8}{automatic} & \blank & \enx{33}{bakery} & \blank \\
+\enx{9}{aware} & \blank & \enx{34}{basin} & \blank \\
+\enx{10}{awful} & \blank & \ens{35}{basis} & \blank \\
+\enx{11}{awkward} & \blank & \ens{36}{bat} & \blank \\
+\enx{12}{awaken} & \blank & \enx{37}{bathe} & \blank \\
+\enx{13}{awesome} & \blank & \enx{38}{B.C.} & \blank \\
+\enx{14}{award} & \blank & \enx{39}{battle} & \blank \\
+\ens{15}{average} & \blank & \enx{40}{bear} & \blank \\
+\enx{16}{bachelor} & \blank & \enx{41}{beast} & \blank \\
+\ens{17}{backward} & \blank & \enx{42}{beard} & \blank \\
+\enx{18}{bacterium} & \blank & \enx{43}{beauty} & \blank \\
+\enx{19}{bacteria} & \blank & \ens{44}{beggar} & \blank \\
+\enx{20}{bacon} & \blank & \enx{45}{behaviour} & \blank \\
+\enx{21}{bandage} & \blank & \enx{46}{beat} & \blank \\
+\enx{22}{bank} & \blank & \enx{47}{battery} & \blank \\
+\ens{23}{ban} & \blank & \enx{48}{bay} & \blank \\
+\enx{24}{band} & \blank & \enx{49}{baseball} & \blank \\
+\enx{25}{bar} & \blank & \enx{50}{baggage} & \blank \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,50
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox\ 空白未背到\quad\checkmarkbox\ 拼写（双写/ar--er）\quad\checkmarkbox\ 词形混淆（base/basis）\quad\checkmarkbox\ 近形混淆（bat/beat）
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox\ 已掌握\quad\checkmarkbox\ 需要巩固\quad\checkmarkbox\ 需重点复习
+
+\end{document}

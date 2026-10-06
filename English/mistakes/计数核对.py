@@ -80,7 +80,7 @@ def main() -> int:
 
     print("\n=== 3. 各套材料的结构 ===")
     sets = re.findall(r"`((?:vocab|phrase|grammar)_\d\d_[a-z_0-9]+)`", readme)
-    check(len(sets) == 7, f"README 列出的套数 = 7", f"实际 {sets}")
+    check(len(sets) == 8, f"README 列出的套数 = 8", f"实际 {sets}")
     for pre in sets:
         files = {p.name for p in HERE.glob(f"{pre}*")}
         # 语法卷的二刷是「重做 / 答案」，其余套是「中→英 / 英→中 / 答案」
@@ -105,7 +105,7 @@ def main() -> int:
         pdf = texf.with_suffix(".pdf")
         if not pdf.exists():
             continue
-        if pdf.name == "tense_voice_01.pdf":
+        if pdf.name == "tense_voice_01.pdf" or pdf.name == "vocab_04_audience_behaviour_01.pdf":
             want = 3
         elif pdf.name.startswith("grammar_01_") and "_recheck_" in pdf.name:
             want = 2                      # grammar_01 的重做/答案卷各 2 页
