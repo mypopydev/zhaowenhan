@@ -6,7 +6,7 @@
     python3 工具/抓取解析.py urls.txt      # 每行一个 URL
 
 产出（写在 ../原文/）：
-    <期号>.html   原文 HTML（溯源，未改动）
+    <期号>.html   原文 HTML 的精简版（只留标题/发布时间/正文，平台脚本已剔除）
     <期号>.json   解析后的条目数据（重排依据）
 
 解析规则：
@@ -36,6 +36,18 @@ def fetch(url: str) -> str:
         capture_output=True,
     )
     return r.stdout.decode("utf-8", errors="ignore")
+
+
+def slim(s: str) -> str:
+    """只保留标题、发布时间与正文 js_content——原页自带数 MB 平台脚本，入库前剔除"""
+    title, ct = meta(s)[0], re.search(r"var ct\s*=\s*\"?(\d{10})", s)
+    m = re.search(r'<div[^>]*id="js_content"[^>]*>(.*?)</div>\s*(?=<script|$)', s, re.S)
+    body = f'<div id="js_content">{m.group(1)}</div>' if m else '<div id="js_content"></div>'
+    return (f"<!-- 精简版原文：仅保留标题 / 发布时间 / 正文 js_content，平台脚本已剔除 -->\n"
+            f"var msg_title = '{title}';\n"
+            f'var ct = "{ct.group(1) if ct else ""}";\n'
+            f"{body}\n"
+            f"<script></script>\n")
 
 
 def meta(s: str):
@@ -217,7 +229,7 @@ def main() -> int:
                     jp = os.path.join(OUT, f"{name}.json")
             except Exception:
                 pass
-        open(os.path.join(OUT, f"{name}.html"), "w", encoding="utf-8").write(s)
+        open(os.path.join(OUT, f"{name}.html"), "w", encoding="utf-8").write(slim(s))
         with open(jp, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=1)
         if dup:
