@@ -80,7 +80,7 @@ def main() -> int:
 
     print("\n=== 3. 各套材料的结构 ===")
     sets = re.findall(r"`((?:vocab|phrase|grammar)_\d\d_[a-z_0-9]+)`", readme)
-    check(len(sets) == 8, f"README 列出的套数 = 8", f"实际 {sets}")
+    check(len(sets) == 9, f"README 列出的套数 = 9", f"实际 {sets}")
     for pre in sets:
         files = {p.name for p in HERE.glob(f"{pre}*")}
         # 语法卷的二刷是「重做 / 答案」，其余套是「中→英 / 英→中 / 答案」
