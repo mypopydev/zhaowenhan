@@ -30,6 +30,8 @@
    "zh": "这部关于宋朝历史的小说一出版便备受推崇,连外国读者都争相购买,销售量远超同类作品。",
    "hint": "whose",
    "en": "Once published, the novel about the Song Dynasty won wide acclaim, whose sales far outperformed those of similar works, with foreign readers racing to buy it.",
+   "editor_note": "whose 从句位置易使指代不清；销售量应指小说。",
+   "correction": "Once published, the novel about the Song Dynasty, whose sales far outperformed those of similar works, won wide acclaim, with foreign readers racing to buy it.",
    "alt": []
   }
  ],

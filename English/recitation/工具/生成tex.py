@@ -79,6 +79,18 @@ def head(issue: str, sub: str, note: str, src: str, n: int, date: str) -> str:
 """
 
 
+def answer_lines(it: dict) -> list[str]:
+    line = f"\\noindent\\hangindent=2.2em\\hangafter=1\\hspace{{2.2em}}{esc(it['en'])}"
+    if not it.get("correction"):
+        return [line]
+    note = esc(it.get("editor_note", "原文参考译文有误"))
+    revised = esc(it["correction"])
+    return [
+        f"\\noindent\\hangindent=2.2em\\hangafter=1\\hspace{{2.2em}}{{\\small\\color{{tipblue}}原文参考译文（{note}）：{esc(it['en'])}}}",
+        f"\\noindent\\hangindent=2.2em\\hangafter=1\\hspace{{2.2em}}\\textbf{{修订：}} {revised}",
+    ]
+
+
 def build(data: dict) -> None:
     issue = data["issue"]
     items = data["items"]
@@ -109,7 +121,7 @@ def build(data: dict) -> None:
         hint = f"\\prompt{{{esc(it['hint'])}}}" if it.get("hint") else ""
         b.append(f"\\num{{{it['no']}}}\\textbf{{{esc(it['zh'])}}}{hint}")
         b.append("\\vspace{0.15em}")
-        b.append(f"\\noindent\\hangindent=2.2em\\hangafter=1\\hspace{{2.2em}}{esc(it['en'])}")
+        b.extend(answer_lines(it))
     if prov:
         b.append(SEP)
         b.append(f"\\num{{{n}}}\\textbf{{谚语}}\\quad {prov['en']}")
@@ -169,7 +181,7 @@ def bundle(datas: list, name: str) -> None:
                     b.append(f"\\num{{{no}}}\\textbf{{{it['zh']}}}{hint}")
                     if kind == "ans":
                         b.append("\\vspace{0.15em}")
-                        b.append(f"\\noindent\\hangindent=2.2em\\hangafter=1\\hspace{{2.2em}}{esc(it['en'])}")
+                        b.extend(answer_lines(it))
                         for a in it.get("alt", []):
                             b.append(f"\\noindent\\hangindent=2.2em\\hangafter=1\\hspace{{2.2em}}{{\\small\\color{{tipblue}}另译：{esc(a)}}}")
                     else:
