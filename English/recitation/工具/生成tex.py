@@ -160,6 +160,7 @@ def bundle(datas: list, name: str) -> None:
             for it in d["items"]:
                 no += 1
                 hint = f"\\prompt{{{esc(it['hint'])}}}" if it.get("hint") else ""
+                b.append("\\begin{minipage}{\\linewidth}")
                 if kind == "en2zh":
                     b.append(f"\\num{{{no}}}{esc(it['en'])}")
                     b.append("\\vspace{0.25em}")
@@ -174,6 +175,7 @@ def bundle(datas: list, name: str) -> None:
                     else:
                         b.append("\\vspace{0.3em}")
                         b.append("\\wline\\vspace{0.3em}\n\\wline")
+                b.append("\\end{minipage}")
             p = d.get("proverb")
             if p:
                 no += 1
