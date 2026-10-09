@@ -4,7 +4,7 @@
 收录日常练习/考试中的错题与对应薄弱知识点，用于复盘与针对性复习。
 
 ## 内容结构
-- `mistakes/`   错题条目。现有词汇默写四套（订正表 + 二刷卷 + 原卷扫描件，按 `vocab_01_a_advanced_01`／`vocab_02_advantage_am_01`／`vocab_03_anyhow_assure_01`／`vocab_04_audience_behaviour_01` 编号；前三套订正表只列错词，第四套按原卷题号列全 50 词并标对错，故为 3 页）与短语默写三套（同构，按 `phrase_01_p11_20_01`／`phrase_02_p21_30_01`／`phrase_03_p31_40_01` 编号，小蓝短语 P11-20／P21-30／P31-40，各 25 条）；这两类每套含订正表 2 页、二刷卷 中→英／英→中／答案 各 1 页。另有两套语法专项：`grammar_01_tense_voice_01`（国庆动词时态语态 35 题选择；订正表 2 页 + 重做卷（`_recheck_q`）／答案与解析（`_recheck_ans`）各 2 页）与 `grammar_02_tense_voice_fill_01`（智学网错题本「时态语态练习1」18 空填空；订正表 2 页 + 重做卷／答案与解析各 1 页）。另含早期时态语态错题重做。编译见 `mistakes/Makefile`（下节）
+- `mistakes/`   错题条目。现有词汇默写四套（订正表 + 二刷卷 + 原卷扫描件，按 `vocab_01_a_advanced_01`／`vocab_02_advantage_am_01`／`vocab_03_anyhow_assure_01`／`vocab_04_audience_behaviour_01` 编号；前三套订正表只列错词，第四套按原卷题号列全 50 词并标对错，故为 3 页）与短语默写三套（同构，按 `phrase_01_p11_20_01`／`phrase_02_p21_30_01`／`phrase_03_p31_40_01` 编号，小蓝短语 P11-20／P21-30／P31-40，各 25 条）；这两类每套含订正表 2 页、二刷卷 中→英／英→中／答案 各 1 页。另有三套语法专项：`grammar_01_tense_voice_01`（国庆动词时态语态 35 题选择；订正表 2 页 + 重做卷（`_recheck_q`）／答案与解析（`_recheck_ans`）各 2 页）与 `grammar_02_tense_voice_fill_01`（智学网错题本「时态语态练习1」18 空填空；订正表 2 页 + 重做卷／答案与解析各 1 页），以及 `grammar_03_gerund_infinitive_fill_01`（上海市大同中学「动名词练习填空-with-keys-1」50 题填空，老师红笔批改，订正表按原卷题号全列并标对错故为 3 页 + 重做卷／答案与解析各 2 页）。另含早期时态语态错题重做。编译见 `mistakes/Makefile`（下节）
 - `weakpoints/` 薄弱知识点汇总（从错题提炼）
 - `review/`     复习计划与复盘记录
 - `vocabulary/` 英语单词默写表（LaTeX 重排，按 A–Z 字母分档 + `extra/` 早期 A-advanced 专项，中译英 / 英译中题目 198 份 + 答案 198 份，题目与答案分离，见 `vocabulary/Makefile`）
@@ -25,8 +25,8 @@
 
 ```bash
 cd mistakes
-make            # 编译全部 35 份 tex → pdf
-make check      # 校验：页数符合预期（订正表 2 页 / 二刷卷 1 页（grammar_01 的重做与答案卷 2 页）/ 时态语态 3 页 / 词汇默写第四套（全列 50 词）订正表 3 页）、日志 0 处 Overfull／Missing character
+make            # 编译全部 38 份 tex → pdf
+make check      # 校验：页数符合预期（订正表 2 页 / 二刷卷 1 页（grammar_01、grammar_03 的重做与答案卷 2 页）/ 时态语态 3 页 / 词汇默写第四套（全列 50 词）与语法第三套（全列 50 题）订正表 3 页）、日志 0 处 Overfull／Missing character
 make docs       # 自检：README 声明 ↔ 实际文件/页数/PDF 元数据（计数核对.py）
 make clean      # 清理 LaTeX 临时文件
 make distclean  # 清理临时文件与生成的 PDF（原卷扫描件不动，它没有对应 .tex）

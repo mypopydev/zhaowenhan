@@ -80,7 +80,7 @@ def main() -> int:
 
     print("\n=== 3. 各套材料的结构 ===")
     sets = re.findall(r"`((?:vocab|phrase|grammar)_\d\d_[a-z_0-9]+)`", readme)
-    check(len(sets) == 9, f"README 列出的套数 = 9", f"实际 {sets}")
+    check(len(sets) == 10, f"README 列出的套数 = 10", f"实际 {sets}")
     for pre in sets:
         files = {p.name for p in HERE.glob(f"{pre}*")}
         # 语法卷的二刷是「重做 / 答案」，其余套是「中→英 / 英→中 / 答案」
@@ -97,7 +97,7 @@ def main() -> int:
     print("\n=== 4. 页数（对照 README 与 Makefile 的 check 规则）===")
     check("订正表 2 页" in readme and "二刷卷 1 页" in readme and "时态语态 3 页" in readme,
           "README 写明页数规则")
-    check('== grammar_01_*_recheck_* ]]; then want=2' in mk
+    check('== grammar_0[13]_*_recheck_* ]]; then want=2' in mk
           and 'tense_voice_01.pdf" ]]; then want=3' in mk
           and '*_recheck_* ]]; then want=1' in mk,
           "Makefile 的 check 规则与之一致")
@@ -105,10 +105,11 @@ def main() -> int:
         pdf = texf.with_suffix(".pdf")
         if not pdf.exists():
             continue
-        if pdf.name == "tense_voice_01.pdf" or pdf.name == "vocab_04_audience_behaviour_01.pdf":
-            want = 3
-        elif pdf.name.startswith("grammar_01_") and "_recheck_" in pdf.name:
-            want = 2                      # grammar_01 的重做/答案卷各 2 页
+        if pdf.name in ("tense_voice_01.pdf", "vocab_04_audience_behaviour_01.pdf",
+                        "grammar_03_gerund_infinitive_fill_01.pdf"):
+            want = 3                      # 时态语态 3 页；vocab_04 全列 50 词 / grammar_03 全列 50 题
+        elif "_recheck_" in pdf.name and pdf.name.startswith(("grammar_01_", "grammar_03_")):
+            want = 2                      # grammar_01 / grammar_03 的重做/答案卷各 2 页
         elif "_recheck_" in pdf.name:
             want = 1
         else:

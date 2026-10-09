@@ -10,6 +10,7 @@
 #   grammar_NN_<范围>_01.tex            语法专项订正表        —— 2 页
 #   grammar_NN_<范围>_01_recheck_*.tex   二刷卷 重做 / 答案    —— 1--2 页（按套，见 check 规则）
 #   grammar_NN_<范围>_01_原卷*.jpg|pdf   原卷／来源件（归档，不参与编译）
+#   （例外：grammar_03 订正表全列 50 题为 3 页，重做／答案卷 2 页）
 #   tense_voice_01.tex                  时态语态错题重做      —— 3 页
 #
 # 常用命令：
@@ -61,8 +62,8 @@ $(LOG): %.log: %.tex
 	@$(MAKE) --no-print-directory -B $(@:.log=.pdf) >/dev/null 2>&1
 
 # ---- 校验 ----
-# 页数预期：各套订正表 2 页；二刷卷 1 页（grammar_01 的重做卷与答案卷为 2 页）；
-#             时态语态 3 页；vocab_04_audience_behaviour_01 全列 50 词，订正表 3 页
+# 页数预期：各套订正表 2 页；二刷卷 1 页（grammar_01 / grammar_03 的重做卷与答案卷为 2 页）；
+#             时态语态 3 页；vocab_04_audience_behaviour_01 全列 50 词、grammar_03 全列 50 题，订正表 3 页
 check: all $(LOG)
 	@fail=0; n=0; \
 	for f in $(PDF); do \
@@ -72,7 +73,8 @@ check: all $(LOG)
 		want=2; \
 		if [[ "$$f" == "tense_voice_01.pdf" ]]; then want=3; \
 		elif [[ "$$f" == "vocab_04_audience_behaviour_01.pdf" ]]; then want=3; \
-		elif [[ "$$f" == grammar_01_*_recheck_* ]]; then want=2; \
+		elif [[ "$$f" == "grammar_03_gerund_infinitive_fill_01.pdf" ]]; then want=3; \
+		elif [[ "$$f" == grammar_0[13]_*_recheck_* ]]; then want=2; \
 		elif [[ "$$f" == *_recheck_* ]]; then want=1; \
 		else want=2; fi; \
 		if [ ! -f "$$log" ]; then bad=日志缺失; \
