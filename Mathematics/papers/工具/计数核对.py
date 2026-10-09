@@ -646,6 +646,8 @@ def _nohit_batch(key):
         return 'I'
     if n == 52:
         return 'J'
+    if n == 53:
+        return 'K'
     return None
 
 
