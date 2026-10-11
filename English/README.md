@@ -42,6 +42,6 @@ make help       # 显示上面这份说明
    ——XeTeX 默认会把**编译时刻（精确到分）**写进 `/Creator`，这一项不归 `SOURCE_DATE_EPOCH` 管，
    不覆盖就做不到可复现。
 
-实测：原有 31 份 PDF 连续两轮 `make distclean && make` 的 md5 逐一相同；本次新增的 4 份 P31–40 PDF 在常规构建与 clean rebuild 间也逐字节相同。
+实测：全部 41 份 PDF 连续两轮 `make distclean && make` 的 md5 逐一相同。
 
 `vocabulary/` 的编译方式见 `vocabulary/Makefile`（`make` 题目 / `make ans` 答案 / `make dist` 汇总 / `make merge` 合册 / `make check` 校验）。
