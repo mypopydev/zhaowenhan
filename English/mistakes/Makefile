@@ -11,6 +11,9 @@
 #   grammar_NN_<范围>_01_recheck_*.tex   二刷卷 重做 / 答案    —— 1--2 页（按套，见 check 规则）
 #   grammar_NN_<范围>_01_原卷*.jpg|pdf   原卷／来源件（归档，不参与编译）
 #   （例外：grammar_03 订正表全列 50 题为 3 页，重做／答案卷 2 页）
+#   trans_NN_<范围>_01.tex              翻译专项订正表        —— 2 页
+#   trans_NN_<范围>_01_recheck_*.tex     二刷卷 重做 / 答案    —— 各 1 页
+#   trans_NN_<范围>_01_原卷*.jpg         原卷照片（归档，不参与编译）
 #   tense_voice_01.tex                  时态语态错题重做      —— 3 页
 #
 # 常用命令：
@@ -63,7 +66,8 @@ $(LOG): %.log: %.tex
 
 # ---- 校验 ----
 # 页数预期：各套订正表 2 页；二刷卷 1 页（grammar_01 / grammar_03 的重做卷与答案卷为 2 页）；
-#             时态语态 3 页；vocab_04_audience_behaviour_01 全列 50 词、grammar_03 全列 50 题，订正表 3 页
+#             时态语态 3 页；vocab_04_audience_behaviour_01 全列 50 词、grammar_03 全列 50 题，订正表 3 页；
+#             翻译专项 trans_01 订正表列全 8 题、2 页，重做卷 / 答案卷各 1 页
 check: all $(LOG)
 	@fail=0; n=0; \
 	for f in $(PDF); do \

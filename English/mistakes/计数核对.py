@@ -79,12 +79,12 @@ def main() -> int:
           f"{len(tex)} 份 tex 都有对应 PDF")
 
     print("\n=== 3. 各套材料的结构 ===")
-    sets = re.findall(r"`((?:vocab|phrase|grammar)_\d\d_[a-z_0-9]+)`", readme)
-    check(len(sets) == 10, f"README 列出的套数 = 10", f"实际 {sets}")
+    sets = re.findall(r"`((?:vocab|phrase|grammar|trans)_\d\d_[a-z_0-9]+)`", readme)
+    check(len(sets) == 11, f"README 列出的套数 = 11", f"实际 {sets}")
     for pre in sets:
         files = {p.name for p in HERE.glob(f"{pre}*")}
-        # 语法卷的二刷是「重做 / 答案」，其余套是「中→英 / 英→中 / 答案」
-        subs = ([f"{pre}_recheck_q", f"{pre}_recheck_ans"] if pre.startswith("grammar_")
+        # 语法卷与翻译卷的二刷是「重做 / 答案」，其余套是「中→英 / 英→中 / 答案」
+        subs = ([f"{pre}_recheck_q", f"{pre}_recheck_ans"] if pre.startswith(("grammar_", "trans_"))
                 else [f"{pre}_recheck_zh2en", f"{pre}_recheck_en2cn", f"{pre}_recheck_ans"])
         need = {f"{pre}.tex", f"{pre}.pdf"} | {f"{s}.{e}" for s in subs for e in ("tex", "pdf")}
         scan = [f for f in files if "原卷" in f]
@@ -150,7 +150,7 @@ def main() -> int:
         for f in fails:
             print(f"   - {f}")
         return 1
-    print(f"✅ 全部通过（{len(tex)} 份 tex、{len(sets)} 套默写、页数与元数据均符合声明）")
+    print(f"✅ 全部通过（{len(tex)} 份 tex、{len(sets)} 套材料、页数与元数据均符合声明）")
     for n in notes:
         print(f"   注：{n}")
     return 0
