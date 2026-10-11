@@ -1,0 +1,296 @@
+% 高一55_立达中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年立达中学高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一55_立达中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一55_立达中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一55_立达中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，连载“27学年高一55”；
+% 原文标题“27学年高一55——2026-2027年上海市立达中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/HdPoruwNVehkmGOb768p9w。
+% 页面标注发布时间 2026-10-11 19:54（上海）。
+% 正文为 6 张 PNG 页：第 01、02、03、05 页 4762×6735，第 04、06 页 2560×3620
+% （**同一篇各页分辨率不同**），均按页序读取。6 页全为试卷正文页（卷首标题在第 1 页页顶，
+% 卷末解答题第 21 题解析止于第 6 页），无封面页、目录页、二维码或宣传页。
+% 粉色斜排“魔都数学加油站”为卷面水印，与公众号页脚一并未录入。
+%
+% 卷首标题：照卷面印作“2026--2027 年立达中学高一上 10 月月考”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash。原卷只有一行标题、无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、选择题”“三、解答题”）。
+%
+% 讲评版：原卷每题下直接印【答案】或【解析】。**只印【答案】的 8 题**（第 4、5、7、10、12、
+% 17、19、20 题），本稿只给 \ans{}；**第 13、14、15 题没有任何【答案】/【解析】段**，
+% 答案“B／B／A”直接印在题干括号内（“正确的是(  B  )”等），本稿按 高一37 第 13 题的成例
+% 把括号留空、答案另提为 \ans{}；其余 8 题都只印【解析】，按全稿口径这类题不另提 \ans{}——
+% 其中选择题第 16 题的结论写在解析末句（“故选 B”），亦照录在解析内。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、不等式”：
+% 19 题中集合与常用逻辑用语 13 题（集合类 9 题——第 4、7、8、11、12、13、16、19、21 题；
+% 逻辑类 4 题——第 3、9、15 题及第 20 题），不等式 6 题（含等式性质、一元二次方程与
+% 分式不等式：第 5、6、10、14、17、18 题），两类均远超三分之一，故并标。
+% 口径同 高一46、高一47、高一48、高一51、高一52、高一53、高一54。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版，试卷版保持干净；
+%      第 13、14、15 题印在题干括号内的答案“B／B／A”同样移入 \ans{}，见上；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%      选择题的作答括号原卷排半角“(    )”，本稿按全稿惯例排 \mbox{（\quad）}；
+%   ④ 原卷实数集、自然数集、整数集、有理数集排斜体/粗体 $R$、$N$、$Z$、$Q$（第 4、8、9、
+%      10、11、12、14、20、21 题等处），本稿按全稿惯例改用 $\R$、$\N$、$\Z$、$\Q$；
+%      空集记号统一为 \varnothing；全集记号 $\overline A$ 照原卷（第 19、21 题）；
+%   ⑤ 原卷在数学式内多处用半角逗号（如 $x_1,x_2$、$a,b,c\in R$、$A_i\cap A_{i+1}$），
+%      均照录未强改；句末句点按全稿惯例排西文句点；
+%   ⑥ 第 17—21 题的子问原卷各自另起一行，本稿按全稿惯例用 enumerate 的 (1)(2)(3)；
+%      解析中的子问标号一律用 \stepm{(1)}{…}；
+%   ⑦ 第 4 题【答案】原卷作 $A\subset B$（“$\subset$”照录；按文意 $A$ 是 $B$ 的真子集），
+%      未改排 \subsetneq，与 高一06 的处理一致；
+%   ⑧ 第 21 题 (3) 问解析里集合 $C$ 的判别式原卷记作 $\Delta'$（带撇），照录；
+%   ⑨ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：本卷首轮逐页转录，暂未发现影响答案的笔误。
+%
+% 插图：无（全卷 6 页无任何图形、无“如图”字样）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年立达中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 命题“$a>b$”是命题“$ac^2>bc^2$”的\blankline[4.4em]条件.
+
+\ifanswer
+\solbegin
+\step{由 $ac^2>bc^2$，得 $a>b$. 反之不成立，例如 $c=0$ 时.}
+\step{所以命题“$a>b$”是命题“$ac^2>bc^2$”的必要不充分条件.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x=6k,k\in Z\}$，$B=\{x\mid x=2m,m\in Z\}$，则 $A$ 与 $B$ 的关系为\blankline[4.4em].
+
+\ifanswer
+\ans{$A\subset B$}
+\fi
+
+\item 若 $-2<a<b<3$，则 $a-b$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\ans{$(-5,0)$}
+\fi
+
+\item 已知方程 $x^2+2x-5=0$ 的两个根为 $x_1$、$x_2$，则 $x_1^2x_2+x_2^2x_1=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{已知方程 $x^2+2x-5=0$ 的两个根为 $x_1$、$x_2$，则 $\begin{cases}x_1+x_2=-2\\ x_1x_2=-5\end{cases}$，}
+\step{则 $x_1^2x_2+x_2^2x_1=x_1x_2(x_1+x_2)=-5\times(-2)=10$.}
+\solend
+\fi
+
+\item 设 $A=\{x\mid1<x<3\}$，$B=\{x\mid x\geqslant a\}$，若 $A\subseteq B$，则 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\ans{$a\leqslant1$}
+\fi
+
+\item 集合 $\{(x,y)\mid x+2y=2,x,y\in N\}$ 用列举法表示为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $x+2y=2$ 可化为 $y=1-\dfrac x2$，}
+\step{由 $y\in N$，有 $y=1-\dfrac x2\geqslant0$，解得 $x\leqslant2$，}
+\step{又由 $x\in N$，得 $x$ 可能取值为 0, 1, 2，}
+\step{当 $x=0$ 时，得 $y=1$，满足条件，}
+\step{当 $x=1$ 时，得 $y=\dfrac12\notin N$，不满足条件，}
+\step{当 $x=2$ 时，得 $y=0$，满足条件，}
+\step{综上，集合用列举法表示为 $\{(0,1),(2,0)\}$.}
+\solend
+\fi
+
+\item 已知命题“若 $x>t$，则 $x>1$”，为真命题，则实数 $t$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $x>t$，则 $x>1$ 为真命题，则 $\{x\mid x>t\}\subseteq\{x\mid x>1\}$，故 $t\geqslant1$.}
+\solend
+\fi
+
+\item 若 $\begin{cases}2x>4\\ 3x\leqslant a\end{cases}$ 有解，则 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\ans{$a>6$}
+\fi
+
+\item 已知集合 $A=\{x\mid x^2-2x-3=0\}$，$B=\{x\mid ax-1=0\}$，$A\cap B=B$，则 $a$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{集合 $A=\{x\mid x^2-2x-3=0\}=\{-1,3\}$.}
+\step{因为 $A\cap B=B$，所以 $B\subseteq A$.}
+\step{若 $B=\varnothing$，则方程 $ax-1=0$ 无解，得 $a=0$；}
+\step{若 $B=\{-1\}$，由 $a\times(-1)-1=0$，解得 $a=-1$；}
+\step{若 $B=\{3\}$，由 $3a-1=0$，解得 $a=\dfrac13$.}
+\step{综上，$a=0$ 或 $a=-1$ 或 $a=\dfrac13$.}
+\solend
+\fi
+
+\item 设 $A-B$ 为属于 $A$ 且不属于 $B$ 的元素组成的集合，记 $A\triangle B=(A-B)\cup(B-A)$，若 $A=\{y\mid y\geqslant0\}$，$B=[1,4]$，则 $A\triangle B=$\blankline[4.4em].
+
+\ifanswer
+\ans{$[0,1)\cup(4,+\infty)$}
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+% 第 13、14、15 题原卷无【答案】/【解析】段，答案“B／B／A”直接印在题干括号内，
+% 按高一37 第 13 题的成例括号留空、答案另提为 \ans{}（见文件头）
+\item 下列关于 $0,\varnothing$ 的关系，正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. $0\in\varnothing$\qquad B. $0\notin\varnothing$\qquad C. $0=\varnothing$\qquad D. $\varnothing\in0$
+
+\ifanswer
+\ans{$B$}
+\fi
+
+\item 下列运用等式的性质进行的变形中，正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 如果 $a=b$，那么 $a+c=b-c$\qquad B. 如果 $\dfrac ac=\dfrac bc$，那么 $a=b$
+
+C. 如果 $a=b$，那么 $\dfrac ac=\dfrac bc$\qquad D. 如果 $a^2=3a$，那么 $a=3$
+
+\ifanswer
+\ans{$B$}
+\fi
+
+\item 用反证法证明命题“设 $a$、$b$ 为实数，则方程 $x^3+ax+b=0$ 至少有一个实根”时，要做的假设是\mbox{（\quad）}
+
+\keepwithprev
+A. 方程 $x^3+ax+b=0$ 没有实根\qquad B. 方程 $x^3+ax+b=0$ 至多有一个实根
+
+C. 方程 $x^3+ax+b=0$ 至多有两个实根\qquad D. 方程 $x^3+ax+b=0$ 恰好有两个实根
+
+\ifanswer
+\ans{$A$}
+\fi
+
+\item 设 $A_1$、$A_2$、$A_3$、$\cdots$、$A_7$ 是均含有 2 个元素的集合，且 $A_1\cap A_7=\varnothing$,$A_i\cap A_{i+1}=\varnothing$ $(i=1,2,3,\cdots,6)$，记 $B=A_1\cup A_2\cup A_3\cup\cdots\cup A_7$，则 $B$ 中元素个数的最小值是\mbox{（\quad）}
+
+\keepwithprev
+A. 4\qquad B. 5\qquad C. 6\qquad D. 7
+
+\ifanswer
+\solbegin
+\step{因为 $A_1\cap A_7=\varnothing$,$A_i\cap A_{i+1}=\varnothing$ $(i=1,2,3,\cdots,6)$，}
+\step{所以 $A_1$ 与 $A_2$ 的元素不同，则 $A_1\cup A_2$ 元素个数为 4，}
+\step{$A_3$ 从 $A_1$ 中选择 1 个元素，再加入一个新元素，这样 $A_1\cup A_2\cup A_3$ 元素个数为 5 个，}
+\step{这 5 个元素适当排列，得到 $A_4$、$A_5$、$A_6$、$A_7$，}
+\step{则 $B$ 中元素的最小值是 $2+2+1=5$，故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 解下列不等式组的解集：
+
+（1）$\begin{cases}3+x>4+2x\\ 5x-3>4x-1\end{cases}$；（2）$\begin{cases}x^2+3x-4<0\\ 3x^2+x-2\geqslant0\end{cases}$.
+
+\ifanswer
+\ans{（1）$\varnothing$；（2）$(-4,-1]\cup\left[\dfrac23,1\right)$}
+\fi
+
+\ansspace[6]
+
+\item （1）设 $m$、$n$ 为实数，比较 $m^2+n^2$ 与 $6m-4n-13$ 的值的大小.
+
+（2）求关于 $x$ 的方程 $ax=x+1$ 的解集，其中 $a$ 是常数.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $(m^2+n^2)-(6m-4n-13)=(m^2-6m+9)+(n^2+4n+4)$}
+\step{$=(m-3)^2+(n+2)^2\geqslant0$，所以 $m^2+n^2\geqslant6m-4n-13$.}
+\stepm{(2)}{若 $a\neq1$，解集为 $\left\{\dfrac1{a-1}\right\}$；若 $a=1$，解集为 $\varnothing$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item （1）若全集 $U=\{1,2,a^2\}$，$A=\{2,a+4\}$，$\overline A=\{9\}$，求 $a$ 的值.
+
+（2）已知集合 $A=\{x\mid x^2+px+15=0\}$，集合 $B=\{x\mid x^2-5x+q=0\}$，且 $A\cap B=\{3\}$，求 $p,q$ 的值和 $A\cup B$.
+
+\ifanswer
+\ans{（1）$a=-3$；（2）$p=-8$,$q=6$，$A\cup B=\{2,3,5\}$}
+\fi
+
+\ansspace[6]
+
+\item （1）设 $\alpha:2\leqslant x\leqslant5$，$\beta:m-1\leqslant x\leqslant3m+1$，$m\in R$，$\alpha$ 是 $\beta$ 的充分条件，求 $m$ 的取值范围.
+
+（2）已知集合 $A=\{x\mid ax^2+2x+1=0,a\in R\}$. 若集合 $A$ 中至多有一个元素，求实数 $a$ 的取值范围.
+
+\ifanswer
+\ans{（1）$\left[\dfrac43,3\right]$；（2）$\{0\}\cup[1,+\infty)$}
+\fi
+
+\ansspace[6]
+
+\item 集合 $A=\{x\mid x^2-3x+2=0\}$，$B=\{x\mid x^2+2(a+1)x+(a^2-5)=0\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求 $\overline A$；
+\item 若 $A\cap B=\{2\}$，求实数 $a$ 的值；
+\item 命题甲：$A\cup B=A$，命题乙：已知集合 $C=\{x\mid x^2+2x+a=0\}$，$D=\{x\mid x>0\}$，且 $C\cap D=\varnothing$. 若命题甲和乙中有且只有一个真命题，求实数 $a$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由 $x^2-3x+2=0$，解得 $x=1$ 或 $x=2$，则 $A=\{1,2\}$，}
+\step{所以 $\overline A=\{x\mid x<1$ 或 $1<x<2$ 或 $x>2\}$.}
+\stepm{(2)}{由 (1) 得 $A=\{1,2\}$，由 $A\cap B=\{2\}$，得 $2\in B$,$1\notin B$，}
+\step{则 $4+4(a+1)+a^2-5=0$，整理得 $a^2+4a+3=0$，解得 $a=-3$ 或 $a=-1$，}
+\step{当 $a=-3$ 时，$B=\{x\mid x^2-4x+4=0\}=\{2\}$，满足 $A\cap B=\{2\}$，则 $a=-3$；}
+\step{当 $a=-1$ 时，$B=\{x\mid x^2-4=0\}=\{-2,2\}$，满足 $A\cap B=\{2\}$，则 $a=-1$，}
+\step{所以 $a$ 的值为 $-3$ 或 $-1$.}
+\stepm{(3)}{由 $A\cup B=A$，得 $B\subseteq A$，}
+\step{当 $B=\varnothing$ 时，$\Delta=4(a+1)^2-4(a^2-5)<0$，解得 $a<-3$；}
+\step{当 $B=\{1\}$ 时，$\begin{cases}1+1=-2(a+1)\\ 1\times1=a^2-5\end{cases}$，无解；}
+\step{当 $B=\{2\}$ 时，$\begin{cases}2+2=-2(a+1)\\ 2\times2=a^2-5\end{cases}$，解得 $a=-3$；}
+\step{当 $B=\{1,2\}$ 时，$\begin{cases}1+2=-2(a+1)\\ 1\times2=a^2-5\end{cases}$，无解，}
+\step{因此命题甲：$a\leqslant-3$，}
+\step{集合 $C=\{x\mid x^2+2x+a=0\}$，$D=\{x\mid x>0\}$，}
+% 原卷记集合 C 的判别式为 \Delta'（带撇），照录（见文件头排版差异⑧）
+\step{由 $C\cap D=\varnothing$，得 $C\subseteq\{x\mid x\leqslant0\}$，}
+\step{当 $C=\varnothing$ 时，$\Delta'=2^2-4a<0$，解得 $a>1$；}
+\step{当 $C\neq\varnothing$ 时，$\begin{cases}\Delta'=2^2-4a\geqslant0\\ -2\leqslant0\\ a\geqslant0\end{cases}$，解得 $0\leqslant a\leqslant1$，}
+\step{因此命题乙：$a\geqslant0$，}
+\step{由命题甲和乙中有且只有一个真命题，得甲真乙假或甲假乙真，}
+\step{则 $a\leqslant-3$ 或 $a\geqslant0$，所以实数 $a$ 的取值范围是 $a\leqslant-3$ 或 $a\geqslant0$.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
