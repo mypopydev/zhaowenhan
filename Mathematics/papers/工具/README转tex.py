@@ -406,20 +406,31 @@ def table_tex(header, aligns, data, index):
     # 而定义那一行里的表头文本照常被数一次，与 README 侧一一对应。
     mac = r'\tabhdr' + 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[index]
 
-    L = [r'\newcommand{%s}{\rowcolor{white} %s \\}' % (mac, ' & '.join(htex)),
-         r'\rowcolors{1}{white}{rowgray}',
-         r'\begin{xltabular}{\textwidth}{@{}%s@{}}' % spec,
-         r'\toprule',
-         mac,
-         r'\midrule',
-         r'\endfirsthead',
-         r'\multicolumn{%d}{r}{\footnotesize（续上表）} \\' % len(header),
-         r'\midrule',
-         mac,
-         r'\midrule',
-         r'\endhead',
-         r'\bottomrule',
-         r'\endlastfoot']
+    # **交替底纹只给不出 300 行的表加**：XeTeX 的 main_memory 是编译期常量（5000000 字，
+    # `-cnf-line`／环境变量都改不动），而 `\rowcolors`（colortbl）会给每行再套一层颜色盒，
+    # 让 longtable 的 `\LT@start` 在 `\vsplit` 时吃的内存明显变大。899 行的“机判无命中”
+    # 台账一加上底纹就 `TeX capacity exceeded [main memory size=5000000]`（实测去掉即正常，
+    # 2026-10-11 并入高一54／55 时踩到；此前一直贴在上限上、再加几十行就会炸）。
+    # ⚠ `\rowcolors` 是**全局**状态：超长表前必须显式重置 `\rowcolors{1}{}{}`，只“不写”它没用
+    # ——它继承上一张表的设置（2026-10-11 先踩了这个：只跳过不写仍炸，加重置才通）。
+    # 表头仍用 `\rowcolor{white}` 单独摘白，不受影响。
+    L = [r'\newcommand{%s}{\rowcolor{white} %s \\}' % (mac, ' & '.join(htex))]
+    if len(rows) <= 300:
+        L.append(r'\rowcolors{1}{white}{rowgray}')
+    else:
+        L.append(r'\rowcolors{1}{}{}')
+    L += [r'\begin{xltabular}{\textwidth}{@{}%s@{}}' % spec,
+          r'\toprule',
+          mac,
+          r'\midrule',
+          r'\endfirsthead',
+          r'\multicolumn{%d}{r}{\footnotesize（续上表）} \\' % len(header),
+          r'\midrule',
+          mac,
+          r'\midrule',
+          r'\endhead',
+          r'\bottomrule',
+          r'\endlastfoot']
     for r in rows:
         L.append(' & '.join(r) + r' \\ \addlinespace[1pt]')
     L += [r'\end{xltabular}']
