@@ -1,0 +1,336 @@
+% 高一54_崇明中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年崇明中学高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一54_崇明中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一54_崇明中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一54_崇明中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，连载“27学年高一54”；
+% 原文标题“27学年高一54——2026-2027年上海市崇明中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/O0OAWH46Ioow0_Jt1AJ38g。
+% 页面标注发布时间 2026-10-11 19:54（上海）。
+% 正文为 8 张 PNG 页：第 01、03、04、05、06 页 4762×6735，第 02、07、08 页 2560×3620
+% （**同一篇各页分辨率不同**），均按页序读取。8 页全为试卷正文页（卷首标题在第 1 页页顶，
+% 卷末解答题第 21 题解析止于第 8 页），无封面页、目录页、二维码或宣传页。
+% 粉色斜排“魔都数学加油站”为卷面水印，与公众号页脚一并未录入。
+%
+% 卷首标题：照卷面印作“2026--2027 年崇明中学高一上 10 月月考”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash。原卷只有一行标题、无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、选择题”“三、解答题”）。
+%
+% 讲评版：原卷每题下直接印【答案】或【解析】。**只印【答案】的 5 题**（第 3、4、6、8、17 题），
+% 本稿只给 \ans{}；**第 14 题没有任何【答案】/【解析】段**，答案“D”直接印在题干括号内
+% （“取值范围是(  D  )”），本稿按 高一37 第 13 题的成例把括号留空、答案另提为 \ans{$D$}；
+% 其余 13 题都只印【解析】，按全稿口径这类题不另提 \ans{}——其中选择题第 13、15、16 题的结论
+% 写在解析末句（“故选 B／B／B”），亦照录在解析内。**第 20 题 (1) 问解析带评分档**
+% （“…………1 分”至“…………6 分”），本稿照录为“……1 分”一类（中间省略号用中文省略号，
+% 见下“与原卷的排版差异”⑦）。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、不等式”：
+% 19 题中集合与常用逻辑用语 10 题（集合类 5 题——第 3、5、16、18、21 题；
+% 逻辑类 5 题——第 6、8、11、13、20 题），不等式 9 题（含等式性质、一元二次方程与分式不等式：
+% 第 4、7、9、10、12、14、15、17、19 题），两类均远超三分之一，故并标。
+% 口径同 高一46、高一47、高一48、高一51、高一52、高一53。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版，试卷版保持干净；
+%      第 14 题印在题干括号内的答案“D”同样移入 \ans{}，见上；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%      选择题的作答括号原卷排半角“(    )”，本稿按全稿惯例排 \mbox{（\quad）}；
+%   ④ 原卷实数集、自然数集、整数集、有理数集排斜体/粗体 $R$、$N$、$Z$、$Q$（第 6、9、11、
+%      15、20、21 题等处），本稿按全稿惯例改用 $\R$、$\N$、$\Z$、$\Q$；空集记号统一为 \varnothing；
+%   ⑤ 原卷在数学式内多处用半角逗号（如 $x_1,x_2$、$a,b,c\in R$、$x>y$），均照录未强改；
+%      句末句点按全稿惯例排西文句点（原卷“故选 B.”一类全角句点亦从宽排作“.”）；
+%   ⑥ 第 17—21 题的子问原卷各自另起一行，本稿按全稿惯例用 enumerate 的 (1)(2)(3)；
+%      解析中的子问标号一律用 \stepm{(1)}{…}，解析中的①②③④分条件/编号用 \stepm{①}{…}；
+%      第 21 题题干里的①②③④是定义的一部分，照录为行内①②③④（不入 enumerate）；
+%   ⑦ 第 20 题 (1) 问解析带评分档，原卷在档与档之间排一串省略号（“…………1 分”），
+%      本稿照录为“\dots\dots 1 分”一类；全稿无同类先例，按原卷位置逐一保留；
+%   ⑧ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：本卷首轮逐页转录，暂未发现影响答案的笔误；
+% 第 21 题 (3) 问 $x_1\div x_2$ 一行原卷作“$\div$”（非“$/$”），照录。
+%
+% 插图：无（全卷 8 页无任何图形、无“如图”字样）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年崇明中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知集合 $A=\{0,1,2\}$，$B=\{3\}$，则 $A\cup B=$\blankline[4.4em].
+
+\ifanswer
+\ans{$\{0,1,2,3\}$}
+\fi
+
+\item 不等式 $-6x^2-x+2<0$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\ans{$\left(-\infty,-\dfrac23\right)\cup\left(\dfrac12,+\infty\right)$}
+\fi
+
+\item 若 $A=\{1,3,5\}$，则集合 $A$ 的真子集有\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{集合 $A=\{1,3,5\}$ 中有 3 个元素，所以集合 $A$ 的真子集个数为 $2^3-1=7$ 个.}
+\solend
+\fi
+
+\item 已知 $x$、$y$ 是实数，要用反证法证明“若 $x+y>2$，则 $x>1$ 或 $y>1$”这个命题，首先要假设结论不成立，也就是假设\blankline[4.4em].
+
+\ifanswer
+\ans{$x\leqslant1$ 且 $y\leqslant1$}
+\fi
+
+\item 已知等式 $2x^2-3x-1=a(x-1)^2+b(x-1)+c$ 恒成立，其中 $a$、$b$、$c$ 为常数，则 $a-b+c=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为等式 $2x^2-3x-1=a(x-1)^2+b(x-1)+c$ 恒成立，}
+\step{所以令 $x=0$，得 $a-b+c=-1$.}
+\solend
+\fi
+
+\item 已知 $p:2\leqslant x<3$ 是 $q:x>m$ 的充分不必要条件，则实数 $m$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\ans{$m<2$}
+\fi
+
+\item 已知 $M=3a^2+5a+2$，$N=2a^2+4a$，$a\in R$，则 $M$\blankline[4.4em]$N$（用 $>$、$<$、$=$ 填空）.
+
+\ifanswer
+\solbegin
+\step{因为 $M=3a^2+5a+2$，$N=2a^2+4a$，}
+\step{所以 $M-N=3a^2+5a+2-(2a^2+4a)=a^2+a+2=\left(a+\dfrac12\right)^2+\dfrac74>0$，}
+\step{故 $M>N$.}
+\solend
+\fi
+
+\item 若不等式 $mx^2+2mx-4<2x^2+4x$ 的解集为 $R$，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $(m-2)x^2+2(m-2)x-4<0$，}
+\step{当 $m=2$ 时，$-4<0$ 恒成立，满足要求；}
+\step{当 $\begin{cases}m-2<0\\ \Delta=4(m-2)^2+16(m-2)<0\end{cases}$，得 $-2<m<2$；}
+\step{综上，实数 $m$ 的取值范围是 $\{m\mid-2<m\leqslant2\}$.}
+\solend
+\fi
+
+\item 已知非零实数 $a$、$b$，则“$a>\dfrac1{b^2}$”是“$b^2>\dfrac1a$”的\blankline[4.4em]条件.
+
+\ifanswer
+\solbegin
+\step{因为 $a>\dfrac1{b^2}>0$，所以 $ab^2-1>0$，所以 $\dfrac{ab^2-1}{a}>0$，所以 $b^2-\dfrac1a>0$，}
+\step{即 $b^2>\dfrac1a$；}
+\step{当 $a=b=-2$ 时，有 $b^2>\dfrac1a$ 成立，但 $a=-2<\dfrac14=\dfrac1{b^2}$，即 $a>\dfrac1{b^2}$ 不成立，}
+\step{所以“$a>\dfrac1{b^2}$”是“$b^2>\dfrac1a$”的充分非必要条件.}
+\solend
+\fi
+
+\item 已知 $a,b,c$ 均为实数，且 $a+b+c=5$,$ab+bc+ca=3$，则 $c$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{将条件变形为 $a+b=5-c$,$ab=3-c(b+a)=3-c(5-c)=c^2-5c+3$，}
+\step{则 $a,b$ 是方程 $x^2-(5-c)x+c^2-5c+3=0$ 的两根，}
+\step{从而 $\Delta=(5-c)^2-4(c^2-5c+3)\geqslant0$，解得 $-1\leqslant c\leqslant\dfrac{13}3$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知 $p$：“三角形是锐角三角形”，$q$：“三角形的内角中有锐角”，则 $p$ 是 $q$ 的\mbox{（\quad）}
+
+\keepwithprev
+A. 必要不充分条件\qquad B. 充分不必要条件
+
+C. 充要条件\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{若三角形是锐角三角形，则其内角都是锐角；}
+\step{但当三角形的内角中有锐角时，该三角形不一定是锐角三角形，}
+\step{也可能是直角三角形或钝角三角形.}
+\step{故 $p$ 是 $q$ 的充分不必要条件. 故选 $B$.}
+\solend
+\fi
+
+% 第 14 题原卷无【答案】/【解析】段，答案“D”直接印在题干括号内，
+% 按高一37 第 13 题的成例括号留空、答案另提为 \ans{}（见文件头）
+\item 若实数 $\alpha,\beta$ 满足 $-\dfrac12<\alpha<\beta<-\dfrac13$，则 $\alpha-\beta$ 的取值范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $-\dfrac12<\alpha-\beta<-\dfrac13$\qquad B. $-\dfrac56<\alpha-\beta<0$
+
+C. $-\dfrac12<\alpha-\beta<\dfrac13$\qquad D. $-\dfrac16<\alpha-\beta<0$
+
+\ifanswer
+\ans{$D$}
+\fi
+
+\item 若 $a$、$b$、$c\in R$，$c>0$ 且 $a>b>0$，下列不等式一定成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $ac<bc$\qquad B. $\dfrac1a<\dfrac1b$\qquad C. $a-c<b-c$\qquad D. $\dfrac ba>\dfrac{b+1}{a+1}$
+
+\ifanswer
+\solbegin
+\step{$A$，$a=c=2$，$b=1$ 时，$2\times2>1\times2$，$A$ 错误；}
+\step{$B$，因为 $a>b>0$，所以 $\dfrac1a-\dfrac1b=\dfrac{b-a}{ab}<0$，所以 $\dfrac1a<\dfrac1b$，$B$ 正确；}
+\step{$C$，$a=c=2$，$b=1$ 时，$2-2>1-2$，$C$ 错误；}
+\step{$D$，$a=c=2$，$b=1$ 时，$\dfrac12<\dfrac{1+1}{2+1}$，$D$ 错误.}
+\step{故选 $B$.}
+\solend
+\fi
+
+\item 已知集合 $U=\{1,2,3,\cdots,2027\}$，$M\subseteq U$，若对于 $M$ 中的任意两个不同的元素 $x$、$y$，都有 $|x-y|>2$，则 $M$ 中元素个数的最大值为\mbox{（\quad）}
+
+\keepwithprev
+A. 675\qquad B. 676\qquad C. 2025\qquad D. 2026
+
+\ifanswer
+\solbegin
+\step{对于 $M$ 中的任意两个不同的元素 $x$、$y$，都有 $|x-y|>2$，}
+\step{不妨设 $x>y$，都有 $x-y\geqslant3$，}
+\step{要想 $M$ 所含元素个数最大，则要 $x-y$ 尽可能小，故需使得 $x-y$ 的最小值为 3，}
+\step{将 1~2027 这 2027 个元素按如下分组：}
+\step{$\{1,2,3\}$,$\{4,5,6\}$,$\cdots$,$\{2023,2024,2025\}$,$\{2026,2027\}$，}
+\step{故应在前 675 组中按周期 3 每组取一个元素，且第一组中不能取 3，}
+\step{第一组中取 1 时，得 $M=\{1,4,7,\cdots,2023,2026\}$}
+\step{或 $M=\{1,4,7,\cdots,2023,2027\}$ 这样的集合，}
+\step{第一组取 2 时，得 $M=\{2,5,8,\cdots,2024,2027\}$，}
+\step{其中任意两元素差值 $x-y(x>y)$ 都大于 2，满足题意，}
+\step{故 $M$ 所含元素个数的最大值为 $\dfrac{2025}{3}+1=676$. 故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 解下列不等式（组）：（1）$\dfrac{3-2x}{x-1}<0$；（2）$\begin{cases}6+x-x^2>0\\ 2x^2-x-6\geqslant0\end{cases}$.
+
+\ifanswer
+\ans{（1）$(-\infty,1)\cup\left(\dfrac32,+\infty\right)$；（2）$\left(-2,-\dfrac32\right]\cup[2,3)$}
+\fi
+
+\ansspace[6]
+
+\item 已知集合 $A=\{x\mid x^2-4x-5<0\}$，$B=\{x\mid(x-a)(x-3a)<0,a>0\}$，设 $p:x\in A$，$q:x\in B$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $a=2$ 时，求 $A\cup B$；
+\item 若 $p$ 是 $q$ 的必要不充分条件，求正实数 $a$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意，集合 $A=\{x\mid-1<x<5\}$，集合 $B=\{x\mid a<x<3a\}$，}
+\step{若 $a=2$，则 $B=\{x\mid2<x<6\}$，所以 $A\cup B=\{x\mid-1<x<6\}$.}
+\stepm{(2)}{若 $p$ 是 $q$ 的必要不充分条件，则 $B$ 是 $A$ 的真子集，}
+\step{且 $a$ 为正实数，即 $\begin{cases}3a\leqslant5\\ a>0\end{cases}$，解得 $0<a\leqslant\dfrac53$，}
+\step{所以正数 $a$ 的取值范围为 $\left(0,\dfrac53\right]$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item （1）已知关于 $x$ 的一元二次方程 $x^2+6x+3=0$ 有两个不相等实数根 $x_1$,$x_2$，求 $\dfrac{x_2}{x_1}+\dfrac{x_1}{x_2}$ 的值.
+
+（2）已知关于 $x$ 的一元二次方程 $mx^2-(m+2)x+\dfrac m4=0$ 有两个不相等的实数根 $x_1$、$x_2$. 若 $\dfrac1{x_1}+\dfrac1{x_2}=4m$，求 $m$ 的值.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$10$；}
+\stepm{(2)}{$\begin{cases}m\neq0\\ \Delta=(m+2)^2-4m\cdot\dfrac m4>0\end{cases}$，解得 $m>-1$ 且 $m\neq0$，}
+\step{由根与系数的关系得 $x_1+x_2=\dfrac{m+2}{m}$，$x_1x_2=\dfrac14$，}
+\step{又 $\dfrac1{x_1}+\dfrac1{x_2}=4m$，所以 $x_2+x_1=4mx_1x_2$，所以 $\dfrac{m+2}{m}=m$，}
+\step{解得 $m=2$ 或 $m=-1$（舍去），故 $m$ 的值为 2.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item （1）已知 $a$、$b$、$c\in\mathbf{R}$，若实数 $x$、$y$、$z$ 满足条件 $x=a^2-2b+1$,$y=b^2-2c+1$,$z=c^2-2a+1$，用反证法证明：$x$、$y$、$z$ 中至少有一个数不小于 0.
+
+（2）已知 $a,b\in R$ 且 $a+b\neq0$，证明 $a^2+b^2-a-b+2ab=0$ 成立的充要条件是 $a+b=1$.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{假设 $x$、$y$、$z$ 都小于 0\dots\dots1 分}
+\step{即 $a^2-2b+1<0$,$b^2-2c+1<0$,$c^2-2a+1<0$\dots\dots2 分}
+\step{以上三个不等式相加，得 $(a^2-2b+1)+(b^2-2c+1)+(c^2-2a+1)<0$\dots3 分}
+\step{整理得 $(a-1)^2+(b-1)^2+(c-1)^2<0$\dots\dots4 分}
+\step{这与 $(a-1)^2+(b-1)^2+(c-1)^2\geqslant0$ 矛盾，\dots\dots5 分}
+\step{所以假设不成立，因此 $x$、$y$、$z$ 中至少有一个数不小于 0\dots\dots6 分}
+\stepm{(2)}{充分性：若 $a+b=1$，}
+\step{则 $a^2+b^2-a-b+2ab=(a+b)^2-(a+b)=1-1=0$，即充分性成立；}
+\step{必要性：若 $a^2+b^2-a-b+2ab=0$，}
+\step{则 $(a+b)^2-(a+b)=(a+b)(a+b-1)=0$，}
+\step{因为 $a+b\neq0$，所以 $a+b-1=0$，即 $a+b=1$，成立；}
+\step{综上，$a^2+b^2-a-b+2ab=0$ 成立的充要条件是 $a+b=1$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 设非空数集 $M$，对于任意 $x$、$y\in M$，如果满足：①$x+y$ 属于 $M$；②$x-y$ 属于 $M$；③$xy$ 属于 $M$；④$\dfrac xy$（分母不为零）也属于 $M$. 定义：满足条件①②③的数集 $M$ 为数环；满足④的数环 $M$ 为数域.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 判断自然数集 $N$、整数集 $Z$、有理数集 $Q$ 是不是数域（无需说明理由）；
+\item 若 $M$ 是一个数环，证明：$0\in M$；若 $S$ 是一个数域，证明：$1\in S$；
+\item 设 $A=\{x\mid x=a+\sqrt2b,a\in Q,b\in Q\}$，证明 $A$ 是数域.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{自然数集 $N$ 不是数域，例如 $1-2=-1\notin N$，}
+\step{整数集 $Z$ 不是数域，例如 $\dfrac23\notin Z$，有理数集 $Q$ 是数域；}
+\stepm{(2)}{若 $x\in M$，且 $M$ 是一个数环，则 $x-x=0\in M$，}
+\step{若 $y\in S$，$y\neq0$，且 $S$ 是一个数域，则 $\dfrac yy=1\in S$；}
+\stepm{(3)}{设 $\forall x_1$、$x_2\in A$，则 $x_1=a_1+\sqrt2b_1$，$x_2=a_2+\sqrt2b_2$,$(a_1,a_2,b_1,b_2\in Q)$，}
+\step{则 $x_1+x_2=a_1+a_2+\sqrt2b_1+\sqrt2b_2=(a_1+a_2)+\sqrt2(b_1+b_2)$，}
+\step{因为 $a_1,a_2,b_1,b_2\in Q$，所以 $(a_1+a_2)\in Q$，$(b_1+b_2)\in Q$，}
+\step{所以 $x_1+x_2\in A$，满足条件①，}
+\step{$x_1-x_2=a_1-a_2+\sqrt2b_1-\sqrt2b_2=(a_1-a_2)+\sqrt2(b_1-b_2)$，}
+\step{因为 $a_1,a_2,b_1,b_2\in Q$，所以 $(a_1-a_2)\in Q$，$(b_1-b_2)\in Q$，}
+\step{所以 $x_1-x_2\in A$，满足条件②，}
+\step{$x_1x_2=a_1a_2+2b_1b_2+\sqrt2(a_1b_2+a_2b_1)$，}
+\step{因为 $a_1,a_2,b_1,b_2\in Q$，所以 $(a_1a_2+2b_1b_2)\in Q$，$(a_1b_2+a_2b_1)\in Q$，}
+\step{所以 $x_1x_2\in A$，满足条件③，}
+\step{$\dfrac{x_1}{x_2}=\dfrac{a_1+\sqrt2b_1}{a_2+\sqrt2b_2}=\dfrac{(a_1+\sqrt2b_1)(a_2-\sqrt2b_2)}{(a_2+\sqrt2b_2)(a_2-\sqrt2b_2)}=\dfrac{a_1a_2-2b_1b_2+\sqrt2(a_2b_1-a_1b_2)}{a_2^2-2b_2^2}$}
+\step{$=\dfrac{a_1a_2-2b_1b_2}{a_2^2-2b_2^2}+\sqrt2\cdot\dfrac{a_2b_1-a_1b_2}{a_2^2-2b_2^2}$，}
+\step{因为 $a_1,a_2,b_1,b_2\in Q$，$a_2$、$b_2\neq0$，}
+\step{所以 $\dfrac{a_1a_2-2b_1b_2}{a_2^2-2b_2^2}\in Q$，$\dfrac{a_2b_1-a_1b_2}{a_2^2-2b_2^2}\in Q$，}
+\step{所以 $x_1\div x_2\in A$，满足条件④.}
+\step{综上所述，$A$ 是数域.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
