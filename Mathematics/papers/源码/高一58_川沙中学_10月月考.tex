@@ -1,0 +1,438 @@
+% 高一58_川沙中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年川沙中学高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一58_川沙中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一58_川沙中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一58_川沙中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，连载“27学年高一58”；
+% 原文标题“27学年高一58——2026-2027年上海市川沙中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/rqytscKvlCnBlyvWeqqg3g。
+% 页面标注发布时间 2026-10-13 21:45（上海）。
+% 正文为 13 张 PNG 页：第 01、03、04、06、08、09、12 页 4762×6735，
+% 第 02、05、07、10、11、13 页 2560×3620（**同一篇各页分辨率不同**），均按页序读取。
+% 13 页全为试卷正文页（卷首标题在第 1 页页顶，卷末解答题第 21 题解析止于第 13 页），
+% 无封面页、目录页、二维码或宣传页。粉色斜排“魔都数学加油站”为卷面水印，与公众号页脚一并未录入。
+%
+% 卷首标题：照卷面印作“2026--2027 年川沙中学高一上 10 月月考”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash。原卷只有一行标题、无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、选择题”“三、解答题”）。
+%
+% 讲评版：原卷每题下直接印【答案】或【解析】。**只印【答案】的 1 题**（第 3 题），本稿只给 \ans{}；
+% **第 14 题没有任何【答案】/【解析】段**，答案“D”直接印在题干括号内（“（  D  ）”），
+% 本稿按 高一37 第 13 题的成例把括号留空、答案另提为 \ans{}；其余 17 题都印【解析】，
+% 按全稿口径这类题不另提 \ans{}——第 13、15、16 题的结论写在解析末句（“故选 B”“故选 A”等），
+% 亦照录在解析内。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、不等式”：
+% 19 题中集合与常用逻辑用语 9 题（第 3、5、9、12、13、16、18、21 题及第 6 题的解集表述），
+% 不等式 10 题（含等式与不等式性质、一元二次不等式、恒成立、基本不等式与应用：第 4、6、7、
+% 8、10、11、14、15、17、19、20 题），两类均远超三分之一，故并标。口径同上。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版，试卷版保持干净；
+%      第 14 题印在题干括号内的答案“D”同样移入 \ans{}，见上；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%      选择题的作答括号原卷排半角“(    )”，本稿按全稿惯例排 \mbox{（\quad）}；
+%   ④ 原卷实数集排斜体 $R$（第 14、20、21 题等），自然数集排 $N$（第 12、19、21 题），
+%      整数集排 $Z$（第 20 题），本稿按全稿惯例改用 $\R$、$\N$、$\Z$；
+%      空集记号统一为 \varnothing；
+%   ⑤ 原卷在数学式内多处用半角逗号（如 $x_1,x_2$、$a,b\in R$），均照录未强改；
+%      句末句点按全稿惯例排西文句点；“card”记号原卷排斜体（$cardM$），照录；
+%   ⑥ 第 17—21 题的子问原卷各自另起一行，本稿按全稿惯例用 enumerate 的 (1)(2)(3)；
+%      解析中的子问标号一律用 \stepm{(1)}{…}；第 11、12 题解析中的①、②（③）分情形，
+%      按全稿惯例作 \stepm{①}{…}、\stepm{②}{…}；
+%   ⑦ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 4 题解析漏了均值不等式的系数 2——原卷作 $a+2b=1\geqslant\sqrt{a\cdot2b}$（应为
+%      $1\geqslant2\sqrt{a\cdot2b}$，从而 $ab\leqslant\dfrac18$），其“$ab\leqslant\dfrac12$”“最大值
+%      $\dfrac12$”亦随之有误，且与紧随的等号条件 $a=\dfrac12$、$b=\dfrac14$（此时 $ab=\dfrac18$）
+%      自相矛盾；
+%   ② 第 12 题解析末尾，$m=-2$ 时原卷作 $N=\left(-1,\dfrac12\right)$（区间括号），而同段的 $m=2$
+%      作 $N=\left\{-1,-\dfrac12,1\right\}$（集合括号）——前者疑为原卷笔误（按文意应为
+%      $\left\{-1,\dfrac12\right\}$）。
+%
+% 插图：无（全卷 13 页无任何图形、无“如图”字样）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年川沙中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item “$x>1$”是“$x>2$”的\blankline[4.4em]条件.
+
+\ifanswer
+\ans{必要不充分}
+\fi
+
+\item 设 $a$、$b$ 为正数，且 $a+2b=1$，则 $a\cdot b$ 最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+% 原卷此处漏了均值不等式的系数 2（应为 $1\geqslant2\sqrt{a\cdot2b}$），照录未改，见文件头原卷笔误①
+\step{因为 $a$、$b$ 为正数，则 $a+2b=1\geqslant\sqrt{a\cdot2b}$，即 $ab\leqslant\dfrac12$，}
+\step{当且仅当 $a=2b$，即 $a=\dfrac12$,$b=\dfrac14$ 时取得最大值，故 $a\cdot b$ 最大值为 $\dfrac12$.}
+\solend
+\fi
+
+\item 若集合 $A=\{x\mid|x|<2\}$,$B=\{y\mid y=x^2+2x+2\}$，则 $A\cup B=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{解不等式 $|x|<2$ 得 $-2<x<2$，所以 $A=\{x\mid-2<x<2\}$，}
+\step{$y=x^2+2x+2=(x+1)^2+1\geqslant1$，所以 $B=\{y\mid y\geqslant1\}$，则 $A\cup B=(-2,+\infty)$.}
+\solend
+\fi
+
+\item 已知不等式 $ax>b+a$ 的解集为 $(-\infty,2)$，则不等式 $\dfrac{ax+b}{x-1}>0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $ax>b+a$ 的解集为 $(-\infty,2)$，得 $a<0$ 且 $2a=b+a$，即 $a=b$，}
+\step{于是 $\dfrac{ax+b}{x-1}>0\Rightarrow\dfrac{a(x+1)}{x-1}>0$，因为 $a<0$，所以 $\dfrac{x+1}{x-1}<0$，}
+\step{所以解集为 $(-1,1)$.}
+\solend
+\fi
+
+\item 若命题“关于 $x$ 的不等式 $ax^2-3ax+3>0$ 对 $x\in\R$ 恒成立”为真命题，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $a=0$ 时，$3>0$ 恒成立；}
+\step{当 $a>0$ 时，要使不等式恒成立，则需 $\Delta=9a^2-12a=3a(3a-4)<0$，}
+\step{解得 $0<a<\dfrac43$；}
+\step{当 $a<0$ 时，不等式不恒成立；}
+\step{综上所述，$a$ 的取值范围是 $0\leqslant a<\dfrac43$.}
+\solend
+\fi
+
+\item 若 $x>1$，则 $\dfrac{x^2-2x+6}{x-1}$ 的最小值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $x>1$ 得 $x-1>0$，}
+\step{则 $\dfrac{x^2-2x+6}{x-1}=\dfrac{(x-1)^2+5}{x-1}=(x-1)+\dfrac5{x-1}\geqslant2\sqrt{(x-1)\cdot\dfrac5{x-1}}=2\sqrt5$，}
+\step{当且仅当 $x-1=\dfrac5{x-1}(x>1)$ 时，即 $x=1+\sqrt5$ 时取等号，}
+\step{故 $\dfrac{x^2-2x+6}{x-1}$ 的最小值是 $2\sqrt5$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $(mx-5)(m-x^2)>0$ 的解集为 $A$，若 $1\in A$ 且 $3\notin A$，则实数 $m$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $1\in A$，得 $x=1$ 满足不等式 $(mx-5)(m-x^2)>0$，}
+\step{代入得 $(m-5)(m-1)>0$，解得 $m<1$ 或 $m>5$，}
+\step{由 $3\notin A$，得 $x=3$ 不满足不等式 $(mx-5)(m-x^2)>0$，}
+\step{即 $(3m-5)(m-9)\leqslant0$，解得 $\dfrac53\leqslant m\leqslant9$，}
+\step{联立不等式组 $\begin{cases}m<1\text{ 或 }m>5\\ \dfrac53\leqslant m\leqslant9\end{cases}$，解得 $5<m\leqslant9$，}
+\step{综上，实数 $m$ 的取值范围是 $5<m\leqslant9$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的不等式 $x^2+2(m-1)x+m^2-m<0$ 的解集为 $(x_1,x_2)$，且 $\dfrac1{x_1}+\dfrac1{x_2}=2$，则实数 $m$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $m\neq0$，由韦达定理得 $x_1x_2=m^2-m$,$x_1+x_2=-2(m-1)$，}
+\step{当 $m=1$ 时，原不等式无解，不满足题意.}
+\step{当 $m\neq1$ 时，$\dfrac1{x_1}+\dfrac1{x_2}=\dfrac{x_1+x_2}{x_1x_2}=\dfrac{-2(m-1)}{m^2-m}=2$，所以 $-\dfrac2m=2$，解得 $m=-1$，}
+\step{将 $m=-1$ 代入原式得关于 $x$ 的不等式 $x^2-4x+2<0$，}
+\step{此时一元二次方程 $x^2-4x+2=0$ 满足判别式 $(-4)^2-4\times2=8>0$，}
+\step{故 $x^2-4x+2<0$ 的解集为 $(x_1,x_2)$，满足题意，所以 $m=-1$.}
+\solend
+\fi
+
+\item 已知 $a>0$，若关于 $x$ 的不等式 $|x-1|>|ax|$ 的解集中的整数恰有 $3$ 个，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意，不等式可转化为 $(a^2-1)x^2+2x-1<0$.}
+\stepm{①}{当 $a^2-1=0$，即 $a=1$ 时，不等式解集为 $\left\{x\left|x<\dfrac12\right.\right\}$，}
+\step{很明显此时整数解有无穷多个，不符合题意；}
+\stepm{②}{当 $a^2-1<0$，即 $0<a<1$ 时，此时 $\Delta=4+4(a^2-1)=4a^2$.}
+\step{因为 $0<a<1$，所以 $\Delta>0$，}
+\step{不等式可转化为 $[(a+1)x-1]\cdot[(a-1)x+1]<0$，}
+\step{此时解集为 $\left\{x\left|x<\dfrac1{a+1}\text{ 或 }x>-\dfrac1{a-1}\right.\right\}$，}
+\step{很明显此时整数解有无穷多个，不符合题意；}
+\stepm{③}{当 $a^2-1>0$，即 $a>1$ 时，此时 $\Delta=4+4(a^2-1)=4a^2$.}
+\step{因为 $a>1$，所以 $\Delta>0$，不等式可转化为 $[(a+1)x-1]\cdot[(a-1)x+1]<0$，}
+\step{此时解集为 $\left\{x\left|-\dfrac1{a-1}<x<\dfrac1{a+1}\right.\right\}$.}
+\step{因为当 $a>1$ 时，$0<\dfrac1{a+1}<\dfrac12$，$-\dfrac1{a-1}<0$，}
+\step{所以原不等式解集中的 $3$ 个整数分别为 $-2,-1,0$，所以 $-3<-\dfrac1{a-1}<-2$，}
+\step{解得 $\dfrac43<a<\dfrac32$，综上所述，实数 $a$ 的取值范围是 $\left(\dfrac43,\dfrac32\right)$.}
+\solend
+\fi
+
+\item 设集合 $M=\left\{x\left|\dfrac x{x-2}\leqslant0,x\in\N\right.\right\}$，$N=\{x\mid(x^2-mx+1)[mx^2+(m+1)x+1]=0\}$，用 $card(A)$ 表示有限集合 $A$ 中元素的个数，若 $|card(M)-card(N)|=1$，则实数 $m$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$M=\left\{x\in\N\left|\dfrac x{x-2}\leqslant0\right.\right\}=\{x\in\N\mid0\leqslant x<2\}=\{0,1\}$，故 $cardM=2$，}
+\step{又 $|card(M)-card(N)|=1$，则 $cardN=1$ 或 $cardN=3$.}
+\step{而 $N=\{x\in R\mid(x+1)(mx+1)(x^2-mx+1)=0\}$，分 $2$ 种情况讨论：}
+\stepm{①}{$cardN=1$，方程 $(x+1)(mx+1)(x^2-mx+1)=0$ 有 $1$ 个不同的实数根，}
+\step{$x+1=0$ 有一个解为 $x=-1$，}
+\step{则 $mx+1=0$ 无解或其解为 $x=-1$，则 $m=0$ 或 $m=1$，}
+\step{当 $m=0$ 时，$x^2-mx+1=0$ 无解，符合题意，}
+\step{当 $m=1$ 时，$x^2-mx+1=0$ 无解，符合题意，}
+\step{故 $m=0$ 或 $m=1$；}
+\stepm{②}{$cardN=3$，必有 $m\neq0$ 且 $m\neq1$，}
+\step{方程 $(x+1)(mx+1)(x^2-mx+1)=0$ 有 $3$ 个不同的实数根，}
+\step{且 $-\dfrac1m$、$-1$ 是方程 $(x+1)(mx+1)(x^2-mx+1)=0$ 的解，且 $-\dfrac1m\neq-1$，}
+\step{若 $-1$ 是方程 $x^2-mx+1=0$ 的解，则 $m=-2$，}
+\step{此时方程 $(x+1)(mx+1)(x^2-mx+1)=0$ 的解集只有 $2$ 个元素 $-1$、$\dfrac12$，}
+\step{与 $cardN=3$ 矛盾；}
+\step{若 $-\dfrac1m$ 是方程 $x^2-mx+1=0$ 的解，则 $\left(-\dfrac1m\right)^2+1+1=0$ 无解，}
+\step{若关于 $x$ 的方程 $x^2-mx+1=0$ 只有一个解且不为 $-\dfrac1m$ 和 $-1$，}
+\step{则 $\Delta=(-m)^2-4=0$ 解得 $m=\pm2$，}
+\step{当 $m=2$ 时，$x^2-2x+1=0$ 的解为 $1$，此时 $N=\left\{-1,-\dfrac12,1\right\}$，符合题意，}
+% 原卷此处作 $N=\left(-1,\dfrac12\right)$（区间括号），疑为笔误，照录未改，见文件头原卷存疑②
+\step{当 $m=-2$ 时，$x^2+2x+1=0$ 的解为 $-1$，此时 $N=\left(-1,\dfrac12\right)$，不符合题意，}
+\step{综上，实数 $m$ 的取值集合用列举法表示为 $\{0,1,2\}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 集合 $A=\{1,2\}$ 的非空子集个数为\mbox{（\quad）}
+
+\keepwithprev
+A. $4$\qquad B. $3$
+
+C. $2$\qquad D. $1$
+
+\ifanswer
+\solbegin
+\step{集合 $A=\{1,2\}$ 的子集的个数为 $2^2=4$ 个，}
+\step{去掉空集，得到集合 $A=\{1,2\}$ 的非空子集的个数为 $2^2-1=3$ 个. 故选 $B$.}
+\solend
+\fi
+
+\item 已知 $a$、$b\in R$，且 $a>b$，则下列不等式恒成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $a^2>b^2$\qquad B. $\dfrac1a<\dfrac1b$
+
+C. $ac^2>bc^2$\qquad D. $a^3>b^3$
+
+\ifanswer
+\ans{$D$}
+\fi
+
+\item 已知实数 $a,b$ 为正数，且 $\dfrac1a+b=1$，则 $a+\dfrac2b$ 的最小值是\mbox{（\quad）}
+
+\keepwithprev
+A. $2\sqrt2+3$\qquad B. $\sqrt2+1$
+
+C. $3-2\sqrt2$\qquad D. $4\sqrt2$
+
+\ifanswer
+\solbegin
+\step{因为 $a,b$ 为正数，所以 $ab>0$，}
+\step{所以 $a+\dfrac2b=\left(a+\dfrac2b\right)\left(\dfrac1a+b\right)=3+ab+\dfrac2{ab}\geqslant3+2\sqrt{ab\times\dfrac2{ab}}=3+2\sqrt2$.}
+\step{当且仅当 $\begin{cases}ab=\dfrac2{ab}\\ \dfrac1a+b=1\end{cases}$，即 $\begin{cases}a=1+\sqrt2\\ b=2-\sqrt2\end{cases}$ 时取等号，故 $a+\dfrac2b$ 的最小值是 $2\sqrt2+3$，}
+\step{故选 $A$.}
+\solend
+\fi
+
+\item 对集合 $A=\{1,2,\cdots,2026\}$ 的每一个非空子集定义“交替和”如下：把子集中的数按从小到大的顺序排列，然后从最大数开始，交替地加减相继各数，如 $\{1,2,4,6,9\}$ 的“交替和”是 $9-6+4-2+1=6$，集合 $\{7,10\}$ 的“交替和”是 $10-7=3$，集合 $\{5\}$ 的“交替和”是 $5$ 等等，则 $A$ 的所有非空子集的“交替和”的总和是\mbox{（\quad）}
+
+\keepwithprev
+A. $2^{2026}\times2025$\qquad B. $2^{2025}\times2026$
+
+C. $2^{2025}\times2024$\qquad D. $(2^{2026}-1)\times2025$
+
+\ifanswer
+\solbegin
+\step{$A=\{1,2,\cdots,2026\}$ 的非空子集分为两类：}
+\step{一类是含 $2026$ 的子集，一类是不含 $2026$ 的子集，}
+\step{若集合 $C$ 是不含 $2026$ 的子集，其元素从 $1,2,\cdots,2025$ 中任意选取，}
+\step{则 $C$ 共有 $2^{2025}$ 个这样的子集，}
+\step{对于 $C$ 中的一个子集 $C_k$，$C_k$ 的交替和记为 $S(C_k)$（规定空集的交替和为 $0$），}
+\step{则设 $C$ 的交替和之和记为 $S(C)=\sum\limits_{k=1}^{2^{2025}}S(C_k)$，}
+\step{若集合 $B$ 是含 $2026$ 的子集，则 $B=C\cup\{2026\}$，则 $B$ 的子集共有 $2^{2025}$ 个，}
+\step{$C_k$ 对应于 $B$ 中的一个子集 $B_k=C_k\cup\{2026\}$，}
+\step{由于 $B_k$ 中最大的元素是 $2026$，则 $B_k$ 的交替和 $S(B_k)=2026-S(C_k)$，}
+\step{因此 $B$ 的交替和之和为 $2^{2025}\times2026-S(C)$，}
+\step{因此 $A$ 的交替和之和为 $2^{2025}\times2026-S(C)+S(C)=2^{2025}\times2026$，}
+\step{故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）比较代数式 $a^2$ 与 $4a-5$ 的大小.
+
+（2）已知 $x,y,z$ 都是正数，$a=x+\dfrac1y$,$b=y+\dfrac1z$,$c=z+\dfrac1x$，试用反证法证明 $a,b,c$ 至少有一个不小于 $2$.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$a^2-(4a-5)=a^2-4a+5=(a-2)^2+1$，}
+\step{因为 $(a-2)^2\geqslant0$，所以 $(a-2)^2+1>0$，}
+\step{即 $a^2-(4a-5)>0$，所以 $a^2>4a-5$.}
+\stepm{(2)}{假设 $a$、$b$、$c$ 三数都小于 $2$，则 $x+\dfrac1y+y+\dfrac1z+z+\dfrac1x<6$.}
+\step{因为 $x,y,z$ 均大于 $0$，}
+\step{所以 $x+\dfrac1y+y+\dfrac1z+z+\dfrac1x=x+\dfrac1x+\dfrac1y+y+\dfrac1z+z\geqslant2+2+2=6$，矛盾，}
+\step{所以 $a$、$b$、$c$ 三数中至少有一个不小于 $2$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 已知集合 $A=\left\{x\left|\dfrac{x-3}{x-2}\geqslant0\right.\right\}$,$B=\{x\mid x^2-(2a+3)x+a^2+3a\leqslant0\}$.
+
+（1）若 $a=1$，求集合 $A,B$ 及 $A\cap B$；
+
+（2）若 $x\in B$ 是 $x\in A$ 的充分条件，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由任意得 $A=\left\{x\left|\dfrac{x-3}{x-2}\geqslant0\right.\right\}$，则 $\begin{cases}(x-3)(x-2)\geqslant0\\ x-2\neq0\end{cases}$，}
+\step{解得 $x\geqslant3$ 或 $x<2$，所以集合 $A=\{x\mid x\geqslant3\text{ 或 }x<2\}$，}
+\step{当 $a=1$ 时，$B=\{x\mid x^2-5x+4\leqslant0\}=\{x\mid1\leqslant x\leqslant4\}$，}
+\step{所以 $A\cap B=\{x\mid1\leqslant x<2\text{ 或 }3\leqslant x\leqslant4\}$；}
+\stepm{(2)}{由 $B=\{x\mid x^2-(2a+3)x+a^2+3a\leqslant0\}=\{x\mid(x-a)(x-a-3)\leqslant0\}$，}
+\step{又 $a<a+3$，所以 $B=\{x\mid a\leqslant x\leqslant a+3\}$，}
+\step{因为 $x\in B$ 是 $x\in A$ 的充分条件，所以 $B\subseteq A$，所以 $a+3<2$ 或 $a\geqslant3$，}
+\step{解得 $a<-1$ 或 $a\geqslant3$，}
+\step{因此实数 $a$ 的取值范围为 $\{a\mid a<-1\text{ 或 }a\geqslant3\}$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 现有某服装制造公司，设公司与服装贸易中心距离为 $x$（单位：千米，$x>0$），经过市场调查了解到以下信息：公司每年仓库存储费用 $y_1$（单位：万元）与 $x+1$ 成反比；每年运输费 $y_2$（单位：万元）与 $x$ 成正比. 已知公司与服装贸易中心距离为 $1$ 时，$y_1$ 和 $y_2$ 分别为 $32$ 万元和 $4$ 万元.
+
+（1）分别求 $y_1,y_2$ 关于 $x$ 的函数表达式；
+
+（2）当这家公司与服装贸易中心距离为多少千米时，才能使两项费用之和最小？最小值是多少？
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得 $y_1$ 与 $x+1$ 成反比，则设 $y_1=\dfrac{k_1}{x+1}(k_1\neq0,x>0)$，}
+\step{当 $x=1$ 时，$y_1=\dfrac{k_1}{1+1}=32$，所以 $k_1=64$，因此 $y_1=\dfrac{64}{x+1}(x>0)$，}
+\step{又 $y_2$ 与 $x$ 成正比，则设 $y_2=k_2x(k_2\neq0,x>0)$，}
+\step{当 $x=1$ 时，$y_2=k_2\times1=4$，所以 $k_2=4$，因此 $y_2=4x(x>0)$；}
+\stepm{(2)}{设两项费用之和为 $y$ 万元，则 $y=y_1+y_2=\dfrac{64}{x+1}+4x(x>0)$，}
+\step{整理得 $y=\dfrac{64}{x+1}+4(x+1)-4$，又 $x+1>0$，}
+\step{所以由基本不等式得 $y=\dfrac{64}{x+1}+4(x+1)-4\geqslant2\sqrt{\dfrac{64}{x+1}\times4(x+1)}-4=28$，}
+\step{当且仅当 $\dfrac{64}{x+1}=4(x+1)$，即 $x=3$ 时取等号，此时 $y$ 取最小值为 $28$，}
+\step{因此，当这家公司与服装贸易中心距离 $3$ 千米时，两项费用之和最小，}
+\step{最小值为 $28$ 万元.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 已知关于 $x$ 的不等式 $(k^2+2k-3)x^2+(k+3)x-1<0$ 的解集为 $M$.
+
+（1）若 $k=-1$，求 $M$；
+
+（2）是否存在实数 $k$，满足：“对于任意的负整数 $s$，都有 $s\in M$；对于任意的正整数 $t$，都有 $t\notin M$”. 若存在，求出 $k$ 的值，若不存在，说明理由；
+
+（3）若存在实数 $a<1$ 和实数 $b>1$，使得 $M=(-\infty,a)\cup(b,+\infty)$，求实数 $k$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{若 $k=-1$，解原不等式等价于解不等式 $4x^2-2x+1>0$，}
+\step{对方程 $4x^2-2x+1=0$ 有 $\Delta=(-2)^2-4\times4\times1=-12<0$，}
+\step{所以函数 $y=4x^2-2x+1$ 图象与 $x$ 轴无交点，图象开口向上，}
+\step{所以不等式 $4x^2-2x+1>0$ 的解集为 $R$，即原不等式解集为 $R$，}
+\step{所以 $M=R$；}
+\stepm{(2)}{存在，理由如下：}
+\step{当 $k=1$ 时，原不等式化为 $4x-1<0$，解得 $x<\dfrac14$，}
+\step{则原不等式解集为 $M=\left(-\infty,\dfrac14\right)$，}
+\step{满足对于任意的负整数 $s$，都有 $s\in M$；}
+\step{对于任意的正整数 $t$，都有 $t\notin M$；}
+\step{当 $k=-3$ 时，原不等式化为 $-1<0$，则原不等式解集为 $M=R$，}
+\step{不满足题意；}
+\step{当 $k\neq1$ 且 $k\neq-3$ 时，$k^2+2k-3\neq0$，}
+\step{对方程 $(k^2+2k-3)x^2+(k+3)x-1=0$，}
+\step{有 $\Delta=(k+3)^2-4(k^2+2k-3)\times(-1)=5k^2+14k-3=(5k-1)(k+3)$，}
+\step{所以 $k\in(-\infty,-3)\cup\left(\dfrac15,+\infty\right)$ 时 $\Delta>0$，方程有两个不相等实数根分别}
+\step{为 $x_1=\dfrac{-(k+3)-\sqrt{5k^2+14k-3}}{2(k^2+2k-3)}$,$x_2=\dfrac{-(k+3)+\sqrt{5k^2+14k-3}}{2(k^2+2k-3)}$，}
+\step{$k\in\left(-3,\dfrac15\right)$ 时 $\Delta<0$，方程无根，}
+\step{$k=\dfrac15$ 时 $\Delta=0$，}
+\step{方程有两个相等实数根为 $x=-\dfrac{k+3}{2(k^2+2k-3)}=-\dfrac1{2(k-1)}$，}
+\step{又 $k\in(-\infty,-3)\cup(1,+\infty)$ 时 $k^2+2k-3>0$，}
+\step{一元二次函数 $y=(k^2+2k-3)x^2+(k+3)x-1$ 图象开口向上，}
+\step{$k\in(-3,1)$ 时 $k^2+2k-3<0$，}
+\step{一元二次函数 $y=(k^2+2k-3)x^2+(k+3)x-1$ 图象开口向下，}
+\step{所以当 $k\in(-\infty,-3)\cup(1,+\infty)$ 时图象开口向上且 $x_2>x_1$，}
+\step{原不等式解集为 $M=(x_1,x_2)$，}
+\step{当 $k\in\left(-3,\dfrac15\right)$ 时图象开口向下且与 $x$ 轴无交点，原不等式解集为 $M=R$，}
+\step{当 $k=\dfrac15$ 时，图象开口向下且与 $x$ 轴有一个交点，}
+\step{原不等式解集为 $M=\left\{x\left|x\neq-\dfrac1{2(k-1)}\right.\right\}$，}
+\step{当 $k\in\left(\dfrac15,1\right)$ 时图象开口向下且 $x_1>x_2$，}
+\step{原不等式解集为 $(-\infty,x_2)\cup(x_1,+\infty)$，}
+\step{所以当 $k\neq1$ 且 $k\neq-3$ 时均不满足：对于任意的负整数 $s$，都有 $s\in M$；}
+\step{对于任意的正整数 $t$，都有 $t\notin M$；}
+\step{综上，存在 $k=1$ 满足题意.}
+\stepm{(3)}{由 (2) 得 $k\in\left(\dfrac15,1\right)$，}
+\step{且 $a=\dfrac{-(k+3)-\sqrt{5k^2+14k-3}}{2(k^2+2k-3)}<1$,$b=\dfrac{-(k+3)+\sqrt{5k^2+14k-3}}{2(k^2+2k-3)}>1$，}
+\step{所以 $\begin{cases}\dfrac15<k<1\\ f(1)=(k^2+2k-3)+(k+3)-1>0\end{cases}\Rightarrow\dfrac{-3+\sqrt{13}}2<k<1$，}
+\step{所以实数 $k$ 的取值范围为 $\left(\dfrac{-3+\sqrt{13}}2,1\right)$.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 已知 $S_n=\{1,2,\cdots,n\}(n\geqslant3)$，$A=\{a_1,a_2,\cdots,a_k\}(k\geqslant2)$ 是 $S_n$ 的子集，定义集合 $A^*=\{a_i-a_j\mid a_i$、$a_j\in A$ 且 $a_i>a_j\}$，若 $A^*\cup\{n\}=S_n$，则称集合 $A$ 是 $S_n$ 的恰当子集. 用 $|X|$ 表示有限集合 $X$ 的元素个数.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $n=5$，$A=\{1,2,3,5\}$，求 $A^*$ 并判断集合 $A$ 是否为 $S_5$ 的恰当子集；
+\item 已知 $A=\{1,a,b,7\}(a<b)$ 是 $S_7$ 的恰当子集，求 $a$、$b$ 的值并说明理由；
+\item 若存在 $A$ 是 $S_n$ 的恰当子集，并且 $|A|=5$，求 $n$ 的最大值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{若 $n=5$，有 $S_5=\{1,2,3,4,5\}$，由 $A=\{1,2,3,5\}$，则 $A^*=\{1,2,3,4\}$，}
+\step{满足 $A^*\cup\{5\}=S_5$，集合 $A$ 是 $S_5$ 的恰当子集.}
+\stepm{(2)}{$A=\{1,a,b,7\}(a<b)$ 是 $S_7$ 的恰当子集，则 $A^*=\{1,2,3,4,5,6\}$，}
+\step{$7-1=6\in A^*$，由 $5\in A^*$ 则 $7-a=5$ 或 $b-1=5$，}
+\step{$7-a=5$ 时，$a=2$，此时 $b=5$，$A=\{1,2,5,7\}$，满足题意；}
+\step{$b-1=5$ 时，$b=6$，此时 $a=3$，$A=\{1,3,6,7\}$，满足题意；}
+\step{$a=2$，$b=5$ 或 $a=3$，$b=6$.}
+\stepm{(3)}{若存在 $A$ 是 $S_n$ 的恰当子集，并且 $|A|=5$，}
+\step{当 $n=10$ 时，$A=\{1,2,3,7,10\}$，有 $A^*=\{1,2,3,4,5,6,7,8,9\}$，}
+\step{满足 $A^*\cup\{10\}=S_{10}$，所以 $A=\{1,2,3,7,10\}$ 是 $S_{10}$ 的恰当子集，}
+\step{当 $n=11$ 时，若存在 $A$ 是 $S_{11}$ 的恰当子集，并且 $|A|=5$，}
+\step{则需满足 $A^*=\{1,2,3,4,5,6,7,8,9,10\}$，}
+\step{由 $10\in A^*$，则有 $1\in A$ 且 $11\in A$，由 $9\in A^*$，则有 $2\in A$ 或 $10\in A$，}
+\step{$2\in A$ 时，设 $A=\{1,2,a,b,11\}(3\leqslant a<b\leqslant10)$，}
+\step{经检验没有这样的 $a$、$b$ 满足 $A^*=\{1,2,3,4,5,6,7,8,9,10\}$；}
+\step{当 $10\in A$ 时，设 $A=\{1,a,b,10,11\}(2\leqslant a<b\leqslant9)$，}
+\step{经检验没有这样的 $a$、$b$ 满足 $A^*=\{1,2,3,4,5,6,7,8,9,10\}$；}
+\step{因此不存在 $A$ 是 $S_{11}$ 的恰当子集，并且 $|A|=5$，}
+\step{所以存在 $A$ 是 $S_n$ 的恰当子集，并且 $|A|=5$，$n$ 的最大值为 $10$.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
