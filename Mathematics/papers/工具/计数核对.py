@@ -650,6 +650,8 @@ def _nohit_batch(key):
         return 'K'
     if 54 <= n <= 55:
         return 'L'
+    if n == 56:
+        return 'M'
     return None
 
 
@@ -1009,9 +1011,9 @@ def check_source(md):
     add('圈数字：没用的份数与名单', (int(m.group(1)), sorted(re.findall(r'高一[0-9a-c]+', m.group(2)))),
         (len(no_circ), sorted(no_circ)),
         '2026-10-02 前这里写“只有高一06 一份没用”，实为 4 份（40／43／46 入库后没用圈数字）')
-    m = re.search(r'六份全卷无选择题', md)
+    m = re.search(r'份全卷无选择题', md)
     if not m:
-        raise AssertionError('README 里找不到这处断言：“…六份全卷无选择题”')
+        raise AssertionError('README 里找不到这处断言：“…份全卷无选择题”')
     seg = md[md.rindex('——', 0, m.start()):m.end()]
     add('全卷无选择题的卷名单', sorted(re.findall(r'高一[0-9a-c]+', seg)), sorted(no_choice),
         '“无选择题”＝源码正文里没有以 A. 开头的选项段（2026-10-02 前这里只写了 高一27／34 两份）')
