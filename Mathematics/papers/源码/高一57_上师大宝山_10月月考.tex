@@ -1,0 +1,348 @@
+% 高一57_上师大宝山_10月月考.tex
+%   —— 高一上数学“2026-2027 年上师大宝山高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一57_上师大宝山_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一57_上师大宝山_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一57_上师大宝山_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，连载“27学年高一57”；
+% 原文标题“27学年高一57——2026-2027年上海市上师大宝山高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/L1hhh5KxZ5ZT1Y5nVFstcw。
+% 页面标注发布时间 2026-10-13 21:45（上海）。
+% 正文为 8 张 PNG 页：第 01—07 页 4762×6735，第 08 页 2560×3620
+% （**同一篇各页分辨率不同**），均按页序读取。8 页全为试卷正文页（卷首标题在第 1 页页顶，
+% 卷末解答题第 21 题解析止于第 8 页），无封面页、目录页、二维码或宣传页。
+% 粉色斜排“魔都数学加油站”为卷面水印，与公众号页脚一并未录入。
+%
+% 卷首标题：照卷面印作“2026--2027 年上师大宝山高一上 10 月月考”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash。原卷只有一行标题、无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、选择题”“三、解答题”）。
+%
+% 讲评版：原卷每题下直接印【答案】或【解析】。**只印【答案】的 2 题**（第 3、4 题），
+% 本稿只给 \ans{}；**第 13 题没有任何【答案】/【解析】段**，答案“A”直接印在题干括号内
+% （“（  A  ）”），本稿按 高一37 第 13 题的成例把括号留空、答案另提为 \ans{}；
+% 其余 16 题都印【解析】，按全稿口径这类题不另提 \ans{}——第 14、15、16 题的结论写在解析末句
+% （“故选 D”等），亦照录在解析内。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、不等式”：
+% 19 题中集合与常用逻辑用语 9 题（第 4、5、6、10、12、13、18、21 题及第 8 题的命题判断），
+% 不等式 10 题（含等式与不等式性质、一元二次不等式、恒成立、基本应用：第 3、7、8、9、11、
+% 14、15、17、19、20 题），两类均远超三分之一，故并标。口径同 高一46、高一47、高一48、
+% 高一51、高一52、高一53、高一54、高一55。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版，试卷版保持干净；
+%      第 13 题印在题干括号内的答案“A”同样移入 \ans{}，见上；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%      选择题的作答括号原卷排半角“(    )”，本稿按全稿惯例排 \mbox{（\quad）}；
+%   ④ 原卷实数集排斜体 $R$（第 17、20 题等），自然数集排 $N$（第 19、21 题），
+%      本稿按全稿惯例改用 $\R$、$\N$；空集记号统一为 \varnothing；
+%   ⑤ 原卷在数学式内多处用半角逗号（如 $x_1,x_2$、$\{a,b,c,d\}$），均照录未强改；
+%      句末句点按全稿惯例排西文句点；
+%   ⑥ 第 17—21 题的子问原卷各自另起一行，本稿按全稿惯例用 enumerate 的 (1)(2)(3)；
+%      解析中的子问标号一律用 \stepm{(1)}{…}；第 8、15 题解析中的①、②（③）分情形，
+%      按全稿惯例作 \stepm{①}{…}、\stepm{②}{…}；
+%   ⑦ 第 18 题题干与解析里集合 $Q$ 的定义照原卷用绝对值（$|x-a|\leqslant2$），未改排区间；
+%   ⑧ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：本卷首轮逐页转录，暂未发现影响答案的笔误。
+%
+% 插图：无（全卷 8 页无任何图形、无“如图”字样）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年上师大宝山高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 命题“若 $a>b$，则 $\dfrac1a<\dfrac1b$”是\blankline[4.4em]命题（填“真”或“假”）.
+
+\ifanswer
+\ans{假}
+\fi
+
+\item 用反证法证明“若 $x+y>2$，则 $x>1$ 或 $y>1$”这个命题时，可以先假设该命题的结论不成立，即\blankline[6em].
+
+\ifanswer
+\ans{$x\leqslant1$ 且 $y\leqslant1$}
+\fi
+
+\item 已知集合 $A=\{2,(a+1)^2,a^2+3a+3\}$，且 $1\in A$，则实数 $a$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $1\in A$，则 $(a+1)^2=1$ 或 $a^2+3a+3=1$，}
+\step{若 $(a+1)^2=1$，解得 $a=0$，此时 $A=\{2,1,3\}$，符合题意，}
+\step{若 $a^2+3a+3=1$，解得 $a=-1$ 或 $-2$，}
+\step{当 $a=-1$ 时，$A=\{2,0,1\}$，符合题意，}
+\step{当 $a=-2$ 时，$A=\{2,1,1\}$，不符合题意，}
+\step{故 $a=-1$ 或 $0$.}
+\solend
+\fi
+
+\item 已知集合 $A\subseteq\{0,5,7\}$，且 $A$ 中至多有一个奇数，则这样的集合 $A$ 的个数共有\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{因为集合 $A\subseteq\{0,5,7\}$，且 $A$ 中至多有一个奇数，}
+\step{若 $A$ 中没有奇数，则 $A$ 可能为 $\varnothing$,$\{0\}$；}
+\step{若 $A$ 中有一个奇数，则 $A$ 可能为 $\{5\}$,$\{7\}$,$\{0,5\}$,$\{0,7\}$.}
+\step{故这样的集合 $A$ 的个数共有 $6$ 个.}
+\solend
+\fi
+
+\item 已知 $a>b>0$，则 $\dfrac ab$ 与 $\dfrac{a+1}{b+1}$ 的大小是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\dfrac ab-\dfrac{a+1}{b+1}=\dfrac{a(b+1)-b(a+1)}{b(b+1)}=\dfrac{a-b}{b(b+1)}$，}
+\step{因为 $a>b>0$，所以 $a-b>0$，$b(b+1)>0$，所以 $\dfrac ab-\dfrac{a+1}{b+1}>0$，}
+\step{故 $\dfrac ab>\dfrac{a+1}{b+1}$.}
+\solend
+\fi
+
+\item 有以下三个命题：①若 $a>b$，则 $\dfrac1a<\dfrac1b$；②若 $a>|b|$，则 $a^2>b^2$；③若 $a>b$，则 $ac^2>bc^2$. 其中真命题的个数是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\stepm{①}{由 $a>b$，当 $a>0>b$ 时，$\dfrac1a>0>\dfrac1b$，所以①错误；}
+\stepm{②}{由 $a>|b|$，即 $a>|b|\geqslant0$，所以 $a^2>|b|^2=b^2$，所以②正确；}
+\stepm{③}{由 $a>b$，当 $c=0$ 时，$ac^2=bc^2=0$，所以③错误；}
+\step{故真命题的个数是 $1$.}
+\solend
+\fi
+
+\item 若“$x>5$”是“$x>a-1$”的充分不必要条件，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若“$x>5$”是“$x>a-1$”的充分不必要条件，}
+\step{则 $(5,+\infty)\subset(a-1,+\infty)$，所以 $a-1<5$，即 $a<6$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid1<x<5\}$，$B=\{x\mid t<x<t+4\}$，若 $A\cap B=A$，则实数 $t$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $A\cap B=A$，所以 $A\subseteq B$，所以 $\begin{cases}t\leqslant1\\ t+4\geqslant5\end{cases}$，解得 $t=1$.}
+\solend
+\fi
+
+\item 若关于 $x$ 不等式组 $\begin{cases}(2x+3)(3x-2)\leqslant0\\ x-a>0\end{cases}$ 无实数解，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $\begin{cases}-\dfrac32\leqslant x\leqslant\dfrac23\\ x>a\end{cases}$ 无实数解，所以 $a\geqslant\dfrac23$.}
+\solend
+\fi
+
+\item 以集合 $U=\{a,b,c,d\}$ 的子集中选出两个不同的子集，需同时满足以下两个条件：（1）$a$、$b$ 都至少属于其中一个集合；（2）对选出的两个子集，其中一个集合为另一个的子集，那么共有\blankline[4.4em]种不同的选法.
+
+\ifanswer
+\solbegin
+\step{不妨设元素少的为 $A$，元素多的为 $B$，则 $B$ 必包含有 $a$、$b$；$A$ 为 $B$ 的真子集，}
+\step{若 $B=\{a,b\}$，$A$ 为 $B$ 的真子集，共 $2^2-1=3$ 种，}
+\step{若 $B=\{a,b,c\}$，$A$ 为 $B$ 的真子集，共 $2^3-1=7$ 种，}
+\step{若 $B=\{a,b,d\}$，$A$ 为 $B$ 的真子集，共 $2^3-1=7$ 种，}
+\step{若 $B=\{a,b,c,d\}$，$A$ 为 $B$ 的真子集，共 $2^4-1=15$ 种，}
+\step{共有 $3+7+7+15=32$ 种.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item “$x=2$”是“$x^2-3x+2=0$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分不必要条件\qquad B. 必要不充分条件
+
+C. 充要条件\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\ans{$A$}
+\fi
+
+\item 若一元二次不等式 $ax^2+bx+c>0$ 的解集是 $\{x\mid x>2\text{ 或 }x<1\}$，那么下列选项正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. $a<0$\qquad B. $ac<0$
+
+C. $b=3a$\qquad D. $ax^2+bx+c=0$ 的两根为 $x_1=1$，$x_2=2$
+
+\ifanswer
+\solbegin
+\step{因为一元二次不等式 $ax^2+bx+c>0$ 的解集是 $\{x\mid x>2\text{ 或 }x<1\}$，}
+\step{所以 $a>0$，故 $A$ 错误；}
+\step{$ax^2+bx+c=0$ 的两根为 $x_1=1$，$x_2=2$，故 $D$ 正确；}
+\step{所以 $x_1x_2=\dfrac ca=2>0$，即 $ac>0$，$x_1+x_2=-\dfrac ba=3>0$，即 $b=-3a$，}
+\step{故 $BC$ 错误.}
+\step{故选 $D$.}
+\solend
+\fi
+
+\item 若不等式 $2kx^2+kx-\dfrac38<0$ 对一切实数 $x$ 都成立，则 $k$ 的取值范围为\mbox{（\quad）}
+
+\keepwithprev
+A. $(-3,0)$\qquad B. $(-\infty,0]$
+
+C. $(-\infty,-3)\cup(0,+\infty)$\qquad D. $(-3,0]$
+
+\ifanswer
+\solbegin
+\stepm{①}{当 $k=0$ 时，得 $-\dfrac38<0$，对一切实数 $x$ 都成立；}
+\stepm{②}{当 $k\neq0$ 时，有 $\begin{cases}2k<0\\ k^2-4\times2k\times\left(-\dfrac38\right)<0\end{cases}$，解得 $-3<k<0$，}
+\step{综合①②，实数 $k$ 的取值范围是 $(-3,0]$. 故选 $D$.}
+\solend
+\fi
+
+\item 已知 $[x]$ 表示不超过 $x$ 的最大整数，例如 $[-3.5]=-4$,$[3.1]=3$，则关于 $x$ 的方程 $[[x-1]-1]=2$ 的解集为\mbox{（\quad）}
+
+\keepwithprev
+A. $\{x\mid4\leqslant x\leqslant5\}$\qquad B. $\{x\mid-3\leqslant x\leqslant-2\text{ 或 }4\leqslant x\leqslant5\}$
+
+C. $\{x\mid4\leqslant x<5\}$\qquad D. $\{x\mid-3<x\leqslant-2\text{ 或 }4\leqslant x<5\}$
+
+\ifanswer
+\solbegin
+\step{由题意得 $[[x-1]-1]=2$，从而 $2\leqslant|x-1|-1<3$，}
+\step{化简得 $3\leqslant|x-1|<4$，解得 $4\leqslant x<5$ 或 $-3<x\leqslant-2$，}
+\step{故解集为 $\{x\mid-3<x\leqslant-2\text{ 或 }4\leqslant x<5\}$，故选 $D$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）已知 $x\in R$，比较 $2x^2+2x-1$ 与 $6x-4$ 的大小；
+
+（2）证明：若 $a+b<10$，则 $a<5$ 或 $b<5$.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $2x^2+2x-1-6x+4=2x^2-4x+3=2(x-1)^2+1>0$ 恒成立，}
+\step{所以 $2x^2+2x-1>6x-4$；}
+\stepm{(2)}{反证法证明，假设 $a\geqslant5$ 且 $b\geqslant5$，}
+\step{因为 $a\geqslant5$ 且 $b\geqslant5$，所以 $a+b\geqslant5+5=10$，}
+\step{这与已知条件 $a+b<10$ 矛盾，所以假设不成立，所以原命题成立，}
+\step{即“若 $a+b<10$，则 $a<5$ 或 $b<5$”成立.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 已知集合 $P=\left\{x\left|\dfrac{3x-1}{x+2}<1\right.\right\}$，集合 $Q=\{x\mid|x-a|\leqslant2\}$.
+
+（1）求集合 $P$；
+
+（2）若“$x\in P$”是“$x\in Q$”的充分非必要条件，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{集合 $P=\left\{x\left|\dfrac{3x-1}{x+2}<1\right.\right\}$，得 $\dfrac{2x-3}{x+2}<0$，解得 $P=\left(-2,\dfrac32\right)$.}
+\stepm{(2)}{集合 $Q=\{x\mid|x-a|\leqslant2\}=\{x\mid a-2\leqslant x\leqslant2+a\}$，}
+\step{由“$x\in P$”是“$x\in Q$”的充分非必要条件，得 $P\subset Q$，}
+\step{得 $\begin{cases}-2\geqslant a-2\\ \dfrac32\leqslant2+a\\ a-2<2+a\end{cases}$，解得 $a\in\left[-\dfrac12,0\right]$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 河南是中华文明和黄河文化的发源地之一，其地域广阔，景色奇特. 为了充分挖掘旅游资源，某景区准备购进一批印有当地风土人情的太阳帽和旅行包. 已知购进 $4$ 个太阳帽和 $3$ 个旅行包需要 $61$ 元，购进 $7$ 个太阳帽和 $5$ 个旅行包需要 $103$ 元.
+
+（1）求每个太阳帽、旅行包的进价；
+
+（2）该景区太阳帽售价为 $6$ 元，旅行包售价为 $20$ 元. 景区计划购进太阳帽和旅行包共 $700$ 个，且购进太阳帽的数量不少于旅行包数量的 $1.5$ 倍，景区该如何设计进货方案，可使销售所获利润最大？最大利润为多少？
+
+\ifanswer
+\solbegin
+\stepm{(1)}{设每个太阳帽、旅行包的进价分别为 $x$、$y$，}
+\step{$\begin{cases}4x+3y=61\\ 7x+5y=103\end{cases}$，解得 $\begin{cases}x=4\\ y=15\end{cases}$，}
+\step{因此每个太阳帽进价为 $4$ 元，每个旅行包进价为 $15$ 元.}
+\stepm{(2)}{设景区购进太阳帽 $m$ 个，那么购进旅行包 $(700-m)$ 个，}
+\step{销售太阳帽和旅行包所获利润为 $w$，}
+\step{由题意得 $\begin{cases}w=(6-4)m+(20-15)(700-m)=-3m+3500\\ m\geqslant1.5(700-m)\\ 0<m\leqslant700,m\in\N\end{cases}$，}
+\step{即 $\begin{cases}w=-3m+3500\\ 420\leqslant m\leqslant700,m\in\N\end{cases}$，}
+\step{由于 $w$ 随 $m$ 的增大而减少，}
+\step{因此当 $m=420$ 时，$w_{\max}=-3\times420+3500=2240$，}
+\step{因此景区购进太阳帽 $420$ 个、旅行包 $280$ 个时销售利润最大为 $2240$ 元.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 已知关于 $x$ 的不等式 $ax^2-(a+1)x+b<0$.
+
+（1）若不等式的解集是 $\{x\mid1<x<5\}$，求 $a+b$ 的值；
+
+（2）若 $b=-\dfrac12$ 且不等式的解集为 $R$，求 $a$ 取值范围；
+
+（3）若 $a>0$，$b=1$，讨论此不等式的解集.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得 $a>0$，且 $1$ 和 $5$ 是方程 $ax^2-(a+1)x+b=0$ 的两根，}
+\step{所以 $1+5=-\dfrac{-(a+1)}a$，且 $1\times5=\dfrac ba$，解得 $a=\dfrac15$，$b=1$，所以 $a+b=\dfrac65$；}
+\stepm{(2)}{$ax^2-(a+1)x-\dfrac12<0$ 的解集为 $R$，}
+\step{当 $a=0$ 时，不合题意；}
+\step{当 $a\neq0$ 时，$\begin{cases}a<0\\ \Delta=(a+1)^2+2a<0\end{cases}$，所以 $a\in(-2-\sqrt3,-2+\sqrt3)$；}
+\step{综上，$a\in(-2-\sqrt3,-2+\sqrt3)$；}
+\stepm{(3)}{若 $a>0$，$b=1$，原不等式为 $ax^2-(a+1)x+1<0$，}
+\step{所以 $(ax-1)(x-1)<0$，所以 $a\left(x-\dfrac1a\right)(x-1)<0$.}
+\step{当 $a>1$ 时，$\dfrac1a<1$，原不等式解集为 $\left\{x\left|\dfrac1a<x<1\right.\right\}$，}
+\step{当 $a=1$ 时，$\dfrac1a=1$，原不等式解集为 $\varnothing$，}
+\step{当 $0<a<1$ 时，$\dfrac1a>1$，原不等式解集为 $\left\{x\left|1<x<\dfrac1a\right.\right\}$，}
+\step{综上所述，当 $a>1$ 时，原不等式解集为 $\left\{x\left|\dfrac1a<x<1\right.\right\}$，}
+\step{当 $a=1$ 时，原不等式解集为 $\varnothing$.}
+\step{当 $0<a<1$ 时，原不等式解集为 $\left\{x\left|1<x<\dfrac1a\right.\right\}$.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 对于给定的非空集合 $A$，定义集合 $A^+=\{z\mid z=x+y,x\in A,y\in A\}$，$A^-=\{z\mid z=x-y,x\in A,y\in A\}$，当 $A^+\cap A^-=\varnothing$ 时，则称 $A$ 具有孪生性质，而 $A^+$、$A^-$ 称为 $A$ 的孪生集合.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 判断下列集合 $S$、$T$ 是否具有孪生性质，如果有，求出其孪生集合；如果没有，请说明理由. ①$S=\{3,4\}$；②$T=\{0,1,7\}$.
+\item 若集合 $A=\{1,2,t\}\subseteq\N$，且集合 $A$ 具有孪生性质，求 $t$ 的最小值.
+\item 已知 $0\leqslant m\leqslant100$ 且 $m\in\N$，记 $m$ 到 $100$ 的连续自然数为集合 $B$，即 $B=\{m,m+1,m+2,\cdots,100\}$，若集合 $B$ 具有孪生性质，求 $m$ 的最小值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{对集合 $S=\{3,4\}$，$S^+=\{6,8,7\}$，$S^-=\{0,1\}$，$S^+\cap S^-=\varnothing$，}
+\step{所以 $S=\{3,4\}$ 具有孪生性质，且孪生集合为 $S^+=\{6,8,7\}$，$S^-=\{0,1\}$；}
+\step{对集合 $T=\{0,1,7\}$，$T^+=\{0,2,14,1,7,8\}$，$T^-=\{0,1,6,7\}$，}
+\step{$T^+\cap T^-\neq\varnothing$，所以 $T=\{0,1,7\}$ 不具有孪生性质.}
+\stepm{(2)}{$A=\{1,2,t\}\subseteq\N$，于是 $2$、$3$、$4$、$t+1$、$t+2$、$2t\in A^+$，}
+\step{$0$、$1$、$t-1$、$t-2\in A^-$，}
+\step{因为 $A^+\cap A^-=\varnothing$，所以 $t-2>4$，又 $t\in\N$，$t_{min}=7$.}
+\stepm{(3)}{$B^+=\{2m,2m+1,2m+2,\cdots,200\}$,$B^-=\{0,1,2,3,\cdots,100-m\}$，}
+\step{因为 $B^+\cap B^-=\varnothing$，所以 $100-m<2m$，解得 $m>\dfrac{100}3$，}
+\step{又 $m\in\N$，故 $m_{min}=34$.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
