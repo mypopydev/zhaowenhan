@@ -1,0 +1,315 @@
+% 高一56_交附闵行_周末作业10.10.tex
+%   —— 高一上数学“2026-2027 年交附闵行高一上周末作业 10.10”（讲评版）
+% 试卷版：xelatex 高一56_交附闵行_周末作业10.10.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一56_交附闵行_周末作业10.10.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一56_交附闵行_周末作业10.10.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，连载“27学年高一56”；
+% 原文标题“27学年高一56——2026-2027年上海市交附闵行高一上周末作业10.10”；
+% 原文链接：https://mp.weixin.qq.com/s/8RUEUjEdxU5V3JCyX6pCzw。
+% 页面标注发布时间 2026-10-12 22:05（上海）。
+% 正文为 10 张 PNG 页：第 02、06、07、08、09 页 4762×6735，第 01、03、04、05、10 页 2560×3620
+% （**同一篇各页分辨率不同**），均按页序读取。10 页全为试卷正文页（卷首标题在第 1 页页顶，
+% 卷末解答题第 14 题解析止于第 10 页），无封面页、目录页、二维码或宣传页。
+% 粉色斜排“魔都数学加油站”为卷面水印，与公众号页脚一并未录入。
+%
+% 卷首标题：照卷面印作“2026--2027 年交附闵行高一上周末作业 10.10”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash。原卷只有一行标题、无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—10（8 题）、
+% 解答题 11—14（4 题），共 12 题；**本卷无选择题**。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、解答题”）。
+%
+% 讲评版：原卷每题下直接印【解析】。**全卷 12 题都印【解析】（无一处只印【答案】）**，
+% 按全稿口径这类题不另提 \ans{}；解析末句的结论（第 5、6、8、9、10、12、13 题的“综上…”、
+% 第 14 题的“综上…”）照录在解析内，第 3、4、7、11 题为纯运算、结论即末式。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、函数与导数、不等式”
+% （与 高一27 同三项）：12 题中不等式 6 题（第 5、8、9、10、12、13 题），
+% 函数与导数（有理数指数幂与根式运算）4 题（第 3、4、7、11 题），
+% 集合与常用逻辑用语 2 题（第 6 题的集合与充要条件、第 14 题的集合新定义），三类均确有内容，故并标。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【解析】，本稿按全稿惯例将解析置于答案版，试卷版保持干净；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ④ 原卷实数集排斜体 $R$（第 6、14 题等），本稿按全稿惯例改用 $\R$；
+%      正整数集原卷作 $N^*$（第 14 题），本稿照录为 $\N^*$；
+%   ⑤ 第 11—14 题的子问原卷各自另起一行，本稿按全稿惯例用 enumerate 的 (1)(2)(3)；
+%      解析中的子问标号一律用 \stepm{(1)}{…}；第 14 题 (2) 下的 (i)(ii) 原卷另起两行，
+%      本稿在 (2) 的条目内保留为两段（解析中作 \stepm{(2)}{(i)…} 与 \step{(ii)…}）；
+%      第 5 题解析中的①、②分情形，按全稿惯例作 \stepm{①}{…}、\stepm{②}{…}；
+%   ⑥ 第 10 题的 $\max\{x,y\}$ 原卷在数学式内排正体记号，本稿用 \max 排正体；
+%   ⑦ 第 13 题的“km/h”原卷在斜杠两侧留了空格（“vkm / h”），本稿按全稿惯例排 km/h；
+%   ⑧ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 14 题 (2)(i) 必要性证明中，原卷印“也可以是 $a_2+b_1<a_2+b_2<a_3+b_2$”
+%      （中间项作 $a_2+b_2$）；本稿照录（此式与紧随其后的“$a_1+b_3=a_2+b_2$”自洽）。
+%      本卷首轮逐页转录，除上述一处措辞外，暂未发现影响答案的笔误。
+%
+% 插图：无（全卷 10 页无任何图形、无“如图”字样）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年交附闵行高一上周末作业 10.10}{集合与常用逻辑用语、函数与导数、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 设 $a>0$，用有理数指数幂的形式表示：$a^{\frac23}\cdot\sqrt[5]{a^3}=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原式 $=a^{\frac23}\cdot a^{\frac35}=a^{\frac{19}{15}}$.}
+\solend
+\fi
+
+\item 求值：$\left(\dfrac12\right)^{-2}+3^0-\left(\dfrac{27}{8}\right)^{\frac13}=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原式 $=2^{1\times(-2)}+1-\left(\dfrac32\right)^{3\times\frac13}=4+1-\dfrac32=\dfrac72$.}
+\solend
+\fi
+
+\item 设 $a$ 为实数，若关于 $x$ 的一元一次不等式组 $\begin{cases}2x+a>0\\ 3x-6a<0\end{cases}$ 的解集中有且仅有 $4$ 个整数，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{一元一次不等式组 $\begin{cases}2x+a>0\\ 3x-6a<0\end{cases}\Leftrightarrow-\dfrac a2<x<2a$，且 $a>0$，}
+\step{关于 $x$ 的一元一次不等式组 $\begin{cases}2x+a>0\\ 3x-6a<0\end{cases}$ 的解集中有且仅有 $4$ 个整数，}
+\stepm{①}{当 $4$ 个整数为 $0$、$1$、$2$、$3$ 时，则 $\begin{cases}-1\leqslant-\dfrac a2<0\\ 3<2a\leqslant4\end{cases}$，所以 $\dfrac32<a\leqslant2$，}
+\stepm{②}{当 $4$ 个整数为 $-1$、$0$、$1$、$2$ 时，则 $\begin{cases}-2\leqslant-\dfrac a2<-1\\ 2<2a\leqslant3\end{cases}$，无解，}
+\step{综上，$a$ 的取值范围是 $\left(\dfrac32,2\right]$.}
+\solend
+\fi
+
+\item 已知集合 $A=\left\{x\mid\dfrac7{x+3}\geqslant1\right\}$，$B=\{x\mid x^2-3mx+2m^2+m-1<0\}$，若“$x\in A$”是“$x\in B$”的必要非充分条件，则实数 $m$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $A=\{x\mid-3<x\leqslant4\}=(-3,4]$，}
+\step{$B=\{x\mid x^2-3mx+2m^2+m-1<0\}=\{x\mid(x-m-1)(x-2m+1)<0\}$，}
+\step{当 $2m-1>m+1$ 即 $m>2$ 时，$B=(m+1,2m-1)$，}
+\step{因为“$x\in A$”是“$x\in B$”的必要不充分条件，所以 $B\subset A$，}
+\step{则 $\begin{cases}2m-1\leqslant4\\ m+1\geqslant-3\\ m>2\end{cases}$，解得 $2<m\leqslant\dfrac52$，经检验满足题意；}
+\step{当 $2m-1<m+1$ 即 $m<2$ 时，$B=(2m-1,m+1)$，}
+\step{因为“$x\in A$”是“$x\in B$”的必要不充分条件，所以 $B\subset A$，}
+\step{则 $\begin{cases}2m-1\geqslant-3\\ m+1\leqslant4\\ m<2\end{cases}$，解得 $-1\leqslant m<2$；经检验满足题意；}
+\step{当 $2m-1=m+1$ 即 $m=2$ 时，$B=\varnothing$，满足 $B\subset A$；}
+\step{综上，实数 $m$ 的取值范围为 $\left[-1,\dfrac52\right]$.}
+\solend
+\fi
+
+\item 有下列说法：①$\sqrt[3]{-27}=3$；②$16$ 的 $4$ 次方根是 $\pm2$；③$\sqrt[4]{81}=\pm3$；④$\sqrt{(x+y)^2}=|x+y|$. 其中正确的有\blankline[4.4em]（填序号）.
+
+\ifanswer
+\solbegin
+\step{①$\sqrt[3]{-27}=-3$，错误；②$16$ 的 $4$ 次方根是 $\pm2$，正确；}
+\step{③$\sqrt[4]{81}=3$，错误；④$\sqrt{(x+y)^2}=|x+y|$，正确.}
+\step{其中正确的有②④.}
+\solend
+\fi
+
+\item 已知 $x^2+(2-a)x+4-2a\geqslant0$ 对任意 $x\in(-2,+\infty)$ 恒成立，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$x^2+(2-a)x+4-2a\geqslant0\Rightarrow x^2+2x+4\geqslant a(x+2)$，}
+\step{因为 $x\in(-2,+\infty)$，所以问题等价于 $\dfrac{x^2+2x+4}{x+2}\geqslant a$ 在 $x\in(-2,+\infty)$ 恒成立，}
+\step{其中 $\dfrac{x^2+2x+4}{x+2}=\dfrac{(x+2)^2-2(x+2)+4}{x+2}=(x+2)+\dfrac4{x+2}-2$}
+\step{$\geqslant2\sqrt{(x+2)\cdot\dfrac4{x+2}}-2=2$，当且仅当 $x+2=\dfrac4{x+2}$，即 $x=0$ 时取等号，}
+\step{故 $a\leqslant2$.}
+\solend
+\fi
+
+\item 设 $x>-1$，$y>0$ 且 $x+3y=1$，则 $\dfrac1{x+1}+\dfrac1y$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$x+3y=1\Rightarrow x+1+3y=2\Rightarrow\dfrac{x+1}2+\dfrac{3y}2=1$，又 $x>-1$，$y>0$，}
+\step{又基本不等式得 $\dfrac1{x+1}+\dfrac1y=\left(\dfrac1{x+1}+\dfrac1y\right)\left(\dfrac{x+1}2+\dfrac{3y}2\right)=\dfrac12+\dfrac{3y}{2(x+1)}+\dfrac{x+1}{2y}+\dfrac32$}
+\step{$\geqslant2+2\sqrt{\dfrac{3y}{2(x+1)}\cdot\dfrac{x+1}{2y}}=2+\sqrt3$，}
+\step{当且仅当 $\dfrac{3y}{2(x+1)}=\dfrac{x+1}{2y}$，即 $x=\sqrt3-2$，$y=1-\dfrac{\sqrt3}3$ 时取等号，}
+\step{故 $\dfrac1{x+1}+\dfrac1y$ 的最小值为 $2+\sqrt3$.}
+\solend
+\fi
+
+\item 定义 $\max\{x,y\}$ 表示实数 $x$、$y$ 中的较大者，若 $a$、$b$、$c$ 是正实数，则 $\max\left\{a,\dfrac1b\right\}+\max\left\{b,\dfrac2c\right\}+\max\left\{c,\dfrac3a\right\}$ 的最小值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{记 $M=\max\left\{a,\dfrac1b\right\}+\max\left\{b,\dfrac2c\right\}+\max\left\{c,\dfrac3a\right\}$，}
+\step{当 $c\geqslant\dfrac3a$ 时，$a\geqslant\dfrac3c$，$M\geqslant a+\dfrac2c+c\geqslant\dfrac3c+\dfrac2c+c=\dfrac5c+c\geqslant2\sqrt{\dfrac5c\cdot c}=2\sqrt5$，}
+\step{当且仅当 $a=\dfrac3{\sqrt5}$，$b=\dfrac2{\sqrt5}$，$c=\sqrt5$ 时取等号.}
+\step{当 $c<\dfrac3a$ 时，$M\geqslant a+\dfrac2c+\dfrac3a>a+\dfrac{2a}3+\dfrac3a=\dfrac{5a}3+\dfrac3a\geqslant2\sqrt{\dfrac{5a}3\cdot\dfrac3a}=2\sqrt5$，}
+\step{显然等号无法取得，}
+\step{综上所述，$M$ 的最小值是 $2\sqrt5$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item 计算下列各式：
+
+\begin{enumerate}[label=(\arabic*)]
+\item $81^{\frac14}-(\sqrt5-\sqrt3)^0+\left(\dfrac8{27}\right)^{-\frac13}$；
+\item $\dfrac{\left(x^{\frac32}-x^{\frac12}\right)+2\left(x^{\frac43}-x^{\frac13}\right)}{\sqrt{\left(x^{\frac12}+2x^{\frac13}\right)^2}\cdot\sqrt{\left(1-x^{-1}\right)^2}}(x>1)$；
+\item $\left(5x^{-\frac23}y^{\frac12}\right)\cdot\left(-\dfrac14x^{-1}y^{\frac12}\right)\cdot\left(-\dfrac56x^{\frac13}y^{-\frac16}\right)(x,y>0)$.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$81^{\frac14}-(\sqrt5-\sqrt3)^0+\left(\dfrac8{27}\right)^{-\frac13}=3-1+\dfrac32=\dfrac72$；}
+\stepm{(2)}{当 $x>1$ 时，$1>\dfrac1x$，}
+\step{$\dfrac{\left(x^{\frac32}-x^{\frac12}\right)+2\left(x^{\frac43}-x^{\frac13}\right)}{\sqrt{\left(x^{\frac12}+2x^{\frac13}\right)^2}\cdot\sqrt{\left(1-x^{-1}\right)^2}}=\dfrac{x^{\frac12}(x-1)+2x^{\frac13}(x-1)}{\left(x^{\frac12}+2x^{\frac13}\right)\cdot\left(1-\dfrac1x\right)}$}
+\step{$=\dfrac{(x-1)\left(x^{\frac12}+2x^{\frac13}\right)}{(x-1)\cdot\dfrac1x\left(x^{\frac12}+2x^{\frac13}\right)}=x$；}
+\stepm{(3)}{$\left(5x^{-\frac23}y^{\frac12}\right)\cdot\left(-\dfrac14x^{-1}y^{\frac12}\right)\cdot\left(-\dfrac56x^{\frac13}y^{-\frac16}\right)$}
+\step{$=\left[5\times\left(-\dfrac14\right)\times\left(-\dfrac56\right)\right]\cdot x^{-\frac23+(-1)+\frac13}\cdot y^{\frac12+\frac12+\left(-\frac16\right)}=\dfrac{25}{24}x^{-\frac43}y^{\frac56}$.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 求下列关于 $x$ 的不等式的解集（$a$ 为实数）.
+
+\begin{enumerate}[label=(\arabic*)]
+\item $|3x+2|\leqslant4-|x-1|$；
+\item $x^2+2x+a<0$；
+\item $\dfrac{ax-1}{x-2}>0$.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$|3x+2|+|x-1|\leqslant4$，}
+\step{当 $x\leqslant-\dfrac23$ 时，$-(3x+2)-(x-1)\leqslant4$，得 $x\geqslant-\dfrac54$，得 $-\dfrac54\leqslant x\leqslant-\dfrac23$，}
+\step{当 $-\dfrac23<x<1$ 时，$3x+2+1-x\leqslant4$，得 $x\leqslant\dfrac12$，即 $-\dfrac23<x\leqslant\dfrac12$，}
+\step{当 $x\geqslant1$ 时，$3x+2+x-1\leqslant4$，得 $x\leqslant\dfrac34$，解集为 $\varnothing$，}
+\step{综上，不等式的解集为 $\left[-\dfrac54,\dfrac12\right]$；}
+\stepm{(2)}{$\Delta=4-4a$，}
+\step{当 $a>1$ 时，$\Delta<0$，不等式的解集为 $\varnothing$，}
+\step{当 $a=1$ 时，$\Delta=0$，不等式的解集为 $\varnothing$，}
+\step{当 $a<1$ 时，$\Delta>0$，}
+\step{方程 $x^2+2x+a=0$ 的根为 $x=\dfrac{-2\pm\sqrt{4-4a}}2=-1\pm\sqrt{1-a}$，}
+\step{所以不等式的解集为 $\{x\mid-1-\sqrt{1-a}<x<-1+\sqrt{1-a}\}$，}
+\step{综上，$a\geqslant1$ 时，不等式的解集为 $\varnothing$；}
+\step{$a<1$ 时，不等式的解集为 $\{x\mid-1-\sqrt{1-a}<x<-1+\sqrt{1-a}\}$；}
+\stepm{(3)}{当 $a=0$ 时，$\dfrac{-1}{x-2}>0$，得 $x<2$；}
+\step{当 $a<0$ 时，$\dfrac{ax-1}{x-2}>0\Leftrightarrow(ax-1)(x-2)>0\Leftrightarrow\left(x-\dfrac1a\right)(x-2)<0$，}
+\step{因为 $\dfrac1a<2$，所以不等式的解集为 $\left\{x\mid\dfrac1a<x<2\right\}$；}
+\step{当 $a>0$ 时，$\dfrac{ax-1}{x-2}>0\Leftrightarrow(ax-1)(x-2)>0\Leftrightarrow\left(x-\dfrac1a\right)(x-2)>0$，}
+\step{当 $0<a<\dfrac12$ 时，$\dfrac1a>2$ 时，不等式的解集为 $\left\{x\mid x>\dfrac1a \text{ 或 } x<2\right\}$，}
+\step{当 $a=\dfrac12$ 时，$\dfrac{ax-1}{x-2}>0\Leftrightarrow(x-2)^2>0$，不等式的解集为 $\{x\mid x\neq2\}$，}
+\step{当 $a>\dfrac12$ 时，$\dfrac1a<2$ 时，不等式的解集为 $\left\{x\mid x>2 \text{ 或 } x<\dfrac1a\right\}$.}
+\step{综上，当 $a=0$ 时，不等式的解集为 $\{x\mid x<2\}$，}
+\step{当 $a<0$ 时，所以不等式的解集为 $\left\{x\mid\dfrac1a<x<2\right\}$，}
+\step{当 $0<a<\dfrac12$ 时，不等式的解集为 $\left\{x\mid x>\dfrac1a \text{ 或 } x<2\right\}$，}
+\step{当 $a=\dfrac12$ 时，不等式的解集为 $\{x\mid x\neq2\}$，}
+\step{当 $a>\dfrac12$ 时，不等式的解集为 $\left\{x\mid x>2 \text{ 或 } x<\dfrac1a\right\}$.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 港珠澳大桥总长约 $55\mathrm{km}$，跨越伶仃洋，连接珠海、香港和澳门. 一辆货车以 $v\mathrm{km/h}$（不超过 $100\mathrm{km/h}$）的速度从香港某地经过港珠澳大桥到珠海某地，共行驶了 $80\mathrm{km}$，每小时的运输成本包括油费和人工费用. 经过测算，货车每小时用油 $\left(3+\dfrac{v^2}{350}\right)\mathrm{L}$，假设油费每升 $7$ 元，人工费每小时 $28$ 元，大桥通行费 $120$ 元/次.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $v=70\mathrm{km/h}$ 时，这次行车的总费用 $y$ 为多少元？
+\item 当 $v$ 为何值时，这次行车的总费用 $y$（单位：元）最低，并求出最低费用（精确到 $0.01$ 元）.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $v=70\mathrm{km/h}$ 时，这次行车的总费用}
+\step{是 $\dfrac{80}{70}\times28+\dfrac{80}{70}\times\left(3+\dfrac{70^2}{350}\right)\times7+120=288$ 元，}
+\step{所以当 $v=70\mathrm{km/h}$ 时，这次行车的总费用为 $288$ 元.}
+\stepm{(2)}{这次行车所用时间为 $t=\dfrac{80}{v}\mathrm{h}$，}
+\step{则全程所有油费为 $\dfrac{80}{v}\times7\times\left(3+\dfrac{v^2}{350}\right)$ 元，}
+\step{全程所用人工费用为 $\dfrac{80}{v}\times28$ 元，}
+\step{所以 $y=\dfrac{80}{v}\times7\times\left(3+\dfrac{v^2}{350}\right)+\dfrac{80}{v}\times28+120(0<v\leqslant100)$，}
+\step{所以这次行车的总费用 $y$ 关于 $v$ 的函数解析式}
+\step{是 $y=\dfrac{3920}{v}+\dfrac{8v}5+120(0<v\leqslant100)$，}
+\step{$y=\dfrac{3920}{v}+\dfrac{8v}5+120\geqslant2\sqrt{\dfrac{3920}{v}\times\dfrac{8v}5}+120=112\sqrt2+120\approx278.37$，}
+\step{当且仅当 $\dfrac{3920}{v}=\dfrac{8v}5$，即 $v=35\sqrt2\approx49.49$ 时取等号，}
+\step{当 $v\approx49.49\mathrm{km/h}$ 时，这次行车的总费用最低，最低费用约为 $278.37$ 元.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 对于实数集中的两个非空有限子集 $A$ 和 $B$，定义和集 $A+B=\{a+b\mid a\in A,b\in B\}$. 记符号 $|A|$ 表示集合 $A$ 中的元素个数. 当 $|A|\geqslant2$ 时，设 $a_1$、$a_2$、$\cdots$、$a_{|A|}$ 是集合 $A$ 中按从小到大排列的所有元素，记集合 $G(A)=\{a_{k+1}-a_k\mid k=1,2,\cdots,|A|-1\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 已知集合 $A=\{1,3,5\}$，$B=\{1,2,6\}$，$C=\{1,2,6,x\}$，若 $A+B=A+C$，求集合 $C$，并求出 $|G(C)|$ 的值.
+\item 已知 $|A|=|B|=m(m\geqslant3,m\in\N^*)$，记集合 $G(A,B)=\{x\mid x\in G(A)$ 或 $x\in G(B)\}$.
+
+（i）当 $m=3$ 时，证明 $|A+B|=5$ 的充要条件是 $|G(A,B)|=1$；
+
+（ii）若 $|G(A)|=1$，$|A+B|=2m$，求 $|G(A,B)|$ 的所有可能取值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $A+B=\{2,3,4,5,6,7,9,11\}$，}
+\step{由 $A+B=A+C$，得 $A+C=\{2,3,4,5,6,7,9,11\}$，}
+\step{所以 $1+x$、$3+x$、$5+x\in\{2,3,4,5,6,7,9,11\}$ 且 $x\neq1,2,6$，}
+\step{所以必有 $x=4$，所以 $C=\{1,2,4,6\}$，所以 $G(C)=\{1,2\}$，}
+\step{所以 $|G(C)|=2$.}
+\stepm{(2)}{(i)因为 $m=3$，可设 $A=\{a_1,a_2,a_3\}$，$B=\{b_1,b_2,b_3\}$，}
+\step{先证充分性：因为 $|G(A,B)|=1$，}
+\step{所以 $G(A)=G(B)$ 且 $|G(A)|=|G(B)|=1$，}
+\step{从而可以设 $A=\{a,a+d,a+2d\}$，$B=\{b,b+d,b+2d\}$，其中 $d>0$，}
+\step{此时 $A+B$ 中的元素为 $a+b+id(i=0,1,2,3,4)$，故 $|A+B|=5$，}
+\step{再证必要性，设 $A=\{a_1,a_2,a_3\}$，$B=\{b_1,b_2,b_3\}$，}
+\step{其中 $a_1<a_2<a_3$，$b_1<b_2<b_3$，}
+\step{注意到和集 $A+B$ 中的最小元素为 $a_1+b_1$，最大元素为 $a_3+b_3$，}
+\step{因为 $|A+B|=5$，所以中间三个元素可以是 $a_1+b_2<a_1+b_3<a_2+b_3$，}
+% 原卷印作“也可以是 a_2+b_1<a_2+b_2<a_3+b_2”（中间项为 a_2+b_2），照录（见文件头原卷存疑①）
+\step{也可以是 $a_2+b_1<a_2+b_2<a_3+b_2$，它们是对应相等的，}
+\step{所以有 $a_1+b_2=a_2+b_1$，$a_1+b_3=a_2+b_2$，$a_2+b_3=a_3+b_2$，}
+\step{即 $a_2-a_1=a_3-a_2=b_2-b_1=b_3-b_2$，故 $|G(A,B)|=1$，得证，}
+\step{(ii)①若 $|G(A,B)|=1$，由第 (i) 小问的分析得，}
+\step{可以设 $A=\{a,a+d,\cdots,a+(m-1)d\}$，$B=\{b,b+d,\cdots,b+(m-1)d\}$，}
+\step{其中 $d>0$，}
+\step{此时 $A+B$ 中的元素为 $a+b+id(i=0,1,\cdots,2m-2)$，$|A+B|=2m-1$，}
+\step{这与条件 $|A+B|=2m$ 矛盾，}
+\step{②取 $A=\{a,a+d,\cdots,a+(m-1)d\}$，$B=\{b,b+2d,b+3d,\cdots,b+md\}$，}
+\step{其中 $d>0$.}
+\step{容易验证此时 $A+B$ 中的元素为 $a+b+id(i=0,1,\cdots,2m-1)$，}
+\step{符合条件 $|A+B|=2m$，所以 $|G(A,B)|$ 可以取 $2$，}
+\step{③若 $|G(A,B)|\geqslant3$，设 $A=\{a_1,a_2,\cdots,a_m\}$，$B=\{b_1,b_2,\cdots,b_m\}$，}
+\step{其中 $a_1<a_2<\cdots<a_m$，$b_1<b_2<\cdots<b_m$.}
+\step{结合 $|G(A)|=1$ 得至少存在两个不同的正整数 $k(1\leqslant k\leqslant m-1)$，}
+\step{使得 $b_{k+1}-b_k\neq a_2-a_1$，}
+\step{不妨设 $i$ 是符合这一条件最小的正整数，$j$ 是符合这一条件最大的正整数，}
+\step{注意到 $a_1+b_1<a_2+b_1<\cdots<a_{m-1}+b_1<\cdots<a_{m-1}+b_i<a_{m-1}+b_{i+1}<\cdots$}
+\step{$<a_{m-1}+b_m<a_m+b_m(*)$，这是 $A+B$ 中的 $2m-1$ 个不同的元素，}
+\step{由 $i$ 的定义我们有 $b_{i+1}-b_i\neq a_{m-1}-a_{m-2}$，即 $a_{m-2}+b_{i+1}\neq a_{m-1}+b_i$，}
+\step{当 $i\geqslant2$ 时，由 $i$ 的最小性得 $b_i-b_{i-1}=a_{m-1}-a_{m-2}$，}
+\step{即 $a_{m-1}+b_{i-1}=a_{m-2}+b_i$，}
+\step{此时我们有 $a_{m-1}+b_{i-1}=a_{m-2}+b_i<a_{m-2}+b_{i+1}<a_{m-1}+b_{i+1}$，}
+\step{当 $i=1$ 时，也有 $a_{m-2}+b_i<a_{m-2}+b_{i+1}<a_{m-1}+b_{i+1}$，}
+\step{因此 $a_{m-2}+b_{i+1}$ 是 $A+B$ 中的元素，但与 $(*)$ 式中的 $2m-1$ 个元素均不相等，}
+\step{同理，由 $j$ 的定义有 $a_m+b_j$ 是 $A+B$ 中的元素，}
+\step{但与 $(*)$ 式中的 $2m-1$ 个元素均不相等，}
+\step{因为 $i<j$，所以 $a_{m-2}+b_{i+1}\neq a_m+b_j$，此时 $|A+B|\geqslant2m+1$，矛盾，}
+\step{综上，$|G(A,B)|$ 的取值只能为 $2$.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
