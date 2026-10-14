@@ -658,6 +658,8 @@ def _nohit_batch(key):
         return 'O'
     if n == 59:
         return 'P'
+    if n == 60:
+        return 'Q'
     return None
 
 
