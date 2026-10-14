@@ -1,0 +1,347 @@
+% 高一61_七宝中学_抱孩子练习10.13.tex
+%   —— 高一上数学“2026-2027 年七宝中学高一上抱孩子练习 10.13”（讲评版）
+% 试卷版：xelatex 高一61_七宝中学_抱孩子练习10.13.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一61_七宝中学_抱孩子练习10.13.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一61_七宝中学_抱孩子练习10.13.tex}"
+%
+% 原文链接：https://mp.weixin.qq.com/s/D3jDxmlZZ8d_ObrjfXtjLA。
+% 公众号“魔都数学加油站”作者破晓于 2026-10-14 22:15 发布。
+% 原图 8 张（`原图/高一61_七宝中学_抱孩子练习10.13/01..08.png`）：第 1、4、8 页 2560×3620，
+% 第 2、3、5、6、7 页 4762×6735（同一篇内两档分辨率）。
+%
+% 卷首标题：照卷面印作“2026--2027 年七宝中学高一上抱孩子练习 10.13”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash。原卷只有一行标题、无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—10（8 题）、
+% 选择题 11—13（3 题）、解答题 14—16（3 题）、另有无编号的“附加题”一节 17—20（4 题），
+% 共 18 题。本稿沿用原节与原题号，只改排为全稿统一的大节样式。
+%
+% 讲评版：原卷每题下直接印【答案】或【解析】。**只印【答案】的 5 题**（第 3、4、5、7、8 题），
+% 本稿只给 \ans{}；第 15 题印【答案】且分 (1)(2) 两问，亦给 \ans{}。其余各题印【解析】，
+% 结论写在解析末句（“故选 D”等），照录在解析内。**两处答案印在题干括号内**——
+% 第 11 题（“( B )”）、第 17 题（“( C )”），本稿按 高一53 第 13 题的成例把括号留空、
+% 答案另提为 \ans{$B$}、\ans{$C$}。**第 13 题原卷既无答案印在括号内、也无【答案】/【解析】段**
+% （见文件头“原卷存疑”⑦），本稿照录——该题答案版也没有答案。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、函数与导数、不等式”
+% （同 高一27、高一56 的三模块口径）：18 题中集合与常用逻辑用语 8 题（第 4、9、10、12、13、15、
+% 17、18 题：性质定理与必要条件、含参二次函数的集合相等、集合与四个关系的真假、存在命题为假、
+% 集合 S／T 的新定义、命题 P／Q、函数递推与命题、“和谐集”），不等式 8 题（第 5、6、8、14、
+% 15、16、19、20 题：二次不等式恰有一解、分段函数不等式、分式不等式恒成立、最值、绝对值不等式、
+% 二次函数值域、含参最值），函数与导数 6 题（第 3、6、7、9、11、19 题：指数幂运算、
+% 分段函数、含绝对值函数、含参二次函数、指数式求值、二次函数）。三类均达三分之一，故并标。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版，试卷版保持干净；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约两个半字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ④ 原卷实数集排斜体 $R$（第 12、16、18 题等），整数集排斜体 $Z$（第 10、13、18 题等），
+%      本稿按全稿惯例改用 $\R$、$\Z$；空集记号统一为 \varnothing；存在／全称量词原卷作
+%      “$\exists$”“$\forall$”，照录；
+%   ⑤ 原卷在数学式内多处用半角逗号（如 $S,T$、$k_1$、$k_2\in Z$），均照录未强改；
+%      句末句点按全稿惯例排西文句点；“和谐集”“接近”等自定义名词照录；
+%   ⑥ 第 11、17 题印在题干括号内的答案移入 \ans{}，见上；
+%   ⑦ 原卷“附加题”一节的标题**不带序号**（只有“附加题”三字，与前三节的“一、”“二、”“三、”
+%      不同），本稿按全稿惯例排 \bigsec{附加题}，题号沿用 17—20；
+%   ⑧ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace。
+%
+% 原卷存疑（照录未改，见源码中该处上方注释）：
+%   ① 第 3 题指数印作 $\left(\frac13\right)^{m^m}$——按所给答案 $\frac4{25}$ 与
+%      $9^n=2\Rightarrow 3^{2n}=2$，须有 $3^m=\frac15$（即指数应为 $m$），指数上的第二个 $m$
+%      无法解释；原卷如此，照录未改。已 8 倍放大确认：底数为 $\frac13$、指数为 $m^m$。
+%   ② 第 10 题题干“下列四个关系”**④处的关系式漏印**：印作“④有且只有一个是正确的，”
+%      （把本属条件的话并入了④），缺④本身的关系式；按解析给出的 6 组解反推，④应为 $d\neq4$
+%      （否则按①②③恰有一个正确来数会得 12 组而非 6 组）。照录原卷、未补。
+%   ③ 第 14(2) 题干末尾缺字：“求 $\frac1{2x+1}+\frac1{y+2}$ **的.**”（应为“的最小值”），
+%      由紧随的解析“故最小值为 $\frac23$”可知；照录未改。
+%   ④ 第 16(3) 解析“**以** $x+\frac4x\leqslant-4$”疑漏“所”字（应为“所以”），照录未改。
+%   ⑤ 第 18 题解析末行印作“所以 $S_1\cup S_2=R$ 不是实数集”，**自相矛盾**——由 5 不属于 $S_1$
+%      也不属于 $S_2$，应为 $S_1\cup S_2\neq R$；已放大确认原卷此处确为“$=R$”。照录未改。
+%   ⑥ 第 9 题解析“由 $f(0)=2>0$”**未先定义 $f$**（前文只写 $y=x^2+mx+2$），照录未改。
+%   ⑦ 第 13 题**原卷没有印答案**：题干括号为空，其后直接是“三、解答题”，既无【答案】也无【解析】
+%      （同卷第 11、17 题都把答案印在括号内，第 12、18 题都给了【解析】）。照录未改。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年七宝中学高一上抱孩子练习 10.13}{集合与常用逻辑用语、函数与导数、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+% 原卷指数印作 $m^m$（按答案须读作 $m$），照录未改（见文件头“原卷存疑”①）
+\item 设 $\left(\dfrac13\right)^{m^m}=5$，$9^n=2$，则 $3^{2m+4n}=\blankline[4.4em]$.
+
+\ifanswer
+\ans{$\dfrac4{25}$}
+\fi
+
+\item 数学中的性质定理的一般形式是：若对象 $A$ 是 $q$，那么 $A$ 具有性质 $p$. 这里 $p$ 是 $q$ 的\blankline[4.4em]条件.
+
+\ifanswer
+\ans{必要}
+\fi
+
+\item 若不等式 $-2\leqslant x^2-2mx+6\leqslant2$ 恰有一解，则 $m=\blankline[4.4em]$.
+
+\ifanswer
+\ans{$\pm2$}
+\fi
+
+\item 设 $f(x)=\begin{cases}1,x>0\\ -1,x<0\end{cases}$，则不等式 $x+(x+2)f(x+2)\leqslant5$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为不等式 $x+(x+2)f(x+2)\leqslant5$，所以 $x+2+(x+2)f(x+2)\leqslant7$，}
+\step{当 $x+2>0$ 时，$f(x+2)=1$，}
+\step{代入原不等式得 $x+2+x+2\leqslant7\Rightarrow-2<x\leqslant\dfrac32$；}
+\step{当 $x+2<0$ 时，$f(x+2)=-1$，}
+\step{代入原不等式得 $x+2-x-2\leqslant7\Rightarrow0\leqslant7$，即 $x<-2$；}
+\step{综上，原不等式的解集为 $(-\infty,-2)\cup(-2,\dfrac32]$.}
+\solend
+\fi
+
+\item 关于 $x$ 的方程 $|x^2-2x-3|=a$ 恰有 4 个不等实根，则实数 $a\in\blankline[4.4em]$.
+
+\ifanswer
+\ans{$(0,4)$}
+\fi
+
+\item 若关于 $x$ 的不等式 $\dfrac{x^2-ax+2}{x^2-x+1}<3$ 对于任意实数 $x$ 都成立的 $a$ 的取值范围是 $(a_1,a_2)$，则 $a_1+a_2=\blankline[4.4em]$.
+
+\ifanswer
+\ans{6}
+\fi
+
+\item 已知集合 $A=\{x\mid x^2+mx+2\geqslant0\text{，且 }x\geqslant0\}$，$B=\{y\mid y=\sqrt{x^2+mx+2},x\in A\}$，若 $A=B$，则实数 $m=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{当 $x=-\dfrac m2\leqslant0$ 即 $m\geqslant0$ 时，$y=x^2+mx+2$ 在 $[0,+\infty)$ 上严格增，}
+% 原卷“由 $f(0)=2>0$”未先定义 $f$，照录未改（见文件头“原卷存疑”⑥）
+\step{由 $f(0)=2>0$，得 $x\geqslant0$ 时 $x^2+mx+2\geqslant2>0$，所以 $A=\{x\mid x\geqslant0\}$，}
+\step{而 $B=\{y\mid y\geqslant\sqrt2\}$，$A\neq B$，不满足题意；}
+\step{当 $x=-\dfrac m2>0$，即 $m<0$ 时，}
+\step{当 $\Delta=m^2-8<0$，即 $-2\sqrt2<m<0$ 时，得 $x^2+mx+2>0$，}
+\step{所以 $B\subseteq\{y\mid y>0\}$，而 $A=\{x\mid x\geqslant0\}$，则 $A\neq B$，不满足题意；}
+\step{当 $\Delta=m^2-8=0$ 即 $m=-2\sqrt2$ 时，$B=\{y\mid y=\sqrt{(x-\sqrt2)^2}\geqslant0,x\in A\}$，}
+\step{$A=\{x\mid x\geqslant0\}$，所以 $A=B$，满足题意；}
+\step{当 $\Delta=m^2-8>0$ 即 $m<-2\sqrt2$ 时，}
+\step{设 $x^2+mx+2=0$ 的两个根分别为 $x_1$、$x_2$，且 $x_1<x_2$，}
+\step{得 $A=\{x\mid0\leqslant x\leqslant x_1$ 或 $x>x_2\}$，}
+\step{而 $B=\{y\mid y=\sqrt{x^2+mx+2},x\in A\}=\{y\mid y\geqslant0\}$，}
+\step{所以 $A\neq B$，不满足题意；}
+\step{综上所述，$m=-2\sqrt2$.}
+\solend
+\fi
+
+% 原卷“④”处的关系式漏印（应另有关系式，按解析反推为 $d\neq4$），照录未改（见文件头“原卷存疑”②）
+\item 若集合 $\{a,b,c,d\}=\{1,2,3,4\}$，且下列四个关系：①$a=1$；②$b\neq1$；③$c=2$；④有且只有一个是正确的，则符合条件的有序数组 $(a,b,c,d)$ 的个数有\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{由题意，$a=2$ 时，$b=1$，$c=4$，$d=3$；$b=3$，$c=1$，$d=4$；}
+\step{$a=3$ 时，$b=1$，$c=4$，$d=2$；$b=1$，$c=2$，$d=4$；}
+\step{$b=2$，$c=1$，$d=4$；}
+\step{$a=4$ 时，$b=1$，$c=3$，$d=2$；}
+\step{所以符合条件的有序数组 $(a,b,c,d)$ 的个数是 6 个.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+% 第 11 题答案“B”直接印在题干括号内，按 高一53 第 13 题的成例括号留空、答案另提为 \ans{}（见文件头）
+\item 已知 $a>0$，且 $a^{2x}=4$，则 $\dfrac{a^{3x}+a^{-3x}}{a^x+a^{-x}}$ 的值为\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac{17}4$\qquad B. $\dfrac{13}4$
+
+C. $-\dfrac{17}4$\qquad D. $-\dfrac{13}4$
+
+\ifanswer
+\ans{$B$}
+\fi
+
+\item 设函数 $f(x)=mx^2-mx-1$. 若 $\exists x\in\R$，$f(x)>0$ 是假命题，则 $m\in$\mbox{（\quad）}
+
+\keepwithprev
+A. $(-\infty,-4)\cup(0,+\infty)$\qquad B. $(-4,0)$
+
+C. $(-\infty,-4]\cup[0,+\infty)$\qquad D. $[-4,0]$
+
+\ifanswer
+\solbegin
+\step{$\exists x\in\R$，$f(x)>0$ 是假命题，则 $\forall x\in\R$，$f(x)\leqslant0$ 是真命题，}
+\step{即 $mx^2-mx-1\leqslant0$ 在 $\R$ 上恒成立，}
+\step{当 $m=0$ 时，$-1<0$，符合题意；}
+\step{当 $m\neq0$ 时，需满足 $\begin{cases}m<0\\ \Delta=m^2+4m\leqslant0\end{cases}$，解得 $-4\leqslant m<0$；}
+\step{综上所述，$m$ 的取值范围为 $[-4,0]$，故选 $D$.}
+\solend
+\fi
+
+\item 设集合 $S,T\subseteq\{x\mid x\geqslant1,x\in\Z\}$，$S,T$ 中至少有两个元素，且 $S,T$ 满足：①对于任意 $x,y\in S$，若 $x\neq y$，都有 $xy\in T$；②对于任意 $x,y\in T$，若 $x<y$，则 $\dfrac yx\in S$；下列命题正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $S$ 有 4 个元素，则 $S\cup T$ 有 7 个元素
+
+B. 若 $S$ 有 4 个元素，则 $S\cup T$ 有 6 个元素
+
+C. 若 $S$ 有 3 个元素，则 $S\cup T$ 有 5 个元素
+
+D. 若 $S$ 有 3 个元素，则 $S\cup T$ 有 4 个元素
+
+% 第 13 题原卷既无括号内答案、也无【答案】/【解析】段，本稿照录（见文件头“原卷存疑”⑦）
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{13}
+
+\item （1）已知 $x>y>0$，且 $xy=1$，求 $\dfrac{x^2+y^2}{x-y}$ 的最小值.
+
+% 原卷 (2) 末尾缺字（“的.”，应为“的最小值”），照录未改（见文件头“原卷存疑”③）
+（2）已知 $x$、$y>0$，且 $2x+y=3$，求 $\dfrac1{2x+1}+\dfrac1{y+2}$ 的.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $x>y>0$，且 $xy=1$，}
+\step{所以 $\dfrac{x^2+y^2}{x-y}=\dfrac{(x-y)^2+2xy}{x-y}=(x-y)+\dfrac{2xy}{x-y}=(x-y)+\dfrac2{x-y}\geqslant2\sqrt2$，}
+\step{当且仅当 $x-y=\dfrac2{x-y}$ 时取等号，故最小值为 $2\sqrt2$.}
+\stepm{(2)}{因为 $2x+y=3$，}
+\step{所以 $\dfrac1{2x+1}+\dfrac1{y+2}=\dfrac16(2x+1+y+2)\left(\dfrac1{2x+1}+\dfrac1{y+2}\right)$}
+\step{$=\dfrac16\left(2+\dfrac{y+2}{2x+1}+\dfrac{2x+1}{y+2}\right)\geqslant\dfrac16(2+2)=\dfrac23$，故最小值为 $\dfrac23$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 已知命题 $P$：函数 $y=x^2-kx+1$ 的图像在 $y=x$ 的图像上方；命题 $Q$：不等式 $|4x-1|-x<k$ 的解集非空.
+
+（1）求命题 $P$ 为真时，实数 $k$ 的取值范围；
+
+（2）如果命题 $P$ 和 $Q$ 有且仅有一个是真命题，求实数 $k$ 的取值范围.
+
+\ifanswer
+\ans{（1）$(-3,1)$；（2）$\left(-3,-\dfrac14\right]\cup[1,+\infty)$}
+\fi
+
+\ansspace[8]
+
+\item 若实数 $x$、$y$、$m$ 满足 $|x-m|<|y-m|$，则称 $x$ 比 $y$ 接近 $m$.
+
+（1）若 4 比 $x^2-3x$ 接近 0，求 $x$ 的取值范围；
+
+（2）对于任意的两个不等正数 $a$、$b$，求证：$a+b$ 比 $\dfrac{b^2}a+\dfrac{a^2}b$ 接近 $2\sqrt{ab}$；
+
+（3）若对于任意的非零实数 $x$，实数 $a$ 比 $x+\dfrac4x$ 接近 $-1$，求 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得 $|x^2-3x|>4$，则 $x^2-3x>4$ 或 $x^2-3x<-4$，}
+\step{由 $x^2-3x>4$，得 $x>4$ 或 $x<-1$；由 $x^2-3x<-4$，得 $x$ 无解.}
+\step{所以 $x$ 取值范围为 $(-\infty,-1)\cup(4,+\infty)$.}
+\stepm{(2)}{因为 $a$、$b>0$ 且 $a\neq b$，所以 $a+b>2\sqrt{ab}$，且 $\dfrac{b^2}a+\dfrac{a^2}b>2\sqrt{ab}$，}
+\step{所以 $\left|\dfrac{b^2}a+\dfrac{a^2}b-2\sqrt{ab}\right|-\left|a+b-2\sqrt{ab}\right|=\left(\dfrac{b^2}a+\dfrac{a^2}b-2\sqrt{ab}\right)-(a+b-2\sqrt{ab})$}
+\step{$=\dfrac{b^2}a+\dfrac{a^2}b-(a+b)=\dfrac{(a+b)(a-b)^2}{ab}>0$，}
+\step{则 $\left|\dfrac{b^2}a+\dfrac{a^2}b-2\sqrt{ab}\right|-\left|a+b-2\sqrt{ab}\right|>0$，}
+\step{即 $a+b$ 比 $\dfrac{b^2}a+\dfrac{a^2}b$ 接近 $2\sqrt{ab}$.}
+\stepm{(3)}{由题意得 $|a+1|<\left|x+\dfrac4x+1\right|$ 对于 $x\in\R$，$x\neq0$ 恒成立，}
+\step{当 $x>0$ 时，$x+\dfrac4x+1\geqslant2\sqrt{x\cdot\dfrac4x}+1=5$，当 $x=2$ 时取等号，}
+\step{当 $x<0$ 时，则 $-x>0$，$(-x)+\dfrac4{-x}\geqslant2\sqrt{(-x)\cdot\dfrac4{-x}}=4$，当 $x=-2$ 时取等号，}
+% 原卷此句作“以 $x+4/x\leqslant-4$”（疑漏“所”字），照录未改（见文件头“原卷存疑”④）
+\step{以 $x+\dfrac4x\leqslant-4$，则 $x+\dfrac4x+1\leqslant-3$，综上，$\left|x+\dfrac4x+1\right|_{min}=3$.}
+\step{由 $|a+1|<3$，得 $-4<a<2$，即 $a$ 取值范围为 $(-4,2)$.}
+\solend
+\fi
+
+\ansspace[8]
+
+\end{enumerate}
+
+\bigsec{附加题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+% 第 17 题答案“C”直接印在题干括号内，按 高一53 第 13 题的成例括号留空、答案另提为 \ans{}（见文件头）
+\item 设 $f(x)$ 是定义在正整数集上的函数，且 $f(x)$ 满足：“当 $f(k)\geqslant k^2$ 成立时，总可推出 $f(k+1)\geqslant(k+1)^2$ 成立”. 那么，下列命题总成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $f(3)\geqslant9$ 成立，则当 $k\geqslant1$ 时，均有 $f(k)\geqslant k^2$ 成立
+
+B. 若 $f(5)\geqslant25$ 成立，则当 $k\leqslant5$ 时，均有 $f(k)\geqslant k^2$ 成立
+
+C. 若 $f(7)=48$ 成立，则当 $k\leqslant7$ 时，均有 $f(k)<k^2$ 成立
+
+D. 若 $f(4)\geqslant16$ 成立，则当 $k>4$ 时，均有 $f(k)>k^2$ 成立
+
+\ifanswer
+\ans{$C$}
+\fi
+
+\item 设 $S$ 是实数集 $\R$ 的非空子集，如果对任意 $a$、$b\in S$，有 $a+b\in S$，$a-b\in S$，则称 $S$ 是一个“和谐集”. 下面命题为假命题的是\mbox{（\quad）}
+
+\keepwithprev
+A. 存在有限集 $S$，$S$ 是一个“和谐集”
+
+B. 对任意无理数 $a$，集合 $\{x\mid x=ka,k\in\Z\}$ 都是“和谐集”
+
+C. 若 $S_1\neq S_2$，且 $S_1$、$S_2$ 均是“和谐集”，则 $S_1\cap S_2\neq\varnothing$
+
+D. 对任意两个“和谐集” $S_1$、$S_2$，若 $S_1\neq\R$，$S_2\neq\R$，则 $S_1\cup S_2=\R$
+
+\ifanswer
+\solbegin
+\step{$A$ 是真命题，$S=\{0\}$ 是和谐集；}
+\step{$B$ 是真命题；设 $x_1=k_1a$，$x_2=k_2a$，$k_1$、$k_2\in\Z$，}
+\step{$x_1+x_2=(k_1+k_2)a\in S$，$x_1-x_2=(k_1-k_2)a\in S$，}
+\step{对任意无理数 $a$，集合 $\{x\mid x=ka,k\in\Z\}$ 都是“和谐集”；}
+\step{$C$ 是真命题：任意和谐集中一定含有 0，所以 $S_1\cap S_2\neq\varnothing$；}
+\step{$D$ 假命题，取 $S_1=\{x\mid x=2k,k\in\Z\}$，$S_2=\{x\mid x=3k,k\in\Z\}$，}
+\step{$S_1$、$S_2$ 均是和谐集，但 5 不属于 $S_1$，也不属于 $S_2$，}
+% 原卷此句印作“$S_1\cup S_2=R$ 不是实数集”，自相矛盾，照录未改（见文件头“原卷存疑”⑤）
+\step{所以 $S_1\cup S_2=\R$ 不是实数集.}
+\step{故选 $D$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $a\leqslant\dfrac34x^2-3x+4\leqslant b$ 的解集为 $[a,b]$，则 $a+b=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{设 $f(x)=\dfrac34x^2-3x+4$，当 $x=-\dfrac{-3}{2\times\frac34}=2$ 时，$f(x)_{min}=1$，}
+\step{由题意得 $a\leqslant1$，且 $f(a)=f(b)=b$，$a<b$，}
+\step{由 $f(b)=b$ 得到 $\dfrac34b^2-3b+4=b$，解得 $b=\dfrac43$（舍去）或 $b=4$，}
+\step{得 $b=4$，由抛物线的对称轴为 $x=2$ 得到 $a=0$，所以 $a+b=4$.}
+\solend
+\fi
+
+\item 已知 $a>0$，$b>0$，$c>1$ 且 $a+b=1$，则 $\left(\dfrac{a^2+1}{ab}-2\right)\cdot c+\dfrac{\sqrt2}{c-1}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $a>0$，$b>0$，$a+b=1$，}
+\step{所以 $\dfrac{a^2+1}{ab}=\dfrac{a^2+(a+b)^2}{ab}=\dfrac{2a^2+b^2+2ab}{ab}\geqslant\dfrac{2\sqrt2ab+2ab}{ab}=2\sqrt2+2$，}
+\step{又 $c>1$，则 $\left(\dfrac{a^2+1}{ab}-2\right)\cdot c+\dfrac{\sqrt2}{c-1}\geqslant2\sqrt2c+\dfrac{\sqrt2}{c-1}$}
+\step{$=\sqrt2\left[2(c-1)+\dfrac1{c-1}+2\right]\geqslant\sqrt2\left[2\sqrt{2(c-1)\cdot\dfrac1{c-1}}+2\right]=4+2\sqrt2$，}
+\step{当且仅当 $\begin{cases}2a^2=b^2\\ a+b=1\\ 2(c-1)=\dfrac1{c-1}\end{cases}$，解得 $a=\sqrt2-1$、$b=2-\sqrt2$、$c=1+\dfrac{\sqrt2}2$，}
+\step{所以 $\left(\dfrac{a^2+1}{ab}-2\right)\cdot c+\dfrac{\sqrt2}{c-1}$ 的最小值是 $4+2\sqrt2$.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
