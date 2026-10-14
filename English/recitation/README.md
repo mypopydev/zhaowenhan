@@ -73,13 +73,20 @@ make list     # 查看清单
 
 - 自检：`python3 工具/内容校验.py`。当前 334 条译文全部中英配对完整；余下 **17 条**告警
   （并入 112—114 三期**未新增任何告警**）：
-  15 条 E 是提示词匹配告警，**已逐条核过**（2026-10-14）——**12 条**只是词形／句式变化、提示词
-  其实用到了（apply→applies **两处**（45#1、65#3）、range→ranging、spare→Sparing、give rise→gave rise、
-  hang→hung、turn out→turned out、too…to、more…than、be up to→is up to、so…that、not...but）；
-  **1 条**是原文笔误（68#3「Evveloped」，应为 Enveloped）；**2 条**才是参考译文确实没用提示词
-  （72#4 benefit、87#2 distance）。另 **2 条 F** 为短条目提示（51#1 中文 9 字、58#1 中文 7 字），
-  非错误。原文另有三处瑕疵均**照原文录入**：51#1「He is anEveryman.」缺空格、65#4
-  「Many respondents,,」双逗号、87#2「add to mysterious atmosphere」漏冠词
+  15 条 E 是提示词匹配告警，**已逐条核过**（2026-10-14）——**根因在判据本身**：`hint_in_en()`
+  把提示词去掉非字母后**只取前 5 个字母**，拿它到同样去过非字母的译文里找**子串**，于是
+  **词形变化**与**中间夹了别的词**这两类必然匹配不上，报出来的 12 条全是假警：
+  - **词形变化 7 条**：apply→applies（45#1、65#3 两处）、range→ranging（65#4）、
+    spare→Sparing（58#4）、give rise→gave rise（54#4）、hang→Hung（104#1）、turn out→turned out（108#2）
+  - **中间夹词 5 条**：so…that→“so strong that”（57#5）、too…to→“too complex to”（92#2）、
+    more…than→“more how… than how…”（84#3）、be up to→“is up to”（84#2）、
+    not...but→“not on …, but on …”（101#3）
+
+  余下 **1 条**是原文笔误（68#3「Evveloped」，应为 Enveloped）、**2 条**才是参考译文确实没用
+  提示词（72#4 benefit、87#2 distance）——**15 条 E 无一条是转录错误**。另 **2 条 F** 为短条目
+  提示（51#1 中文 9 字、58#1 中文 7 字），亦非错误。原文另有三处瑕疵均**照原文录入**：
+  51#1「He is anEveryman.」缺空格、65#4「Many respondents,,」双逗号、
+  87#2「add to mysterious atmosphere」漏冠词
 - 已知编号问题：第 79、64 期的**原文标题本身写错期号**（79 期标题写 -78-、64 期标题写
   -62-），已按人工核对改名；重解析以**文件名**为准，避免被错误标题覆盖
 - 合册：期数上来后用 `python3 工具/生成tex.py --bundle 10`（每 10 期一册，册内题号
