@@ -78,8 +78,9 @@ def main() -> int:
             if m:
                 paras = [p for p in re.findall(r"<(?:p|section)[^>]*>(.*?)</(?:p|section)>", m.group(1), re.S)
                          if re.sub(r"<[^>]+>", "", p).strip()]
-                # 粗略：条数*2（中+英）+ 谚语*2 应不小于段落数-2（允许前言/尾注）
-                expect = len(items) * 2 + (2 if d.get("proverb") else 0)
+                # 粗略：条数*2（中+英）+ 谚语*2 + 词汇块*1 应不小于段落数-2（允许前言/尾注）
+                expect = len(items) * 2 + (2 if d.get("proverb") else 0) \
+                    + (1 if d.get("vocab") else 0)
                 if len(paras) > expect + 3:
                     msgs.append(f"G 疑似漏条目：正文 {len(paras)} 段，仅计入 {expect}")
         # H：tex 是否含该期条目
@@ -90,6 +91,10 @@ def main() -> int:
                 key = it["en"][:25].replace("{", "").replace("}", "")
                 if key and key not in tx:
                     msgs.append(f"H tex 中缺译文 #{it.get('no')}: {key}")
+            # 词汇尾块也要落到答案卷里
+            for p in d.get("vocab") or []:
+                if p["en"] not in tx:
+                    msgs.append(f"H tex 中缺词汇：{p['en']}")
         if msgs:
             problems += len(msgs)
             print(f"== 第 {iss} 期（{d.get('date')}）")

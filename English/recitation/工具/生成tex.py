@@ -91,11 +91,29 @@ def answer_lines(it: dict) -> list[str]:
     ]
 
 
+def vocab_block(vcab: list, no: int, kind: str) -> list[str]:
+    """「本期词汇」尾块（第 114 期首见），排在正文条目（与谚语）之后、占一个题号。
+
+    默写卷只给中文释义（写英文）、回译卷只给英文（写中文）、答案卷给中英对照。
+    """
+    if kind == "en2zh":
+        en = "；".join(esc(p["en"]) for p in vcab)
+        return [f"\\num{{{no}}}\\textbf{{本期词汇}}\\quad {en}",
+                "\\vspace{0.25em}", "\\wline"]
+    if kind == "ans":
+        pairs = "；".join(f"{esc(p['en'])}　{esc(p['zh'])}" for p in vcab)
+        return [f"\\num{{{no}}}\\textbf{{本期词汇}}\\quad {pairs}"]
+    zh = "；".join(esc(p["zh"]) for p in vcab)
+    return [f"\\num{{{no}}}\\textbf{{本期词汇　{zh}}}",
+            "\\vspace{0.3em}", "\\wline\\vspace{0.3em}\n\\wline"]
+
+
 def build(data: dict) -> None:
     issue = data["issue"]
     items = data["items"]
     prov = data["proverb"]
-    n = len(items) + (1 if prov else 0)
+    vcab = data.get("vocab") or []
+    n = len(items) + (1 if prov else 0) + (1 if vcab else 0)
     # 标题里的来源段（如「26 二模」「24 一模」）与发布日期
     tail = data["title"].split(f"-{issue}-")[-1]
     src = f"{tail}　{data['date']}"
@@ -112,6 +130,9 @@ def build(data: dict) -> None:
         b.append(f"\\num{{{n}}}\\textbf{{谚语　{prov['zh']}}}")
         b.append("\\vspace{0.3em}")
         b.append("\\wline\\vspace{0.3em}\n\\wline")
+    if vcab:
+        b.append(SEP)
+        b.extend(vocab_block(vcab, n, "zh2en"))
     write(issue, "zh2en", head(issue, "默写（中 $\\to$ 英）",
                                "根据中文句子与提示词写出英文翻译，题号沿用原文。", src, n, data["date"]), b)
 
@@ -127,6 +148,9 @@ def build(data: dict) -> None:
         b.append(f"\\num{{{n}}}\\textbf{{谚语}}\\quad {prov['en']}")
         b.append("\\vspace{0.15em}")
         b.append(f"\\noindent\\hangindent=2.2em\\hangafter=1\\hspace{{2.2em}}{prov['zh']}")
+    if vcab:
+        b.append(SEP)
+        b.extend(vocab_block(vcab, n, "ans"))
     write(issue, "ans", head(issue, "中英对照（背诵 · 答案）",
                              "中 $\\to$ 英默写卷的参考答案；亦可直接用于背诵与回译自查。", src, n, data["date"]), b)
 
@@ -141,6 +165,9 @@ def build(data: dict) -> None:
         b.append(f"\\num{{{n}}}\\textbf{{谚语}}\\quad {prov['en']}")
         b.append("\\vspace{0.25em}")
         b.append("\\wline")
+    if vcab:
+        b.append(SEP)
+        b.extend(vocab_block(vcab, n, "en2zh"))
     write(issue, "en2zh", head(issue, "回译（英 $\\to$ 中）",
                                "根据英文句子写出中文原句，题号沿用原文。", src, n, data["date"]), b)
 
@@ -157,7 +184,8 @@ def bundle(datas: list, name: str) -> None:
     """合册：多期合成一册，册内题号连续编号，每期前加小标题"""
     span = f"{datas[0]['issue']}–{datas[-1]['issue']}"
     src = f"{datas[0]['date']} 至 {datas[-1]['date']}"
-    n = sum(len(d["items"]) + (1 if d.get("proverb") else 0) for d in datas)
+    n = sum(len(d["items"]) + (1 if d.get("proverb") else 0) + (1 if d.get("vocab") else 0)
+            for d in datas)
 
     def issue_head(d: dict) -> str:
         tail = d["title"].split(f"-{d['issue']}-")[-1]
@@ -205,6 +233,10 @@ def bundle(datas: list, name: str) -> None:
                     b.append(f"\\num{{{no}}}\\textbf{{谚语　{p['zh']}}}")
                     b.append("\\vspace{0.3em}")
                     b.append("\\wline\\vspace{0.3em}\n\\wline")
+            vcab = d.get("vocab") or []
+            if vcab:
+                no += 1
+                b.extend(vocab_block(vcab, no, kind))
         return b
 
     write(name, "zh2en", head(f"合册 {span}", "默写（中 $\\to$ 英）",

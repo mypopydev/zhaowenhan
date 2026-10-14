@@ -12,6 +12,8 @@
 解析规则：
   - 正文在 <div id="js_content"> 内，段落交替：中文段（末尾括号为提示词）→ 英文段
   - 末尾若出现「英文在前、中文在后」的成对段，判为谚语
+  - 末尾的「英文+短释义」对照串（如 114 期「-sing solo独唱 smooth out消除…」）判为**本期词汇**，
+    存进 vocab 字段（不入条目）；「知识星球」推广尾注按尾注滤掉
 """
 
 import datetime
@@ -77,7 +79,9 @@ def body_paragraphs(s: str):
     return out
 
 
-NOTE_PAT = re.compile(r"手搓|点赞|转发|推荐|感谢支持|如裨益|内容均为|扫码|关注|往期|合集|点个在看|星标")
+# 「知识星球」是 2026-10-14 起（第 112 期）每期都有的**推广尾注**
+# （「笔者现已开通知识星球，内容每日更新…」），与既有的点赞/关注一类同性质，一并滤掉
+NOTE_PAT = re.compile(r"手搓|点赞|转发|推荐|感谢支持|如裨益|内容均为|扫码|关注|往期|合集|点个在看|星标|知识星球")
 CJK = r"\u4e00-\u9fff"
 
 
@@ -89,13 +93,52 @@ def has_cjk(t: str) -> bool:
     return bool(re.search(f"[{CJK}]", t))
 
 
+# parse() 自己产出的字段——超出这个集合的键说明是**人工补的**，--reparse 不覆盖
+PARSED_KEYS = {"title", "issue", "date", "url", "items", "proverb", "vocab", "warns"}
+ITEM_KEYS = {"no", "zh", "hint", "en", "alt"}
+
+
+# 「本期词汇」尾块：整段是「英文 + 短汉字释义」的对照串，如第 114 期的
+# 「-sing solo独唱 smooth out消除  fast-growing 快速发展的」。它不是翻译条目、也不是谚语，
+# 单列进 json 的 vocab 字段（生成器在三版末尾排成一块「本期词汇」）。
+VOCAB_PAIR = re.compile(rf"(-?[A-Za-z][A-Za-z\-'’]*(?:\s+[A-Za-z\-'’]+)*)\s*([{CJK}]{{1,6}})")
+
+
+def parse_vocab(t: str):
+    """整段是词汇对照块则返回 [{"en","zh"}]，否则 None。
+
+    三条判据同时成立才认（防误吞正常条目或谚语）：
+      ① 段内没有句末标点「。！？」——正常中文条目的句子都以「。」收尾；
+      ② 至少 2 组「英文 + 短释义」（释义 ≤6 字）；
+      ③ 段内**所有**汉字都被这些释义覆盖（不留孤立汉字）。
+    """
+    if re.search(r"[。！？]", t):
+        return None
+    pairs = []
+    for m in VOCAB_PAIR.finditer(t):
+        en, zh = m.group(1).strip(), m.group(2)
+        pairs.append({"en": en, "zh": zh})
+    covered = sum(len(p["zh"]) for p in pairs)
+    total_cjk = len(re.findall(f"[{CJK}]", t))
+    if len(pairs) < 2 or covered < total_cjk:
+        return None
+    return pairs
+
+
 def parse(s: str, url: str):
     title, date, issue = meta(s)
     paras = [p for p in body_paragraphs(s) if not is_note(p)]
-    items, proverb, warns = [], None, []
+    items, proverb, warns, vocab = [], None, [], None
     i = 0
     while i < len(paras):
         cur = paras[i]
+        # ⓬ 「本期词汇」尾块（第 114 期首见）：整段英文＋短释义对照 → vocab
+        if vocab is None:
+            vc = parse_vocab(cur)
+            if vc:
+                vocab = vc
+                i += 1
+                continue
         numbered = re.match(r"^\s*\d+\s*[.、)．]\s*", cur)
         # ⓪ 「N. 英文. 中文」例句体（早期期号）：拆成一条（英文在前、中文在后）
         if numbered:
@@ -163,7 +206,7 @@ def parse(s: str, url: str):
         warns.append(f"孤立英文段：{cur[:30]}")
         i += 1
     return {"title": title, "issue": issue, "date": date, "url": url,
-            "items": items, "proverb": proverb, "warns": warns}
+            "items": items, "proverb": proverb, "vocab": vocab or [], "warns": warns}
 
 
 def main() -> int:
@@ -188,7 +231,20 @@ def main() -> int:
                     old0 = json.load(open(jp0, encoding="utf-8"))
                     if old0.get("url"):
                         data["url"] = old0["url"]
-                    if old0.get("date") == data.get("date") and old0.get("items") == data.get("items"):
+                    # **人工补过字段的 json 一律不重写**：parse() 不产出这些字段，
+                    # 重写会把人工成果静默冲掉（2026-10-14 踩到——107.json 的
+                    # correction／editor_note 是本模块唯一一处「原文参考译文有误」订正，
+                    # 生成器生成 tex 时要读它；64／75／78／79 另有顶层 note）
+                    hand = (set(old0) - PARSED_KEYS) | (
+                        {k for it in old0.get("items", []) for k in it} - ITEM_KEYS)
+                    if hand:
+                        print(f"  · {name} 含人工字段 {sorted(hand)}，跳过（不覆盖）")
+                        continue
+                    # 老 JSON 没有 vocab 字段时按「与本次一致」处理——避免回归重解析时
+                    # 仅仅为了补一个空字段而重写全部 72 份 json（vocab 是可选字段）
+                    if (old0.get("date") == data.get("date")
+                            and old0.get("items") == data.get("items")
+                            and old0.get("vocab", data["vocab"]) == data["vocab"]):
                         print(f"  · {name} 与既有 JSON 一致，跳过")
                         continue
                 except Exception:
