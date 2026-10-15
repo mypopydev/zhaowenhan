@@ -104,12 +104,13 @@ ITEM_KEYS = {"no", "zh", "hint", "en", "alt"}
 VOCAB_PAIR = re.compile(rf"(-?[A-Za-z][A-Za-z\-'’]*(?:\s+[A-Za-z\-'’]+)*)\s*([{CJK}]{{1,6}})")
 
 
-def parse_vocab(t: str):
+def parse_vocab(t: str, last: bool = False):
     """整段是词汇对照块则返回 [{"en","zh"}]，否则 None。
 
-    三条判据同时成立才认（防误吞正常条目或谚语）：
+    判据（防误吞正常条目或谚语）：
       ① 段内没有句末标点「。！？」——正常中文条目的句子都以「。」收尾；
-      ② 至少 2 组「英文 + 短释义」（释义 ≤6 字）；
+      ② 至少 2 组「英文 + 短释义」（释义 ≤6 字）；**第 115 期的尾块只给了 1 组**
+         （「-sink into their phones 沉迷于手机」），故正文**末段**放宽到 1 组（`last=True`）；
       ③ 段内**所有**汉字都被这些释义覆盖（不留孤立汉字）。
     """
     if re.search(r"[。！？]", t):
@@ -120,7 +121,7 @@ def parse_vocab(t: str):
         pairs.append({"en": en, "zh": zh})
     covered = sum(len(p["zh"]) for p in pairs)
     total_cjk = len(re.findall(f"[{CJK}]", t))
-    if len(pairs) < 2 or covered < total_cjk:
+    if len(pairs) < (1 if last else 2) or covered < total_cjk:
         return None
     return pairs
 
@@ -133,8 +134,9 @@ def parse(s: str, url: str):
     while i < len(paras):
         cur = paras[i]
         # ⓬ 「本期词汇」尾块（第 114 期首见）：整段英文＋短释义对照 → vocab
+        #   第 115 期起尾块可能只有 1 组，故把「是否正文末段」传进去
         if vocab is None:
-            vc = parse_vocab(cur)
+            vc = parse_vocab(cur, last=(i == len(paras) - 1))
             if vc:
                 vocab = vc
                 i += 1
