@@ -1,0 +1,461 @@
+% 高一62_交附闵行_周末作业10.16.tex
+%   —— 高一上数学“2026-2027 年交附闵行高一上周末作业 10.16”（讲评版）
+% 试卷版：xelatex 高一62_交附闵行_周末作业10.16.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一62_交附闵行_周末作业10.16.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一62_交附闵行_周末作业10.16.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，连载“27学年高一62”；
+% 原文标题“27学年高一62——2026-2027年上海市交附闵行高一上周末作业10.16”
+% （篇名按同系列 高一56 的篇名格式记写；本稿转录只依据 13 张 PNG 卷面，未逐字核对网页标题）；
+% 原文链接：https://mp.weixin.qq.com/s/fcCkku2L0ki3JAnex1Ce4g。
+% 页面标注发布时间 2026-10-16 21:44（上海）。
+% 正文为 13 张 PNG 页：第 04、05、07、08、10、11、12 页 4762×6735，
+% 第 01、02、03、06、09、13 页 2560×3620（**同一篇各页分辨率不同**），均按页序读取。
+% 13 页全为试卷正文页（卷首标题在第 1 页页顶，卷末第 21 题解析止于第 13 页），
+% 无封面页、目录页、二维码或宣传页。粉色斜排“魔都数学加油站”为卷面水印，与公众号页脚一并未录入。
+%
+% 卷首标题：照卷面印作“2026--2027 年交附闵行高一上周末作业 10.16”（年份区间按全稿惯例
+% 排 en dash）。原卷只有一行标题、无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、选择题”“三、解答题”）。
+%
+% 讲评版：原卷每题下直接印【解析】。**全卷 19 题都印【解析】（无一处只印【答案】，
+% 也没有答案印在题干括号内——四道选择题的作答括号原卷即留空）**，按全稿口径这类题
+% 不另提 \ans{}；各题解析末句的结论（第 13—16 题的“故选 A／C／D”、各填空与解答题
+% 的“综上/故…”）照录在解析内。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、函数与导数、
+% 不等式”（与 高一56 同三项）：19 题中集合与常用逻辑用语 5 题（第 4、13、16、18、21 题），
+% 不等式 9 题（第 5、6、7、8、9、11、12、14、19 题，含二次不等式命题、判别式法最值、
+% 基本不等式四题、高斯函数解不等式、绝对值不等式、正反比例应用题），
+% 函数与导数 5 题（第 3、10、15、17、20 题，对数方程、函数单调性与方程思想、
+% 对数运算估算、指数对数求值、新定义函数），三类均确有内容，故并标。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【解析】，本稿按全稿惯例将解析置于答案版，试卷版保持干净；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约两个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ④ 原卷实数集记号不统一：第 10 题解析两处排**正体加粗** $\mathbf{R}$，
+%      第 4、13、18 题排斜体 $R$，本稿按全稿惯例一律改用 $\R$；
+%      正整数集原卷作 $N^*$（第 21 题），本稿照全稿惯例排 $\N^*$；
+%   ⑤ 原卷在数学式内多处用半角逗号（如第 4 题题干 $m^2-1=0,m\in R$、
+%      第 10 题题干 $e^{x_1}+x_1=6,\ln\cdots$、第 8 题题干与解析、第 17 题解析 (2)(3)、
+%      第 21 题题干 $a_1,a_2,\cdots$），均照录未强改；句末句点按全稿惯例排西文句点；
+%   ⑥ 第 5 题题干的①—④原卷各自另起一行，本稿照排为四个自然段；
+%   ⑦ 第 13 题四个选项原卷两行两条、第 14、15 题四个选项一行四条、第 16 题每条一行，
+%      本稿均照原卷行排（选项用 \qquad 分隔）；选择题作答括号按全稿惯例排 \mbox{（\quad）}；
+%   ⑧ 第 14 题【解析】的“法一：”“法二：”标号原卷排**红色加粗**（全卷仅有的红字，2 处），
+%      本稿按全稿子题标号样式排 \stepm{法一：}{…}、\stepm{法二：}{…}（加粗着色、不改黑色
+%      基调，同 高一60 第 15 题成例），冒号照原卷排全角；
+%   ⑨ 第 17—20 题的子问按全稿惯例用 enumerate 的 (1)(2)(3)；第 21 题题干小问因原卷
+%      跳号印作（1）（2）（4）（见“原卷笔误/存疑”①），无法用 enumerate 自动编号，
+%      本稿照录为三个自然段（全角括号，同 高一60 第 21 题成例）；解析中的子问标号
+%      一律用 \stepm{(1)}{…}（第 21 题解析照原卷标 (1)(2)(3)）；
+%   ⑩ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace（末题用 \ansspace*）。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 21 题题干的小问编号**跳号**：印作（1）（2）（4），而紧随其后的【解析】按
+%      (1)(2)(3) 写——题干第（4）问实为第（3）问。本稿题干照录（4）、解析照录 (3)，未改
+%      （与 高一60 第 21 题同一处跳号，两卷此题同源）。
+%   ② 第 21 题【解析】(2) “从而 $\{(a_i,a_i)\}\in T(i=1,2,\cdots,k)$”：由上一句
+%      $1\notin A$ 应得 $(a_i,a_i)\notin T$（因 $a_i/a_i=1$），与紧随的“$T$ 中元素个数
+%      最多为 $C_k^2$”的推理亦只有 $\notin$ 才自洽；原卷此处印作 $\in$，
+%      已放大确认无斜线，照录未改（与 高一60 第 21 题同一处）。
+%   ③ 第 21 题【解析】(1) 首式印作 $\dfrac{1}{1}\in\{1,2,4\}$（分子分母同为 1），
+%      疑为 $\dfrac12$ 之误（同源卷 高一60 即印 $\dfrac12$）；但 $1\in\{1,2,4\}$ 结论
+%      不受影响，本稿照录 $\dfrac{1}{1}$ 未改。
+%   ④ 第 5 题题干“解集是 $\{x\mid x\neq d\}$”中的 $d$ 全卷未作任何交代（由解析
+%      $\Delta=a^2-4b=0$ 知应指二重根 $-\frac a2$），系原卷记号悬空，照录未改。
+%   ⑤ 第 14 题【解析】法一“$[0,1]$ 使 $2x-2\leqslant a\leqslant4x+2$ 成立”一句缺动词
+%      （疑漏“对”字），照录未改（与 高一60 第 15 题同一句、同一病）。
+%   ⑥ 第 16 题【解析】“则 $a$ 的取值范围 $(-\infty,-2\sqrt2)\cup(2\sqrt2,+\infty)$”
+%      “取值范围”后脱一“为”字，照录未改。
+%
+% 插图：无（全卷 13 页无任何图形、无“如图”字样）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年交附闵行高一上周末作业 10.16}{集合与常用逻辑用语、函数与导数、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知 $\log_{2x^2-1}(3x^2+2x-1)=1$，则 $x=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\log_{2x^2-1}(3x^2+2x-1)=1$，所以 $\begin{cases}2x^2-1>0\\ 2x^2-1\neq1\\ 3x^2+2x-1>0\\ 2x^2-1=3x^2+2x-1\end{cases}$，解得 $x=-2$.}
+\solend
+\fi
+
+\item 设集合 $A=\{x\mid x^2+2(m+1)x+m^2-1=0,m\in\R\}$，且 $A\subseteq\{0,-4\}$，则实数 $m$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $A=\varnothing$ 时，$\Delta=4(m+1)^2-4(m^2-1)=8(m+1)<0$，解得 $m<-1$；}
+\step{当 $A=\{0\}$ 时，$\begin{cases}\Delta=8(m+1)=0\\ -2(m+1)=0\end{cases}$，解得 $m=-1$；}
+\step{当 $A=\{-4\}$ 时，$\begin{cases}\Delta=8(m+1)=0\\ -2(m+1)=-8\end{cases}$，解得 $m\in\varnothing$；}
+\step{当 $A=\{0,-4\}$ 时，$\begin{cases}\Delta=8(m+1)>0\\ -2(m+1)=0-4=-4\end{cases}$，解得 $m=1$；}
+\step{综上所述，实数 $m$ 的取值范围是 $(-\infty,-1]\cup\{1\}$.}
+\solend
+\fi
+
+\item 已知不等式 $x^2+ax+b>0(a>0)$ 的解集是 $\{x\mid x\neq d\}$，
+
+① $a^2=4b$
+
+② 若不等式 $x^2+ax+b<c$ 的解集为 $(-3,1)$，则 $a+b+c=7$
+
+③ 若不等式 $x^2+ax-b<0$ 的解集为 $(x_1,x_2)$，则 $x_1x_2>0$
+
+④ 若不等式 $x^2+ax+b<c$ 的解集为 $(x_1,x_2)$，且 $|x_1-x_2|=4$，则 $c=4$
+
+其中正确结论的序号是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意，不等式 $x^2+ax+b>0(a>0)$ 的解集是 $\{x\mid x\neq d\}$，}
+\step{所以 $\Delta=a^2-4b=0$，所以 $b=\dfrac{a^2}4$，所以①正确；}
+\step{对于②，$x^2+ax+b<c$ 变形为 $x^2+ax+b-c<0$，其解集为 $(-3,1)$，}
+\step{所以 $\begin{cases}-3+1=-a\\ -3\times1=b-c\\ a^2=4b\end{cases}$，得 $\begin{cases}a=2\\ b=1\\ c=4\end{cases}$，故 $a+b+c=7$ 成立，所以②正确；}
+\step{对于③，若不等式 $x^2+ax-b<0$ 的解集为 $(x_1,x_2)$，}
+\step{由韦达定理得 $x_1x_2=-b=-\dfrac{a^2}4<0$，所以③错误；}
+\step{对于④，若不等式 $x^2+ax+b<c$ 的解集为 $(x_1,x_2)$，}
+\step{即 $x^2+ax+b-c<0$ 的解集为 $(x_1,x_2)$，}
+\step{由韦达定理得 $x_1+x_2=-a,x_1x_2=b-c=\dfrac{a^2}4-c$，}
+\step{则 $|x_1-x_2|=\sqrt{(x_1+x_2)^2-4x_1x_2}=\sqrt{a^2-4\left(\dfrac{a^2}4-c\right)}=2\sqrt c=4$，解得 $c=4$，}
+\step{所以④正确.}
+\step{故正确的是①②④.}
+\solend
+\fi
+
+\item 若 $x>-1$，则 $\dfrac{2x^2-x+3}{x^2-x+1}$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $y=\dfrac{2x^2-x+3}{x^2-x+1}(x>-1)$，整理得 $(y-2)x^2+(1-y)x+(y-3)=0$.}
+\step{当 $y=2$ 时，方程化为 $-x-1=0$，解得 $x=-1$，不满足 $x>-1$，故 $y\neq2$.}
+\step{当 $y\neq2$ 时，一元二次方程有实数解，}
+\step{故判别式 $\Delta=(1-y)^2-4(y-2)(y-3)\geqslant0$，}
+\step{展开得 $-3y^2+18y-23\geqslant0$，即 $3y^2-18y+23\leqslant0$.}
+\step{求解得 $y\in\left[\dfrac{9-2\sqrt3}3,\dfrac{9+2\sqrt3}3\right]$.}
+\step{验证 $y=\dfrac{9+2\sqrt3}3$ 时，对应的 $x=\sqrt3-1>-1$，满足条件.}
+\step{故最大值为 $\dfrac{2\sqrt3+9}3$.}
+\solend
+\fi
+
+\item 若正实数 $x$、$y$ 满足 $x+y+xy-7=0$，则 $x+2y$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $x$、$y$ 为正实数，$x+y+xy=7$ 得 $(x+1)(y+1)=8$，}
+\step{所以 $(x+1)(2y+2)=16$，所以 $(x+1)+(2y+2)\geqslant2\sqrt{(x+1)(2y+2)}=8$，}
+\step{当且仅当 $x=3$，$y=1$ 时取等号，所以 $x+2y$ 的最小值为 $5$.}
+\solend
+\fi
+
+\item 已知 $a>0,b>0,\sqrt{ab}=\dfrac{20}a+\dfrac{26}b$，则 $\dfrac1{\log_{\frac a2}520}+\dfrac1{\log_b520}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{已知 $a>0,b>0,\sqrt{ab}=\dfrac{20}a+\dfrac{26}b$，}
+\step{由基本不等式得 $\dfrac{20}a+\dfrac{26}b\geqslant2\sqrt{\dfrac{20}a\cdot\dfrac{26}b}=\dfrac{2\sqrt{520}}{\sqrt{ab}}$，故 $\sqrt{ab}\geqslant\dfrac{2\sqrt{520}}{\sqrt{ab}}$，}
+\step{所以 $\dfrac1{\log_{\frac a2}520}+\dfrac1{\log_b520}=\log_{520}\dfrac12a+\log_{520}b=\log_{520}\dfrac12ab$，}
+\step{则 $\log_{520}\dfrac12ab\geqslant\log_{520}\sqrt{520}=\dfrac12$，}
+\step{当且仅当 $a^2=\dfrac{40\sqrt{130}}{13},b^2=\dfrac{26\sqrt{130}}5$ 时取等号，}
+\step{故 $\dfrac1{\log_{\frac a2}520}+\dfrac1{\log_b520}$ 的最小值为 $\dfrac12$.}
+\solend
+\fi
+
+\item 高斯，著名的数学家、物理学家、天文学家，是近代数学奠基者之一，享有“数学王子”之称. 函数 $y=[x]$ 为高斯函数，其中 $[x]$ 表示不超过实数 $x$ 的最大整数，如 $[1.2]=1$，$[-1.2]=-2$. 若关于 $x$ 的不等式 $[x]^2-2[x]+(1-a)(1+a)\leqslant0$ 的解集为 $\{x\mid-1\leqslant x<4\}$，则正数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$[x]^2-2[x]+(1-a)(1+a)\leqslant0$ 可化为 $([x]-1+a)([x]-1-a)\leqslant0$，}
+\step{令 $([x]-1+a)([x]-1-a)=0$，解得 $[x]=1-a$ 或 $[x]=1+a$.}
+\step{因为 $a>0$，则 $1-a<1+a$，所以不等式的解为 $1-a\leqslant[x]\leqslant1+a$，}
+\step{当 $-1\leqslant x<4$ 时，$[x]$ 可取的整数为 $-1,0,1,2,3$，}
+\step{因为不等式的解集为 $\{x\mid-1\leqslant x<4\}$，所以 $\begin{cases}-2<1-a\leqslant-1\\ 3\leqslant1+a<4\end{cases}$，解得 $2\leqslant a<3$，}
+\step{故正数 $a$ 的取值范围是 $[2,3)$.}
+\solend
+\fi
+
+\item 已知实数 $x_1,x_2$ 满足 $e^{x_1}+x_1=6,\ln\sqrt[3]{3x_2+1}+x_2=\dfrac53$，则 $x_1+3x_2=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\ln\sqrt[3]{3x_2+1}+x_2=\dfrac53$，则 $\dfrac13\ln(3x_2+1)+x_2=\dfrac53$，}
+\step{则 $\ln(3x_2+1)+3x_2=5$，所以 $\ln(3x_2+1)+3x_2+1=6$，}
+\step{即 $\ln(3x_2+1)+e^{\ln(3x_2+1)}=6$，}
+\step{令 $f(x)=e^x+x$，}
+\step{因为函数 $y=e^x$ 与 $y=x$ 均在 $\R$ 上严格增，}
+\step{所以函数 $f(x)=e^x+x$ 在 $\R$ 上严格增，}
+\step{又因为 $e^{x_1}+x_1=6$，即 $f(x_1)=f(\ln(3x_2+1))=6$，所以 $x_1=\ln(3x_2+1)$，}
+\step{所以 $x_1+3x_2=\ln(3x_2+1)+3x_2=5$.}
+\solend
+\fi
+
+\item 若正数 $a$、$b$ 满足 $\log_2\sqrt{a+3b}=1+\log_4a+\log_4b$，则 $a+3b$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a>0$，$b>0$，则 $\sqrt{a+3b}>0$，又 $\log_2\sqrt{a+3b}=1+\log_4a+\log_4b$，}
+\step{则 $\log_2\sqrt{a+3b}=\log_44+\log_4a+\log_4b=\log_4(4ab)$，}
+\step{即 $\dfrac12\log_2(a+3b)=\dfrac12\log_2(4ab)$，即 $a+3b=4ab$，}
+\step{等式两边同时除以 $4ab$，则 $\dfrac14\left(\dfrac1b+\dfrac3a\right)=1$，}
+\step{则 $a+3b=\dfrac14(a+3b)\times\left(\dfrac1b+\dfrac3a\right)=\dfrac14\left(\dfrac ab+6+\dfrac{9b}a\right)\geqslant\dfrac14\times\left(6+2\sqrt{\dfrac ab\times\dfrac{9b}a}\right)=3$，}
+\step{当且仅当 $\begin{cases}\dfrac ab=\dfrac{9b}a\\ a+3b=4ab\end{cases}$ 即 $\begin{cases}b=\dfrac12\\ a=\dfrac32\end{cases}$ 时取等号，所以 $a+3b$ 的最小值为 $3$.}
+\solend
+\fi
+
+\item 已知 $x,y,m$ 为正实数，若不等式 $\dfrac m3-\dfrac23\geqslant\dfrac{8x}{m(4x+y)}+\dfrac{2y}{m(x+y)}$ 恒成立，则 $m$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $a=4x+y,b=x+y$，则 $x=\dfrac{a-b}3,y=\dfrac{4b-a}3$，}
+\step{所以 $\dfrac{8x}{4x+y}+\dfrac{2y}{x+y}=\dfrac{\frac{8(a-b)}3}{a}+\dfrac{\frac{2(4b-a)}3}{b}=\dfrac{16}3-\dfrac23\left(\dfrac{4b}a+\dfrac ab\right)$}
+\step{$\leqslant\dfrac{16}3-\dfrac23\times2\sqrt{\dfrac{4b}a\cdot\dfrac ab}=\dfrac{16}3-\dfrac83=\dfrac83$，}
+\step{当且仅当 $\dfrac{4b}a=\dfrac ab$，即 $a=2b$ 时取等号，}
+\step{因为不等式 $\dfrac{m^2}3-\dfrac{2m}3\geqslant\dfrac{8x}{4x+y}+\dfrac{2y}{x+y}$ 恒成立，即 $\dfrac{m^2}3-\dfrac{2m}3\geqslant\dfrac83$ 恒成立，}
+\step{即 $m^2-2m-8\geqslant0$ 恒成立，解得 $m\geqslant4$ 或 $m\leqslant-2$，}
+\step{又因为 $m>0$，所以 $m\geqslant4$，所以 $m$ 的取值范围为 $[4,+\infty)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知集合 $M=\{x\mid ax^2-2x+1=0,a\in\R\}$，则“$a=1$”是“$M$ 仅有 1 个真子集”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分不必要条件\qquad B. 必要不充分条件
+
+C. 充要条件\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{若集合 $M=\{x\mid ax^2-2x+1=0,a\in\R\}$ 仅有一个真子集，则 $M$ 只有一个元素，}
+\step{即 $ax^2-2x+1=0$ 只有一个根，}
+\step{当 $a=0$ 时，显然符合题意；}
+\step{当 $a\neq0$ 时，$\Delta=4-4a=0$，即 $a=1$，}
+\step{则“$a=1$”是“$M$ 仅有 1 个真子集”的充分不必要条件. 故选 $A$.}
+\solend
+\fi
+
+\item 若不等式 $|3x-a|\leqslant x+2$ 的解集包含集合 $[0,1]$，则实数 $a$ 的取值范围为\mbox{（\quad）}
+
+\keepwithprev
+A. $[0,2]$\qquad B. $[0,1]$\qquad C. $[1,2]$\qquad D. $(1,2)$
+
+\ifanswer
+\solbegin
+% 原卷“法一：”“法二：”排红色加粗（全卷仅有的红字），本稿按全稿子题标号样式排 \stepm
+% （详见文件头“与原卷的排版差异”⑧）
+\stepm{法一：}{不等式 $|3x-a|\leqslant x+2$ 化为 $2x-2\leqslant a\leqslant4x+2$，}
+% 原卷此句缺动词（疑漏“对”字），照录未改（见文件头“原卷笔误/存疑”⑤）
+\step{$[0,1]$ 使 $2x-2\leqslant a\leqslant4x+2$ 成立，则 $0\leqslant a\leqslant2$，故选 $A$.}
+\stepm{法二：}{将两边平方整理得 $8x^2-(6a+4)x+a^2-4\leqslant0$ 对 $[0,1]$ 恒成立，}
+\step{则有 $\begin{cases}a^2-4\leqslant0\\ a^2-6a\leqslant0\end{cases}$，解得 $0\leqslant a\leqslant2$，故选 $A$.}
+\solend
+\fi
+
+\item 数学运算是指在明晰运算对象的基础上，依据运算法则解决数学问题的素养. 因为运算，数的威力无限；没有运算，数就只是一个符号，对数运算与指数运算是两类重要的运算，对数的运算性质降低了运算的级别，简化了运算，在数学发展史上是伟大的成就. 而位数是指一个自然数有效位的个数，例如：$2^{10}=1024$，所以 $2^{10}$ 的位数为 4. 请你运用所学过的对数运算的知识，估计 $2025^{2026}$ 的位数是\mbox{（\quad）}
+
+\keepwithprev
+A. $6697$\qquad B. $6698$\qquad C. $6699$\qquad D. $6700$
+
+\ifanswer
+\solbegin
+\step{设 $2025^{2026}=t$，所以 $\lg t=2026\lg2025$，}
+\step{因为 $\lg2025\approx3.3064$，所以 $\lg t\approx6698.8$，}
+\step{所以 $t\approx10^{6698.8}\in(10^{6698},10^{6699})$，所以 $2025^{2026}$ 的位数为 $6699$. 故选 $C$.}
+\solend
+\fi
+
+\item 用 $C(A)$ 表示非空集合 $A$ 中的元素个数. 对于集合 $A$、$B$，定义
+$A*B=\begin{cases}C(A)-C(B),C(A)\geqslant C(B)\\ C(B)-C(A),C(A)<C(B)\end{cases}$，
+若 $A=\{0,1\}$，$B=\{x\mid(x^2-ax)(x^2+ax+2)=0\}$，设实数 $a$ 的所有可能取值组成的集合是 $S$，则下列选项不正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. $C(B)$ 的可能值为 $1$，$2$，$3$，$4$
+
+B. 若 $A*B=2$，则 $a$ 的取值范围为 $(-\infty,-2\sqrt2)\cup(2\sqrt2,+\infty)$
+
+C. 若 $A*B=1$，则 $C(S)=3$
+
+D. 若 $A*B=0$，则 $a$ 的取值范围为 $(-2\sqrt2,2\sqrt2)$
+
+\ifanswer
+\solbegin
+\step{对于集合 $B$，当 $a=0$ 时，方程 $x^2(x^2+2)=0$ 的解为 $x=0$，$C(B)=1$，}
+\step{当 $a\neq0$ 时，$x^2-ax=0$ 或 $x^2+ax+2=0$，}
+\step{其中 $x^2-ax=0$ 的解为 $x_1=0$，$x_2=a$，}
+\step{若 $\Delta=a^2-8>0$，即 $a>2\sqrt2$ 或 $a<-2\sqrt2$，}
+\step{方程 $x^2+ax+2=0$ 有两个不相等的实数根，此时 $C(B)=4$；}
+\step{若 $\Delta=a^2-8=0$，即 $a=2\sqrt2$ 或 $-2\sqrt2$，}
+\step{方程 $x^2+ax+2=0$ 有两个相等的实数根，此时 $C(B)=3$；}
+\step{若 $\Delta=a^2-8<0$，即 $-2\sqrt2<a<0$ 或 $0<a<2\sqrt2$，}
+\step{方程 $x^2+ax+2=0$ 无实数根，此时 $C(B)=2$；}
+\step{所以 $C(B)$ 的可能值为 $1$，$2$，$3$，$4$，故 $A$ 正确；}
+\step{若 $A*B=2$，且 $C(A)=2$，则 $C(B)=4$，}
+% 原卷“取值范围”后脱一“为”字，照录未改（见文件头“原卷笔误/存疑”⑥）
+\step{则 $a$ 的取值范围 $(-\infty,-2\sqrt2)\cup(2\sqrt2,+\infty)$，故 $B$ 正确；}
+\step{若 $A*B=1$，且 $C(A)=2$，则 $C(B)=1$ 或 $3$，}
+\step{当 $C(B)=1$ 时，$a=0$，}
+\step{当 $C(B)=3$ 时，$a=2\sqrt2$ 或 $-2\sqrt2$，此时集合 $S=\{0,-2\sqrt2,2\sqrt2\}$，}
+\step{则 $C(S)=3$，故 $C$ 正确；}
+\step{若 $A*B=0$，且 $C(A)=2$，则 $C(B)=2$，}
+\step{由此可得 $a$ 的取值范围为 $(-2\sqrt2,0)\cup(0,2\sqrt2)$，故 $D$ 不正确；}
+\step{故选 $D$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 计算下列各式的值：
+
+\begin{enumerate}[label=(\arabic*)]
+\item 已知 $a^{\frac12}+a^{-\frac12}=\sqrt6$，求 $\dfrac{a^{\frac32}-a^{-\frac32}}{a^{\frac12}-a^{-\frac12}}$；
+\item $27^{\frac23}-2^{\log_23}\times\log_2\dfrac18+2\lg\left(\sqrt{3+\sqrt5}+\sqrt{3-\sqrt5}\right)$；
+\item $\log_{2.5}6.25+\lg0.01+\ln\sqrt e-2^{1+\log_23}$.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{设 $x=a^{\frac12},y=a^{-\frac12}$，则 $xy=1,x+y=\sqrt6$，}
+\step{原式 $=\dfrac{x^3-y^3}{x-y}=x^2+xy+y^2=(x+y)^2-xy=6-1=5$；}
+\stepm{(2)}{由 $27^{\frac23}=(3^3)^{\frac23}=3^2=9,2^{\log_23}=3,\log_2\dfrac18=-3$，}
+\step{设 $t=\sqrt{3+\sqrt5}+\sqrt{3-\sqrt5}$，则 $t^2=6+2\sqrt{(3+\sqrt5)(3-\sqrt5)}=6+4=10$，}
+\step{所以 $2\lg t=\lg t^2=\lg10=1$，原式 $=9-3\times(-3)+1=19$；}
+\stepm{(3)}{由 $\log_{2.5}6.25=2,\lg0.01=-2,\ln\sqrt e=\dfrac12,2^{1+\log_23}=2\times3=6$，}
+\step{原式 $=2-2+\dfrac12-6=-\dfrac{11}2$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 已知集合 $M=\{x\mid a-1\leqslant x\leqslant2a+3\}$，$P=\{x\mid-2<x\leqslant4\}$，全集 $U=\R$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $a=2$ 时，求 $M\cap P$；
+\item 若 $x\in P$ 是 $x\in M$ 的必要不充分条件，求实数 $a$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $a=2$ 时，集合 $M=\{x\mid1\leqslant x\leqslant7\}$，所以 $M\cap P=\{x\mid1\leqslant x\leqslant4\}$；}
+\stepm{(2)}{因为 $x\in P$ 是 $x\in M$ 的必要不充分条件，所以 $M\subset P$，}
+\step{当 $M=\varnothing$ 时，$a-1>2a+3$，解得 $a<-4$，}
+\step{当 $M\neq\varnothing$ 时，则 $\begin{cases}a-1\leqslant2a+3\\ a-1>-2\\ 2a+3\leqslant4\end{cases}$，解得 $-1<a\leqslant\dfrac12$，}
+\step{综上所述，实数 $a$ 的取值范围为 $\left(-\infty,-4\right)\cup\left(-1,\dfrac12\right]$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 现有某服装制造公司，设公司与服装贸易中心距离为 $x$（单位：千米，$x>0$），经过市场调查了解到以下信息：公司每年仓库存储费用 $y_1$（单位：万元）与 $x+1$ 成反比；每年运输费 $y_2$（单位：万元）与 $x$ 成正比. 已知公司与服装贸易中心距离为 1 时，$y_1$ 和 $y_2$ 分别为 32 万元和 4 万元.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 分别求 $y_1,y_2$ 关于 $x$ 的函数表达式；
+\item 当这家公司与服装贸易中心距离为多少千米时，才能使两项费用之和最小？最小值是多少？
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得 $y_1$ 与 $x+1$ 成反比，则设 $y_1=\dfrac{k_1}{x+1}(k_1\neq0,x>0)$，}
+\step{当 $x=1$ 时，$y_1=\dfrac{k_1}{1+1}=32$，所以 $k_1=64$，因此 $y_1=\dfrac{64}{x+1}(x>0)$，}
+\step{又 $y_2$ 与 $x$ 成正比，则设 $y_2=k_2x(k_2\neq0,x>0)$，}
+\step{当 $x=1$ 时，$y_2=k_2\times1=4$，所以 $k_2=4$，因此 $y_2=4x(x>0)$；}
+\stepm{(2)}{设两项费用之和为 $y$ 万元，则 $y=y_1+y_2=\dfrac{64}{x+1}+4x(x>0)$，}
+\step{整理得 $y=\dfrac{64}{x+1}+4(x+1)-4$，又 $x+1>0$，}
+\step{所以由基本不等式得 $y=\dfrac{64}{x+1}+4(x+1)-4\geqslant2\sqrt{\dfrac{64}{x+1}\times4(x+1)}-4=28$，}
+\step{当且仅当 $\dfrac{64}{x+1}=4(x+1)$，即 $x=3$ 时取等号，此时 $y$ 取最小值为 $28$，}
+\step{因此，当这家公司与服装贸易中心距离 3 千米时，两项费用之和最小，}
+\step{最小值为 28 万元.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 已知实数 $t\in(0,+\infty)$，函数 $y=f(x)$ 的定义域为 $D$，若函数 $y=f(x)$ 满足：①对于任意 $x\in D$，有 $\dfrac tx\in D$；②对于任意 $x_1,x_2\in D$，当 $x_1x_2=t$ 时，$f(x_1)=f(x_2)$ 恒成立，则称 $y=f(x)$ 为“$t$ 积轴函数”.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 设 $g(x)=|\ln x|$，证明：$y=g(x)$ 是“1 积轴函数”；
+\item 设 $h(x)=\log_2x\cdot\log_{\sqrt2}\left(\dfrac{2}{\sqrt x}\right)$，且 $y=h(x)$ 是“$t$ 积轴函数”，求实数 $t$ 的值.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$g(x)=|\ln x|$ 的定义域为 $(0,+\infty)$，}
+\step{对任意 $x\in(0,+\infty)$，$\dfrac1x\in(0,+\infty)$，满足条件①；}
+\step{对任意 $x_1,x_2\in(0,+\infty)$，当 $x_1x_2=1$ 时，$x_2=\dfrac1{x_1}$，}
+\step{则 $g(x_2)=|\ln x_2|=\left|\ln\dfrac1{x_1}\right|=|-\ln x_1|=g(x_1)$，满足条件②，}
+\step{故 $y=g(x)$ 是“1 积轴函数”；}
+\stepm{(2)}{$h(x)=\log_2x\cdot\log_{\sqrt2}\left(\dfrac2{\sqrt x}\right)=\log_2x\cdot2\log_2\left(\dfrac2{\sqrt x}\right)$}
+\step{$=2\log_2x\cdot\left(1-\dfrac12\log_2x\right)=-\log_2^2x+2\log_2x$.}
+\step{由“$t$ 积轴函数”定义，对定义域内任意 $x$，有 $h(x)=h\left(\dfrac tx\right)$，}
+\step{代入得 $-\log_2^2x+2\log_2x=-\log_2^2\left(\dfrac tx\right)+2\log_2\left(\dfrac tx\right)$，}
+\step{展开整理得 $(2\log_2t-4)\log_2x-(\log_2^2t-2\log_2t)=0$，}
+\step{该式对任意 $x$ 恒成立，因此 $\begin{cases}2\log_2t-4=0\\ \log_2^2t-2\log_2t=0\end{cases}$，解得 $\log_2t=2$，}
+\step{即 $t=4$.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 已知集合 $A=\{a_1,a_2,\cdots,a_k\}(k\geqslant2)$. 其中 $a_i\in\N^*(i=1,2,\cdots,k)$. 若对于任意的 $a\in A$，总有 $\dfrac1a\notin A$，则称集合 $A$ 具有性质 $P$. 由 $A$ 中的元素构成两个相应的集合：$S=\{(a,b)\mid a\in A,b\in A,ab\in A\}$，$T=\left\{(a,b)\mid a\in A,b\in A,\dfrac ab\in A\right\}$，其中 $(a,b)$ 是有序数对，集合 $S$ 和 $T$ 中的元素个数分别为 $m$ 和 $n$.
+
+（1）检验集合 $\{2,3,6\}$ 与 $\{1,2,4\}$ 是否具有性质 $P$，并对其中具有性质 $P$ 的集合，写出相应的集合 $S$ 和 $T$；
+
+（2）对任何具有性质 $P$ 的集合 $A$，$n$ 的最大值为多少？（直接写出答案，无需说明理由）；
+
+% 原卷题干的小问编号跳号：印作（1）（2）（4），本稿照录（4）、未改成（3）
+% （见文件头“原卷笔误/存疑”①）
+（4）判断 $m$ 和 $n$ 的大小关系，并证明你的结论.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{% 原卷印作 $\dfrac{1}{1}\in\{1,2,4\}$（分子分母同为 1，疑为 $\dfrac12$ 之误），照录
+因为 $\dfrac{1}{1}\in\{1,2,4\}$，所以 $\{1,2,4\}$ 不具有性质 $P$；}
+\step{因为 $\dfrac12\notin\{2,3,6\}$，$\dfrac13\notin\{2,3,6\}$，$\dfrac16\notin\{2,3,6\}$，所以 $\{2,3,6\}$ 具有性质 $P$.}
+\step{$S=\{(2,3),(3,2)\}$，$T=\{(6,2),(6,3)\}$；}
+\stepm{(2)}{因为对于任意的 $a\in A$，总有 $\dfrac1a\notin A$，所以 $1\notin A$，}
+% 原卷此处印作“$\{(a_i,a_i)\}\in T$”，与上一句“$1\notin A$”及下文“最多为 $C_k^2$”的推理
+% 均不自洽（应为“$\notin$”），已放大确认无斜线；照录未改（见文件头“原卷笔误/存疑”②）
+\step{从而 $\{(a_i,a_i)\}\in T(i=1,2,\cdots,k)$.}
+\step{因为 $a\in A,b\in A,\dfrac ab\in A$，所以当 $i\neq j$ 时，}
+\step{$(a_i,a_j)\in T$ 和 $(a_j,a_i)\in T(i,j=1,2,\cdots,k)$ 至多有一个成立，}
+\step{所以集合 $T$ 中的元素个数最多为 $C_k^2=\dfrac{k(k-1)}2$，即 $n\leqslant\dfrac{k(k-1)}2$.}
+% 原卷【解析】把题干第（4）问标作“(3)”（与题干跳号相应），本稿照录未改（见文件头“原卷笔误/存疑”①）
+\stepm{(3)}{$m=n$，证明如下：}
+\step{①设 $(a,b)\in T$，则 $a\in A,b\in A,\dfrac ab\in A$. 设 $c=\dfrac ab$，则 $a=bc$，}
+\step{故 $b\in A$，$c\in A$，$bc\in A$，从而 $(b,c)\in S$，}
+\step{即对 $\forall(a,b)\in T$，总 $\exists c$ 使 $(b,c)\in S$，从而 $n\leqslant m$.}
+\step{②设 $(p,q)\in S$，则 $p\in A$，$q\in A$，$pq\in A$.}
+\step{设 $r=pq$，则 $q=\dfrac rp$，故 $r\in A,p\in A,\dfrac rp\in A$，从而 $(r,p)\in T$，}
+\step{即对 $\forall(p,q)\in S$，总 $\exists r$ 使 $(r,p)\in T$，从而 $m\leqslant n$.}
+\step{由①②得 $m=n$.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
