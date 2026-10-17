@@ -27,7 +27,19 @@ from collections import Counter
 def fingerprint(pdf):
     txt = subprocess.run(['pdftotext', '-layout', pdf, '-'],
                          capture_output=True, text=True).stdout
-    txt = '\n'.join(l for l in txt.split('\n') if not re.fullmatch(r'\s*\d*\s*', l))  # 去页码行
+    # 去页码行——**只删“第 k 页末尾且恰为 k”的纯数字行**。原先全文一刀切（任何纯数字行都删），
+    # 会把上标分数（如 $a^{\frac12}$）被 pdftotext 拆出来的**单独一行数字**也当页码删掉：
+    # 高一62 第 17 题题干 $a^{\frac12}+a^{-\frac12}=\sqrt6$ 的分母「2」在紧凑版里恰好独占
+    # 一行被删、试卷版里粘在别行幸存，于是同一份源码的两版被误判“正文不一致”。
+    # pdftotext 用 \x0c 分页；页脚就是 \thepage，故“末行＝页号”才算页码，其余纯数字行
+    # （分数拆出来的分子分母）一律保留——两版同删/同留，多重集才平衡。
+    blocks = []
+    for idx, page in enumerate(txt.split('\x0c'), start=1):
+        lines = [l for l in page.split('\n') if l.strip()]
+        if lines and re.fullmatch(rf'\s*{idx}\s*', lines[-1]):
+            lines.pop()
+        blocks.append('\n'.join(lines))
+    txt = '\n'.join(blocks)
     chars = sorted(Counter(re.sub(r'\s+', '', txt)).elements())
     return hashlib.md5(''.join(chars).encode('utf-8')).hexdigest()
 
