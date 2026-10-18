@@ -30,6 +30,17 @@
 %      原卷不缺（初稿漏抄致该行按字面不成立，2026-10-05 已按原卷补回）。
 %   ③ 第 13 题答案印 A，解析以“1-k≠0”排除 k=1；但 k=1 时原方程为 -2x-1=0，
 %      仍有实数根，按题意应选 B。本稿保留原卷答案 A 及其解析，不代为订正。
+%      又解析第二式原卷印作“2-k>0”（即 k<2），与同句结论“k≤2”亦不自洽，一并照录。
+%
+% 2026-10-18 第二轮回原图复核订正（均为“本稿与原卷不符”，原卷原文未动）：
+%   ① 第 12 题题干：原卷作“则 (y+1)/√(2xyz) 最小值为____”，无“的”，本稿曾加“的”，已删。
+%   ② 第 12、15、20(1) 题解析的并列取等值：原卷用半角逗号（如“y=1/2,x=√3/4,z=√6/4”），
+%      本稿曾一律排成全角“，”，已改回半角。
+%   ③ 第 7 题解析“当 A=∅ 时”一行：原卷以 { a≠1；Δ<0 } 的方程组形式印出并带“则”，
+%      本稿曾改写为散文句并删“则”，已按原卷恢复。
+%   ④ 第 11 题解析第三行：原卷作“-3<(a+2b)<2”，本稿曾删去括号，已补回。
+%   ⑤ 第 19 题旧注对“方程/不等式”的判断有误，已改写（见该题前注）。
+%   其余各题题干、解析逐行比对无差异。
 %
 \documentclass[a4paper,11pt]{article}
 \usepackage{common}
@@ -101,7 +112,9 @@
 \solbegin
 \step{由方程 $x^2-3x+2=0$，解得 $x=1$ 或 $x=2$，即 $B=\{1,2\}$，}
 \step{因为 $A\subseteq B$，所以 $A=\varnothing$ 或 $A=\{1\}$ 或 $A=\{2\}$ 或 $A=\{1,2\}$，}
-\step{当 $A=\varnothing$ 时，$a\neq1$，且 $\Delta=3^2-4(a-1)\times(-2)<0$，解得 $a<-\dfrac18$，}
+% 注：原卷此行以方程组形式印作“则 {a≠1；Δ=3²-4(a-1)×(-2)<0}，解得 a<-1/8”，
+% 本稿原改写为“a≠1，且 Δ=…<0”的散文句式并删去“则”，已按原卷恢复。
+\step{当 $A=\varnothing$ 时，则 $\begin{cases}a\neq1\\\Delta=3^2-4(a-1)\times(-2)<0\end{cases}$，解得 $a<-\dfrac18$，}
 \step{将 $x=1$ 代入方程 $(a-1)x^2+3x-2=0$，得 $a=0$，}
 \step{此时 $A=\{x\mid-x^2+3x-2=0\}=\{1,2\}$，满足条件，}
 \step{将 $x=2$ 代入方程 $(a-1)x^2+3x-2=0$，得到 $a=0$，上面已经验证满足条件，}
@@ -158,7 +171,8 @@ $\dfrac{b}{x+a}+\dfrac{x+d}{x+c}<0$ 的解集为 $\left(-1,-\dfrac13\right)\cup\
 \solbegin
 \step{设 $a+b=m(a+2b)+n(2a-b)=(m+2n)a+(2m-n)b$，}
 \step{所以 $\begin{cases}m+2n=1\\2m-n=1\end{cases}$，解得 $n=\dfrac15$，$m=\dfrac35$，所以 $a+b=\dfrac35(a+2b)+\dfrac15(2a-b)$，}
-\step{因为 $-3<a+2b<2$，$-1<2a-b<4$，}
+% 注：原卷此行第一项带括号作“-3<(a+2b)<2，-1<2a-b<4”，本稿原删去括号，已补回。
+\step{因为 $-3<(a+2b)<2$，$-1<2a-b<4$，}
 \step{所以 $-\dfrac95<\dfrac35(a+2b)<\dfrac65$，$-\dfrac15<\dfrac15(2a-b)<\dfrac45$，}
 \step{相加得 $-2<\dfrac35(a+2b)+\dfrac15(2a-b)<2$，即 $-2<a+b<2$，}
 \step{故 $a+b$ 的取值范围为 $(-2,2)$.}
@@ -169,14 +183,16 @@ $\dfrac{b}{x+a}+\dfrac{x+d}{x+c}<0$ 的解集为 $\left(-1,-\dfrac13\right)\cup\
 % 注：原卷题干与解析均印作 \sqrt{2xyz}，但按其自身答案 8 与取等值（$y=\dfrac12$，
 % $x=\dfrac{\sqrt3}4$，$z=\dfrac{\sqrt6}4$）代入只与 $\sqrt{2x^2y^2z^2}=\sqrt2\,xyz$ 相符，
 % $\sqrt{2xyz}$ 与答案 8 不自洽，原卷如此，照录未改。
-\item 已知正数 $x$、$y$、$z$ 满足 $2x^2+y^2+z^2=1$，则 $\dfrac{y+1}{\sqrt{2xyz}}$ 的最小值为 \blankline[4.4em].
+% 注：原卷此句无“的”，径作“则 (y+1)/√(2xyz) 最小值为____”，本稿原多一“的”，已删。
+\item 已知正数 $x$、$y$、$z$ 满足 $2x^2+y^2+z^2=1$，则 $\dfrac{y+1}{\sqrt{2xyz}}$ 最小值为 \blankline[4.4em].
 
 \ifanswer
 \solbegin
 \step{由条件得 $2x^2+z^2=1-y^2=(1-y)(1+y)$，则 $1+y=\dfrac{2x^2+z^2}{1-y}$，}
 \step{结合 $x$、$y$、$z>0$ 得原式 $=\dfrac{2x^2+z^2}{\sqrt{2xyz}(1-y)}\geqslant\dfrac{2\sqrt2xz}{\sqrt{2xyz}(1-y)}=\dfrac2{y(1-y)}$，}
 \step{又 $y(1-y)\leqslant\left(\dfrac{y+1-y}2\right)^2=\dfrac14$，所以 $\dfrac2{y(1-y)}\geqslant\dfrac2{\frac14}=8$，}
-\step{当且仅当 $\sqrt2x=z$，且 $y=1-y$，即 $y=\dfrac12$，$x=\dfrac{\sqrt3}4$，$z=\dfrac{\sqrt6}4$ 时取等号，}
+% 注：原卷三个取等值之间用半角逗号“y=1/2,x=√3/4,z=√6/4”，本稿原排成全角“，”，已改回。
+\step{当且仅当 $\sqrt2x=z$，且 $y=1-y$，即 $y=\dfrac12$,$x=\dfrac{\sqrt3}4$,$z=\dfrac{\sqrt6}4$ 时取等号，}
 \step{故 $\dfrac{y+1}{\sqrt{2xyz}}$ 最小值为 $8$.}
 \solend
 
@@ -240,7 +256,8 @@ C. $5+2\sqrt6$\qquad D. $3+2\sqrt2$
 \step{因为 $a>0$，$b>0$，$\dfrac1{a+1}+\dfrac1{b+1}=1$，}
 \step{所以 $2a+3b=2(a+1)+3(b+1)-5=[2(a+1)+3(b+1)]\cdot\left(\dfrac1{a+1}+\dfrac1{b+1}\right)-5$}
 \step{$=\left[2+3+\dfrac{3(b+1)}{a+1}+\dfrac{2(a+1)}{b+1}\right]-5\geqslant5+2\sqrt{\dfrac{3(b+1)}{a+1}\times\dfrac{2(a+1)}{b+1}}-5=2\sqrt6$，}
-\step{当且仅当 $\dfrac{3(b+1)}{a+1}=\dfrac{2(a+1)}{b+1}$，即 $a=\dfrac{\sqrt6}2$，$b=\dfrac{\sqrt6}3$ 时取等号. 故选 $A$.}
+% 注：原卷作“即 a=√6/2,b=√6/3”，两值之间为半角逗号，本稿原排成全角，已改回。
+\step{当且仅当 $\dfrac{3(b+1)}{a+1}=\dfrac{2(a+1)}{b+1}$，即 $a=\dfrac{\sqrt6}2$,$b=\dfrac{\sqrt6}3$ 时取等号. 故选 $A$.}
 \solend
 
 \fi
@@ -346,8 +363,9 @@ A. $676$\qquad B. $675$\qquad C. $672$\qquad D. $671$
 \ifanswer
 % 注：原卷第 19 题未印【解析】，仅印一行【答案】"（1）(a-c)(b-c)≤0；
 % （2）(-∞,3/2]∪[5,+∞)"。(1) 的两行推导为本稿所补，(2) 照录原卷答案。
-% 又题干作"方程"，而所给答案 (-∞,3/2]∪[5,+∞) 实为不等式 |3x-8|≤|5-x|+|2x-3| 的解集，
-% 与"方程"不合，原卷如此，照录未改。
+% 2026-10-18 复核订正：旧注称 (2) 的答案“实为不等式 |3x-8|≤|5-x|+|2x-3| 的解集，
+% 与‘方程’不合”，此判断有误——x≤3/2 与 x≥5 两段上 |3x-8| 与 |5-x|+|2x-3| 恒等，
+% 而 3/2<x<5 时两边仅在该区间端点取等，故该答案正是原方程的解集，与题干不矛盾。
 \solbegin
 \stepm{(1)}{由三角不等式 $|a-b|=|(a-c)-(b-c)|\leqslant|a-c|+|b-c|$，}
 \step{当且仅当 $(a-c)(b-c)\leqslant0$ 时等号成立.}
@@ -382,7 +400,8 @@ A. $676$\qquad B. $675$\qquad C. $672$\qquad D. $671$
 \stepm{(1)}{因为正实数 $x$、$y$ 满足 $x+y=xy$，$\dfrac{x+y}{xy}=1\Rightarrow\dfrac1y+\dfrac1x=1$，}
 \step{所以 $(2x+y)\times1=(2x+y)\left(\dfrac1y+\dfrac1x\right)=3+\dfrac{2x}{y}+\dfrac yx\geqslant3+2\sqrt{\dfrac{2x}{y}\cdot\dfrac yx}=3+2\sqrt2$，}
 \step{当且仅当 $\dfrac{2x}{y}=\dfrac yx$ 且 $\dfrac1y+\dfrac1x=1$ 时取等号，}
-\step{解得 $x=\dfrac{2+\sqrt2}2$，$y=\sqrt2x=\sqrt2\times\dfrac{2+\sqrt2}2=1+\sqrt2$，}
+% 注：原卷作“解得 x=(2+√2)/2,y=…”，两值之间为半角逗号，本稿原排成全角，已改回。
+\step{解得 $x=\dfrac{2+\sqrt2}2$,$y=\sqrt2x=\sqrt2\times\dfrac{2+\sqrt2}2=1+\sqrt2$，}
 \step{所以 $2x+y$ 的最小值为 $3+2\sqrt2$；}
 \stepm{(2)}{因为 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$，}
 \step{所以 $a^2+b^2=(a^2+b^2)\left(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}\right)=x^2+y^2+\dfrac{b^2x^2}{a^2}+\dfrac{a^2y^2}{b^2}$，}

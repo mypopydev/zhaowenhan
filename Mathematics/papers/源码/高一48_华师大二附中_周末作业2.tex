@@ -22,8 +22,17 @@
 %
 % 原卷存疑：第 3 题解析称 a=1 时“不满足元素的互异性”并舍去；按题面集合相等，a=1、b=0
 % 也满足题设，但不影响所求式的值仍为 1。本稿照录原卷解析。
-% 转录订正：第 10 题解析末句原卷作"故真命题的命题序号为②③④"，初稿漏录②，已据原图补正。
+% 第 16 题题干“有下别两个命题”（“下别”应为“下列”）系原卷笔误，本稿照录。
+% 转录订正：第 10 题解析末句原卷作“故真命题的命题序号为②③④”，初稿漏录②，已据原图补正。
 % 第 21 题第 (3) 问解析原卷有 $x^2\in\overline A$，初稿漏录，现已补回。
+% 二轮回原图复核（2026-10-18）新订正六处：
+%   第 5 题题干与解析首式原卷均作 $U=\{x\in\N\mid x\leqslant9\}$，本稿原误作 $\{x\mid x\in\N,\,x\leqslant9\}$；
+%   第 12 题②解析原卷作“所以 $x+y\in A_1$，$xy\in A_1$，$x+y\in A_2$，$xy\in A_2$”，本稿原漏 $xy\in A_1$、$xy\in A_2$；
+%   第 16 题题干②末原卷作“$d$-邻集；则（　）”，本稿原误作句号；
+%   第 17 题解析两处原卷有“$\Rightarrow$”（①当 $B=\varnothing$ 时……$<0\Rightarrow-2<b<1$；
+%   当 $B$ 为单元数集合时……$=0\Rightarrow b=-2$），本稿原漏排；
+%   第 18 题解析原卷作“不符合题意舍去”（无逗号）且前半“符合题意”后为逗号，本稿原误作“符合题意；……不符合题意，舍去”；
+%   第 20 题 (3) 解析原卷为两组联立式用“或”相连，本稿原误并为一组，均已照原图改回。
 %
 \documentclass[a4paper,11pt]{article}
 \usepackage{common}
@@ -68,11 +77,12 @@ m+1\leqslant4,\\
 
 \fi
 
-\item 已知全集 $U=\{x\mid x\in\N,\,x\leqslant9\}$，$A\cap B=\{3\}$，$\overline A\cap B=\{4,6,8\}$，$A\cap\overline B=\{1,5\}$，则 $\overline A=$\blankline[4.4em].
+% 原卷作 $U=\{x\in\N\mid x\leqslant9\}$，本稿原误作 $\{x\mid x\in\N,\,x\leqslant9\}$，已照原图订正（2026-10-18）
+\item 已知全集 $U=\{x\in\N\mid x\leqslant9\}$，$A\cap B=\{3\}$，$\overline A\cap B=\{4,6,8\}$，$A\cap\overline B=\{1,5\}$，则 $\overline A=$\blankline[4.4em].
 
 \ifanswer
 \solbegin
-\step{由题意得 $U=\{x\mid x\in\N,\,x\leqslant9\}=\{0,1,2,3,4,5,6,7,8,9\}$；}
+\step{由题意得 $U=\{x\in\N\mid x\leqslant9\}=\{0,1,2,3,4,5,6,7,8,9\}$；}
 \step{$A\cap B=\{3\}$，得 $A$、$B$ 中含有元素 $3$；}
 \step{$\overline A\cap B=\{4,6,8\}$，得 $B$ 中含有 $4$、$6$、$8$，集合 $A$ 中不含 $4$、$6$、$8$；}
 \step{$A\cap\overline B=\{1,5\}$，得 $A$ 中含有 $1$、$5$，集合 $\overline B$ 中含有 $1$、$5$；}
@@ -212,7 +222,8 @@ x_1x_2=1>0
 \step{同理当 $0\in\complement_R A$ 时，也可以类似推出矛盾，故①错误；}
 \step{对于②，若 $A_1$、$A_2$ 都是“完美集”，且 $A_1\cap A_2\neq\varnothing$，}
 \step{取 $x,y\in A_1\cap A_2$，则 $x\in A_1$，$x\in A_2$，$y\in A_1$，$y\in A_2$，}
-\step{又 $A_1$、$A_2$ 具有性质 $P$，所以 $x+y\in A_1$，$x+y\in A_2$，}
+% 原卷作“所以 $x+y\in A_1$，$xy\in A_1$，$x+y\in A_2$，$xy\in A_2$”，本稿原漏 $xy\in A_1$、$xy\in A_2$，已补回（2026-10-18）
+\step{又 $A_1$、$A_2$ 具有性质 $P$，所以 $x+y\in A_1$，$xy\in A_1$，$x+y\in A_2$，$xy\in A_2$，}
 \step{所以 $x+y\in A_1\cap A_2$，$xy\in A_1\cap A_2$，所以 $A_1\cap A_2$ 是“完美集”，故②正确；}
 \step{对于③，若 $A$ 是“完美集”，集合 $A=\{0\}$ 是“完美集”，故 $A$ 可以是有限集，}
 \step{故③正确；}
@@ -293,11 +304,12 @@ C. $[-2,0)\cup(0,1]$\qquad D. $[-2,-1)\cup(0,1]$
 
 \fi
 
-\item 设 $d>0$，已知 $A$、$B$ 是两个数集。若对任意 $x\in A$，都存在 $y\in B$，使得 $|x-y|<d$，则称 $A$ 是 $B$ 的一个“$d$-邻集”。有下列两个命题：
+% 原卷如此，照录未改（第 16 题题干原卷印作“下别”，系原卷笔误）；②末原卷为“；则（　）”，本稿原误作句号，已订正
+\item 设 $d>0$，已知 $A$、$B$ 是两个数集。若对任意 $x\in A$，都存在 $y\in B$，使得 $|x-y|<d$，则称 $A$ 是 $B$ 的一个“$d$-邻集”。有下别两个命题：
 
 ① $M=\{a+b\sqrt2\mid a,b\in\Z\}$ 是 $\Q$ 的一个 $\dfrac1{2025}$-邻集；
 
-② 若 $A$ 是 $B$ 的一个 $d$-邻集，则 $B$ 也是 $A$ 的一个 $d$-邻集。
+② 若 $A$ 是 $B$ 的一个 $d$-邻集，则 $B$ 也是 $A$ 的一个 $d$-邻集；
 
 则\mbox{（\quad）}
 
@@ -341,11 +353,13 @@ C. ①真②真\qquad D. ①假②假
 \step{当 $A\neq\varnothing$ 时，$A=\left\{\dfrac1a\right\}$，则 $\dfrac1a=1$ 或 $\dfrac1a=2$，即 $a=1$ 或 $a=\dfrac12$；}
 \step{综上，$a\in\left\{0,1,\dfrac12\right\}$；}
 \stepm{(2)}{因为 $B\cup C=C$，所以 $B\subseteq C$；}
-\step{①当 $B=\varnothing$ 时，$\Delta=4(b+1)^2-4(b+3)<0$，$-2<b<1$；}
+% 原卷两处有“$\Rightarrow$”（本行及下行“单元数集合”行），本稿原漏排，已照原图补回（2026-10-18）
+\step{①当 $B=\varnothing$ 时，$\Delta=4(b+1)^2-4(b+3)<0\Rightarrow-2<b<1$；}
 \step{②若 $B\neq\varnothing$，}
 % 原卷如此，照录未改（第 17 题解析此处原卷作“单元数集合”）
-\step{当 $B$ 为单元数集合时，$\Delta=4(b+1)^2-4(b+3)=0$，$b=-2$ 或 $b=1$；}
-\step{当 $b=-2$ 时，$B=\{1\}$，符合题意；当 $b=1$ 时，$B=\{-2\}$，不符合题意，舍去；}
+\step{当 $B$ 为单元数集合时，$\Delta=4(b+1)^2-4(b+3)=0\Rightarrow b=-2$，或 $b=1$；}
+% 原卷作“……符合题意，当 $b=1$ 时……不符合题意舍去；”，本稿原误作“符合题意；……不符合题意，舍去”，已照原图订正（2026-10-18）
+\step{当 $b=-2$ 时，$B=\{1\}$，符合题意，当 $b=1$ 时，$B=\{-2\}$，不符合题意舍去；}
 \step{当 $B=\{1,2\}$ 时，}
 \step{\[
 \begin{cases}
@@ -450,9 +464,15 @@ a\leqslant-4
 \]}
 \step{得到 $-5<a\leqslant-4$；}
 \step{当命题甲是假命题、命题乙是真命题时，}
+% 原卷为两组联立式用“或”相连，本稿原误并为一组，已照原图改回（2026-10-18）
 \step{\[
 \begin{cases}
-a\leqslant-5\text{ 或 }a>3,\\
+a\leqslant-5,\\
+a>-4
+\end{cases}
+\text{ 或 }
+\begin{cases}
+a>3,\\
 a>-4
 \end{cases}
 \]}

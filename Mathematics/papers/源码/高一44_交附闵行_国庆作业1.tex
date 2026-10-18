@@ -26,6 +26,13 @@
 %   ② 第 10 题④所举的 P 含有小于 1 的元素，与题干"若 x<1，则 x\notin P"相矛盾，照录。
 %   ③ 第 13 题【解析】的年产量原卷作“万斤”（本稿原误作“万吨”，并据此误记“未作单位换算”的存疑）；2026-10-05 已照原卷改回，该存疑不成立；
 %   ④ 第 10 题②以 M、P 的最大值论证一般集合，未处理不一定有最大值的情形。
+%   ⑤ 第 13 题题干原卷作“根据其他果衣种植经验发现”，系原卷笔误（应为“果农”），照录未改。
+%
+% 2026-10-18 第二轮回原图复核订正（均系本稿抄错原卷，已改回原卷原文，见正文 % 注）：
+%   第 12 题(2)问末句原卷作“取值集合”，本稿原误作“取值范围”；
+%   第 13 题题干原卷作“为了提高产量”，本稿原漏“了”字；原卷“果衣”本稿原误改作“果农”；
+%   第 14 题(1)【解析】第二行句尾原卷作句号，本稿原误作分号；
+%   另有第 4、5、6、9 题原卷数学式之间的半角逗号，本稿原统一误作全角逗号/顿号，均已改回半角。
 %
 %
 \documentclass[a4paper,11pt]{article}
@@ -59,39 +66,46 @@
 
 \fi
 
-\item 已知全集 $U=\{a,b,c,d,e\}$，集合 $A$、$B$ 满足 $A\cap\overline{B}=\{a,b\}$，$\overline{A\cup B}=\{c,e\}$，则 $A=$\blankline[4.4em].
+% 注：本行“集合 $A,B$”与“$\{a,b\}$,$\overline{A\cup B}$”处原卷均为数学式间半角逗号，本稿原误作“、”/全角逗号，已照原卷改回。
+\item 已知全集 $U=\{a,b,c,d,e\}$，集合 $A,B$ 满足 $A\cap\overline{B}=\{a,b\}$,$\overline{A\cup B}=\{c,e\}$，则 $A=$\blankline[4.4em].
 
 \ifanswer
 \solbegin
-\step{因为 $U=\{a,b,c,d,e\}$，$\overline{A\cup B}=\{c,e\}$，所以 $A\cup B=\{a,b,d\}$，}
+% 注：本行“$\{a,b,c,d,e\}$,$\overline{A\cup B}$”处原卷为半角逗号，本稿原误作全角逗号，已改回；
+%     “$a,b$”“$c,e$”“$a,b,c,e$”原卷均为数学式内半角逗号，本稿原误作“、”，已改回。
+\step{因为 $U=\{a,b,c,d,e\}$,$\overline{A\cup B}=\{c,e\}$，所以 $A\cup B=\{a,b,d\}$，}
 \step{因为 $A\cap\overline B=\{a,b\}$，}
-\step{所以 $A$ 中有 $a$、$b$ 这两个元素，$A$ 中没有 $c$、$e$ 这两个元素；}
-\step{$B$ 中没有 $a$、$b$、$c$、$e$ 这四个元素，}
-\step{若 $d\in A$，$d\in B$，则 $A=\{a,b,d\}$，$B=\{d\}$，所以 $\overline B=\{a,b,c,e\}$，}
+\step{所以 $A$ 中有 $a,b$ 这两个元素，$A$ 中没有 $c,e$ 这两个元素；}
+\step{$B$ 中没有 $a,b,c,e$ 这四个元素，}
+\step{若 $d\in A$，$d\in B$，则 $A=\{a,b,d\}$,$B=\{d\}$，所以 $\overline B=\{a,b,c,e\}$，}
 \step{满足 $A\cup B=\{a,b,d\}$，也满足 $A\cap\overline B=\{a,b\}$，符合题意，则 $A=\{a,b,d\}$；}
-\step{若 $d\in A$，$d\notin B$，则 $A=\{a,b,d\}$，$B=\varnothing$，所以 $\overline B=\{a,b,c,d,e\}$，}
+% 注：本行“$\{a,b,d\}$,$B=\varnothing$”处原卷为半角逗号，本稿原误作全角逗号，已改回。
+\step{若 $d\in A$，$d\notin B$，则 $A=\{a,b,d\}$,$B=\varnothing$，所以 $\overline B=\{a,b,c,d,e\}$，}
 \step{满足 $A\cup B=\{a,b,d\}$，不满足 $A\cap\overline B=\{a,b\}$，不符合题意；}
-\step{若 $d\notin A$，$d\in B$，则 $A=\{a,b\}$，$B=\{d\}$，所以 $\overline B=\{a,b,c,e\}$，}
+\step{若 $d\notin A$，$d\in B$，则 $A=\{a,b\}$,$B=\{d\}$，所以 $\overline B=\{a,b,c,e\}$，}
 \step{满足 $A\cup B=\{a,b,d\}$，也满足 $A\cap\overline B=\{a,b\}$，符合题意，则 $A=\{a,b\}$；}
 % 注：d∉A、d∉B 与 A∪B={a,b,d} 相矛盾，原卷仍照此讨论并推出 A={a,b}、B=∅，照录未改。
-\step{若 $d\notin A$，$d\notin B$，则 $A=\{a,b\}$，$B=\varnothing$，所以 $\overline B=\{a,b,c,d,e\}$，}
+\step{若 $d\notin A$，$d\notin B$，则 $A=\{a,b\}$,$B=\varnothing$，所以 $\overline B=\{a,b,c,d,e\}$，}
 \step{也满足 $A\cap\overline B=\{a,b\}$，不满足 $A\cup B=\{a,b,d\}$，不符合题意.}
 \step{故 $A=\{a,b,d\}$ 或 $A=\{a,b\}$.}
 \solend
 
 \fi
 
-\item 已知 $p$：$\dfrac{x-1}{x-3}\leqslant0$，$q$：$|x+2a|<2$，若 $p$ 是 $q$ 的充分不必要条件，则实数 $a$ 的取值范围是 \blankline[4.4em].
+% 注：本行“$\leqslant0$,$q$”处原卷为半角逗号，本稿原误作全角逗号，已改回。
+\item 已知 $p$：$\dfrac{x-1}{x-3}\leqslant0$,$q$：$|x+2a|<2$，若 $p$ 是 $q$ 的充分不必要条件，则实数 $a$ 的取值范围是 \blankline[4.4em].
 
 \ifanswer
 \solbegin
-\step{$p:1\leqslant x<3$，$q:-2-2a<x<2-2a$，所以 $-2-2a<1$，$2-2a\geqslant3$，}
+% 注：本行“$<3$,$q$”与“$<1$,$2-2a$”处原卷均为半角逗号，本稿原误作全角逗号，已改回。
+\step{$p:1\leqslant x<3$,$q:-2-2a<x<2-2a$，所以 $-2-2a<1$,$2-2a\geqslant3$，}
 \step{所以 $-\dfrac32<a\leqslant-\dfrac12$.}
 \solend
 
 \fi
 
-\item 已知 $a$、$b$、$c\in\R$，有四个推理：① $a>b\Rightarrow am^2>bm^2$；② $\dfrac ac>\dfrac bc\Rightarrow a>b$；③ $a>b$，$ab>0\Rightarrow\dfrac1a<\dfrac1b$；④ $a^2>b^2$，$ab>0\Rightarrow\dfrac1a<\dfrac1b$，其中正确的序号是 \blankline[4.4em].
+% 注：③④中“$a>b$,$ab>0$”“$a^2>b^2$,$ab>0$”处原卷均为半角逗号，本稿原误作全角逗号，已改回。
+\item 已知 $a$、$b$、$c\in\R$，有四个推理：① $a>b\Rightarrow am^2>bm^2$；② $\dfrac ac>\dfrac bc\Rightarrow a>b$；③ $a>b$,$ab>0\Rightarrow\dfrac1a<\dfrac1b$；④ $a^2>b^2$,$ab>0\Rightarrow\dfrac1a<\dfrac1b$，其中正确的序号是 \blankline[4.4em].
 
 \ifanswer
 \solbegin
@@ -136,7 +150,8 @@
 \step{故 $\dfrac2{ab}+\dfrac1{bc(1-c)}\geqslant\dfrac2{ab}+\dfrac4b=\dfrac{a+b}{2ab}+\dfrac4b=\dfrac1{2a}+\dfrac9{2b}=\dfrac12\left(\dfrac1a+\dfrac9b\right)$}
 \step{$=\dfrac18\left(\dfrac1a+\dfrac9b\right)(a+b)=\dfrac18\left(10+\dfrac ba+\dfrac{9a}b\right)\geqslant\dfrac18\left(10+2\sqrt{\dfrac ba\times\dfrac{9a}b}\right)=2$，}
 \step{当 $b=3a=3$ 时取等号，}
-\step{综上，当 $a=1$，$b=3$，$c=\dfrac12$ 时，$\dfrac2{ab}+\dfrac1{bc(1-c)}$ 的最小值为 $2$.}
+% 注：本行“$a=1,b=3,c=\dfrac12$”原卷为数学式内半角逗号，本稿原误作全角逗号，已改回。
+\step{综上，当 $a=1,b=3,c=\dfrac12$ 时，$\dfrac2{ab}+\dfrac1{bc(1-c)}$ 的最小值为 $2$.}
 \solend
 
 \fi
@@ -203,7 +218,8 @@
 
 \begin{enumerate}[label=(\arabic*)]
 \item 求实数 $a$ 的取值集合 $A$；
-\item 设集合 $B=\{x\mid 6m-4<2x-4<2m\}$，若“$x\in A$”是“$x\in B$”的必要不充分条件，求实数 $m$ 的取值范围.
+% 注：末句原卷作“求实数 $m$ 的取值集合.”，本稿原误作“取值范围”，已照原卷改回。
+\item 设集合 $B=\{x\mid 6m-4<2x-4<2m\}$，若“$x\in A$”是“$x\in B$”的必要不充分条件，求实数 $m$ 的取值集合.
 \end{enumerate}
 
 \ifanswer
@@ -225,7 +241,9 @@
 
 \ansspace[6]
 
-\item 果农种植一种水果，每年施肥和灌溉等需投入 $4$ 万元. 为提高产量同时改善水果口味以赢得市场，计划在今年投入 $x$ 万元用于改良品种. 根据其他果农种植经验发现，该水果年产量 $t$（万斤）与用于改良品种的资金投入 $x$（万元）之间的关系大致为：$t=3-\dfrac{m}{x+1}$（$x\geqslant0$，$m$ 为常数），若不改良品种，年产量为 $1$ 万斤. 该水果最初售价为每斤 $4$ 元，改良品种后，售价每斤提高 $\dfrac{x}{5}$ 元，假设产量和价格不受其他因素的影响.
+% 注：本行原卷作“为了提高产量同时改善水果口味以赢得市场”（本稿原漏“了”字，已补）；
+%     原卷作“根据其他果衣种植经验发现”，系原卷笔误（应为“果农”），本稿原误改作“果农”，已照原卷改回“果衣”。
+\item 果农种植一种水果，每年施肥和灌溉等需投入 $4$ 万元. 为了提高产量同时改善水果口味以赢得市场，计划在今年投入 $x$ 万元用于改良品种. 根据其他果衣种植经验发现，该水果年产量 $t$（万斤）与用于改良品种的资金投入 $x$（万元）之间的关系大致为：$t=3-\dfrac{m}{x+1}$（$x\geqslant0$，$m$ 为常数），若不改良品种，年产量为 $1$ 万斤. 该水果最初售价为每斤 $4$ 元，改良品种后，售价每斤提高 $\dfrac{x}{5}$ 元，假设产量和价格不受其他因素的影响.
 
 \begin{enumerate}[label=(\arabic*)]
 \item 求 $m$ 的值；
@@ -269,7 +287,8 @@
 \ifanswer
 \solbegin
 \stepm{(1)}{当 $c=0$ 时，$f(x)=ax^2+(b-2)x+3$，$f(x)<0$ 的解集为 $(-3,-1)$，}
-\step{故方程 $ax^2+(b-2)x+3=0$ 的根为 $-3$、$-1$，且 $a>0$；}
+% 注：本行句尾原卷作句号“.”，本稿原误作分号“；”，已照原卷改回。
+\step{故方程 $ax^2+(b-2)x+3=0$ 的根为 $-3$、$-1$，且 $a>0$.}
 \step{由韦达定理得 $(-3)\times(-1)=\dfrac3a$，解得 $a=1$；}
 \step{$-3+(-1)=-\dfrac{b-2}{a}$，代入 $a=1$ 得 $-4=-(b-2)$，解得 $b=6$.}
 \stepm{(2)}{将 $b=-a-1$ 代入不等式 $f(x)>-4x+c+4$，}
