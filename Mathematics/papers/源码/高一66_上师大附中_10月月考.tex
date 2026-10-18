@@ -1,0 +1,392 @@
+% 高一66_上师大附中_10月月考.tex
+%   —— 高一上数学“2026-2027 年上师大附中高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一66_上师大附中_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一66_上师大附中_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一66_上师大附中_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，连载“27学年高一66”；
+% 原文标题“27学年高一66——2026-2027年上海市上师大附中高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/BAqOl3_op5sAQSv9dl-7Fg。
+% 页面标注发布时间 2026-10-17 21:58（上海）。
+% 本次转录只据 `原图/高一66_上师大附中_10月月考/` 的 9 张 PNG 逐页读图。
+% 正文为 9 张 PNG 页（`原图/高一66_上师大附中_10月月考/01..09.png`）：
+% 第 06、07 页 2560×3620，第 01、02、03、04、05、08、09 页 4762×6735
+% （**同一篇各页分辨率不同**），均按页序读取。9 页全为试卷正文页（卷首标题在第 1 页页顶，
+% 卷末解答题第 19 题解析止于第 9 页），无封面页、目录页、二维码或宣传页。
+% 粉色斜排“魔都数学加油站”为卷面水印，与公众号页脚一并未录入。
+%
+% 卷首标题：照卷面印作“2026--2027 年上师大附中高一上 10 月月考”（卷面为黑体加粗一行），
+% 年份区间按全稿惯例排 en dash。原卷只有一行标题、无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—19（3 题），共 17 题。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、选择题”“三、解答题”）。
+%
+% 讲评版：原卷每题下直接印【解析】。**全卷 17 题都印【解析】（无一处只印【答案】，
+% 也没有答案印在题干括号内——四道选择题的作答括号原卷即留空）**，按全稿口径这类题
+% 不另提 \ans{}；各题解析末句的结论（第 13—16 题的“故选 B／A／C／B”、各填空与解答题
+% 的“故/综上…”）照录在解析内。第 11 题为“研究问题”型：题干内先印一段示范“解：…”，
+% 再“参考上述解法”提出待求填空，其【解析】仍按全稿口径置于答案版。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、不等式、
+% 函数与导数”：17 题中集合与常用逻辑用语 6 题（第 7、12、14、16、17、19 题：集合关系与
+% 子集、新定义“调和集”、充分非必要条件、card 记号下的集合计数、集合表示与反证法、
+% 新定义“优美子集”），不等式 6 题（第 6、8、9、11、13、15 题：一次不等式解集反求参数、
+% 绝对值不等式恒成立、基本不等式最值、分式不等式换元、韦达定理、含参不等式整数解），
+% 函数与导数 5 题（第 3、4、5、10、18 题：指数幂运算、方根、分数指数幂、二次方程根的分布、
+% 分段函数与最值的实际应用），三类均确有内容，故并标（口径同 高一62）。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【解析】，本稿按全稿惯例将解析置于答案版，试卷版保持干净；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约四个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ④ 原卷实数集排斜体 $R$（第 7、8 题题干与解析），整数集排斜体 $Z$（第 12、17 题），
+%      正整数集排斜体 $N^*$（第 18 题解析、第 19 题题干），自然数集排斜体 $N$
+%      （第 18 题题干，解析同处改排 $N^*$，见“原卷笔误/存疑”④），本稿按全稿惯例
+%      统一改用 $\R$、$\Z$、$\N$、$\N^*$；空集原卷作 $\varnothing$，照录；
+%   ⑤ 原卷在数学式内多处用半角逗号（如第 7 题 $x\in R,x^2+x-6=0$、第 12 题
+%      $M=\{x|-2025\leqslant x\leqslant2025,x\in Z\}$、第 17 题 $m\in Z,n\in Z$、
+%      第 18 题分段函数各支），均照录未强改；句末句点按全稿惯例排西文句点；
+%      “调和的”“等差的”“调和集”“优美子集”等自定义名词照录；
+%   ⑥ 第 9 页 (3) 解析的“先证充分性：”“再证必要性：”两个标号原卷排**红色**（全卷仅有的
+%      红字，2 处），本稿按 高一53“情况1：”、高一62“法一：”成例排 \stepm{…}{…}
+%      （加粗着色、不改黑色基调），冒号照原卷排全角；
+%   ⑦ 第 17—19 题的子问按全稿惯例用 enumerate 的 (1)(2)(3)；解析中的子问标号一律用
+%      \stepm{(1)}{…}；第 16 题解析的①②③④⑤、第 19 题 (2) 解析的①②按全稿惯例作
+%      \stepm{①}{…}、\stepm{②}{…}；
+%   ⑧ 选择题作答括号按全稿惯例排 \mbox{（\quad）}；选项照原卷行排——第 13、16 题四个选项
+%      一行四条，第 14 题两行两条，第 15 题两行两条且均排分式；
+%   ⑨ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace（末题用 \ansspace*）；
+%      第 18、19 题题干长，各用一处 \ansneed 让题干与作答区不拆页（\ansneed 只作用于试卷版）；
+%   ⑩ 第 18 题的“Labubu”原卷排斜体，本稿排 \textit{Labubu}；“card”记号原卷排斜体
+%      （$card(M)$），本稿照录未改作正体；
+%   ⑪ 第 6 页右侧的 Labubu 卡通配图（含“LABUBU POP MART”字样）为公众号配图，
+%      压在正文之上（第 18 题题干两行被遮），非题图，不录。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 12 题解析末句印作“则共有 $\dfrac{2025-1}4\times2=1012$ 个不同的“调和集”的个数.”，
+%      “共有…个”已含计数，句末又缀“的个数”，语义重复，疑为衍文；照录未改。
+%   ② 第 15 题解析首句印作“$\Leftrightarrow((a+1)x-1)((a-1)x-1)<0$ 恰有两个解”，
+%      题干作“恰有 2 个整数解”，此处脱“整数”二字；照录未改。
+%   ③ 第 18 题题干印作“现有国内一家工厂决定在国内专项生产销售此款玩具”，“国内”
+%      两见，疑衍其一；照录未改。
+%   ④ 第 18 题题干的分段函数定义域作 $0<x<20,x\in N$ 与 $x\geqslant20,x\in N$，
+%      而解析中的 $c(x)$、$L(x)$ 两处均作 $x\in N^*$；同一分段函数前后记号不一，
+%      照录（本稿分别排 $\N$、$\N^*$）。
+%   ⑤ 第 19 题 (2) 解析只讨论 $a=2$ 与 $a>6$ 两种情形（偶数 $a$ 中 $a=4$ 与集合元素重复，
+%      可不计；$a\leqslant0$ 的情形未提），且未在 (2) 内明说“是／不是优美子集”，
+%      而把验证另起一行置于 (3) 之前；照录未改。
+%
+% 插图：无（全卷 9 页无任何几何图形、无“如图/右图/图中”字样；第 6 页右侧的 Labubu
+% 卡通配图系公众号装饰图，见“与原卷的排版差异”⑪，不计为题图）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年上师大附中高一上 10 月月考}{集合与常用逻辑用语、不等式、函数与导数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知 $a-a^{-1}=1$，则 $a^2+a^{-2}=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a-a^{-1}=1$，两边平方得 $a^2+a^{-2}-2=1$，化为 $a^2+a^{-2}=3$.}
+\solend
+\fi
+
+\item 16 的 4 次方根是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{16 的 4 次方根是 $\pm\sqrt[4]{16}=\pm\sqrt[4]{2^4}=\pm2$.}
+\solend
+\fi
+
+\item 将 $\dfrac{\sqrt x}{x\cdot\sqrt[3]x}$ 写成分数指数幂的形式为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原式 $=\dfrac{x^{\frac12}}{x\cdot x^{\frac13}}=x^{\frac12-1-\frac13}=x^{-\frac56}$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $ax+2b<bx+a$ 的解集为 $\left(\dfrac12,+\infty\right)$，则不等式 $ax>b$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$ax+2b<bx+a$，变形得 $(a-b)x+(2b-a)<0$，}
+\step{又由该不等式的解集为 $\left(\dfrac12,+\infty\right)$，所以 $\begin{cases}a-b<0\\ (a-b)\times\dfrac12+(2b-a)=0\end{cases}$，}
+\step{所以 $a=3b<0$，代入 $ax>b$ 中得 $3bx>b$，又 $b<0$，则 $x<\dfrac13$，}
+\step{故解集为 $\left(-\infty,\dfrac13\right)$.}
+\solend
+\fi
+
+\item 设集合 $A=\{x\in\R\mid x^2+x-6=0\}$，集合 $B=\{x\mid mx+1=0\}$，且 $A\cup B=A$，则 $m$ 的值组成的集合是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $A=\{x\in\R\mid x^2+x-6=0\}=\{-3,2\}$，}
+\step{由 $A\cup B=A$，得 $B\subseteq A$，}
+\step{当 $m=0$ 时，$B=\varnothing$，满足题意，}
+\step{当 $m\neq0$ 时，$B=\left\{-\dfrac1m\right\}$，所以 $-\dfrac1m=2$ 或 $-\dfrac1m=-3$，所以 $m=-\dfrac12$ 或 $m=\dfrac13$，}
+\step{综上所述，$m$ 的值组成的集合是 $\left\{0,-\dfrac12,\dfrac13\right\}$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的不等式 $|a|<|x|+|x+1|$ 解集为 $\R$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $|x|+|x+1|\geqslant|x-(x+1)|=1$，又不等式 $|a|<|x|+|x+1|$ 解集为 $\R$，}
+\step{所以 $|a|<1$，即实数 $a$ 的取值范围是 $(-1,1)$.}
+\solend
+\fi
+
+\item 若 $\ln a+\ln b=\ln(a+b)$，则 $a+4b$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\ln a+\ln b=\ln(ab)=\ln(a+b)$，所以 $ab=a+b$，$a>0$，$b>0$，}
+\step{则 $1=\dfrac1a+\dfrac1b$，$a+4b=(a+4b)\left(\dfrac1a+\dfrac1b\right)=5+\dfrac ab+\dfrac{4b}a\geqslant5+2\sqrt{\dfrac ab\cdot\dfrac{4b}a}=9$，}
+\step{当且仅当 $\dfrac ab=\dfrac{4b}a$，即 $b=\dfrac32,a=3$ 时取等号，故 $a+4b$ 的最小值为 $9$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的方程 $ax^2+2x+1=0$ 至少有一个负根，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $a=0$，则 $x=-\dfrac12$，成立；}
+\step{若 $a<0$，方程 $ax^2+2x+1=0$ 一正一负两个根，故成立；}
+\step{若 $a>0$，则只需使 $\Delta=4-4a\geqslant0$ 即可，故 $0<a\leqslant1$；}
+\step{综上所述，实数 $a$ 的取值范围为 $(-\infty,1]$.}
+\solend
+\fi
+
+\item 研究问题：“已知关于 $x$ 的不等式 $ax^2-bx+c>0$ 的解集为 $(1,2)$，解关于 $x$ 的不等式 $cx^2-bx+a>0$”，有如下解决方案：
+
+解：由 $ax^2-bx+c>0\Rightarrow a-b\left(\dfrac1x\right)+c\left(\dfrac1x\right)^2>0$，令 $y=\dfrac1x$，则 $y\in\left(\dfrac12,1\right)$，
+
+所以不等式 $cx^2-bx+a>0$ 的解集为 $\left(\dfrac12,1\right)$.
+
+参考上述解法，已知关于 $x$ 的不等式 $\dfrac k{x+a}+\dfrac{x+b}{x+c}<0$ 的解集为 $(-2,-1)\cup(2,3)$，则关于 $x$ 的不等式 $\dfrac{kx}{ax+1}+\dfrac{bx+1}{cx+1}<0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $\dfrac k{x+a}+\dfrac{x+b}{x+c}<0$ 得 $\dfrac{k\cdot\dfrac1x}{1+a\cdot\dfrac1x}+\dfrac{1+b\cdot\dfrac1x}{1+c\cdot\dfrac1x}<0$，}
+\step{令 $y=\dfrac1x$，因为 $x\in(-2,-1)\cup(2,3)$，所以 $y\in\left(-1,-\dfrac12\right)\cup\left(\dfrac13,\dfrac12\right)$，}
+\step{所以不等式 $\dfrac{kx}{ax+1}+\dfrac{bx+1}{cx+1}<0$ 的解集为 $\left(-1,-\dfrac12\right)\cup\left(\dfrac13,\dfrac12\right)$.}
+\solend
+\fi
+
+\item 若三个非零且互不相等的实数 $a$、$b$、$c$ 满足 $\dfrac1a+\dfrac1b=\dfrac2c$，则称 $a$、$b$、$c$ 是调和的；若满足 $a+c=2b$，则称 $a$、$b$、$c$ 是等差的. 已知集合 $M=\{x\mid-2025\leqslant x\leqslant2025,x\in\Z\}$，集合 $P$ 是 $M$ 的三元子集，即 $P=\{a,b,c\}\subseteq M$. 若集合 $P$ 中元素 $a$、$b$、$c$ 既是调和的，又是等差的，则称集合 $P$ 为“调和集”. 不同的“调和集”的个数为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $a+c=2b$，则 $a=2b-c$，代入 $\dfrac1a+\dfrac1b=\dfrac2c$，即 $\dfrac1{2b-c}=\dfrac2c-\dfrac1b=\dfrac{2b-c}{bc}$，}
+\step{整理得 $(2b-c)^2=bc$，展开得 $4b^2-5bc+c^2=0$，}
+\step{解得 $b=\dfrac c4$ 或 $b=c$（由集合的互异性，舍去），代入 $a+c=2b$ 得 $a=-\dfrac c2$，}
+\step{则 $P=\left\{-\dfrac c2,\dfrac c4,c\right\}\subseteq\{x\mid-2025\leqslant x\leqslant2025,x\in\Z\}$，所以 $c$ 为 4 的整数倍，}
+% 原卷此处“共有…个不同的“调和集”的个数”，句末“的个数”与“共有…个”重复，疑衍；照录（见文件头“原卷笔误/存疑”①）
+\step{且不为 0，则共有 $\dfrac{2025-1}4\times2=1012$ 个不同的“调和集”的个数.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知 $x_1,x_2$ 是方程 $x^2-4x+1=0$ 的两个根，则 $x_1^2+x_2^2$ 的值为\mbox{（\quad）}
+
+\keepwithprev
+A. $12$\qquad B. $14$\qquad C. $16$\qquad D. $18$
+
+\ifanswer
+\solbegin
+\step{$x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=4^2-2=14$，故选 $B$.}
+\solend
+\fi
+
+\item 已知 $ab\neq0$，则“$\dfrac ba>1$”是“$\dfrac ab<1$”成立的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad B. 必要非充分条件
+
+C. 充要条件\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{当 $ab\neq0$ 时，由 $\dfrac ba>1$，即 $\dfrac ba-1=\dfrac{b-a}a>0$，}
+\step{得 $\dfrac{a-b}a<0$，所以 $0<a<b$ 或 $b<a<0$，即 $\dfrac ab<1$ 成立，}
+\step{反之，例如 $a=2$，$b=-3$ 时，满足 $\dfrac ab<1$，此时 $\dfrac ba<1$，}
+\step{所以“$\dfrac ba>1$”是“$\dfrac ab<1$”成立的充分不必要条件. 故选 $A$.}
+\solend
+\fi
+
+\item 关于 $x$ 的不等式 $(ax-1)^2<x^2$ 恰有 2 个整数解，则实数 $a$ 的取值范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $\left(-\dfrac32,-1\right)\cup\left(1,\dfrac32\right)$\qquad B. $\left(-\dfrac32,-1\right)\cup\left[1,\dfrac32\right)$
+
+C. $\left(-\dfrac32,-\dfrac43\right]\cup\left[\dfrac43,\dfrac32\right)$\qquad D. $\left(-\dfrac32,-\dfrac43\right)\cup\left(\dfrac43,\dfrac32\right)$
+
+\ifanswer
+\solbegin
+% 原卷此句作“恰有两个解”，题干作“恰有 2 个整数解”，脱“整数”二字；照录（见文件头“原卷笔误/存疑”②）
+\step{$(ax-1)^2<x^2$ 即 $(ax-1)^2-x^2<0\Leftrightarrow((a+1)x-1)((a-1)x-1)<0$ 恰有两个解，}
+\step{所以 $(a+1)(a-1)>0$，即 $a>1$ 或 $a<-1$.}
+\step{当 $a>1$ 时，不等式解为 $\dfrac1{a+1}<x<\dfrac1{a-1}$，}
+\step{因为 $\dfrac1{a+1}\in\left(0,\dfrac12\right)$，恰有两个整数解即 $1$，$2$，所以 $2<\dfrac1{a-1}\leqslant3$，}
+\step{$2a-2<1\leqslant3a-3$，解得 $\dfrac43\leqslant a<\dfrac32$；}
+\step{当 $a<-1$ 时，不等式解为 $\dfrac1{a+1}<x<\dfrac1{a-1}$，}
+\step{因为 $\dfrac1{a-1}\in\left(-\dfrac12,0\right)$，恰有两个整数解即 $-1$、$-2$，所以 $-3\leqslant\dfrac1{a+1}<-2$，}
+\step{$-2(a+1)<1\leqslant-3(a+1)$，解得 $-\dfrac32<a\leqslant-\dfrac43$；}
+\step{故选 $C$.}
+\solend
+\fi
+
+\item 设有限集 $M$ 所含元素的个数用 $card(M)$ 表示，并规定 $card(\varnothing)=0$. 已知集合 $A$、$B$ 满足 $A\cup B=\{1,2,3,4,5,6\}$，$A\cap B=\varnothing$，若 $card(A)\notin A$，$card(B)\notin B$，则满足条件的所有不同集合 $A$ 的个数为\mbox{（\quad）}
+
+\keepwithprev
+A. $6$\qquad B. $10$\qquad C. $16$\qquad D. $64$
+
+\ifanswer
+\solbegin
+\step{若 $A=\varnothing$ 时，$B=\{1,2,3,4,5,6\}$，则 $card(A)=0$，则 $card(B)=6\in B$，}
+\step{这与题意 $card(B)\notin B$ 矛盾，故不满足题意，故 $A\neq\varnothing$.}
+\step{设 $A$ 中元素的个数为 $card(A)=k(k=1,2,\cdots,6)$，}
+\step{则 $B$ 中元素的个数为 $card(B)=6-k$，且 $6-k\in A\cup B$，}
+\step{由 $k\notin A$ 且 $6-k\notin B$，得 $k\in B$，$6-k\in A$.}
+\stepm{①}{当 $k=5$ 时，则由 $card(A)=5\notin A$，得 $5\in B$，又 $card(B)=1$，}
+\step{所以 $B=\{5\}$，$A=\{1,2,3,4,6\}$ 满足题意；}
+\stepm{②}{当 $k=2$ 时，则 $2\notin A$，$4\notin B$，则 $2\in B$，$4\in A$，又 $card(A)=2$，}
+\step{若 $A=\{4,5\}$，则 $B=\{1,2,3,6\}$；若 $A=\{4,6\}$，则 $B=\{1,2,3,5\}$；}
+\step{若 $A=\{1,4\}$，则 $B=\{2,3,5,6\}$；若 $A=\{3,4\}$，则 $B=\{1,2,5,6\}$；}
+\step{以上情况都满足题意；}
+\stepm{③}{当 $k=3$ 时，即 $card(A)=3$，则 $3\notin A$，$3\in B$，}
+\step{但此时 $card(B)=6-3=3\notin B$，故产生矛盾，所以不满足题意；}
+\stepm{④}{当 $k=4$ 时，则由 $card(B)=6-4=2\notin B$ 且 $card(A)=4\notin A$，得 $2\in A$，$4\in B$，}
+\step{又 $card(B)=2$，与②同理可得不同集合 $B$ 的个数有 4 个，}
+\step{即不同集合 $A$ 的个数有 4 个；}
+\stepm{⑤}{当 $k=1$ 时，则 $5\in A$，又 $card(A)=1$，}
+\step{所以 $A=\{5\}$，$B=\{1,2,3,4,6\}$ 满足题意；}
+\step{综上，满足条件的所有不同集合 $A$ 的个数为 $1+4+4+1=10$. 故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 设集合 $A=\{x\mid x=m^2-n^2,m\in\Z,n\in\Z\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求证：$2k+1\in A(k\in\Z)$；
+\item 用反证法证明：10 不是集合 $A$ 的元素.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为集合 $A=\{x\mid x=m^2-n^2,m\in\Z,n\in\Z\}$，}
+\step{可令 $m=k+1$，$n=k$，$k\in\Z$，}
+\step{由 $2k+1=(k+1)^2-k^2$，则 $2k+1\in A(k\in\Z)$；}
+\stepm{(2)}{假设 10 是集合 $A$ 的元素，得 $10\in A$，即 $10=m^2-n^2$，}
+\step{也就是 $(m-n)(m+n)=10$，由于 $m\in\Z$，$n\in\Z$，}
+\step{得 $\begin{cases}m-n=1\\ m+n=10\end{cases}$ 或 $\begin{cases}m-n=10\\ m+n=1\end{cases}$ 或 $\begin{cases}m-n=-1\\ m+n=-10\end{cases}$ 或 $\begin{cases}m-n=-10\\ m+n=-1\end{cases}$}
+\step{或 $\begin{cases}m-n=2\\ m+n=5\end{cases}$ 或 $\begin{cases}m-n=5\\ m+n=2\end{cases}$ 或 $\begin{cases}m-n=-2\\ m+n=-5\end{cases}$ 或 $\begin{cases}m-n=-5\\ m+n=-2\end{cases}$，}
+\step{由于上面每一种情况的解都不是整数，所以假设不成立，}
+\step{即 10 不是集合 $A$ 的元素.}
+\solend
+\fi
+
+\ansspace[6]
+
+% 第 18 题题干长、作答区 8 行；用 \ansneed 挡住“作答区整块翻到次页、与题干分家”
+\ansneed{20cm}
+\item \textit{Labubu} 已然成为 2025 年年轻人的新宠，它为年轻人提供了情绪价值，成为了很多年轻人的精神寄托. 现有国内一家工厂决定在国内专项生产销售此款玩具，已知生产这种玩具的年固定成本为 15 万元，每生产 $x$ 千件需另投入 $c(x)$ 万元. 其中 $c(x)$ 与 $x$ 之间的关系为：$c(x)=\begin{cases}ax^2+bx,0<x<20,x\in\N\\ 22x+\dfrac c{x-2}-950,x\geqslant20,x\in\N\end{cases}$，且函数 $c(x)$ 的图象过 $A(3,9)$、$B(6,24)$、$C(82,1054)$ 三点. 通过市场分析，公司决定每千件 \textit{Labubu} 售价定为 12 万元，且该厂年内生产的此款玩具能全部销售完.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 求 $a$、$b$、$c$ 的值，并写出年利润 $L(x)$（万元）关于年产量 $x$（千件）的函数解析式；
+\item 当年产量为多少千件时，该厂所获年利润最大？并求出最大年利润.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{将 $A(3,9)$、$B(6,24)$、$C(82,1054)$ 三点代入，}
+\step{得 $\begin{cases}9=9a+3b\\ 24=36a+6b\\ 1054=22\times82+\dfrac c{82-2}-950\end{cases}$，解得 $a=\dfrac13$，$b=2$，$c=16000$，}
+\step{即 $c(x)=\begin{cases}\dfrac13x^2+2x,0<x<20,x\in\N^*\\ 22x+\dfrac{16000}{x-2}-950,x\geqslant20,x\in\N^*\end{cases}$；}
+\step{$L(x)=12x-c(x)-15=\begin{cases}-\dfrac13x^2+10x-15,0<x<20,x\in\N^*\\ -10x-\dfrac{16000}{x-2}+935,x\geqslant20,x\in\N^*\end{cases}$.}
+\stepm{(2)}{当 $0<x<20$ 时，$L(x)=-\dfrac13(x-15)^2+60$，}
+\step{则当 $x=15$ 时，$L(x)$ 取得最大值 60 万元；}
+\step{当 $x\geqslant20$ 时，$L(x)=-10x-\dfrac{16000}{x-2}+935=-\left[10(x-2)+\dfrac{16000}{x-2}\right]+915$}
+\step{$\leqslant-2\sqrt{10(x-2)\cdot\dfrac{16000}{x-2}}+915=115$，}
+\step{当且仅当 $10(x-2)=\dfrac{16000}{x-2}$ 时，即 $x=42$ 时取等号，}
+\step{此时 $L(x)$ 取得最大值，且最大值为 115 万元，}
+\step{所以当年产量为 42 千件时，该厂所获年利润最大，最大年利润 115 万元.}
+\solend
+\fi
+
+\ansspace[8]
+
+% 压轴题（题干＋三小问）与作答区 10 行须同页：\ansneed 挡住“题干留在页底、小问翻页”
+\ansneed{20cm}
+\item 已知集合 $A$ 中元素均为正整数，且 $A$ 中至少有三个元素. 如果存在 $x$、$y$、$z\in A$，同时满足①$x<y<z$；②$x+y>z$；③$x+y+z$ 为偶数，那么称集合 $A$ 具有性质 $P$. 已知集合 $S_n=\{1,2,3,\cdots,2n\}$，其中 $n\in\N^*$，$n\geqslant4$（例如：$S_4=\{1,2,3,4,5,6,7,8\}$），对于集合 $S_n$ 的非空子集 $B$，若 $S_n$ 中存在三个互不相同的元素 $a$、$b$、$c$，使得 $a+b$、$b+c$、$c+a$ 均属于 $B$，则称集合 $B$ 是集合 $S_n$ 的“优美子集”.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若集合 $A_1=\{1,3,4,5\}$，$A_2=\{1,3,5,7\}$，判断 $A_1$、$A_2$ 是否具有性质 $P$，并说明理由；
+\item 若集合 $B=\{4,6,a\}$ 具有性质 $P$，判断集合 $B$ 是否集合 $S_4$ 的“优美子集”，并说明理由；
+\item 对于集合 $S_n$ 的非空子集 $M$，证明：集合 $M$ 具有性质 $P$ 的充要条件是集合 $M$ 是集合 $S_n$ 的“优美子集”.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{集合 $A_1=\{1,3,4,5\}$ 具有性质 $P$，理由如下：}
+\step{取 $x=3$，$y=4$，$z=5$，}
+\step{满足 $x<y<z$，$x+y=7>5=z$，$x+y+z=12$ 是偶数，}
+\step{所以集合 $A_1=\{1,3,4,5\}$ 具有性质 $P$；}
+\step{集合 $A_2=\{1,3,5,7\}$ 不具有性质 $P$，理由如下：}
+\step{集合 $A_2$ 中所有元素均为奇数，任意三个元素的和为奇数，不满足条件③，}
+\step{所以 $A_2=\{1,3,5,7\}$ 不具有性质 $P$.}
+% 原卷 (2) 只讨论 a=2 与 a>6 两种情形，a≤0 未提，且验证“优美子集”另起一行；照录（见文件头“原卷笔误/存疑”⑤）
+\stepm{(2)}{由 $4+6+a$ 是偶数，得实数 $a$ 是偶数，}
+\stepm{①}{若 $a=2$，则由 $a+4>6$，得 $a>2$，矛盾.}
+\stepm{②}{若 $a>6$，则 $x=4$，$y=6$，$z=a$.}
+\step{由 $x+y>z$，得 $6<a<10$，故 $a=8$，满足题意，所以集合 $B=\{4,6,8\}$.}
+\step{$1+3=4$，$1+5=6$，$3+5=8$，所以 $B$ 是 $S_4$ 的“优美子集”.}
+% 原卷“先证充分性：”“再证必要性：”排红色（全卷仅有的红字），按 高一53“情况1：”成例加粗着色
+\stepm{(3)}{{\bfseries\color{solblue}先证充分性：}$M$ 是集合 $S_n$ 的“优美子集”$\Rightarrow M$ 具有性质 $P$.}
+\step{集合 $M$ 是集合 $S_n$ 的“优美子集”，所以存在三个互不相同的 $a$、$b$、$c\in S_n$，}
+\step{不妨设 $a<b<c$，使得 $x=a+b\in M$，$y=c+a\in M$，$z=b+c\in M$，}
+\step{且 $x<y<z$，$x+y-z=(a+b)+(a+c)-(b+c)=2a>0$，}
+\step{$x+y+z=2(a+b+c)$ 为偶数，所以集合 $M$ 具有性质 $P$.}
+\step{{\bfseries\color{solblue}再证必要性：}$M$ 具有性质 $P\Rightarrow M$ 是集合 $S_n$ 的“优美子集”.}
+\step{集合 $M$ 具有性质 $P$，所以 $M$ 中存在 $x$、$y$、$z$，}
+\step{同时满足①$x<y<z$；②$x+y>z$；③$x+y+z$ 为偶数，}
+\step{令 $a=\dfrac{x+y+z}2-z$，$b=\dfrac{x+y+z}2-y$，$c=\dfrac{x+y+z}2-x$，}
+\step{所以 $a<b<c$，$a=\dfrac{x+y+z}2-z=\dfrac{x+y-z}2>0$，$a$、$b$、$c$ 均为整数，}
+\step{因为 $z-c=z+x-\dfrac{x+y+z}2=\dfrac{z+x-y}2>0$，所以 $c<z$，}
+\step{所以 $0<a<b<c<z$，且 $a$、$b$、$c$ 均为正整数，所以 $a$、$b$、$c\in S_n$，}
+\step{因为 $a+b=x$，$a+c=y$，$b+c=z$，所以 $a+b$、$b+c$、$c+a\in M$，}
+\step{所以当集合 $M$ 具有性质 $P$ 时，集合 $M$ 是集合 $S_n$ 的“优美子集”.}
+\step{综上所述，对于 $S_n$ 的非空子集 $M$，}
+\step{集合 $M$ 是集合 $S_n$ 的“优美子集”的充要条件是集合 $M$ 具有性质 $P$.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
