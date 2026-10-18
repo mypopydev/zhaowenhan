@@ -1,0 +1,426 @@
+% 高一68_东华附高_10月月考.tex
+%   —— 高一上数学“2026-2027 年东华附高高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一68_东华附高_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一68_东华附高_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一68_东华附高_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，连载“27学年高一68”；
+% 原文标题“27学年高一68——2026-2027年上海市东华附高高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/uja6yznqDjmT3rvcfKQZig。
+% 页面标注发布时间 2026-10-18 20:33（上海）。
+% 正文为 10 张 PNG 页（`原图/高一68_东华附高_10月月考/01..10.png`）：
+% 第 09 页 2560×3620，第 01—08、10 页 4762×6735（**同一篇各页分辨率不同**），均按页序读取。
+% 10 页全为试卷正文页（卷首标题在第 1 页页顶，卷末解答题第 21 题解析止于第 10 页），
+% 无封面页、目录页、二维码或宣传页。粉色斜排“魔都数学加油站”为卷面水印，与公众号页脚一并未录入。
+%
+% 卷首标题：照卷面印作“2026--2027 年东华附高高一上 10 月月考”（黑体加粗一行），
+% 年份区间按全稿惯例排 en dash。原卷只有一行标题、无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、选择题”“三、解答题”）。
+%
+% 讲评版：原卷每题下直接印【答案】或【解析】。**只印【答案】的 4 题**（第 3、4、5、9 题），
+% 本稿只给 \ans{}；其余 15 题里 14 题都印【解析】（按全稿口径这类题不另提 \ans{}——
+% 第 14、15、16 题的“故选 B／A／C”写在解析末句，亦照录在解析内）。
+% **另有 1 题答案印在题干括号内**——第 13 题（“(  A  )”，且该题无【答案】/【解析】段），
+% 本稿按 高一37 第 13 题、高一63 第 14 题成例把括号留空、答案另提为 \ans{$A$}。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、不等式”：
+% 19 题中集合与常用逻辑用语 11 题（第 3、5、7、8、11、12、13、14、17、18、21 题），
+% 不等式 8 题（含等式（韦达定理、恒等式）与不等式性质、二次不等式、恒成立：
+% 第 4、6、9、10、15、16、19、20 题），两类均确有分量，故并标。口径同 高一63。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版，试卷版保持干净；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约四个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ④ 原卷实数集排粗体 $\mathbf{R}$（第 3 题题干）或斜体 $R$（第 12、13、15、20 题题干与解析），
+%      本稿按全稿惯例统一改用 $\R$（粗体／斜体不作区分，同 高一63 排版差异④）；
+%      第 21 题正整数集原卷排斜体 $N_+$（下标加号），因 $N_+$ 与 $\N^*$ 是两种记号，
+%      本稿照录 $N_+$ 未改（同 高一05 第 20 题成例）；空集记号原卷作 $\varnothing$，照录；
+%   ⑤ “card”记号原卷排斜体（$card(P)$ 等，第 12 题），本稿照录未改作正体（同 高一66 排版差异⑩）；
+%   ⑥ 原卷在数学式内多处用半角逗号（如第 6 题解析“解得 $a=2,b=1,c=-2$”、第 11 题解析
+%      $\{1,8\},\{2,7\},\{3,6\},\{4,5\}$、第 13 题题干“$a<0,b>0$”、第 19 题解析
+%      $k=1,3,4,5,8$、第 21 题（1）$P=\{2,5,8\},Q=\{0,5,10\}$ 等），均照录未强改；
+%      句末句点按全稿惯例排西文句点；“封闭集”自定义名词照录；
+%   ⑦ 第 6 题解析的“法一：”“法二：”标号原卷排**红色**（全卷共 2 处），
+%      同 高一53“情况1：”、高一63“法一：”成例，本稿排 \stepm{法一：}{…}、\stepm{法二：}{…}
+%      （加粗着色、不改黑色基调），冒号照原卷排全角；
+%   ⑧ 第 17—21 题的子问按全稿惯例用 enumerate 的 (1)(2)(3)；解析中的子问标号一律用
+%      \stepm{(1)}{…}；第 18 题 (2) 解析的①②、第 20 题解析的 (2)(i) 与 (ii) 照原卷标号
+%      分别作 \stepm{①}{…}、\stepm{②}{…}、\stepm{(2)(i)}{…}、\stepm{(ii)}{…}；
+%   ⑨ 第 13 题印在题干括号内的答案移入 \ans{}，见上；
+%   ⑩ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace（末题用 \ansspace*）；
+%   ⑪ 选择题的作答括号原卷排半角“(　　)”（第 14、15、16 题括号内空白、第 13 题括号内印 A），
+%      本稿按全稿惯例排 \mbox{（\quad）}；选项照原卷行排——第 14、15、16 题四个选项一行四条，
+%      第 13 题两行两条。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 10 题解析行文顺序欠顺：第 2 行未作铺垫即写“所以 $\Delta=m^2-8m+4>0$”
+%      （该断言到第 6 行才用于舍 $m=5$），而韦达定理两行在其后才出现，且第 6 行
+%      “又 $\Delta=m^2-8m+4>0$”将同一式子重复一遍；原卷如此，照录未改。
+%   ② 第 21 题 (1) 解析验证集合 $Q$ 时，$0+0=0$ 与 $0-0=0$ 两情形合写作
+%      “$0\pm0=0\in Q$”（放大确认确为“±”），写法不合常规；照录未改。
+%   ③ 第 21 题 (2) 解析的不等式链作“$a_3-a_3<a_3-a_2<a_3-a_1$”（未写 $0\leqslant$），
+%      而 (3) 中同类不等式链写作“$0\leqslant a_n-a_n<a_n-a_{n-1}<\cdots$”，前后写法不一；
+%      照录未改。
+%
+% 行数核对：逐题数 \step/\stepm 条数与原卷【解析】印刷行数，14 题逐一相符，
+% 合计 132 条 / 132 行（Q6：4；Q7：3；Q8：1；Q10：6；Q11：9；Q12：27；Q14：3；Q15：5；
+% Q16：7；Q17：7；Q18：17；Q19：6；Q20：12；Q21：25）。
+%
+% 插图：无（全卷 10 页无任何图形、无“如图/右图/图中”字样）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年东华附高高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+% 原卷实数集排粗体 $\mathbf R$，本稿按全稿惯例改用 $\R$（见文件头“排版差异”④）
+\item 已知 $a\in\R$，则“$a^2>4$”是“$a>2$”的\blankline[4.4em]条件.
+
+\ifanswer
+\ans{必要非充分}
+\fi
+
+\item 已知 $1<x<2$，$-1<y<4$，则 $x+y$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\ans{$(0,6)$}
+\fi
+
+\item 陈述句“$x=2$ 或 $y=3$”的否定形式为\blankline[4.4em].
+
+\ifanswer
+\ans{$x\neq2$ 且 $y\neq3$}
+\fi
+
+\item 已知等式 $2x^2-3x-1=a(x-1)^2+b(x-1)+c$ 恒成立，其中 $a$、$b$、$c$ 为常数，则 $a+b+c=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+% 原卷“法一：”“法二：”标号排红色，本稿按 高一53“情况1：”成例排 \stepm（加粗着色），见文件头
+\stepm{法一：}{因为 $2x^2-3x-1=a(x-1)^2+b(x-1)+c$ 恒成立，}
+\step{即 $2x^2-3x-1=ax^2+(b-2a)x+a-b+c$ 恒成立，}
+\step{所以 $\begin{cases}a=2\\ b-2a=-3\\ a-b+c=-1\end{cases}$，解得 $a=2,b=1,c=-2$，所以 $a+b+c=1$.}
+% 原卷“法二：”标号排红色，同上
+\stepm{法二：}{令 $x=2$，得 $a+b+c=1$.}
+\solend
+\fi
+
+\item 已知集合 $M=\{1,m+2,m^2+4\}$，如果 $5\in M$，那么实数 $m$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $5\in M$，所以 $m+2=5$ 或 $m^2+4=5$，解得 $m=3$ 或 $m=\pm1$，}
+\step{当 $m=-1$ 时，$m+2=1$，与集合 $M$ 中元素的互异性矛盾，故舍去 $m=-1$，}
+\step{经检验 $m=1$ 或 3.}
+\solend
+\fi
+
+\item 已知集合 $M$ 满足 $\{1,2\}\subseteq M\subset\{1,2,5,6,7\}$，则符合条件的集合 $M$ 个数有\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{$M=\{1,2\}\cup\{5,6,7\}$ 的真子集，有 7 个.}
+\solend
+\fi
+
+\item 已知 $x^2-ax+b<0$ 的解集为 $\{x\mid-2<x<3\}$，则 $ax^2+x+b>0$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\ans{$(-\infty,-3)\cup(2,+\infty)$}
+\fi
+
+\item 已知关于 $x$ 的方程 $x^2-mx+2m-1=0$ 的两个实数根分别为 $x_1$、$x_2$，且 $x_1^2+x_2^2=7$，则 $m=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+% 行文顺序照原卷：先写 $\Delta>0$，韦达定理两行在其后（见文件头“原卷笔误/存疑”①）
+\step{关于 $x$ 的方程 $x^2-mx+2m-1=0$ 的两个实数根分别为 $x_1$、$x_2$，}
+\step{所以 $\Delta=m^2-4\times(2m-1)=m^2-8m+4>0$，}
+\step{所以 $x_1+x_2=m$，$x_1x_2=2m-1$，}
+\step{得 $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=m^2-2(2m-1)=7$，}
+\step{$m^2-4m-5=(m-5)(m+1)=0$，$m=5$ 或 $m=-1$，}
+\step{又 $\Delta=m^2-8m+4>0$，$m=5$（舍），所以 $m=-1$.}
+\solend
+\fi
+
+\item 已知由自然数组成的 $n-1$ 个元素的集合 $A=\{1,2,3,4,\cdots,n-1\}$($n>1$)，非空集合 $B\subseteq A$，且对任意的 $a\in B$，都有 $n-a\in B$. 当 $n=9$ 时，则所有满足条件的集合 $B$ 的元素的和为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $n=9$ 时，$A=\{1,2,3,4,5,6,7,8\}$，}
+\step{当 $B$ 中有两个元素时，集合 $B$ 可以为 $\{1,8\},\{2,7\},\{3,6\},\{4,5\}$，}
+\step{元素总和为 $4\times9=36$；}
+\step{当 $B$ 中有四个元素时，集合 $B$ 可以为 $\{1,8\},\{2,7\},\{3,6\},\{4,5\}$ 中任取两个的并集，}
+\step{集合 $B$ 共有 6 种情况，元素总和为 $6\times2\times9=108$；}
+\step{当 $B$ 中有六个元素时，集合 $B$ 可以为 $\{1,8\},\{2,7\},\{3,6\},\{4,5\}$ 中任取三个的并集，}
+\step{集合 $B$ 共有 4 种情况，元素总和为 $4\times3\times9=12\times9=108$；}
+\step{当 $B$ 中有八个元素时，$B=\{1,2,3,4,5,6,7,8\}$，元素之和为 $4\times9=36$，}
+\step{所以所有满足条件的集合 $B$ 的元素总和为 $36+108+108+36=288$.}
+\solend
+\fi
+
+\item 设 $P=\{0,2\}$，$Q=\{x\in\R\mid(x+1)(mx+1)(x^2-mx+1)=0\}$，$card(A)$ 表示集合 $A$ 中的元素个数. 定义 $P*Q=|card(P)-card(Q)|$，若 $P*Q=1$，则实数 $m$ 的所有可能值之和为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $P=\{0,2\}$，所以 $card(P)=2$，}
+\step{又因为 $|card(P)-card(Q)|=1$，所以 $card(Q)=3$ 或 $card(Q)=1$，}
+\step{对于方程 $(x+1)(mx+1)(x^2-mx+1)=0$，由 $x+1=0$，得 $x=-1$，}
+\step{方程 $x^2-mx+1=0$，}
+\step{若 $\Delta<0$，则 $m^2-4<0$，解得 $-2<m<2$，无实数根，}
+\step{若 $\Delta=0$，则 $m^2-4=0$，解得 $m=\pm2$，有一个实数根，}
+\step{若 $\Delta>0$，则 $m^2-4>0$，解得 $m<-2$ 或 $m>2$，有两个实数根，}
+\step{当 $card(Q)=1$ 时，表示方程只有一个实数根，即方程只有一个根为 $x=-1$，}
+\step{对于 $mx+1=0$，若 $m=0$，原方程化为 $(x+1)(x^2+1)=0$，}
+\step{唯一实根 $x=-1$，此时 $card(Q)=1$，符合题意；}
+\step{若 $m\neq0$，由方程 $mx+1=0$，得 $x=-\dfrac1m$，则 $-\dfrac1m=-1$，解得 $m=1$，}
+\step{此时 $x^2-mx+1=x^2-x+1=0$ 无实根，符合题意；}
+\step{故实数 $m$ 的可能值为 0 或 1，}
+\step{当 $card(Q)=3$ 时，表示方程只有三个不同的实数根，显然 $m\neq0$，}
+\step{所以第一个根 $x=-1$，第二个根 $x=-\dfrac1m$，}
+\step{若 $\Delta=0$，当 $m=2$ 时，$x^2-2x+1=0$，解得 $x=1$，}
+\step{$mx+1=0$ 的根为 $x=-\dfrac12$，符合题意；}
+\step{当 $m=-2$ 时，$x^2+2x+1=0$，解得 $x=-1$，$mx+1=0$ 的根为 $x=\dfrac12$，}
+\step{不符合题意；}
+\step{若 $\Delta>0$，$x^2-mx+1=0$ 有两个不同的实根，}
+\step{其中一个根与 $-1$ 或 $-\dfrac1m$ 重合才可以，}
+\step{当 $x=-1$ 是 $x^2-mx+1=0$ 的实根，即 $m=-2$ 舍掉；}
+\step{当 $x=-\dfrac1m$ 是 $x^2-mx+1=0$ 的实根，}
+\step{即 $\left(-\dfrac1m\right)^2-m\left(-\dfrac1m\right)+1=0\Rightarrow\dfrac1{m^2}+2=0$，无实数解，舍掉；}
+\step{故实数 $m$ 的可能值为 2，}
+\step{综上所述，实数 $m$ 的所有可能值为 0，1，2，}
+\step{所以实数 $m$ 的所有可能值之和为 $0+1+2=3$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+% 第 13 题答案“A”直接印在题干括号内“(  A  )”，且该题无【答案】/【解析】段；
+% 按 高一37 第 13 题、高一63 第 14 题的成例括号留空、答案另提为 \ans{}（见文件头）
+\item 已知 $a$、$b\in\R$，则“$a<0,b>0$”是“$ab<0$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分不必要条件\qquad B. 必要不充分条件
+
+C. 充要条件\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\ans{$A$}
+\fi
+
+\item 已知集合 $A=\{x\mid x^2-4x+3\leqslant0\}$，集合 $B=\{x\mid x-a<0\}$. 若 $A\cap B=\varnothing$，则实数 $a$ 的取值范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $a<1$\qquad B. $a\leqslant1$\qquad C. $a<3$\qquad D. $a\leqslant3$
+
+\ifanswer
+\solbegin
+\step{因为 $A=\{x\mid(x-1)(x-3)\leqslant0\}=\{x\mid1\leqslant x\leqslant3\}$，}
+\step{且 $B=\{x\mid x-a<0\}=\{x\mid x<a\}$，}
+\step{因为 $A\cap B=\varnothing$，所以 $a\leqslant1$. 故选 $B$.}
+\solend
+\fi
+
+\item 若不等式 $(m-1)x^2+(m-1)x+2>0$ 的解集是 $\R$，则 $m$ 的范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $[1,9)$\qquad B. $[2,+\infty)$\qquad C. $[1,+\infty)$\qquad D. $[2,9]$
+
+\ifanswer
+\solbegin
+\step{当 $m-1=0$，即 $m=1$ 时，原不等式可化为 $2>0$ 恒成立，}
+\step{满足不等式解集为 $\R$，}
+\step{当 $m-1\neq0$，即 $m\neq1$ 时，若不等式 $(m-1)x^2+(m-1)x+2>0$ 的解集是 $\R$，}
+\step{则 $\begin{cases}m-1>0\\ (m-1)^2-8(m-1)<0\end{cases}$，解得 $1<m<9$.}
+\step{综上所述，$m$ 的取值范围为 $[1,9)$. 故选 $A$.}
+\solend
+\fi
+
+\item 已知不等式 $x^2-(2m+3)x+6m<0$ 的解集中恰好有两个偶数解，则实数 $m$ 的取值范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $\left[0,\dfrac12\right)$\qquad B. $[3,4]$\qquad C. $[-1,0)\cup(3,4]$\qquad D. $\left[0,\dfrac12\right)\cup\left(\dfrac52,3\right]$
+
+\ifanswer
+\solbegin
+\step{由 $x^2-(2m+3)x+6m<0$，得 $(x-2m)(x-3)<0$，}
+\step{当 $2m=3$ 时，此时 $m=\dfrac32$，不等式的解集为 $\varnothing$，不合题意，舍去；}
+\step{当 $2m>3$ 时，此时 $m>\dfrac32$，不等式的解集为 $\{x\mid3<x<2m\}$，}
+\step{此时若有 2 个偶数解，则需 $6<2m\leqslant8$，解得 $m\in(3,4]$；}
+\step{当 $2m<3$ 时，此时 $m<\dfrac32$，不等式的解集为 $\{x\mid2m<x<3\}$，}
+\step{此时若有 2 个偶数解，则需 $-2\leqslant2m<0$，解得 $m\in[-1,0)$；}
+\step{综上，实数 $m$ 的取值范围为 $[-1,0)\cup(3,4]$，故 $C$ 正确. 故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 设集合 $A=\{x\mid x^2-2x-8\leqslant0\}$，$B=\{x\mid m<x<2m+1\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 当 $m=2$ 时，求 $A\cap B$ 与 $A\cup B$；
+\item 若 $A\cap B=B$ 时，求实数 $m$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{集合 $A=\{x\mid x^2-2x-8\leqslant0\}=\{x\mid-2\leqslant x\leqslant4\}$，}
+\step{当 $m=2$ 时，$B=\{x\mid2<x<5\}$，}
+\step{所以 $A\cap B=\{x\mid2<x\leqslant4\}$，$A\cup B=\{x\mid-2\leqslant x<5\}$.}
+\stepm{(2)}{由 $A\cap B=B$，得 $B\subseteq A$，}
+\step{当 $B=\varnothing$ 时，$m\geqslant2m+1$，解得 $m\leqslant-1$，此时满足 $B\subseteq A$；}
+\step{当 $B\neq\varnothing$ 时，则 $\begin{cases}m<2m+1\\ -2\leqslant m\\ 2m+1\leqslant4\end{cases}$，解得 $-1<m\leqslant\dfrac32$；}
+\step{综上，实数 $m$ 的取值范围为 $(-\infty,\dfrac32]$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 设集合 $A=\{x\mid x^2-8x+12=0\}$，$B=\{x\mid x^2+2(a+1)x+a^2-13=0\}$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $A\cap B=\{2\}$，求实数 $a$ 的值；
+\item 若 $x\in A$ 是 $x\in B$ 的必要条件，求实数 $a$ 的取值范围.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$A=\{x\mid x^2-8x+12=0\}=\{2,6\}$，$B=\{x\mid x^2+2(a+1)x+a^2-13=0\}$，}
+\step{因为 $A\cap B=\{2\}$，所以 $2\in B$，则 $4+4(a+1)+a^2-13=0$，}
+\step{即 $a^2+4a-5=0$，解得 $a=1$ 或 $-5$，}
+\step{当 $a=1$ 时，$B=\{x\mid x^2+4x-12=0\}=\{-6,2\}$，$A\cap B=\{2\}$，满足题意；}
+\step{当 $a=-5$ 时，$B=\{x\mid x^2-8x+12=0\}=A$，$A\cap B=\{2,6\}$，}
+\step{不满足题意，则 $a=1$；}
+\stepm{(2)}{若 $x\in A$ 是 $x\in B$ 的必要条件，则 $B\subseteq A$，}
+\stepm{①}{当 $B=\varnothing$ 时，则 $\Delta=4(a+1)^2-4(a^2-13)=8(a+7)<0$，}
+\step{解得 $a<-7$，}
+\stepm{②}{当 $B\neq\varnothing$，即 $a\geqslant-7$ 时，}
+\step{若集合 $B$ 中只有一个元素，则 $\Delta=8(a+7)=0$，即 $a=-7$ 时，}
+\step{$B=\{x\mid x^2-12x+36=0\}=\{6\}\subseteq\{2,6\}$，$B\subseteq A$，满足题意；}
+\step{若集合 $B$ 中有两个元素，则 $\Delta=8(a+7)>0$，}
+\step{即当 $a>-7$ 时，要使 $B\subseteq A$，则 $B=A=\{2,6\}$，}
+\step{所以 2 和 6 是方程 $x^2+2(a+1)x+a^2-13=0$ 的两根，}
+\step{则 $\begin{cases}2+6=-2(a+1)\\ 2\times6=a^2-13\end{cases}$，解得 $a=-5$，满足条件 $a>-7$.}
+\step{综上所述，$\{a\mid a\leqslant-7\text{ 或 }a=-5\}$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 已知关于 $x$ 的一元二次方程 $3x^2-3kx+k-2=0$，其两实根为 $x_1$、$x_2$，且 $x_1=\lambda x_2$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若 $(2x_1-x_2)(x_1-2x_2)=1$，求 $k$ 的值；
+\item 若 $\lambda+\dfrac1\lambda$ 为整数时，求所有满足条件的整数 $k$.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\step{由题意 $k\neq0$，$\Delta=9k^2-12k(k-2)\geqslant0$，得 $0<k\leqslant8$，且 $x_1+x_2=1$，$x_1x_2=\dfrac{k-2}{3k}$.}
+\stepm{(1)}{因为 $1=(2x_1-x_2)(x_1-2x_2)=2x_1^2+2x_2^2-5x_1x_2$}
+\step{$=2(x_1+x_2)^2-9x_1x_2=2-\dfrac{3(k-2)}k$，所以 $k=3$.}
+\stepm{(2)}{显然 $\lambda\neq0$，这说明 $x_1$ 与 $x_2$ 都不为 0，所以 $k\neq2$.}
+\step{因为 $\lambda+\dfrac1\lambda=\dfrac{x_1}{x_2}+\dfrac{x_2}{x_1}=\dfrac{x_1^2+x_2^2}{x_1x_2}=\dfrac{(x_1+x_2)^2-2x_1x_2}{x_1x_2}=\dfrac{3k}{k-2}-2$ 为整数，}
+\step{所以 $k-2\mid3k$，进而 $k-2\mid6$，其中符合 $0<k\leqslant8$ 的有 $k=1,3,4,5,8$.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 已知函数 $f(x)=-x^2+2x-a$.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若关于 $x$ 的不等式 $f(x)\leqslant0$ 的解集为 $\R$，求 $a$ 的取值范围；
+\item 记关于 $x$ 的不等式 $f(x)<-a^2+a$ 的解集为 $M$.
+
+(i) 若 $3\notin M$，求 $a$ 的取值范围；
+
+(ii) 求 $M$.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$f(x)=-x^2+2x-a\leqslant0$ 恒成立，即不等式 $x^2-2x+a\geqslant0$ 的解集为 $\R$，}
+\step{则 $\Delta=4-4a\leqslant0$，解得 $a\geqslant1$，所以 $a$ 的取值范围是 $\{a\mid a\geqslant1\}$.}
+\stepm{(2)(i)}{不等式 $f(x)<-a^2+a$ 可化为 $x^2-2x+a(2-a)>0$，}
+\step{由 $3\notin M$，得 $3^2-2\times3+a(2-a)\leqslant0$，即 $a^2-2a-3\geqslant0$，}
+\step{解得 $a\leqslant-1$ 或 $a\geqslant3$，所以 $a$ 的取值范围是 $\{a\mid a\leqslant-1\text{ 或 }a\geqslant3\}$.}
+\stepm{(ii)}{由 (i) 得 $x^2-2x+a(2-a)>0\Leftrightarrow(x-a)[x-(2-a)]>0$，}
+\step{当 $a<1$ 时，$a<2-a$，解得 $x<a$ 或 $x>2-a$；}
+\step{当 $a=1$ 时，$a=2-a$，解得 $x<1$ 或 $x>1$；}
+\step{当 $a>1$ 时，$a>2-a$，解得 $x<2-a$ 或 $x>a$；}
+\step{综上，当 $a<1$ 时，$M=(-\infty,a)\cup(2-a,+\infty)$；}
+\step{当 $a=1$ 时，$M=(-\infty,1)\cup(1,+\infty)$；}
+\step{当 $a>1$ 时，$M=(-\infty,2-a)\cup(a,+\infty)$.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 已知集合 $M=\{a_1,a_2,a_3,\cdots,a_n\}$($0\leqslant a_1<a_2<a_3<\cdots<a_n$,$n\in N_+$) 具有性质：对任意
+$1\leqslant i\leqslant j\leqslant n$($i,j$ 为正整数)，$a_j+a_i$ 与 $a_j-a_i$ 至少有一个属于 $M$，则称 $M$ 为“封闭集”.
+
+\begin{enumerate}[label=(\arabic*)]
+\item 若集合 $P=\{2,5,8\}$,$Q=\{0,5,10\}$，判断 $P$、$Q$ 是否是“封闭集”？并说明理由；
+\item 若集合 $P=\{a_1,a_2,a_3\}$($0\leqslant a_1<a_2<a_3$) 是“封闭集”，且 $a_3=2026$，求集合 $P$；
+\item 设集合 $A=\{a_1,a_2,a_3,\cdots,a_n\}$($0\leqslant a_1<a_2<a_3<\cdots<a_n$,$n\geqslant4$,$n$ 为正整数) 是“封闭集”，证明：$a_1+a_2+a_3+\cdots+a_n=\dfrac n2\cdot a_n$.
+\end{enumerate}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{集合 $P$ 不是“封闭集”，理由如下：}
+\step{在集合 $P=\{2,5,8\}$ 中，}
+\step{因为 $2+5=7\notin P$，$5-2=3\notin P$，所以集合 $P$ 不是“封闭集”.}
+\step{集合 $Q$ 是“封闭集”，理由如下：}
+\step{集合 $Q=\{0,5,10\}$ 中，}
+% 原卷此处作“0±0=0∈Q”，0+0 与 0−0 两情形合写为“±”，写法不合常规；照录（见文件头“原卷笔误/存疑”②）
+\step{因为 $0+5=5\in Q$，$0+10=10\in Q$，$10-5=5\in Q$，$0\pm0=0\in Q$，}
+\step{$5+5=10\in Q$，$5-5=0\in Q$，$10-10=0\in Q$，}
+\step{所以集合 $Q$ 是“封闭集”；}
+% 原卷此处不等式链未写 0⩽，(3) 中同类链则写 0⩽，前后不一；照录（见文件头“原卷笔误/存疑”③）
+\stepm{(2)}{因为 $a_1<a_2<a_3$，且 $P=\{a_1,a_2,a_3\}$ 是“封闭集”，$a_3+a_3>a_3$，}
+\step{所以 $a_3+a_3\notin P$，则 $a_3-a_3=0\in P$，所以 $a_1=0$，}
+\step{因为 $a_2+a_3>a_3$，所以 $a_2+a_3\notin P$，}
+\step{则 $(a_3-a_3)\in P$、$(a_3-a_2)\in P$、$(a_3-a_1)\in P$，}
+\step{$a_3-a_3<a_3-a_2<a_3-a_1$，}
+\step{由集合的元素互异性得 $a_3-a_2=a_2$，}
+\step{因为 $a_3=2026$，所以 $a_2=\dfrac12a_3=1013$，所以集合 $P=\{0,1013,2026\}$；}
+\stepm{(3)}{因为 $A=\{a_1,a_2,a_3,\cdots,a_n\}(0\leqslant a_1<a_2<a_3<\cdots<a_n)$ 是“封闭集”，}
+\step{所以 $a_n+a_n\notin A$，则 $a_n-a_n=0\in A$，所以 $a_1=0$，}
+\step{又 $0\leqslant a_1<a_2<\cdots<a_n$，所以 $0\leqslant a_n-a_n<a_n-a_{n-1}<\cdots<a_n-a_1$，}
+\step{又 $a_n+a_{n-i}>a_n(i=1,2,\cdots,n-1)$，所以 $a_n+a_{n-i}\notin A$，则 $a_n-a_{n-i}\in A$，}
+\step{由集合元素的互异性得 $a_1=a_n-a_n$，$a_2=a_n-a_{n-1}$，$a_3=a_n-a_{n-2}$，$\cdots$，}
+\step{$a_n=a_n-a_1$，}
+\step{所以 $a_1+a_2+a_3+\cdots+a_n$}
+\step{$=(a_n-a_n)+(a_n-a_{n-1})+(a_n-a_{n-2})+\cdots+(a_n-a_1)$}
+\step{$=na_n-(a_1+a_2+a_3+\cdots+a_n)$，}
+\step{所以 $2(a_1+a_2+a_3+\cdots+a_n)=na_n$，所以 $a_1+a_2+a_3+\cdots+a_n=\dfrac n2\cdot a_n$.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
