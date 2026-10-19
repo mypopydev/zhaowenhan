@@ -1,0 +1,79 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.7cm}
+\linespread{1.05}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+\newfontfamily{\starfont}{Songti SC}
+
+\definecolor{wrongred}{RGB}{198,40,40}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\newcommand{\checkmarkbox}{\fbox{\rule{0pt}{0.75ex}\rule{0.75ex}{0pt}}}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\STAR}{\textcolor{wrongred}{\starfont ★}}
+\newcommand{\STARSLOT}[1]{\makebox[1.35em][l]{#1}}
+\newcommand{\anss}[3]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{\STAR}\textbf{#3} & #2}
+\newcommand{\ansx}[3]{\hangindent=2.2em\hangafter=1\num{#1}\STARSLOT{}\textbf{#3} & #2}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\begin{document}
+\pagestyle{plain}
+
+\begin{center}
+{\LARGE\bfseries 英语短语默写 \quad 二刷 · 参考答案}\\[0.25em]
+{\large 小蓝 P41--50 \quad（中 $\to$ 英 / 英 $\to$ 中通用）}\\[0.22em]
+{\small 2029 届高一英语 · \STAR 为初核不符或待复核的条目}
+\end{center}
+
+\vspace{0.35em}
+\noindent{\small 全 25 条，题号沿用原卷。图片未附印刷答案；以下为按题意与提示词拟列的参考表达，允许同义表达。}
+
+\vspace{0.45em}
+\renewcommand{\arraystretch}{1.4}
+\noindent\begin{tabular}{@{}L{5.1cm}@{\hspace{0.15cm}}L{2.9cm}@{\hspace{0.5cm}}L{5.1cm}@{\hspace{0.15cm}}L{2.9cm}@{}}
+\toprule
+\textbf{题号 / 英文短语} & \textbf{中文释义} & \textbf{题号 / 英文短语} & \textbf{中文释义} \\
+\midrule
+\anss{1}{回顾}{look back (on sth.)} & \ansx{14}{禁止某人做某事}{ban sb. from doing sth.} \\
+\ansx{2}{羽毛球场}{badminton court} & \anss{15}{她刚到就得走了}{Barely had she arrived when she had to leave.} \\
+\anss{3}{落伍}{go / be out of fashion} & \ansx{16}{良好的开端是成功的一半}{Well begun is half done.} \\
+\ansx{4}{打钟，按铃}{ring the bell} & \anss{17}{不怕迟到只怕不做}{Better late than never.} \\
+\anss{5}{廉价销售}{sell at a bargain price} & \anss{18}{这本书我看不懂}{This book is beyond me / beyond my understanding.} \\
+\ansx{6}{向某人乞求某物}{beg sb. for sth.} & \anss{19}{不能忍受她总是迟到}{can't bear her being late all the time} \\
+\ansx{7}{铺床}{make the bed} & \anss{20}{他还要很长时间才能回来}{It'll be a long time before he comes back.} \\
+\anss{8}{境况好转}{get better / be better off} & \ansx{21}{新产品是基于传统草药研制的}{The new product is based on traditional herbal medicine.} \\
+\ansx{9}{规矩点！}{behave yourself!} & \anss{22}{他按过门铃后好一会儿才开门}{It was a long time before he opened the door.} \\
+\anss{10}{难以描述}{hard to describe} & \anss{23}{请允许我代表在座各位说你退休后生活愉快}{Please allow me, on behalf of everyone present, to wish you a happy retirement.} \\
+\anss{11}{束紧裤带}{tighten one's belt} & \anss{24}{多读书对精神成长有益}{It is beneficial to expose yourself to more reading.} \\
+\ansx{12}{畅销书}{best-seller} & \anss{25}{把我的字典递给我好吗？}{Can you pass me the dictionary that belongs to me?} \\
+\anss{13}{破坏微妙的自然平衡}{break / destroy the delicate balance of nature} & & \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\color{rulegray}\rule{\textwidth}{0.5pt}}
+\vspace{0.3em}
+\noindent\textbf{复核记录}\hfill\small 完成默写后填写
+
+\vspace{0.3em}
+\noindent\begin{tabular}{@{}p{0.31\textwidth}@{}p{0.34\textwidth}@{}p{0.35\textwidth}@{}}
+默写得分：\underline{\hspace{1.2cm}}\,/\,25
+& 仍错误的题号：\underline{\hspace{3.2cm}}
+& 下次复习日期：\underline{\hspace{2.0cm}} \\
+\end{tabular}
+
+\vspace{0.3em}
+\noindent 本轮易错点：\checkmarkbox 固定搭配\quad\checkmarkbox 习语\quad\checkmarkbox 短语动词\quad\checkmarkbox 句式倒装
+
+\vspace{0.3em}
+\noindent 复习状态：\checkmarkbox 已掌握\quad\checkmarkbox 需要巩固\quad\checkmarkbox 需重点复习
+
+\end{document}
