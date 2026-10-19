@@ -87,7 +87,7 @@ TITLE = re.compile(r'\\examtitlest(?:\[\d\])?\{(.*?)\}')
 SUBTITLE = re.compile(r'\\examtitlest(?:\[\d\])?\{.*?\}\{(.*?)\}')
 ANS_FULL = re.compile(r'\\ans\{[^}]*（1）')
 
-# 副标题口径（2026-09-26 起）：原卷自印的两份照录，其余**按本卷实际内容**补出、且只许用
+# 副标题口径（2026-09-26 起）：原卷自印的四份照录，其余**按本卷实际内容**补出、且只许用
 # “知识模块”一节里的模块名、以“、”连接（见 README“说明”的“标题行”节）。
 SELFSUB = {'高一14': '集合与逻辑单元练习', '高一24': '集合与逻辑、等式的性质',
            '高一49': '集合与逻辑单元综合检测', '高一50': '不等式章节练习'}
@@ -277,11 +277,11 @@ def zhenti_slots(cells):
 def zhenti_facts(md):
     """按“真题出处”表逐行数出：
 
-        (表行数, 题位数, 原题照录数, 改编数, 借定义数, 真题道数, {份数: 该份数的真题道数})
+        (表行数, 题位数, 原题照录数, 改编数, 借定义数, 真题道数,
+         {不同试卷数: 该份数的真题道数}, 不同真题—试卷关联数)
 
-    “份数”= 该真题被几个**不同的卷**用到（按表首格点到的卷号去重）——这是 2026-09-28 补的：
-    此前“几道被三份／两份用到”是手写的，没有任何东西核得了；现在与题位、道数互推。
-    归并用 zhenti_key()（见那里的说明：同一份卷的两道真题靠题号区分开）。
+    “份数”= 该真题被几个**不同的卷**用到（按表首格点到的卷号去重）。
+    归并用 zhenti_key()；同卷同源题的不同题位另计在题位数中，不重复增加份数。
     """
     rows = zhenti_rows(md)
     n_row = len(rows)
@@ -294,12 +294,13 @@ def zhenti_facts(md):
     for r, s in zip(rows, slots):
         groups.setdefault(zhenti_key(r[1]), set()).update(x[0] for x in s)
     dist = {}
-    for k, vols in groups.items():
+    for vols in groups.values():
         dist[len(vols)] = dist.get(len(vols), 0) + 1
-    return n_row, n_slot, n_dd, n_row - n_dd - n_bj, n_bj, len(groups), dist
+    n_volume_links = sum(map(len, groups.values()))
+    return n_row, n_slot, n_dd, n_row - n_dd - n_bj, n_bj, len(groups), dist, n_volume_links
 
 
-FENSHU = {4: '四份', 3: '三份', 2: '两份', 1: '单独'}
+FENSHU = {5: '五份', 4: '四份', 3: '三份', 2: '两份', 1: '单独'}
 
 
 def _zhenti_g(pat, s, name, n=1, flags=0):
@@ -336,7 +337,7 @@ def _tongti_members(cell):
 
 def check_zhenti(md):
     lines = md.split('\n')
-    n_row, n_slot, n_dd, n_gb, n_bj, n_dao, dist = zhenti_facts(md)
+    n_row, n_slot, n_dd, n_gb, n_bj, n_dao, dist, n_volume_links = zhenti_facts(md)
     sm = next(l for l in lines if l.startswith('| 定到具体高考试卷 |'))      # 摘要那一行
     ti = next(l for l in lines if l.startswith('### 能考据到的高考出处：'))    # 本节标题
     zb = '\n'.join(lines[lines.index(ti) + 1:lines.index(ZHENTI_HEAD)])     # 本节正文
@@ -350,6 +351,7 @@ def check_zhenti(md):
     sm_4 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*四份\*\*', sm, '摘要：被四份用到的道数')
     sm_3 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*三份\*\*', sm, '摘要：被三份用到的道数')
     sm_2 = _zhenti_g(r'\*\*(\d+) 道\*\*各被两份用到', sm, '摘要：被两份用到的道数')
+    sm_1 = _zhenti_g(r'\*\*(\d+) 道\*\*单独一份使用', sm, '摘要：单独一份用到的道数')
 
     ti_dd, ti_tj, ti_tw = _zhenti_g(r'出处：(\d+) 道真题（(\d+) 条对应／(\d+) 个题位）',
                                     ti, '节标题：道数/条数/题位', n=3)
@@ -360,9 +362,12 @@ def check_zhenti(md):
     zb_dd2, zb_gb2, zb_bj2, zb_tj2 = _zhenti_g(
         r'原题照录 \*\*(\d+)\*\* 条、改编 \*\*(\d+)\*\* 条、借定义／借集合另出题 \*\*(\d+)\*\* 条 ＝ (\d+) 条',
         zb, '节正文：按关系分', n=4)
-    a5, a4, a3, b2, c1, tw_sum = _zhenti_g(
-        r'(\d+) × 5 ＋ (\d+) × 4 ＋ (\d+) × 3 ＋ (\d+) × 2 ＋ (\d+) × 1 ＝ \*\*(\d+) 个题位\*\*',
-        zb, '节正文：题位算式', n=6)
+    a5, a4, a3, b2, c1, volume_sum = _zhenti_g(
+        r'(\d+) × 5 ＋ (\d+) × 4 ＋ (\d+) × 3 ＋ (\d+) × 2 ＋ (\d+) × 1 ＝ \*\*(\d+) 个不同试卷关联\*\*',
+        zb, '节正文：不同试卷关联算式', n=6)
+    slots_sum, slots_from_volumes, duplicate_slots = _zhenti_g(
+        r'\*\*题位数另计\*\*：(\d+) 个题位 ＝ (\d+) 个不同试卷关联 ＋ (\d+) 个同卷重复题位',
+        zb, '节正文：试卷关联数与题位数拆分', n=3)
     dd_sum = a5 + a4 + a3 + b2 + c1
     zb_5 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*五份\*\*试卷用到', zb, '节正文：被五份用到')
     zb_4 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*四份\*\*试卷用到', zb, '节正文：被四份用到')
@@ -392,21 +397,24 @@ def check_zhenti(md):
                           dist.get(2, 0), dist.get(1, 0))
     add('真题出处：条数（三处 ↔ 表行数）', (sm_tj, ti_tj, zb_tj), (n_row,) * 3,
         f'表 {n_row} 行；三处为摘要／节标题／节正文')
-    add('真题出处：题位数（三处 ＋ 算式 ↔ 表）', (sm_tw, ti_tw, zb_tw, tw_sum), (n_slot,) * 4,
+    add('真题出处：题位数（三处 ＋ 拆分算式 ↔ 表）', (sm_tw, ti_tw, zb_tw, slots_sum), (n_slot,) * 4,
         '表首格逐个数出的本库题位')
     add('真题出处：真题道数（三处 ＋ 算式 ↔ 表归并）',
         (sm_dd, ti_dd, zb_dd, dd_sum), (n_dao,) * 4,
         f'按出处栏归并（同卷两道真题靠题号区分）；算式 {a5} ＋ {a4} ＋ {a3} ＋ {b2} ＋ {c1} ＝ {dd_sum}')
-    # 题位数与“份数分布”互为印证：Σ(份数 × 该份数的真题道数) 必须等于题位数
-    add('真题出处：题位 ＝ Σ(份数 × 道数)（表内自洽）', n_slot,
+    # “份数分布”按不同试卷去重；同一试卷同一道来源的多题位另计在题位总数中。
+    add('真题出处：不同试卷关联数 ＝ Σ(份数 × 道数)（表内自洽）', volume_sum,
         5 * d5 + 4 * d4 + 3 * d3 + 2 * d2 + d1)
+    add('真题出处：不同试卷关联数 ↔ 表归并', n_volume_links, volume_sum)
+    add('真题出处：同卷重复题位数 ↔ 表与说明',
+        (duplicate_slots, slots_from_volumes), (n_slot - n_volume_links, n_volume_links))
     add('真题出处：按关系分（摘要／节正文 ↔ 表）',
         ((sm_dd2, sm_gb2, sm_bj2), (zb_dd2, zb_gb2, zb_bj2)),
         ((n_dd, n_gb, n_bj),) * 2, '原题照录／改编／借定义')
     add('真题出处：按关系分之和 ＝ 条数', sm_dd2 + sm_gb2 + sm_bj2, n_row)
     add('真题出处：真题侧份数分布（摘要／节正文／算式 ↔ 表归并）',
-        (sm_5, sm_4, sm_3, sm_2, zb_5, zb_4, zb_3, zb_2, a5, a4, a3, b2, c1),
-        (d5, d4, d3, d2, d5, d4, d3, d2, d5, d4, d3, d2, d1),
+        (sm_5, sm_4, sm_3, sm_2, sm_1, zb_5, zb_4, zb_3, zb_2, a5, a4, a3, b2, c1),
+        (d5, d4, d3, d2, d1, d5, d4, d3, d2, d5, d4, d3, d2, d1),
         f'表归并得 {d5} 道被五份、{d4} 道被四份、{d3} 道被三份、{d2} 道被两份、{d1} 道单独')
     add('真题出处：被五份用到的名单条数', zb_5, m5.group(1).count('；') + 1)
     add('真题出处：被四份用到的名单条数', zb_4, m4.group(1).count('；') + 1)
@@ -522,6 +530,20 @@ def check_tongti_counts(md):
         (n_zmem, n_bmem, n_all), f'逐字 {n_zmem}、仅变体 {n_bmem}、并集 {n_all}')
     add('共享题库：成员数自洽（逐字 ＋ 仅变体 ＝ 合计）', sm_zmem + sm_bmem, sm_all)
 
+    clan_rows = [r for r in table_rows(md, BIANTI_HEAD) if '含参二次方程与子集讨论' in r[0]]
+    if len(clan_rows) != 1:
+        raise AssertionError(f'变体表中应恰有一个“含参二次方程与子集讨论”族，实为 {len(clan_rows)}')
+    sizes = [int(x) for x in re.findall(r'\d+', clan_rows[0][1])]
+    if len(sizes) != 3:
+        raise AssertionError(f'含参二次方程族应列三档组规模，读到 {sizes}')
+    expected_cross = sum(sizes[i] * sizes[j] for i in range(len(sizes)) for j in range(i + 1, len(sizes)))
+    row_cross = _zhenti_g(r'组间交叉共 \*\*(\d+) 对\*\*', clan_rows[0][2],
+                           '变体表：含参二次方程族交叉对数')
+    note_cross = _zhenti_g(r'这三组之间的 (\d+) 对交叉', jz,
+                           '节正文：含参二次方程族交叉对数')
+    add('共享题库：含参二次方程族交叉对数', (row_cross, note_cross),
+        (expected_cross, expected_cross), '按三档组规模逐对相乘后求和')
+
 
 # ----------------------------------------------------------------- 材料流转对照表
 # 那张表也是会静默过期的：2026-10-02 查它时发现**三份家长拍照卷只登了两行**（高一b 那行整行漏了），
@@ -548,7 +570,7 @@ def check_liuzhuan(md, n_tex):
 
 
 # ----------------------------------------------------------------- 副标题分布与其他随加卷漂移的数
-# "其余 48 份由本稿补出……其中 31 份作'集合与常用逻辑用语'，另 17 份实为两章或纯不等式"
+# 31／35 按源码文件计，其中扣除两份对号副本后，66 个补出副标题文件对应 64 套不同卷。
 # 这两个数由源码的 `\examtitlest{…}{副标题}` 现算；根 README 里又复述了一遍。
 # 另有两处“当前态”的份数是靠人改的（自定义名词那句的份数、“标题行”那句的套数），一并接进闸。
 def check_subtitle_dist(md, root, n_tex):
@@ -560,14 +582,19 @@ def check_subtitle_dist(md, root, n_tex):
     plain = {k: v for k, v in subs.items() if k not in SELFSUB}
     n_single = sum(1 for v in plain.values() if v == '集合与常用逻辑用语')
     n_multi = len(plain) - n_single
-    a, b = _zhenti_g(r'其中 (\d+) 份作“集合与常用逻辑用语”，\*\*另 (\d+) 份', md,
+    a, b = _zhenti_g(r'其中 (\d+) 个源码文件作“集合与常用逻辑用语”，\s*\*\*另 (\d+) 个源码文件', md,
                      '说明：副标题分布', n=2)
-    add('副标题：作“集合与常用逻辑用语”的份数', a, n_single, f'本稿补出的 {len(plain)} 份里')
-    add('副标题：标成两章或纯不等式的份数', b, n_multi)
+    self_match = re.search(r'\*\*高一([0-9／]+) 四份是原卷自印、照录', md)
+    if not self_match:
+        raise AssertionError('README 里找不到原卷自印副标题名单')
+    self_names = self_match.group(1).split('／')
+    add('副标题：原卷自印名单', sorted('高一' + n for n in self_names), sorted(SELFSUB))
+    add('副标题：集合模块源码文件数', a, n_single, f'本稿补出的 {len(plain)} 个源码文件里')
+    add('副标题：两章或纯不等式源码文件数', b, n_multi)
     if root:
-        c, d = _zhenti_g(r'副标题 \*\*(\d+) 份\*\*即“集合与常用逻辑用语”，\s*> \*\*另 (\d+) 份',
+        c, d = _zhenti_g(r'副标题有 \*\*(\d+) 个源码文件\*\*作“集合与常用逻辑用语”，\s*> \*\*另 (\d+) 个源码文件',
                          root, '根 README：副标题分布', n=2, flags=re.S)
-        add('副标题：根 README 复述的份数', (c, d), (n_single, n_multi),
+        add('副标题：根 README 复述的源码文件数', (c, d), (n_single, n_multi),
             '两份文档各写一遍，只改一份是常见漏改')
     n_set = n_tex - COPIES
     add('“自定义名词”那句的份数', claim(md, r'把 \*\*(\d+) 份\*\*试卷里的\*\*自定义名词\*\*',
@@ -672,6 +699,10 @@ def _nohit_batch(key):
         return 'V'
     if n == 66:
         return 'W'
+    if n == 67:
+        return 'X'
+    if n == 68:
+        return 'Y'
     return None
 
 
@@ -977,7 +1008,7 @@ def check_source(md):
         # “38 个 `.tex` … 故 36”（当时实为 42 … 40）——正是“只核一处、另一处漂掉”的同型，
         # 故这里也各断一条。
         add('套数（根 README 定义式：.tex 数）',
-            claim(root, r'：(\d+) 个 `\.tex` 里', '根 README 定义式 tex 数'), n_tex,
+            claim(root, r'(\d+) 个 `\.tex` 里', '根 README 定义式 tex 数'), n_tex,
             '根 README 也复述了定义式两半')
         add('套数（根 README 定义式：套数）',
             claim(root, r'一套副本只算一套，故 (\d+)', '根 README 定义式套数'), n_tex - COPIES)
@@ -997,7 +1028,7 @@ def check_source(md):
     add('标题前缀年份数', claim(md, r'作“年”的 (\d+) 份', '年'), n_nian)
     add('副标题（本稿补出）份数', claim(md, r'标题的 (\d+) 份都是本稿补出', '副标题份数'), n_sub_std)
     add('副标题只用“知识模块”名', 0, len(bad_sub),
-        '违规：' + '、'.join(bad_sub) if bad_sub else '全部合规（其余为高一14／高一24 原卷自印值）')
+        '违规：' + '、'.join(bad_sub) if bad_sub else '全部合规（原卷自印副标题：高一14／24／49／50）')
     add('源码头带 ② 的份数', claim(md, r'其中 \*\*(\d+) 份\*\*另有 ②', '带②份数'), n_diff)
     # README 点名“高一a 是唯一没有 ② 的一份”——这是可核的，故连名单一起断言
     # （只核份数的话，“少了两份、但总份数恰好没变”这类错就漏了）。
