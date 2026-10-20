@@ -1,0 +1,426 @@
+% 高一69_建平中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年建平中学高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一69_建平中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一69_建平中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一69_建平中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，连载“27学年高一69”；
+% 原文标题“27学年高一69——2026-2027年上海市建平中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/3le9UsGLt3U9CYsh5Pd75A。
+% 页面标注发布时间 2026-10-19 22:47（上海）。
+% 正文为 11 张 PNG 页（`原图/高一69_建平中学_10月月考/01..11.png`）：
+% 第 08、11 页 2560×3620，第 01—07、09、10 页 4762×6735（**同一篇各页分辨率不同**），均按页序读取。
+% 11 页全为试卷正文页（卷首标题在第 1 页页顶，卷末解答题第 20 题解析止于第 11 页），
+% 无封面页、目录页、二维码或宣传页。粉色斜排“魔都数学加油站”为卷面水印，与公众号页脚一并未录入。
+%
+% 卷首标题：照卷面印作“2026-2027 年建平中学高一上 10 月月考”（黑体加粗一行）。
+% 原卷年份区间用半角连字符，本稿按全稿惯例排 en dash（同 高一68 排版差异条）；原卷只有一行标题、
+% 无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—20（4 题），共 18 题。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、选择题”“三、解答题”）。
+%
+% 讲评版：原卷每题下直接印【答案】或【解析】。**只印【答案】的 1 题**（第 3 题），
+% 本稿只给 \ans{}；其余 17 题全部印【解析】（按全稿口径这类题不另提 \ans{}——
+% 第 13—16 题的“故选 D／A／B／D”写在解析末句，亦照录在解析内）。
+% 全卷没有“答案印在题干括号内”的题：第 13—16 题的括号内均为空白。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、不等式”：
+% 18 题中集合与常用逻辑用语 9 题（第 3、4、6、9、11、13、16、18、20 题），
+% 不等式 9 题（第 5、7、8、10、12、14、15、17、19 题），两类均确有分量，故并标。
+% 口径同 高一63、高一68。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版，试卷版保持干净；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约四个字宽，本稿按全稿惯例统一排 \blankline[4.4em]（第 9 题横线夹在
+%      “$A$____$N$”中间，按 高一07 第 16 题成例改用行内 \underline{\hspace{3em}}）；
+%   ④ 原卷实数集一律排斜体 $R$（题干：第 7、8、10、11、13、14、16 题；解析：第 7、13 题），
+%      自然数集排斜体 $N$（题干第 9 题；解析第 9 题），本稿按全稿惯例统一改用 $\R$、$\N$
+%      （同 高一41 排版差异⑤、高一68 排版差异④）；
+%   ⑤ 原卷“．”“.”两种句末标点混用（第 4 题“$U=\{1,2,3,4,5,6\}$．”作全角句点，
+%      第 3、5、6 题等作西文句点），已逐处放大确认并照录；数学式内的逗号、
+%      “元素 $2$，$3$”这类中文行文里的逗号亦按原卷区分全角/半角，未强改；
+%   ⑥ 第 17—20 题的子问原卷印作“17.（1）…（2）…”（子问标号与题号同段），
+%      本稿按全稿惯例用 enumerate 的 (1)(2)(3)，解析中的子问标号一律用 \stepm{(1)}{…}；
+%   ⑦ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace（末题用 \ansspace*）；
+%   ⑧ 选择题的作答括号原卷排半角“(　　)”（四题括号内均空白），本稿按全稿惯例排
+%      \mbox{（\quad）}；选项照原卷行排——第 13 题四个选项一行四条，第 14、15 题两行两条，
+%      第 16 题四个选项各占一行；
+%   ⑨ 第 7 题解析的两行不等式组、第 10 题解析的 λ／μ 两个方程组、第 18 题 (1) 的
+%      三行不等式组、第 19 题 (1) 的两行不等式组，原卷均排作“{”连接的多行式，
+%      本稿按全稿惯例排 cases；
+%   ⑩ 第 2 页第 9 题题干的分式 $\dfrac17$ 与原卷一致（原卷作“$5x+\dfrac17y$”，
+%      分数线与 $y$ 分离），照录未改作 $\dfrac{y}7$。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 11 题【解析】第 1 行推出“$A\cap B\neq\varnothing$”后，第 2 行直接以
+%      “若集合 $C$ 满足 $A\cap C=\varnothing$ 且 $C\subseteq\{1,2,3,4,5\}$”起论，
+%      而 $C$ 在题干与解析中都未定义（按上下文 $C$ 应是 $B$ 在 $\{1,2,3,4,5\}$ 中的补集）；
+%      原卷如此，照录未改。
+%   ② 第 20 题 (2) 解析作“因为 $x$、$y$ 为正整数，所以 $x+y$ 可能取值为 1 或 $a$”，
+%      而正整数 $x$、$y$ 的 $x+y\geqslant2$，不可能取 1（解析下一行自己也写
+%      “当 $x+y=1$ 时，正整数 $x$、$y$ 不能取值”）；原卷如此，照录未改。
+%
+% 行数核对：逐题数 \step/\stepm 条数与原卷【解析】印刷行数，17 题逐一相符，
+% 合计 141 条 / 141 行（Q4：5；Q5：2；Q6：2；Q7：4；Q8：6；Q9：4；Q10：11；Q11：5；
+% Q12：9；Q13：1；Q14：4；Q15：13；Q16：19；Q17：6；Q18：11；Q19：9；Q20：30）。
+%
+% 插图：无题目配图或数学图形（11 页题面均无“如图/右图/图中”字样；页面另有粉色斜排水印，
+% 见上）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年建平中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+% 原卷此处作“⊂”（真包含，无下横线），与后半的“⊆”不同，已放大确认
+\item 已知集合 $M$ 满足 $\{1,2\}\subset M\subseteq\{1,2,3,4,5\}$，则所有满足条件的集合 $M$ 个数为\blankline[4.4em].
+
+\ifanswer
+\ans{7}
+\fi
+
+% 原卷“U={1,2,3,4,5,6}”后作全角句点“．”（放大确认，与第 3、5、6 题的西文句点不同），照录
+\item 已知全集 $U=\{1,2,3,4,5,6\}$．若 $A\cap\overline{B}=\{2,3\}$，$\overline{A}\cap B=\{4,6\}$，$\overline{A\cup B}=\{1,5\}$，则 $A=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $A\cap\overline{B}=\{2,3\}$，所以集合 $A$ 中有元素 $2$，$3$，}
+\step{因为 $\overline{A}\cap B=\{4,6\}$，所以集合 $B$ 中有元素 $4$，$6$，}
+\step{因为 $\overline{A\cup B}=\{1,5\}$，所以集合 $A$，$B$ 中都没有元素 $1$，$5$，}
+\step{又 $U=\{1,2,3,4,5,6\}$，所以集合 $A\cap B=\varnothing$，}
+\step{所以 $A=\{2,3\}$.}
+\solend
+\fi
+
+\item 设 $a>0$，$b>0$，则 $\dfrac{a+b}a+\dfrac{9a+b}b$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由于 $a>0$，$b>0$，则 $\dfrac{a+b}a+\dfrac{9a+b}b=1+\dfrac ba+\dfrac{9a}b+1\geqslant2\sqrt{\dfrac ba\cdot\dfrac{9a}b}+2=8$，}
+\step{当且仅当 $\dfrac ba=\dfrac{9a}b$，即 $b=3a$ 时取等号，所以 $\dfrac{a+b}a+\dfrac{9a+b}b$ 的最小值为 $8$.}
+\solend
+\fi
+
+\item 若“$x>-3$”是“$x>m$”的必要非充分条件，则 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+% 原卷此处作“⊂”（真包含，无下横线），已放大确认
+\step{若“$x>-3$”是“$x>m$”的必要非充分条件，所以 $\{x\mid x>m\}\subset\{x\mid x>-3\}$，}
+\step{则 $m>-3$，故 $m$ 的取值范围是 $\{m\mid m>-3\}$.}
+\solend
+\fi
+
+\item 已知对任意实数 $x$，不等式 $mx^2-mx+2\geqslant0$ 都成立，则 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $m=0$ 时，原不等式变为 $2\geqslant0$，该不等式对于任意 $x\in\R$ 恒成立，符合题意；}
+\step{当 $m\neq0$ 时，不等式 $mx^2-mx+2\geqslant0$ 是一元二次不等式，}
+\step{要使其对于任意 $x\in\R$ 恒成立，需满足 $\begin{cases}m>0\\ (-m)^2-4\times2m\leqslant0\end{cases}$，解得 $0<m\leqslant8$，}
+\step{综上，实数 $m$ 的取值范围是 $[0,8]$.}
+\solend
+\fi
+
+\item 已知 $m\in\R$，关于 $x$ 的方程 $x^2-6x+(4m+8)=0$ 的两个实数根为 $x_1$、$x_2$，且 $|x_1-x_2|=4$，则 $x_1^2x_2+x_1x_2^2=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由关于 $x$ 的方程 $x^2-6x+(4m+8)=0$ 的两个实数根为 $x_1$、$x_2$，}
+\step{且 $|x_1-x_2|=4$，得 $(-6)^2-4(4m+8)>0$，解得 $m<\dfrac14$，}
+\step{且 $x_1+x_2=6$，$x_1x_2=4m+8$，}
+\step{由 $|x_1-x_2|=4$，得 $(x_1-x_2)^2=16$，则 $(x_1+x_2)^2-4x_1x_2=16$，}
+\step{得 $36-4(4m+8)=16$，解得 $m=-\dfrac34<\dfrac14$，}
+\step{所以 $x_1^2x_2+x_1x_2^2=x_1x_2(x_1+x_2)=6\times(-3+8)=30$.}
+\solend
+\fi
+
+% 原卷题干分式作“5x + 1/7 y”（分数线后紧接 y），照录；横线夹在 A 与 N 之间，用行内下划线
+\item 若集合 $\mbox{$A=\{a\mid a=5x+\dfrac17y,x,y\in\N\}$}$，则 $A$\underline{\hspace{2.6em}}$N$（用“$\in$、$\notin$、$\subseteq$、$\supseteq$、$=$”其中一个填空）\mbox{.}
+
+\ifanswer
+\solbegin
+\step{取 $x=0$、$y=7n(n\in\N)$，则 $a=5\times0+\dfrac{7n}7=n$，}
+\step{所以任意自然数 $n$ 都属于 $A$，即 $\N\subseteq A$.}
+\step{又取 $x=0$、$y=1$，则 $a=\dfrac17\in A$，而 $\dfrac17\notin\N$，}
+\step{所以 $A$ 中存在不属于 $\N$ 的元素，即 $A\neq\N$，所以 $A\supseteq\N$.}
+\solend
+\fi
+
+\item 已知 $x$、$y\in\R$，$-1\leqslant2x+y\leqslant2$，$-2\leqslant x-y\leqslant3$，则下列结论正确的有\blankline[4.4em]（填序号）.
+
+\keepwithprev
+① $x$ 的取值范围为 $\left[-1,\dfrac53\right]$；\qquad ② $-\dfrac73\leqslant y\leqslant2$；
+
+③ $x+y$ 的取值范围为 $\left[-\dfrac{10}3,\dfrac{11}3\right]$；\qquad ④ $-4\leqslant x+2y\leqslant4$.
+
+\ifanswer
+\solbegin
+\step{由 $-1\leqslant2x+y\leqslant2$，$-2\leqslant x-y\leqslant3$，}
+\step{两式相加得 $-3\leqslant3x\leqslant5$，化简得 $-1\leqslant x\leqslant\dfrac53$，故①正确；}
+\step{由 $-2\leqslant x-y\leqslant3$，得 $-6\leqslant-2x+2y\leqslant4$，}
+\step{结合 $-1\leqslant2x+y\leqslant2$，相加得 $-7\leqslant3y\leqslant6$，化简得 $-\dfrac73\leqslant y\leqslant2$，故②正确；}
+\step{设 $x+y=\lambda(2x+y)+\mu(x-y)$，得 $\begin{cases}2\lambda+\mu=1\\ \lambda-\mu=1\end{cases}$，解得 $\begin{cases}\lambda=\dfrac23\\ \mu=-\dfrac13\end{cases}$，}
+\step{所以 $x+y=\dfrac23(2x+y)-\dfrac13(x-y)$，}
+\step{结合 $-\dfrac23\leqslant\dfrac23(2x+y)\leqslant\dfrac43$，$-1\leqslant-\dfrac13(x-y)\leqslant\dfrac23$，得 $-\dfrac53\leqslant x+y\leqslant2$，}
+\step{故③不正确；}
+\step{$x+2y=(2x+y)-(x-y)$，}
+\step{结合 $-1\leqslant2x+y\leqslant2$，$-3\leqslant-(x-y)\leqslant2$，得 $-4\leqslant x+2y\leqslant4$，故④正确.}
+\step{故正确的是①②④.}
+\solend
+\fi
+
+\item 设 $A$、$B$ 是集合 $\{1,2,3,4,5\}$ 的两个子集（$A$、$B$ 可以相等），对于 $x\in\R$，定义：$m=\begin{cases}0,x\notin A\\ 1,x\in A\end{cases}$，$n=\begin{cases}0,x\notin B\\ 1,x\in B\end{cases}$，若存在 $x\in\R$，使得 $m+n=2$，已知 $A=\{1,3,5\}$，则满足条件的集合 $B$ 的个数为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $m=n=1$，即存在 $x\in\R$，使得 $x\in A$ 且 $x\in B$，故 $A\cap B\neq\varnothing$，}
+% 原卷此处以未定义过的集合 C 起论（见文件头“原卷笔误/存疑”①），照录
+\step{若集合 $C$ 满足 $A\cap C=\varnothing$ 且 $C\subseteq\{1,2,3,4,5\}$，}
+\step{则 $C$ 为集合 $\{2,4\}$ 的子集，即集合 $C$ 的可能有 $2^2=4$ 种，}
+\step{又集合 $\{1,2,3,4,5\}$ 的全部子集个数为 $2^5=32$ 个，}
+\step{故满足条件的集合 $B$ 的个数为 $32-4=28$.}
+\solend
+\fi
+
+\item 定义 $\max\{x,y\}$ 表示实数 $x$、$y$ 中的较大值. 若 $a$、$b$、$c$ 是正实数，则 $\max\left\{a,\dfrac1b\right\}+\max\left\{b,\dfrac2c\right\}+\max\left\{c,\dfrac4a\right\}$ 的最小值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $t=\max\left\{a,\dfrac1b\right\}+\max\left\{b,\dfrac2c\right\}+\max\left\{c,\dfrac4a\right\}$，}
+\step{当 $c\geqslant\dfrac4a$ 时，$t\geqslant a+\dfrac2c+c\geqslant\dfrac4c+\dfrac2c+c=\dfrac6c+c$，}
+\step{已知 $c$ 是正实数，所以 $t\geqslant\dfrac6c+c\geqslant2\sqrt{\dfrac6c\cdot c}=2\sqrt6$，}
+\step{当且仅当 $a=\dfrac4{\sqrt6}=\dfrac{2\sqrt6}3$，$\dfrac{\sqrt6}4\leqslant b\leqslant\dfrac{\sqrt6}3,c=\sqrt6$ 时取等号；}
+\step{当 $c<\dfrac4a$ 时，$t\geqslant a+\dfrac2c+\dfrac4a\geqslant a+\dfrac{2a}4+\dfrac4a=\dfrac{3a}2+\dfrac4a$，}
+\step{已知 $a$ 是正实数，所以 $t\geqslant\dfrac{3a}2+\dfrac4a\geqslant2\sqrt{\dfrac{3a}2\cdot\dfrac4a}=2\sqrt6$，}
+\step{若 $\dfrac{3a}2=\dfrac4a$，则 $a=\dfrac{2\sqrt6}3$，$c=\sqrt6$，此时 $c=\dfrac4a$，与 $c<\dfrac4a$ 矛盾，}
+\step{所以等号无法取得.}
+\step{综上，$\max\left\{a,\dfrac1b\right\}+\max\left\{b,\dfrac2c\right\}+\max\left\{c,\dfrac4a\right\}$ 的最小值是 $2\sqrt6$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 设 $P=\{x\mid y=x^2\}$，$Q=\{(x,y)\mid y=x^2\}$，则 $P$、$Q$ 的关系是\mbox{（\quad）}
+
+\keepwithprev
+A. $P\subseteq Q$\qquad B. $P\supseteq Q$\qquad C. $P=Q$\qquad D. $P\cap Q=\varnothing$
+
+\ifanswer
+\solbegin
+\step{集合 $P=\{x\mid x\in\R\}$ 为数集，集合 $Q$ 为点集，所以 $P\cap Q=\varnothing$. 故选 $D$.}
+\solend
+\fi
+
+\item 设 $a$、$b\in\R$，则“$a<b<0$”是 $\dfrac1a>\dfrac1b$ 的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分不必要条件\qquad B. 必要不充分条件
+
+C. 充要条件\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{因为 $\dfrac1a-\dfrac1b=\dfrac{b-a}{ab}$，所以当 $a<b<0$ 时，$ab>0$，$b-a>0$，}
+\step{所以 $\dfrac1a-\dfrac1b=\dfrac{b-a}{ab}>0$ 即 $\dfrac1a>\dfrac1b$，}
+\step{当 $\dfrac1a>\dfrac1b$ 时，取 $a=1$，$b=-1$，得不到 $a<b<0$，}
+\step{所以 $a<b<0$ 是 $\dfrac1a>\dfrac1b$ 充分不必要条件. 故选 $A$.}
+\solend
+\fi
+
+\item 若 $0<a<b<c$，则下列结论错误的是\mbox{（\quad）}
+
+\keepwithprev
+A. $a^2-ab>ac-bc$\qquad B. $a+\dfrac1a>b+\dfrac1b$
+
+C. $\dfrac{b+c}{a+c}<\dfrac ba$\qquad D. $\dfrac1{c-b}+\dfrac1{b-a}\geqslant\dfrac4{c-a}$
+
+\ifanswer
+\solbegin
+\step{对于 A，因为 $a^2-ab-(ac-bc)=a(a-b)-c(a-b)=(a-c)(a-b)$，}
+\step{又 $0<a<b<c$，所以 $a-c<0$，$a-b<0$，则 $a^2-ab-(ac-bc)>0$，}
+\step{即 $a^2-ab>ac-bc$，所以 A 正确，}
+% 原卷此处数学式内的逗号为半角（“a=2,b=3”），照录
+\step{对于 B，取 $a=2,b=3$，显然满足 $0<a<b$，但 $a+\dfrac1a=\dfrac52<b+\dfrac1b=\dfrac{10}3$，}
+\step{所以 B 错误，}
+\step{对于 C，因为 $\dfrac{b+c}{a+c}-\dfrac ba=\dfrac{ab+ac-ab-bc}{(a+c)a}=\dfrac{c(a-b)}{(a+c)a}$，又 $0<a<b<c$，}
+\step{则 $a-b<0$，所以 $\dfrac{b+c}{a+c}-\dfrac ba<0$，则 $\dfrac{b+c}{a+c}<\dfrac ba$，故 C 正确，}
+% 原卷此处三个不等式之间为半角逗号（“c-b>0,b-a>0,c-a>0”），照录
+\step{对于 D，因为 $0<a<b<c$，所以 $c-b>0,b-a>0,c-a>0$，}
+\step{则 $\left(\dfrac1{c-b}+\dfrac1{b-a}\right)(c-a)=\left(\dfrac1{c-b}+\dfrac1{b-a}\right)[(c-b)+(b-a)]$}
+\step{$=2+\dfrac{b-a}{c-b}+\dfrac{c-b}{b-a}\geqslant2+2\sqrt{\dfrac{b-a}{c-b}\cdot\dfrac{c-b}{b-a}}=4$，}
+\step{当且仅当 $\dfrac{b-a}{c-b}=\dfrac{c-b}{b-a}$，即 $2b=a+c$ 时取等号，}
+\step{所以 $\dfrac1{c-b}+\dfrac1{b-a}\geqslant\dfrac4{c-a}$，故 D 正确，}
+\step{故选 $B$.}
+\solend
+\fi
+
+\item 对于 $a\in\R$，设非空集合 $A=\left\{x\mid\dfrac{(x^2-930x+a)(x-52)}{x+a}=0\right\}$，记 $A$ 中的所有元素之和为 $S(a)$，所有元素之积为 $T(a)$，则下列说法中，不正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 存在实数 $a$，使得 $S(a)=930$
+
+B. 存在实数 $a$，使得 $T(a)=517$
+
+C. 不存在实数 $a$，使得 $T(a)=0$
+
+D. 恰存在 1 个实数 $a$，使得 $T(a)=-52$
+
+\ifanswer
+\solbegin
+\step{由分式值为 $0$，得分子为 $0$ 且分母不为 $0$，}
+\step{分子 $(x^2-930x+a)(x-52)=0$ 的根为 $x=52$}
+\step{及方程 $x^2-930x+a=0$ 的两根 $x_1$、$x_2$，}
+\step{由根与系数的关系得 $x_1+x_2=930$，$x_1\cdot x_2=a$，}
+\step{分母限制 $x\neq-a$，需要剔除等于 $-a$ 的根，}
+\step{选项 A，取 $a=-52$，$x=52$ 为增根舍去，集合 $A=\{x_1,x_2\}$，}
+\step{元素之和 $S(a)=930$，故 A 正确；}
+\step{选项 B，当无增根时，$T(a)=52a$，令 $52a=517$，得 $a=\dfrac{517}{52}$，}
+\step{验证无增根，存在这样的 $a$，故 B 正确；}
+\step{选项 C，若 $T(a)=0$，则 $0\in A$，代入分子得 $a=0$，}
+\step{但 $a=0$ 时分母 $x\neq0$，$x=0$ 为增根，$0$ 不能属于集合 $A$，}
+\step{故不存在 $a$ 使得 $T(a)=0$，故 C 正确；}
+\step{选项 D，当无增根时，令 $52a=-52$，得 $a=-1$；}
+\step{当 $x=-a$ 是二次方程的根且不等于 $52$ 时，}
+\step{令 $52\times(930+a)=-52$，解得 $a=-931$，验证符合条件；}
+\step{当 $a=-52$ 时，$x=52$，舍去，}
+\step{集合 $A=\{x_1,x_2\}$，$T(a)=a=-52$，得到两个满足条件的 $a$；}
+\step{因此存在 3 个满足条件的 $a$，故 D 错误.}
+\step{故选 $D$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）已知 $a>b>0$，用作差法证明：$a^5-b^5>a^3b^2-a^2b^3$；
+
+（2）已知 $a\in\R$，求关于 $x$ 的不等式 $\dfrac{x-a^2}{x-2a}\geqslant0$ 的解集.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$a^5-b^5-(a^3b^2-a^2b^3)=a^3(a^2-b^2)+b^3(a^2-b^2)=(a^2-b^2)(a^3+b^3)$，}
+\step{因为 $a>b>0$，所以 $a^2>b^2$，$a^2-b^2>0$，$a^3+b^3>0$，}
+\step{所以 $(a^2-b^2)(a^3+b^3)>0$，所以 $a^5-b^5>a^3b^2-a^2b^3$；}
+\stepm{(2)}{$a^2>2a$，即 $a<0$ 或 $a>2$ 时，原不等式的解集为 $\{x\mid x<2a\text{ 或 }x\geqslant a^2\}$；}
+\step{$a^2=2a$，即 $a=0$ 或 $a=2$ 时，原不等式的解集为 $\{x\mid x\neq2a\}$；}
+\step{$a^2<2a$，即 $0<a<2$ 时，原不等式的解集为 $\{x\mid x\leqslant a^2\text{ 或 }x>2a\}$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 已知集合 $A=\{x\mid-1<x<5\},B=\{x\mid a<x<2a-1\},C=\{x\mid x^2-5ax+6a^2=0\}$.
+
+（1）若 $B\cap A=B$，求实数 $a$ 的取值范围；
+
+（2）若 $A\cap C=\varnothing$，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$A=\{x\mid-1<x<5\},B=\{x\mid a<x<2a-1\}$，}
+\step{因为 $B\cap A=B$，所以 $B\subseteq A$，}
+\step{若 $B=\varnothing\Rightarrow a\geqslant2a-1\Rightarrow a\leqslant1$，}
+\step{若 $B\neq\varnothing\Rightarrow\begin{cases}2a-1>a\\ a\geqslant-1\\ 2a-1\leqslant5\end{cases}\Rightarrow a\in(1,3]$；}
+\step{综上，$a\leqslant3$；}
+\stepm{(2)}{$A=\{x\mid-1<x<5\},C=\{x\mid(x-2a)(x-3a)=0\}$，}
+\step{$A\cap C=\varnothing$，}
+\step{若 $a>0$，则 $2a\geqslant5\Rightarrow a\geqslant\dfrac52$；}
+\step{若 $a<0$，则 $2a\leqslant-1\Rightarrow a\leqslant-\dfrac12$；}
+\step{若 $a=0$，不符；}
+\step{综上，$a\geqslant\dfrac52\text{ 或 }a\leqslant-\dfrac12$.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 某文具企业生产笔记本，在某市原有年销售量为 10 万本. 现委托代理商销售，代理商收取销售额的 $r\%$ 作为代理费. 为保证厂家利润不变，每本笔记本售价调整为 $\dfrac{20}{1-r\%}$ 元. 受涨价影响，年销售量减少 $0.1r$ 万本.
+
+（1）若代理商每年获得的代理费不少于 2 万元，求 $r$ 的取值范围；
+
+（2）是否存在正数 $r$，使得代理商每年获得的代理费超过厂家委托代理商之后自身实际到手的收入？若存在，求出所有满足条件的 $r$；若不存在，请说明理由.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得 $\begin{cases}\dfrac{20}{1-r\%}\times(10-0.1r)\times r\%\geqslant2\\ 10-0.1r>0\end{cases}$，解得 $1\leqslant r<100$，}
+\step{则 $r$ 的取值范围是 $[1,100)$；}
+\stepm{(2)}{由题意，代理商每年获得的代理费为 $\dfrac{20}{1-r\%}\times(10-0.1r)\times r\%=2r$，}
+\step{厂家委托代理商之后自身实际到手的收入}
+\step{为 $\dfrac{20}{1-r\%}\times(10-0.1r)-2r=200-2r$，}
+\step{由 $2r>200-2r$，得 $r>50$，}
+\step{又 $10-0.1r>0$，即 $r<100$，则 $50<r<100$，}
+\step{因此，存在正数 $r$，使得代理商每年获得的代理费超过厂家委托代理商}
+\step{之后自身实际到手的收入，所有满足条件的 $r$ 的取值范围为 $(50,100)$.}
+\solend
+\fi
+
+\ansspace[8]
+
+\item 已知集合 $M$ 中的元素均为正整数，且集合 $M$ 至少有 2 个元素. 若存在整数 $k$，使得对任意的正整数 $x$、$y$，当 $x+y\in M$ 时，$xy-k\in M$ 恒成立，则称集合 $M$ 具有性质 $T(k)$.
+
+（1）判断集合 $\{1,2\}$ 是否具有性质 $T(0)$，$\{2,3\}$ 是否具有性质 $T(1)$，并说明理由；
+
+（2）若集合 $M=\{1,a\}$ 具有性质 $T(1)$，求 $a$ 的值；
+
+（3）求证：对任意整数 $k\geqslant2$，不存在具有性质 $T(k)$ 的集合.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$\{1,2\}$ 具有性质 $T(0)$. 理由如下：}
+\step{对任意正整数 $x$、$y$，当 $x+y\in\{1,2\}$ 时，}
+\step{由 $x+y\geqslant1+1=2$ 得只有 $x+y=2$，所以只能是 $x=y=1$，}
+\step{此时 $xy-k=1\times1-0=1\in M$，}
+\step{满足条件，$\{1,2\}$ 具有性质 $T(0)$；}
+\step{$\{2,3\}$ 不具有性质 $T(1)$. 理由如下：}
+\step{存在正整数 $x$、$y$，使得 $x+y\in\{2,3\}$，}
+\step{当 $x+y=2$ 时，$x=y=1$，$xy-1=1\times1-1=0$，不是正整数，}
+\step{则出现反例，所以 $\{2,3\}$ 不具有性质 $T(1)$.}
+\stepm{(2)}{由 $M=\{1,a\}$ 得 $a$ 是正整数，$a\neq1$，$k=1$，}
+\step{则只要 $x+y\in M$，就必须有 $xy-1\in M$，}
+% 原卷此处作“$x+y$ 可能取值为 1 或 $a$”（正整数之和不可能为 1），见文件头“原卷笔误/存疑”②，照录
+\step{因为 $x$、$y$ 为正整数，所以 $x+y$ 可能取值为 1 或 $a$，}
+\step{当 $x+y=1$ 时，正整数 $x$、$y$ 不能取值；}
+\step{当 $x+y=a$ 时，设 $y=a-x$，$x=1,2,\cdots,a-1$，}
+\step{则 $xy-1=x(a-x)-1\in\{1,a\}$，}
+\step{先取 $x=1$，$y=a-1$，}
+\step{由 $1\times(a-1)-1=a-2\in\{1,\ a\}$ 得 $a-2=1$，$a=3$}
+\step{或 $a-2=a$，$-2=0$，舍去，}
+\step{检验 $a=3$，$M=\{1,3\}$，则 $x+y\in\{1,3\}$，只有 $x+y=3$，}
+\step{则 $(x,y)$ 为 $(1,2)$、$(2,1)$，$xy-1=1\times2-1=1\in M$，满足，所以 $a=3$.}
+\stepm{(3)}{假设存在满足条件的集合 $M$，元素都是正整数，$|M|\geqslant2$，}
+\step{具有性质 $T(k)$，$k\geqslant2$，}
+\step{设 $m$ 是集合 $M$ 里最小元素，}
+\step{因为 $M$ 至少有两个正整数元素，所以存在 $n\in M$ 且 $n>m$，}
+\step{取 $x=1$，$y=n-1$，则 $x+y=n\in M$，}
+\step{由性质 $T(k)$ 得 $xy-k=1\times(n-1)-k=n-1-k\in M$，}
+\step{由元素均为正整数得 $n-1-k\geqslant m$，即 $n\geqslant m+k+1$，}
+\step{将 $n-1-k$ 作为新的 $n$ 重复上述操作，}
+\step{最终必得到 $n'\in M$ 使得 $n'-1-k<m$，与 $m$ 是 $M$ 的最小正整数元素矛盾，}
+\step{故假设不成立，即对任意整数 $k\geqslant2$，不存在具有性质 $T(k)$ 的集合.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
