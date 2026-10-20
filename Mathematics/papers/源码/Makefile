@@ -21,7 +21,7 @@
 #   make docs               校验：README 里的“当前态计数”与源码/成品是否一致
 #   make list               查看页数统计
 #   make trace              生成“题目溯源”报告（溯源.tex → ../溯源/题目溯源.pdf）
-#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（48 份 / 108 页）
+#   make bundle             把 ../试卷紧凑/ 的成品合成一份合订打印本（71 份 / 160 页）
 #   make clean              清理 LaTeX 临时文件
 #   make distclean          清理临时文件与中间 PDF
 #   make help               显示本帮助
@@ -59,7 +59,7 @@ TEX       := $(sort $(wildcard 高一*.tex))
 # ——那是为了覆盖 XeTeX 写进 /Creator 的编译时刻，而这一版 /Creator 已是固定的
 # “LaTeX with hyperref”；本库源码里也没有 \today 之类会随日期变化的排版。
 # 取值 = 全库统一的构建基准日＝口径日期（工具/README转tex.py 的 RUN_DATE）的**当天零点**：
-# 人可读 2026-10-18、epoch 1792281600（UTC 零点）。
+# 人可读 2026-10-20、epoch 1792454400（UTC 零点）。
 # 下文带日期的实测记录均为当时记录，保留为历史背景，不代表当前基准日。
 # ⚠ 改 RUN_DATE 时这里要跟着改——计数核对.py 有一条断言比对两者是不是同一天。
 #
@@ -77,7 +77,7 @@ TEX       := $(sort $(wildcard 高一*.tex))
 #    处理口径（详见 README“编译方式”）：跑完全量目标后 `git restore -- ../试卷 ../试卷紧凑 ../答案 ../溯源`
 #    还原；验证产物先打 md5 基线、跑完再比；**判“是否只是这类重编”一律直接比 md5**（像素比对对
 #    /Creator 的 4 字节与这类压缩差异是盲的）。别把“跑完 make all 得到干净 status”当成本仓库的保证。
-SOURCE_DATE_EPOCH := 1792281600
+SOURCE_DATE_EPOCH := 1792454400
 
 # 每遍编译前**清掉该卷的辅助文件**（.aux/.out/.toc/.log）——这是可复现的最后一块：
 # xelatex 单遍编译读上一次留在盘上的 .aux，于是同一份源码会因“上一次编的是哪一版”而出不同字节
