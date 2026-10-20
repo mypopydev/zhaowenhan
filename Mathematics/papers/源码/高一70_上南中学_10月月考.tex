@@ -1,0 +1,405 @@
+% 高一70_上南中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年上南中学高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一70_上南中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一70_上南中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一70_上南中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，连载“27学年高一70”；
+% 原文标题“27学年高一70——2026-2027年上海市上南中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/LZ3CuE_rbvy0_8Juv6JghA。
+% 页面标注发布时间 2026-10-19 22:47（上海）。
+% 正文为 9 张 PNG 页（`原图/高一70_上南中学_10月月考/01..09.png`）：
+% 第 01、09 页 2560×3620，第 02—08 页 4762×6735（**同一篇各页分辨率不同**），均按页序读取。
+% 9 页全为试卷正文页（卷首标题在第 1 页页顶，卷末解答题第 21 题 (3) 解析止于第 9 页），
+% 无封面页、目录页、二维码或宣传页。粉色斜排“魔都数学加油站”为卷面水印，与公众号页脚一并未录入。
+%
+% 卷首标题：照卷面印作“2026-2027 年上南中学高一上 10 月月考”（黑体加粗一行）。
+% 原卷年份区间用半角连字符，本稿按全稿惯例排 en dash（同 高一68、高一69）；原卷只有一行标题、
+% 无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、选择题”“三、解答题”）。
+%
+% 讲评版：原卷每题下直接印【答案】或【解析】。**只印【答案】的 1 题**（第 5 题），
+% 本稿只给 \ans{}；其余 18 题全部印【解析】（按全稿口径这类题不另提 \ans{}——
+% 第 13—16 题的“故选 D／C／A／A”写在解析末句，亦照录在解析内）。
+% 全卷没有“答案印在题干括号内”的题：第 13—16 题的括号内均为空白。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、不等式”：
+% 19 题中集合与常用逻辑用语 9 题（第 6、7、9、10、14、15、16、18、21 题；其中第 10、15 题
+% 属充分必要条件，第 17 (1) 题属反证法，一并计入常用逻辑用语），不等式 10 题
+% （第 3、4、8、11、12、13、17 (2)、19、20 题及第 21 题前的方程与判别式），两类均确有分量，
+% 故并标。口径同 高一63、高一68、高一69。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版，试卷版保持干净；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约四个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ④ 原卷数集排斜体：实数集 $R$（第 20 题 (2) 题干、第 21 题题干），自然数集 $N$
+%      （第 14 题题干两处），整数集 $Z$（第 16 题③、第 21 题 (3) 题干与解析两处）；
+%      本稿按全稿惯例统一改用 $\R$、$\N$、$\Z$（同 高一68 排版差异④、高一69 排版差异④）；
+%      空集记号原卷作 $\varnothing$，照录；
+%   ⑤ 原卷句末标点混用：第 16 题“④有理数集是一个数域**．**其中正确的说法是”、
+%      第 19 题“深度为 $3m$**．**如果池底每平方米的造价为 100 元”作全角句点，
+%      其余各题末为西文句点，已逐处放大确认并照录；数学式内的逗号（如第 3 题
+%      “$x\geqslant1$ 或 $x\leqslant-1$，”、第 14 题“$a\in\{0,1,2\}$，”）按原卷作半角，
+%      中文行文里的逗号按原卷作全角，均未强改；
+%   ⑥ 第 17—21 题的子问原卷印作“17.（1）…（2）…”（子问标号与题号同段或另起一段），
+%      本稿按 高一69 成例用行内“（1）（2）（3）”段，解析中的子问标号一律用 \stepm{(1)}{…}；
+%      第 20 题 (2) 内层的“①”“②”照原卷作 \stepm{①}{…}、\stepm{②}{…}；
+%   ⑦ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace（末题用 \ansspace*）；
+%   ⑧ 选择题的作答括号原卷排半角“(　　)”（四题括号内均空白），本稿按全稿惯例排
+%      \mbox{（\quad）}；选项照原卷行排——第 13、14、16 题四个选项一行四条，第 15 题两行两条；
+%   ⑨ 第 4 题解析、第 11 题解析、第 20 题 (2) 解析、第 21 题题干与 (1)(2)(3) 解析中的
+%      多行不等式组，原卷均排作“{”连接的多行式，本稿按全稿惯例排 cases；
+%   ⑩ 第 13 题解析作“对于 $AB$，当 $a=1$，$b=-2$ 时，$AB$ 显然错误”，把 A、B 两项
+%      合写为 $AB$（无顿号），照录未改；
+%   ⑪ 第 11 题解析的“$\Leftrightarrow$”、第 18 题解析的“$\Rightarrow$”照原卷符号排，
+%      未改写为中文“即”“所以”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 16 题解析作“$\dfrac ab=\dfrac12\neq P$”，用“≠”（不等号）而非“∉”（不属于），
+%      按上下文应为 $\dfrac12\notin P$；放大确认原卷确为“≠”，照录未改。
+%   ② 第 12 题题干末作“则实数 $m$ 的取值范围____.”，漏“是”字（其余各题均作
+%      “……是____.”或“……为____.”）；原卷如此，照录未改。
+%   ③ 第 21 题 (2) 解析第三步作“因为 $x_1<x_2$，所以 $x_1^2+x_2^2=2m^2-4>0$”，
+%      由 $x_1<x_2$ 直接推“平方和为正”并不成立（平方和非负与两根是否相等无关，
+%      此处实因 $x_1\ne x_2$ 故两者不同时为 0）；该步只给出较弱的 $m^2>2$，
+%      更强的 $m^2>\dfrac83$ 由下一行 $\Delta>0$ 补出，结论未受影响。原卷如此，照录未改。
+%   ④ 第 20 题 (2)② 起句连用两个“即”——“即 $m\neq-1$ 时，即 $(m+1)x^2-(m-1)x+m-1<0$
+%      的解集为 $R$”，后一“即”应作“若”或删；原卷如此，照录未改。
+%
+% 行数核对：逐题数 \step/\stepm 条数与原卷【解析】印刷行数，18 题逐一相符，
+% 合计 113 条 / 113 行（Q3：1；Q4：2；Q6：4；Q7：7；Q8：2；Q9：2；Q10：3；Q11：5；
+% Q12：9；Q13：4；Q14：3；Q15：3；Q16：8；Q17：7；Q18：10；Q19：14；Q20：7；Q21：22）。
+%
+% 插图：无题目配图或数学图形（9 页题面均无“如图/右图/图中”字样；页面另有粉色斜排水印，
+% 见上）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年上南中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 不等式 $|x|\geqslant1$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由不等式 $|x|\geqslant1$，得 $x\geqslant1$ 或 $x\leqslant-1$，所以所求解集为 $(-\infty,-1]\cup[1,+\infty)$.}
+\solend
+\fi
+
+\item 不等式 $\dfrac{2x-1}x\leqslant0$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{已知 $\dfrac{2x-1}x\leqslant0$，则 $\begin{cases}x(2x-1)\leqslant0\\ x\neq0\end{cases}$，解得 $0<x\leqslant\dfrac12$，}
+\step{不等式 $\dfrac{2x-1}x\leqslant0$ 的解集是 $\left\{x\mid0<x\leqslant\dfrac12\right\}$.}
+\solend
+\fi
+
+\item 已知全集 $U=\{x\mid2\leqslant x\leqslant5,x\in\R\}$，集合 $A=\{x\mid2\leqslant x<4,x\in\R\}$，则 $\overline A=$\blankline[4.4em].
+
+\ifanswer
+\ans{$[4,5]$}
+\fi
+
+\item 设集合 $A=\{a^2,0\}$，$B=\{a+2,1\}$，若 $A\cap B=\{1\}$，则 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $A\cap B=\{1\}$，则 $a^2=1$，解得 $a=\pm1$，}
+\step{当 $a=1$ 时，$A=\{1,0\}$，$B=\{3,1\}$，此时 $A\cap B=\{1\}$，符合题意，}
+\step{当 $a=-1$ 时，$a+2=1$，即 $B=\{1,1\}$，此时不符合.}
+\step{故 $a=1$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{1,3,2-m\}$，集合 $B=\{3,m^2\}$，若 $B\subseteq A$，则 $m=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $m^2=1$ 或 $m^2=2-m$，}
+\step{①若 $m^2=1$，解得 $m=\pm1$，}
+\step{当 $m=1$ 时，$A=\{1,3,1\}$ 违背了元素的互异性，故舍去，}
+\step{同理，当 $m=-1$ 时，$A=\{1,3,3\}$ 也舍去，}
+\step{②若 $m^2=2-m$，解得 $m=-2$ 或 1（舍），}
+\step{当 $m=-2$ 时，$A=\{1,3,4\}$，$B=\{3,4\}$，满足 $B\subseteq A$，故符合题意.}
+\step{故 $m=-2$.}
+\solend
+\fi
+
+\item 已知 $x-5>0$，则函数 $y=x+\dfrac1{x-5}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$y=x-5+\dfrac1{x-5}+5\geqslant2\sqrt{(x-5)\cdot\dfrac1{x-5}}+5=2+5=7$，}
+\step{当且仅当 $x-5=\dfrac1{x-5}$，即 $x=6$ 时取到等号，此时函数取得最小值 7.}
+\solend
+\fi
+
+% 原卷此处作“⊂”（真包含，无下横线），与后半的“⊆”不同，已放大确认
+\item 已知集合 $A=\{2,3,5,8\}$，集合 $B=\{2,3,5,8,13,21\}$，若集合 $M$ 满足 $A\subset M\subseteq B$，则这样的集合 $M$ 共有\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{$M=\{2,3,5,8,13\}$ 或 $\{2,3,5,8,21\}$ 或 $\{2,3,5,8,13,21\}$，}
+\step{所以满足条件的 $M$ 个数为 3.}
+\solend
+\fi
+
+\item 已知 $p:x<-2$ 或 $x>3$，$q:4x+m<0$，若 $p$ 是 $q$ 的必要不充分条件，则实数 $m$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设集合 $A=\{x\mid x<-2\text{ 或 }x>3\}$，$B=\{x\mid4x+m<0\}=\left\{x\mid x<-\dfrac m4\right\}$，}
+\step{因为 $p$ 是 $q$ 的必要不充分条件，所以 $B$ 是 $A$ 的真子集，}
+\step{所以 $-\dfrac m4\leqslant-2$，解得 $m\geqslant8$，所以实数 $m$ 的取值范围是 $\{m\mid m\geqslant8\}$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的一元二次不等式 $ax^2+bx+c>0$ 的解集为 $\left\{x\mid x<\dfrac13\text{ 或 }x>\dfrac12\right\}$，则关于 $x$ 的不等式 $cx^2+bx+a<0$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由不等式 $ax^2+bx+c>0$ 的解集为 $\left\{x\mid x<\dfrac13\text{ 或 }x>\dfrac12\right\}$，}
+\step{则 $a>0$，且 $\dfrac13$ 和 $\dfrac12$ 是方程 $ax^2+bx+c=0$ 的解，}
+\step{由根与系数的关系得 $\begin{cases}\dfrac13+\dfrac12=-\dfrac ba\\ \dfrac13\times\dfrac12=\dfrac ca\end{cases}$，解得 $b=-\dfrac{5a}6$，$c=\dfrac a6$，}
+\step{所以 $cx^2+bx+a<0\Leftrightarrow\dfrac16ax^2-\dfrac{5a}6x+a<0$，即 $x^2-5x+6<0$，}
+\step{解得 $2<x<3$，所以不等式 $cx^2+bx+a<0$ 的解集为 $(2,3)$.}
+\solend
+\fi
+
+% 原卷题干末作“则实数 m 的取值范围____.”，漏“是”字，照录（见文件头“原卷笔误/存疑”②）
+\item 若两个正实数 $x$、$y$ 满足 $x+y=1$，且存在这样的 $x$、$y$ 使不等式 $\dfrac1{x+1}+\dfrac4{y+2}<m^2+\dfrac94m$ 有解，则实数 $m$ 的取值范围\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $x+y=1$ 得 $(x+1)+(y+2)=4$.}
+\step{所以 $\dfrac1{x+1}+\dfrac4{y+2}=\dfrac14\left(\dfrac1{x+1}+\dfrac4{y+2}\right)[(x+1)+(y+2)]$}
+\step{$=\dfrac14\left[1+\dfrac{y+2}{x+1}+\dfrac{4(x+1)}{y+2}+4\right]=\dfrac14\left[5+\dfrac{y+2}{x+1}+\dfrac{4(x+1)}{y+2}\right]$，}
+\step{由基本不等式得 $\dfrac{y+2}{x+1}+\dfrac{4(x+1)}{y+2}\geqslant2\sqrt{\dfrac{y+2}{x+1}\times\dfrac{4(x+1)}{y+2}}=4$，}
+\step{当且仅当 $y+2=2(x+1)$ 时取等号，所以 $\dfrac1{x+1}+\dfrac4{y+2}\geqslant\dfrac14(5+4)=\dfrac94$，}
+\step{当且仅当 $y=2x$ 且 $x+y=1$，即 $x=\dfrac13$、$y=\dfrac23$ 时取等号.}
+\step{因为存在这样的 $x$、$y$ 使不等式有解，所以 $m^2+\dfrac94m>\dfrac94$，}
+\step{即 $4m^2+9m-9>0$，也就是 $(4m-3)(m+3)>0$，解得 $m<-3$ 或 $m>\dfrac34$，}
+\step{所以 $m$ 的取值范围是 $(-\infty,-3)\cup\left(\dfrac34,+\infty\right)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知 $a>b$，则下列不等式一定成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $a^2>b^2$\qquad B. $|a|>|b|$\qquad C. $ac^2>bc^2$\qquad D. $a-b>0$
+
+\ifanswer
+\solbegin
+% 原卷把 A、B 两项合写作“AB”（无顿号），照录（见文件头“排版差异”⑩）
+\step{对于 $AB$，当 $a=1$，$b=-2$ 时，$AB$ 显然错误；}
+\step{对于 $C$，当 $c=0$ 时，$ac^2=bc^2=0$，故 $C$ 错误；}
+\step{对于 $D$，因为 $a>b$，所以 $a-b>0$，故 $D$ 正确.}
+\step{故选 $D$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid ax=2,a\in\N\}$，若 $A\subseteq\N$，则所有 $a$ 的取值构成的集合为\mbox{（\quad）}
+
+\keepwithprev
+A. $\{1,2\}$\qquad B. $\{1\}$\qquad C. $\{0,1,2\}$\qquad D. $\N$
+
+\ifanswer
+\solbegin
+\step{当 $A=\varnothing$ 时，易求 $a=0$；}
+\step{当 $A\neq\varnothing$ 时，由 $x=\dfrac2a\in\N$ 得 $a=1$ 或 2.}
+\step{综上，$a\in\{0,1,2\}$，故选 $C$.}
+\solend
+\fi
+
+\item 命题“$x>1$”是命题\mbox{“$\dfrac1x<1$”}的\mbox{（\quad）}条件.
+
+\keepwithprev
+A. 充分不必要\qquad B. 必要不充分
+
+C. 充分必要\qquad D. 既不充分也不必要
+
+\ifanswer
+\solbegin
+\step{当 $x>1$ 时，$\dfrac1x-1=\dfrac{1-x}x<0$，即 $\dfrac1x<1$，}
+\step{反之，当 $x<0$ 时，满足 $\dfrac1x<1$，但 $x>1$ 不成立，}
+\step{故命题“$x>1$”是命题“$\dfrac1x<1$”的充分不必要条件．故选 $A$.}
+\solend
+\fi
+
+% 原卷“④有理数集是一个数域”后作全角句点“．”（放大确认），照录（见文件头“排版差异”⑤）
+\item 当一个非空数集 $G$ 满足：如果 $a$、$b\in G$，那么 $a+b$、$a-b$、$ab\in G$ 且 $b\neq0$，$\dfrac ab\in G$ 时，我们称 $G$ 就是一个数域，有以下关于数域的说法：①0 是任何数域的元素；②若数域 $G$ 有非零元素，则 $2026\in G$；③集合 $P=\{x\mid x=2k,k\in\Z\}$ 是一个数域；④有理数集是一个数域．其中正确的说法是\mbox{（\quad）}
+
+\keepwithprev
+A. ①②④\qquad B. ②③④\qquad C. ①④\qquad D. ①②
+
+\ifanswer
+\solbegin
+\step{当 $a=b$，且 $a$、$b\in G$ 时，$a-b\in G$，}
+\step{所以 0 是任何数域的元素，故①正确；}
+\step{当 $a=b\neq0$，且 $a$、$b\in G$ 时，由数域的定义得 $\dfrac ab=1\in G$，}
+\step{所以 $1+1=2\in G$，$1+2=3\in G$，$\cdots$，$1+2025=2026\in G$，故②正确；}
+% 原卷此处作“a/b=1/2≠P”（用“≠”而非“∉”），照录（见文件头“原卷笔误/存疑”①）
+\step{当 $a=2$，$b=4$ 时，$\dfrac ab=\dfrac12\neq P$，故③错误；}
+\step{如果 $a$、$b\in\Q$，那么 $a+b$、$a-b$、$ab\in\Q$，且当 $b\neq0$ 时，$\dfrac ab\in\Q$，}
+\step{所以有理数集是一个数域，故④正确.}
+\step{故选 $A$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）用反证法证明命题：“三角形内至少有一个角不小于 $60^\circ$”；
+
+（2）设 $x>y>0$，试比较 $(x^2+y^2)(x-y)$ 与 $(x^2-y^2)(x+y)$ 的大小.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{假设 $\triangle ABC$ 的三个内角都小于 $60^\circ$，即 $A<60^\circ$，$B<60^\circ$，$C<60^\circ$，}
+\step{所以 $A+B+C<180^\circ$，这与三角形内角和等于 $180^\circ$ 矛盾，}
+\step{故假设错误，即原命题成立.}
+\stepm{(2)}{$(x^2+y^2)(x-y)-(x^2-y^2)(x+y)=(x^2+y^2)(x-y)-(x-y)(x+y)^2$}
+\step{$=(x-y)[x^2+y^2-(x+y)^2]=-2xy(x-y)$，}
+\step{因为 $x>y>0$，所以 $-2xy<0$，$x-y>0$，}
+\step{故 $-2xy(x-y)<0$，即 $(x^2+y^2)(x-y)<(x^2-y^2)(x+y)$.}
+\solend
+\fi
+
+\ansspace[5]
+
+\item 已知集合 $A=\{x\mid ax^2+2x+1=0\}$.
+
+（1）若 $A$ 中只有一个元素，求 $a$ 的值；
+
+（2）若 $A$ 中至多只有一个元素，求 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $a=0$ 时，$A=\{x\mid2x+1=0\}=\left\{-\dfrac12\right\}$，符合条件；}
+\step{当 $a\neq0$ 时，方程 $ax^2+2x+1=0$ 为一元二次方程，}
+\step{要使 $A$ 中只有一个元素，则方程 $ax^2+2x+1=0$ 只有一个实数解，}
+\step{所以 $\Delta=4-4a=0\Rightarrow a=1$；}
+\step{所以，$a$ 的值为 0 或 1.}
+\stepm{(2)}{若 $A$ 中至多只有一个元素，则 $A$ 中只有一个元素，或 $A=\varnothing$.}
+\step{由（1）得若 $A$ 中只有一个元素，$a$ 的值为 0 或 1；}
+\step{若 $A=\varnothing$，则方程 $ax^2+2x+1=0$ 无实数解，}
+\step{所以 $\Delta=4-4a<0\Rightarrow a>1$.}
+\step{所以，$a\geqslant1$ 或 $a=0$.}
+\solend
+\fi
+
+\ansspace[5]
+
+% 原卷“深度为 3m”后作全角句点“．”（放大确认），照录（见文件头“排版差异”⑤）
+\item 某工厂拟建造一个无盖的长方体贮水池，其容积为 $4800m^3$，深度为 $3m$．如果池底每平方米的造价为 100 元，池壁每平方米的造价为 80 元，
+
+（1）当池底的一边长为 50 米时，总造价为多少？
+
+（2）怎样设计水池能使总造价最低？最低总造价为多少元？
+
+\ifanswer
+\solbegin
+\stepm{(1)}{长方体贮水池，其容积为 $4800m^3$，深度为 $3m$，}
+\step{得池底的面积为 $\dfrac{4800}3=1600m^2$，}
+\step{所以池底的造价为 $1600\times100=160000$ 元；}
+\step{当池底的一边长为 50 米时，另一边长为 $\dfrac{1600}{50}=32m$，}
+\step{所以池壁共有 $2\times(50+32)\times3=492m^2$，}
+\step{池壁的造价为 $492\times80=39360$ 元，}
+\step{所以总造价为 $160000+39360=199360$ 元；}
+\stepm{(2)}{设池底的一边长为 $xm$，水池的总造价为 $y$ 元，}
+\step{因为池底的面积为 $1600m^2$，所以池底的另一边为 $\dfrac{1600}xm$，}
+\step{所以 $y=160000+2\times3\times\left(x+\dfrac{1600}x\right)\times80=160000+480\left(x+\dfrac{1600}x\right)$}
+\step{$\geqslant160000+480\times2\sqrt{1600}=198400$，}
+\step{当且仅当 $x=\dfrac{1600}x$，即 $x=40$ 时取等号，}
+\step{所以当水池池底为边长为 $40m$ 的正方形时，水池的总造价最低，}
+\step{最低总造价为 198400 元.}
+\solend
+\fi
+
+\ansspace[7]
+
+\item 已知函数 $y=(m+1)x^2-(m-1)x+m-1$.
+
+（1）当 $m=0$ 时，求 $y<0$ 时 $x$ 的取值范围；
+
+（2）若不等式 $y<0$ 的解集为 $R$，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $m=0$ 时，$y<0$ 时，则 $x^2+x-1<0$，解得 $\dfrac{-1-\sqrt5}2<x<\dfrac{-1+\sqrt5}2$，}
+\step{所以 $x$ 的取值范围是 $\left(\dfrac{-1-\sqrt5}2,\dfrac{-1+\sqrt5}2\right)$；}
+\stepm{(2)}{①当 $m+1=0$，即 $m=-1$ 时，原不等式化为 $y=2x-2<0$，}
+\step{所以解集为 $\{x\mid x<1\}$，不合题意；}
+% 原卷此处连用两个“即”（“即 m≠-1 时，即 …的解集为 R”），照录（见文件头“原卷笔误/存疑”④）
+\stepm{②}{当 $m+1\neq0$，即 $m\neq-1$ 时，即 $(m+1)x^2-(m-1)x+m-1<0$ 的解集为 $R$，}
+\step{则有 $\begin{cases}m+1<0\\ \Delta=(m-1)^2-4(m+1)(m-1)<0\end{cases}$，解得 $m<-\dfrac53$，}
+\step{所以 $m$ 的取值范围是 $\left(-\infty,-\dfrac53\right)$.}
+\solend
+\fi
+
+\ansspace[7]
+
+\item 已知 $m\in\R$，一个二次项系数为 1 的一元二次方程的两个不等实根分别为 $x_1$ 和 $x_2$（$x_1<x_2$），且满足 $\begin{cases}x_1^2+x_2^2=2m^2-4\\ x_1+x_2=m\end{cases}$，
+
+（1）直接写出该一元二次方程；
+
+（2）若 $(3x_1-x_2)(3x_2-x_1)\geqslant-1$，求 $m$ 的取值范围；
+
+（3）若 $m$ 为正整数，记集合 $A=[x_1,x_2]\cap\Z$，若 $A\neq\varnothing$，且 $A$ 中元素个数不超过 4，求正整数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $\begin{cases}x_1^2+x_2^2=2m^2-4\\ x_1+x_2=m\end{cases}$，}
+\step{所以 $(x_1+x_2)^2=x_1^2+x_2^2+2x_1x_2=2m^2-4+2x_1x_2=m^2$，}
+\step{所以 $x_1x_2=2-\dfrac{m^2}2$，}
+\step{所以这个一元二次方程为 $(x-x_1)(x-x_2)=0$，即 $x^2-(x_1+x_2)x+x_1x_2=0$，}
+\step{即 $x^2-mx+2-\dfrac{m^2}2=0$；}
+\stepm{(2)}{因为 $(3x_1-x_2)(3x_2-x_1)=10x_1x_2-3(x_1^2+x_2^2)=10\left(2-\dfrac{m^2}2\right)-3(2m^2-4)$}
+\step{$=32-11m^2\geqslant-1$，所以 $m^2\leqslant3$，}
+% 原卷此处由 x1<x2 直接推“x1²+x2²=2m²-4>0”，推理依据偏松，照录（见文件头“原卷笔误/存疑”③）
+\step{因为 $x_1<x_2$，所以 $x_1^2+x_2^2=2m^2-4>0$，得 $m^2>2$，则 $2<m^2\leqslant3$，}
+\step{对于方程 $x^2-mx+2-\dfrac{m^2}2=0$，$\Delta=m^2-4\left(2-\dfrac{m^2}2\right)=3m^2-8>0$，}
+\step{得 $m^2>\dfrac83$，所以 $\dfrac83<m^2\leqslant3$，解得 $-\sqrt3\leqslant m<-\dfrac{2\sqrt6}3$ 或 $\dfrac{2\sqrt6}3<m\leqslant\sqrt3$，}
+\step{因此，实数 $m$ 的取值范围是 $\left\{m\mid-\sqrt3\leqslant m<-\dfrac{2\sqrt6}3\text{ 或 }\dfrac{2\sqrt6}3<m\leqslant\sqrt3\right\}$；}
+\stepm{(3)}{由 $\Delta=m^2-4\left(2-\dfrac{m^2}2\right)=3m^2-8>0$，得 $m^2>\dfrac83$，}
+\step{因为集合 $A=[x_1,x_2]\cap\Z$，$A\neq\varnothing$，且 $A$ 中元素个数不超过 4，}
+\step{所以 $|x_1-x_2|<5$，}
+\step{即 $|x_1-x_2|^2=(x_1+x_2)^2-4x_1x_2=m^2-4\left(2-\dfrac{m^2}2\right)=3m^2-8<25$，}
+\step{得 $m^2<11$，所以 $\dfrac83<m^2<11$，}
+\step{所以正整数 $m$ 的可能取值集合为 $\{2,3\}$，}
+\step{当 $m=2$ 时，方程为 $x^2-2x=0$，解得 $x_1=0$，$x_2=2$，}
+\step{则 $A=[0,2]\cap\Z=\{0,1,2\}$，符合题意，}
+\step{当 $m=3$ 时，方程为 $x^2-3x-\dfrac52=0$，解得 $x_1=\dfrac{3-\sqrt{19}}2$，$x_2=\dfrac{3+\sqrt{19}}2$，}
+\step{此时，$A=\left[\dfrac{3-\sqrt{19}}2,\dfrac{3+\sqrt{19}}2\right]\cap\Z=\{0,1,2,3\}$，符合题意，}
+\step{综上所述，正整数 $m$ 的取值范围是 $\{2,3\}$.}
+\solend
+\fi
+
+\ansspace*[10]
+
+\end{enumerate}
+
+\end{document}
