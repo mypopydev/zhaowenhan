@@ -1,0 +1,481 @@
+% 高一72_复旦复兴_10月月考.tex
+%   —— 高一上数学“2026-2027 年复旦复兴高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一72_复旦复兴_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一72_复旦复兴_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一72_复旦复兴_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一72”；
+% 原文标题“27学年高一72——2026-2027年上海市复旦复兴高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/h0fj1AAzw_f3zONr1CGYSg。
+% 正文为 13 张 PNG 页（`原图/高一72_复旦复兴_10月月考/01..13.png`），
+% 其中第 12 页为 2560×3620，其余 12 页为 4762×6735；均按页序读取。
+% 13 页全为试卷正文页（卷首标题在第 1 页页顶，卷末第 21 题 (3) 解析止于第 13 页），
+% 无封面页、目录页、二维码或宣传页。粉色斜排“魔都数学加油站”为卷面水印，未录入。
+%
+% 卷首标题：照卷面印作“2026-2027 年复旦复兴高一上 10 月月考”（黑体加粗一行）。
+% 原卷年份区间用半角连字符，本稿按全稿惯例排 en dash（同 高一68—71）；原卷无副标题。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在本卷内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。本稿沿用原节与原题号，
+% 只改排为全稿统一的大节样式（原卷小节标题为“一、填空题”“二、选择题”“三、解答题”）。
+%
+% 讲评版：原卷每题下均印【解析】，没有只印【答案】的题，也没有答案印在题干括号内的题。
+% 故 19 题全部用 \solbegin…\solend，不另提 \ans{}。
+%
+% 副标题：原卷未印副标题。本稿按“知识模块”口径标作“集合与常用逻辑用语、不等式”：
+% 19 题中集合与常用逻辑用语 10 题（第 3、4、5、6、9、11、12、13、16、21 题；其中第 4 题
+% 属反证法，一并计入常用逻辑用语），不等式 9 题（第 7、8、10、14、15、17、18、19、20 题；
+% 第 19 题 (1) 属绝对值不等式、(2) 属基本不等式，按主干计入不等式），两类均确有分量，故并标。
+% 口径同 高一63、高一68—71。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【解析】，本稿按全稿惯例将解析置于答案版，试卷版保持干净；
+%   ② 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ③ 原卷填空横线约四个字宽，本稿按全稿惯例统一排 \blankline[4.4em]；
+%   ④ 原卷数集记号排斜体 $R$、$N$、$Z$（第 3、8、9、10、12、13、17、20 题等），
+%      本稿按全稿惯例统一改用 $\R$、$\N$、$\Z$（同 高一68—71 排版差异④）；
+%      空集记号原卷作 $\varnothing$，照录；
+%   ⑤ 原卷句末标点混用：各题题干末多为西文句点，第 12 题“命题：”后用全角冒号、
+%      第 21 题“距离为”后用西文句点；均逐处照录，未强改；
+%   ⑥ 第 17—21 题的子问原卷印作“（1）…（2）…”（另起一段），本稿按 高一69—71 成例用
+%      行内“（1）（2）（3）”段，解析中的子问标号一律用 \stepm{(1)}{…}；
+%   ⑦ 每道解答题原卷未留作答空白，本稿按全稿惯例加 \ansspace（末题用 \ansspace*）；
+%   ⑧ 选择题的作答括号原卷排半角“(    )”，本稿按全稿惯例排 \mbox{（\quad）}；
+%      选项行排照原卷——第 13 题一行两条、第 14—16 题一行四条；
+%   ⑨ 第 7 题解析、第 8 题解析、第 14 题解析、第 19 题 (1) 解析、第 20 题 (3) 解析中的
+%      多行不等式组，原卷均排作“{”连接的多行式，本稿按全稿惯例排 cases；
+%   ⑩ 原卷判别式排空心“△”（第 10、11、20 题），本稿按全稿惯例作 $\Delta$（同 高一69／70）。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 12 题解析对①取集合 $A=\{0,1\}$ 称“具有性质 $P$”，但 $1+1=2\notin A$，
+%      按题设定义并不满足性质 $P$；有限集确可举 $A=\{0\}$，结论不受影响。原卷如此，照录未改。
+%   ② 第 20 题 (2) 解析“$p$ 与 $q$ 有且只有一个真命题”一句只有右引号“””（无左引号），
+%      原卷如此，照录未改。
+%
+% 行数核对：逐题数 \step/\stepm 条数与原卷【解析】印刷行数，19 题逐一相符，
+% 合计 187 条 / 187 行（Q3：3；Q4：4；Q5：3；Q6：10；Q7：2；Q8：6；Q9：7；Q10：12；
+% Q11：20；Q12：14；Q13：10；Q14：3；Q15：5；Q16：9；Q17：3；Q18：10；Q19：8；
+% Q20：41；Q21：17）。全卷无只印【答案】的题，故无 \ans{} 账。
+%
+% 插图：无题目配图或数学图形（13 页题面均无“如图/右图/图中”字样；页面另有粉色斜排水印，
+% 见上）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年复旦复兴高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 若命题“存在 $x\in\R$，$x^2-2ax+4a+5<0$”是假命题，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{任意 $x\in\R$，$x^2-2ax+4a+5\geqslant0$ 是真命题，}
+\step{故 $\Delta=(-2a)^2-4(4a+5)=4(a^2-4a-5)\leqslant0$，解得 $-1\leqslant a\leqslant5$，}
+\step{故取值范围为 $\{a\mid-1\leqslant a\leqslant5\}$.}
+\solend
+\fi
+
+\item 不等式 $|x+3|-|x-2|\geqslant3$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $x<-3$ 时，得 $-(x+3)+(x-2)\geqslant3$ 可推出 $-5\geqslant3$，这显然不可能，}
+\step{当 $-3\leqslant x\leqslant2$ 时，得 $(x+3)+(x-2)\geqslant3$ 可推出 $x\geqslant1$，故当 $1\leqslant x\leqslant2$ 不等式成立.}
+\step{当 $x>2$ 时，得 $(x+3)-(x-2)\geqslant3$ 可推出 $5\geqslant3$，这显然恒成立.}
+\step{综上所述，不等式的解集为 $\{x\mid x\geqslant1\}$.}
+\solend
+\fi
+
+\item 已知 $a$、$b$ 均为正数，且 $2a+b=4$，则 $\sqrt{2a}+\sqrt b$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\sqrt{2a}+\sqrt b=\sqrt{(\sqrt{2a}+\sqrt b)^2}=\sqrt{2a+b+2\sqrt{2ab}}=\sqrt{4+2\sqrt{2ab}}$}
+\step{$\leqslant\sqrt{4+2a+b}=\sqrt{4+4}=2\sqrt2$，当且仅当 $\sqrt{2a}=\sqrt b$ 时取等号，}
+\step{故 $\sqrt{2a}+\sqrt b$ 取最大值 $2\sqrt2$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的方程 $\dfrac{x^2+a}{x-1}=1$ 的解集中只含有一个元素，则 $a$ 的取值集合为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\dfrac{x^2+a}{x-1}=1$，所以 $x\neq1$，故 $x^2+a=x-1$，即 $x^2-x+a+1=0$，}
+\step{因为关于 $x$ 的方程 $\dfrac{x^2+a}{x-1}=1$ 的解集中只含有一个元素，}
+\step{所以方程 $x^2-x+a+1=0$ 有两个相等的实数根，且该根不等于 $1$，}
+\step{或者方程有两个不相等的实数根，且这两根中有一个根是 $1$，}
+\step{当方程 $x^2-x+a+1=0$ 有两个相等的实数根时，$\Delta=1-4(a+1)=0$，}
+\step{解得 $a=-\dfrac34$，方程 $x^2-x+a+1=0$ 的解为 $x=\dfrac12$，符合题意；}
+\step{当方程 $x^2-x+a+1=0$ 有两个不相等的实数根，且这两根中有一个根是 $1$ 时，}
+\step{则 $a+1=0$，解得 $a=-1$，此时 $x^2-x=0$ 有两根 $1$ 和 $0$，}
+\step{则 $\dfrac{x^2+a}{x-1}=1$ 的根为 $0$，符合题意.}
+\step{故 $a$ 的取值集合为 $\left\{-1,-\dfrac34\right\}$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的不等式 $a-2<2a-x<\dfrac12$ 只有一个整数解 $2$，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a-2<2a-x<\dfrac12$ 的解为 $2a-\dfrac12<x<a+2$，}
+\step{因为不等式的整数解只有 $2$，所以 $\begin{cases}1\leqslant2a-\dfrac12<2\\ 2<a+2\leqslant3\end{cases}$，故 $\dfrac34\leqslant a\leqslant1$.}
+\solend
+\fi
+
+\item 已知 $\alpha:x<3m-4$ 或 $x>-m$，$\beta:x<2$ 或 $x\geqslant4$. 若 $\alpha$ 是 $\beta$ 的必要条件，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $A=\{x\mid x<3m-4\text{ 或 }x>-m\}$，$B=\{x\mid x<2\text{ 或 }x\geqslant4\}$，}
+\step{若 $\alpha$ 是 $\beta$ 的必要条件，则 $B\subseteq A$，}
+\step{①当 $3m-4\leqslant-m$，即 $m\leqslant1$ 时，$A\neq\R$，}
+\step{若 $B\subseteq A$，则 $\begin{cases}3m-4\geqslant2\\ -m<4\end{cases}$，解得 $m\geqslant2$，又 $m\leqslant1$，故无解，}
+\step{②当 $3m-4>-m$，即 $m>1$ 时，$A=\R$，此时 $B\subseteq A$ 成立；}
+\step{综上，$m$ 的取值范围是 $(1,+\infty)$.}
+\solend
+\fi
+
+\item 已知正实数 $a$、$b$ 满足 $a+b=1$，则 $\dfrac{a+1}{a}+\dfrac{2026}{b}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $a>0$、$b>0$ 且 $a+b=1$，所以 $\dfrac{a+1}{a}=1+\dfrac1a$，原式化为 $1+\dfrac1a+\dfrac{2026}{b}$.}
+\step{由常数代换得 $\dfrac1a+\dfrac{2026}{b}=\left(\dfrac1a+\dfrac{2026}{b}\right)(a+b)=1+\dfrac ba+\dfrac{2026a}{b}+2026$}
+\step{$=2027+\dfrac ba+\dfrac{2026a}{b}\geqslant2027+2\sqrt{\dfrac ba\cdot\dfrac{2026a}{b}}=2027+2\sqrt{2026}$，}
+\step{所以 $\dfrac{a+1}{a}+\dfrac{2026}{b}\geqslant1+2027+2\sqrt{2026}=2028+2\sqrt{2026}$.}
+\step{当且仅当 $\dfrac ba=\dfrac{2026a}{b}$ 即 $b=\sqrt{2026}\,a$ 时取等号，}
+\step{此时 $a=\dfrac1{1+\sqrt{2026}}$、$b=\dfrac{\sqrt{2026}}{1+\sqrt{2026}}$，均为正实数，}
+\step{故最小值为 $2028+2\sqrt{2026}$.}
+\solend
+\fi
+
+\item 设 $a$ 为实数，方程 $x^2-2ax+a^2-1=0$ 的两根为 $x_1$、$x_2$（$x_1<x_2$），方程 $y^2-(a+2)y+(2a-1)=0$ 的两根为 $y_1$、$y_2$（$y_1<y_2$），集合 $M=\{(x,y)\mid x_1\leqslant x\leqslant x_2,y_1\leqslant y\leqslant y_2\}$ 中的所有点组成的平面区域的面积为 $S$，则 $S$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{方程 $x^2-2ax+a^2-1=0$ 可化为 $(x-a)^2=1$，即 $(x-(a-1))(x-(a+1))=0$，}
+\step{由 $x_1<x_2$ 得 $x_1=a-1$、$x_2=a+1$，所以 $x_2-x_1=2$.}
+\step{方程 $y^2-(a+2)y+(2a-1)=0$ 的判别式}
+\step{$\Delta=(a+2)^2-4(2a-1)=a^2-4a+8=(a-2)^2+4>0$，}
+\step{所以对任意 $a\in\R$，该方程都有两个不相等的实根，}
+\step{由韦达定理得 $y_1+y_2=a+2$、$y_1y_2=2a-1$，}
+\step{所以 $y_2-y_1=\sqrt{(y_1+y_2)^2-4y_1y_2}=\sqrt{(a+2)^2-4(2a-1)}$}
+\step{$=\sqrt{a^2-4a+8}=\sqrt{(a-2)^2+4}$.}
+\step{集合 $M$ 表示的是边长分别为 $x_2-x_1$、$y_2-y_1$ 的矩形区域，}
+\step{其面积 $S=(x_2-x_1)(y_2-y_1)=2\sqrt{(a-2)^2+4}$.}
+\step{因为 $(a-2)^2+4\geqslant4$，所以 $S\geqslant2\sqrt4=4$，当且仅当 $a=2$ 时取等号.}
+\step{故 $S$ 的最小值为 $4$.}
+\solend
+\fi
+
+\item 给定 $5$ 个正整数，从中任取 $4$ 个数求和，所得的所有和数构成集合 $\{86,92,96,98\}$，则原来的五个数的最小值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意给定 $5$ 个正整数，从中任取 $4$ 个数求和，}
+\step{所得的所有和数构成集合 $\{86,92,96,98\}$，}
+\step{设这 $5$ 个正整数为 $x_1\leqslant x_2\leqslant x_3\leqslant x_4\leqslant x_5$，它们的总和为 $S$.}
+\step{任取 $4$ 个数求和，得到的和分别为 $S-x_1$、$S-x_2$、$S-x_3$、$S-x_4$、$S-x_5$，}
+\step{所以这 $5$ 个和的总和为 $4S$.}
+\step{因为这些和构成的集合为 $\{86,92,96,98\}$，只有 $4$ 个元素，}
+\step{说明必有两个数相等，使得这两个数对应的和是相同的.}
+\step{因为 $86+92+96+98=372$，由于其中一个和被重复计算了一次，}
+\step{所以 $4S=372+k\,(k\in\{86,92,96,98\})$.}
+\step{因为 $S$ 必须是整数，所以 $372+k$ 必须能被 $4$ 整除.}
+\step{因为 $372\div4=93$，余数为 $0$，所以 $k$ 也必须能被 $4$ 整除.}
+\step{在集合中，能被 $4$ 整除的数为 $92$ 和 $96$，所以分两种情况：}
+\step{情况一，$92$ 重复，$372+92=464=4S$，解得 $S=116$.}
+\step{此时五个数分别为 $116-98=18$，$116-96=20$，$116-92=24$，}
+\step{$116-92=24$，$116-86=30$，即这 $5$ 个数为 $18$，$20$，$24$，$24$，$30$；}
+\step{情况二：$96$ 重复，$372+96=468=4S$，解得 $S=117$.}
+\step{此时五个数分别为 $117-98=19$，$117-96=21$，$117-96=21$，}
+\step{$117-92=25$，$117-86=31$，即这 $5$ 个数为 $19$，$21$，$21$，$25$，$31$；}
+\step{两组解均满足题意.}
+\step{故原来的五个数的最小值是 $18$ 或 $19$.}
+\solend
+\fi
+
+% 原卷此处取 A={0,1} 称具有性质 P，但 1+1=2 不在 A 中，按定义不满足；照录（见文件头“原卷笔误/存疑”①）
+\item 设 $A$ 是非空数集，若对任意 $x$、$y\in A$，都有 $x+y\in A$、$xy\in A$，则称 $A$ 具有性质 $P$，给出以下命题：
+
+①若 $A$ 具有性质 $P$，则 $A$ 可以是有限集；
+
+②若 $A$ 具有性质 $P$，且 $A\neq\R$，则 $\overline A$ 具有性质 $P$；
+
+③若 $A_1$、$A_2$ 具有性质 $P$，且 $A_1\cap A_2\neq\varnothing$，则 $A_1\cap A_2$ 具有性质 $P$；
+
+④若 $A_1$、$A_2$ 具有性质 $P$，则 $A_1\cup A_2$ 具有性质 $P$.
+
+其中所有真命题的序号是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{对于①，取集合 $A=\{0,1\}$ 具有性质 $P$，故 $A$ 可以是有限集，故①正确；}
+\step{对于③，取 $x$、$y\in A_1\cap A_2$，则 $x\in A_1$，$x\in A_2$，$y\in A_1$，$y\in A_2$，}
+\step{又 $A_1$、$A_2$ 具有性质 $P$，所以 $x+y\in A_1$，$xy\in A_1$，$x+y\in A_2$，$xy\in A_2$，}
+\step{所以 $x+y\in A_1\cap A_2$，$xy\in A_1\cap A_2$，所以 $A_1\cap A_2$ 具有性质 $P$，故③正确；}
+\step{对于④，取 $A_1=\{x\mid x=2k,k\in\Z\}$，$A_2=\{x\mid x=3k,k\in\Z\}$，$2\in A_1$，$3\in A_2$，}
+\step{但 $2+3\notin A_1\cup A_2$，故④错误；}
+\step{对于②，若 $A$ 具有性质 $P$，且 $A\neq\R$，假设 $\overline A$ 也具有性质 $P$，}
+\step{设 $0\in A$，在 $\overline A$ 中任取一个 $x$，$x\neq0$，此时可证得 $-x\in A$，否则若 $-x\in\overline A$，}
+\step{由于 $\overline A$ 也具有性质 $P$，则 $x+(-x)=0\in\overline A$，与 $0\in A$ 矛盾，故 $-x\in A$，}
+\step{由于 $A$ 具有性质 $P$，$\overline A$ 也具有性质 $P$，所以 $(-x)^2\in A$，$x^2\in\overline A$，}
+\step{而 $(-x)^2=x^2$，这与 $A\cap\overline A=\varnothing$ 矛盾，}
+\step{故当 $0\in A$ 且 $A$ 具有性质 $P$ 时，则 $\overline A$ 不具有性质 $P$，}
+\step{同理当 $0\in\overline A$ 时，也可以类似推出矛盾，故②错误.}
+\step{故真命题是①③.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 下列说法错误的是\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $a>b$，则 $a^3>b^3$
+
+B. 已知 $a$、$b\in\R$，“$a>1$ 且 $b>1$”是“$ab>1$”的充分而不必要条件
+
+C. “$x=1$”是“$x^2-3x+2=0$”的充要条件
+
+D. 若 $p$ 是 $q$ 的充分不必要条件，则 $q$ 是 $p$ 的必要不充分条件
+
+\ifanswer
+\solbegin
+\step{对于 $A$，$a>b$，则 $a-b>0$，}
+\step{$a^3-b^3=(a-b)(a^2+ab+b^2)=(a-b)\left[\left(a+\dfrac12b\right)^2+\dfrac34b^2\right]>0$，则 $a^3>b^3$，正确；}
+\step{对于 $B$，由“$a>1$ 且 $b>1$”，得“$ab>1$”，充分性成立；}
+\step{反之：例如：$a=\dfrac12$，$b=4$，满足 $ab>1$，但 $a>1$ 且 $b>1$ 不成立，}
+\step{即必要性不成立，正确；}
+\step{对于 $C$，由 $x^2-3x+2=0$，得 $x=1$ 或 $x=2$，}
+\step{所以 $x=1$ 是 $x^2-3x+2=0$ 的充分不必要条件，所以 $C$ 不正确；}
+\step{对于 $D$，由充分条件、必要条件的关系，得 $p$ 是 $q$ 的充分不必要条件，}
+\step{则 $q$ 是 $p$ 的必要不充分条件，所以 $D$ 正确.}
+\step{故选 $C$.}
+\solend
+\fi
+
+\item 如果关于 $x$ 的不等式 $x^2<ax+b$ 的解集是 $\{x\mid1<x<3\}$，那么 $b^a$ 等于\mbox{（\quad）}
+
+\keepwithprev
+A. $-81$\qquad B. $81$\qquad C. $-64$\qquad D. $64$
+
+\ifanswer
+\solbegin
+\step{不等式 $x^2<ax+b$ 可化为 $x^2-ax-b<0$，其解集是 $\{x\mid1<x<3\}$，}
+\step{那么，由根与系数的关系得 $\begin{cases}1+3=a\\ 1\times3=-b\end{cases}$，解得 $a=4$，$b=-3$，}
+\step{所以 $b^a=(-3)^4=81$. 故选 $B$.}
+\solend
+\fi
+
+\item 在提瓦特大陆，水晶矿是锻造武器的重要材料，价值不菲，旅行者准备购买一批水晶矿，他决定分两次进行购买，并且制定了两种不同的方案：方案一是两次购入相同数量的水晶矿；方案二是两次购入相同金额的水晶矿. 已知他两次购入的单价分别为 $a_1$、$a_2$，且 $a_1\neq a_2$，则下列说法正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 当且仅当 $a_1>a_2$ 时，方案一的平均购买成本比方案二更低
+
+B. 当且仅当 $a_1>a_2$ 时，方案二的平均购买成本比方案一更低
+
+C. 无论 $a_1$、$a_2$ 的大小关系如何，方案一的平均购买成本比方案二更低
+
+D. 无论 $a_1$、$a_2$ 的大小关系如何，方案二的平均购买成本比方案一更低
+
+\ifanswer
+\solbegin
+\step{方案一：设每次购入水晶矿的数量为 $m$，则平均成本 $x=\dfrac{ma_1+ma_2}{2m}=\dfrac{a_1+a_2}{2}$；}
+\step{方案二：设每次购入水晶矿的金额为 $n$，则平均成本为 $y=\dfrac{2n}{\dfrac n{a_1}+\dfrac n{a_2}}=\dfrac{2a_1a_2}{a_1+a_2}$，}
+\step{所以 $x-y=\dfrac{a_1+a_2}{2}-\dfrac{2a_1a_2}{a_1+a_2}=\dfrac{(a_1+a_2)^2-4a_1a_2}{2(a_1+a_2)}=\dfrac{(a_1-a_2)^2}{2(a_1+a_2)}$，}
+\step{因为 $a_1\neq a_2$，所以 $x-y=\dfrac{(a_1-a_2)^2}{2(a_1+a_2)}>0$，即 $x>y$，}
+\step{故方案二的平均购买成本比方案一更低. 故选 $D$.}
+\solend
+\fi
+
+\item 当集合 $S$ 是 $\R$ 的非空子集且 $S$ 的元素个数有限，称 $S$ 的所有元素之积为 $S$ 的“厚度”. 集合 $\{-9,-3,0,3,9,15\}$ 的全部非空子集的厚度之和为\mbox{（\quad）}
+
+\keepwithprev
+A. $0$\qquad B. $10239$\qquad C. $2026$\qquad D. $-6561$
+
+\ifanswer
+\solbegin
+\step{设 $A=\{-9,-3,0,3,9,15\}$.}
+\step{$A$ 的每个子集都对应“对每个元素选或不选”的一种取法：}
+\step{把所有子集的元素之积相加，恰好等于 $\prod\limits_{a\in A}(1+a)$}
+\step{其中 $1$ 表示“不选该元素”，$a$ 表示“选该元素”.}
+\step{由于题目只要求非空子集，需减去空集对应的那一项 $1$，}
+\step{故全部非空子集的厚度之和为 $\prod\limits_{a\in A}(1+a)-1$.}
+\step{而 $\prod\limits_{a\in A}(1+a)=(1-9)(1-3)(1+0)(1+3)(1+9)(1+15)$}
+\step{$=(-8)\times(-2)\times1\times4\times10\times16=10240$，所以所求之和为 $10240-1=10239$.}
+\step{故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知全集 $U=\{0,1,2,3,4,5,6\}$，$A=\left\{x\mid\dfrac3{x+2}\geqslant1,x\in\N\right\}$，$B=\{2,6\}$.
+
+（1）求 $A$，并写出 $A$ 的所有子集；
+
+（2）求 $\overline{A\cup B}$.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$\dfrac3{x+2}\geqslant1\Rightarrow-2<x\leqslant1$，又 $x\in\N$，所以集合 $A=\{0,1\}$，}
+\step{子集有 $\varnothing$、$\{0\}$、$\{1\}$、$\{0,1\}$ 共 $4$ 个.}
+\stepm{(2)}{$A\cup B=\{0,1,2,6\}$，所以 $\overline{A\cup B}=\{3,4,5\}$.}
+\solend
+\fi
+
+\ansspace[4]
+
+\item 某农场要建造一个长方体形无盖蓄水池，其容积为 $1200m^3$，深为 $3m$. 其底面为长方形 $ABCD$，其中 $AD\geqslant AB$. 如果池底每平方米的造价为 $120$ 元，池壁每平方米的造价为 $100$ 元.
+
+（1）若贮水池的总造价不超过 $78000$ 元，求 $AD$ 边长的范围；
+
+（2）怎样设计贮水池能使总造价最低？最低总造价是多少？
+
+\ifanswer
+\solbegin
+\stepm{(1)}{设 $AD=x\,m$，$AB=y\,m$，且 $x\geqslant y$，}
+\step{由题意得 $xy=400$，且 $x\geqslant y$，则 $x\geqslant\dfrac{400}{x}$，且 $x\geqslant20$，}
+\step{则总造价 $z=400\times120+2(x+y)\times3\times100=48000+600(x+y)$，}
+\step{则 $z=48000+600\left(x+\dfrac{400}{x}\right)\leqslant78000$，即 $x+\dfrac{400}{x}\leqslant50$，}
+\step{整理得 $x^2-50x+400\leqslant0$，解得 $10\leqslant x\leqslant40$，又 $x\geqslant20$，}
+\step{所以 $AD$ 边长的范围是 $20m\leqslant AD\leqslant40m$；}
+\stepm{(2)}{结合 (1) 有 $xy=400$，且总造价 $z=48000+600(x+y)$}
+\step{$\geqslant48000+600\times2\sqrt{xy}=72000$，当且仅当 $x=y=20$ 时取等号，}
+\step{所以当 $AD=20m$，$AB=20m$ 时，}
+\step{贮水池的总造价最低，最低总造价是 $72000$ 元.}
+\solend
+\fi
+
+\ansspace[5]
+
+\item 已知函数 $f(x)=|x+a|+\left|x-\dfrac a2\right|$.
+
+（1）当 $a=2$ 时，求不等式 $f(x)\leqslant5$ 的解集；
+
+（2）设 $a>0$，$b>0$ 且 $f(x)$ 的最小值为 $m$，若 $m+\dfrac32b=3$，求 $\dfrac3a+\dfrac2b$ 的最小值.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $a=2$，所以 $f(x)=|x+a|+\left|x-\dfrac a2\right|=\begin{cases}-2x-1,&x<-2\\ 3,&-2\leqslant x\leqslant1\\ 2x+1,&x>1\end{cases}$，}
+\step{所以 $f(x)\leqslant5$ 可化为 $\begin{cases}x<-2\\ -2x-1\leqslant5\end{cases}$ 或 $\begin{cases}-2\leqslant x\leqslant1\\ 3\leqslant5\end{cases}$ 或 $\begin{cases}x>1\\ 2x+1\leqslant5\end{cases}$，}
+\step{解得 $-3\leqslant x\leqslant2$，所以原不等式的解集为 $[-3,2]$；}
+\stepm{(2)}{由题意得 $f(x)=|x+a|+\left|x-\dfrac a2\right|\geqslant\left|a+\dfrac a2\right|=\dfrac32a$，}
+\step{即 $m=\dfrac32a$，$m+\dfrac32b=\dfrac32a+\dfrac32b=3$，即 $a+b=2$，}
+\step{所以 $\left(\dfrac3a+\dfrac2b\right)(a+b)=5+\dfrac{3b}{a}+\dfrac{2a}{b}\geqslant5+2\sqrt6$，}
+\step{当且仅当 $\dfrac{3b}{a}=\dfrac{2a}{b}$，即 $a=6-2\sqrt6$，$b=2\sqrt6-4$ 时取等号，}
+\step{所以 $\dfrac3a+\dfrac2b$ 的最小值为 $\dfrac{5+2\sqrt6}{2}$.}
+\solend
+\fi
+
+\ansspace[6]
+
+\item 设 $a$、$m$ 为实数，$A$ 为 $\R$ 的非空子集. 命题 $p$：存在 $x\in A$，满足 $x^2-2ax+2a^2-a-6=0$，命题 $q$：对任意 $x\in\R$，都有 $|x-2|-|x-a|\leqslant m$.
+
+（1）若 $A=\R$，$p$ 是真命题，求实数 $a$ 的取值范围；
+
+（2）若 $A=\R$，$m=2$，$p$ 与 $q$ 有且只有一个真命题，求实数 $a$ 的取值范围；
+
+（3）若 $A=[-2,0]\cup[1,+\infty)$，是否存在正实数 $m$，使“$p$ 为假命题”是“$q$ 为真命题”的必要非充分条件？并说明理由.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得 $x^2-2ax+2a^2-a-6=0$，}
+\step{判别式 $\Delta=(2a)^2-4(2a^2-a-6)\geqslant0$，整理得 $a^2-a-6\leqslant0$，}
+\step{解得 $-2\leqslant a\leqslant3$，因此实数 $a$ 的取值范围为 $[-2,3]$；}
+\stepm{(2)}{当 $A=\R$，$m=2$ 时不等式可化为对任意 $x\in\R$，}
+\step{都有 $|x-2|-|x-a|\leqslant2$.}
+\step{又易得 $|x-2|-|x-a|\leqslant|x-2-(x-a)|=|2-a|$，}
+\step{所以只需满足 $|2-a|\leqslant2$ 即可，解得 $0\leqslant a\leqslant4$；}
+\step{由 (1) 得当 $p$ 为真命题时，$a\in[-2,3]$，}
+\step{因此当 $p$ 为假命题时，$a\in(-\infty,-2)\cup(3,+\infty)$；}
+\step{当 $q$ 为真命题时，$a\in[0,4]$，}
+\step{因此当 $q$ 为假命题时，$a\in(-\infty,0)\cup(4,+\infty)$.}
+% 原卷此句只有右引号、无左引号，照录（见文件头“原卷笔误/存疑”②）
+\step{$p$ 与 $q$ 有且只有一个真命题”可分为以下两种情况：}
+\step{第一种：$p$ 为真命题且 $q$ 为假命题，}
+\step{此时 $a\in[-2,3]$ 且 $a\in(-\infty,0)\cup(4,+\infty)$，因此可得 $-2\leqslant a<0$；}
+\step{第二种：$p$ 为假命题且 $q$ 为真命题，}
+\step{此时 $a\in(-\infty,-2)\cup(3,+\infty)$ 且 $a\in[0,4]$，因此可得 $3<a\leqslant4$.}
+\step{综上所述，可得实数 $a$ 的取值范围为 $[-2,0)\cup(3,4]$；}
+\stepm{(3)}{若“$p$ 为假命题”，即对任意 $x\in[-2,0]\cup[1,+\infty)$，}
+\step{方程 $x^2-2ax+2a^2-a-6\neq0$，}
+\step{即方程 $x^2-2ax+2a^2-a-6=0$ 在 $A=[-2,0]\cup[1,+\infty)$ 上无解，}
+\step{显然当 $\Delta=(2a)^2-4(2a^2-a-6)<0$，即 $a<-2$ 或 $a>3$ 时，}
+\step{此时方程在 $\R$ 上无实数根，所以在 $A$ 上无解，满足题意；}
+\step{当 $a\in[-2,3]$ 时，方程的根为 $x=a\pm\sqrt{-a^2+a+6}$，}
+\step{因此需满足所有实数根均不在集合 $A$ 内，}
+\step{因为 $a\in[-2,3]$，二次函数 $y=x^2-2ax+2a^2-a-6$ 关于 $x=a$ 对称，}
+\step{所以方程 $x^2-2ax+2a^2-a-6=0$ 实数根不可能均在 $(-\infty,-2)$ 内，}
+\step{当方程 $x^2-2ax+2a^2-a-6=0$ 实数根均在 $(0,1)$ 内时，}
+\step{需满足 $\begin{cases}2a^2-a-6>0\\ 1-2a+2a^2-a-6>0\\ 0<a<1\end{cases}$，显然该不等式组无解；}
+\step{当方程 $x^2-2ax+2a^2-a-6=0$ 有两实根，}
+\step{且一根在 $(0,1)$ 内，一根在 $(-\infty,-2)$ 内时，}
+\step{需满足 $\begin{cases}\Delta=(2a)^2-4(2a^2-a-6)>0\\ 4+4a+2a^2-a-6<0\\ 2a^2-a-6<0\\ 1-2a+2a^2-a-6<0\end{cases}$，解得 $-1<a<\dfrac12$.}
+\step{综上，$p$ 为假命题时实数 $a$ 的取值范围为 $(-\infty,-2)\cup\left(-1,\dfrac12\right)\cup(3,+\infty)$；}
+\step{若“$q$ 为真命题”，即对任意 $x\in\R$，都有 $|x-2|-|x-a|\leqslant m$ 恒成立，}
+\step{易得 $|x-2|-|x-a|$ 的最大值为 $|a-2|$，}
+\step{因此需满足 $|a-2|\leqslant m$，解得 $a\in[2-m,2+m]$，$m>0$，}
+\step{不妨记 $P=(-\infty,-2)\cup\left(-1,\dfrac12\right)\cup(3,+\infty)$，$Q=[2-m,2+m]$，}
+\step{则使“$p$ 为假命题”是“$q$ 为真命题”的必要非充分条件}
+\step{等价于 $Q$ 为 $P$ 的真子集.}
+\step{因为 $m$ 为正实数，所以 $m>0$，则 $2+m>2$，}
+\step{所以只需考虑 $[2-m,2+m]\subseteq(3,+\infty)$ 即可，所以 $2-m>3$，}
+\step{解得 $m<-1$，这与 $m$ 为正实数矛盾，因此不存在正实数 $m$ 满足题意.}
+\solend
+\fi
+
+\ansspace[7]
+
+\item 已知集合 $S_n=\{\xi\mid\xi=(x_1,x_2,\cdots,x_n),x_i\in\{0,1\},i=1,2,\cdots,n\}(n\geqslant2)$. 对于 $\alpha=(a_1,a_2,\cdots,a_n)$，$\beta=(b_1,b_2,\cdots,b_n)\in S_n$，定义 $\alpha$ 与 $\beta$ 之间的距离为 $d(\alpha,\beta)=|a_1-b_1|+|a_2-b_2|+|a_3-b_3|+\cdots+|a_n-b_n|$.
+
+（1）若 $\alpha=(1,1,1,1)\in S_4$，写出所有的 $\beta\in S_4$，使得 $d(\alpha,\beta)=1$；
+
+（2）已知 $\gamma=(1,1,\cdots,1)\in S_n$，若 $\alpha$、$\beta\in S_n$，并且 $d(\alpha,\gamma)=d(\beta,\gamma)=5\leqslant n$，求 $d(\alpha,\beta)$ 的最大值；
+
+（3）若 $T$ 是 $S_n$ 的子集，满足：对任意 $\alpha$、$\beta\in T$，都有 $d(\alpha,\beta)\leqslant n-1$，求 $T$ 的元素个数的最大值.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$S_4=\{\xi\mid\xi=(x_1,x_2,x_3,x_4),x_i\in\{0,1\},i=1,2,3,4\}$，}
+\step{因为 $x_i\in\{0,1\}$，所以 $|a_i-b_i|=0$ 或 $1$，}
+\step{当 $d(\alpha,\beta)=|a_1-b_1|+|a_2-b_2|+|a_3-b_3|+|a_4-b_4|=1$ 时，}
+\step{因为 $a_1=a_2=a_3=a_4=1$，所以 $b_1$、$b_2$、$b_3$、$b_4$ 中有三个 $1$ 一个 $0$，}
+\step{则所有的 $\beta$ 有四种情况：$(1,1,1,0)$，$(1,1,0,1)$，$(1,0,1,1)$，$(0,1,1,1)$；}
+\stepm{(2)}{因为 $\gamma=(1,1,\cdots,1)\in S_n$，}
+\step{当 $d(\alpha,\gamma)=5$ 时，$a_1$、$a_2$、$\cdots$、$a_n$ 这 $n$ 个数中有五个 $0$ 和 $n-5$ 个 $1$，}
+\step{同理当 $d(\beta,\gamma)=5$ 时，$b_1$、$b_2$、$\cdots$、$b_n$ 这 $n$ 个数中有五个 $0$ 和 $n-5$ 个 $1$，}
+\step{当 $a_i=b_i$ 时，$|a_i-b_i|=0$，$a_i\neq b_i$ 时，$|a_i-b_i|=1$，}
+\step{当 $5\leqslant n\leqslant10$ 时，$a_i$、$b_i$ 最多有 $2(n-5)$ 个位置不同，}
+\step{则 $d(\alpha,\beta)$ 的最大值为 $2(n-5)$，}
+\step{当 $n>10$ 时，$a_i$、$b_i$ 最多有 $10$ 个位置不同，则 $d(\alpha,\beta)$ 的最大值为 $10$，}
+\step{综上所述，$d(\alpha,\beta)_{\max}=\begin{cases}2(n-5),&5\leqslant n\leqslant10\\ 10,&n>10\end{cases}$；}
+\stepm{(3)}{已知 $\alpha=(a_1,a_2,\cdots,a_n)\in S_n$，设 $\alpha'=(1-a_1,1-a_2,\cdots,1-a_n)$，}
+\step{此时 $d(\alpha,\alpha')=n$，$S_n$ 中满足 $\alpha$、$\alpha'$ 的情况共有 $2^{n-1}$ 种，}
+\step{对任意 $\alpha$、$\beta\in T$，都有 $d(\alpha,\beta)\leqslant n-1$ 时，得 $\beta\neq\alpha'$，}
+\step{此时 $\alpha$ 和 $\alpha'$ 只能有一个属于 $T$，即 $T$ 的元素个数的最大值为 $2^{n-1}$.}
+\solend
+\fi
+
+\ansspace*[7]
+
+\end{enumerate}
+
+\end{document}
