@@ -703,7 +703,7 @@ def _nohit_batch(key):
         return 'X'
     if n == 68:
         return 'Y'
-    if 69 <= n <= 72:
+    if 69 <= n <= 73:
         return 'Z'
     return None
 
