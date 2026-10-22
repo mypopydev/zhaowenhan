@@ -414,26 +414,24 @@ def table_tex(header, aligns, data, index):
     # ⚠ `\rowcolors` 是**全局**状态：超长表前必须显式重置 `\rowcolors{1}{}{}`，只“不写”它没用
     # ——它继承上一张表的设置（2026-10-11 先踩了这个：只跳过不写仍炸，加重置才通）。
     # 表头仍用 `\rowcolor{white}` 单独摘白，不受影响。
+    # 超长表分块：XeTeX 的 main_memory 固定 5000000，单个 xltabular 装 1300+ 行
+    # 会 `TeX capacity exceeded`（2026-10-22 并入高一74—76 时踩到，116 页被截断）。
+    # 表头宏只定义一次（A 闸按字符多重集比对，重复定义会多算一份），后续各块复用它。
+    def _tab(chunk):
+        out = [r'\rowcolors{1}{}{}', r'\begin{xltabular}{\textwidth}{@{}%s@{}}' % spec,
+               r'\toprule', mac, r'\midrule', r'\endfirsthead',
+               r'\multicolumn{%d}{r}{\footnotesize（续上表）} \\' % len(header),
+               r'\midrule', mac, r'\midrule', r'\endhead',
+               r'\bottomrule', r'\endlastfoot']
+        for r in chunk:
+            out.append(' & '.join(r) + r' \\ \addlinespace[1pt]')
+        out.append(r'\end{xltabular}')
+        return out
+
     L = [r'\newcommand{%s}{\rowcolor{white} %s \\}' % (mac, ' & '.join(htex))]
-    if len(rows) <= 300:
-        L.append(r'\rowcolors{1}{white}{rowgray}')
-    else:
-        L.append(r'\rowcolors{1}{}{}')
-    L += [r'\begin{xltabular}{\textwidth}{@{}%s@{}}' % spec,
-          r'\toprule',
-          mac,
-          r'\midrule',
-          r'\endfirsthead',
-          r'\multicolumn{%d}{r}{\footnotesize（续上表）} \\' % len(header),
-          r'\midrule',
-          mac,
-          r'\midrule',
-          r'\endhead',
-          r'\bottomrule',
-          r'\endlastfoot']
-    for r in rows:
-        L.append(' & '.join(r) + r' \\ \addlinespace[1pt]')
-    L += [r'\end{xltabular}']
+    CH = 350
+    for k in range(0, max(len(rows), 1), CH):
+        L += _tab(rows[k:k + CH])
     # 4 列及以上的表降到 \small：少折两行，宽表不至于长得看不到头
     if len(header) >= 4:
         L = [r'\begingroup\small'] + L + [r'\endgroup']
