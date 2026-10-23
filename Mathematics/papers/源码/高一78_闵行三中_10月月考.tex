@@ -1,0 +1,336 @@
+% 高一78_闵行三中_10月月考.tex
+%   —— 高一上数学“2026-2027 年闵行三中高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一78_闵行三中_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一78_闵行三中_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一78_闵行三中_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一78”；
+% 原文标题“27学年高一78——2026-2027年上海市闵行三中高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/ueBx_j7o5s44MOU80uCLoQ。
+% 页面标注发布时间 2026-10-23 22:02（上海）。
+% 正文为 13 张 PNG 页（`原图/高一78_闵行三中_10月月考/01..13.png`），
+% 尺寸混排（约半数为 4762×6735、半数为 2560×3620），均按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号。填空题 3—12（10 题）、选择题 13—16（4 题）、
+% 解答题 17—21（5 题），共 19 题。
+%
+% 讲评版：第 3、4 题只印【答案】，本稿只给 \ans{}；其余 17 题印【解析】。
+% 选择题答案在解析末句“故选 B／A／D／C”。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑：第 12 题解析把 $2^9-10$ 记为起始项、末项写作 $2^2-3$，按法一
+% 逐段相加应为 $(2^8-1)+(2^7-1)+\cdots+(2^1-1)$，原卷如此，照录未改。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 103 条（Q5：2；Q6：2；Q7：2；Q8：2；
+% Q9：3；Q10：7；Q11：4；Q12：19；Q13：4；Q14：1；Q15：4；Q16：16；Q17：6；Q18：5；
+% Q19：7；Q20：9；Q21：10）。原卷解析的换行按语意合并，未逐行强拆；第 3、4 题只印
+% 【答案】，各提 \ans{}，不计入 \step 账。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年闵行三中高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 命题“若 $\dfrac1a>\dfrac1b$，则 $a<b$”是\blankline[4.4em]命题（填“真”或“假”）.
+
+\ifanswer
+\ans{假}
+\fi
+
+\item 如果 $3<x<7$，$1<y<2$，则 $x-2y$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\ans{$(-1,5)$}
+\fi
+
+\item 若 $x>-1$，则 $x+\dfrac1{x+1}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $x>-1$，则 $x+\dfrac1{x+1}=x+1+\dfrac1{x+1}-1\geqslant2\sqrt{(x+1)\cdot\dfrac1{x+1}}-1=1$，}
+\step{当且仅当 $x+1=\dfrac1{x+1}$，即 $x=0$ 时取等号，故最小值为 $1$.}
+\solend
+\fi
+
+\item 设 $a$ 是实数，若 $x=1$ 是 $x>a$ 的一个充分条件，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $x=1$ 是 $x>a$ 的一个充分条件，则 $\{1\}\subseteq\{x\mid x>a\}$，所以 $a<1$，}
+\step{则 $a$ 的取值范围是 $(-\infty,1)$.}
+\solend
+\fi
+
+\item 满足 $\{a_1\}\subseteq M\subseteq\{a_1,a_2,a_3,a_4\}$ 的集合 $M$ 的个数为\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{$a_1$ 必须选入 $M$，$a_2,a_3,a_4$ 各有“选入”或“不选入”两种选择，}
+\step{因此共有 $2\times2\times2=8$ 个集合.}
+\solend
+\fi
+
+\item 若集合 $M=\{x\mid x^2+(a-1)x+4=0\}$ 有且仅有一个真子集，则实数 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$M$ 有且仅有一个真子集 $\Leftrightarrow M$ 恰有一个元素 $\Leftrightarrow$ 方程有两个相等的实根，}
+\step{因此 $\Delta=(a-1)^2-16=0$，解得 $a=-3$ 或 $a=5$.}
+\solend
+\fi
+
+\item 不等式 $ax^2+bx+c>0$ 的解集为 $(1,2)$，则不等式 $ax^2-bx+c\geqslant0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{两根为 $1$，$2$，且 $a<0$，所以 $ax^2+bx+c=a(x-1)(x-2)$，}
+\step{即 $b=-3a$，$c=2a$.}
+\step{$ax^2-bx+c\geqslant0\Leftrightarrow a(x+1)(x+2)\geqslant0\Leftrightarrow(x+1)(x+2)\leqslant0\Leftrightarrow-2\leqslant x\leqslant-1$，故解集为 $[-2,-1]$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式组 $\begin{cases}x^2-2x-8\geqslant0\\ 2x^2+(7-2k)x-7k<0\end{cases}$ 有且仅有一个整数解，则实数 $k$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{第一个不等式为 $(x+2)(x-4)\geqslant0$，解得 $x\leqslant-2$ 或 $x\geqslant4$；}
+\step{第二个为 $(2x+7)(x-k)<0$.}
+\step{当 $k>-\dfrac72$ 时，第二个的解集为 $\left(-\dfrac72,k\right)$，须包含 $-3$ 且不包含 $-2$，}
+\step{即 $-3<k\leqslant-2$，此时唯一整数解为 $-3$.}
+\step{当 $k<-\dfrac72$ 时，第二个的解集为 $\left(k,-\dfrac72\right)$，须包含 $-4$ 且不包含 $-5$，}
+\step{即 $-5\leqslant k<-4$，此时唯一整数解为 $-4$.}
+\step{当 $k=-\dfrac72$ 时，第二个不等式为 $2\left(x+\dfrac72\right)^2<0$，无解. 因此 $k\in[-5,-4)\cup(-3,-2]$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的方程 $\dfrac{x^2+(3a+7)x+1}{x+a}=0$ 有两个不同的负实数解，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{分子方程有两个不同负根 $x_1,x_2$，当且仅当 $\Delta=(3a+1)^2-4>0$，$x_1+x_2=-(3a+1)<0$，$x_1x_2=1>0$，解得 $a>\dfrac13$.}
+\step{原方程还要求 $x\neq-a$，将 $x=-a$ 代入分子，得 $-2a^2-a+1=(1-2a)(a+1)$，在 $a>\dfrac13$ 时仅 $a=\dfrac12$ 使其为零.}
+\step{当 $a=\dfrac12$ 时，分子为 $\left(x+\dfrac12\right)(x+2)$，原方程仅有解 $x=-2$，须剔除.}
+\step{因此 $a\in\left(\dfrac13,\dfrac12\right)\cup\left(\dfrac12,+\infty\right)$.}
+\solend
+\fi
+
+\item 已知集合 $M$ 中的任一个元素都是整数，当存在整数 $a,c\in M$，$b\notin M$ 且 $a<b<c$ 时，称 $M$ 为“间断整数集”. 集合 $\{x\mid1\leqslant x\leqslant10,x\in\Z\}$ 的所有子集中，是“间断整数集”的个数为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{法一：（直接法）①考虑集合中最小元素为 $1$ 个单独元素，以 $1$ 为最小元素的集合，只要不选 $2$，其余元素在 $3$—$10$ 中任意取，但是不能不取，有 $2^8-1$ 种；}
+\step{以 $2$ 为最小元素的集合，只要不选 $3$，其余元素在 $4$—$10$ 任意取，但是不能不取，有 $2^7-1$ 种；}
+\step{$\cdots$ 以 $8$ 为最小元素的集合，最后一个元素必须选 $10$，有 $2^1-1=1$ 种；}
+\step{此时共有 $(2^8-1)+(2^7-1)+\cdots+(2^1-1)=\dfrac{2(1-2^8)}{1-2}-8=2^9-10$ 种；}
+\step{②考虑集合中最小元素为 $2$ 个连续元素，以 $1,2$ 为最小元素的集合，只要不选 $3$，其余元素在 $4$—$10$ 任意取，但是不能不取，有 $2^7-1$ 种；}
+\step{以 $2,3$ 为最小元素的集合，只要不选 $4$，其余元素在 $5$—$10$ 任意取，但是不能不取，有 $2^6-1$ 种；}
+\step{$\cdots$ 以 $7,8$ 为最小元素的集合，最后一个元素必须选 $10$，有 $2^1-1=1$ 种；}
+\step{此时共有 $(2^7-1)+(2^6-1)+\cdots+(2^1-1)=\dfrac{2(1-2^7)}{1-2}-7=2^8-9$ 种；}
+\step{③考虑集合中最小元素为 $3$ 个连续元素，以 $1,2,3$ 为最小元素的集合，只要不选 $4$，其余元素在 $5$—$10$ 任意取，但是不能不取，有 $2^6-1$ 种；}
+\step{以 $2,3,4$ 为最小元素的集合，只要不选 $5$，其余元素在 $6$—$10$ 任意取，但是不能不取，有 $2^5-1$ 种；}
+\step{$\cdots$ 以 $6,7,8$ 为最小元素的集合，最后一个元素必须选 $10$，有 $2^1-1=1$ 种；}
+\step{此时共有 $(2^6-1)+(2^5-1)+\cdots+(2^1-1)=\dfrac{2(1-2^6)}{1-2}-6=2^7-8$ 种；}
+\step{有了以上的铺垫，最后一种情况是以 $1,2,3,4,5,6,7,8$ 为最小元素的集合，最后一个元素必须选 $10$，此时共有 $2^2-3$ 种；}
+\step{综上，共有 $(2^9-10)+(2^8-9)+\cdots+(2^2-3)=\dfrac{4(1-2^8)}{1-2}-\dfrac{8\times(3+10)}2=2^{10}-4-52=968$ 个“间断整数集”.}
+\step{法二：（直接法）①分析“$3$ 个”元素的子集，从集合 $\{1,2,\cdots,10\}$ 中选 $3$ 个元素 $a,b,c(a<b<c)$ 构成子集，当 $a,c$ 中间只有 $1$ 个数时，$a,c$ 的选法有 $8$ 种，对于每一种选法，剩下的元素可以构成 $2^1-1$ 种非空子集，所以 $3$ 个元素的子集中满足“间断整数集”的个数为 $8\times(2^1-1)$；}
+\step{②分析“$4$ 个”元素的子集，当 $a,c$ 中间只有 $2$ 个数时，$a,c$ 的选法有 $7$ 种，所以 $4$ 个元素的子集中满足“间断整数集”的个数为 $7\times(2^2-1)$；}
+\step{以此类推，对于“$5$ 个”元素的子集，满足条件的个数为 $6\times(2^3-1)$，$\cdots$，对于“$10$ 个”元素的子集，满足条件的个数为 $1\times(2^8-1)$，全部的情况有 $8\times(2^1-1)+7\times(2^2-1)+6\times(2^3-1)+\cdots+1\times(2^8-1)=968$ 个.}
+\step{法三：（间接法）全部的子集有 $2^{10}$ 个，不符合条件的子集，即子集中所有元素都要连续，不符合条件的 $1$ 元子集有 $10$ 个；}
+\step{不符合条件的 $2$ 元子集有 $9$ 个；$\cdots$ 不符合条件的 $10$ 元子集有 $1$ 个；不要忘记，还有一个空集不符合条件，故共有 $2^{10}-(10+9+\cdots+1)-1=968$ 个“间断整数集”.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 设 $a$、$b\in\R$，则“$a+b>4$”是“$a>2$ 且 $b>2$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad B. 必要非充分条件
+
+C. 充要条件\qquad D. 既非充分又非必要条件
+
+\ifanswer
+\solbegin
+\step{当 $a=5$，$b=0$ 时，满足 $a+b>4$，但 $a>2$ 且 $b>2$ 不成立，即充分性不成立，}
+\step{若 $a>2$ 且 $b>2$，则必有 $a+b>4$，即必要性成立，}
+\step{故“$a+b>4$”是“$a>2$ 且 $b>2$”的必要不充分条件，}
+\step{故选 $B$.}
+\solend
+\fi
+
+\item 下列变形错误的是\mbox{（\quad）}
+
+\keepwithprev
+A. 如果 $(m+1)x=m+1$，则 $x=1$\qquad B. 如果 $x=y$，则 $x+5=y+5$
+
+C. 如果 $(m^2+1)x=5$，则 $x=\dfrac5{m^2+1}$\qquad D. 如果 $x=y$，则 $ax=ay$
+
+\ifanswer
+\solbegin
+\step{当 $m=-1$ 时，等式变为 $0=0$，$x$ 可为任意实数，不能推出 $x=1$. 故选 $A$.}
+\solend
+\fi
+
+\item 若不等式 $ax<b$ 与 $x^2+x+1<0$ 的解集相同，则\mbox{（\quad）}
+
+\keepwithprev
+A. $a>0,b=0$\qquad B. $a<0,b=0$\qquad C. $a=0,b>0$\qquad D. $a=0,b\leqslant0$
+
+\ifanswer
+\solbegin
+\step{$x^2+x+1=\left(x+\dfrac12\right)^2+\dfrac34>0$，所以 $x^2+x+1<0$ 的解集为 $\varnothing$.}
+\step{当 $a>0$ 时，$ax<b$ 的解集为 $\left(-\infty,\dfrac ba\right)$；}
+\step{当 $a<0$ 时，解集为 $\left(\dfrac ba,+\infty\right)$，均非空.}
+\step{当 $a=0$ 时，不等式成为 $0<b$，无解当且仅当 $b\leqslant0$，故选 $D$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid ax^2+bx+c>0\}$，$B=\{x\mid bx^2+cx+a>0\}$，$C=\{x\mid cx^2+ax+b>0\}$，其中 $a,b,c$ 为实数，现有两个结论：①若 $A\cap B\cap C=(p,+\infty)$，则 $p=0$；②存在实数 $q$，使得 $A\cap B\cap C=(-\infty,q)$，则下列判断中正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. ①和②都正确\qquad B. ①和②都错误\qquad C. ①正确，②错误\qquad D. ①错误，②正确
+
+\ifanswer
+\solbegin
+\step{①由 $A\cap B\cap C=(p,+\infty)$，即不等式组 $\begin{cases}ax^2+bx+c>0\\ bx^2+cx+a>0\\ cx^2+ax+b>0\end{cases}$ 的解集为 $(p,+\infty)$，先证明 $a,b,c$ 都不小于零：}
+\step{不妨假设 $a<0$，考虑不等式 $ax^2+bx+c>0$，因为不等式组有解集，故不等式 $ax^2+bx+c>0$ 必定有解，}
+\step{设方程 $ax^2+bx+c=0$ 的两实数根为 $m,n(m<n)$，则不等式 $ax^2+bx+c>0$ 的解集为 $\{x\mid m<x<n\}$，}
+\step{由 $A\cap B\cap C=(p,+\infty)$，即不等式组的解集为不等式 $ax^2+bx+c>0$ 的子集，与解集为 $(p,+\infty)$ 矛盾，故假设错误，$a\geqslant0$，同理可得 $b\geqslant0$，$c\geqslant0$，}
+\step{再证明 $a,b,c$ 至少有一个为零：不妨设 $a,b,c$ 均为正数，则 $y=ax^2+bx+c$，$y=bx^2+cx+a$，$y=cx^2+ax+b$ 的图象均开口向上，不等式组的解集应该还有 $x<q$ 的部分，与已知矛盾，故假设错误，所以 $a,b,c$ 中至少有一个为零.}
+\step{显然 $a,b,c$ 不全为 $0$，分类讨论如下：若 $a,b,c$ 中的两个为 $0$，不妨设 $a=b=0,c>0$，则不等式组为 $\begin{cases}c>0\\ cx>0\\ cx^2>0\end{cases}$，解集为 $(0,+\infty)$，此时 $p=0$；}
+\step{若 $a,b,c$ 中的 $1$ 个为 $0$，不妨设 $a=0,b,c>0$，则不等式组为 $\begin{cases}bx+c>0\\ bx^2+cx>0\\ cx^2+b>0\end{cases}$，其中不等式 $bx+c>0$ 的解集为 $\left\{x\mid x>-\dfrac cb\right\}$，}
+\step{不等式 $bx^2+cx>0$ 的解集为 $\left(-\infty,-\dfrac cb\right)\cup(0,+\infty)$，不等式 $cx^2+b>0$ 恒成立，因为 $-\dfrac cb<0$，所以不等式组的解集为 $(0,+\infty)$，此时 $p=0$，①正确；}
+\step{②假设存在实数 $q$，使 $A\cap B\cap C=(-\infty,q)$，即不等式组的解集为 $(-\infty,q)$，先证明 $a,b,c$ 都不小于零：}
+\step{不妨假设 $a<0$，考虑不等式 $ax^2+bx+c>0$，因为不等式组有解集，故不等式 $ax^2+bx+c>0$ 必定有解，设方程 $ax^2+bx+c=0$ 的两实数根为 $m,n(m<n)$，则不等式 $ax^2+bx+c>0$ 的解集为 $\{x\mid m<x<n\}$，}
+\step{又不等式组的解集为不等式 $ax^2+bx+c>0$ 的子集，与解集为 $(-\infty,q)$ 矛盾，故假设错误，所以 $a\geqslant0$，同理可得 $b\geqslant0$，$c\geqslant0$，}
+\step{再证明 $a,b,c$ 至少有一个为零：不妨设 $a,b,c$ 均为正数，则三图象均开口向上，不等式组的解集应该还有 $x>p$ 的部分，与已知矛盾，故假设错误，所以 $a,b,c$ 至少有一个为零.}
+\step{显然 $a,b,c$ 不全为 $0$，分类讨论如下：若 $a,b,c$ 中的两个为 $0$，不妨设 $a=b=0,c>0$，则不等式组为 $\begin{cases}c>0\\ cx>0\\ cx^2>0\end{cases}$，解集为 $(0,+\infty)$，与解集为 $(-\infty,q)$ 矛盾；}
+\step{若 $a,b,c$ 中的 $1$ 个为 $0$，不妨设 $a=0,b,c>0$，则不等式组为 $\begin{cases}bx+c>0\\ bx^2+cx>0\\ cx^2+b>0\end{cases}$，其中不等式 $bx+c>0$ 的解集为 $\left\{x\mid x>-\dfrac cb\right\}$，}
+\step{不等式 $bx^2+cx>0$ 的解集为 $\left(-\infty,-\dfrac cb\right)\cup(0,+\infty)$，不等式 $cx^2+b>0$ 恒成立，因为 $-\dfrac cb<0$，所以不等式组的解集为 $(0,+\infty)$，与解集为 $(-\infty,q)$ 矛盾，}
+\step{所以不存在实数 $q$，使得 $A\cap B\cap C=(-\infty,q)$，②错误；故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）用反证法证明：若 $x+y>8$，则 $x>3$ 或 $y>5$.
+
+（2）解关于 $x$ 的不等式：$|x-1|+|x-3|<8$，请写出必要的解题过程，仅画图不得分.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{假设结论不成立，即 $x\leqslant3$ 且 $y\leqslant5$，}
+\step{则 $x+y\leqslant3+5=8$，与已知 $x+y>8$ 矛盾，因此 $x>3$ 或 $y>5$.}
+\stepm{(2)}{当 $x<1$ 时，原不等式为 $1-x+3-x<8$，即 $x>-2$，得 $-2<x<1$.}
+\step{当 $1\leqslant x\leqslant3$ 时，原不等式为 $x-1+3-x=2<8$，得 $1\leqslant x\leqslant3$.}
+\step{当 $x>3$ 时，原不等式为 $x-1+x-3<8$，即 $x<6$，得 $3<x<6$.}
+\step{解集为 $(-2,1)\cup[1,3]\cup(3,6)=(-2,6)$.}
+\solend
+\fi
+
+\ansspace
+
+\item 已知全集 $U=\R$，集合 $A=\left\{x\,\middle|\,\dfrac{x+3}{x-2}<0\right\}$，$B=\{x\mid|x-3|<2\}$，$C=\{x\mid m+1<x<2m\}$.
+
+（1）求 $A\cap B$；
+
+（2）若 $B\cap C=C$，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$\dfrac{x+3}{x-2}<0\Leftrightarrow(x+3)(x-2)<0\Leftrightarrow-3<x<2$，所以 $A=(-3,2)$.}
+\step{$|x-3|<2\Leftrightarrow1<x<5$，所以 $B=(1,5)$. 因此 $A\cap B=(1,2)$.}
+\stepm{(2)}{$B\cap C=C\Leftrightarrow C\subseteq B$. 当 $m\leqslant1$ 时，$m+1\geqslant2m$，$C=\varnothing$，满足条件.}
+\step{当 $m>1$ 时，$C=(m+1,2m)\neq\varnothing$，此时 $C\subseteq B\Leftrightarrow\begin{cases}m+1\geqslant1\\ 2m\leqslant5\end{cases}$，结合 $m>1$，得 $1<m\leqslant\dfrac52$.}
+\step{因此实数 $m$ 的取值范围为 $\left(-\infty,\dfrac52\right]$.}
+\solend
+\fi
+
+\ansspace
+
+\item （1）求证：对任意 $x,y\in\R$，都有 $x^2+y^2\geqslant4x-2y-5$ 成立，并写出等号成立的条件；
+
+（2）已知关于 $x$ 的不等式 $(a^2+4a-5)x^2+4(a-1)x+3>0$ 对一切实数 $x$ 恒成立，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{作差得 $x^2+y^2-(4x-2y-5)=(x-2)^2+(y+1)^2\geqslant0$.}
+\step{因此原不等式成立，等号成立当且仅当 $x-2=0$ 且 $y+1=0$，即 $x=2$ 且 $y=-1$.}
+\stepm{(2)}{二次项系数为 $a^2+4a-5=(a-1)(a+5)$，分情况讨论. 当二次项系数为 $0$ 时，$a=1$ 或 $a=-5$.}
+\step{$a=1$ 时原不等式为 $3>0$，恒成立；$a=-5$ 时为 $-24x+3>0$，取 $x=1$ 不成立.}
+\step{当二次项系数小于 $0$ 时，二次函数图象开口向下，不等式不能对一切实数 $x$ 恒成立.}
+\step{当二次项系数大于 $0$ 时，恒成立的充要条件为 $\begin{cases}(a-1)(a+5)>0\\ \Delta=[4(a-1)]^2-12(a^2+4a-5)=4(a-1)(a-19)<0\end{cases}\Leftrightarrow1<a<19$，}
+\step{因此 $a$ 的取值范围为 $[1,19)$.}
+\solend
+\fi
+
+\ansspace
+
+\item （1）若关于 $x$ 的一元二次方程 $x^2-(a+2)x+2=0$ 有两个实数根 $\alpha,\beta$，且满足 $\dfrac1\alpha+\dfrac1\beta=2$，求实数 $a$ 的值；
+
+（2）若关于 $x$ 的方程 $ax^2-(a+2)x+2=(a-2)x+5$ 有两个不相等的实数根 $x_1,x_2$，且 $x_1x_2>0$，求 $x_1^2+x_2^2$ 的取值范围；
+
+（3）若关于 $x$ 的方程 $(a-1)x^2+a=(4-2a)|x|$ 有四个不同的实根，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$\alpha+\beta=a+2$，$\alpha\beta=2$，因此 $\dfrac1\alpha+\dfrac1\beta=\dfrac{\alpha+\beta}{\alpha\beta}=\dfrac{a+2}2=2\Rightarrow a=2$.}
+\step{回代得 $\Delta=4^2-4\times2=8>0$，且两根均非零，符合题意.}
+\stepm{(2)}{方程化为 $ax^2-2ax-3=0$，则 $a=0$ 时无解，须有 $a\neq0$.}
+\step{$\begin{cases}\Delta=4a(a+3)>0\\ x_1x_2=-\dfrac3a>0\end{cases}\Leftrightarrow a<-3$，又 $x_1+x_2=2$，}
+\step{所以 $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=4+\dfrac6a\in(2,4)$.}
+\stepm{(3)}{令 $t=|x|\geqslant0$，方程化为 $(a-1)t^2-(4-2a)t+a=0$，$a=1$ 时，$|x|=\dfrac12$，只有两个实根，须排除.}
+\step{$a\neq1$ 时，每个正根 $t$ 对应两个实根 $\pm t$，而 $t=0$ 只对应一个实根；故原方程有四个不同实根，当且仅当关于 $t$ 的方程有两个不同正根，}
+\step{即 $\begin{cases}\Delta_t=(4-2a)^2-4a(a-1)=16-12a>0\\ t_1+t_2=\dfrac{4-2a}{a-1}>0\\ t_1t_2=\dfrac a{a-1}>0\end{cases}\Leftrightarrow1<a<\dfrac43$，}
+\step{故所求范围为 $\left(1,\dfrac43\right)$.}
+\solend
+\fi
+
+\ansspace
+
+\item 给定数集 $M$，若对于任意 $a$、$b\in M$，有 $a+b\in M$，$a-b\in M$，则称集合 $M$ 为闭集合.
+
+（1）判断集合 $A_1=\{-4,-2,0,2,4\}$，集合 $B=\{x\mid x=3k,k\in\Z\}$ 是否为闭集合；
+
+（2）若集合 $C$、$D$ 为闭集合，则 $C\cup D$ 是否一定为闭集合？请说明理由；
+
+（3）已知集合 $C$、$D$ 为闭集合，且 $C\subset\R$，$D\subset\R$，证明：$(C\cup D)\subset\R$.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为 $4\in A_1$，$2\in A_1$，$4+2=6\notin A_1$，所以 $A_1$ 不是闭集合；}
+\step{任取 $x,y\in B$，设 $x=3m$，$y=3n$，$m,n\in\Z$，则 $x+y=3m+3n=3(m+n)$ 且 $m+n\in\Z$，}
+\step{所以 $x+y\in B$，同理，$x-y\in B$，故 $B$ 为闭集合.}
+\stepm{(2)}{结论：不一定. 不妨令 $C=\{x\mid x=2k,k\in\Z\}$，$D=\{x\mid x=3k,k\in\Z\}$，}
+\step{则由（1）得 $C$、$D$ 为闭集合，易得 $2,3\in C\cup D$，$2+3=5\notin C\cup D$，因此 $C\cup D$ 不一定是闭集合.}
+\stepm{(3)}{不妨假设 $C\cup D=\R$，则由 $C\subset\R$，得存在 $a\in\R$ 且 $a\notin C$，故 $a\in D$. 同理，存在 $b\in\R$ 且 $b\notin D$，故 $b\in C$.}
+\step{因为 $a+b\in\R=C\cup D$，所以 $a+b\in C$ 或 $a+b\in D$.}
+\step{若 $a+b\in C$，则由 $C$ 为闭集合且 $b\in C$，得 $a=(a+b)-b\in C$，与 $a\notin C$ 矛盾.}
+\step{若 $a+b\in D$，则由 $D$ 为闭集合且 $a\in D$，得 $b=(a+b)-a\in D$，与 $b\notin D$ 矛盾.}
+\step{综上，$C\cup D=\R$ 不成立，故 $(C\cup D)\subset\R$.}
+\solend
+\fi
+
+\ansspace*[7]
+
+\end{enumerate}
+
+\end{document}

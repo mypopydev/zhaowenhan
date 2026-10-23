@@ -1,0 +1,368 @@
+% 高一77_上外云间_10月月考.tex
+%   —— 高一上数学“2026-2027 年上外云间高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一77_上外云间_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一77_上外云间_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一77_上外云间_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一77”；
+% 原文标题“27学年高一77——2026-2027年上海市上外云间高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/q_NPuAcQHEvhj6Ygn05nBg。
+% 页面标注发布时间 2026-10-23 22:02（上海）。
+% 正文为 9 张 PNG 页（`原图/高一77_上外云间_10月月考/01..09.png`）：
+% 第 4、5、7、8、9 页为 4762×6735，其余 4 页为 2560×3620，均按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号。填空题 3—12（10 题）、选择题 13—16（4 题）、
+% 解答题 17—21（5 题），共 19 题。
+%
+% 讲评版：第 11 题只印【答案】（“[2,3)”），本稿只给 \ans{}；其余 18 题均印【解析】。
+% 选择题答案写在解析末句“故选 D／D／C／C”，照录在解析内。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例置于答案版；
+%   ② 原卷未印副标题，本稿补出；
+%   ③ 填空横线统一排 \blankline[4.4em]；
+%   ④ 原卷数集记号排斜体 $R$、$Z$、$N$（第 9、12、16—18 题等），按全稿惯例改
+%      $\R$、$\Z$、$\N$；
+%   ⑤ 第 17—21 题的子问用行内“（1）（2）（3）”段，解析中的子问标号用 \stepm；
+%   ⑥ 解答题按惯例加 \ansspace；
+%   ⑦ 第 19 题的示意图原卷印在题干右侧。本稿按原图形状用 TikZ 重排
+%      （直角、矩形 $OCPD$、过 $P$ 的直线 $EF$），仅答案版出。
+%
+% 原卷笔误/存疑（照录加注）：
+%   ① 第 15 题括号内原卷已印作答“（ C ）”，题末又标“（　）条件”，本稿照录为
+%      \mbox{（\quad）}，答案仍在解析末句；
+%   ② 第 12 题 ④ 中“$S_1\cup S_2=R$”的 $R$ 原卷排斜体，按惯例改 $\R$。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 86 条（Q3：2；Q4：2；Q5：6；Q6：3；Q7：3；
+% Q8：5；Q9：4；Q10：4；Q12：7；Q13：2；Q14：4；Q15：1；Q16：14；Q17：2；Q18：7；
+% Q19：6；Q20：9；Q21：5）。原卷解析的换行按语意合并，未逐行强拆；第 11 题只印
+% 【答案】，提 \ans{}，不计入 \step 账。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+\usepackage{tikz}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年上外云间高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知实数 $x>-1$，则 $\dfrac4{x+1}+x$ 的最小值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $x>-1$，所以 $x+1>0$，$\dfrac4{x+1}+x=\dfrac4{x+1}+x+1-1\geqslant2\sqrt{\dfrac4{x+1}\cdot(x+1)}-1=2\sqrt4-1=3$，}
+\step{当且仅当 $\dfrac4{x+1}=x+1$，即 $x=1$ 时取等号，所以 $\dfrac4{x+1}+x$ 的最小值为 $3$.}
+\solend
+\fi
+
+\item 已知 $\alpha:2m-6<x<m+5$，$\beta:-3<x<5$，若 $\alpha$ 是 $\beta$ 的必要条件，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\alpha$ 是 $\beta$ 的必要条件，所以 $\begin{cases}2m-6\leqslant-3\\ m+5\geqslant5\\ 2m-6<m+5\end{cases}\Rightarrow0\leqslant m\leqslant\dfrac32$，}
+\step{所以实数 $m$ 的取值范围是 $\left[0,\dfrac32\right]$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的一元二次方程 $x^2-x+a=0$ 有两个不相等的正根 $m$、$n$，则 $\dfrac1m+\dfrac9n$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为一元二次方程 $x^2-x+a=0$ 有两个不相等的正根 $m$、$n$，}
+\step{所以判别式 $\Delta=(-1)^2-4a>0\Rightarrow a<\dfrac14$，$m+n=1$，$mn=a>0$，}
+\step{因此 $0<a<\dfrac14$ 且 $m+n=1(m,n>0)$.}
+\step{$\dfrac1m+\dfrac9n=\left(\dfrac1m+\dfrac9n\right)(m+n)=1+\dfrac nm+\dfrac{9m}n+9=10+\dfrac nm+\dfrac{9m}n\geqslant10+2\sqrt9=16$，}
+\step{等号成立条件为 $\dfrac nm=\dfrac{9m}n\Rightarrow n^2=9m^2\Rightarrow n=3m$，}
+\step{$m$、$n>0$，结合 $m+n=1$，代入 $n=3m$ 得 $m+3m=1\Rightarrow m=\dfrac14$，$n=\dfrac34$，此时 $mn=\dfrac14\cdot\dfrac34=\dfrac3{16}$，满足 $0<a<\dfrac14$，等号可取，因此 $\dfrac1m+\dfrac9n$ 的最小值为 $16$.}
+\solend
+\fi
+
+\item 已知 $1\leqslant a+b\leqslant4$，$-1\leqslant a-b\leqslant2$，则 $4a-2b$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $-1\leqslant a-b\leqslant2$，得 $-3\leqslant3a-3b\leqslant6$.}
+\step{又 $1\leqslant a+b\leqslant4$，所以 $-3+1\leqslant(3a-3b)+(a+b)\leqslant6+4$，}
+\step{则 $-2\leqslant4a-2b\leqslant10$.}
+\solend
+\fi
+
+\item 已知 $a$、$b$ 均为正实数，且满足 $ab+a+b=8$，则 $ab$ 的最大值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由已知得 $a+b=8-ab\geqslant2\sqrt{ab}$，当且仅当 $a=b$ 时取等号，}
+\step{此时 $ab+2\sqrt{ab}-8\leqslant0$，解得 $-4\leqslant\sqrt{ab}\leqslant2$，即 $0\leqslant ab\leqslant4$，}
+\step{所以 $ab$ 的最大值为 $4$.}
+\solend
+\fi
+
+\item 对于任意实数 $x$，不等式 $|3x-2|+|1-3x|\geqslant|6x-3|$ 恒成立. 若该不等式取等号，则实数 $x$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当不等式取等号时，$|3x-2|+|1-3x|=|6x-3|$，}
+\step{当 $x\leqslant\dfrac13$ 时，即 $(2-3x)+(1-3x)=3-6x$，解得 $x\leqslant\dfrac13$；}
+\step{当 $\dfrac13<x\leqslant\dfrac12$ 时，即 $(2-3x)+(3x-1)=3-6x$，解得 $x=\dfrac13$，舍去；}
+\step{当 $\dfrac12<x<\dfrac23$ 时，即 $(2-3x)+(3x-1)=6x-3$，解得 $x=\dfrac23$，舍去；}
+\step{当 $x\geqslant\dfrac23$ 时，即 $(3x-2)+(3x-1)=6x-3$，解得 $x\geqslant\dfrac23$. 综上，不等式取等号时，$x\in\left(-\infty,\dfrac13\right]\cup\left[\dfrac23,+\infty\right)$.}
+\solend
+\fi
+
+\item 已知 $a\in\R$，若关于 $x$ 的方程 $x^2+ax+a^2-8=0$ 有两个实根 $x_1$、$x_2$，且 $\dfrac1{x_1}+\dfrac1{x_2}=-\dfrac12$，则 $a$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $\Delta=a^2-4(a^2-8)=32-3a^2\geqslant0$，解得 $a^2\leqslant\dfrac{32}3$，}
+\step{由韦达定理得 $x_1+x_2=-a$，$x_1x_2=a^2-8$，}
+\step{则 $\dfrac1{x_1}+\dfrac1{x_2}=\dfrac{x_1+x_2}{x_1x_2}=\dfrac{-a}{a^2-8}=-\dfrac12$，即 $a^2-2a-8=(a-4)(a+2)=0$，}
+\step{解得 $a=4$ 或 $a=-2$. 又 $a^2\leqslant\dfrac{32}3$，则 $a=-2$.}
+\solend
+\fi
+
+\item 关于实数 $x$ 的不等式 $\dfrac{(x-1)(x-3)(x-6)}{(x-2)(x-4)^2(x-5)}\geqslant0$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $\dfrac{(x-1)(x-3)(x-6)}{(x-2)(x-4)^2(x-5)}\geqslant0$，}
+\step{等价于 $(x-1)(x-3)(x-6)(x-2)(x-5)\geqslant0$，且 $x-2\neq0$，$x-4\neq0$，$x-5\neq0$，}
+\step{由“穿针引线法”，解得 $1\leqslant x<2$ 或 $3\leqslant x<4$ 或 $4<x<5$ 或 $x\geqslant6$，}
+\step{所以不等式的解集为 $[1,2)\cup[3,4)\cup(4,5)\cup[6,+\infty)$.}
+\solend
+\fi
+
+\item 不等式 $(a-2)x^2+2(a-2)x+1>0$ 对任意实数 $x$ 恒成立，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\ans{$[2,3)$}
+\fi
+
+\item 设 $S$ 是实数集 $\R$ 的一个非空子集，如果对于任意的 $a$、$b\in S$（$a$ 与 $b$ 可以相等，也可以不相等），$a+b\in S$ 且 $a-b\in S$，则称 $S$ 是“和谐集”，则下列四个命题中为真命题的个数为\blankline[4.4em]个.
+
+①存在一个集合 $S$，它既是“和谐集”，又是有限集
+
+②集合 $\{x\mid x=k\sqrt3,k\in\Z\}$ 是“和谐集”
+
+③若 $S_1$、$S_2$ 都是“和谐集”，则 $S_1\cap S_2\neq\varnothing$
+
+④对任意两个不同的“和谐集”$S_1$、$S_2$，总有 $S_1\cup S_2=\R$
+
+\ifanswer
+\solbegin
+\step{①是真命题，$S=\{0\}$ 是和谐集；}
+\step{②是真命题，设 $x_1=k_1\sqrt3$，$x_2=k_2\sqrt3$，$k_1$、$k_2\in\Z$，$x_1+x_2=(k_1+k_2)\sqrt3\in S$，}
+\step{$x_1-x_2=(k_1-k_2)\sqrt3\in S$，所以 $S=\{x\mid x=k\sqrt3,k\in\Z\}$ 是和谐集；}
+\step{③是真命题，任意和谐集中一定含有 $0$，所以 $S_1\cap S_2\neq\varnothing$；}
+\step{④是假命题，取 $S_1=\{x\mid x=2k,k\in\Z\}$，$S_2=\{x\mid x=3k,k\in\Z\}$，}
+\step{$S_1$、$S_2$ 均是和谐集，但 $5$ 不属于 $S_1$，也不属于 $S_2$，所以 $S_1\cup S_2$ 不是实数集.}
+\step{故真命题的个数是 $3$ 个.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知 $M=\{(x,y)\mid x=y,x\in\R\}$，$N=\{(x,y)\mid y=x^2,x\in\R\}$，则 $M\cap N=$\mbox{（\quad）}
+
+\keepwithprev
+A. $\{x\mid x\geqslant0\}$\qquad B. $\{x\mid x\in\R\}$\qquad C. $\{(1,1)\}$\qquad D. $\{(1,1),(0,0)\}$
+
+\ifanswer
+\solbegin
+\step{由 $\begin{cases}x=y\\ y=x^2\end{cases}$，解得 $\begin{cases}x=0\\ y=0\end{cases}$ 或 $\begin{cases}x=1\\ y=1\end{cases}$，}
+\step{则交点为 $(1,1)$、$(0,0)$，得到 $M\cap N=\{(1,1),(0,0)\}$. 故选 $D$.}
+\solend
+\fi
+
+\item 设集合 $A$、$B$ 是全集 $U$ 的两个子集，则 $A\subseteq B$ 是 $A\cup B=U$ 的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分但非必要条件\qquad B. 必要但非充分条件
+
+C. 充要条件\qquad D. 既非充分也非必要条件
+
+\ifanswer
+\solbegin
+\step{若 $A\subseteq B$，得 $A\cup B=B$，但不一定等于全集 $U$，充分性不成立；}
+\step{例如：设全集 $U=\{1,2,3,4,5\}$，集合 $A=\{1,2,3\}$，$B=\{3,4,5\}$，}
+\step{此时满足 $A\cup B=U$，但集合 $A$ 不是集合 $B$ 的子集，所以必要性不成立.}
+\step{故选 $D$.}
+\solend
+\fi
+
+\item 已知 $a$、$b$ 为实数，则“$a^2+b^2\neq0$”是“$\dfrac{|a+b|}{|a|+|b|}\leqslant1$ 成立”的\mbox{（\quad）}条件.
+
+\keepwithprev
+A. 充分不必要\qquad B. 必要不充分
+
+C. 充要\qquad D. 既不充分也不必要
+
+\ifanswer
+\solbegin
+\step{$a^2+b^2\neq0$ 即 $a$、$b$ 不同时为零，此时 $|a|+|b|>0$，由 $|a+b|\leqslant|a|+|b|$ 得 $\dfrac{|a+b|}{|a|+|b|}\leqslant1$，反之亦然，故为充要条件. 故选 $C$.}
+\solend
+\fi
+
+\item 设集合 $S,T$ 中元素均为正整数，且至少有两个元素，若 $S,T$ 满足：①对于任意 $x,y\in S$，若 $x\neq y$，都有 $xy\in T$；②对于任意 $x,y\in T$，若 $x<y$，则 $\dfrac yx\in S$. 则关于下面两个命题，说法正确的是\mbox{（\quad）}
+
+命题 $\alpha$：若 $S$ 有 $3$ 个元素，则 $S\cup T$ 有 $4$ 个元素.
+
+命题 $\beta$：若 $S$ 有 $4$ 个元素，则 $S\cup T$ 有 $7$ 个元素.
+
+\keepwithprev
+A. $\alpha$ 是真命题，$\beta$ 是真命题\qquad B. $\alpha$ 是真命题，$\beta$ 是假命题
+
+C. $\alpha$ 是假命题，$\beta$ 是真命题\qquad D. $\alpha$ 是假命题，$\beta$ 是假命题
+
+\ifanswer
+\solbegin
+\step{若取 $S=\{2,4,8\}$，则 $T=\{8,16,32\}$，此时 $S\cup T=\{2,4,8,16,32\}$，包含 $5$ 个元素，故 $\alpha$ 是假命题；}
+\step{设集合 $S=\{p_1,p_2,p_3,p_4\}$，且 $p_1<p_2<p_3<p_4$，$p_1,p_2,p_3,p_4\in\N^*$，}
+\step{则 $p_1p_2<p_2p_4$，且 $p_1p_2,p_2p_4\in T$，则 $\dfrac{p_4}{p_1}\in S$，}
+\step{同理 $\dfrac{p_4}{p_2}\in S$，$\dfrac{p_4}{p_3}\in S$，$\dfrac{p_3}{p_2}\in S$，$\dfrac{p_3}{p_1}\in S$，$\dfrac{p_2}{p_1}\in S$，}
+\step{若 $p_1=1$，则 $p_2\geqslant2$，则 $\dfrac{p_3}{p_2}<p_3$，故 $\dfrac{p_3}{p_2}=p_2$ 即 $p_3=p_2^2$，}
+\step{又 $p_4>\dfrac{p_4}{p_2}>\dfrac{p_4}{p_3}>1$，故 $\dfrac{p_4}{p_3}=\dfrac{p_4}{p_2}=p_2$，所以 $p_4=p_2^3$，}
+\step{故 $S=\{1,p_2,p_2^2,p_2^3\}$，此时 $p_2^5\in T$，$p_2\in T$，故 $p_2^4\in S$，矛盾，舍.}
+\step{若 $p_1\geqslant2$，则 $\dfrac{p_2}{p_1}<\dfrac{p_3}{p_1}<p_3$，故 $\dfrac{p_3}{p_1}=p_2$，$\dfrac{p_2}{p_1}=p_1$ 即 $p_3=p_1^3$，$p_2=p_1^2$，}
+\step{又 $p_4>\dfrac{p_4}{p_1}>\dfrac{p_4}{p_2}>\dfrac{p_4}{p_3}>1$，故 $\dfrac{p_4}{p_3}=\dfrac{p_4}{p_1}=p_1$，所以 $p_4=p_1^4$，}
+\step{故 $S=\{p_1,p_1^2,p_1^3,p_1^4\}$，此时 $\{p_1^3,p_1^4,p_1^5,p_1^6,p_1^7\}\subseteq T$.}
+\step{若 $q\in T$，则 $\dfrac q{p_1^3}\in S$，故 $\dfrac q{p_1^3}=p_1^i,i=1,2,3,4$，故 $q=p_1^{i+3},i=1,2,3,4$，}
+\step{即 $q\in\{p_1^4,p_1^5,p_1^6,p_1^7\}$，故 $\{p_1^4,p_1^5,p_1^6,p_1^7\}=T$，}
+\step{此时 $S\cup T=\{p_1,p_1^2,p_1^3,p_1^4,p_1^5,p_1^6,p_1^7\}$，即 $S\cup T$ 中有 $7$ 个元素.}
+\step{故 $\beta$ 是真命题. 故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知 $A=\{x\mid x>1\}$，$B=\{x\mid0\leqslant x\leqslant2\}$.
+
+（1）求 $A\cap B$、$A\cup B$、$(\complement_\R A)\cap B$.
+
+（2）设 $C=\{x\mid x\in(A\cup B)\text{ 且 }x\notin(A\cap B)\}$，求集合 $C$.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$A\cap B=\{x\mid1<x\leqslant2\}$，$A\cup B=\{x\mid x\geqslant0\}$，$(\complement_\R A)\cap B=\{x\mid0\leqslant x\leqslant1\}$；}
+\stepm{(2)}{$C=\{x\mid0\leqslant x\leqslant1\text{ 或 }x>2\}$.}
+\solend
+\fi
+
+\ansspace
+
+\item 设命题 $p:\forall x\in\R$，使得不等式 $mx^2-mx+2>0$ 恒成立；命题 $q:\exists0\leqslant x\leqslant3$，不等式 $2x-2\geqslant|m|$ 成立.
+
+（1）若 $p$ 为假命题，求实数 $m$ 的取值范围；
+
+（2）若命题 $p$、$q$ 有且只有一个是真命题，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{命题 $p:\forall x\in\R$，使得不等式 $mx^2-mx+2>0$ 恒成立为真命题，}
+\step{当 $m=0$ 时，$2>0$，成立；}
+\step{当 $m\neq0$ 时，需 $\begin{cases}m>0\\ \Delta=m^2-8m<0\end{cases}$，解得 $0<m<8$.}
+\step{所以若 $p$ 为真命题，则 $0\leqslant m<8$，则若 $p$ 为假命题，则实数 $m$ 的范围为 $\{m\mid m<0\text{ 或 }m\geqslant8\}$；}
+\stepm{(2)}{命题 $q:\exists0\leqslant x\leqslant3$，不等式 $2x-2\geqslant|m|$ 成立为真命题，}
+\step{则 $|m|\leqslant(2x-2)_{\max}$，所以 $|m|\leqslant2\times3-2=4$，解得 $-4\leqslant m\leqslant4$，}
+\step{设 $A=\{m\mid0\leqslant m<8\}$，$B=\{m\mid-4\leqslant m\leqslant4\}$，当 $p$ 真 $q$ 假时，$m$ 的范围为 $A\cap\overline B=\{m\mid4<m<8\}$，当 $p$ 假 $q$ 真时，$m$ 的范围为 $\overline A\cap B=\{m\mid-4\leqslant m<0\}$，综上，命题 $p$、$q$ 有且只有一个是真命题的 $m$ 的取值范围是 $\{m\mid-4\leqslant m<0\text{ 或 }4<m<8\}$.}
+\solend
+\fi
+
+\ansspace
+
+\item 如图，$OA$、$OB$ 是两条长度足够长的互相垂直的笔直小路，矩形 $OCPD$ 的顶点 $C$，$D$ 分别在 $OA$、$OB$ 上，且该矩形区域内种满了荷花. 为了让观赏者有更好的观赏体验，现计划经过点 $P$ 修一条小路 $EF$，其中点 $E$ 在小路 $OA$ 上，点 $F$ 在小路 $OB$ 上，并在 $\triangle OEF$ 区域内种满荷花. 已知 $OD=25\,\mathrm{m}$，$OC=40\,\mathrm{m}$，且小路 $EF$ 要完全位于一个以 $O$ 为顶点的，边长为 $100\,\mathrm{m}$ 的正方形内部（包括边界）. 记 $\triangle OEF$ 的面积为 $S\,\mathrm{m}^2$.
+
+（1）设 $EC=x\,\mathrm{m}$，试用 $x$ 表示 $OF$，并求 $x$ 的取值范围.
+
+（2）当 $EC$ 的长度为多少时，$S$ 取得最小值？最小值是多少？
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+\draw (0,0) -- (6.6,0) node[below right]{$B$};
+\draw (0,0) -- (0,5.9) node[above]{$A$};
+\node[below left] at (0,0) {$O$};
+\coordinate (C) at (0,2.4); \coordinate (D) at (2.6,0); \coordinate (P) at (2.6,2.4);
+\draw (0,2.4) rectangle (2.6,0);
+\node[left] at (C) {$C$}; \node[below] at (D) {$D$}; \node[above right] at (P) {$P$};
+\coordinate (F) at (4.6,0); \coordinate (E) at (0,5.55);
+\draw (E) -- (F);
+\node[left] at (E) {$E$}; \node[below] at (F) {$F$};
+\end{tikzpicture}
+\end{center}
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题意得 $x\leqslant60$，$\triangle PCE\sim\triangle FDP$，所以 $\dfrac{EC}{CP}=\dfrac{PD}{DF}$，即 $\dfrac x{25}=\dfrac{40}{DF}$，得 $DF=\dfrac{1000}x\,\mathrm{m}$，}
+\step{所以 $OF=OD+DF=\left(25+\dfrac{1000}x\right)\mathrm{m}$，}
+\step{所以 $25+\dfrac{1000}x\leqslant100$，解得 $x\geqslant\dfrac{40}3$；综上，$\dfrac{40}3\leqslant x\leqslant60$；}
+\stepm{(2)}{由 $OE=OC+CE=(40+x)\,\mathrm{m}$，所以 $S=\dfrac12OF\cdot OE=\dfrac12\left(25+\dfrac{1000}x\right)(40+x)=\dfrac12\left(1000+25x+\dfrac{40000}x+1000\right)\mathrm{m}^2$，}
+\step{由基本不等式得 $S\geqslant\dfrac12\left(2000+2\sqrt{25x\cdot\dfrac{40000}x}\right)=2000\,\mathrm{m}^2$，}
+\step{当且仅当 $25x=\dfrac{40000}x$，即 $x=40$ 时取等号，故 $EC=40\,\mathrm{m}$ 时，$S$ 取得最小值，为 $2000\,\mathrm{m}^2$.}
+\solend
+\fi
+
+\ansspace
+
+\item 定义区间 $(c,d)$、$[c,d)$、$(c,d]$、$[c,d]$ 的长度均为 $d-c(d>c)$.
+
+（1）不等式 $x^2-2x-3<0$ 的解区间的长度是多少？
+
+（2）如果数集 $A=\left[a,a+\dfrac34\right]$，$B=\left[b-\dfrac12,b\right]$ 都是集合 $[0,1]$ 的子集，那么集合 $A\cap B$ 的长度的最小值和最大值分别是多少？（直接写出答案）
+
+（3）已知实数 $a>0$，求满足 $\dfrac1{x-a}+\dfrac1x\geqslant1$ 的 $x$ 构成的区间的长度之和.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{不等式 $x^2-2x-3<0$ 可变为 $(x-3)(x+1)<0$，}
+\step{解得 $-1<x<3$，即不等式的解集为 $(-1,3)$，所以该不等式的解区间的长度是 $3-(-1)=4$.}
+\stepm{(2)}{由题意得 $\begin{cases}a\geqslant0\\ a+\dfrac34\leqslant1\end{cases}$，且 $\begin{cases}b-\dfrac12\geqslant0\\ b\leqslant1\end{cases}$，解得 $0\leqslant a\leqslant\dfrac14$，$\dfrac12\leqslant b\leqslant1$，}
+\step{取 $a=0$，$b=1$，则 $A=\left[0,\dfrac34\right]$，$B=\left[\dfrac12,1\right]$，得 $A\cap B=\left[\dfrac12,\dfrac34\right]$，所以集合 $A\cap B$ 的长度的最小值为 $\dfrac14$；}
+\step{取 $a=0$，$b=\dfrac12$，则 $A=\left[0,\dfrac34\right]$，$B=\left[0,\dfrac12\right]$，得 $A\cap B=\left[0,\dfrac12\right]$，所以集合 $A\cap B$ 的长度的最大值为 $\dfrac12$.}
+\stepm{(3)}{不等式 $\dfrac1{x-a}+\dfrac1x\geqslant1$ 等价于 $\dfrac{x^2-(2+a)x+a}{x(x-a)}\leqslant0$，}
+\step{设方程 $x^2-(2+a)x+a=0$ 的两根为 $x_1$、$x_2$，且 $x_1<x_2$，}
+\step{则 $x_1=\dfrac{2+a-\sqrt{a^2+4}}2\in(0,a)$，$x_2=\dfrac{2+a+\sqrt{a^2+4}}2\in(a,+\infty)$，}
+\step{所以不等式 $\dfrac{x^2-(2+a)x+a}{x(x-a)}\leqslant0$ 的解集为 $(0,x_1]\cup(a,x_2]$，解集构成的区间长度为 $x_1+x_2-a=(2+a)-a=2$.}
+\solend
+\fi
+
+\ansspace
+
+\item 设集合 $A=\{a_1,a_2,a_3,a_4\}$，$B=\{b_1,b_2,b_3,b_4\}$，$C=\{2,3,4,6\}$，新定义：集合 $A$ 中所有含 $k$ 个元素的子集中 $k$ 个元素之和组成的集合为“$k$ 元集”，集合 $A$ 中所有含 $k$ 个元素的子集中最大元素减去剩余所有元素的和组成的集合为“$k$ 元差集”.
+
+（1）若 $A$ 的“$k$ 元集”为 $C$，求：集合 $A$.
+
+（2）在（1）的条件下，若 $B$ 的“$k$ 元差集”为 $C$，求：所有满足条件的 $A\cap B$ 的真子集个数之和.
+
+（3）设 $b_1=a_1^2$，$b_2=a_2^2$，$b_3=a_3^2$，$b_4=a_4^2$，若 $A\cap B$ 为 $2$ 元集且元素之和为 $10$ 且 $A$ 的“$2$ 元集”中最大元素不超过 $14$，求：所有满足条件的 $A$ 的“$3$ 元差集”.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{若 $A$ 的“$k$ 元集”为 $C$，$C=\{2,3,4,6\}$，则集合为 $\{-1,1,2,3\}$；}
+\stepm{(2)}{$B$ 集合为 $\{5,3,0,-1\}$ 或 $\{9,3,1,0\}$ 或 $\{6,3,1,-1\}$，}
+\step{故所有 $A\cap B$ 的真子集个数之和为 $13$；}
+\stepm{(3)}{$b_1=a_1^2$，$b_2=a_2^2$，$b_3=a_3^2$，$b_4=a_4^2$，若 $A\cap B$ 为 $2$ 元集且元素之和为 $10$ 且 $A$ 的“$2$ 元集”中最大元素不超过 $14$，}
+\step{则满足条件的 $A$ 的“$3$ 元差集”$\{1,3,5\}$ 或 $\{0,4,5,6\}$ 或 $\{2,4,5,8\}$.}
+\solend
+\fi
+
+\ansspace*[7]
+
+\end{enumerate}
+
+\end{document}
