@@ -703,7 +703,7 @@ def _nohit_batch(key):
         return 'X'
     if n == 68:
         return 'Y'
-    if 69 <= n <= 76:
+    if 69 <= n <= 78:
         return 'Z'
     return None
 
@@ -1072,7 +1072,7 @@ def check_source(md):
         '“无选择题”＝源码正文里没有以 A. 开头的选项段（2026-10-02 前这里只写了 高一27／34 两份）')
     add('全卷无插图的份数', claim(md, r'等\*\*(\d+) 份\*\*全卷无插图', '无插图份数'), len(no_fig),
         '“无插图”＝既无 `\\includegraphics`、也无 tikzpicture')
-    m = re.search(r'另 2 份——(.+?)——用 TikZ 重绘', md)
+    m = re.search(r'另 \d+ 份——(.+?)——用 TikZ 重绘', md)
     if not m:
         raise AssertionError('README 里找不到这处断言：“另 2 份——…——用 TikZ 重绘”')
     add('用 TikZ 重绘的卷', sorted(re.findall(r'高一[0-9a-c]+', m.group(1))), sorted(tikz),
