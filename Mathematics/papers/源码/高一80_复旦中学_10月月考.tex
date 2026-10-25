@@ -1,0 +1,406 @@
+% 高一80_复旦中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年复旦中学高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一80_复旦中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一80_复旦中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一80_复旦中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一80”；
+% 原文标题“27学年高一80——2026-2027年上海市复旦中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/kDaNxIwzXxQNfMbuqqOnIg。
+% 页面标注发布时间 2026-10-25 18:53（上海）。
+% 正文为 11 张 PNG 页（`原图/高一80_复旦中学_10月月考/01..11.png`），
+% 尺寸混排（第 1、3、10、11 页为 2560×3620，其余 7 页为 4762×6735），均按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号。填空题 3—12（10 题）、选择题 13—16（4 题）、
+% 解答题 17—21（5 题），共 19 题。
+%
+% 讲评版：第 4 题只印【答案】，本稿只给 \ans{}；其余 18 题印【解析】。
+% 选择题答案在解析末句“故选 A／A／C／B”。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① **第 21 题与第 20 题完全相同**——题干“设函数 $y=ax^2+x-b$”与三小问、解析文字
+%      逐字重复（原卷第 20 题解析完后，第 21 题又把同一份题与解重排了一遍）。本稿照录
+%      两题、不删任何一问，只在第 21 题题首加一条 % 注说明。
+%   ② 第 16 题命题③作“若集合 $M=\{1,2,a\}$ 满足性质 $P$ 且 $a\in\N$，$a\geqslant1$，
+%      则 $a\geqslant6$”；其解析自己算出临界值应为 $7$（“命题③把临界值写成 6，实为 7，
+%      ③错误”），故③是假命题、答案取①④。题面的 6 与解析的 7 都照录。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版；
+%   ② 原卷未印副标题，本稿补出；填空横线统一排 \blankline[4.4em]；
+%   ③ 原卷数集记号排斜体 $R$、$N$，本稿按全稿惯例改用 $\R$、$\N$；
+%   ④ 第 17—21 题的子问用行内“（1）（2）（3）”段，解析中的子问标号用 \stepm；
+%   ⑤ 解答题按惯例加 \ansspace；选择题括号排 \mbox{（\quad）}。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 138 条（Q3：2；Q5：8；Q6：2；Q7：2；Q8：2；
+% Q9：6；Q10：4；Q11：3；Q12：6；Q13：5；Q14：5；Q15：5；Q16：19；Q17：5；Q18：12；
+% Q19：10；Q20：21；Q21：21）。第 20、21 题解析逐字相同，各 21 条；第 4 题只印【答案】，
+% 提 \ans{}，不计入 \step 账。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年复旦中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 若 $a>b$，且 $\dfrac1a>\dfrac1b$，则 $ab\blankline[4.4em]0$（填“$>$”或“$<$”）.
+
+\ifanswer
+\solbegin
+\step{若 $a>b$，且 $\dfrac1a>\dfrac1b$，则 $a-b>0$，}
+\step{则 $\dfrac1a-\dfrac1b=\dfrac{b-a}{ab}>0$，则 $ab<0$.}
+\solend
+\fi
+
+\item 陈述句“$x>1$ 且 $y>2$”的否定形式是\blankline[4.4em].
+
+\ifanswer
+\ans{$x\leqslant1$ 或 $y\leqslant2$}
+\fi
+
+\item 已知集合 $A=\{1,a^2-4a,a-4\}$，且 $-3\in A$，则 $a=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{因为集合 $A=\{1,a^2-4a,a-4\}$，且 $-3\in A$，}
+\step{所以 $a^2-4a=-3$ 或 $a-4=-3$，}
+\step{当 $a^2-4a=-3$ 时，解得 $a=1$ 或 $a=3$，}
+\step{若 $a=1$ 时，$a-4=-3$，$a^2-4a=-3$，集合 $A$ 的元素出现重复，舍去，}
+\step{若 $a=3$ 时，$A=\{1,-3,-1\}$，符合题意，}
+\step{当 $a-4=-3$ 时，解得 $a=1$，此时 $a^2-4a=-3$，}
+\step{集合 $A$ 的元素出现重复，舍去，}
+\step{综上所述，$a=3$.}
+\solend
+\fi
+
+\item 已知 $m$、$n\in\R$，关于 $x$ 的不等式 $x^2+mx+n<0$ 的解集为 $\{x\mid-1<x<2\}$，则 $\dfrac nm=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{由题意，关于 $x$ 的方程 $x^2+mx+n=0$ 的根为 $-1$ 和 $2$，}
+\step{所以 $\begin{cases}-1+2=-m\\ -1\times2=n\end{cases}$，解得 $\begin{cases}m=-1\\ n=-2\end{cases}$，所以 $\dfrac nm=\dfrac{-2}{-1}=2$.}
+\solend
+\fi
+
+\item 已知 $1<a<3$，$3<b<6$，$m=\dfrac b{2a}$，则 $m$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $1<a<3$，所以 $2<2a<6$，所以 $\dfrac16<\dfrac1{2a}<\dfrac12$，}
+\step{又 $3<b<6$，所以 $\dfrac12<\dfrac b{2a}<3$，即 $m$ 的取值范围是 $\left(\dfrac12,3\right)$.}
+\solend
+\fi
+
+\item 设集合 $A=\{x\mid a\leqslant x\leqslant a+8\}$，$M=\{x\mid x<0\text{ 或 }x>5\}$，全集 $U=\R$，若 $A\cup M=\R$，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{集合 $M=\{x\mid x<0\text{ 或 }x>5\}$，$A=\{x\mid a\leqslant x\leqslant a+8\}$，且 $A\cup M=\R$，}
+\step{所以 $\begin{cases}a\leqslant0\\ a+8\geqslant5\end{cases}$，解得 $-3\leqslant a\leqslant0$，所以 $a$ 的取值范围是 $[-3,0]$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的不等式 $\lvert x-2\rvert+\lvert x+1\rvert<a$ 在 $\R$ 上无解，则 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\lvert x-2\rvert+\lvert x+1\rvert\geqslant\lvert x-2-(x+1)\rvert=3$，}
+\step{当且仅当 $(x-2)(x+1)\leqslant0$ 时，即 $-1\leqslant x\leqslant2$ 时取等号，}
+\step{所以 $(\lvert x-2\rvert+\lvert x+1\rvert)_{\min}=3$，}
+\step{因为不等式 $\lvert x-2\rvert+\lvert x+1\rvert<a$ 在 $\R$ 上无解，}
+\step{所以不等式 $\lvert x-2\rvert+\lvert x+1\rvert\geqslant a$ 在 $\R$ 上恒成立，}
+\step{所以 $(\lvert x-2\rvert+\lvert x+1\rvert)_{\min}\geqslant a$，即 $a\leqslant3$，所以 $a$ 的取值范围为 $(-\infty,3]$.}
+\solend
+\fi
+
+\item 对于任意的正数 $m$、$n$，不等式 $\dfrac3m+\dfrac1n\geqslant\dfrac{\lambda}{2m+n}$ 成立，则 $\lambda$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为对于任意的正数 $m$、$n$，不等式 $\dfrac3m+\dfrac1n\geqslant\dfrac{\lambda}{2m+n}$ 成立，}
+\step{所以 $\lambda\leqslant\dfrac{3(2m+n)}m+\dfrac{2m+n}n=7+\dfrac{3n}m+\dfrac{2m}n$，}
+\step{因为 $7+\dfrac{3n}m+\dfrac{2m}n\geqslant7+2\sqrt{\dfrac{3n}m\cdot\dfrac{2m}n}=7+2\sqrt6$，当且仅当 $\dfrac{3n}m=\dfrac{2m}n$ 时取等号，}
+\step{所以 $\lambda\leqslant7+2\sqrt6$，故 $\lambda$ 的最大值为 $7+2\sqrt6$.}
+\solend
+\fi
+
+\item 权方和不等式作为基本不等式的一个变化，在求二元变量最值时有很多广泛的应用，其表述如下：设 $a$、$b$、$x$、$y>0$，则 $\dfrac{a^2}x+\dfrac{b^2}y\geqslant\dfrac{(a+b)^2}{x+y}$，当且仅当 $\dfrac ax=\dfrac by$ 时，等号成立. 根据权方和不等式，函数 $y=\dfrac3x+\dfrac9{25-3x}\left(0<x<\dfrac{25}4\right)$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $0<x<\dfrac{25}4$，}
+\step{所以 $f(x)=\dfrac3x+\dfrac9{25-3x}=\dfrac{3^2}{3x}+\dfrac{3^2}{25-3x}\geqslant\dfrac{(3+3)^2}{3x+25-3x}=\dfrac{36}{25}$，}
+\step{当且仅当 $\dfrac3{3x}=\dfrac3{25-3x}$，即 $x=\dfrac{25}6$ 时取等号，故最小值为 $\dfrac{36}{25}$.}
+\solend
+\fi
+
+\item 定义关于 $x$、$y$ 的新运算：$T[x,y]=(x-y)(2ax+by)$，其中 $x\in\R$，$y\in\R$，$a$、$b$ 为非零常数. 当 $T[1,2]=0$ 时，求不等式组 $\begin{cases}T[a,a-1]<-a+3\\ T[3a,2-a]>-10a(2a-1)\end{cases}$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$T[1,2]=-(2a+2b)=0$，即 $b=-a$.}
+\step{$T[a,a-1]=(a-a+1)[2a^2-a(a-1)]<-a+3$，}
+\step{即 $a^2+2a-3<0$，解得 $-3<a<1$；}
+\step{$T[3a,2-a]=[3a-(2-a)][6a^2-a(2-a)]>-10a(2a-1)$，}
+\step{整理得 $14a^3-a^2-3a>0$，解得 $-\dfrac37<a<0$ 或 $a>\dfrac12$；}
+\step{所以解集为 $\left\{a\mid-\dfrac37<a<0\text{ 或 }\dfrac12<a<1\right\}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 下列四个说法中，正确的有\mbox{（\quad）}
+
+①空集没有子集；②空集是任何集合的真子集；
+
+③若 $\varnothing\subseteq A$，则 $A=\varnothing$；④任何集合至少有两个子集.
+
+\keepwithprev
+A. $0$ 个\qquad B. $1$ 个\qquad C. $2$ 个\qquad D. $3$ 个
+
+\ifanswer
+\solbegin
+\step{①空集的子集是它本身，故错误，}
+\step{②空集的任何非空集合的真子集，故错误，}
+\step{③若 $\varnothing\subseteq A$，则集合 $A$ 是任意集合，故错误，}
+\step{④空集的子集只有它本身一个，故错误，}
+\step{故选 $A$.}
+\solend
+\fi
+
+\item 下列命题是假命题的为\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $a>b$，则 $ac^2>bc^2$\qquad B. 若 $a>b$，$c>d$，则 $a+c>b+d$
+
+C. 若 $a>b>0$ 且 $c<0$，则 $\dfrac c{a^2}>\dfrac c{b^2}$\qquad D. 若 $a>b>-1$，则 $\dfrac1{a+1}<\dfrac1{b+1}$
+
+\ifanswer
+\solbegin
+\step{当 $c=0$ 时，$A$ 显然为假命题；}
+\step{若 $a>b$，$c>d$，则 $a+c>b+d$，$B$ 为真命题；}
+\step{若 $a>b>0$ 且 $c<0$，则 $\dfrac1{a^2}<\dfrac1{b^2}$，$\dfrac c{a^2}>\dfrac c{b^2}$，$C$ 为真命题；}
+\step{若 $a>b>-1$，则 $a+1>b+1>0$，所以 $\dfrac1{a+1}<\dfrac1{b+1}$，$D$ 为真命题.}
+\step{故选 $A$.}
+\solend
+\fi
+
+\item 设 $x$、$y\in\R$，则“$x^3+y^3>0$”是“$x+y>0$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分不必要条件\qquad B. 必要不充分条件
+
+C. 充要条件\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{$x^3+y^3>0$，即 $x^3>(-y)^3$，又函数 $f(t)=t^3$ 在 $\R$ 上严格增，}
+\step{故 $x>-y$，即 $x+y>0$，充分性成立，}
+\step{若 $x+y>0$，即 $x>-y$，}
+\step{函数 $f(t)=t^3$ 在 $\R$ 上严格增，则 $x^3>(-y)^3$，即 $x^3+y^3>0$，必要性成立，}
+\step{综上所述，“$x^3+y^3>0$”是“$x+y>0$”的充要条件. 故选 $C$.}
+\solend
+\fi
+
+\item 对于给定的非空集合 $A$，定义集合 $S_A=\{x+y\mid x\in A,y\in A\}$，$T_A=\{x-y\mid x\in A,y\in A\}$，若 $S_A\cap T_A=\varnothing$，则称集合 $A$ 满足性质 $P$，则下列命题成立的是\mbox{（\quad）}
+
+①集合 $M=\{1,2\}$ 满足性质 $P$；
+
+②集合 $M=\{1,2,3\}$ 满足性质 $P$；
+
+③若集合 $M=\{1,2,a\}$ 满足性质 $P$ 且 $a\in\N$，$a\geqslant1$，则 $a\geqslant6$；
+
+④若集合 $M=\{0,2,a,b\}=T_M$，且 $b>a>2$，则 $b-a=2$.
+
+\keepwithprev
+A. ①③\qquad B. ①④\qquad C. ②③\qquad D. ②④
+
+\ifanswer
+\solbegin
+\step{①当 $M=\{1,2\}$ 时，$S_M=\{1+1,1+2,2+2\}=\{2,3,4\}$，$T_M=\{0,1\}$，}
+\step{$S_M\cap T_M=\varnothing$，满足性质 $P$，①正确.}
+\step{②当 $M=\{1,2,3\}$ 时，$S_M=\{2,3,4,5,6\}$，$T_M=\{0,1,2\}$，$S_M\cap T_M=\{2\}\neq\varnothing$，}
+\step{②错误.}
+\step{③由元素的互异性得 $a\neq1$、$a\neq2$，又 $a\in\N$、$a\geqslant1$，故 $a\geqslant3$，}
+\step{此时 $S_M=\{2,3,4,a+1,a+2,2a\}$，$T_M=\{0,1,a-2,a-1\}$.}
+\step{要使 $S_M\cap T_M=\varnothing$，需 $a-2\notin S_M$ 且 $a-1\notin S_M$：}
+\step{当 $a=3,4,5$ 时 $a-1\in\{2,3,4\}\subseteq S_M$；当 $a=6$ 时 $a-2=4\in S_M$，都不满足；}
+\step{当 $a\geqslant7$ 时 $a-2\geqslant5>4$，}
+\step{且 $S_M$ 中其余元素 $a+1$、$a+2$、$2a$ 都大于 $a-1>a-2$，}
+\step{故 $a-2$、$a-1$ 都不属于 $S_M$，满足性质 $P$.}
+\step{所以满足性质 $P$ 的 $a$ 都必须满足 $a\geqslant7$，}
+\step{而 $a=6$ 并不满足性质 $P$——命题③把临界值写成 $6$，实为 $7$，③错误.}
+\step{④由 $b>a>2$ 得 $T_M$ 中 $a-2$、$b-2$、$b-a$ 都是正数，}
+\step{由 $M=T_M$ 得它们都属于 $M=\{0,2,a,b\}$.}
+\step{因为 $a-2>0$、$a-2\neq a$ 且 $a-2<b$，所以只能 $a-2=2$，得 $a=4$；}
+\step{因为 $b-2>2$ 且 $b-2\neq b$，所以只能 $b-2=a=4$，得 $b=6$.}
+\step{此时 $M=\{0,2,4,6\}$，$T_M=\{0,2,4,6\}=M$，且 $b-a=2$，④正确.}
+\step{所以正确的是①④. 故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知关于 $x$ 的一元二次方程 $x^2+(2k+1)x+k^2+1=0$ 有两个不等实数根 $x_1$、$x_2$.
+
+（1）求 $k$ 的取值范围；
+
+（2）若 $x_1x_2=5$，求 $k$ 的值.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{因为关于 $x$ 的一元二次方程 $x^2+(2k+1)x+k^2+1=0$ 有两个不等实数根，}
+\step{所以此方程的判别式 $\Delta=(2k+1)^2-4(k^2+1)>0$，解得 $k>\dfrac34$，}
+\step{则 $k$ 的取值范围是 $\left(\dfrac34,+\infty\right)$；}
+\stepm{(2)}{由题意得 $x_1x_2=k^2+1=5$，解得 $k=-2$ 或 $k=2$，}
+\step{由 (1) 得 $k>\dfrac34$，则 $k$ 的值为 $2$.}
+\solend
+\fi
+
+\ansspace
+
+\item 已知关于 $x$ 的不等式 $\dfrac{a(x-1)}{x-2}>1(a\in\R)$.
+
+（1）当 $a=1$ 时，求不等式组 $\begin{cases}\dfrac{a(x-1)}{x-2}>1\\ x^2>9\end{cases}$ 的解集；
+
+（2）当 $a<1$ 时，求此不等式 $\dfrac{a(x-1)}{x-2}>1(a\in\R)$ 的解集.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{关于 $x$ 的不等式 $\dfrac{a(x-1)}{x-2}>1(a\in\R)$，}
+\step{当 $a=1$ 时，不等式组为 $\begin{cases}\dfrac{x-1}{x-2}>1\\ x^2>9\end{cases}$，}
+\step{由 $\dfrac{x-1}{x-2}>1\Leftrightarrow\dfrac{x-1}{x-2}-1>0\Leftrightarrow\dfrac{x-1-x+2}{x-2}>0\Leftrightarrow\dfrac1{x-2}>0$，}
+\step{解得 $x>2$，又 $x^2>9$，解得 $x>3$ 或 $x<-3$，}
+\step{综上，不等式组 $\begin{cases}\dfrac{x-1}{x-2}>1\\ x^2>9\end{cases}$ 的解集为 $(3,+\infty)$.}
+\stepm{(2)}{不等式 $\dfrac{a(x-1)}{x-2}>1$，即 $\dfrac{(a-1)x-(a-2)}{x-2}>0$，}
+\step{则有 $[((a-1)x-(a-2))](x-2)>0$，又 $a<1$，所以 $a-1<0$，}
+\step{不等式可以变形为 $\left(x-\dfrac{a-2}{a-1}\right)(x-2)<0$，}
+\step{又 $\dfrac{a-2}{a-1}-2=\dfrac{a-2-2a+2}{a-1}=\dfrac{-a}{a-1}$，}
+\step{①当 $a<0$ 时，$\dfrac{-a}{a-1}<0$，即 $\dfrac{a-2}{a-1}<2$，不等式的解集为 $\left(\dfrac{a-2}{a-1},2\right)$；}
+\step{②当 $a=0$ 时，不等式为 $0>1$ 不成立，不等式的解集为空集；}
+\step{③当 $0<a<1$ 时，$\dfrac{-a}{a-1}>0$，即 $\dfrac{a-2}{a-1}>2$，不等式的解集为 $\left(2,\dfrac{a-2}{a-1}\right)$.}
+\solend
+\fi
+
+\ansspace
+
+\ifanswer\else\needvspace{12\baselineskip}\fi
+\item 已知集合 $A=\{x\mid-2\leqslant x\leqslant5\}$，$B=\{x\mid m+1\leqslant x\leqslant2m-1\}$.
+
+（1）当 $m=3$ 时，求 $A\cup B$；$A\cap\overline B$；
+
+（2）若集合 $B$ 为非空集合且 $A\cup B=A$，求实数 $m$ 的取值范围；
+
+（3）若 $A\cap B=\varnothing$，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $m=3$ 时，$A=\{x\mid-2\leqslant x\leqslant5\}$，$B=\{x\mid4\leqslant x\leqslant5\}$，}
+\step{$A\cup B=[-2,5]$，}
+\step{因为 $\overline B=\{x\mid x>5\text{ 或 }x<4\}$，所以 $A\cap\overline B=\{x\mid-2\leqslant x<4\}$；}
+\stepm{(2)}{因为集合 $B$ 为非空集合且 $A\cup B=A$，所以 $B\subseteq A$，}
+\step{又 $A=\{x\mid-2\leqslant x\leqslant5\}$，$B=\{x\mid m+1\leqslant x\leqslant2m-1\}$，}
+\step{所以 $\begin{cases}m+1\geqslant-2\\ 2m-1\leqslant5\\ m+1\leqslant2m-1\end{cases}$，解得 $2\leqslant m\leqslant3$，故实数 $m$ 的取值范围是 $[2,3]$；}
+\stepm{(3)}{$A\cap B=\varnothing$，}
+\step{若 $B=\varnothing$ 时，则 $m+1>2m-1$，解得 $m<2$，符合题意，}
+\step{若 $B\neq\varnothing$ 时，则 $\begin{cases}m\geqslant2\\ 2m-1<-2\end{cases}$ 或 $\begin{cases}m\geqslant2\\ m+1>5\end{cases}$，解得 $m>4$，}
+\step{综上所述，实数 $m$ 的取值范围是 $(-\infty,2)\cup(4,+\infty)$.}
+\solend
+\fi
+
+\ansspace
+
+\item 设函数 $y=ax^2+x-b(a\in\R,b\in\R)$.
+
+（1）若 $b=1$，且集合 $\{x\mid y=0\}$ 中有且只有一个元素，求实数 $a$ 的取值集合；
+
+（2）解关于 $x$ 的不等式 $y<(a-1)x^2+(b+2)x-2b$；
+
+（3）当 $a>0$，$b>1$ 时，记不等式 $y>0$ 的解集为 $P$，集合 $Q=\{x\mid-2-t<x<-2+t\}$. 若对于任意正数 $t$，$P\cap Q\neq\varnothing$，求 $\dfrac1a-\dfrac1b$ 的最大值.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题设 $y=ax^2+x-1(a\in\R)$，又 $\{x\mid y=0\}$ 有且只有一个元素，}
+\step{所以 $ax^2+x-1=0$ 有且只有一个根，}
+\step{当 $a=0$ 时，$x-1=0$，即 $x=1$，则 $\{x\mid y=0\}=\{1\}$，满足题设；}
+\step{当 $a\neq0$ 时，$\Delta=1+4a=0$，即 $a=-\dfrac14$，则 $\{x\mid y=0\}=\{2\}$，满足题设；}
+\step{所以 $a$ 的取值集合为 $\left\{-\dfrac14,0\right\}$.}
+\stepm{(2)}{由题设 $ax^2+x-b<(a-1)x^2+(b+2)x-2b$，}
+\step{整理得 $x^2-(b+1)x+b=(x-b)(x-1)<0$，}
+\step{当 $b<1$ 时，解集为 $\{x\mid b<x<1\}$；}
+\step{当 $b=1$ 时，解集为 $\varnothing$；}
+\step{当 $b>1$ 时，解集为 $\{x\mid1<x<b\}$；}
+\stepm{(3)}{由 $t>0$，恒有 $t-2>-t-2$，}
+\step{故 $Q\neq\varnothing$，$y=f(x)=ax^2+x-b>0$ 且 $a>0$，$b>1$，}
+\step{故 $f(x)$ 开口向上且 $f(0)=-b<0$，}
+\step{故对应一元二次方程恒有两个不等实根，且在 $y$ 轴两侧，}
+\step{因为 $P\cap Q\neq\varnothing$，即 $f(x)>0$ 在 $(-2-t,-2+t)$ 上有解，且 $\forall t\in(0,+\infty)$，}
+\step{又区间 $(-2-t,-2+t)$ 关于 $x=-2$ 对称，且区间长度 $2t\in(0,+\infty)$，}
+\step{综上，只需保证 $f(-2)=4a-2-b=0$，则 $4a-b=2$，}
+\step{且 $b=4a-2>1$，即 $a>\dfrac34$，}
+\step{所以 $\dfrac1a-\dfrac1b=\dfrac12\left(\dfrac2a-\dfrac2b\right)=\dfrac12\left(\dfrac{4a-b}a-\dfrac{4a-b}b\right)=\dfrac52-\dfrac12\left(\dfrac ba+\dfrac{4a}b\right)$}
+\step{$\leqslant\dfrac52-\sqrt{\dfrac ba\cdot\dfrac{4a}b}=\dfrac12$，当且仅当 $b=2a$，即 $a=1>\dfrac34$，$b=2>1$ 时取等号，}
+\step{故 $\dfrac1a-\dfrac1b$ 的最大值为 $\dfrac12$.}
+\solend
+\fi
+
+\ansspace
+
+% 注：原卷第 21 题与第 20 题完全相同（题干、三小问与解析逐字重复），照录未删（见文件头“原卷笔误/存疑”①）。
+\item 设函数 $y=ax^2+x-b$.
+
+（1）若 $b=1$，且集合 $\{x\mid y=0\}$ 中有且只有一个元素，求实数 $a$ 的取值集合；
+
+（2）解关于 $x$ 的不等式 $y<(a-1)x^2+(b+2)x-2b$；
+
+（3）当 $a>0$，$b>1$ 时，记不等式 $y>0$ 的解集为 $P$，集合 $Q=\{x\mid-2-t<x<-2+t\}$. 若对于任意正数 $t$，$P\cap Q\neq\varnothing$，求 $\dfrac1a-\dfrac1b$ 的最大值.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{由题设 $y=ax^2+x-1(a\in\R)$，又 $\{x\mid y=0\}$ 有且只有一个元素，}
+\step{所以 $ax^2+x-1=0$ 有且只有一个根，}
+\step{当 $a=0$ 时，$x-1=0$，即 $x=1$，则 $\{x\mid y=0\}=\{1\}$，满足题设；}
+\step{当 $a\neq0$ 时，$\Delta=1+4a=0$，即 $a=-\dfrac14$，则 $\{x\mid y=0\}=\{2\}$，满足题设；}
+\step{所以 $a$ 的取值集合为 $\left\{-\dfrac14,0\right\}$.}
+\stepm{(2)}{由题设 $ax^2+x-b<(a-1)x^2+(b+2)x-2b$，}
+\step{整理得 $x^2-(b+1)x+b=(x-b)(x-1)<0$，}
+\step{当 $b<1$ 时，解集为 $\{x\mid b<x<1\}$；}
+\step{当 $b=1$ 时，解集为 $\varnothing$；}
+\step{当 $b>1$ 时，解集为 $\{x\mid1<x<b\}$；}
+\stepm{(3)}{由 $t>0$，恒有 $t-2>-t-2$，}
+\step{故 $Q\neq\varnothing$，$y=f(x)=ax^2+x-b>0$ 且 $a>0$，$b>1$，}
+\step{故 $f(x)$ 开口向上且 $f(0)=-b<0$，}
+\step{故对应一元二次方程恒有两个不等实根，且在 $y$ 轴两侧，}
+\step{因为 $P\cap Q\neq\varnothing$，即 $f(x)>0$ 在 $(-2-t,-2+t)$ 上有解，且 $\forall t\in(0,+\infty)$，}
+\step{又区间 $(-2-t,-2+t)$ 关于 $x=-2$ 对称，且区间长度 $2t\in(0,+\infty)$，}
+\step{综上，只需保证 $f(-2)=4a-2-b=0$，则 $4a-b=2$，}
+\step{且 $b=4a-2>1$，即 $a>\dfrac34$，}
+\step{所以 $\dfrac1a-\dfrac1b=\dfrac12\left(\dfrac2a-\dfrac2b\right)=\dfrac12\left(\dfrac{4a-b}a-\dfrac{4a-b}b\right)=\dfrac52-\dfrac12\left(\dfrac ba+\dfrac{4a}b\right)$}
+\step{$\leqslant\dfrac52-\sqrt{\dfrac ba\cdot\dfrac{4a}b}=\dfrac12$，当且仅当 $b=2a$，即 $a=1>\dfrac34$，$b=2>1$ 时取等号，}
+\step{故 $\dfrac1a-\dfrac1b$ 的最大值为 $\dfrac12$.}
+\solend
+\fi
+
+\ansspace*[7]
+
+\end{enumerate}
+
+\end{document}

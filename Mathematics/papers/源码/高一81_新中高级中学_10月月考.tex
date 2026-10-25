@@ -1,0 +1,311 @@
+% 高一81_新中高级中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年新中高级中学高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一81_新中高级中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一81_新中高级中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一81_新中高级中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一81”；
+% 原文标题“27学年高一81——2026-2027年上海市新中高级中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/wgPXS7rIVfMYVuqf2zL9JA。
+% 页面标注发布时间 2026-10-25 18:53（上海）。
+% 正文为 7 张 PNG 页（`原图/高一81_新中高级中学_10月月考/01..07.png`），
+% 均为 4762×6735，按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号。填空题 3—10（8 题）、选择题 11—14（4 题）、
+% 解答题 15—19（5 题），共 17 题。
+%
+% 讲评版：第 4、5 题只印【答案】，另提 \ans{}；第 11、12 题既无【答案】也无【解析】段，
+% 答案“C”“D”直接印在题干括号内（“( C )”“( D )”），按 高一37 第 13 题／高一63 第 14 题
+% 成例括号留空、另提 \ans{}；其余 13 题印【解析】。选择题 13、14 的答案在解析末句“故选 A／B”。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 9 题解析由 $(1-k^2)x=k-k^2$ 直接写“所以 $1-k^2\neq0$，即 $k\neq\pm1$”。
+%      但 $k=1$ 时 $A$、$B$ 都是直线 $x+y=2$，$A\cap B\neq\varnothing$ 显然成立；
+%      按题问应排除的只有 $k=-1$（此时两直线平行）。原卷结论 $k\neq\pm1$ 照录未改。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版；
+%   ② 原卷未印副标题，本稿补出；填空横线统一排 \blankline[4.4em]；
+%   ③ 原卷数集记号排斜体 $R$、$Z$，本稿按全稿惯例改用 $\R$、$\Z$；
+%   ④ 第 15—19 题的子问用行内“（1）（2）”段，解析中的子问标号用 \stepm；
+%   ⑤ 解答题按惯例加 \ansspace；选择题括号排 \mbox{（\quad）}。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 82 条（Q3：2；Q6：3；Q7：2；Q8：2；Q9：2；
+% Q10：9；Q13：4；Q14：10；Q15：6；Q16：7；Q17：9；Q18：7；Q19：19）。第 4、5 题只印
+% 【答案】，第 11、12 题无解析段，各提 \ans{}，不计入 \step 账。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年新中高级中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 不等式 $3x^2+8x+4\geqslant0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $3x^2+8x+4\geqslant0$ 可化为 $(3x+2)(x+2)\geqslant0$，则 $x\leqslant-2$ 或 $x\geqslant-\dfrac23$，}
+\step{即不等式 $3x^2+8x+4\geqslant0$ 的解集为 $(-\infty,-2]\cup\left[-\dfrac23,+\infty\right)$.}
+\solend
+\fi
+
+\item 用反证法证明命题“若 $x+y<2$，则 $x<1$ 或 $y<1$”，则应假设\blankline[4.4em].
+
+\ifanswer
+\ans{$x\geqslant1$ 且 $y\geqslant1$}
+\fi
+
+\item 设方程 $2x^2-5x+1=0$ 的两根为 $x_1$，$x_2$，则 $\dfrac1{x_1}+\dfrac1{x_2}=\blankline[4.4em]$.
+
+\ifanswer
+\ans{$5$}
+\fi
+
+\item 若 $\alpha:x^2-5x+6=0$，$\beta:x=2$，则 $\alpha$ 是 $\beta$ 的\blankline[4.4em]条件.
+
+\ifanswer
+\solbegin
+\step{由 $x^2-5x+6=0$，解得 $x=2$ 或 $x=3$，即 $\alpha:x=2$ 或 $x=3$；}
+\step{所以由 $\alpha$ 推不出 $\beta$，即充分性不成立；由 $\beta$ 推得出 $\alpha$，即必要性成立；}
+\step{所以 $\alpha$ 是 $\beta$ 的必要非充分条件.}
+\solend
+\fi
+
+\item 已知集合 $M$ 满足 $\{a,b\}\subseteq M\subset\{a,b,c,d,e\}$，则这样的集合 $M$ 有\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{$M$ 可以是 $\{a,b\}$，$\{a,b,c\}$，$\{a,b,d\}$，$\{a,b,e\}$，$\{a,b,c,d\}$，}
+\step{$\{a,b,c,e\}$，$\{a,b,d,e\}$，所以集合 $M$ 有 $7$ 个.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid-2<x<6\}$，$B=\{x\mid x>a-1\}$，且 $A\cup B=\{x\mid x>-2\}$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为集合 $A\cup B=\{x\mid x>-2\}$，$A=\{x\mid-2<x<6\}$，$B=\{x\mid x>a-1\}$，}
+\step{所以 $-2\leqslant a-1<6$，解得 $-1\leqslant a<7$，所以实数 $a$ 的取值范围是 $[-1,7)$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{(x,y)\mid kx+y=k+1\}$，$B=\{(x,y)\mid x+ky=2k\}$，其中 $k$ 为实数，$A\cap B\neq\varnothing$，则 $k$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+% 注：下一行原卷结论作“$k\neq\pm1$”，但 $k=1$ 时两集合都是 $x+y=2$，交集非空；按题问应为 $k\neq-1$。照录未改（见文件头“原卷笔误/存疑”①）。
+\step{因为 $A\cap B\neq\varnothing$，所以方程组 $\begin{cases}kx+y=k+1\\ x+ky=2k\end{cases}$ 有解，消 $y$ 得 $(1-k^2)x=k-k^2$，}
+\step{所以 $1-k^2\neq0$，即 $k\neq\pm1$.}
+\solend
+\fi
+
+\item 若使集合 $A=\{x\mid(kx-k^2-10)(x-1)>0,x\in\Z\}$ 中的元素个数最少，则实数 $k$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意集合 $A=\{x\mid(kx-k^2-10)(x-1)>0,\ x\in\Z\}$，}
+\step{$k=0$ 时，不等式解得 $x<1$，有无数个整数解；}
+\step{$k\neq0$ 时，则不等式变形为 $k\left(x-k-\dfrac{10}k\right)(x-1)>0$，}
+\step{当 $k>0$ 时，$k+\dfrac{10}k\geqslant2\sqrt{10}$，仅当 $k=\sqrt{10}$ 时等号成立，}
+\step{此时不等式解得 $x>k+\dfrac{10}k$ 或 $x<1$，有无数个整数解；}
+\step{当 $k<0$ 时，$k+\dfrac{10}k=-[(-k)+\left(-\dfrac{10}k\right)]\leqslant-2\sqrt{10}$，仅当 $k=-\sqrt{10}$ 时等号成立，}
+\step{此时不等式解得 $k+\dfrac{10}k<x<1$，}
+\step{由 $x\in\Z$，$-7<-2\sqrt{10}<-6$，要使集合 $A$ 中的元素最少，则 $k+\dfrac{10}k\geqslant-7$，}
+\step{即 $k^2+7k+10\leqslant0$，解得 $-5\leqslant k\leqslant-2$，故实数 $k$ 的取值范围是 $[-5,-2]$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item 下列集合中，表示方程组 $\begin{cases}x+y=3\\ x-y=1\end{cases}$ 的解集的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\{2,1\}$\qquad B. $\{x=2,y=1\}$\qquad C. $\{(2,1)\}$\qquad D. $\{(1,2)\}$
+
+\ifanswer
+\ans{$C$}
+\fi
+
+\item 若 $a<b<0$，则下列不等式中不能成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac1a>\dfrac1b$\qquad B. $a-b>a$\qquad C. $\lvert a\rvert>\lvert b\rvert$\qquad D. $a^3>b^3$
+
+\ifanswer
+\ans{$D$}
+\fi
+
+\item 若 $\alpha$ 是 $\beta$ 的必要非充分条件，$\beta$ 是 $\gamma$ 的充要条件，$\gamma$ 是 $\delta$ 的必要非充分条件，则 $\delta$ 是 $\alpha$ 的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分不必要条件\qquad B. 必要不充分条件
+
+C. 充要条件\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{因为 $\beta$ 是 $\gamma$ 的充要条件，所以 $\beta\Leftrightarrow\gamma$，}
+\step{因为 $\alpha$ 是 $\beta$ 的必要非充分条件，所以 $\beta\Rightarrow\alpha$，}
+\step{因为 $\gamma$ 是 $\delta$ 的必要非充分条件，所以 $\delta\Rightarrow\gamma$，}
+\step{所以 $\delta\Rightarrow\alpha$，但 $\alpha$ 得不出 $\delta$，所以 $\delta$ 是 $\alpha$ 的充分不必要条件. 故选 $A$.}
+\solend
+\fi
+
+\item 若对于任意 $x\in A$，都有 $\dfrac1{1-x}\in A$，则称集合 $A$ 为“和谐集”.\\
+已知 $M=\left\{-2,-\frac12,0,1,\frac12,\frac23,\frac32,3\right\}$，\\
+则集合 $M$ 的非空子集中“和谐集”的个数为\mbox{（\quad）}
+
+\keepwithprev
+A. $2$\qquad B. $3$\qquad C. $4$\qquad D. $7$
+
+\ifanswer
+\solbegin
+\step{当 $x=-\dfrac12$ 时，$\dfrac1{1-\left(-\dfrac12\right)}=\dfrac23\in M$，当 $x=\dfrac23$ 时，$\dfrac1{1-\dfrac23}=3\in M$，}
+\step{当 $x=3$ 时，$\dfrac1{1-3}=-\dfrac12\in M$，所以 $-\dfrac12,\dfrac23,3$ 可作为“和谐集”中一组元素；}
+\step{当 $x=-2$ 时，$\dfrac1{1-(-2)}=\dfrac13\in M$，当 $x=\dfrac13$ 时，$\dfrac1{1-\dfrac13}=\dfrac32\in M$，}
+\step{当 $x=\dfrac32$ 时，$\dfrac1{1-\dfrac32}=-2\in M$，所以 $-2,\dfrac13,\dfrac32$ 可作为“和谐集”中一组元素；}
+\step{当 $x=0$ 时，$\dfrac1{1-0}=1\in M$，当 $x=1$ 时，$\dfrac1{1-x}$ 无意义，}
+\step{所以 $0$，$1$ 不是“和谐集”中的元素.}
+\step{若集合 $M$ 的非空子集为“和谐集”，}
+\step{则其元素只能从元素组 $-2,\dfrac13,\dfrac32$ 和 $-\dfrac12,\dfrac23,3$ 两组数中任意选择一组或两组，}
+\step{集合 $M$ 的非空“和谐集”为 $\left\{-\dfrac12,\dfrac23,3\right\}$、$\left\{-2,\dfrac13,\dfrac32\right\}$、$\left\{-\dfrac12,\dfrac23,3,-2,\dfrac13,\dfrac32\right\}$，}
+\step{共 $3$ 个. 故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{14}
+
+\item 求下列不等式的解集：
+
+（1）$\dfrac{x+3}{x-2}<0$；
+
+（2）$\lvert3x-4\rvert\geqslant x+2$.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$\dfrac{x+3}{x-2}<0\Leftrightarrow(x+3)(x-2)<0$，解得 $-3<x<2$，}
+\step{所以不等式 $\dfrac{x+3}{x-2}<0$ 的解集是 $(-3,2)$.}
+\stepm{(2)}{由 $\lvert3x-4\rvert\geqslant x+2$ 得 $3x-4\geqslant x+2$ 或 $3x-4\leqslant-(x+2)$，}
+\step{由 $3x-4\geqslant x+2$ 得 $2x\geqslant6$，即 $x\geqslant3$；}
+\step{由 $3x-4\leqslant-(x+2)$ 得 $4x\leqslant2$，即 $x\leqslant\dfrac12$；}
+\step{所以不等式 $\lvert3x-4\rvert\geqslant x+2$ 的解集为 $\left(-\infty,\dfrac12\right]\cup[3,+\infty)$.}
+\solend
+\fi
+
+\ansspace
+
+\item （1）证明：若 $x>y>0$，则 $\dfrac x{1+x}>\dfrac y{1+y}$；
+
+（2）已知集合 $A=\{2,-1,x^2-x+1\}$，$B=\{y,-2,x+1\}$，$A\cap B=\{-1,3\}$，求实数 $x$、$y$ 的值.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{$\dfrac x{1+x}-\dfrac y{1+y}=\dfrac{x+xy-(y+xy)}{(1+x)(1+y)}=\dfrac{x-y}{(1+x)(1+y)}$，}
+\step{由 $x>y>0$，有 $x-y>0$，$(1+x)(1+y)>0$，则 $\dfrac x{1+x}-\dfrac y{1+y}>0$，}
+\step{即 $\dfrac x{1+x}>\dfrac y{1+y}$.}
+\stepm{(2)}{已知 $A\cap B=\{-1,3\}$，则有 $3\in A$，得 $x^2-x+1=3$，解得 $x=-1$ 或 $x=2$，}
+\step{当 $x=-1$ 时，$B=\{y,-2,0\}$，不满足 $A\cap B=\{-1,3\}$，故舍去；}
+\step{当 $x=2$ 时，$A=\{2,-1,3\}$，$B=\{y,-2,3\}$，由 $A\cap B=\{-1,3\}$，得 $y=-1$；}
+\step{综上，$x=2$，$y=-1$.}
+\solend
+\fi
+
+\ansspace
+
+\item 已知集合 $A=\{x\mid\lvert2x-3\rvert<5\}$，$B=\{x\mid x^2-4bx+3b^2<0\}$.
+
+（1）若 $b=1$，求 $A\cap\overline B$；
+
+（2）若 $A\cap B=B$，求实数 $b$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{集合 $A=\{x\mid\lvert2x-3\rvert<5\}=\{x\mid-1<x<4\}$，}
+\step{$B=\{x\mid x^2-4bx+3b^2<0\}=\{x\mid(x-b)(x-3b)<0\}$.}
+\step{$b=1$ 时，$B=\{x\mid(x-1)(x-3)<0\}=\{x\mid1<x<3\}$，}
+\step{$\overline B=\{x\mid x\leqslant1\text{ 或 }x\geqslant3\}$，$A\cap\overline B=\{x\mid-1<x\leqslant1\text{ 或 }3\leqslant x<4\}$.}
+\stepm{(2)}{若 $A\cap B=B$，则 $B\subseteq A$，}
+\step{当 $b=0$ 时，$B=\varnothing$，满足条件；}
+\step{当 $b>0$ 时，$B=\{x\mid b<x<3b\}$，此时 $\begin{cases}b\geqslant-1\\ 3b\leqslant4\\ b>0\end{cases}$，解得 $0<b\leqslant\dfrac43$；}
+\step{当 $b<0$ 时，$B=\{x\mid3b<x<b\}$，此时 $\begin{cases}3b\geqslant-1\\ b\leqslant4\\ b<0\end{cases}$，解得 $-\dfrac13\leqslant b<0$；}
+\step{综上，实数 $b$ 的取值范围为 $\left\{b\mid-\dfrac13\leqslant b\leqslant\dfrac43\right\}$.}
+\solend
+\fi
+
+\ansspace
+
+\item 已知 $a\in\R$，命题 $p$：方程 $x^2-2x+a=0$ 无实根；命题 $q$：对任意 $x\in\R$，不等式 $ax^2-ax+1>0$ 恒成立.
+
+（1）若 $p$ 为真命题，求 $a$ 的取值范围；
+
+（2）若 $p$、$q$ 中有且只有一个为真命题，求 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{若 $p$ 为真命题，即方程 $x^2-2x+a=0$ 无实根，则 $\Delta=4-4a<0$，}
+\step{即 $a>1$，故 $a$ 的取值范围是 $(1,+\infty)$；}
+\stepm{(2)}{若命题 $q$：对任意 $x\in\R$，不等式 $ax^2-ax+1>0$ 恒成立为真命题，}
+\step{则 $a=0$ 或 $\begin{cases}a>0\\ \Delta=a^2-4a<0\end{cases}$，解得 $0\leqslant a<4$.}
+\step{若 $p$、$q$ 中有且只有一个为真命题，包括 $p$ 真 $q$ 假或 $p$ 假 $q$ 真，}
+\step{则 $\begin{cases}a>1\\ a<0\text{ 或 }a\geqslant4\end{cases}$ 或 $\begin{cases}a\leqslant1\\ 0\leqslant a<4\end{cases}$，解得 $a\geqslant4$ 或 $0\leqslant a\leqslant1$，}
+\step{则 $a$ 的取值范围是 $[0,1]\cup[4,+\infty)$.}
+\solend
+\fi
+
+\ansspace
+
+\item 已知一元二次方程 $ax^2+bx+c=0(a$、$b$、$c\in\R$，$a\neq0)$ 的两个实根为 $x_1$、$x_2$.
+
+（1）当 $a=1$，$c=2$ 时，若 $x_1^2+x_2^2=5$，求实数 $b$ 的值；
+
+（2）若 $b+c=0$，$ab<0$，用反证法证明 $x_1$、$x_2$ 中至少有一个大于等于 $2$；
+
+（3）若 $3a+2b+c=0$，设 $y_i=x_i-2(i=1,2)$，若 $y_1$、$y_2$ 是方程 $y^2+my+n=0(m,n\in\R)$ 的实根，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{(1)}{当 $a=1$，$c=2$，方程为 $x^2+bx+2=0$，}
+\step{由韦达定理 $x_1+x_2=-b$，$x_1x_2=2$，得 $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=b^2-4$，}
+\step{已知 $x_1^2+x_2^2=5$，则 $b^2-4=5\Rightarrow b=\pm3$，}
+\step{检验：$b=\pm3$ 均满足 $\Delta=9-8=1>0$，故 $b=3$ 或 $b=-3$.}
+\stepm{(2)}{假设 $x_1$、$x_2$ 都小于 $2$，}
+\step{由 $b+c=0$，$ab<0$ 得 $c=-b$，且 $a$ 与 $b$ 异号，}
+\step{由韦达定理得 $x_1+x_2=-\dfrac ba>0$，$x_1x_2=\dfrac ca=-\dfrac ba>0$，则 $x_1$ 与 $x_2$ 同正，}
+\step{此时 $x_1+x_2=x_1x_2$，则 $\dfrac1{x_1}+\dfrac1{x_2}=1$，}
+\step{又因为 $x_1$、$x_2$ 都小于 $2$，所以 $\dfrac1{x_1}+\dfrac1{x_2}>\dfrac12+\dfrac12=1$，这与 $\dfrac1{x_1}+\dfrac1{x_2}=1$ 矛盾，}
+\step{故假设不成立，从而 $x_1$、$x_2$ 中至少有一个大于等于 $2$.}
+\stepm{(3)}{由 $3a+2b+c=0$ 得 $c=-(3a+2b)$，}
+\step{从而方程 $ax^2+bx+c=0$ 等价于 $ax^2+bx-(3a+2b)=0$，}
+\step{由题意得 $\Delta=b^2+4a(3a+2b)\geqslant0$ 且 $a\neq0$，即 $(b+2a)(b+6a)\geqslant0$，}
+\step{故 $\left(\dfrac ba+2\right)\left(\dfrac ba+6\right)\geqslant0$，解得 $-\dfrac ba\leqslant2$ 或 $-\dfrac ba\geqslant6$，}
+\step{又因为 $x_1+x_2=-\dfrac ba$，所以 $x_1+x_2$ 的取值范围为 $(-\infty,2]\cup[6,+\infty)$，}
+\step{又因为 $y_1$、$y_2$ 是方程 $y^2+my+n=0(m,n\in\R)$ 的实根，}
+\step{所以 $y_1+y_2=-m=x_1-2+x_2-2=x_1+x_2-4$，即 $4-m=x_1+x_2$，}
+\step{从而 $4-m\leqslant2$ 或 $4-m\geqslant6$，解得 $m\leqslant-2$ 或 $m\geqslant2$，}
+\step{故实数 $m$ 的取值范围为 $(-\infty,-2]\cup[2,+\infty)$.}
+\solend
+\fi
+
+\ansspace*[7]
+
+\end{enumerate}
+
+\end{document}
