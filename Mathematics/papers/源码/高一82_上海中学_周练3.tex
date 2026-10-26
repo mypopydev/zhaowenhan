@@ -1,0 +1,383 @@
+% 高一82_上海中学_周练3.tex
+%   —— 高一上数学“2026-2027 年上海中学高一上周练 3”（讲评版）
+% 试卷版：xelatex 高一82_上海中学_周练3.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一82_上海中学_周练3.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一82_上海中学_周练3.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一82”；
+% 原文标题“27学年高一82——2026-2027年上海市上海中学高一上周练3”；
+% 原文链接：https://mp.weixin.qq.com/s/kHS7lhQT_aqnXqJJ35TQAw。
+% 页面标注发布时间 2026-10-26 20:15（上海）。
+% 正文为 11 张 PNG 页（`原图/高一82_上海中学_周练3/01..11.png`），
+% 尺寸混排（第 1—8 页为 4762×6735，第 9—11 页为 2560×3620），均按页序读取。
+%
+% 篇幅与题号：原卷自第 2 题起编号（第 1 题不在原文内）。填空题 2—20（19 题）、
+% 解答题 21—22（2 题），共 21 题。
+%
+% 讲评版：21 题全部印【解析】，本稿不另提 \ans{}。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 16 题解析作“由 $y=x(x+2)$ 在 $(0,2]$ 严格增，得函数 $y$ 在 $x=2$ 处取得
+%      最大值 6”，前后不自洽：上一句已得 $b\geqslant x(x+1)$，$x(x+1)$ 在 $x=2$ 处
+%      才是 $6$；$x(x+2)$ 在 $x=2$ 处为 $8$。原卷印作 $x(x+2)$，照录未改。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【解析】，本稿按全稿惯例将解析置于答案版；
+%   ② 原卷未印副标题，本稿补出；填空横线统一排 \blankline[4.4em]；
+%   ③ 原卷数集记号排斜体 $R$、$Z$、$N$，本稿按全稿惯例改用 $\R$、$\Z$、$\N$；
+%   ④ 第 21、22 题的子问用行内“（1）（2）”段，解析中的子问标号用 \stepm；
+%   ⑤ 解答题按惯例加 \ansspace。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 143 条（Q2：3；Q3：2；Q4：3；Q5：7；
+% Q6：5；Q7：1；Q8：7；Q9：10；Q10：5；Q11：6；Q12：8；Q13：9；Q14：6；Q15：11；
+% Q16：9；Q17：3；Q18：5；Q19：8；Q20：12；Q21：9；Q22：14）。原卷解析的换行
+% 按语意合并，未逐行强拆。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年上海中学高一上周练 3}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+
+\item “$x>1$”是“$x-\dfrac1x>0$”的\blankline[3.6em]条件.
+（填“充分非必要”“必要非充分”“充要”或“既非充分又非必要”）
+
+\ifanswer
+\solbegin
+\step{$x-\dfrac1x>0\Leftrightarrow\dfrac{(x-1)(x+1)}x>0\Leftrightarrow x\in(-1,0)\cup(1,+\infty)$.}
+\step{$x>1$ 能推出该不等式成立，但该不等式成立时也可能有 $-1<x<0$，}
+\step{因此是充分非必要条件.}
+\solend
+\fi
+
+\item 已知 $1\in[a,a^2]$，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a\leqslant1\leqslant a^2\Leftrightarrow a\leqslant-1$ 或 $a=1$.}
+\step{须有 $a<a^2$，排除 $a=1$，所以 $a\in(-\infty,-1]$.}
+\solend
+\fi
+
+\item 已知集合 $\{x\mid ax^2+2x-1=0,\,x\in\R\}$ 的子集个数为 $2$，则实数 $a=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{子集个数为 $2$，原集合恰有一个元素.}
+\step{当 $a=0$ 时，方程唯一解为 $x=\dfrac12$；当 $a\neq0$ 时，须 $\Delta=4+4a=0$，得 $a=-1$；}
+\step{综上，$a=0$ 或 $a=-1$.}
+\solend
+\fi
+
+\item 若 $\dfrac1a<\dfrac1b<0$，则下列不等式：①$a+b<ab$；②$\lvert a\rvert>\lvert b\rvert$；③$a<b$；
+④$\dfrac ba+\dfrac ab>2$ 中，所有正确不等式的序号为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $\dfrac1a<\dfrac1b<0$，则 $a<0$，$b<0$，且 $a>b$，}
+\step{则①$a+b<0$，$ab>0$，故①正确；}
+\step{②令 $a=-2$，$b=-3$，则显然 $-\dfrac12<-\dfrac13$，但 $\lvert a\rvert=2$，$\lvert b\rvert=3$，故②错误；}
+\step{③由②得 $a>b$，故③错；}
+\step{④由于 $a<0$，$b<0$，故 $\dfrac ba>0$，$\dfrac ab>0$，则 $\dfrac ba+\dfrac ab\geqslant2\sqrt{\dfrac ba\cdot\dfrac ab}=2$，}
+\step{当且仅当 $\dfrac ba=\dfrac ab$ 即 $a=b$ 时取等号，又 $a>b$，则 $\dfrac ba+\dfrac ab>2$，故④正确；}
+\step{故正确的是①④.}
+\solend
+\fi
+
+\item 设集合 $A=\{1,m\}$，令 $B=\{b\mid b=x+y,\,x\in A$ 且 $y\in A\}$，若 $A\cap B$ 恰有一个元素，则
+$A\cup B$ 的元素之和为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$B=\{2,1+m,2m\}$，$1\in B$ 要求 $m=0$ 或 $m=\dfrac12$，$m\in B$ 要求 $m=0$ 或 $m=2$，}
+\step{当 $m=0$ 时，$A\cap B=\{0,1\}$，不符合题意.}
+\step{当 $m=\dfrac12$ 时，$A\cap B=\{1\}$，$A\cup B=\left\{\dfrac12,1,\dfrac32,2\right\}$，元素之和为 $5$.}
+\step{当 $m=2$ 时，$A\cap B=\{2\}$，$A\cup B=\{1,2,3,4\}$，元素之和为 $10$.}
+\step{故 $A\cup B$ 的元素之和为 $5$ 或 $10$.}
+\solend
+\fi
+
+\item 已知函数 $f(x)=ax+\dfrac bx$（$a,b$ 为实常数），若 $-3\leqslant f(1)\leqslant0$，
+$3\leqslant f(2)\leqslant6$，则 $f(3)$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$f(3)=3a+\dfrac b3=-\dfrac59f(1)+\dfrac{16}9f(2)\Rightarrow\dfrac{16}3\leqslant f(3)\leqslant\dfrac{37}3$.}
+\solend
+\fi
+
+\item 设 $a,b\in\R$，给出下列四个条件：$P:a\geqslant0,b\geqslant0$；$Q_1:\sqrt{\dfrac{a^2+b^2}2}\geqslant\dfrac{a+b}2$；
+$Q_2:\dfrac{a+b}2\geqslant\sqrt{ab}$；$Q_3:\sqrt{ab}\geqslant\dfrac{2ab}{a+b}$. 则在 $Q_1,Q_2,Q_3$ 中，
+是 $P$ 的充要条件的有\blankline[3.6em]个.
+
+\ifanswer
+\solbegin
+\step{$a=b=-1$ 时，$Q_1$ 成立而 $P$ 不成立，故 $Q_1$ 不是 $P$ 的充要条件.}
+\step{由基本不等式，$P\Rightarrow Q_2$，等号当且仅当 $a=b$；}
+\step{反之，$Q_2$ 有意义需 $ab\geqslant0$，且 $\dfrac{a+b}2\geqslant\sqrt{ab}\geqslant0$ 得 $a+b\geqslant0\Rightarrow a\geqslant0,b\geqslant0$，}
+\step{故 $Q_2\Leftrightarrow P$.}
+\step{$a=b=0$ 时，$P$ 成立，但 $Q_3$ 的分母为 $0$，无意义，故 $P\nRightarrow Q_3$；}
+\step{又 $a=b=-1$ 时 $\sqrt{ab}=1\geqslant\dfrac{2ab}{a+b}=-1$ 成立而 $P$ 不成立，$Q_3\nRightarrow P$.}
+\step{因此只有 $Q_2$ 符合，共 $1$ 个.}
+\solend
+\fi
+
+\item 已知不等式 $[(a-1)x-1](x^2-ax-1)\geqslant0$ 对任意正数 $x$ 都成立，则实数 $a$ 的所有可能值构
+成的集合为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $a=1$，则 $[(a-1)x-1](x^2-ax-1)\geqslant0$ 化为 $x^2-ax-1\leqslant0$ 对 $x>0$ 恒成立，}
+\step{因为二次三项式 $x^2-ax-1$ 对应的二次函数开口向上，该情况不成立；}
+\step{若 $a>1$，则 $y=(a-1)x-1$ 在 $\left[\dfrac1{a-1},+\infty\right)$ 上恒大于等于 $0$，}
+\step{要使对任意正数 $x$，不等式 $[(a-1)x-1](x^2-ax-1)\geqslant0$ 恒成立，}
+\step{则 $\begin{cases}\dfrac a2<\dfrac1{a-1}\\[2pt] \left(\dfrac1{a-1}\right)^2-\dfrac a{a-1}-1=0\end{cases}$，解得 $a=\dfrac32$；}
+\step{若 $a<1$，则 $\dfrac1{a-1}<0$，则 $y=(a-1)x-1$ 在 $[0,+\infty)$ 上恒小于 $0$，}
+\step{要使对任意正数 $x$，不等式 $[(a-1)x-1](x^2-ax-1)\geqslant0$ 恒成立，}
+\step{则 $y=x^2-ax-1$ 在 $[0,+\infty)$ 上恒小于等于 $0$，}
+\step{因为函数 $y=x^2-ax-1$ 对应的图象开口向上，该情况不成立.}
+\step{综上，实数 $a$ 的所有可能取值构成的集合为 $\left\{\dfrac32\right\}$.}
+\solend
+\fi
+
+\item 若 $f(x)$ 为二次函数，且关于 $x$ 的不等式 $1-x\leqslant f(x)\leqslant x-1$ 的解集为 $\{1\}\cup[2,3]$，则
+$f(0)=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{$x<1$ 时 $1-x>x-1$，无解；$x=1$ 属于解集，所以 $f(1)=0$.}
+\step{设 $f(x)=(x-1)(ax+b)$，其中 $a\neq0$；}
+\step{当 $x>1$ 时，原不等式等价于 $-1\leqslant ax+b\leqslant1$，其解集为 $[2,3]$，}
+\step{两端分别对应 $-1$ 与 $1$，因此 $\begin{cases}2a+b=-1\\ 3a+b=1\end{cases}$ 或 $\begin{cases}2a+b=1\\ 3a+b=-1\end{cases}$，}
+\step{解得 $(a,b)=(2,-5)$ 或 $(-2,5)$，于是 $f(0)=-b=\pm5$.}
+\solend
+\fi
+
+\item 设 $A=\{x\mid(x-1)(x-a)<0\}$，$B_b=\{x\mid(x-2)(x-b)<0\}$. 若存在实数 $b_1$，使得
+$B_{b_1}\subseteq A$，且存在实数 $b_2$，使得 $A\subseteq B_{b_2}$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{取 $b_1=2$，则 $B_{b_1}=\varnothing\subseteq A$，第一个条件对任意 $a$ 均成立.}
+\step{当 $a<1$ 时，$A=(a,1)\subseteq(a,2)=B_a$，可取 $b_2=a$.}
+\step{当 $a=1$ 时，$A=\varnothing$，第二个条件成立.}
+\step{当 $1<a\leqslant2$ 时，$A=(1,a)\subseteq(1,2)=B_1$，可取 $b_2=1$.}
+\step{当 $a>2$ 时，$2\in A$，但任意实数 $b$ 都有 $2\notin B_b$，第二个条件不成立.}
+\step{因此 $a\in(-\infty,2]$.}
+\solend
+\fi
+
+\item 若函数 $f(x)=ax^2+(2-a)x+2029\,(a>0)$ 满足：对任意实数 $t$，总存在
+$x_1,x_2\in[t-1,t+1]$ 使得 $\lvert f(x_1)-f(x_2)\rvert\geqslant4$，则实数 $a$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $h=\dfrac{a-2}{2a}$，配方得 $f(x)=a(x-h)^2+f(h)$.}
+\step{取 $t=h$，对区间内任意 $x$ 有 $0\leqslant f(x)-f(h)\leqslant a$，}
+\step{因而任意两点的函数值之差的绝对值不超过 $a$，必须有 $a\geqslant4$.}
+\step{反过来，当 $a\geqslant4$ 时，对任意实数 $t$：}
+\step{若 $\lvert t-h\rvert\leqslant1$，取 $x_1=h$，$x_2$ 为离 $h$ 较远的端点，}
+\step{则 $\lvert f(x_1)-f(x_2)\rvert=a(1+\lvert t-h\rvert)^2\geqslant a\geqslant4$.}
+\step{若 $\lvert t-h\rvert>1$，取 $x_1=t-1$，$x_2=t+1$，则 $\lvert f(x_1)-f(x_2)\rvert=4a\lvert t-h\rvert>4a\geqslant4$.}
+\step{因此条件等价于 $a\geqslant4$，所求最小值为 $4$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的方程 $\lvert x^2+mx+1\rvert+\lvert x^2-mx+1\rvert=2\lvert mx\rvert$ 的整数根有且仅有两个，则实数
+$m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $A=mx$，$B=x^2+1$，则 $\lvert A+B\rvert+\lvert B-A\rvert=2\lvert A\rvert$，}
+\step{即 $2\lvert A\rvert=\lvert A+B\rvert+\lvert B-A\rvert\geqslant\lvert A+B+A-B\rvert=2\lvert A\rvert$，}
+\step{所以 $A+B$ 和 $A-B$ 同号，所以 $(A+B)(B-A)\leqslant0$，即 $(x^2+1)^2-m^2x^2\leqslant0$，}
+\step{即 $x^4+(2-m^2)x^2+1\leqslant0$，设 $t=x^2$，则 $t^2+(2-m^2)t+1\leqslant0$，}
+\step{其两根 $t_1t_2=1>0$，结合 $t$ 的定义得 $t_1$、$t_2$ 均是正根，}
+\step{设 $t_1<t_2$，则 $t_1\in(0,1)$，则 $t_2>1$，}
+\step{设 $f(t)=t^2+(2-m^2)t+1$，因为 $f(1)=4-m^2\leqslant0$，应有 $t_2=x_2^2<2^2=4$，}
+\step{所以 $f(4)=25-4m^2>0$，}
+\step{综上所述，$m\in\left(-\dfrac52,-2\right]\cup\left[2,\dfrac52\right)$.}
+\solend
+\fi
+
+\item 设 $[x]$ 表示不超过 $x$ 的最大整数，则下列同学的判断中，对任意实数 $x,y$ 恒成立的是\blankline[3.6em]
+（写人名）.
+
+小卓：$[-x]=-[x]$；小晨：$[2x]=2[x]$；小雨：$[x+y]\leqslant[x]+[y]$；
+
+小珂：$[x-y]\leqslant[x]-[y]$.
+
+\ifanswer
+\solbegin
+\step{$[x-y]+[y]\leqslant(x-y)+y=x$，且左边为整数，因此 $[x-y]+[y]\leqslant[x]$，}
+\step{即小珂的判断恒成立.}
+\step{小卓：取 $x=\dfrac12$，则 $[-x]=-1$，$-[x]=0$，不相等.}
+\step{小晨：取 $x=\dfrac12$，则 $[2x]=1$，$2[x]=0$，不相等.}
+\step{小雨：取 $x=y=\dfrac12$，则 $[x+y]=1>0=[x]+[y]$，不相等.}
+\step{故恒成立的是小珂.}
+\solend
+\fi
+
+\item 设 $M$ 是 $\{1,2,3,\cdots,n\}$ 的非空子集，其中 $n\geqslant2$，$n\in\N^*$. 若存在非负整数 $k$，使得对任意
+$a\in M$，均有 $k-a\in M$，则称集合 $M$ 具有性质 $P$. 设 $\{1,2,3,\cdots,n\}$ 的非空子集中，具
+有性质 $P$ 的集合个数为 $f(n)$，则 $f(12)-f(11)=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{同一集合是否具有性质 $P$ 与 $n$ 无关，}
+\step{因此 $f(12)-f(11)$ 等于含 $12$ 且具有性质 $P$ 的集合个数.}
+\step{设这样的集合 $M$ 的最小元素为 $m$.}
+\step{$k-m\in M$，$k-12\in M$，有 $k-m\leqslant12$，$k-12\geqslant m$，得 $k=m+12$，}
+\step{故 $k$ 唯一且 $13\leqslant k\leqslant24$.}
+\step{固定 $k$，将 $k-12$ 至 $12$ 的整数按 $\{a,k-a\}$ 分组；当 $a=k-a$ 时单独成组.}
+\step{每组必须全选或全不选，其中含 $12$ 的组必选，其余组任选.}
+\step{当 $k$ 依次取 $13$，$14$，$\cdots$，$24$ 时，}
+\step{除必选组外的组数依次为 $5$，$5$，$4$，$4$，$3$，$3$，$2$，$2$，$1$，$1$，$0$，$0$，}
+\step{每组有选或不选两种选择，}
+\step{因此 $f(12)-f(11)=2(2^5+2^4+2^3+2^2+2^1+2^0)=126$.}
+\solend
+\fi
+
+\item 若不等式 $\lvert x^2-ax\rvert\leqslant b$ 对任意 $a\in[-1,2]$ 及任意 $x\in[0,2]$ 恒成立，则实数 $b$ 的最小值
+为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $b>0$，得 $\lvert x^2-ax\rvert\leqslant b$，等价为 $-b\leqslant x^2-ax\leqslant b$，}
+\step{又 $x=0$ 时，不等式显然成立，只需考虑 $0<x\leqslant2$，得 $-\dfrac bx-x\leqslant-a\leqslant\dfrac bx-x$，}
+\step{由任意 $a\in[-1,2]$，即 $-a\in[-2,1]$，}
+\step{得 $\dfrac bx-x\geqslant1$ 即 $b\geqslant x(x+1)$ 对 $0<x\leqslant2$ 恒成立，}
+\step{由 $y=x(x+2)$ 在 $(0,2]$ 严格增，得函数 $y$ 在 $x=2$ 处取得最大值 $6$，则 $b\geqslant6$ ①，}
+\step{又 $-\dfrac bx-x\leqslant-2$ 即 $-b\leqslant x(x-2)$ 对 $0<x\leqslant2$ 恒成立，}
+\step{而 $y=x(x-2)$ 在 $(0,2]$ 的最小值为 $x=1$ 处取得，得最小值为 $-1$，}
+\step{得 $-b\leqslant-1$，则 $b\geqslant1$ ②，}
+\step{故由①②得 $b\geqslant6$，即 $b$ 的最小值为 $6$.}
+\solend
+\fi
+
+\item 若不等式 $5x+12\sqrt{xy}\leqslant a(x+y)$ 对任意正实数 $x,y$ 恒成立，则实数 $a$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$9(x+y)-(5x+12\sqrt{xy})=4x+9y-12\sqrt{xy}=(2\sqrt x-3\sqrt y)^2\geqslant0$，}
+\step{等号当且仅当 $y=\dfrac49x$ 时成立，因此 $a=9$ 符合题意.}
+\step{取 $x=9$，$y=4$，原不等式成为 $117\leqslant13a$，得 $a\geqslant9$，所以最小值为 $9$.}
+\solend
+\fi
+
+\item 实数 $a$、$b$、$c$、$d$ 满足 $ab+bc+cd+da=1$，则 $a^2+2b^2+3c^2+4d^2$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由于 $ab+bc+cd+da=1$，整理得 $(a+c)(b+d)=1$；}
+\step{由柯西不等式得 $(a^2+3c^2)\left(1+\dfrac13\right)\geqslant(a+c)^2$，即 $(a^2+3c^2)\geqslant\dfrac34(a+c)^2$，}
+\step{同理 $(2b^2+4d^2)\left(\dfrac12+\dfrac14\right)\geqslant(b+d)^2$，整理得 $2b^2+4d^2\geqslant\dfrac43(b+d)^2$，}
+\step{故 $a^2+2b^2+3c^2+4d^2\geqslant\dfrac34(a+c)^2+\dfrac43(b+d)^2\geqslant2(a+c)(b+d)=2$，}
+\step{当且仅当 $a:b:c:d=3:2:1:1$ 时取等号，故最小值为 $2$.}
+\solend
+\fi
+
+\item 设实数 $a,b,c,d,e$ 满足 $a^2+b^2+c^2+d^2+e^2=1$，则
+$\lvert a-b\rvert+\lvert b-c\rvert+\lvert c-d\rvert+\lvert d-e\rvert+\lvert e-a\rvert$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{对于 $\lvert a-b\rvert\leqslant\lvert a\rvert+\lvert b\rvert$，其取等条件为 $a$、$b$ 异号或至少其中一个为 $0$，}
+\step{不妨设 $a\geqslant0$，则 $b\leqslant0$，同理可得 $\lvert b-c\rvert\leqslant\lvert b\rvert+\lvert c\rvert$，$\lvert c-d\rvert\leqslant\lvert c\rvert+\lvert d\rvert$，$\cdots$}
+\step{当以上不等式都取等时，有 $a\geqslant0,b\leqslant0,c\geqslant0,d\leqslant0,e\geqslant0$，}
+\step{令 $a\geqslant e$，于是有 $\lvert a-b\rvert+\lvert b-c\rvert+\lvert c-d\rvert+\lvert d-e\rvert+\lvert e-a\rvert=2a-2b+2c-2d$}
+\step{$=2(\lvert a\rvert+\lvert b\rvert+\lvert c\rvert+\lvert d\rvert)$，因为 $\dfrac{\lvert a\rvert+\lvert b\rvert+\lvert c\rvert+\lvert d\rvert}4\leqslant\sqrt{\dfrac{a^2+b^2+c^2+d^2}4}$，}
+\step{所以有 $2(\lvert a\rvert+\lvert b\rvert+\lvert c\rvert+\lvert d\rvert)\leqslant4\sqrt{a^2+b^2+c^2+d^2}=4\sqrt{1-e^2}\leqslant4$，}
+\step{因此，$\lvert a-b\rvert+\lvert b-c\rvert+\lvert c-d\rvert+\lvert d-e\rvert+\lvert e-a\rvert$ 的最大值为 $4$，}
+\step{当且仅当 $a=0,b=d=-\dfrac12,c=e=\dfrac12$ 时取等号.}
+\solend
+\fi
+
+\item 设 $x,y,z$ 为正实数，记 $f=\dfrac x{x+y}+\dfrac y{y+z}+\dfrac z{z+x}$，则 $f$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{记 $S=x+y+z$. 因为 $\dfrac x{x+y}>\dfrac xS$，同理处理其余两项，得 $f>1$.}
+\step{又 $\dfrac x{x+y}<\dfrac{x+z}S$，同理得 $f<\dfrac{(x+z)+(y+x)+(z+y)}S=2$.}
+\step{取 $(x,y,z)=(t^2,t,1)$，则 $f=\dfrac{2t}{t+1}+\dfrac1{t^2+1}$.}
+\step{取 $t=\dfrac1N$ 取 $t=N$，分别有 $0<f-1<\dfrac2N$，$0<2-f<\dfrac2N$，}
+\step{当正整数 $N$ 很大时，分别可以任意接近 $1$、$2$.}
+\step{再任取 $r\in(1,2)$，取 $m>\max\left\{\dfrac2{r-1},\dfrac1{2-r}\right\}$，令 $y=m^2$，$z=1$，}
+\step{记 $A=2-r-\dfrac1{m^2+1}>0$，}
+\step{此时 $f=r\Leftrightarrow P(x)=Ax^2+[A(m^2+1)-(m^2-1)]x+Am^2=0$.}
+\step{$P(0)=Am^2>0$，而 $P(m)=(m+m^2)(m+1)\left(\dfrac{m^2}{m^2+1}+\dfrac2{m+1}-r\right)<0$，}
+\step{因为括号内的数小于 $1+\dfrac2m-r<0$.}
+\step{由二次函数图象，$P(x)=0$ 在 $(0,m)$ 内有解，因而每个 $r\in(1,2)$ 都能取到，}
+\step{所求范围为 $(1,2)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{20}
+
+\item 设 $\Omega$ 为所有满足下列条件的函数 $f(x)$ 组成的集合：$f(x)$ 的定义域为 $[0,1]$，
+$f(0)=f(1)$，且对任意 $x_1,x_2\in[0,1]$，均有 $\lvert f(x_1)-f(x_2)\rvert\leqslant\lvert x_1-x_2\rvert$. 求最小的实数 $k$，
+使得对任意 $f(x)\in\Omega$ 及任意 $x_1,x_2\in[0,1]$，均有 $\lvert f(x_1)-f(x_2)\rvert\leqslant k$.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\step{任取 $f(x)\in\Omega$，不妨设 $x_1\leqslant x_2$，记 $L=\lvert f(x_1)-f(x_2)\rvert$.}
+\step{已知条件给出 $L\leqslant x_2-x_1$.}
+\step{又由 $f(0)=f(1)$ 及三角不等式，}
+\step{$L=\lvert(f(x_1)-f(0))+(f(1)-f(x_2))\rvert\leqslant\lvert f(x_1)-f(0)\rvert+\lvert f(1)-f(x_2)\rvert$}
+\step{$\leqslant x_1+1-x_2$，两个上界相加得 $2L\leqslant1$，因此 $k=\dfrac12$ 满足要求.}
+\step{为说明不能取更小的 $k$，在 $[0,1]$ 上取 $g(x)=\dfrac12-\left\lvert x-\dfrac12\right\rvert$，}
+\step{此时 $g(0)=g(1)=0$，}
+\step{且 $\lvert g(x_1)-g(x_2)\rvert=\left\lvert\left\lvert x_1-\dfrac12\right\rvert-\left\lvert x_2-\dfrac12\right\rvert\right\rvert\leqslant\lvert x_1-x_2\rvert$，所以 $g(x)\in\Omega$，}
+\step{而 $\left\lvert g\left(\dfrac12\right)-g(0)\right\rvert=\dfrac12$，任何满足要求的 $k$ 都必须满足 $k\geqslant\dfrac12$，故最小的 $k$ 为 $\dfrac12$.}
+\solend
+\fi
+
+\needvspace{21\baselineskip}
+\item 设 $n\geqslant2$ 为正整数，$S$ 为 $1,2,\cdots,n$ 的所有排列组成的集合. 例如：当 $n=2$ 时，
+$S=\{(1,2),(2,1)\}$.
+
+（1）若 $n=3$，无需过程，直接写出集合 $S$；
+
+（2）对给定的正整数 $n$，设 $A=(a_1,a_2,\cdots,a_n)\in S$，$B=(b_1,b_2,\cdots,b_n)\in S$，定义 $A$ 与 $B$
+之间的距离为 $d(A,B)=\lvert a_1-b_1\rvert+\lvert a_2-b_2\rvert+\cdots+\lvert a_n-b_n\rvert$. 若对每个 $i=1,2,\cdots,n$，均有
+$a_i\neq b_i$，求 $d(A,B)$ 的最小值.
+
+\ansspace[13]
+
+\ifanswer
+\solbegin
+\step{（1）$S=\{(1,2,3),(1,3,2),(2,1,3),(2,3,1),(3,1,2),(3,2,1)\}$.}
+\step{（2）因为 $a_i,b_i$ 是不同的整数，所以 $\lvert a_i-b_i\rvert\geqslant1$，从而 $d(A,B)\geqslant n$.}
+\step{对每个 $i$，$\lvert a_i-b_i\rvert$ 与 $a_i-b_i$ 的奇偶性相同，}
+\step{而 $(a_1-b_1)+(a_2-b_2)+\cdots+(a_n-b_n)$}
+\step{$=(1+2+\cdots+n)-(1+2+\cdots+n)=0$，所以 $d(A,B)$ 必为偶数.}
+\step{因此，$n$ 为偶数时 $d(A,B)\geqslant n$；$n$ 为奇数时 $d(A,B)\geqslant n+1$.}
+\step{当 $n$ 为偶数时，将 $A$ 中的数值 $1$ 与 $2$、$3$ 与 $4$、$\cdots$、$n-1$ 与 $n$ 分别互换，}
+\step{得到 $B$，此时 $B\in S$，各位置的数值均改变，且每项 $\lvert a_i-b_i\rvert=1$，}
+\step{所以 $d(A,B)=n$.}
+\step{当 $n$ 为奇数时，将 $A$ 中的数值 $1$ 与 $2$、$3$ 与 $4$、$\cdots$、$n-4$ 与 $n-3$ 分别互换，}
+\step{并将数值 $n-2,n-1,n$ 分别替换为 $n-1,n,n-2$；}
+\step{当 $n=3$ 时，只进行后三个数的替换，}
+\step{得到的 $B\in S$，各位置的数值均改变，}
+\step{且 $d(A,B)=(n-3)+(1+1+2)=n+1$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
