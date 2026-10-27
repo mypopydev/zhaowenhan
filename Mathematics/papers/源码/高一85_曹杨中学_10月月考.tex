@@ -1,0 +1,391 @@
+% 高一85_曹杨中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年曹杨中学高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一85_曹杨中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一85_曹杨中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一85_曹杨中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一85”；
+% 原文标题“27学年高一85——2026-2027年上海市曹杨中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/nUM4gUc2jdntX66LFfjAFQ。
+% 页面标注发布时间 2026-10-27 17:43（上海）。
+% 正文为 10 张 PNG 页（`原图/高一85_曹杨中学_10月月考/01..10.png`），
+% 尺寸混排（第 1—8 页为 4762×6735，第 9、10 页为 2560×3620），均按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在原文内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。
+%
+% 讲评版：19 题全部印【解析】，本稿不另提 \ans{}；选择题答案在解析末句“故选 D／B／B／B”。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 7 题解析由 $x_1^2+x_2^2=3$ 得 $p^2-2p-3=0$，直接写“解得 $p=3$ 或 $p=-1$”，
+%      未检验判别式；$p=3$ 时 $\Delta=9-12<0$，方程无实根，按题意只应取 $p=-1$。
+%      原卷把两支都列作答案，照录未改。
+%   ② 第 10 题解析末作“故该农家院每间客房日租金至少提高到 20 元”，而题干问“提高到___元”：
+%      解析中的 $x$ 是“提高了 $x$ 元”，$x\geqslant20$ 对应的租金是 $100$ 元。原卷表述不自洽，
+%      照录未改。
+%   ③ 第 14 题解析末作“而 $8\notin B$”，该题中 $B$ 未定义，按上下文应为 $8\notin T$；
+%      原卷印作 $B$，照录未改。
+%   ④ 第 12 题题干“$M=\{x\mid x\leqslant2026,x\in\Z\}$”与解析“$|4b|\leqslant2026$”一致，
+%      但解析末“符合要求的集合共有 $2\times506=1012$ 个”按 $|b|\leqslant506$ 的整数个数
+%      （$b\neq0$）应为 $1012$ 个，与答案一致，无讹。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【解析】，本稿按全稿惯例将解析置于答案版；
+%   ② 原卷未印副标题，本稿补出；填空横线统一排 \blankline[4.4em]；
+%   ③ 原卷数集记号排斜体 $R$、$Z$、$N$（第 14 题另有 $M$），本稿按全稿惯例改用
+%      $\R$、$\Z$、$\N$；
+%   ④ 第 17—21 题的子问用行内“（1）（2）（3）”段，解析中的子问标号用 \stepm；
+%   ⑤ 解答题按惯例加 \ansspace；选择题括号排 \mbox{（\quad）}。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 124 条（Q3：5；Q4：2；Q5：1；Q6：5；Q7：4；
+% Q8：2；Q9：5；Q10：3；Q11：7；Q12：5；Q13：3；Q14：5；Q15：8；Q16：4；Q17：7；
+% Q18：7；Q19：14；Q20：20；Q21：17）。原卷解析的换行按语意合并，未逐行强拆。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[5]{2026--2027 年曹杨中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知 $2x^2+x+1=a(x+1)^2+b(x+1)+c$ 对任意 $x\in\R$ 恒成立，则 $a+b+c=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{$a(x+1)^2+b(x+1)+c=a(x^2+2x+1)+bx+b+c$}
+\step{$=ax^2+2ax+a+bx+b+c=ax^2+(2a+b)x+a+b+c$，}
+\step{又因为 $2x^2+x+1=a(x+1)^2+b(x+1)+c$ 对任意 $x\in\R$ 恒成立，}
+\step{所以 $2x^2+x+1=ax^2+(2a+b)x+a+b+c$，所以 $\begin{cases}a=2\\ 2a+b=1\\ a+b+c=1\end{cases}$，}
+\step{解得 $\begin{cases}a=2\\ b=-3\\ c=2\end{cases}$，所以 $a+b+c=1$.}
+\solend
+\fi
+
+\item 命题：“若 $x+y\neq5$，则 $x\neq2$ 或 $y\neq3$”是\blankline[3.6em]命题（填“真”或“假”）
+
+\ifanswer
+\solbegin
+\step{命题“若 $x+y\neq5$，则 $x\neq2$ 或 $y\neq3$”等价于 $x=2$ 且 $y=3$，则 $x+y=5$，}
+\step{$x=2$ 且 $y=3$，则 $x+y=5$，是真命题.}
+\solend
+\fi
+
+\item 如果集合 $A$ 满足 $\{0,2\}\subseteq A\subset\{-1,0,1,2\}$，则满足条件的集合 $A$ 的个数为\blankline[3.6em]（填数字）.
+
+\ifanswer
+\solbegin
+\step{$A=\{0,2\}$，$A=\{-1,0,2\}$，$A=\{1,0,2\}$，满足条件的集合 $A$ 的个数为 $3$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x^2-6x+8=0\}$，$B=\{x\mid mx+1=0\}$，若 $A\cap B=B$，则实数 $m$ 的取
+值集合是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $A\cap B=B$，所以 $B\subseteq A$，且 $A=\{x\mid x^2-6x+8=0\}=\{2,4\}$，}
+\step{当 $B=\varnothing$ 时，$m=0$，此时满足 $B\subseteq A$，故符合条件；}
+\step{当 $B\neq\varnothing$ 时，$m\neq0$，则 $B=\left\{-\dfrac1m\right\}$，因为 $B\subseteq A$，}
+\step{所以 $-\dfrac1m=2$ 或 $-\dfrac1m=4$，所以 $m=-\dfrac12$ 或 $m=-\dfrac14$；}
+\step{综上所述，$m$ 的取值集合是 $\left\{-\dfrac12,-\dfrac14,0\right\}$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的二次方程 $x^2+px+p=0$ 的两个实根分别为 $x_1,x_2$，且满足 $x_1^2+x_2^2=3$，则
+$p$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为关于 $x$ 的二次方程 $x^2+px+p=0$ 的两个实根分别为 $x_1,x_2$，}
+\step{所以 $x_1+x_2=-p$，$x_1x_2=p$，因为 $x_1^2+x_2^2=3$，}
+\step{所以 $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=p^2-2p=3$，}
+\step{即 $p^2-2p-3=(p-3)(p+1)=0$，解得 $p=3$ 或 $p=-1$.}
+\solend
+\fi
+
+\item 设全集 $U=\{x\mid x=2k,\,k\leqslant10$ 且 $k\in\N^*\}$，若 $A\cap\overline B=\{2,6,14,10\}$，$\overline A\cap B=\{4,8,18\}$，
+且 $\overline A\cap\overline B=\varnothing$，则 $A\cap B=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{$U=\{2,4,6,8,10,12,14,16,18,20\}$. $\overline A\cap\overline B=\varnothing$，}
+\step{全集中不属于已知两部分的元素均属于 $A\cap B$，故 $A\cap B=\{12,16,20\}$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的不等式 $\dfrac{x^2-ax-b}{x^2+x+1}<0$ 的解集为 $(2,3)$，则不等式 $bx^2-ax-1\geqslant0$ 的解集
+是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{即一元二次不等式 $x^2-ax-b<0$ 的解集为 $(2,3)$，}
+\step{则方程 $x^2-ax-b=0$ 的两根分别为 $x_1=2$，$x_2=3$，}
+\step{由韦达定理得 $x_1+x_2=a=5$，$x_1x_2=-b=6$，所以 $b=-6$，}
+\step{所以不等式 $bx^2-ax-1\geqslant0$ 即为 $-6x^2-5x-1\geqslant0$，即 $6x^2+5x+1\leqslant0$，}
+\step{即 $(3x+1)(2x+1)\leqslant0$，解得 $-\dfrac12\leqslant x\leqslant-\dfrac13$，所以所求的解集为 $\left[-\dfrac12,-\dfrac13\right]$.}
+\solend
+\fi
+
+\item 某农家院有客房 $20$ 间，日常每间客房日租金为 $80$ 元，每天都客满. 该农家院欲提高档
+次，并提高租金. 经市场调研，每间客房日租金每增加 $10$ 元，客房出租数就会减少 $1$
+间. 每间客房日租金不得超过 $130$ 元，要使每天客房的租金总收入不低于 $1800$ 元，该农家
+院每间客房日租金至少提高到\blankline[4.4em]元.
+
+\ifanswer
+\solbegin
+\step{设农家院将房租提高了 $x$ 元，每天客房的租金收入 $y$ 元，由题意得 $\dfrac x{10}$ 为整数，}
+\step{则 $y=\left(20-\dfrac x{10}\right)(80+x)\geqslant1800$，且 $0\leqslant x\leqslant50$，解得 $20\leqslant x\leqslant50$，}
+\step{故该农家院每间客房日租金至少提高到 $20$ 元.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式组 $\begin{cases}x^2-3x-4>0\\ 2x^2+(2k+5)x+5k<0\end{cases}$ 仅有一个整数解，则 $k$ 的取值
+范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{第一式的解集为 $(-\infty,-1)\cup(4,+\infty)$，第二式为 $(2x+5)(x+k)<0$.}
+\step{当 $-k>-\dfrac52$ 时，第二式的解集为 $\left(-\dfrac52,-k\right)$，唯一整数解只能是 $-2$，}
+\step{须 $-2<-k\leqslant5$，即 $-5\leqslant k<2$.}
+\step{当 $-k<-\dfrac52$ 时，第二式的解集为 $\left(-k,-\dfrac52\right)$，唯一整数解只能是 $-3$，}
+\step{须 $-4\leqslant-k<-3$，即 $3<k\leqslant4$.}
+\step{当 $-k=-\dfrac52$ 时，第二式无解.}
+\step{因此 $k\in[-5,2)\cup(3,4]$.}
+\solend
+\fi
+
+\item 已知集合 $M=\{x\mid x\leqslant2026,x\in\Z\}$，集合 $P$ 是集合 $M$ 的三元子集，即
+$P=\{a,b,c\}\subseteq M$，且 $P$ 中的元素 $a,b,c$ 满足 $\begin{cases}a-2b+c=0\\ a+6b-c=0\end{cases}$，则符合要求的集合 $P$ 有\blankline[3.6em]个.
+
+\ifanswer
+\solbegin
+\step{两式相加得 $a=-2b$，代入得 $c=4b$，故 $P=\{-2b,b,4b\}$.}
+\step{三个元素互不相同当且仅当 $b\neq0$；由}
+\step{$P\subseteq M$，得 $\lvert4b\rvert\leqslant2026$，即整数 $b$ 满足 $1\leqslant\lvert b\rvert\leqslant506$.}
+\step{无论 $b$ 正负，$b$ 都是 $P$ 中按从小到大排列的第二个元素，}
+\step{因此不同 $b$ 对应不同集合 $P$. 符合要求的集合共有 $2\times506=1012$ 个.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 如果 $a<b<0$，那么下列不等式恒成立的为\mbox{（\quad）}
+
+\keepwithprev
+A. $ab>a^2$\qquad B. $ab<b^2$\qquad C. $\dfrac1{a+1}>\dfrac1{b+1}$\qquad D. $-\dfrac1a<-\dfrac1b$
+
+\ifanswer
+\solbegin
+\step{因为 $a<b<0$，所以 $a^2>ab>b^2$，$A$、$B$ 错误；}
+\step{当 $a=-2$，$b=-1$ 时，$C$ 显然错误；}
+\step{由 $a<b<0$ 得 $-a>-b>0$，所以 $-\dfrac1a<-\dfrac1b$，$D$ 正确. 故选 $D$.}
+\solend
+\fi
+
+\item 设集合 $M=\{x\mid x=m^2-n^2,\,m,n\in\Z\}$，$T=\{t\mid t=2k+1,k\in\Z\}$，则“$t\in M$”是
+“$t\in T$”的\mbox{（\quad）}条件.
+
+\keepwithprev
+A. 充分非必要\qquad B. 必要非充分\qquad C. 充分必要\qquad D. 既非充分又非必要
+
+\ifanswer
+\solbegin
+\step{集合 $T=\{t\mid t=2k+1,k\in\Z\}$，则恒有 $2k+1=(k+1)^2-k^2$，}
+\step{所以 $2k+1\in M\,(k\in\Z)$，}
+\step{即一切奇数都属于集合 $M$，即 $t\in T$ 是 $t\in M$ 的充分条件；}
+\step{又 $3^2-1^2=8\in M$，而 $8\notin B$，即由 $t\in M$ 推不出 $t\in T$，即必要性不成立；}
+\step{所以 $t\in M$ 是 $t\in T$ 的必要不充分条件. 故选 $B$.}
+\solend
+\fi
+
+\item 关于 $x$ 的方程 $(x-a)\lvert x-a\rvert=a\,(a\neq0)$ 的实数解的个数为\mbox{（\quad）}
+
+\keepwithprev
+A. $0$\qquad B. $1$\qquad C. $2$\qquad D. 与 $a$ 的取值有关
+
+\ifanswer
+\solbegin
+\step{令 $t=x-a$，原方程转化为 $t\cdot\lvert t\rvert=a$，}
+\step{当 $t\geqslant0$ 时，$\lvert t\rvert=t$，方程变为 $t^2=a$，}
+\step{若 $a>0$，解得唯一非负解 $t=\sqrt a$，对应原方程解 $x=a+\sqrt a$；}
+\step{若 $a<0$，此情况无实根；}
+\step{当 $t<0$ 时，$\lvert t\rvert=-t$，方程变为 $-t^2=a$，即 $t^2=-a$，}
+\step{若 $a<0$，解得唯一负解 $t=-\sqrt{-a}$，对应原方程解 $x=a-\sqrt{-a}$，}
+\step{若 $a>0$，此情况无实根；}
+\step{综上，无论 $a$ 取正还是负，方程都仅有 $1$ 个实数解. 故选 $B$.}
+\solend
+\fi
+
+\item 在某校科技节中，李明同学定义了可分比集合：若对于集合 $M$ 满足对任意 $a$、$b\in M$，
+都有 $\dfrac ab\notin[2,3]$，则称 $M$ 是可分比集合. 若集合 $A$、$B$ 均为可分比集合，且
+$A\cup B=\{1,2,\cdots,n\}$（$n$ 为正整数），则 $n$ 的最大值为\mbox{（\quad）}
+
+\keepwithprev
+A. $6$\qquad B. $7$\qquad C. $8$\qquad D. $9$
+
+\ifanswer
+\solbegin
+\step{一方面，取 $A=\{1,4,5,6,7\}$，$B=\{2,3\}$，满足题意，则 $n=7$；}
+\step{另一方面，若 $n\geqslant8$，不妨设 $1\in A$，则 $2$，$3\in B$，则 $4$，$5$，$6$，$7\in A$，}
+\step{此时 $8\notin A$，且 $8\notin B$，矛盾！}
+\step{综上所述，正整数 $n$ 的最大值为 $7$. 故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 设集合 $A=\{x\mid-1<x<5\}$，集合 $B=\{x\mid3-a<x<3+a\}$.
+
+（1）若 $a=3$，求 $A\cap B$、$\overline A\cup B$；
+
+（2）若 $A\cup B=A$，求实数 $a$ 的取值范围.
+
+\ansspace*[9]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{集合 $A=\{x\mid-1<x<5\}$，集合 $B=\{x\mid3-a<x<3+a\}$，}
+\step{当 $a=3$ 时，$B=\{x\mid0<x<6\}$，所以 $A\cap B=(0,5)$，}
+\step{又 $\overline A=(-\infty,-1]\cup[5,+\infty)$，所以 $\overline A\cup B=(-\infty,-1]\cup(0,+\infty)$.}
+\stepm{（2）}{因为 $A\cup B=A$，所以 $B\subseteq A$，}
+\step{当 $B=\varnothing$ 时，$3-a\geqslant3+a$，解得 $a\leqslant0$；}
+\step{当 $B\neq\varnothing$ 时，则 $\begin{cases}a>0\\ -1\leqslant3-a\\ 3+a\leqslant5\end{cases}$，解得 $0<a\leqslant2$；}
+\step{综上，实数 $a$ 的取值范围为 $(-\infty,2]$.}
+\solend
+\fi
+
+\item 设 $a\in\R$，已知 $\alpha$：关于 $x$ 的一元二次方程 $2x^2-4x+a+3=0$ 有两个同号实根；$\beta$：
+对任意实数 $x$，不等式 $(a-1)x^2-(a-1)x-1<0$ 恒成立.
+
+（1）若 $\alpha$ 为真命题，求实数 $a$ 的取值范围；
+
+（2）若 $\alpha,\beta$ 中至少有一个为真命题，求实数 $a$ 的取值范围.
+
+\ansspace*[11]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{设方程两根为 $x_1,x_2$，则 $\alpha$ 为真的充要条件为 $\begin{cases}\Delta=16-8(a+3)\geqslant0\\ x_1x_2=\dfrac{a+3}2>0\end{cases}$，}
+\step{解得 $a\leqslant-1$ 且 $a>-3$，即 $a\in(-3,-1]$.}
+\stepm{（2）}{当 $a=1$ 时，不等式为 $-1<0$，$\beta$ 为真.}
+\step{当 $a\neq1$ 时，$\begin{cases}a-1<0\\ \Delta=[-(a-1)]^2+4(a-1)=(a-1)(a+3)<0\end{cases}$，}
+\step{解得 $-3<a<1$，}
+\step{因此 $\beta$ 为真时，$a\in(-3,1]$.}
+\step{$\alpha,\beta$ 中至少有一个为真，所求范围为 $(-3,-1]\cup(-3,1]=(-3,1]$.}
+\solend
+\fi
+
+\item （1）已知 $\alpha:x<-m$ 或 $x>3m-1$；$\beta:x<2$ 或 $x\geqslant4$，若 $\alpha$ 是 $\beta$ 的必要非充分条件，
+求实数 $m$ 的取值范围；
+
+（2）已知集合 $A=\left\{x\left|\dfrac4{x+1}>1\right.\right\}$，集合 $B=\{x\mid x^2-ax-2a^2\geqslant0\}$，若 $A\cap B=\varnothing$，求实
+数 $a$ 的取值范围.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$\alpha$ 是 $\beta$ 的必要非充分条件，等价于 $\beta$ 的解集是 $\alpha$ 的解集的真子集.}
+\step{当 $m<\dfrac14$ 时，$-m>3m-1$，$\alpha$ 的解集为 $\R$；}
+\step{$\beta$ 的解集为 $(-\infty,2)\cup[4,+\infty)$，符合题意.}
+\step{当 $m\geqslant\dfrac14$ 时，取 $x=-m$，有 $x<2$ 且 $x=-m\leqslant3m-1$，}
+\step{此时 $\beta$ 成立而 $\alpha$ 不成立，不符合题意.}
+\step{所以 $m$ 的取值范围为 $\left(-\infty,\dfrac14\right)$.}
+\stepm{（2）}{解不等式 $\dfrac4{x+1}>1$，得 $\dfrac{3-x}{x+1}>0$，所以 $A=(-1,3)$.}
+\step{由 $x^2-ax-2a^2=(x-2a)(x+a)$，分三种情况讨论.}
+\step{当 $a=0$ 时，$B=\R$，不符合题意.}
+\step{当 $a>0$ 时，$B=(-\infty,-a]\cup[2a,+\infty)$，}
+\step{因此 $A\cap B=\varnothing\Leftrightarrow\begin{cases}-a\leqslant-1\\ 2a\geqslant3\end{cases}\Leftrightarrow a\geqslant\dfrac32$.}
+\step{当 $a<0$ 时，$B=(-\infty,2a]\cup[-a,+\infty)$，}
+\step{因此 $A\cap B=\varnothing\Leftrightarrow\begin{cases}2a\leqslant-1\\ -a\geqslant3\end{cases}\Leftrightarrow a\leqslant-3$.}
+\step{所以 $a$ 的取值范围为 $(-\infty,-3]\cup\left[\dfrac32,+\infty\right)$.}
+\solend
+\fi
+
+\item （1）解不等式 $x\lvert x-4\rvert\geqslant3$；
+
+（2）若实数 $a,b$ 为正数，且满足 $a+b=2$，用反证法证明：$\dfrac{1+2b}a\geqslant3$ 和 $\dfrac{1+2a}b\geqslant3$ 中至
+少有一个成立；
+
+（3）设 $\triangle ABC$ 的三个内角 $A,B,C$ 所对的边分别为 $a,b,c$，求证：关于 $x$ 的方程
+$x^2+2ax+b^2=0$ 与 $x^2+2cx-b^2=0$ 有公共根的充要条件是 $A=90^\circ$.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $x\geqslant4$ 时，则 $x^2-4x\geqslant3$，则 $x\geqslant2+\sqrt7$，$x\leqslant2-\sqrt7$，所以 $x\geqslant2+\sqrt7$；}
+\step{当 $x<4$ 时，则 $-x^2+4x\geqslant3$，则 $1\leqslant x\leqslant3$，所以 $1\leqslant x\leqslant3$；}
+\step{则不等式 $x\lvert x-4\rvert\geqslant3$ 的解集是 $[1,3]\cup[2+\sqrt7,+\infty)$.}
+\stepm{（2）}{假设结论不成立，即有 $\dfrac{1+2b}a<3$ 且 $\dfrac{1+2a}b<3$，由已知，实数 $a,b$ 为正数，}
+\step{所以有 $1+2b<3a$ 且 $1+2a<3b$，故 $2+2a+2b<3a+3b$，}
+\step{所以 $a+b>2$，与已知 $a+b=2$ 矛盾，假设不成立，}
+\step{所以有 $\dfrac{1+2b}a\geqslant3$ 和 $\dfrac{1+2a}b\geqslant3$ 中至少有一个成立.}
+\stepm{（3）}{充分性：当 $A=90^\circ$ 时，$a^2=b^2+c^2$.}
+\step{于是 $x^2+2ax+b^2=0\Leftrightarrow x^2+2ax+a^2-c^2=0$}
+\step{$\Leftrightarrow[x+(a+c)][x+(a-c)]=0$，}
+\step{该方程有两根 $x_1=-(a+c)$，$x_2=-(a-c)$.}
+\step{同样 $x^2+2cx-b^2=0\Leftrightarrow[x+(c+a)][x+(c-a)]=0$，}
+\step{该方程亦有两根 $x_3=-(c+a)$，$x_4=-(c-a)$.}
+\step{显然 $x_1=x_3$，两方程有公共根.}
+\step{必要性：设方程 $x^2+2ax+b^2=0$ 与 $x^2+2cx-b^2=0$ 的公共根为 $m$，}
+\step{则 $\begin{cases}m^2+2am+b^2=0\qquad(1)\\ m^2+2cm-b^2=0\qquad(2)\end{cases}$，}
+\step{$(1)+(2)$ 得 $m=-(a+c)\,(m=0$ 舍去$)$.}
+\step{将 $m=-(a+c)$ 代入 $(1)$ 式，得 $[-(a+c)]^2+2a[-(a+c)]+b^2=0$，}
+\step{整理得 $a^2=b^2+c^2$，所以 $A=90^\circ$.}
+\step{故结论成立.}
+\solend
+\fi
+
+\item 集合 $A$ 为非空数集，定义：$S=\{x\mid x=a+b,a,b\in A\}$，$T=\{x\mid x=\lvert a-b\rvert,a,b\in A\}$.
+
+（1）若集合 $A=\{1,2,3\}$，直接写出集合 $S,T$；
+
+（2）若集合 $A=\{x_1,x_2,x_3\}$，$x_1<x_2<x_3$，且 $T=A$，求证：$x_1=0$ 且 $2x_2=x_3$；
+
+（3）若集合 $A\subseteq\{x\mid0\leqslant x\leqslant2026,x\in\N\}$，$S\cap T=\varnothing$，记 $\lvert A\rvert$ 为集合 $A$ 中元素的个数，
+求 $\lvert A\rvert$ 的最大值.
+
+\ansspace*[14]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$S=\{2,3,4,5,6\}$，$T=\{0,1,2\}$.}
+\stepm{（2）}{取 $a=b$，得 $0\in T=A$；}
+\step{又 $T$ 中所有元素均非负，因此 $A$ 的最小元 $x_1=0$，}
+\step{于是 $0<x_2<x_3$，且 $x_3-x_2\in T=A=\{0,x_2,x_3\}$.}
+\step{由于 $0<x_3-x_2<x_3$，只能有 $x_3-x_2=x_2$，即 $2x_2=x_3$.}
+\stepm{（3）}{设 $A$ 的最小元为 $m$，$\lvert A\rvert=k$.}
+\step{若 $0\in A$，则 $0=0+0=\lvert0-0\rvert\in S\cap T$，矛盾，因此 $m\geqslant1$.}
+\step{构造集合 $C=\{x-m\mid x\in A\}$，$D=\{x+m\mid x\in A\}$.}
+\step{因为 $m\in A$ 且 $x\geqslant m$，所以 $C\subseteq T$，$D\subseteq S$，从而 $C\cap D=\varnothing$.}
+\step{$C$、$D$ 各含 $k$ 个元素，且其中所有元素均为 $0$ 至 $2026+m$ 之间的整数，}
+\step{因此 $2k\leqslant2027+m$.}
+\step{另一方面，$A\subseteq\{m,m+1,\cdots,2026\}$，所以 $k\leqslant2027-m$.}
+\step{当 $m\leqslant675$ 时，$k\leqslant\dfrac{2027+m}2\leqslant1351$；}
+\step{当 $m\geqslant676$ 时，$k\leqslant2027-m\leqslant1351$.}
+\step{取 $A=\{676,677,\cdots,2026\}$，则 $\lvert A\rvert=1351$，$S$ 中每个元素均不小于 $1352$，}
+\step{$T$ 中每个元素均不大于 $1350$，满足 $S\cap T=\varnothing$.}
+\step{因此 $\lvert A\rvert$ 的最大值为 $1351$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}

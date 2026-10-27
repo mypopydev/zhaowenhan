@@ -1,0 +1,358 @@
+% 高一86_华理科高_10月月考.tex
+%   —— 高一上数学“2026-2027 年华理科高高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一86_华理科高_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一86_华理科高_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一86_华理科高_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一86”；
+% 原文标题“27学年高一86——2026-2027年上海市华理科高高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/gKmkKcsXrbW7FlBLUuHbaA。
+% 页面标注发布时间 2026-10-27 17:43（上海）。
+% 正文为 9 张 PNG 页（`原图/高一86_华理科高_10月月考/01..09.png`），
+% 尺寸混排（第 1—8 页为 4762×6735，第 9 页为 2560×3620），均按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在原文内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。
+%
+% 讲评版：19 题全部印【解析】，本稿不另提 \ans{}；选择题答案在解析末句“故选 D／C／B／A”。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 21 题 (2) 解析作“由根和系数的关系得 $a_1=2$ 和 $a_2$ 相当于
+%      $x^2-tx+t=0$ 的两根”，多印“$=2$”；按上下文应为“$a_1$ 和 $a_2$ 相当于
+%      $x^2-tx+t=0$ 的两根”。照录未改。
+%   ② 第 8 题的 $\N$ 含 $0$（原卷解析明写“含 0”），与全稿其余各卷把 $\N$ 当正整数
+%      的惯例不同；本稿按原卷用 $\N$，并在该题解析里保留“（含 0）”三字。
+%   ③ 第 15 题题干作“有四个推理”，其后却列了①—⑤共五条；照录“四个”与五条，未改。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【解析】，本稿按全稿惯例将解析置于答案版；
+%   ② 原卷未印副标题，本稿补出；填空横线统一排 \blankline[4.4em]；
+%   ③ 原卷数集记号排斜体 $R$、$Z$、$N$，本稿按全稿惯例改用 $\R$、$\Z$、$\N$；
+%   ④ 第 17—21 题的子问用行内“（1）（2）（3）”段，解析中的子问标号用 \stepm；
+%   ⑤ 解答题按惯例加 \ansspace；选择题括号排 \mbox{（\quad）}。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 105 条（Q3：2；Q4：2；Q5：2；Q6：4；Q7：2；
+% Q8：2；Q9：3；Q10：6；Q11：3；Q12：8；Q13：1；Q14：2；Q15：6；Q16：7；Q17：6；
+% Q18：5；Q19：10；Q20：15；Q21：19）。原卷解析的换行按语意合并，未逐行强拆。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[6]{2026--2027 年华理科高高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知一元二次不等式 $x^2-ax-b<0$ 的解集为 $(1,3)$，则 $a+b=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{$1,3$ 为方程 $x^2-ax-b=0$ 的两根，}
+\step{由韦达定理，$a=1+3=4$，$-b=1\times3=3$，所以 $a+b=1$.}
+\solend
+\fi
+
+\item 满足 $\{1,2\}\subset A\subseteq\{1,2,3,4,5,6\}$ 的集合 $A$ 的个数是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\subset$ 表示真子集，因此 $A$ 含有 $1,2$，且须从 $\{3,4,5,6\}$ 中至少选取一个元素，}
+\step{共有 $2^4-1=15$ 个.}
+\solend
+\fi
+
+\item 若 $-1<a<b<5$，则 $a-b$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a<b\Rightarrow a-b<0$，且 $a>-1$，$b<5\Rightarrow a-b>-6$，}
+\step{因此 $a-b$ 的取值范围为 $(-6,0)$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x^2+4x-5=0\}$，$B=\{x\mid mx+1=0\}$，若 $A\cap B=B$，则实数 $m$ 组成
+的集合为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$A=\{1,-5\}$，且 $A\cap B=B\Leftrightarrow B\subseteq A$.}
+\step{当 $m=0$ 时，$B=\varnothing$，符合题意；}
+\step{当 $m\neq0$ 时，$-\dfrac1m=1$ 或 $-\dfrac1m=-5$，得 $m=-1$ 或 $m=\dfrac15$；}
+\step{故所求集合为 $\left\{0,-1,\dfrac15\right\}$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid1<x\leqslant3\}$，集合 $B=\{x\mid x<a\}$，且 $A\cup B=\{x\mid x\leqslant3\}$，则实数 $a$ 的
+取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$1\notin A$，须 $1\in B$，即 $a>1$；并集不含大于 $3$ 的数，须 $a\leqslant3$.}
+\step{当 $1<a\leqslant3$ 时，$A\cup B=(-\infty,3]$，故 $a\in(1,3]$.}
+\solend
+\fi
+
+\item 已知集合 $A=\left\{m\left|\dfrac8{m-2}\in\Z,\,m\in\N\right.\right\}$，用列举法表示集合 $A=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{$m-2$ 是 $8$ 的整数因数，即 $m-2\in\{\pm1,\pm2,\pm4,\pm8\}$.}
+\step{结合 $m\in\N$（含 $0$），得 $A=\{0,1,3,4,6,10\}$.}
+\solend
+\fi
+
+\item 关于 $x$ 的不等式 $kx^2-kx-2\geqslant0$ 的解集为空集，则实数 $k$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $k=0$ 时，原不等式为 $-2\geqslant0$，解集为空集，符合题意.}
+\step{当 $k\neq0$ 时，须 $k<0$ 且 $\Delta=k^2+8k<0$，解得 $-8<k<0$.}
+\step{因此 $k$ 的取值范围为 $(-8,0]$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的不等式 $x^2-(2a+1)x+4a-2<0$ 的解集中恰有 $3$ 个整数解，则 $a$ 的取值范
+围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原不等式为 $(x-2)(x-2a+1)<0$. 当 $2a-1=2$ 时无解.}
+\step{若 $2a-1>2$，解集为 $(2,2a-1)$，三个整数解只能为 $3,4,5$，}
+\step{因此 $5<2a-1\leqslant6$，得 $3<a\leqslant\dfrac72$.}
+\step{若 $2a-1<2$，解集为 $(2a-1,2)$，三个整数解只能为 $-1,0,1$，}
+\step{因此 $-2\leqslant2a-1<-1$，得 $-\dfrac12\leqslant a<0$.}
+\step{所以 $a\in\left[-\dfrac12,0\right)\cup\left(3,\dfrac72\right]$.}
+\solend
+\fi
+
+\item 对于实数 $x$，规定 $[x]$ 表示不大于 $x$ 的最大整数，如 $[\pi]=3$，$[-1.2]=-2$，$\left[\dfrac12\right]=0$，那么
+不等式 $4[x]^2-8[x]-21<0$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原不等式等价于 $(2[x]+3)(2[x]-7)<0$，即 $-\dfrac32<[x]<\dfrac72$.}
+\step{$[x]\in\Z$，得 $[x]\in\{-1,0,1,2,3\}$.}
+\step{由 $[x]=k\Leftrightarrow k\leqslant x<k+1$，解集为 $[-1,4)$.}
+\solend
+\fi
+
+\item 设全集 $U=\{1,2,3,4,5,6,7,8,9,10\}$，给出条件：①$A\subseteq U$；②若 $x\in A$，则 $2x\notin A$；
+③若 $x\in\overline A$，则 $2x\notin\overline A$. 那么同时满足三个条件的集合 $A$ 的个数为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $1\in A$，则 $2\in\overline A$，$4\in A$，$8\in\overline A$；}
+\step{若 $1\in\overline A$，则 $2\in A$，$4\in\overline A$，$8\in A$，此时 $1$，$2$，$4$，$8$ 的放置有 $2$ 种；}
+\step{若 $3\in A$，则 $6\in\overline A$；}
+\step{若 $3\in\overline A$，则 $6\in A$，此时 $3$，$6$ 的放置有 $2$ 种；}
+\step{若 $5\in A$，则 $10\in\overline A$；}
+\step{若 $5\in\overline A$，则 $10\in A$，此时 $5$，$10$ 的放置有 $2$ 种；}
+\step{$7$，$9$ 的放置各 $2$ 种，}
+\step{综上所述，同时满足三个条件的集合 $A$ 的个数为 $2\times2\times2\times2\times2=32$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 设集合 $A=\{x\mid x\geqslant0\}$，则下列关系中正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. $A\supseteq0$\qquad B. $\{0\}\in A$\qquad C. $0\notin A$\qquad D. $A\supseteq\{0\}$
+
+\ifanswer
+\solbegin
+\step{$0\in A$，所以 $\{0\}\subseteq A$，即 $A\supseteq\{0\}$，故选 $D$.}
+\solend
+\fi
+
+\item 若集合 $M=\{x\mid y=\sqrt{-2x+8}\}$，$N=\{y\mid y=x^2-2\}$，则 $M\cap N=\mbox{（\quad）}$
+
+\keepwithprev
+A. $\{(2,2),(-2,2)\}$\qquad B. $(-2,4)$\qquad C. $[-2,4]$\qquad D. $\{2\}$
+
+\ifanswer
+\solbegin
+\step{$-2x+8\geqslant0\Rightarrow M=(-\infty,4]$，$x^2-2\geqslant-2\Rightarrow N=[-2,+\infty)$，}
+\step{因此 $M\cap N=[-2,4]$，故选 $C$.}
+\solend
+\fi
+
+\item 已知 $a,b,c\in\R$，有四个推理：①$a>b\Rightarrow am^2>bm^2$；②$\dfrac ac>\dfrac bc\Rightarrow a>b$；③
+$a>b,ab>0\Rightarrow\dfrac1a<\dfrac1b$；④$a^2>b^2,ab>0\Rightarrow\dfrac1a<\dfrac1b$；⑤$\sqrt a<\sqrt b\Rightarrow a<b$. 其中推理
+正确的个数为\mbox{（\quad）}
+
+\keepwithprev
+A. $1$\qquad B. $2$\qquad C. $3$\qquad D. $4$
+
+\ifanswer
+\solbegin
+\step{①错误：取 $a=1,b=0,m=0$，则 $a>b$，但 $am^2=bm^2=0$.}
+\step{②错误：取 $a=0,b=1,c=-1$，则 $\dfrac ac>\dfrac bc$，但 $a<b$.}
+\step{③正确：$\dfrac1b-\dfrac1a=\dfrac{a-b}{ab}>0$，即 $\dfrac1a<\dfrac1b$.}
+\step{④错误：取 $a=-3,b=-1$，满足 $a^2>b^2,ab>0$，但 $\dfrac1a=-\dfrac13>-1=\dfrac1b$.}
+\step{⑤正确：平方根有意义时 $a,b\geqslant0$，将 $0\leqslant\sqrt a<\sqrt b$ 两边平方得 $a<b$.}
+\step{正确的共 $2$ 个，故选 $B$.}
+\solend
+\fi
+
+\item 已知非空集合 $A,B$ 满足两个条件：①$A\cup B=\{1,2,3,4,5,6\}$，$A\cap B=\varnothing$；②若
+$x\in A$，则 $x+1\in B$. 有序集合对 $(A,B)$ 的个数为\mbox{（\quad）}
+
+\keepwithprev
+A. $12$\qquad B. $38$\qquad C. $42$\qquad D. $46$
+
+\ifanswer
+\solbegin
+\step{以 $U=\{1,2,3,4,5,6\}$ 为全集，补入，则 $B=\overline A$，每个 $A$ 唯一确定一个 $B$.}
+\step{若 $6\in A$，则 $7\in B$，矛盾，故 $A\subseteq\{1,2,3,4,5\}$；}
+\step{又由②，$A$ 中不能同时含有两个相邻整数.}
+\step{反之，任取 $\{1,2,3,4,5\}$ 中不含相邻整数的非空子集 $A$，令 $B=\overline A$，即满足条件.}
+\step{$A$ 含一个元素时有 $5$ 种；含两个元素时有 $3+2+1=6$ 种；}
+\step{含三个元素时仅有 $\{1,3,5\}$ 不可能含更多元素.}
+\step{因此共有 $5+6+1=12$ 个有序集合对，故选 $A$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）比较两数 $m^2+n^2$ 与 $6m-4n-13$ 的大小；
+
+（2）解不等式组 $\begin{cases}\dfrac3x\geqslant-1\\ x^2-2x-2>0\end{cases}$.
+
+\ansspace*[10]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$(m^2+n^2)-(6m-4n-13)=m^2-6m+n^2+4n+13$}
+\step{$=(m-3)^2+(n+2)^2\geqslant0$，因此 $m^2+n^2\geqslant6m-4n-13$.}
+\stepm{（2）}{第一个不等式为 $\dfrac3x\geqslant-1\Leftrightarrow\dfrac{x+3}x\geqslant0\Leftrightarrow x\leqslant-3$ 或 $x>0$.}
+\step{第二个不等式为 $x^2-2x-2>0\Leftrightarrow(x-1)^2>3\Leftrightarrow x<1-\sqrt3$}
+\step{或 $x>1+\sqrt3$.}
+\step{取两者解集的交集，得原不等式组的解集为 $(-\infty,-3]\cup(1+\sqrt3,+\infty)$.}
+\solend
+\fi
+
+\item 已知 $a+b+c=0$，证明：“$a^2+b^2+c^2=0$”是“$ab+bc+ac=0$”的充要条件.
+
+\ansspace*[9]
+
+\ifanswer
+\solbegin
+\step{由 $a^2+b^2+c^2=0$，得 $a=b=c=0$，因此 $ab+bc+ac=0$，充分性成立；}
+\step{由 $ab+bc+ac=0$，得 $2ab+2bc+2ac=0$，}
+\step{由 $a+b+c=0$，得 $(a+b+c)^2=0$，}
+\step{因此 $a^2+b^2+c^2+2ab+2bc+2ac=0$，则 $a^2+b^2+c^2=0$，必要性成立，}
+\step{所以“$a^2+b^2+c^2=0$”是“$ab+bc+ac=0$”的充要条件.}
+\solend
+\fi
+
+\item 已知集合 $A=\left\{x\left|\dfrac7{x+2}>1\right.\right\}$，集合 $B=\{x\mid m+1<x<3m-1\}$，设命题 $\alpha:x\in A$，命
+题 $\beta:x\in B$.
+
+（1）当 $m=3$ 时，两命题 $\alpha,\beta$ 至少有一个是真，求 $x$ 的取值并用集合表示；
+
+（2）若命题 $\alpha$ 的充分非必要条件是 $\beta$，求实数 $m$ 的取值范围.
+
+\ansspace*[11]
+
+\ifanswer
+\solbegin
+\step{由 $\dfrac7{x+2}>1\Leftrightarrow\dfrac{5-x}{x+2}>0\Leftrightarrow-2<x<5$，得 $A=(-2,5)$.}
+\stepm{（1）}{当 $m=3$ 时，$B=\{x\mid4<x<8\}=(4,8)$.}
+\step{两命题至少有一个为真，等价于 $x\in A\cup B=(-2,8)$，}
+\step{所求集合为 $\{x\mid-2<x<8\}$.}
+\stepm{（2）}{$\beta$ 是 $\alpha$ 的充分非必要条件，等价于 $B\subset A$.}
+\step{当 $m+1\geqslant3m-1$，即 $m\leqslant1$ 时，$B=\varnothing\subset A$，符合条件.}
+\step{当 $m>1$ 时，$B\neq\varnothing$，此时 $B\subseteq A\Leftrightarrow\begin{cases}m+1\geqslant-2\\ 3m-1\leqslant5\end{cases}\Leftrightarrow-3\leqslant m\leqslant2$.}
+\step{结合 $m>1$，得 $1<m\leqslant2$.}
+\step{此时 $m+1>2$，而 $0\in A$，$0\notin B$，所以 $B\neq A$，满足非必要性.}
+\step{合并得 $m\in(-\infty,2]$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $\dfrac{a-x}{x-2a+1}\leqslant0$ 的解集为 $A$，满足方程 $x^2-2mx+m+2=0$ 的两根
+都大于 $1$ 的 $m$ 的所有值组成的集合为 $B$.
+
+（1）$a=2$ 时，求集合 $A$；
+
+（2）求集合 $B$；
+
+（3）若 $A\cup B=A$，求实数 $a$ 的取值范围.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $a=2$ 时，$\dfrac{2-x}{x-3}\leqslant0\Leftrightarrow\dfrac{x-2}{x-3}\geqslant0\Leftrightarrow x\leqslant2$ 或 $x>3$，}
+\step{所以 $A=(-\infty,2]\cup(3,+\infty)$.}
+\stepm{（2）}{方程的判别式为 $\Delta=4m^2-4(m+2)=4(m-2)(m+1)$.}
+\step{设两实根为 $x_1,x_2$，}
+\step{由韦达定理得 $(x_1-1)+(x_2-1)=2m-2$，$(x_1-1)(x_2-1)=3-m$.}
+\step{两根都大于 $1$，等价于两根减去 $1$ 后的和、积均为正，}
+\step{即 $\begin{cases}(m-2)(m+1)\geqslant0\\ 2m-2>0\\ 3-m>0\end{cases}\Leftrightarrow2\leqslant m<3$，所以 $B=[2,3)$.}
+\stepm{（3）}{$A\cup B=A\Leftrightarrow B\subseteq A$，且原不等式等价于 $\dfrac{x-a}{x-(2a-1)}\geqslant0$，$x\neq2a-1$.}
+\step{①当 $a<1$ 时，$2a-1<a$，$A=(-\infty,2a-1)\cup[a,+\infty)$，}
+\step{此时 $a<1<2$，因而 $[2,3)\subseteq A$，条件成立.}
+\step{②当 $a=1$ 时，$A=(-\infty,1)\cup(1,+\infty)$，条件成立.}
+\step{③当 $a>1$ 时，$a<2a-1$，$A=(-\infty,a]\cup(2a-1,+\infty)$.}
+\step{于是 $B\subseteq A\Leftrightarrow(a,2a-1)\cap[2,3)=\varnothing\Leftrightarrow2a-1<2$ 或 $a\geqslant3$}
+\step{$\Leftrightarrow1<a<\dfrac32$ 或 $a\geqslant3$，}
+\step{合并三种情况，得 $a\in\left(-\infty,\dfrac32\right)\cup[3,+\infty)$.}
+\solend
+\fi
+
+\item 已知有限集 $A=\{a_1,a_2,\cdots,a_n\}\,(n\geqslant2,n\in\N)$，如果 $A$ 中的元素 $a_i\,(i=1,2,\cdots,n)$ 满足
+$a_1+a_2+\cdots+a_n=a_1\times a_2\times\cdots\times a_n$，就称 $A$ 为“完美集”.
+
+（1）判断：集合 $\{-1-\sqrt3,-1+\sqrt3\}$ 是否是“完美集”并说明理由；
+
+（2）$a_1$、$a_2$ 是两个不同的正数，且 $\{a_1,a_2\}$ 是“完美集”，求证：$a_1$、$a_2$ 至少有一个大于
+$2$；
+
+（3）若 $a_i$ 为正整数，求：“完美集”$A$.
+
+\ansspace*[14]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由 $(-1-\sqrt3)+(-1+\sqrt3)=-2$，$(-1-\sqrt3)(-1+\sqrt3)=-2$，}
+\step{则集合 $\{-1-\sqrt3,-1+\sqrt3\}$ 是“完美集”，}
+\stepm{（2）}{若 $a_1$、$a_2$ 是两个不同的正数，且 $\{a_1,a_2\}$ 是“完美集”，}
+\step{设 $a_1+a_2=a_1\cdot a_2=t>0$，}
+\step{由根和系数的关系得 $a_1=2$ 和 $a_2$ 相当于 $x^2-tx+t=0$ 的两根，}
+\step{由 $\Delta=t^2-4t>0$，解得 $t>4$ 或 $t<0$（舍去），}
+\step{所以 $a_1\cdot a_2>4$，又 $a_1$、$a_2$ 均为正数，所以 $a_1$、$a_2$ 至少有一个大于 $2$.}
+\stepm{（3）}{不妨设 $A$ 中 $a_1<a_2<a_3<\cdots<a_n$，}
+\step{由 $a_1a_2\cdots a_n=a_1+a_2+\cdots+a_n<na_n$，得 $a_1a_2\cdots a_{n-1}<n$，}
+\step{当 $n=2$ 时，即有 $a_1<2$，又 $a_i$ 为正整数，所以 $a_1=1$，}
+\step{于是 $1+a_2=1\times a_2$，则 $a_2$ 无解，即不存在满足条件的“完美集”；}
+\step{当 $n=3$ 时，$a_1a_2<3$，故只能 $a_1=1$，$a_2=2$，求得 $a_3=3$，}
+\step{于是“完美集”$A$ 只有一个，为 $\{1,2,3\}$.}
+\step{当 $n\geqslant4$ 时，由 $a_1a_2\cdots a_{n-1}\geqslant1\times2\times3\times\cdots\times(n-1)$，}
+\step{即有 $n>1\times2\times3\times\cdots\times(n-1)$，}
+\step{而 $n-(n-1)(n-2)=-n^2+4n-2=-(n-2)^2+2<0$，}
+\step{又 $(n-1)(n-2)\leqslant1\times2\times3\times\cdots\times(n-1)$，因此 $n<1\times2\times3\times\cdots\times(n-1)$，}
+\step{矛盾，所以当 $n\geqslant4$ 时不存在完美集 $A$，}
+\step{综上，“完美集”$A$ 为 $\{1,2,3\}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
