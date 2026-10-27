@@ -390,8 +390,9 @@ def check_zhenti(md):
     m = re.search(r'第二种／第三种(?:／第四种)?改法(.*?)→', zb, re.S)
     if not m:
         raise AssertionError('README 里找不到这处断言：节正文“第二种／第三种／第四种改法”的括号')
+    # “五种”= 同一道真题占 5 个本库题位、多出 4 条（2026-10-27 并入高一87 后首次出现）
     extra_calc = (m.group(1).count('两种') + 2 * m.group(1).count('三种')
-                  + 3 * m.group(1).count('四种'))
+                  + 3 * m.group(1).count('四种') + 4 * m.group(1).count('五种'))
 
     d5, d4, d3, d2, d1 = (dist.get(5, 0), dist.get(4, 0), dist.get(3, 0),
                           dist.get(2, 0), dist.get(1, 0))
@@ -421,7 +422,7 @@ def check_zhenti(md):
     add('真题出处：被三份用到的名单条数', zb_3, m3.group(1).count('；') + 1)
     add('真题出处：被两份用到的名单条数', zb_2, names2.count('、') + 1, '名单里逐个点名的真题')
     add('真题出处：多改法条数', (extra_dec, dd_ar + extra_dec), (extra_calc, tj_ar),
-        '“两种”记 1 条、“三种”记 2 条、“四种”记 3 条；右边同时核“道数 ＋ 多改法 ＝ 条数”')
+        '“两种”记 1 条、“三种”记 2 条、“四种”记 3 条、“五种”记 4 条；右边同时核“道数 ＋ 多改法 ＝ 条数”')
     add('真题出处：算式两端的道数与条数', (dd_ar, tj_ar), (zb_dd, zb_tj))
     check_tongti(md, zhenti_slots([r[0] for r in zhenti_rows(md)]))
 
@@ -703,7 +704,7 @@ def _nohit_batch(key):
         return 'X'
     if n == 68:
         return 'Y'
-    if 69 <= n <= 84:
+    if 69 <= n <= 87:
         return 'Z'
     return None
 
