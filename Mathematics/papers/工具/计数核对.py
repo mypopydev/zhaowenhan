@@ -347,6 +347,7 @@ def check_zhenti(md):
         r'\*\*(\d+) 条对应\*\*：原题照录 (\d+)、改编 (\d+)、借定义／借集合另出题 (\d+)',
         sm, '摘要：条数／按关系分', n=4)
     sm_tw = _zhenti_g(r'对应本库 \*\*(\d+) 个题位\*\*', sm, '摘要：题位数')
+    sm_6 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*六份\*\*', sm, '摘要：被六份用到的道数')
     sm_5 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*五份\*\*', sm, '摘要：被五份用到的道数')
     sm_4 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*四份\*\*', sm, '摘要：被四份用到的道数')
     sm_3 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*三份\*\*', sm, '摘要：被三份用到的道数')
@@ -362,13 +363,19 @@ def check_zhenti(md):
     zb_dd2, zb_gb2, zb_bj2, zb_tj2 = _zhenti_g(
         r'原题照录 \*\*(\d+)\*\* 条、改编 \*\*(\d+)\*\* 条、借定义／借集合另出题 \*\*(\d+)\*\* 条 ＝ (\d+) 条',
         zb, '节正文：按关系分', n=4)
-    a5, a4, a3, b2, c1, volume_sum = _zhenti_g(
-        r'(\d+) × 5 ＋ (\d+) × 4 ＋ (\d+) × 3 ＋ (\d+) × 2 ＋ (\d+) × 1 ＝ \*\*(\d+) 个不同试卷关联\*\*',
-        zb, '节正文：不同试卷关联算式', n=6)
+    m6 = re.search(r'(\d+) × 6 ＋ (\d+) × 5 ＋ (\d+) × 4 ＋ (\d+) × 3 ＋ (\d+) × 2 ＋ (\d+) × 1 ＝ \*\*(\d+) 个不同试卷关联\*\*', zb)
+    if m6:
+        a6, a5, a4, a3, b2, c1, volume_sum = (int(m6.group(i)) for i in range(1, 8))
+    else:
+        a6 = 0
+        a5, a4, a3, b2, c1, volume_sum = _zhenti_g(
+            r'(\d+) × 5 ＋ (\d+) × 4 ＋ (\d+) × 3 ＋ (\d+) × 2 ＋ (\d+) × 1 ＝ \*\*(\d+) 个不同试卷关联\*\*',
+            zb, '节正文：不同试卷关联算式', n=6)
     slots_sum, slots_from_volumes, duplicate_slots = _zhenti_g(
         r'\*\*题位数另计\*\*：(\d+) 个题位 ＝ (\d+) 个不同试卷关联 ＋ (\d+) 个同卷重复题位',
         zb, '节正文：试卷关联数与题位数拆分', n=3)
-    dd_sum = a5 + a4 + a3 + b2 + c1
+    dd_sum = a6 + a5 + a4 + a3 + b2 + c1
+    zb_6 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*六份\*\*试卷用到', zb, '节正文：被六份用到')
     zb_5 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*五份\*\*试卷用到', zb, '节正文：被五份用到')
     zb_4 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*四份\*\*试卷用到', zb, '节正文：被四份用到')
     zb_3 = _zhenti_g(r'\*\*(\d+) 道\*\*真题被\*\*三份\*\*试卷用到', zb, '节正文：被三份用到')
@@ -387,15 +394,16 @@ def check_zhenti(md):
         raise AssertionError('README 里找不到这处断言：节正文“被三份用到”的名单')
     dd_ar, extra_dec, tj_ar = _zhenti_g(
         r'故 (\d+) ＋ (\d+) ＝ \*\*(\d+) 条对应\*\*', zb, '节正文：条数算式', n=3)
-    m = re.search(r'第二种／第三种(?:／第四种)?改法(.*?)→', zb, re.S)
+    m = re.search(r'第二种／第三种(?:／第四种)?(?:／第五种)?改法(.*?)→', zb, re.S)
     if not m:
         raise AssertionError('README 里找不到这处断言：节正文“第二种／第三种／第四种改法”的括号')
     # “五种”= 同一道真题占 5 个本库题位、多出 4 条（2026-10-27 并入高一87 后首次出现）
     extra_calc = (m.group(1).count('两种') + 2 * m.group(1).count('三种')
-                  + 3 * m.group(1).count('四种') + 4 * m.group(1).count('五种'))
+                  + 3 * m.group(1).count('四种') + 4 * m.group(1).count('五种')
+                  + 5 * m.group(1).count('六种'))
 
-    d5, d4, d3, d2, d1 = (dist.get(5, 0), dist.get(4, 0), dist.get(3, 0),
-                          dist.get(2, 0), dist.get(1, 0))
+    d6, d5, d4, d3, d2, d1 = (dist.get(6, 0), dist.get(5, 0), dist.get(4, 0),
+                              dist.get(3, 0), dist.get(2, 0), dist.get(1, 0))
     add('真题出处：条数（三处 ↔ 表行数）', (sm_tj, ti_tj, zb_tj), (n_row,) * 3,
         f'表 {n_row} 行；三处为摘要／节标题／节正文')
     add('真题出处：题位数（三处 ＋ 拆分算式 ↔ 表）', (sm_tw, ti_tw, zb_tw, slots_sum), (n_slot,) * 4,
@@ -405,7 +413,7 @@ def check_zhenti(md):
         f'按出处栏归并（同卷两道真题靠题号区分）；算式 {a5} ＋ {a4} ＋ {a3} ＋ {b2} ＋ {c1} ＝ {dd_sum}')
     # “份数分布”按不同试卷去重；同一试卷同一道来源的多题位另计在题位总数中。
     add('真题出处：不同试卷关联数 ＝ Σ(份数 × 道数)（表内自洽）', volume_sum,
-        5 * d5 + 4 * d4 + 3 * d3 + 2 * d2 + d1)
+        6 * d6 + 5 * d5 + 4 * d4 + 3 * d3 + 2 * d2 + d1)
     add('真题出处：不同试卷关联数 ↔ 表归并', n_volume_links, volume_sum)
     add('真题出处：同卷重复题位数 ↔ 表与说明',
         (duplicate_slots, slots_from_volumes), (n_slot - n_volume_links, n_volume_links))
@@ -414,9 +422,9 @@ def check_zhenti(md):
         ((n_dd, n_gb, n_bj),) * 2, '原题照录／改编／借定义')
     add('真题出处：按关系分之和 ＝ 条数', sm_dd2 + sm_gb2 + sm_bj2, n_row)
     add('真题出处：真题侧份数分布（摘要／节正文／算式 ↔ 表归并）',
-        (sm_5, sm_4, sm_3, sm_2, sm_1, zb_5, zb_4, zb_3, zb_2, a5, a4, a3, b2, c1),
-        (d5, d4, d3, d2, d1, d5, d4, d3, d2, d5, d4, d3, d2, d1),
-        f'表归并得 {d5} 道被五份、{d4} 道被四份、{d3} 道被三份、{d2} 道被两份、{d1} 道单独')
+        (sm_6, sm_5, sm_4, sm_3, sm_2, sm_1, zb_6, zb_5, zb_4, zb_3, zb_2, a6, a5, a4, a3, b2, c1),
+        (d6, d5, d4, d3, d2, d1, d6, d5, d4, d3, d2, d6, d5, d4, d3, d2, d1),
+        f'表归并得 {d6} 道被六份、{d5} 道被五份、{d4} 道被四份、{d3} 道被三份、{d2} 道被两份、{d1} 道单独')
     add('真题出处：被五份用到的名单条数', zb_5, m5.group(1).count('；') + 1)
     add('真题出处：被四份用到的名单条数', zb_4, m4.group(1).count('；') + 1)
     add('真题出处：被三份用到的名单条数', zb_3, m3.group(1).count('；') + 1)
@@ -704,7 +712,7 @@ def _nohit_batch(key):
         return 'X'
     if n == 68:
         return 'Y'
-    if 69 <= n <= 87:
+    if 69 <= n <= 90:
         return 'Z'
     return None
 
