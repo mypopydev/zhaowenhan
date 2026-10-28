@@ -1,0 +1,450 @@
+% 高一88_交大附中_10月月考.tex
+%   —— 高一上数学“2026-2027 年交大附中高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一88_交大附中_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一88_交大附中_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一88_交大附中_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一88”；
+% 原文标题“27学年高一88——2026-2027年上海市交大附中高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/IZrNZmrH_D7aRfZkS76esQ。
+% 正文为 14 张 PNG 页（`原图/高一88_交大附中_10月月考/01..14.png`），
+% 尺寸混排（第 7、8、12、14 页为 2560×3620，其余为 4762×6735），均按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在原文内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。
+%
+% 讲评版：第 3 题只印【答案】（“$\{0,1\}$”），本稿只给 \ans{}；第 13 题无【解析】、
+% 括号内直接印答案“（B）”，本稿试卷版按惯例留空、答案版提 \ans{B}；其余 17 题印
+% 【解析】，其中选择题答案在解析末句“故选 C／C／C”。第 19 题题干带一幅示意图
+% （`OA`、`OB` 两条互相垂直的小路与矩形 `OCPD`、折线 `EF`），三版都出。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 6 题解析末句作“解得 $p=3$ 或 $p=-1$”，未检验判别式；$p=3$ 时
+%      $\Delta=p^2-4p=9-12<0$，两根不为实根，应舍去，答案实为 $p=-1$。原卷照录。
+%   ② 第 14 题设“第一次操作（药剂在右盘）称得的药剂为 $x_2$ 克”，与下文
+%      $x=x_1+x_2$ 的次序相反（$x_2$ 系右盘所得），属记号混用，不影响结论。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版；
+%   ② 原卷未印副标题，本稿补出；填空横线统一排 \blankline[4.4em]；
+%   ③ 原卷数集记号排斜体 $R$、$Z$、$N$，本稿按全稿惯例改用 $\R$、$\Z$、$\N$；
+%   ④ 第 17—21 题的子问用行内“（1）（2）（3）”段，解析中的子问标号用 \stepm；
+%   ⑤ 解答题按惯例加 \ansspace；选择题括号排 \mbox{（\quad）}；
+%   ⑥ 第 19 题的示意图原卷排在题干右侧、文字绕排，本稿改排为题干后的居中图
+%      （TikZ 重绘：原图该处被公众号粉色水印斜压，裁切会带上水印，故按原图
+%      比例重绘，点、线、标签与原图一致）。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 176 条（Q3：0；Q4：2；Q5：5；Q6：4；
+% Q7：8；Q8：2；Q9：2；Q10：14；Q11：15；Q12：9；Q13：0；Q14：6；Q15：8；Q16：12；
+% Q17：15；Q18：10；Q19：11；Q20：25；Q21：28）。第 3 题只印【答案】、第 13 题无解析，
+% 均不计入 \step 账。原卷解析的换行按语意合并，未逐行强拆。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[7]{2026--2027 年交大附中高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知集合 $A=\{-1,0,1,2\}$，集合 $B=(-1,1]$，则 $A\cap B=\blankline[4.4em]$.
+
+\ifanswer
+\ans{$\{0,1\}$}
+\fi
+
+\item 若 $x\in\R$，$\lvert x+1\rvert+\lvert x-6\rvert$ 的最小值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\lvert x+1\rvert+\lvert x-6\rvert\geqslant\lvert x+1-(x-6)\rvert=7$，当且仅当 $-1\leqslant x\leqslant6$ 时取等号，}
+\step{所以 $\lvert x+1\rvert+\lvert x-6\rvert$ 的最小值为 $7$.}
+\solend
+\fi
+
+\item 若 $a>b$，$c>d$，则下列不等式关系中一定成立的是\blankline[4.4em].
+
+①$a-b>d-c$；\quad ②$a+d>b+c$；\quad ③$a-c>b-c$；\quad ④$a-c<a-d$
+
+\ifanswer
+\solbegin
+\step{因为 $a>b$，$c>d$，所以 $a-b>0$，$d-c<0$，所以 $a-b>d-c$，①成立；}
+\step{取 $a=3$，$b=2$，$c=0$，$d=-3$，②不成立；}
+\step{因为 $a>b$，所以 $a-c>b-c$，③成立；}
+\step{由 $c>d$ 得 $-c<-d$，得 $a-c<a-d$，④成立.}
+\step{故正确的是①③④.}
+\solend
+\fi
+
+\item 若关于 $x$ 的二次方程 $x^2+px+p=0$ 的两个实根分别为 $x_1,x_2$，且满足 $x_1^2+x_2^2=3$，则 $p$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为关于 $x$ 的二次方程 $x^2+px+p=0$ 的两个实根分别为 $x_1,x_2$，}
+\step{所以 $x_1+x_2=-p$，$x_1x_2=p$，因为 $x_1^2+x_2^2=3$，}
+\step{所以 $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=p^2-2p=3$，}
+\step{即 $p^2-2p-3=(p-3)(p+1)=0$，解得 $p=3$ 或 $p=-1$.}% 原卷未检验 Δ：p=3 时 Δ<0，应舍去，见文件头存疑①
+\solend
+\fi
+
+\item 已知全集 $U=\{x\in\N\mid x\leqslant9\}$，$A\cap B=\{3\}$，$\overline A\cap B=\{4,6,8\}$，$A\cap\overline B=\{1,5\}$，则 $\overline A=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{由题意得 $U=\{x\in\N\mid x\leqslant9\}=\{0,1,2,3,4,5,6,7,8,9\}$，}
+\step{$A\cap B=\{3\}$ 得 $A$、$B$ 中含有元素 $3$，}
+\step{$\overline A\cap B=\{4,6,8\}$ 得 $B$ 中含有 $4$，$6$，$8$，集合 $A$ 中不含 $4$，$6$，$8$，}
+\step{$A\cap\overline B=\{1,5\}$ 得 $A$ 含有 $1$，$5$，集合 $\overline B$ 中含 $1$，$5$，}
+\step{对于 $0$，假设集合 $A$ 中含有 $0$，由 $A\cap B=\{3\}$ 得 $B$ 不含 $0$，}
+\step{则 $A\cap\overline B$ 必含元素 $0$，与 $A\cap\overline B=\{1,5\}$ 矛盾，}
+\step{同理可得集合 $A$ 中不含元素 $2$，$7$，$9$，}
+\step{综上所述，$A=\{1,3,5\}$，故 $\overline A=\{0,2,4,6,7,8,9\}$.}
+\solend
+\fi
+
+\item 若命题甲：$x\in[2,5]$ 和命题乙：$x\in\{x\mid x<1$ 或 $x>4\}$ 中至少有一个是真命题，则实数 $x$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若甲、乙命题均为假命题，则 $\begin{cases}x<2\ \text{或}\ x>5\\ 1\leqslant x\leqslant4\end{cases}$，得 $1\leqslant x<2$，}
+\step{又甲、乙命题至少有一个是真命题，则 $x<1$ 或 $x\geqslant2$.}
+\solend
+\fi
+
+\item 已知 $3<xy^2<7$，$4<\dfrac{x^2}{y}<12$，则代数式 $\dfrac{x^3}{y^4}$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $3<xy^2<7$，$4<\dfrac{x^2}{y}<12$，所以 $\dfrac17<\dfrac1{xy^2}<\dfrac13$，$16<\dfrac{x^4}{y^2}<144$.}
+\step{所以 $\dfrac{16}{7}<\dfrac1{xy^2}\cdot\dfrac{x^4}{y^2}<\dfrac{144}{3}$，即 $\dfrac{16}{7}<\dfrac{x^3}{y^4}<48$，则 $\dfrac{x^3}{y^4}$ 的取值范围为 $\left(\dfrac{16}{7},48\right)$.}
+\solend
+\fi
+
+\item 已知 $x>-1$，$y>-2$，且 $\dfrac1{x+1}+\dfrac2{y+2}=4$，则 $2x+y$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\stepm{法一：}{因为 $x>-1$，$y>-2$，所以 $2x+y=2(x+1)+(y+2)-4$，}
+\step{而 $2(x+1)+(y+2)=\dfrac14[2(x+1)+(y+2)]\left(\dfrac1{x+1}+\dfrac2{y+2}\right)$}
+\step{$=\dfrac14\left[4+\dfrac{4(x+1)}{y+2}+\dfrac{y+2}{x+1}\right]\geqslant\dfrac14(4+2\sqrt4)=2$，}
+\step{当且仅当 $\dfrac{4(x+1)}{y+2}=\dfrac{y+2}{x+1}$ 时取等号，由 $\begin{cases}\dfrac{4(x+1)}{y+2}=\dfrac{y+2}{x+1}\\[0.2em] \dfrac1{x+1}+\dfrac2{y+2}=4\end{cases}$，解得 $\begin{cases}x=-\dfrac12\\[0.2em] y=-1\end{cases}$，}
+\step{当 $x=-\dfrac12$，$y=-1$ 时，$2(x+1)+(y+2)$ 取得最小值为 $2$，}
+\step{此时 $2x+y=2(x+1)+(y+2)-4$ 取得最小值为 $-2$，}
+\step{即 $2x+y$ 的取值范围为 $[-2,+\infty)$.}
+\stepm{法二：}{由 $\dfrac1{x+1}+\dfrac2{y+2}=4$ 去分母，得 $2(x+1)+y+2=4(x+1)(y+2)$，}
+\step{整理得 $4xy+3(2x+y)+4=0\,(*)$，}
+\step{$x>-1$，$y>-2$，$(2x+y)^2=4x^2+y^2+4xy\geqslant8xy$，即 $xy\leqslant\dfrac{(2x+y)^2}{8}$，}
+\step{当且仅当 $2x=y$ 时取等号，}
+\step{由 $(*)$ 得 $-3(2x+y)-4=4xy\leqslant\dfrac{(2x+y)^2}{2}$，即 $(2x+y)^2+6(2x+y)+8\geqslant0$，}
+\step{解得 $2x+y\geqslant-2$ 或 $2x+y\leqslant-4$（不合题意舍去），}
+\step{故 $2x+y$ 的取值范围为 $[-2,+\infty)$.}
+\solend
+\fi
+
+\item 已知 $m\in\R$，集合 $A=\{x\mid m\leqslant x\leqslant5(m-1),x\in\N\}$ 中恰含有 $4$ 个整数，则 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{首先集合 $A$ 非空，故 $m\leqslant5(m-1)$，所以 $m\leqslant5(m-1)$，解得 $m\geqslant\dfrac54$，}
+\step{设集合 $A$ 中最小的整数为 $k(k\in\N)$，最小整数为 $k$ 等价于 $k-1<m\leqslant k$，}
+\step{集合恰含 $4$ 个整数，故最大整数为 $k+3$，等价于 $k+3\leqslant5(m-1)<k+4$，}
+\step{对 $k$ 分类讨论：}
+\step{①当 $k=2$ 时，由 $k-1<m\leqslant k$ 得 $1<m\leqslant2$，}
+\step{由 $k+3\leqslant5(m-1)<k+4$ 得 $5\leqslant5(m-1)<6$，}
+\step{解得 $2\leqslant m<\dfrac{11}{5}$，两者交集为 $m=2$，符合题意，}
+\step{②当 $k=3$ 时，由 $k-1<m\leqslant k$ 得 $2<m\leqslant3$，}
+\step{由 $k+3\leqslant5(m-1)<k+4$ 得 $6\leqslant5(m-1)<7$，}
+\step{解得 $\dfrac{11}{5}\leqslant m<\dfrac{12}{5}$，两者交集为 $\left[\dfrac{11}{5},\dfrac{12}{5}\right)$，符合题意，}
+\step{③当 $k\geqslant4$ 时，由 $k-1<m\leqslant k$ 得 $m>3$，}
+\step{由 $k+3\leqslant5(m-1)<k+4$，得 $m<\dfrac{k+9}{5}\leqslant\dfrac{13}{5}=2.6$，}
+\step{$m>3$ 与 $m<2.6$ 无交集，无解，}
+\step{④当 $k\leqslant1$ 时，$m\leqslant k\leqslant1$，与 $m\geqslant\dfrac54$ 矛盾，无解，}
+\step{综上所述，$m$ 的取值范围是 $\{2\}\cup\left[\dfrac{11}{5},\dfrac{12}{5}\right)$.}
+\solend
+\fi
+
+\item 已知 $a>0$，$b>0$，$c>9$，且 $a+b=3$，则 $\dfrac{ac}{b}+\dfrac{c}{ab}-\dfrac{2c}{9}+\dfrac{\sqrt{10}}{c-9}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\dfrac ab+\dfrac1{ab}-\dfrac29=\dfrac ab+\dfrac{9-2ab}{9ab}=\dfrac ab+\dfrac{(a+b)^2-2ab}{9ab}=\dfrac{10a}{9b}+\dfrac b{9a}$}
+\step{$\geqslant2\sqrt{\dfrac{10a}{9b}\cdot\dfrac b{9a}}=\dfrac{2\sqrt{10}}{9}$，当且仅当 $\dfrac{10a}{9b}=\dfrac b{9a}=\dfrac{\sqrt{10}}{9}$，即 $b=\sqrt{10}a$ 时取等号.}
+\step{所以 $\dfrac{ac}{b}+\dfrac{c}{ab}-\dfrac{2c}{9}=\left(\dfrac ab+\dfrac1{ab}-\dfrac29\right)c\geqslant\dfrac{2\sqrt{10}c}{9}$，}
+\step{所以 $\dfrac{ac}{b}+\dfrac{c}{ab}-\dfrac{2c}{9}+\dfrac{\sqrt{10}}{c-9}\geqslant\dfrac{2\sqrt{10}c}{9}+\dfrac{\sqrt{10}}{c-9}=\dfrac{2\sqrt{10}(c-9)}{9}+\dfrac{\sqrt{10}}{c-9}+2\sqrt{10}$，}
+\step{因为 $c>9$，所以 $c-9>0$，}
+\step{所以 $\dfrac{2\sqrt{10}(c-9)}{9}+\dfrac{\sqrt{10}}{c-9}\geqslant\sqrt{10}\times2\sqrt{\dfrac{2(c-9)}{9}\cdot\dfrac1{c-9}}=\dfrac{4\sqrt5}{3}$，}
+\step{当且仅当 $\dfrac{2(c-9)}{9}=\dfrac1{c-9}$，即 $c=9+\dfrac{3\sqrt2}{2}$ 时取等号.}
+\step{所以当且仅当 $b=\sqrt{10}a$ 且 $c=9+\dfrac{3\sqrt2}{2}$ 时，}
+\step{$\dfrac{ac}{b}+\dfrac{c}{ab}-\dfrac{2c}{9}+\dfrac{\sqrt{10}}{c-9}$ 取得最小值，最小值为 $\dfrac{4\sqrt5}{3}+2\sqrt{10}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 用反证法证明命题：“三角形的内角中至少有一个不大于 $60$ 度”时，假设正确的是\mbox{（\quad）}% 原卷括号内已印“B”，试卷版按惯例留空，见文件头
+
+\keepwithprev
+A. 假设三内角都不大于 $60$ 度\qquad B. 假设三内角都大于 $60$ 度
+
+C. 假设三内角至多有一个大于 $60$ 度\qquad D. 假设三内角至多有两个大于 $60$ 度
+
+\ifanswer
+\ans{$B$}
+\fi
+
+\item 小明同学用一架两臂不等长的天平称 $20$ 克药剂，他先将 $10$ 克的砝码放在天平左盘中，取出一些药剂放在天平右盘中使天平平衡；再将 $10$ 克的砝码放在天平右盘中，再取出一些药剂放在天平左盘中使天平平衡；最后将两次称得的药剂装入烧杯. 你认为小明装入烧杯中药剂的剂量\mbox{（\quad）}
+
+\keepwithprev
+A. 小于 $20$ 克\qquad B. 等于 $20$ 克\qquad C. 大于 $20$ 克\qquad D. 不能判断
+
+\ifanswer
+\solbegin
+\step{设天平左臂长为 $m$，右臂长为 $n$，$m$、$n>0$ 且 $m\neq n$，}
+\step{设第一次操作（药剂在右盘）称得的药剂为 $x_2$ 克，}
+\step{第二次操作（药剂在左盘）称得的药剂为 $x_1$ 克，}
+\step{则 $\begin{cases}10m=nx_2\\ mx_1=10n\end{cases}$，解得 $x_1=\dfrac{10n}{m}$，$x_2=\dfrac{10m}{n}$，}
+\step{$x=x_1+x_2=\dfrac{10n}{m}+\dfrac{10m}{n}\geqslant2\sqrt{\dfrac{10n}{m}\cdot\dfrac{10m}{n}}=20$，}
+\step{当且仅当 $m=n$ 时，取等号，而 $m\neq n$，所以 $x>20$. 故选 $C$.}
+\solend
+\fi
+
+\item 集合 $M=\{233,114514,-5,-1,0,\pi\}$ 有 $6$ 个元素，\newline 设 $M$ 的所有非空子集为 $M_i(i=1,2,\cdots,63)$，每一个 $M_i$ 中所有元素的乘积记为 $m_i(i=1,2,\cdots,63)$，则 $m_1+m_2+m_3+\cdots+m_{63}=\mbox{（\quad）}$
+
+\keepwithprev
+A. $0$\qquad B. $1$\qquad C. $-1$\qquad D. $2$
+
+\ifanswer
+\solbegin
+\step{集合 $M$ 的所有非空子集 $M_i(i=1,2,\cdots,63)$ 可以分为以下几种情况，}
+\step{①含元素 $0$ 的子集，共有 $2^5=32$ 个，这些子集中所有元素的乘积为 $0$，}
+\step{②不含元素 $0$，含有元素 $-1$，且含有其他元素的子集，共有 $2^4-1=15$ 个，}
+\step{③不含元素 $0$，不含元素 $-1$，但含有其他元素的子集，共有 $2^4-1=15$ 个，}
+\step{其中②和③，除了 $-1$ 元素外，其他元素均一一对应，则乘积互为相反数，}
+\step{故两者和为 $0$；}
+\step{④只含有元素 $-1$ 的子集，只有 $1$ 个，此时所有元素的乘积为 $-1$，}
+\step{综上，$m_1+m_2+m_3+\cdots+m_{63}=-1$. 故选 $C$.}
+\solend
+\fi
+
+\item 若存在 $a$、$b\in\R$，当 $x\in[1,5]$ 时，$\lvert x^2+ax+b\rvert\leqslant m$ 成立，则实数 $m$ 的最小值是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac12$\qquad B. $1$\qquad C. $2$\qquad D. $4$
+
+\ifanswer
+\solbegin
+\step{设 $f(x)=x^2+ax+b$，$x\in[1,5]$，分别代入 $x=1,3,5$，}
+\step{得 $\lvert f(1)\rvert=\lvert1+a+b\rvert\leqslant m$，$\lvert f(3)\rvert=\lvert9+3a+b\rvert\leqslant m$，}
+\step{$\lvert f(5)\rvert=\lvert25+5a+b\rvert\leqslant m$，}
+\step{所以 $f(1)+f(5)-2f(3)=(1+a+b)+(25+5a+b)-2(9+3a+b)$}
+\step{$=26-18+6a-6a+2b-2b=8$，}
+\step{由绝对值不等式性质得 $\lvert f(1)\rvert+\lvert f(5)\rvert+2\lvert f(3)\rvert\geqslant\lvert f(1)+f(5)-2f(3)\rvert=8$，}
+\step{则 $m+m+2m\geqslant8$，解得 $m\geqslant2$.}
+\step{验证等号成立条件：取 $a=-6$，$b=7$，}
+\step{此时 $f(x)=x^2-6x+7=(x-3)^2-2$，}
+\step{当 $x\in[1,5]$ 时，$f(x)$ 在 $[1,3]$ 上严格减，在 $(3,5]$ 上严格增，}
+\step{又 $f(1)=2$，$f(5)=2$，所以 $f(x)$ 的取值范围为 $[-2,2]$，满足 $\lvert f(x)\rvert\leqslant2$，}
+\step{故 $m=2$ 可取，因此 $m$ 的最小值为 $2$. 故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 求解下列关于 $x$ 的不等式，并写出不等式的解集.
+
+（1）$\dfrac{3x-2}{x+5}\leqslant0$；
+
+（2）$ax^2+(a-2)x-2>0$.
+
+\ansspace*[10]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由 $\dfrac{3x-2}{x+5}\leqslant0$ 得 $(3x-2)(x+5)\leqslant0$ 且 $x+5\neq0$，解得 $-5<x\leqslant\dfrac23$，}
+\step{故不等式的解集为 $\left\{x\left|-5<x\leqslant\dfrac23\right.\right\}$；}
+\stepm{（2）}{$ax^2+(a-2)x-2>0$，}
+\step{当 $a=0$ 时，解得 $x<-1$，}
+\step{当 $a\neq0$ 时，不等式可化为 $(ax-2)(x+1)>0$，即 $a\left(x-\dfrac2a\right)(x+1)>0$，}
+\step{当 $a>0$ 时，解得 $x>\dfrac2a$ 或 $x<-1$，}
+\step{当 $a<0$ 时，原不等式可转化为 $\left(x-\dfrac2a\right)(x+1)<0$，}
+\step{若 $-2<a<0$，解得 $\dfrac2a<x<-1$，}
+\step{若 $a=-2$，$x\in\varnothing$，}
+\step{若 $a<-2$，解得 $-1<x<\dfrac2a$，}
+\step{综上，当 $a=0$ 时，解集为 $\{x\mid x<-1\}$；}
+\step{当 $a>0$ 时，解集为 $\left\{x\left|x>\dfrac2a\ \text{或}\ x<-1\right.\right\}$，}
+\step{当 $-2<a<0$ 时，解集为 $\left\{x\left|\dfrac2a<x<-1\right.\right\}$；}
+\step{当 $a=-2$ 时，解集为 $\varnothing$，}
+\step{当 $a<-2$ 时，解集为 $\left\{x\left|-1<x<\dfrac2a\right.\right\}$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid\lvert2x-5\rvert<\lvert x-1\rvert\}$，$B=\{x\mid0<2x-a<4\}$.
+
+（1）当 $a=2$ 时，求 $\overline A\cap B$、$A\cup\overline B$；
+
+（2）若 $x\in\overline A$ 是 $x\in B$ 的必要非充分条件，求实数 $a$ 的取值范围.
+
+\ansspace*[10]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$\lvert2x-5\rvert<\lvert x-1\rvert\Rightarrow(2x-5)^2<(x-1)^2\Rightarrow3x^2-18x+24<0$}
+\step{$\Rightarrow(x-2)(x-4)<0$，则 $A=\{x\mid2<x<4\}$，$\overline A=\{x\mid x\leqslant2\ \text{或}\ x\geqslant4\}$，}
+\step{由 $B=\{x\mid0<2x-a<4\}$ 得 $0<2x-a<4\Rightarrow\dfrac a2<x<\dfrac{4+a}{2}$，}
+\step{则 $B=\left\{x\left|\dfrac a2<x<\dfrac{4+a}{2}\right.\right\}$，}
+\step{当 $a=2$ 时，$B=\{x\mid1<x<3\}$，$\overline B=\{x\mid x\leqslant1\ \text{或}\ x\geqslant3\}$，}
+\step{则 $\overline A\cap B=(1,2]$，$A\cup\overline B=(-\infty,1]\cup(2,+\infty)$；}
+\stepm{（2）}{由 $x\in\overline A$ 是 $x\in B$ 的必要非充分条件得 $B$ 是 $\overline A$ 的真子集，}
+\step{若 $B$ 全落在 $x\geqslant4$ 内，则 $\dfrac a2\geqslant4\Rightarrow a\geqslant8$，}
+\step{若 $B$ 全落在 $x\leqslant2$ 内，则 $\dfrac{a+4}{2}\leqslant2\Rightarrow a\leqslant0$，}
+\step{综上，实数 $a$ 的取值范围是 $(-\infty,0]\cup[8,+\infty)$.}
+\solend
+\fi
+
+\item 如图，$OA$、$OB$ 是两条长度足够长的互相垂直的笔直小路，矩形 $OCPD$ 的顶点 $C$，$D$ 分别在 $OA$、$OB$ 上，且该矩形区域内种满了荷花. 为了让观赏者有更好的观赏体验，现计划经过点 $P$ 修一条小路 $EF$，其中点 $E$ 在小路 $OA$ 上，点 $F$ 在小路 $OB$ 上，并在 $\triangle OEF$ 区域内种满荷花. 已知 $OD=25$m，$OC=40$m，且小路 $EF$ 要完全位于一个以 $O$ 为顶点的，边长为 $100$m 的正方形内部（包括边界）. 记 $\triangle OEF$ 的面积为 $S$ m$^2$.
+
+\begin{center}
+\begin{tikzpicture}[x=0.46cm,y=0.42cm,line width=0.7pt]
+\draw (0,0) -- (0,10.2) node[above,inner sep=3pt] {$A$};
+\draw (0,0) -- (11.8,0) node[right,inner sep=3pt] {$B$};
+\draw (0,4.83) -- (2.42,4.83) -- (2.42,0);
+\draw (0,6.92) -- (8.01,0);
+\node[below left,inner sep=2pt] at (0,0) {$O$};
+\node[below,inner sep=2pt] at (2.42,0) {$D$};
+\node[left,inner sep=3pt] at (0,4.83) {$C$};
+\node[above right,inner sep=1pt] at (2.42,4.83) {$P$};
+\node[left,inner sep=3pt] at (0,6.92) {$E$};
+\node[below,inner sep=2pt] at (8.01,0) {$F$};
+\end{tikzpicture}
+\end{center}
+
+（1）设 $EC=x$ m，试用 $x$ 表示 $OF$，并求 $x$ 的取值范围.
+
+（2）当 $EC$ 的长度为多少时，$S$ 取得最小值？最小值是多少？
+
+\ansspace*[11]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由题意得 $x\leqslant60$，}
+\step{$\triangle PCE\backsim\triangle FDP$，所以 $\dfrac{EC}{CP}=\dfrac{PD}{DF}$，即 $\dfrac{x}{25}=\dfrac{40}{DF}$，得 $DF=\dfrac{1000}{x}$ m，}
+\step{所以 $OF=OD+DF=\left(25+\dfrac{1000}{x}\right)$ m，}
+\step{所以 $25+\dfrac{1000}{x}\leqslant100$，解得 $x\geqslant\dfrac{40}{3}$；}
+\step{综上，$\dfrac{40}{3}\leqslant x\leqslant60$；}
+\stepm{（2）}{由 $OE=OC+CE=(40+x)$ m，}
+\step{所以 $S=\dfrac12\cdot OF\cdot OE=\dfrac12\left(25+\dfrac{1000}{x}\right)(40+x)$}
+\step{$=\dfrac12\left(1000+25x+\dfrac{40000}{x}+1000\right)$ m$^2$，}
+\step{由基本不等式得 $S\geqslant\dfrac12\left(2000+2\sqrt{25x\cdot\dfrac{40000}{x}}\right)=2000$ m$^2$，}
+\step{当且仅当 $25x=\dfrac{40000}{x}$，即 $x=40$ 时取等号，}
+\step{故 $EC=40$ m 时，$S$ 取得最小值，为 $2000$ m$^2$.}
+\solend
+\fi
+
+\item 已知二次函数 $f(x)=ax^2+bx+c$，一次函数 $g(x)=x+4$.
+
+（1）若 $a=1$ 时，$f(x)<0$ 的解集为 $\{x\mid1<x<2\}$，求关于 $x$ 的不等式 $cx^2+bx+a>0$ 的解集；
+
+（2）若 $f(x)<0$ 的解集为 $(-2,-1)$，对于任意 $x_1\in[1,4]$，总存在 $x_2\in[-4,2]$，使得 $f(x_1)-x_1-2a\geqslant g(x_2)$ 成立，求实数 $a$ 的取值范围；
+
+（3）若对任意 $x\in\R$，不等式 $f(x)\geqslant2ax+b$ 恒成立，求 $\dfrac{b^2}{4(a^2+c^2)}$ 的最大值.
+
+\ansspace*[16]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $a=1$ 时，$f(x)<0$ 解集为 $\{x\mid1<x<2\}$，}
+\step{则 $f(x)=(x-1)(x-2)=x^2-3x+2$，所以 $b=-3$，$c=2$，}
+\step{不等式 $cx^2+bx+a>0$ 即 $2x^2-3x+1>0$，解得 $x<\dfrac12$ 或 $x>1$，}
+\step{所以不等式解集为 $\left(-\infty,\dfrac12\right)\cup(1,+\infty)$；}
+\stepm{（2）}{由 $f(x)<0$ 的解集为 $(-2,-1)$，则 $\begin{cases}a>0\\[0.1em]-\dfrac ba=-3\\[0.2em]\dfrac ca=2\end{cases}$，得 $\begin{cases}a>0\\ b=3a\\ c=2a\end{cases}$，}
+\step{故 $f(x)=a(x^2+3x+2)$，}
+\step{令 $h(x_1)=f(x_1)-x_1-2a=ax_1^2+(3a-1)x_1$，$x_1\in[1,4]$，}
+\step{且 $g(x_2)=x_2+4$，$x_2\in[-4,2]$，}
+\step{要使 $\forall x_1\in[1,4]$，总 $\exists x_2\in[-4,2]$，使得 $f(x_1)-x_1-2a\geqslant g(x_2)$ 成立，}
+\step{只需 $h(x_1)_{\min}\geqslant g(x_2)_{\min}=0$，而 $h(x_1)$ 的对称轴为 $x_1=\dfrac{1-3a}{2a}$，}
+\step{①当 $\dfrac{1-3a}{2a}\leqslant1$，即 $a\geqslant\dfrac15$ 时，只需 $h(1)=4a-1\geqslant0$，即 $a\geqslant\dfrac14$，}
+\step{②当 $1<\dfrac{1-3a}{2a}<4$，即 $\dfrac1{11}<a<\dfrac15$ 时，只需 $h\left(\dfrac{1-3a}{2a}\right)=-\dfrac{(1-3a)^2}{4a}\geqslant0$，}
+\step{即 $a\leqslant0$，不符合条件，}
+\step{③当 $\dfrac{1-3a}{2a}\geqslant4$，即 $a\leqslant\dfrac1{11}$ 时，只需 $h(4)=28a-4\geqslant0$，即 $a\geqslant\dfrac17$，}
+\step{不符合条件，}
+\step{综上，$a\geqslant\dfrac14$，即 $a$ 的取值范围是 $\left[\dfrac14,+\infty\right)$；}
+\stepm{（3）}{若对任意 $x\in\R$，不等式 $f(x)\geqslant2ax+b$ 恒成立，}
+\step{整理得 $ax^2+(b-2a)x+c-b\geqslant0$ 恒成立，显然 $a\neq0$，}
+\step{所以 $\begin{cases}a>0\\ \Delta=(b-2a)^2-4a(c-b)\leqslant0\end{cases}$，则 $0\leqslant b^2\leqslant4a(c-a)$，}
+\step{所以 $\dfrac{b^2}{4(a^2+c^2)}\leqslant\dfrac{ac-a^2}{a^2+c^2}=\dfrac{\dfrac ca-1}{1+\left(\dfrac ca\right)^2}$，}
+\step{令 $t=\dfrac ca-1$，因为 $0\leqslant b^2\leqslant4a(c-a)$，所以 $c\geqslant a>0\Rightarrow t\geqslant0$，}
+\step{若 $t=0$ 时，此时 $\dfrac{b^2}{4(a^2+c^2)}\leqslant\dfrac{ac-a^2}{a^2+c^2}=\dfrac{\dfrac ca-1}{1+\left(\dfrac ca\right)^2}=0$，}
+\step{若 $t>0$ 时，$\dfrac{b^2}{4(a^2+c^2)}\leqslant\dfrac{t}{1+(1+t)^2}=\dfrac1{t+\dfrac2t+2}\leqslant\dfrac1{2\sqrt2+2}=\dfrac{\sqrt2-1}{2}$，}
+\step{当且仅当 $t=\sqrt2$ 时，即 $c=(1+\sqrt2)a$ 时，上式取得等号，}
+\step{综上，$\dfrac{b^2}{4(a^2+c^2)}$ 的最大值为 $\dfrac{\sqrt2-1}{2}$.}
+\solend
+\fi
+
+\item 设 $M$ 是由有限个正整数构成的集合，记 $\lvert M\rvert$ 为集合 $M$ 中的元素个数. 若存在非空集合 $A_1$、$A_2$、$\cdots$、$A_m$，$B_1$、$B_2$、$\cdots$、$B_m$ 使
+
+$M=A_1\cup A_2\cup\cdots\cup A_m=B_1\cup B_2\cup\cdots\cup B_m$，且满足如下两个条件，则称 $A_1$、$A_2$、$\cdots$、$A_m$，$B_1$、$B_2$、$\cdots$、$B_m$ 为集合 $M$ 的 $m$ 维伴随拆分：
+
+①对 $\forall i\neq j(i,j=1,2,\cdots,m)$，$A_i\cap A_j=\varnothing$，$B_i\cap B_j=\varnothing$；
+
+②对 $\forall i$、$j=1,2,\cdots,m$，若 $A_i\cap B_j=\varnothing$，均有 $\lvert A_i\cup B_j\rvert>m$.
+
+（1）若 $M=\{1,2,3,4\}$，请写出一个集合 $M$ 的 $2$ 维伴随拆分；
+
+（2）若 $M=\{1,2,3,4\}$，证明：集合 $M$ 不存在 $3$ 维伴随拆分；
+
+（3）若集合 $M$ 存在 $14$ 维伴随拆分，求 $\lvert M\rvert$ 的最小值.
+
+\ansspace*[16]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{若 $m=2$，则存在非空集合 $A_1$、$A_2$、$B_1$、$B_2$，}
+\step{满足 $M=A_1\cup A_2$，$B_1\cup B_2$，}
+\step{且满足条件：①对 $A_1\cap A_2=\varnothing$，$B_1\cap B_2=\varnothing$；}
+\step{②对 $\forall i$、$j=1,2$，若 $A_i\cap B_j=\varnothing$，均有 $\lvert A_i\cup B_j\rvert>2$.}
+\step{取 $A_1=\{1,2\}$，$A_2=\{3,4\}$，$B_1=\{1,3\}$，$B_2=\{2,4\}$，}
+\step{满足 $A_1\cup A_2=\{1,2,3,4\}$，$B_1\cup B_2=\{1,2,3,4\}$，}
+\step{$B_1\cap B_2=\varnothing$，$A_1\cap B_1=\{1\}$，$A_1\cap B_2=\{2\}$，$A_2\cap B_1=\{3\}$，}
+\step{$A_2\cap B_2=\{4\}$，不存在 $A_i\cap B_j=\varnothing$ 的情形，故满足条件①②，}
+\step{故一个集合 $M$ 的 $2$ 维伴随拆分}
+\step{为 $A_1=\{1,2\}$，$A_2=\{3,4\}$，$B_1=\{1,3\}$，$B_2=\{2,4\}$.}
+\stepm{（2）}{假设集合 $M$ 存在 $3$ 维伴随拆分，由于 $\lvert M\rvert=4$，}
+\step{所以 $\lvert A_i\rvert$、$\lvert B_j\rvert$ 只能取 $1$ 或 $2$，$i$、$j=1,2,3$，}
+\step{不妨设 $A_1=\{a\}$，$A_2=\{b\}$，$A_3=\{c,d\}$，$B_1=\{x\}$，$B_2=\{y\}$，$B_3=\{z,w\}$，}
+\step{其中 $\{a,b,c,d\}=\{x,y,z,w\}=\{1,2,3,4\}$.}
+\step{若 $a=x$，则 $A_1\cap B_2=\varnothing$，而 $\lvert A_1\cup B_2\rvert=2<3$，不合题意；}
+\step{若 $a=y$，则 $A_1\cap B_1=\varnothing$，而 $\lvert A_1\cup B_1\rvert=2<3$，不合题意；}
+\step{若 $a=z$ 或 $w$，则 $A_1\cap B_1=\varnothing$，而 $\lvert A_1\cup B_1\rvert=2<3$，不合题意；}
+\step{所以假设不成立，所以集合 $M$ 不存在 $3$ 维伴随拆分.}
+\stepm{（3）}{不妨设 $A_1$、$A_2$、$\cdots$、$A_{14}$，$B_1$、$B_2$、$\cdots$、$B_{14}$ 中元素最少的集合为 $A_1$，}
+\step{且若 $A_1\cap B_j\neq\varnothing$，$j=1,2,\cdots,k$，$A_1\cap B_j=\varnothing$，$j=k+1,k+2,\cdots,14$，}
+\step{记 $\lvert A_1\rvert=x$，由 $B_i\cap B_j=\varnothing$，$i\neq j(i$、$j=1,2,\cdots,14)$，得 $k\leqslant x$，}
+\step{由条件②得，对 $\forall j=k+1,\cdots,14$，$\lvert A_1\cup B_j\rvert\geqslant14$，}
+\step{得 $\lvert B_j\rvert\geqslant14-\lvert A_1\rvert=14-x$，}
+\step{于是 $\lvert M\rvert=(\lvert B_1\rvert+\lvert B_2\rvert+\cdots+\lvert B_k\rvert)+(\lvert B_{k+1}\rvert+\lvert B_{k+2}\rvert+\cdots+\lvert B_{14}\rvert)$}
+\step{$\geqslant kx+(14-k)(14-x)=2(x-7)(k-7)+98$，}
+\step{当 $x\leqslant7$ 时，有 $k\leqslant7$，则 $2(x-7)(k-7)+98\geqslant98$，所以 $\lvert M\rvert\geqslant98$；}
+\step{当 $x>7$ 时，$\lvert M\rvert\geqslant\lvert A_1\rvert+\lvert A_2\rvert+\cdots+\lvert A_{14}\rvert\geqslant14\lvert A_1\rvert=14x>98$，}
+\step{综上，$\lvert M\rvert\geqslant98$，当各集合大小均为 $7$ 时可取等，故 $\lvert M\rvert$ 最小值为 $98$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
