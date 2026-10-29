@@ -1,0 +1,347 @@
+% 高一94_交大实验_10月月考.tex
+%   —— 高一上数学“2026-2027 年交大实验高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一94_交大实验_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一94_交大实验_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一94_交大实验_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一94”；
+% 原文标题“27学年高一94——2026-2027年上海市交大实验高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/FirO_bGq5xtFiIPaKip0Vw。
+% 正文为 8 张 PNG 页（`原图/高一94_交大实验_10月月考/01..08.png`），均 4762×6735，按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在原文内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。
+%
+% 讲评版：第 3 题只印【答案】（“$5$”），本稿只给 \ans{}；第 16 题无【解析】、答案“D”直接
+% 印在题干括号内，本稿试卷版按惯例留空、答案版提 \ans{$D$}；其余 17 题印【解析】，
+% 其中选择题答案在解析末句“故选 $B$／$A$／$C$”。全卷无插图。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 9 题解析把 $A$、$B$ 先分母有理化后比较，结论 $A<B$ 与题干所留“$A\underline{\quad}B$”
+%      的空格相符，照录；
+%   ② 第 12 题解析“即 $\dfrac34\leqslant a<\dfrac43$”与上一行“$\begin{cases}a\geqslant\frac34\\ a<\frac43\end{cases}$”
+%      一致，无笔误。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版；
+%   ② 原卷未印副标题，本稿补出；填空横线统一排 \blankline[4.4em]；
+%   ③ 原卷数集记号排斜体 $R$、$N$，本稿按全稿惯例改用 $\R$、$\N$（第 21 题 (3) 的 $x\in N$ 照改）；
+%   ④ 第 17—21 题的子问用行内“（1）（2）（3）”段，解析中的子问标号用 \stepm；
+%   ⑤ 解答题按惯例加 \ansspace；选择题括号排 \mbox{（\quad）}。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 98 条（Q3：0；Q4：2；Q5：2；Q6：2；Q7：3；
+% Q8：1；Q9：2；Q10：5；Q11：4；Q12：6；Q13：1；Q14：2；Q15：4；Q16：0；Q17：6；
+% Q18：9；Q19：10；Q20：21；Q21：18）。第 3 题只印答案、第 16 题无解析，均不计入 \step 账。
+% 原卷解析的换行按语意合并，未逐行强拆。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[7]{2026--2027 年交大实验高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 设方程 $2x^2-5x+1=0$ 的两根为 $x_1,x_2$，则 $\dfrac1{x_1}+\dfrac1{x_2}=\blankline[4.4em]$.
+
+\ifanswer
+\ans{$5$}
+\fi
+
+\item 不等式 $\dfrac2{1-3x}\geqslant1$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $\dfrac2{1-3x}\geqslant1$ 得 $\begin{cases}1-3x>0\\ 2\geqslant1-3x\end{cases}$，解得 $-\dfrac13\leqslant x<\dfrac13$，}
+\step{故解集为 $\left\{x\left|-\dfrac13\leqslant x<\dfrac13\right.\right\}$.}
+\solend
+\fi
+
+\item 已知等式 $2x^2+3x+5=a(2x+1)(x+1)+c$ 恒成立，则实数 $c=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{$2x^2+3x+5=a(2x+1)(x+1)+c=2ax^2+3ax+a+c$，}
+\step{则 $\begin{cases}2a=2\\ 3a=3\\ a+c=5\end{cases}$，解得 $c=4$.}
+\solend
+\fi
+
+\item 已知 $2<x<3$，$-2<y<-1$，则 $2x-y$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $2<x<3$，$-2<y<-1$ 得 $4<2x<6$，$1<-y<2$，}
+\step{由不等式的基本性质得 $5<2x-y<8$，故 $2x-y$ 的取值范围是 $(5,8)$.}
+\solend
+\fi
+
+\item 已知 $\lvert x+2\rvert+\lvert x-3\rvert=5$，则实数 $x$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\lvert x+2\rvert$ 表示数轴上点 $P$（对应实数 $x$）到点 $A$（对应实数 $-2$）的距离，}
+\step{$\lvert x-3\rvert$ 表示数轴上点 $P$（对应实数 $x$）到点 $B$（对应实数 $3$）的距离，且 $\lvert AB\rvert=5$，}
+\step{所以 $P$ 点轨迹为线段 $AB$，所以 $-2\leqslant x\leqslant3$，故实数 $x$ 的取值范围为 $[-2,3]$.}
+\solend
+\fi
+
+\item 已知全集是 $(0,+\infty)$，集合 $A=\{1,2,3,4,5\},B=\{x\mid x\geqslant m\}$，若 $A\cap\overline B$ 有三个元素，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$A\cap\overline B=\{x\in A\mid x<m\}$ 恰有三个元素，当且仅当 $3<m\leqslant4$，即 $m\in(3,4]$.}
+\solend
+\fi
+
+\item 已知 $a>2,A=\sqrt{a+1}-\sqrt a,B=\sqrt{a-1}-\sqrt{a-2}$，则 $A$ 与 $B$ 的大小关系是：$A\blankline[2.2em]B$（选填：$>,<,=,\leqslant,\geqslant$）.
+
+\ifanswer
+\solbegin
+\step{$A=\dfrac1{\sqrt{a+1}+\sqrt a},B=\dfrac1{\sqrt{a-1}+\sqrt{a-2}}$.}
+\step{$a>2$ 时，$\sqrt{a+1}+\sqrt a>\sqrt{a-1}+\sqrt{a-2}>0$，所以 $A<B$.}
+\solend
+\fi
+
+\item 关于 $x$ 的不等式 $(m^2-m)x^2-4(m-1)x+1>0$ 对一切实数 $x$ 恒成立，则 $m$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $m^2-m=0$ 时，$m=0$ 对应 $4x+1>0$，不恒成立；}
+\step{$m=1$ 对应 $1>0$，恒成立.}
+\step{当 $m^2-m\neq0$ 时，$\begin{cases}m^2-m>0\\ \Delta=16(m-1)^2-4(m^2-m)=4(m-1)(3m-4)<0\end{cases}$}
+\step{$\Leftrightarrow1<m<\dfrac43$.}
+\step{因此 $m\in\left[1,\dfrac43\right)$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid0<ax-1\leqslant5\}$，集合 $B=\{x\mid-1<x\leqslant2\}$，且 $A\cap B=A$，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $a=0$ 时，$A=\varnothing$，满足 $A\subseteq B$.}
+\step{当 $a>0$ 时，$A=\left(\dfrac1a,\dfrac6a\right]$，则 $A\subseteq B\Leftrightarrow\dfrac6a\leqslant2\Leftrightarrow a\geqslant3$.}
+\step{当 $a<0$ 时，$A=\left[\dfrac6a,\dfrac1a\right)$，则 $A\subseteq B\Leftrightarrow\dfrac6a>-1\Leftrightarrow a<-6$.}
+\step{因此，$a$ 的取值范围为 $(-\infty,-6)\cup\{0\}\cup[3,+\infty)$.}
+\solend
+\fi
+
+\item 设集合 $A=\{x\mid x^2+2x-3>0\}$，集合 $B=\{x\mid x^2-2ax-1\leqslant0,a>0\}$. 若 $A\cap B$ 中恰含有一个整数，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $A$ 中不等式变形得 $(x-1)(x+3)>0$，解得 $x<-3$ 或 $x>1$，}
+\step{即 $A=\{x\mid x<-3$ 或 $x>1\}$，}
+\step{函数 $y=f(x)=x^2-2ax-1$ 的对称轴为 $x=a>0$，$f(-3)=6a+8>0$，}
+\step{由对称性得，要使 $A\cap B$ 恰有一个整数，即这个整数解为 $2$，}
+\step{所以 $f(2)\leqslant0$ 且 $f(3)>0$，即 $\begin{cases}4-4a-1\leqslant0\\ 9-6a-1>0\end{cases}$，解得 $\begin{cases}a\geqslant\dfrac34\\ a<\dfrac43\end{cases}$，即 $\dfrac34\leqslant a<\dfrac43$，}
+\step{则 $a$ 的取值范围为 $\left[\dfrac34,\dfrac43\right)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 若 $a,b,c\in\R,c>0$ 且 $a>b>0$，下列不等式一定成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $ac<bc$\qquad B. $\dfrac1a<\dfrac1b$\qquad C. $a-c<b-c$\qquad D. $a+c<b+c$
+
+\ifanswer
+\solbegin
+\step{$a>b>0$，则 $\dfrac1a-\dfrac1b=\dfrac{b-a}{ab}<0$，故选 $B$.}
+\solend
+\fi
+
+\item 设 $a$、$b\in\R$，则“$a>1$ 且 $b>1$”是“$a+b>2$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad B. 必要非充分条件
+
+C. 充要条件\qquad D. 既非充分也非必要条件
+
+\ifanswer
+\solbegin
+\step{由“$a>1$ 且 $b>1$”得“$a+b>2$”，反之不成立，例如取 $a=\dfrac12$，$b=2$.}
+\step{所以“$a>1$ 且 $b>1$”是“$a+b>2$”的充分非必要条件. 故选 $A$.}
+\solend
+\fi
+
+\item 已知 $x>0,y>0$，且 $x+9y=4xy$，则 $x+y$ 的最小值是\mbox{（\quad）}
+
+A. $16$\qquad B. $13$\qquad C. $4$\qquad D. $\dfrac{13}{4}$
+\keepwithprev
+
+\ifanswer
+\solbegin
+\step{由条件得 $\dfrac9x+\dfrac1y=4$，$\dfrac xy>0,\dfrac{9y}x>0$，}
+\step{所以 $4(x+y)=(x+y)\left(\dfrac9x+\dfrac1y\right)=10+\dfrac xy+\dfrac{9y}x\geqslant10+2\sqrt{\dfrac xy\cdot\dfrac{9y}x}=16$，}
+\step{当且仅当 $\dfrac xy=\dfrac{9y}x$，即 $x=3y$ 时取等号，结合条件得 $x=3,y=1$，}
+\step{因此 $x+y$ 的最小值为 $4$，故选 $C$.}
+\solend
+\fi
+
+\item 我国数学家陈景润在哥德巴赫猜想的研究中取得了世界领先的成果，哥德巴赫猜想是 $1742$ 年哥德巴赫给数学家欧拉的信中提出的猜想：“任意大于 $2$ 的偶数都可以表示成两个质数之和”，则哥德巴赫猜想的否定为\mbox{（\quad）}% 原卷括号内已印“D”，试卷版按惯例留空
+
+A. 任意小于 $2$ 的偶数都不可以表示成两个质数之和
+
+B. 任意大于 $2$ 的偶数都不可以表示成两个质数之和
+
+C. 至少存在一个小于 $2$ 的偶数不可以表示成两个质数之和
+
+D. 至少存在一个大于 $2$ 的偶数不可以表示成两个质数之和
+
+\ifanswer
+\ans{$D$}
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）已知 $x\in R$，比较 $2x^2+3x-1$ 与 $7x-3$ 的大小；
+
+（2）已知 $a>0$，$b>0$，若 $a+b>4$，求证：$\dfrac a{b+2}$ 和 $\dfrac b{a+2}$ 中至少有一个大于 $\dfrac12$.
+
+\ansspace*[10]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$2x^2+3x-1-(7x-3)=2x^2-4x+2=2(x-1)^2\geqslant0$，}
+\step{当且仅当 $x=1$ 时取等号，故 $2x^2+3x-1\geqslant7x-3$；}
+\stepm{（2）}{假设 $\dfrac a{b+2}\leqslant\dfrac12$，$\dfrac b{a+2}\leqslant\dfrac12$，}
+\step{$a>0$，$b>0$，则 $a+2>0$，$b+2>0$，故 $2a\leqslant b+2$，$2b\leqslant a+2$，}
+\step{两式相加得 $a+b\leqslant4$，与 $a+b>4$ 矛盾，}
+\step{故 $\dfrac a{b+2}$ 和 $\dfrac b{a+2}$ 中至少有一个大于 $\dfrac12$.}
+\solend
+\fi
+
+\item 已知全集 $U=\R$，关于 $x$ 的不等式 $ax^2+bx+c<0$ 的解集是 $A=\left(-\infty,-\dfrac13\right)\cup(1,+\infty)$，集合 $B=\left\{x\left|\dfrac x{2x-1}\geqslant0\right.\right\}$，集合 $C=\{x\mid(x-2m)(x-m^2-1)<0,m\neq1\}$.
+
+（1）计算 $\overline A\cap B$；
+
+（2）若关于 $x$ 的不等式 $cx^2-bx+a<0$ 的解集为 $D$，且“$x\in D$”是“$x\in C$”的充分不必要条件，求实数 $m$ 的取值范围.
+
+\ansspace*[14]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由补集及分式不等式的解法，$\overline A=\left[-\dfrac13,1\right]$，$B=(-\infty,0]\cup\left(\dfrac12,+\infty\right)$，}
+\step{因此 $\overline A\cap B=\left[-\dfrac13,0\right]\cup\left(\dfrac12,1\right]$；}
+\stepm{（2）}{由 $A$ 得 $a<0$，且 $ax^2+bx+c=a\left(x+\dfrac13\right)(x-1)$，$b=-\dfrac23a$，$c=-\dfrac13a$，}
+\step{$-\dfrac a3>0$，$cx^2-bx+a<0\Leftrightarrow-\dfrac a3(x^2-2x-3)<0\Leftrightarrow(x+1)(x-3)<0$，}
+\step{所以 $D=(-1,3)$.}
+\step{又 $m\neq1$，故 $m^2+1-2m=(m-1)^2>0$，从而 $C=(2m,m^2+1)$，}
+\step{题设等价于 $D\subseteq C$，因此必须满足 $\begin{cases}2m\leqslant-1\\ m^2+1\geqslant3\end{cases}\Leftrightarrow m\leqslant-\sqrt2$.}
+\step{当 $m\leqslant-\sqrt2$ 时，$2m<-1$ 且 $m^2+1\geqslant3$，确有 $D\subseteq C$，}
+\step{所以 $m\in(-\infty,-\sqrt2]$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x^2-3x+2=0\},B=\{x\mid x^2-ax+a-1=0\}$，$C=\{x\mid x^2+2(m+1)x+m^2-5=0\}$.
+
+（1）若 $A\cup B=A$，求实数 $a$ 的值；
+
+（2）若 $A\cap C=C$，求实数 $m$ 的取值范围.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由 $x^2-3x+2=0$ 得 $x=1$ 或 $2$，所以 $A=\{1,2\}$，}
+\step{由 $x^2-ax+a-1=0$ 得 $x=1$ 或 $a-1$，所以 $1\in B,a-1\in B$，}
+\step{因为 $A\cup B=A$，所以 $B\subseteq A$，}
+\step{所以 $a-1=1$ 或 $2$，所以 $a=2$ 或 $3$；}
+\stepm{（2）}{因为 $A\cap C=C$，所以 $C\subseteq A$，}
+\step{当 $C=\varnothing$ 时，$\Delta=4(m+1)^2-4(m^2-5)<0$，解得 $m<-3$，}
+\step{当 $C=\{1\}$ 时，$\begin{cases}\Delta=4(m+1)^2-4(m^2-5)=0\\ 1+2(m+1)+m^2-5=0\end{cases}$，无解，}
+\step{当 $C=\{2\}$ 时，$\begin{cases}\Delta=4(m+1)^2-4(m^2-5)=0\\ 4+4(m+1)+m^2-5=0\end{cases}$，解得 $m=-3$，}
+\step{当 $C=\{1,2\}$ 时，$\begin{cases}1+2=-2(m+1)\\ 1\cdot2=m^2-5\end{cases}$，无解，}
+\step{综上，实数 $m$ 的取值范围是 $(-\infty,-3]$.}
+\solend
+\fi
+
+\item 已知函数 $f(x)=mx^2-(2m+1)x+3,m\in\R$.
+
+（1）已知 $A=\{x\mid f(x)>0\}$，若 $1\notin A$，求实数 $m$ 取值范围；
+
+（2）若 $f(x)<1$ 的解集是 $(2,+\infty)$，求 $f(x)>x^2$ 的解集；
+
+（3）解关于 $x$ 的不等式 $f(x)\leqslant mx$.
+
+\ansspace*[16]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由题意得 $f(1)=m-(2m+1)+3=2-m\leqslant0$，解得 $m\geqslant2$.}
+\step{因此，实数 $m$ 的取值范围是 $[2,+\infty)$.}
+\stepm{（2）}{由 $f(x)=mx^2-(2m+1)x+3<1$，得 $mx^2-(2m+1)x+2<0$，}
+\step{即 $(mx-1)(x-2)<0$，}
+\step{因为不等式 $(mx-1)(x-2)<0$ 的解集为 $(2,+\infty)$，所以 $m=0$，}
+\step{此时，不等式即为 $-(x-2)<0$，解得 $x>2$，合乎题意，}
+\step{由 $x^2<f(x)=-x+3$，即 $x^2+x-3<0$，解得 $\dfrac{-1+\sqrt{13}}2<x<\dfrac{\sqrt{13}-1}2$，}
+\step{所以，不等式 $f(x)>x^2$ 的解集为 $\left(\dfrac{-1+\sqrt{13}}2,\dfrac{\sqrt{13}-1}2\right)$.}
+\stepm{（3）}{不等式 $f(x)\leqslant mx$，即 $mx^2-(3m+1)x+3\leqslant0$，}
+\step{(i) 当 $m=0$ 时，$-x+3\leqslant0$，解得 $x\geqslant3$，}
+\step{当 $m\neq0$ 时，$(mx-1)(x-3)\leqslant0$，}
+\step{(ii) 当 $m>0$ 时，$\dfrac1m$ 与 $3$ 不确定大小，分情况讨论，}
+\step{①若 $\dfrac1m>3$ 时，即 $0<m<\dfrac13$，解得 $3\leqslant x\leqslant\dfrac1m$，}
+\step{②若 $\dfrac1m=3$ 时，即 $m=\dfrac13$，解得 $x=3$，}
+\step{③若 $\dfrac1m<3$ 时，即 $m>\dfrac13$，解得 $\dfrac1m\leqslant x\leqslant3$，}
+\step{(iii) 若 $m<0$ 时，则 $\dfrac1m<3$，解得 $x\geqslant3$ 或 $x\leqslant\dfrac1m$，}
+\step{综上，当 $m<0$ 时，解集为 $\left\{x\left|x\geqslant3\ \text{或}\ x\leqslant\dfrac1m\right.\right\}$；}
+\step{当 $m=0$ 时，解集为 $\{x\mid x\geqslant3\}$；}
+\step{当 $0<m<\dfrac13$ 时，解集为 $\left\{x\left|3\leqslant x\leqslant\dfrac1m\right.\right\}$；}
+\step{当 $m=\dfrac13$ 时，解集为 $\{3\}$；}
+\step{当 $m>\dfrac13$ 时，解集为 $\left\{x\left|\dfrac1m\leqslant x\leqslant3\right.\right\}$.}
+\solend
+\fi
+
+\item 已知集合 $A$ 为非空数集，定义：$S=\{x\mid x=a+b,a,b\in A\}$，$T=\{x\mid x=\lvert a-b\rvert,a,b\in A\}$.
+
+（1）若集合 $A=\{1,3\}$，求证：$2\in S$，并直接写出集合 $S,T$；
+
+（2）若集合 $A=\{x_1,x_2,x_3,x_4\}$，$x_1<x_2<x_3<x_4$，且 $T=A$，求证：$x_1+x_4=x_2+x_3$；
+
+（3）若集合 $A\subseteq\{x\mid0\leqslant x\leqslant2021,x\in\N\}$，$S\cap T=\varnothing$，记 $\lvert A\rvert$ 为集合 $A$ 中元素的个数，求 $\lvert A\rvert$ 的最大值.
+
+\ansspace*[16]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{因为 $1\in A$，所以 $1+1=2\in S$；}
+\step{由集合 $A=\{1,3\}$，计算得集合 $S=\{2,4,6\},T=\{0,2\}$；}
+\stepm{（2）}{由于集合 $A=\{x_1,x_2,x_3,x_4\}$，$x_1<x_2<x_3<x_4$，且 $T=A$，}
+\step{所以 $T$ 中也只包含四个元素，即 $T=\{0,x_2-x_1,x_3-x_1,x_4-x_1\}$，}
+\step{剩下的 $x_3-x_2=x_4-x_3=x_2-x_1$，所以 $x_1+x_4=x_2+x_3$；}
+\stepm{（3）}{设 $A=\{a_1,a_2,\cdots,a_k\}$ 满足题意，其中 $a_1<a_2<\cdots<a_k$，}
+\step{$2a_1<a_1+a_2<a_1+a_3<\cdots<a_1+a_k<a_2+a_k<a_3+a_k<\cdots<a_{k-1}+a_k<2a_k$，}
+\step{所以 $\lvert S\rvert\geqslant2k-1$，$a_1-a_1<a_2-a_1<a_3-a_1<\cdots<a_k-a_1$，所以 $\lvert T\rvert\geqslant k$，}
+\step{因为 $S\cap T=\varnothing$，由容斥原理得 $\lvert S\cup T\rvert=\lvert S\rvert+\lvert T\rvert\geqslant3k-1$，}
+\step{$S\cup T$ 中最小的元素为 $0$，最大的元素为 $2a_k$，所以 $\lvert S\cup T\rvert\leqslant2a_k+1$，}
+\step{所以 $3k-1\leqslant2a_k+1\leqslant4043(k\in\N^*)$，所以 $k\leqslant1348$，}
+\step{实际上当 $A=\{674,675,676,\cdots,2021\}$ 时满足题意，证明如下：}
+\step{设 $A=\{m,m+1,m+2,\cdots,2021\},m\in\N$，}
+\step{则 $S=\{2m,2m+1,2m+2,\cdots,4042\}$，$T=\{0,1,2,\cdots,2021-m\}$，}
+\step{由题意得 $2021-m<2m$，即 $m>673\dfrac23$，}
+\step{故 $m$ 的最小值为 $674$，于是当 $m=674$ 时，$A$ 中元素最多，}
+\step{即 $A=\{674,675,676,\cdots,2021\}$ 时满足题意，}
+\step{综上所述，集合 $A$ 中元素的个数的最大值是 $1348$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
