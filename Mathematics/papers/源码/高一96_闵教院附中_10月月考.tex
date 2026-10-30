@@ -1,0 +1,312 @@
+% 高一96_闵教院附中_10月月考.tex
+%   —— 高一上数学“2026-2027 年闵教院附中高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一96_闵教院附中_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一96_闵教院附中_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一96_闵教院附中_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一96”；
+% 原文标题“27学年高一96——2026-2027年上海市闵教院附中高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/jLoSpPzCD3pePP_Bm2ylCw。
+% 正文为 7 张 PNG 页（`原图/高一96_闵教院附中_10月月考/01..07.png`）：01、07 为
+% 2560×3620，02—06 为 4762×6735，按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在原文内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。
+%
+% 讲评版：第 3、5、6、11 题只印【答案】，本稿只给 \ans{}；其余 15 题印【解析】，
+% 其中第 13—16 题的答案在解析末句“故选 $C$／$B$／$B$／$D$”。全卷无插图。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 18 题 (2) 解析末句作“因此最小值为 9”，但同段已算得
+%      $\dfrac2x+\dfrac1y=4+\dfrac{4y}x+\dfrac xy\geqslant4+2\sqrt4=8$，且
+%      $x=\dfrac12,y=\dfrac14$ 时该式为 $2\times2+4=8$；原卷“9”应为“8”，照录；
+%   ② 第 20 题 (3) 的条件组印作 $\begin{cases}2m\leqslant1\\ 7-m>3\end{cases}$，
+%      而 $B=\{x\mid2m<x<1-m\}$ 只要求 $1-m>3$（$7-m>3$ 得 $m<4$，推不出 $m<-2$）；
+%      原卷误印“7”，照录，结论 $m<-2$ 未改。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版；
+%   ② 原卷未印副标题，本稿补出；填空横线统一排 \blankline[4.4em]；
+%   ③ 原卷数集记号排斜体 $R$，本稿按全稿惯例改用 $\R$；
+%   ④ 第 16 题的 $\mathit{Max}\{a,b\}$ 原卷排斜体，本稿按全稿惯例改正体 $\max$；
+%   ⑤ 解答题按惯例加 \ansspace；选择题括号排 \mbox{（\quad）}。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 76 条（Q3：0；Q4：2；Q5：0；Q6：0；
+% Q7：3；Q8：2；Q9：4；Q10：2；Q11：0；Q12：5；Q13：1；Q14：1；Q15：3；Q16：6；
+% Q17：7；Q18：10；Q19：6；Q20：12；Q21：12）。第 3、5、6、11 题只印答案，
+% 不计入 \step 账。原卷解析的换行按语意合并，未逐行强拆。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[2]{2026--2027 年闵教院附中高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知集合 $A=\{x\mid-1<x\leqslant2\}$，集合 $B=\{x\mid1<x\leqslant3\}$，则 $A\cup B=\blankline[4.4em]$.
+
+\ifanswer
+\ans{$(-1,3]$}
+\fi
+
+\item 方程 $(1-x)^2=1$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$(1-x)^2=1\Leftrightarrow1-x=\pm1\Leftrightarrow x=0$ 或 $x=2$，解集为 $\{0,2\}$.}
+\solend
+\fi
+
+\item “$x>1$”是“$x^2>1$”的\blankline[4.4em]条件（用“充分非必要”“必要非充分”“充要”“既非充分又非必要”填空）.
+
+\ifanswer
+\ans{充分非必要}
+\fi
+
+\item 用反证法证明“已知 $x$、$y\in\R$，$x^2+y^2=0$，求证：$x=y=0$”时，应假设\blankline[4.4em].
+
+\ifanswer
+\ans{$x\neq0$ 或 $y\neq0$}
+\fi
+
+\item $a^2+b^2$\blankline[4.4em]$2a-2b-2$（比较大小）.
+
+\ifanswer
+\solbegin
+\step{$a^2+b^2-(2a-2b-2)=a^2-2a+1+b^2+2b+1=(a-1)^2+(b+1)^2$，}
+\step{因为 $(a-1)^2+(b+1)^2\geqslant0$，所以 $a^2+b^2-(2a-2b-2)\geqslant0$，}
+\step{即 $a^2+b^2\geqslant2a-2b-2$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的不等式 $x^2+kx+2\geqslant0$ 的解集为 $\R$，则实数 $k$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{二次项系数为正，不等式对一切 $x\in\R$ 成立，当且仅当 $\Delta=k^2-8\leqslant0$，}
+\step{解得 $-2\sqrt2\leqslant k\leqslant2\sqrt2$.}
+\solend
+\fi
+
+\item 已知 $x>-1$，则 $x=\blankline[4.4em]$ 时，$x+\dfrac1{x+1}$ 的值最小.
+
+\ifanswer
+\solbegin
+\step{因为 $x>-1$，所以 $x+\dfrac1{x+1}=x+1+\dfrac1{x+1}-1\geqslant2\sqrt{(x+1)\cdot\dfrac1{x+1}}-1=1$，}
+\step{当且仅当 $x+1=\dfrac1{x+1}$，即 $x=0$ 时取等号，}
+\step{即当 $x=0$ 时，$x+\dfrac1{x+1}$ 的值最小为 $1$.}
+\solend
+\fi
+
+\item 不等式 $\lvert x+2\rvert+\lvert x-3\rvert\leqslant5$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\lvert x+2\rvert+\lvert x-3\rvert\geqslant\lvert(x+2)-(x-3)\rvert=5$.}
+\step{等号成立当且仅当 $(x+2)(x-3)\leqslant0$，即 $-2\leqslant x\leqslant3$，解集为 $[-2,3]$.}
+\solend
+\fi
+
+\item 下列各式中，正确的为\blankline[4.4em].
+
+① $0\subseteq\{0\}$；\quad ② $\{0,1,2\}\supseteq\{2,1,0\}$；\quad ③ $\varnothing\subseteq\{0,1,2\}$；\quad ④ $\varnothing=\{0\}$；\quad ⑤ $\{0,1\}=\{(0,1)\}$；
+
+⑥ $\{0\}\in\{0,1,2\}$.
+
+\ifanswer
+\ans{②③}
+\fi
+
+\item 若一个集合是另一个集合的子集，称两个集合构成“全食”；若两个集合有公共元素，但互不为对方子集，则称两个集合构成“偏食”. 对于集合 $A=\left\{-1,\dfrac12,1\right\}$，$B=\{x\mid ax^2=1,a\geqslant0\}$，若两个集合构成“全食”或“偏食”，则 $a$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{集合 $A=\left\{-1,\dfrac12,1\right\}$，$B=\{x\mid ax^2=1,a\geqslant0\}$，}
+\step{若 $a=0$，则 $B=\varnothing$，即有 $B\subseteq A$；}
+\step{若 $a>0$，得 $B=\left\{-\sqrt{\dfrac1a},\sqrt{\dfrac1a}\right\}$，由 $B\subseteq A$，得 $\sqrt{\dfrac1a}=1$，解得 $a=1$；}
+\step{若 $A$、$B$ 两个集合有公共元素，但互不为对方子集，得 $\sqrt{\dfrac1a}=\dfrac12$，解得 $a=4$.}
+\step{综上，$a=0$ 或 $1$ 或 $4$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知集合 $M=\{2,a,1\}$，$N=\{2a,2,1\}$，若 $M=N$，则 $a=\mbox{（\quad）}$
+
+\keepwithprev
+A. $-2$\qquad B. $-1$\qquad C. $0$\qquad D. $1$
+
+\ifanswer
+\solbegin
+\step{由集合中元素的互异性及 $M=N$，得 $a=2a$，解得 $a=0$，故选 $C$.}
+\solend
+\fi
+
+\item 已知 $a,b,c\in\R$ 且 $a>b$，则下列不等式一定成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac1a<\dfrac1b$\qquad B. $\dfrac a{c^2+1}>\dfrac b{c^2+1}$\qquad C. $a^2>b^2$\qquad D. $a\lvert c\rvert>b\lvert c\rvert$
+
+\ifanswer
+\solbegin
+\step{$c^2+1>0$，将 $a>b$ 两边同除以 $c^2+1$，得 $\dfrac a{c^2+1}>\dfrac b{c^2+1}$，故选 $B$.}
+\solend
+\fi
+
+\item 设 $a>0$，若关于 $x$ 的不等式 $x^2-(2a-1)x-2a<0$ 的解集中恰有 $3$ 个整数，则实数 $a$ 的取值范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $\left[1,\dfrac32\right]$\qquad B. $\left(1,\dfrac32\right]$\qquad C. $\left[\dfrac12,1\right]$\qquad D. $\left(\dfrac12,1\right]$
+
+\ifanswer
+\solbegin
+\step{已知关于 $x$ 的不等式 $x^2-(2a-1)x-2a<0$，则 $(x+1)(x-2a)<0$，}
+\step{则 $-1<x<2a$，又解集中恰有 $3$ 个整数，则 $2<2a\leqslant3$，则 $1<a\leqslant\dfrac32$，}
+\step{则 $a$ 的取值范围为 $\left(1,\dfrac32\right]$. 故选 $B$.}
+\solend
+\fi
+
+\item 对于两个不相等的实数 $a$、$b$，规定符号 $\max\{a,b\}$ 表示 $a$、$b$ 中的较大值，如：$\max\{2,4\}=4$. 按照这个规定，方程 $\max\{x,-x\}=\dfrac{2x+1}{x}$ 的解集为\mbox{（\quad）}
+
+\keepwithprev
+A. $\{1-\sqrt2\}$\qquad B. $\{2-\sqrt2\}$\qquad C. $\{1+\sqrt2,1-\sqrt2\}$\qquad D. $\{1+\sqrt2,-1\}$
+
+\ifanswer
+\solbegin
+\step{当 $x>-x$ 时，$x>0$，方程 $\max\{x,-x\}=\dfrac{2x+1}{x}$，即为分式方程 $x=\dfrac{2x+1}{x}$，}
+\step{解得 $x-1=\pm\sqrt2$，即 $x=1\pm\sqrt2$，经检验，$x=1\pm\sqrt2$ 满足题意.}
+\step{又因为 $x>0$，所以 $x=1+\sqrt2$；}
+\step{当 $x<-x$ 时，$x<0$，方程 $\max\{x,-x\}=\dfrac{2x+1}{x}$，}
+\step{即为分式方程 $-x=\dfrac{2x+1}{x}$，解得 $x=-1$. 经检验，$x=-1$ 满足题意.}
+\step{综上，方程 $\max\{x,-x\}=\dfrac{2x+1}{x}$ 的解集为 $\{1+\sqrt2,-1\}$. 故选 $D$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 求下列不等式（组）的解集.
+
+（1）$\begin{cases}x^2-x-6\leqslant0\\ x-1>0\end{cases}$；\qquad（2）$\lvert1-2x\rvert>2$.
+
+\ansspace*[10]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由 $x^2-x-6=(x+2)(x-3)\leqslant0$，得 $-2\leqslant x\leqslant3$. 又 $x-1>0\Leftrightarrow x>1$，}
+\step{所以原不等式组的解集为 $[-2,3]\cap(1,+\infty)=(1,3]$.}
+\stepm{（2）}{原不等式等价于 $1-2x>2$ 或 $1-2x<-2$，分别解得 $x<-\dfrac12$ 或 $x>\dfrac32$，}
+\step{所以原不等式的解集为 $\left(-\infty,-\dfrac12\right)\cup\left(\dfrac32,+\infty\right)$.}
+\solend
+\fi
+
+\item 已知正数 $x,y$ 满足 $x+2y=1$.
+
+（1）证明：$xy\leqslant\dfrac18$；
+
+（2）求 $\dfrac2x+\dfrac1y$ 的最小值，并写出取得最小值时的条件.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{因为 $x>0,2y>0$，所以 $1=x+2y\geqslant2\sqrt{2xy}$，两边平方得 $1\geqslant8xy$，}
+\step{即 $xy\leqslant\dfrac18$，等号成立当且仅当 $x=2y$，结合 $x+2y=1$，得 $x=\dfrac12,y=\dfrac14$.}
+\stepm{（2）}{利用 $x+2y=1$，得 $\dfrac2x+\dfrac1y=\left(\dfrac2x+\dfrac1y\right)(x+2y)=4+\dfrac{4y}x+\dfrac xy$.}
+\step{因为 $\dfrac{4y}x>0,\dfrac xy>0$，所以 $4+\dfrac{4y}x+\dfrac xy\geqslant4+2\sqrt{\dfrac{4y}x\cdot\dfrac xy}=8$，}
+\step{等号成立当且仅当 $\dfrac{4y}x=\dfrac xy$，即 $x=2y$.}
+\step{结合 $x+2y=1$，得 $x=\dfrac12,y=\dfrac14$，因此最小值为 $9$，}% 原卷作“9”，与前式得 8 矛盾，照录
+\step{当且仅当 $x=\dfrac12,y=\dfrac14$ 时取得.}
+\solend
+\fi
+
+\item 已知函数 $y=ax^2-(2a+2)x+4$.
+
+（1）若 $a=-3$，求不等式 $y>0$ 的解集；
+
+（2）是否存在实数 $a$ 使得方程 $y=0$ 有两个不相等的实数根且 $\dfrac1{x_1}+\dfrac1{x_2}=1$ 成立，若存在求出 $a$ 的值，若不存在，请说明理由.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $a=-3$ 时，$y=-3x^2+4x+4>0$，即 $3x^2-4x-4<0$，解得 $-\dfrac23<x<2$，}
+\step{故原不等式的解集为 $\left\{x\left|-\dfrac23<x<2\right.\right\}$；}
+\stepm{（2）}{$y=ax^2-(2a+2)x+4=0$ 的两个根为 $x_1$、$x_2$，}
+\step{则 $x_1+x_2=\dfrac{2a+2}a$，$x_1x_2=\dfrac4a$，$\Delta=(2a+2)^2-16>0$，即 $a>1$ 或 $a<-3$，}
+\step{因为 $\dfrac1{x_1}+\dfrac1{x_2}=1$，所以 $x_1x_2=x_1+x_2$，即 $\dfrac{2a+2}a=\dfrac4a$，}
+\step{所以 $a=1$，此时 $a$ 显然不符合题意，即 $a$ 不存在.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid1<x\leqslant3\}$，集合 $B=\{x\mid2m<x<1-m\}$.
+
+（1）当 $m=-1$ 时，求 $A\cap B$；
+
+（2）若“$x\in A$”是“$x\in B$”的必要非充分条件，求实数 $m$ 的取值范围；
+
+（3）若“若 $x\in A$，则 $x\in B$”是真命题，判断方程 $x^2+mx+2=0$ 根的个数.
+
+\ansspace*[14]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $m=-1$ 时，$B=\{x\mid-2<x<2\}=(-2,2)$，}
+\step{所以 $A\cap B=(1,3]\cap(-2,2)=(1,2)$.}
+\stepm{（2）}{“$x\in A$”是“$x\in B$”的必要非充分条件，等价于 $B\subsetneqq A$.}
+\step{若 $B=\varnothing$，则 $2m\geqslant1-m$，即 $m\geqslant\dfrac13$. 此时 $A\neq\varnothing$，满足 $B\subseteq A$.}
+\step{若 $B\neq\varnothing$，则 $m<\dfrac13$. 要使 $B\subseteq A$，必须有 $2m\geqslant1,1-m\leqslant3$，}
+\step{其中 $2m\geqslant1$ 即 $m\geqslant\dfrac12$，与 $m<\dfrac13$ 矛盾.}
+\step{所以 $m$ 的取值范围为 $\left[\dfrac13,+\infty\right)$.}
+\stepm{（3）}{题设命题为真命题，等价于 $A\subseteq B$，因此 $\begin{cases}2m\leqslant1\\ 7-m>3\end{cases}\Leftrightarrow m<-2$.}% 原卷作“7-m>3”，应为“1-m>3”，照录
+\step{方程 $x^2+mx+2=0$ 的判别式为 $\Delta=m^2-8$.}
+\step{当 $m<-2\sqrt2$ 时，$\Delta>0$，方程有两个不相等的实数根.}
+\step{当 $m=-2\sqrt2$ 时，$\Delta=0$，方程有一个实数根 $x=\sqrt2$.}
+\step{当 $-2\sqrt2<m<-2$ 时，$\Delta<0$，方程无实数根.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $\dfrac{ax-1}{x-2}>a$.
+
+（1）若 $a=1$，求该不等式的解集；
+
+（2）若 $a\in\R$，求该不等式的解集；
+
+（3）记（2）中不等式的解集为 $A$，若 $A\subseteq(0,+\infty)$，证明：$a^3+a\geqslant2a^2$，并指出何时等号成立.
+
+\ansspace*[14]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $a=1$ 时，原不等式为 $\dfrac{x-1}{x-2}>1\Leftrightarrow\dfrac1{x-2}>0\Leftrightarrow x>2$. 解集为 $(2,+\infty)$.}
+\stepm{（2）}{原不等式要求 $x\neq2$，移项通分得 $\dfrac{ax-1}{x-2}-a=\dfrac{2a-1}{x-2}>0$.}
+\step{当 $a>\dfrac12$ 时，$2a-1>0$，须 $x-2>0$，解集为 $(2,+\infty)$.}
+\step{当 $a=\dfrac12$ 时，不等式化为 $0>0$，解集为 $\varnothing$.}
+\step{当 $a<\dfrac12$ 时，$2a-1<0$，须 $x-2<0$，解集为 $(-\infty,2)$.}
+\stepm{（3）}{若 $a<\dfrac12$，则 $A=(-\infty,2)$，此时 $0\in A$，不满足 $A\subseteq(0,+\infty)$.}
+\step{若 $a=\dfrac12$，则 $A=\varnothing\subseteq(0,+\infty)$；若 $a>\dfrac12$，则 $A=(2,+\infty)\subseteq(0,+\infty)$.}
+\step{因此题设条件等价于 $a\geqslant\dfrac12$，从而 $a>0$，}
+\step{于是 $a^3+a-2a^2=a(a^2-2a+1)=a(a-1)^2\geqslant0$，即 $a^3+a\geqslant2a^2$，}
+\step{等号成立当且仅当 $a-1=0$，即 $a=1$，且此时满足题设条件.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
