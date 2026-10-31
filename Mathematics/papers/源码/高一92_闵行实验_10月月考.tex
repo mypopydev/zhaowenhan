@@ -21,9 +21,8 @@
 % 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
 %
 % 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
-%   ① 第 21 题 (3) 题干与解析末句把结论印作“$(C\cup D)\subset R$”，而解析证明的是
-%      “$C\cup D=\R$ 不成立”，按文意应为“$(C\cup D)\subsetneq\R$”；本稿按真子集排
-%      $\subsetneq$，原卷记号照录于文件头；
+%   ① 第 21 题 (3) 原卷三处印 $\subset$、第 17 题 (2) 原卷亦印 $\subset$，均照录
+%      （同 高一96 第 20 题／高一18 成例；解析证明的 $C\cup D\neq\R$ 与“真子集”口径一致）；
 %   ② 第 7 题解析只列 $B=\varnothing$（$a=0$）、$B=\{1\}$（$a=1$）、$B=\{-3\}$（$a=-\frac13$）
 %      三种情形，与结论 $\left\{0,1,-\frac13\right\}$ 相符，无笔误。
 %
@@ -198,14 +197,14 @@ A. $a^2<b^2$\qquad B. $\dfrac1a<\dfrac1b$\qquad C. $ab<b^2$\qquad D. $ab<a^2$
 \ans{$D$}
 \fi
 
-\item 已知全集 $U=\{1,2,3,4,5\}$，集合 $A,B$ 是 $U$ 子集，满足 $\overline{A\cup B}=\{4,5\}$，$B=\{2,3\}$，则 $A\cap\overline B=\mbox{（\quad）}$
+\item 已知全集 $U=\{1,2,3,4,5\}$，集合 $A,B$ 是 $U$ 子集，满足 $\overline{A\cup B}=\{4,5\},B=\{2,3\}$，则 $A\cap\overline B=\mbox{（\quad）}$
 
 \keepwithprev
 A. $\{1\}$\qquad B. $\{1,2\}$\qquad C. $\{1,4,5\}$\qquad D. $\varnothing$
 
 \ifanswer
 \solbegin
-\step{因为全集 $U=\{1,2,3,4,5\}$，集合 $A$、$B$ 是 $U$ 子集，$\overline{A\cup B}=\{4,5\}$，$B=\{2,3\}$，}
+\step{因为全集 $U=\{1,2,3,4,5\}$，集合 $A$、$B$ 是 $U$ 子集，$\overline{A\cup B}=\{4,5\},B=\{2,3\}$，}
 \step{所以 $A\cup B=\{1,2,3\}$，故 $1\in A$，$1\notin B$，$4\notin A$，$5\notin A$，$4\notin B$，$5\notin B$，}
 \step{故 $A\cap\overline B=\{1\}$. 故选 $A$.}
 \solend
@@ -263,7 +262,7 @@ A. $675$\qquad B. $676$\qquad C. $2025$\qquad D. $2026$
 \ifanswer
 \solbegin
 \stepm{（1）}{当 $a=2$ 时，集合 $M=\{x\mid1\leqslant x\leqslant7\}$，所以 $M\cap P=\{x\mid1\leqslant x\leqslant4\}$；}
-\stepm{（2）}{因为 $x\in P$ 是 $x\in M$ 的必要不充分条件，所以 $M\subsetneqq P$，}
+\stepm{（2）}{因为 $x\in P$ 是 $x\in M$ 的必要不充分条件，所以 $M\subset P$，}
 \step{当 $M=\varnothing$ 时，$a-1>2a+3$，解得 $a<-4$，}
 \step{当 $M\neq\varnothing$ 时，则 $\begin{cases}a-1\leqslant2a+3\\ a-1>-2\\ 2a+3\leqslant4\end{cases}$，解得 $-1<a\leqslant\dfrac12$，}
 \step{综上所述，实数 $a$ 的取值范围为 $(-\infty,-4)\cup\left(-1,\dfrac12\right]$.}
@@ -335,7 +334,7 @@ A. $675$\qquad B. $676$\qquad C. $2025$\qquad D. $2026$
 
 \item 已知函数 $f(x)=x^2-(a-2)x+a-3$.
 
-（1）若 $f(x)=0$ 的两根为 $\alpha,\beta$，$\alpha^2+\beta^2=2$，求 $a$ 的值；
+（1）若 $f(x)=0$ 的两根为 $\alpha,\beta,\alpha^2+\beta^2=2$，求 $a$ 的值；
 
 （2）解关于 $x$ 的不等式 $f(x)\geqslant0$；
 
@@ -347,7 +346,7 @@ A. $675$\qquad B. $676$\qquad C. $2025$\qquad D. $2026$
 \solbegin
 \stepm{（1）}{由韦达定理，$\alpha+\beta=a-2,\alpha\beta=a-3$，}
 \step{因此 $\alpha^2+\beta^2=(a-2)^2-2(a-3)=2\Leftrightarrow(a-2)(a-4)=0$，}
-\step{$a=2$ 时两根为 $1,-1$；$a=4$ 时两根均为 $1$，均满足条件，}
+\step{$a=2$ 时两根为 $1,-1$;$a=4$ 时两根均为 $1$，均满足条件，}
 \step{所以 $a=2$ 或 $a=4$.}
 \stepm{（2）}{因为 $f(x)=(x-1)[x-(a-3)]$，所以分三种情况：}
 \step{当 $a<4$ 时，$a-3<1$，解集为 $(-\infty,a-3]\cup[1,+\infty)$.}
@@ -376,13 +375,13 @@ A. $675$\qquad B. $676$\qquad C. $2025$\qquad D. $2026$
 
 （2）若集合 $C$、$D$ 为闭集合，则 $C\cup D$ 是否一定为闭集合？请说明理由；
 
-（3）已知集合 $C$、$D$ 为闭集合，且 $C\subsetneq R,D\subsetneq R$，证明：$(C\cup D)\subsetneq R$.% 原卷印作 (C∪D)⊂R，按解析证明的是 C∪D≠R，排真子集
+（3）已知集合 $C$、$D$ 为闭集合，且 $C\subset R,D\subset R$，证明：$(C\cup D)\subset R$.% 原卷印 ⊂，照录（同 高一96 第 20 题成例）
 
 \ansspace*[14]
 
 \ifanswer
 \solbegin
-\stepm{（1）}{因为 $4\in A_1$，$2\in A_1$，$4+2=6\notin A_1$，所以 $A_1$ 不是闭集合；}
+\stepm{（1）}{因为 $4\in A_1,2\in A_1,4+2=6\notin A_1$，所以 $A_1$ 不是闭集合；}
 \step{任取 $x,y\in B$，设 $x=3m,y=3n,m,n\in\Z$，}
 \step{则 $x+y=3m+3n=3(m+n)$ 且 $m+n\in\Z$，}
 \step{所以 $x+y\in B$，同理，$x-y\in B$，故 $B$ 为闭集合.}
@@ -390,14 +389,14 @@ A. $675$\qquad B. $676$\qquad C. $2025$\qquad D. $2026$
 \step{不妨令 $C=\{x\mid x=2k,k\in\Z\},D=\{x\mid x=3k,k\in\Z\}$，}
 \step{则由（1）得 $C$、$D$ 为闭集合，易得 $2,3\in C\cup D,2+3=5\notin C\cup D$，}
 \step{因此，$C\cup D$ 不一定是闭集合.}
-\stepm{（3）}{不妨假设 $C\cup D=R$，则由 $C\subsetneq R$，得存在 $a\in R$ 且 $a\notin C$，故 $a\in D$.}
+\stepm{（3）}{不妨假设 $C\cup D=R$，则由 $C\subset R$，得存在 $a\in R$ 且 $a\notin C$，故 $a\in D$.}
 \step{同理，存在 $b\in R$ 且 $b\notin D$，故 $b\in C$.}
 \step{因为 $a+b\in R=C\cup D$，所以 $a+b\in C$ 或 $a+b\in D$.}
 \step{若 $a+b\in C$，则由 $C$ 为闭集合且 $b\in C$，得 $a=(a+b)-b\in C$，}
 \step{与 $a\notin C$ 矛盾.}
 \step{若 $a+b\in D$，则由 $D$ 为闭集合且 $a\in D$，得 $b=(a+b)-a\in D$，}
 \step{与 $b\notin D$ 矛盾.}
-\step{综上，$C\cup D=R$ 不成立，故 $(C\cup D)\subsetneq R$.}
+\step{综上，$C\cup D=R$ 不成立，故 $(C\cup D)\subset R$.}
 \solend
 \fi
 
