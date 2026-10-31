@@ -33,10 +33,11 @@
 %   ⑤ 解答题按惯例加 \ansspace；选择题括号排 \mbox{（\quad）}；
 %   ⑥ 第 16 题的弦图原卷排在题干右侧、文字绕排，本稿改排为选项后的居中图。
 %
-% 行数核对：逐题数 \step/\stepm 条数，合计 71 条（Q3：0；Q4：0；Q5：2；Q6：3；Q7：2；
+% 行数核对：逐题数 \step/\stepm 条数，合计 73 条（Q3：0；Q4：0；Q5：3；Q6：4；Q7：2；
 % Q8：2；Q9：4；Q10：1；Q11：3；Q12：9；Q13：5；Q14：3；Q15：5；Q16：6；Q17：2；
 % Q18：6；Q19：8；Q20：7；Q21：3）。第 3、4 题只印答案，不计入 \step 账。
-% 原卷解析的换行按语意合并，未逐行强拆。
+% 原卷解析的换行按语意合并，未逐行强拆（2026-10-31 逐题回原图重核：Q5 的“所以 a+c=5.”
+% 与 Q6 的“检验得△=…”原卷均单独成行，本稿原并入上条，已拆开）。
 %
 \documentclass[a4paper,11pt]{article}
 \usepackage{common}
@@ -67,7 +68,8 @@
 \ifanswer
 \solbegin
 \step{因为 $2x^2+3x+5=2ax^2+a(3x+1)+c$ 恒成立，}
-\step{即 $2x^2+3x+5=2ax^2+3ax+(a+c)$ 恒成立，所以 $\begin{cases}2=2a\\ 3=3a\\ 5=a+c\end{cases}$，所以 $a+c=5$.}
+\step{即 $2x^2+3x+5=2ax^2+3ax+(a+c)$ 恒成立，所以 $\begin{cases}2=2a\\ 3=3a\\ 5=a+c\end{cases}$，}
+\step{所以 $a+c=5$.}
 \solend
 \fi
 
@@ -77,11 +79,12 @@
 \solbegin
 \step{方程 $x^2+6x+m=0(m\in\R)$ 的两根为 $x_1$、$x_2$，所以 $x_1+x_2=-6$，$x_1x_2=m$，}
 \step{又 $\lvert x_1-x_2\rvert=4$，则 $(x_1-x_2)^2=(x_1+x_2)^2-4x_1x_2=16$，}
-\step{即 $(-6)^2-4m=16$，解得 $m=5$，检验得 $\Delta=6^2-4\times1\times5=16>0$，符合题意，所以 $m=5$.}
+\step{即 $(-6)^2-4m=16$，解得 $m=5$，}
+\step{检验得 $\triangle=6^2-4\times1\times5=16>0$，符合题意，所以 $m=5$.}
 \solend
 \fi
 
-\item 已知 $\alpha:2m-6<x<m+5$，$\beta:-3<x<5$，若 $\alpha$ 是 $\beta$ 的必要条件，则实数 $m$ 的取值范围是\blankline[4.4em].
+\item 已知 $\alpha:2m-6<x<m+5,\beta:-3<x<5$，若 $\alpha$ 是 $\beta$ 的必要条件，则实数 $m$ 的取值范围是\blankline[4.4em].
 
 \ifanswer
 \solbegin
@@ -90,7 +93,7 @@
 \solend
 \fi
 
-\item 已知 $-2\leqslant a\leqslant3$，$2\leqslant b\leqslant\dfrac72$，则 $a-2b$ 的取值范围为\blankline[4.4em].
+\item 已知 $-2\leqslant a\leqslant3,2\leqslant b\leqslant\dfrac72$，则 $a-2b$ 的取值范围为\blankline[4.4em].
 
 \ifanswer
 \solbegin
