@@ -34,10 +34,10 @@
 %   ⑥ 第 6 题的韦恩图原卷排在题干右侧、文字绕排，本稿改排为题干后的居中图
 %      （自原图裁切、去粉色水印后转灰度）。
 %
-% 行数核对：逐题数 \step/\stepm 条数，合计 94 条（Q3：2；Q4：2；Q5：1；Q6：0；
-% Q7：4；Q8：3；Q9：2；Q10：4；Q11：5；Q12：6；Q13：3；Q14：4；Q15：3；Q16：9；
-% Q17：4；Q18：4；Q19：10；Q20：8；Q21：20）。第 6 题只印【答案】，不计入 \step 账。
-% 原卷解析的换行按语意合并，未逐行强拆。
+% 行数核对：逐题数 \step/\stepm 条数，合计 95 条（Q3：2；Q4：2；Q5：1；Q6：0；
+% Q7：5；Q8：3；Q9：2；Q10：4；Q11：5；Q12：6；Q13：3；Q14：4；Q15：3；Q16：9；
+% Q17：4；Q18：4；Q19：10；Q20：8；Q21：20）。第 6 题只印【答案】，
+% 不计入 \step 账。原卷解析的换行按语意合并，未逐行强拆。
 %
 \documentclass[a4paper,11pt]{article}
 \usepackage{common}
@@ -96,7 +96,8 @@
 \step{由于 $x_1$、$x_2$ 是 $x^2-2x+a-2=0$ 的两个实根，}
 \step{由韦达定理得 $x_1x_2=a-2$，$x_1+x_2=2$，}
 \step{因此 $\dfrac1{x_1}+\dfrac1{x_2}=\dfrac{x_1+x_2}{x_1x_2}=\dfrac2{a-2}=-\dfrac12$，所以 $a-2=-4$，解得 $a=-2$，}
-\step{判别式 $\Delta=(-2)^2-4(a-2)=-4a+12$，当 $a=-2$ 时，$\Delta=8+12=20>0$，有两个实根，符合条件，故 $a=-2$.}
+\step{判别式 $\triangle=(-2)^2-4(a-2)=-4a+12$，}
+\step{当 $a=-2$ 时，$\triangle=8+12=20>0$，有两个实根，符合条件，故 $a=-2$.}
 \solend
 \fi
 
@@ -135,7 +136,7 @@
 \ifanswer
 \solbegin
 \step{因为方程 $x^2+2x-m=0$ 有解，}
-\step{所以 $\Delta=2^2-4\times1\times(-m)=4+4m\geqslant0$，解得 $m\geqslant-1$，}
+\step{所以 $\triangle=2^2-4\times1\times(-m)=4+4m\geqslant0$，解得 $m\geqslant-1$，}
 \step{命题“若方程有解，则 $m\geqslant a$”为真命题，即 $\forall m\in[-1,+\infty)$，$m\geqslant a$ 恒成立，}
 \step{因此 $a$ 的取值不能超过集合 $[-1,+\infty)$ 的最小值，即 $a\leqslant-1$，}
 \step{综上，$a$ 的取值范围为 $(-\infty,-1]$.}
@@ -165,7 +166,7 @@
 \item 设集合 $A=\{x\mid x=2k+1,k\in\Z\}$，$B=\{x\mid x=2k-1,k\in\Z\}$，则 $A$、$B$ 之间的关系是\mbox{（\quad）}
 
 \keepwithprev
-A. $B\subsetneq A$\qquad B. $A\subsetneq B$\qquad C. $A=B$\qquad D. 以上都不是
+A. $B\subset A$\qquad B. $A\subset B$\qquad C. $A=B$\qquad D. 以上都不是
 
 \ifanswer
 \solbegin
@@ -323,7 +324,7 @@ D. 存在 $a$，使得 $P_1$ 不是 $P_2$ 的子集，存在 $b$，使得 $Q_1$ 
 \stepm{（1）}{当 $a=-2$ 时，原不等式为 $2x^2-x-1>0$，即 $(x-1)(2x+1)>0$，}
 \step{解得 $x<-\dfrac12$ 或 $x>1$，所以原不等式的解集为 $\left(-\infty,-\dfrac12\right)\cup(1,+\infty)$.}
 \stepm{（2）}{当 $a=0$ 时，原不等式为 $-x+1<0$，解得 $x>1$；}
-\step{当 $a>0$ 时，原不等式变为 $(ax-1)(x-1)<0$，其对应方程的两根为 $\dfrac1a$，$1$，}
+\step{当 $a>0$ 时，原不等式变为 $(ax-1)(x-1)<0$，其对应方程的两根为 $\dfrac1a,1$，}
 \step{若 $\dfrac1a<1$，即 $a>1$ 时，由 $(ax-1)(x-1)<0$ 解得 $\dfrac1a<x<1$，}
 \step{若 $\dfrac1a=1$，即 $a=1$ 时，不等式 $(ax-1)(x-1)<0$ 解集为 $\varnothing$，}
 \step{若 $\dfrac1a>1$，即 $0<a<1$ 时，由 $(ax-1)(x-1)<0$ 解得 $1<x<\dfrac1a$，}
@@ -332,7 +333,7 @@ D. 存在 $a$，使得 $P_1$ 不是 $P_2$ 的子集，存在 $b$，使得 $Q_1$ 
 \step{当 $a=1$ 时，不等式的解集为 $\varnothing$，}
 \step{当 $a>1$ 时，不等式的解集为 $\left(\dfrac1a,1\right)$.}
 \stepm{（3）}{若命题 $P$ 为真命题，}
-\step{若 $a<0$，原不等式变为 $(ax-1)(x-1)<0$，其对应方程的两根为 $\dfrac1a$，$1$，}
+\step{若 $a<0$，原不等式变为 $(ax-1)(x-1)<0$，其对应方程的两根为 $\dfrac1a,1$，}
 \step{其解集为 $\left(-\infty,\dfrac1a\right)\cup(1,+\infty)$，不合题意，}
 \step{当 $a\geqslant0$ 时，由（2）得当 $a=1$ 时，解集为 $\varnothing$，}
 \step{所以命题 $P$ 为真命题，则 $a=1$；}
