@@ -1,0 +1,403 @@
+% 高一99_上中东校_10月月考.tex
+%   —— 高一上数学“2026-2027 年上中东校高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一99_上中东校_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一99_上中东校_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一99_上中东校_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一99”；
+% 原文标题“27学年高一99——2026-2027年上海市上中东校高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/Wip5UdCJOjbWnBC4VVHh7Q。
+% 正文为 11 张 PNG 页（`原图/高一99_上中东校_10月月考/01..11.png`），
+% 尺寸混排（第 1、3、5—10 页为 4762×6735，第 2、4、11 页为 2560×3620），按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在原文内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—23（7 题），共 21 题——本卷题数多于常见的 19 题。
+%
+% 讲评版：全部 21 题均印【解析】，其中第 15—18 题的答案在解析末句
+% “故选 $C$／$D$／$D$／$B$”（题干括号内未印答案）。全卷无插图。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 8 题解析未讨论 $B=\varnothing$ 的情形，且以“显然 $m+1\leqslant2m-1$”
+%      一句带过“$B\neq\varnothing$”的前提，跳步，照录；
+%   ② 第 10 题解析末句“解集为 $\{x\mid x>1$ 或 $x<\dfrac15\}$”两根次序与
+%      前行“$x<\dfrac15$ 或 $x>1$”相反，照录；
+%   ③ 第 17 题解析“则 $x+\dfrac y4=\cdots=\dfrac12+\dfrac24+\cdots$”中 $\dfrac24$
+%      未约分，照录。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【解析】，本稿按全稿惯例将答案与解析置于答案版；
+%   ② 原卷未印副标题，本稿补出；填空横线统一排 \blankline[4.4em]；
+%   ③ 原卷数集记号排斜体 $R$、$Z$、$Q$、$N$，本稿按全稿惯例改用 $\R$、$\Z$、$\Q$、$\N$；
+%   ④ 解答题按惯例加 \ansspace；选择题括号排 \mbox{（\quad）}；
+%   ⑤ 第 14、22、23 题的 $\mathit{max}$／$\mathit{min}$ 原卷排斜体，按全稿惯例改正体
+%      $\max$／$\min$（同 高一96 第 16 题成例）。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 124 条（Q3：1；Q4：2；Q5：2；Q6：3；Q7：4；
+% Q8：3；Q9：4；Q10：6；Q11：2；Q12：8；Q13：3；Q14：13；Q15：2；Q16：2；Q17：6；
+% Q18：11；Q19：7；Q20：4；Q21：9；Q22：8；Q23：22）。全卷 21 题均印【解析】。
+% 原卷解析的换行按语意合并，未逐行强拆。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+\begin{document}
+
+\examtitlest[7]{2026--2027 年上中东校高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知集合 $A=\{a_1,a_2,a_3\}$，则集合 $A$ 的真子集个数为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{集合 $A=\{a_1,a_2,a_3\}$，共含有 $3$ 个元素，得真子集个数为 $2^3-1=8-1=7$.}
+\solend
+\fi
+
+\item 已知 $x$、$y>0$，$x^2+9y^2=1$，则 $xy$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由于 $x$、$y>0$，$x^2+9y^2=1$，则 $1=x^2+9y^2\geqslant2\sqrt{x^2\cdot9y^2}=6xy$，}
+\step{得 $xy\leqslant\dfrac16$，当且仅当 $x=3y=\dfrac{\sqrt2}2$ 时取等号，故 $xy$ 的最大值为 $\dfrac16$.}
+\solend
+\fi
+
+\item 不等式 $\dfrac1{x-1}<1$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $\dfrac1{x-1}<1$ 即为 $\dfrac1{x-1}-1<0$，即 $\dfrac{2-x}{x-1}<0$，即有 $\begin{cases}2-x>0\\ x-1<0\end{cases}$ 或 $\begin{cases}2-x<0\\ x-1>0\end{cases}$，}
+\step{即 $\begin{cases}x<2\\ x<1\end{cases}$ 或 $\begin{cases}x>2\\ x>1\end{cases}$，即 $x<1$ 或 $x>2$，则解集为 $(-\infty,1)\cup(2,+\infty)$.}
+\solend
+\fi
+
+\item 若集合 $\{x\mid ax^2+2x+1=0\}$ 为单元素集，则 $a$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若集合 $\{x\mid ax^2+2x+1=0\}$ 为单元素集，则方程 $ax^2+2x+1=0$ 只有一个实根.}
+\step{当 $a=0$，得 $x=-\dfrac12$，满足题意；当 $a\neq0$ 时，$\Delta=4-4a=0$，解得 $a=1$；}
+\step{故 $a$ 的取值是 $0$ 或 $1$.}
+\solend
+\fi
+
+\item 已知 $\alpha$、$\beta$ 是方程 $x^2+x-1=0$ 的两个不同实根，则 $\alpha^3+\beta^3$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\alpha$、$\beta$ 是方程 $x^2+x-1=0$ 的两个不同实根，}
+\step{所以由韦达定理得 $\alpha+\beta=-1$，$\alpha\beta=-1$，}
+\step{所以 $\alpha^3+\beta^3=(\alpha+\beta)(\alpha^2-\alpha\beta+\beta^2)=(\alpha+\beta)\left[(\alpha+\beta)^2-3\alpha\beta\right]$}
+\step{$=(-1)\times\left[(-1)^2-3\times(-1)\right]=(-1)\times(1+3)=-4$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid-2\leqslant x\leqslant7\}$，$B=[m+1,2m-1]$，若 $A\cup B=A$，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $A\cup B=A$，所以 $B\subseteq A$，}
+\step{显然 $m+1\leqslant2m-1$，即当 $m\geqslant2$ 时，$B\neq\varnothing$，}% 原卷未讨论 B=∅、以“显然”带过，照录
+\step{由 $B\subseteq A$ 得 $\begin{cases}m+1\geqslant-2\\ 2m-1\leqslant7\end{cases}$，解得 $-3\leqslant m\leqslant4$，此时 $2\leqslant m\leqslant4$.}
+\solend
+\fi
+
+\item 若正实数 $x$、$y$ 满足 $2x+y=2$，则 $\dfrac{x+2y}{xy}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $x>0$，$y>0$ 且 $2x+y=2$，}
+\step{所以 $\dfrac{x+2y}{xy}=\dfrac1y+\dfrac2x=\dfrac12\left(\dfrac1y+\dfrac2x\right)(2x+y)$}
+\step{$=\dfrac12\left(5+\dfrac{2x}y+\dfrac{2y}x\right)\geqslant\dfrac12\left(5+2\sqrt{\dfrac{2x}y\times\dfrac{2y}x}\right)=\dfrac92$.}
+\step{当且仅当 $\begin{cases}\dfrac{2x}y=\dfrac{2y}x\\ 2x+y=2\end{cases}$，即 $x=y=\dfrac23$ 时取等号，故最小值为 $\dfrac92$.}
+\solend
+\fi
+
+\item 已知不等式 $ax^2+bx+c>0$ 的解集为 $(1,5)$，则不等式 $cx^2+bx+a<0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $ax^2+bx+c>0$ 的解集为 $(1,5)$，}
+\step{得 $a<0$，且 $1$，$5$ 是方程 $ax^2+bx+c=0$ 的两根，}
+\step{则 $-\dfrac ba=6,\dfrac ca=5$，所以 $b=-6a$，$c=5a$，}
+\step{所以不等式 $cx^2+bx+a<0$ 化为 $5ax^2-6ax+a<0$，}
+\step{则 $5x^2-6x+1>0$，解得 $x<\dfrac15$ 或 $x>1$，}
+\step{故不等式 $cx^2+bx+a<0$ 的解集为 $\left\{x\mid x>1\right.$ 或 $\left.x<\dfrac15\right\}$.}% 原卷两根次序与前行相反，照录
+\solend
+\fi
+
+\item 已知函数 $f(x)=\lvert x-k\rvert+\lvert x-2k\rvert\,(k>0)$，若当 $x\in[3,4]$ 时，$f(x)$ 都能取到最小值，则实数 $k$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由绝对值不等式，$f(x)=\lvert x-k\rvert+\lvert x-2k\rvert\geqslant k$，等号成立时 $k\leqslant x\leqslant2k$，}
+\step{于是 $k\leqslant3<4\leqslant2k$，即 $2\leqslant k\leqslant3$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $1-2a\leqslant x\leqslant a+\dfrac32$ 的整数解恰好有三个，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得关于 $x$ 的不等式 $1-2a\leqslant x\leqslant a+\dfrac32$ 的整数解恰好有三个，}
+\step{则 $1-2a<a+\dfrac32$，解得 $a>-\dfrac16$，}
+\step{设该不等式的三个整数解分别为 $k$、$k+1$、$k+2\,(k\in Z)$，}
+\step{得 $\begin{cases}k-1<1-2a\leqslant k\\ k+2\leqslant a+\dfrac32<k+3\end{cases}$，解得 $\begin{cases}\dfrac{1-k}2\leqslant a<\dfrac{2-k}2\\[2pt] k+\dfrac12\leqslant a<k+\dfrac32\end{cases}$，}
+\step{由 $a\geqslant-\dfrac16$ 得 $\begin{cases}\dfrac{1-k}2>-\dfrac16\\[2pt] k+\dfrac12\geqslant-\dfrac16\end{cases}$，解得 $-\dfrac23\leqslant k<\dfrac43$，所以 $k=0,1$，}
+\step{当 $k=0$ 时，得 $\begin{cases}\dfrac12\leqslant a<1\\[2pt] \dfrac12\leqslant a<\dfrac32\end{cases}$，即 $\dfrac12\leqslant a<1$，}
+\step{当 $k=1$ 时，得 $\begin{cases}0\leqslant a<\dfrac12\\[2pt] \dfrac32\leqslant a<\dfrac52\end{cases}$，此时无解，}
+\step{综上所述，实数 $a$ 的取值范围是 $\left\{a\mid\dfrac12\leqslant a<1\right\}$.}
+\solend
+\fi
+
+\item 已知两正实数 $a,b$，满足 $a+b=6$，则 $\dfrac a{a^2+1}+\dfrac b{b^2+1}$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $\dfrac a{a^2+1}+\dfrac b{b^2+1}=\dfrac{(a+b)(ab+1)}{a^2b^2+a^2+b^2+1}=\dfrac{6(ab+1)}{a^2b^2-2ab+37}$，令 $t=ab+1$，}
+\step{则 $\dfrac{6(ab+1)}{a^2b^2-2ab+37}=\dfrac{6t}{t^2-4t+40}=\dfrac{6}{t+\dfrac{40}t-4}\leqslant\dfrac{6}{2\sqrt{40}-4}=\dfrac{\sqrt{10}+1}6$，}
+\step{当且仅当 $ab=2\sqrt{10}-1\leqslant9$ 时取等号，故最大值为 $\dfrac{\sqrt{10}+1}6$.}
+\solend
+\fi
+
+\item 已知 $a$、$b$、$t$ 均为实数，若对于任意的实数 $x$，均有不等式：
+
+$\left(\lvert x-t\rvert+a-1\right)\left(\lvert x-t\rvert-2b\right)\left(\lvert 2x-2t\rvert-a^2-5\right)\geqslant0$ 成立，则 $\lvert x-2a+3\rvert+\lvert x+2b-a\rvert$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{令 $u=\lvert x-t\rvert\geqslant0$，则 $(u+a-1)(u-2b)\left(u-\dfrac{a^2+5}2\right)\geqslant0$ 对所有 $u\geqslant0$ 恒成立，}
+\step{若 $2b\leqslant0$ 即 $b\leqslant0$，则 $(u+a-1)\left(u-\dfrac{a^2+5}2\right)\geqslant0$ 对所有 $u\geqslant0$ 恒成立，}
+\step{故 $1-a=\dfrac{a^2+5}2$，故 $a^2+2a+3=0$，此方程无实数解，}
+\step{若 $2b>0$ 即 $b>0$，取 $u=0$，则 $(a-1)\times2b\times\dfrac{a^2+5}2\geqslant0$，故 $a-1\geqslant0$，}
+\step{此时 $u+a-1\geqslant0$ 在 $[0,+\infty)$ 上恒成立，故 $(u-2b)\left(u-\dfrac{a^2+5}2\right)\geqslant0$，}
+\step{故 $2b=\dfrac{a^2+5}2,a\geqslant1$.}
+\step{而 $\lvert x-2a+3\rvert+\lvert x+2b-a\rvert\geqslant\lvert 2b+a-3\rvert$，}
+\step{当且仅当 $\min\{2a-3,a-2b\}\leqslant x\leqslant\max\{2a-3,a-2b\}$ 时取等号，}
+\step{而 $\lvert a+2b-3\rvert=\left\lvert a+\dfrac{a^2+5}2-3\right\rvert=\left\lvert\dfrac12a^2+a-\dfrac12\right\rvert$.}
+\step{$g(a)=\dfrac12a^2+a-\dfrac12$，因为 $a\geqslant1>-1$，所以 $g(a)$ 在 $[1,+\infty)$ 严格增，}
+\step{故 $g(a)\geqslant g(1)=1$，$b=\dfrac32$，故 $\lvert a+2b-3\rvert\geqslant1$ 即 $\lvert x-2a+3\rvert+\lvert x+2b-a\rvert\geqslant1$，}
+\step{当且仅当 $a=1$，$b=\dfrac32$，$-2\leqslant x\leqslant-1$ 时取等号，}
+\step{所以 $\lvert x-2a+3\rvert+\lvert x+2b-a\rvert$ 的取值范围为 $[1,+\infty)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{14}
+
+\item 已知 $x\in R$，则“$(x-2)(x-3)\leqslant0$ 成立”是“$\lvert x-2\rvert+\lvert x-3\rvert=1$ 成立”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分不必要条件\qquad B. 必要不充分条件
+
+C. 充分必要条件\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{由 $(x-2)(x-3)\leqslant0$ 得 $2\leqslant x\leqslant3$，由 $\lvert x-2\rvert+\lvert x-3\rvert=1$ 得 $2\leqslant x\leqslant3$，}
+\step{故选 $C$.}
+\solend
+\fi
+
+\item 设 $a$、$b\in R$，下列不等式中恒成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $a+\dfrac1a\geqslant2$\qquad B. $\dfrac ab+\dfrac ba\geqslant2$
+
+C. $a^2+b^2>2ab$\qquad D. $\dfrac{a^2+3}{\sqrt{a^2+2}}>2$
+
+\ifanswer
+\solbegin
+\step{A．$a<0$ 时不成立；B．$\dfrac ab<0$ 时不成立；C．$a=\pm b$ 时不成立；}
+\step{D．$\dfrac{a^2+3}{\sqrt{a^2+2}}=\sqrt{a^2+2}+\dfrac1{\sqrt{a^2+2}}>2$，恒成立．故选 $D$.}
+\solend
+\fi
+
+\item 若两个正实数 $x$、$y$ 满足 $\dfrac1x+\dfrac4y=2$，且不等式 $x+\dfrac y4<m^2-m$ 有解，则实数 $m$ 的取值范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $(-1,2)$\qquad B. $(-\infty,-2)\cup(1,+\infty)$
+
+C. $(-2,1)$\qquad D. $(-\infty,-1)\cup(2,+\infty)$
+
+\ifanswer
+\solbegin
+\step{若不等式 $x+\dfrac y4<m^2-m$ 有解，即 $m^2-m>\left(x+\dfrac y4\right)_{min}$ 即可，}% min 原卷排斜体，改正体
+\step{因为 $\dfrac1x+\dfrac4y=2$，所以 $\dfrac1{2x}+\dfrac2y=1$，}
+\step{则 $x+\dfrac y4=\left(x+\dfrac y4\right)\left(\dfrac1{2x}+\dfrac2y\right)=\dfrac12+\dfrac24+\dfrac{2x}y+\dfrac y{8x}$}% 原卷 2/4 未约分，照录
+\step{$\geqslant1+2\sqrt{\dfrac{2x}y\cdot\dfrac y{8x}}=1+2\times\sqrt{\dfrac14}=2$，}
+\step{当且仅当 $\dfrac{2x}y=\dfrac y{8x}$，即 $y^2=16x^2$，即 $y=4x$ 时取等号，此时 $x=1$，$y=4$，}
+\step{即 $\left(x+\dfrac y4\right)_{min}=2$，由 $m^2-m>2$ 得 $m^2-m-2>0$，即 $(m+1)(m-2)>0$，}
+\step{得 $m>2$ 或 $m<-1$，即实数 $m$ 的取值范围是 $(-\infty,-1)\cup(2,+\infty)$，故选 $D$.}
+\solend
+\fi
+
+\item 当一个非空数集 $G$ 满足“如果 $a$、$b\in G$，则 $a+b$、$a-b$、$ab\in G$，且 $b\neq0$ 时，$\dfrac ab\in G$”，则称 $G$ 是一个数域．以下关于数域的 4 个命题中，真命题的个数是\mbox{（\quad）}
+
+①$0$ 是任何数域中的元素；②若数域 $G$ 中有非零的元素，则 $2026\in G$；
+
+③集合 $P=\{x\mid x=2k,k\in Z\}$ 是一个数域；④有理数集、无理数集都是数域.
+
+\keepwithprev
+A. $1$\qquad B. $2$\qquad C. $3$\qquad D. $4$
+
+\ifanswer
+\solbegin
+\step{对①：当 $a=b\neq0$ 时，有 $a-b=0\in G$，所以 $0$ 是任何数域的元素，故①正确；}
+\step{对②：取非零元素 $a\in G$，则 $\dfrac aa=1\in G$，再由 $a$、$b\in G$，则 $a+b\in G$，}
+\step{得任意正整数属于 $G$，故 $2026\in G$，故②正确；}
+\step{对③：若 $P=\{x\mid x=2k,k\in Z\}$ 为数域，}
+\step{取 $a=2$，$b=4$，则 $\dfrac ab=\dfrac12\in P$ 不成立，故③错误；}
+\step{对④：任取有理数 $x_1$、$x_2$，令 $a=x_1$，$b=x_2$，}
+\step{则 $a+b=(x_1+x_2)\in Q$，$a-b=(x_1-x_2)\in Q$，}
+\step{$a\cdot b=(x_1\cdot x_2)\in Q$，且 $\dfrac ab=\dfrac{x_1}{x_2}\in Q(x_2\neq0)$，所以有理数集 $Q$ 是数域，}
+\step{当 $a=b=\sqrt2$ 时，符合 $a$、$b$ 是无理数，$a-b=0$，$0$ 是有理数不是无理数，}
+\step{则无理数集不是数域，故④错误；}
+\step{所以正确的有①②共 2 个．故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{18}
+
+\item 解以下不等式（组）：
+
+（1）$x^2-(a+2)x+2a<0\,(a\in R)$；
+
+（2）$\begin{cases}x^2-8x+12<0\\[2pt] \dfrac{(x+2)}{(x^2+x+1)(x-3)}\geqslant0\end{cases}$.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{不等式 $x^2-(a+2)x+2a<0$ 等价于 $(x-a)(x-2)<0$．比较两根 $a$ 与 2，}
+\step{当 $a>2$ 时，不等式的解集为 $(2,a)$；}
+\step{当 $a<2$ 时，不等式的解集为 $(a,2)$；}
+\step{当 $a=2$ 时，解集为空集.}
+\stepm{（2）}{将不等式 $x^2-8x+12<0$ 变形得 $(x-2)(x-6)<0$，解得 $2<x<6$；}
+\step{对于不等式 $\dfrac{x+2}{(x^2+x+1)(x-3)}\geqslant0$ 等价于 $\dfrac{x+2}{x-3}\geqslant0$，即 $x\leqslant-2$ 或 $x>3$，}
+\step{即不等式组的解集为 $(3,6)$.}
+\solend
+\fi
+
+\item 已知 $m:x\in A,A=[-3,2];n:x\in B$，非空集合 $B=\{x\mid x^2+2x+a\leqslant0\}$.
+
+（1）求实数 $a$ 的取值范围；
+
+（2）若 $m$ 是 $n$ 的必要条件，求实数 $a$ 的取值范围.
+
+\ansspace*[8]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{因为集合 $B\neq\varnothing$，所以 $\Delta=2^2-4a\geqslant0\Rightarrow a\leqslant1$.}
+\stepm{（2）}{因为 $m$ 是 $n$ 的必要条件，所以 $B\subseteq A$，}
+\step{所以 $\begin{cases}a\leqslant1\\ -3\leqslant-1\leqslant2\\ (-3)^2+2\times(-3)+a\geqslant0\\ 2^2+2\times2+a\geqslant0\end{cases}$，所以 $\begin{cases}a\leqslant1\\ a\geqslant-3\end{cases}\Rightarrow-3\leqslant a\leqslant1$.}
+\solend
+\fi
+
+\item 已知陈述句 $\alpha$：关于 $x$ 的方程 $x^2-6x+m=0$ 有两个不同的正数根，陈述句 $\beta$：集合 $\{x\mid(m+1)x^2+4x+1=0,x\in R\}$ 中至多有一个元素.
+
+（1）若 $\alpha$ 和 $\beta$ 都是真命题，求实数 $m$ 的取值范围；
+
+（2）若 $\alpha$ 和 $\beta$ 至多有一个是假命题，求实数 $m$ 的取值范围.
+
+\ansspace*[10]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{因为关于 $x$ 的方程 $x^2-6x+m=0$ 有两个不同的正数根，}
+\step{则 $\begin{cases}36-4m>0\\ m>0\end{cases}$，解得 $0<m<9$，}
+\step{集合 $\{x\mid(m+1)x^2+4x+1=0,x\in R\}$ 中至多有一个元素，}
+\step{则 $m=-1$ 或 $\begin{cases}m+1\neq0\\ 16-4(m+1)\leqslant0\end{cases}$，解得 $m\geqslant3$，}
+\step{$\alpha$ 和 $\beta$ 都是真命题，所以实数 $m$ 的取值范围为 $\{m\mid3\leqslant m<9\}$}
+\stepm{（2）}{由（1）得当 $\alpha$ 为假命题时，$m\leqslant0$ 或 $m\geqslant9$，}
+\step{当 $\beta$ 为假命题时，$m<3$ 且 $m\neq-1$，}
+\step{所以 $\alpha$ 和 $\beta$ 均为假命题时，$m$ 的范围是 $m\leqslant0$ 且 $m\neq-1$，}
+\step{$\alpha$ 和 $\beta$ 至多有一个是假命题时，实数 $m$ 的取值范围为 $\{m\mid m>0$ 或 $m=-1\}$.}
+\solend
+\fi
+
+\item 某公司决定将某种智能产品大量投放中国市场，已知该产品年固定研发成本 30 万元，每生产一台需另投入 90 元，设该公司一年内生产该产品 $x$ 万台且全部售完，每万台的销售收入为 $G(x)$ 万元，满足以下解析式：$G(x)=\begin{cases}250-3x,0<x\leqslant25\\[2pt] 80+\dfrac{3000}x-\dfrac{9000}{x^2},x>25\end{cases}$.
+
+（1）写出年利润 $S$（万元）关于年产量 $x$（万台）的函数解析式（利润＝销售收入－成本）；
+
+（2）当年产量为多少万台时，该公司获得的利润最大？并求出最大利润和对应的年产量.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{年利润 $S=x\cdot G(x)-30-90x=\begin{cases}-3x^2+160x-30,&0<x\leqslant25\\[2pt] -10x-\dfrac{9000}x+2970,&x>25\end{cases}$.}
+\stepm{（2）}{当 $0<x\leqslant25$ 时，$S=-3x^2+160x-30=-3\left(x-\dfrac{80}3\right)^2+\dfrac{6310}3$，}
+\step{所以 $S$ 在 $(0,25]$ 上单调递增，}
+\step{所以 $S_{max}=-3\times25^2+160\times25-30=2095$；}% max 原卷排斜体，改正体
+\step{当 $x>25$ 时，$S=-10x-\dfrac{9000}x+2970=2970-\left(10x+\dfrac{9000}x\right)$}
+\step{$\leqslant2970-2\sqrt{10x\cdot\dfrac{9000}x}=2370$，}
+\step{当且仅当 $10x=\dfrac{9000}x$，即 $x=30$ 时取等号，此时 $S_{max}=2370$，}
+\step{因为 $2370>2095$，所以 $x=30$，$S_{max}=2370$，}
+\step{故当年产量为 30 万台时，该公司获得的利润最大，最大利润为 2370 万元.}
+\solend
+\fi
+
+\item 定理（三角不等式），对于任意的 $a$、$b\in R$，恒有 $\lvert\lvert a\rvert-\lvert b\rvert\rvert\leqslant\lvert a\pm b\rvert\leqslant\lvert a\rvert+\lvert b\rvert$．定义：
+
+已知 $n\in N$ 且 $n\geqslant3$，对于有序数组 $a_1$、$a_2$、$\cdots$、$a_n$，称 $\lvert a_1-a_2\rvert+\lvert a_2-a_3\rvert+\cdots+\lvert a_{n-1}-a_n\rvert$ 为有序数组 $a_1$、$a_2$、$\cdots$、$a_n$ 的波动距离，记作 $f(a_1,a_2,\cdots,a_n)$，即
+
+$f(a_1,a_2,\cdots,a_n)=\lvert a_1-a_2\rvert+\lvert a_2-a_3\rvert+\cdots+\lvert a_{n-1}-a_n\rvert$，请根据上述信息解决以下几个问题：
+
+（1）求函数 $y=\lvert x-2\rvert+\lvert x-4\rvert$ 的最小值，并指出函数取到最小值时 $x$ 的取值范围；
+
+（2）①求有序数组 2、5、3、4 的波动距离 $f(2,5,3,4)$；
+
+②求证：若 $a$、$b$、$c$、$d\in R$ 且 $a<b<c$，则 $f(a,b,c,d)\leqslant f(a,c,b,d)$；
+
+（3）同理可证得命题“若 $a$、$b$、$c$、$d\in R$ 且 $c<b<a$ 时，$f(a,b,c,d)\leqslant f(a,c,b,d)$”也是真命题（注：该命题无需证明，需要时可直接使用）.
+
+设两两不相等的四个实数 $a_1$、$a_2$、$a_3$、$a_4\in\{3^1,3^2,3^3,3^4\}$，求有序数组 $a_1$、$a_2$、$a_3$、$a_4$ 的波动距离 $f(a_1,a_2,a_3,a_4)$ 的最大值.
+
+\ansspace*[14]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由三角不等式得 $\lvert\lvert a\rvert-\lvert b\rvert\rvert\leqslant\lvert a\pm b\rvert\leqslant\lvert a\rvert+\lvert b\rvert$，}
+\step{当且仅当 $\lvert a+b\rvert^2=(\lvert a\rvert+\lvert b\rvert)^2$ 时，}
+\step{即当 $-ab=\lvert ab\rvert$ 时，即当 $ab\leqslant0$ 时取等号，}
+\step{由三角不等式得 $y=\lvert x-2\rvert+\lvert x-4\rvert\geqslant\lvert(x-2)-(x-4)\rvert=2$，}
+\step{当且仅当 $(x-2)(x-4)\leqslant0$ 时，即 $2\leqslant x\leqslant4$ 时取等号，}
+\step{因此，函数 $y=\lvert x-2\rvert+\lvert x-4\rvert$ 的最小值为 $2$，此时 $x$ 的取值范围是 $[2,4]$.}
+\stepm{（2）}{①由题中定义得 $f(2,5,3,4)=\lvert2-5\rvert+\lvert5-3\rvert+\lvert3-4\rvert=6$；}
+\step{②$f(a,b,c,d)-f(a,c,b,d)=\lvert a-b\rvert+\lvert c-d\rvert-\lvert a-c\rvert-\lvert b-d\rvert$，}
+\step{因为 $a<b<c$，所以 $\lvert a-b\rvert-\lvert a-c\rvert=-\lvert b-c\rvert$，$\lvert c-d\rvert-\lvert b-d\rvert\leqslant\lvert b-c\rvert$}
+\step{所以 $f(a,b,c,d)-f(a,c,b,d)\leqslant0$，即 $f(a,b,c,d)\leqslant f(a,c,b,d)$，}
+\stepm{（3）}{$f(a,b,c,d)=\lvert a-b\rvert+\lvert b-c\rvert+\lvert c-d\rvert$}
+\step{$=\lvert d-c\rvert+\lvert c-b\rvert+\lvert b-a\rvert=f(d,c,b,a)$，}
+\step{当 $f(a_1,a_2,a_3,a_4)$ 取得最大值时，$a_2=\max\{a_1,a_2,a_3\}$ 或 $a_2=\min\{a_1,a_2,a_3\}$，}% max/min 原卷排斜体，改正体
+\step{同理 $a_3=\max\{a_2,a_3,a_4\}$ 或 $a_3=\min\{a_2,a_3,a_4\}$，}
+\step{若 $a_2=\max\{a_1,a_2,a_3\}$，则 $a_2>a_3$，所以 $a_3=\min\{a_2,a_3,a_4\}$，}
+\step{故 $f(a_1,a_2,a_3,a_4)=\lvert a_1-a_2\rvert+\lvert a_2-a_3\rvert+\lvert a_3-a_4\rvert=a_2-a_1+a_2-a_3+a_4-a_3$}
+\step{$=2a_2+a_4-2a_3-a_1\leqslant2\times3^4+3^3-2\times3^1-3^2=174$，}
+\step{当且仅当 $a_1=3^2$，$a_2=3^4$，$a_3=3^1$，$a_4=3^3$ 时取等号，}
+\step{所以 $f(3^2,3^4,3^1,3^3)$ 为 $f(a_1,a_2,a_3,a_4)$ 的最大值，}
+\step{若 $a_2=\min\{a_1,a_2,a_3\}$，则 $a_2<a_3$，所以 $a_3=\max\{a_2,a_3,a_4\}$，}
+\step{同理可得 $f(3^3,3^4,3^1,3^2)$ 为 $f(a_1,a_2,a_3,a_4)$ 的最大值，}
+\step{综上所述，$f(a_1,a_2,a_3,a_4)$ 的最大值为 174.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
