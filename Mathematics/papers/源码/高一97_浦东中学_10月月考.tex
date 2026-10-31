@@ -74,11 +74,11 @@
 \solend
 \fi
 
-\item 满足 $\{1,3\}\subseteq A\subseteq\{0,1,3,5\}$ 的所有集合 $A$ 的全部元素之和为\blankline[4.4em].
+\item 满足 $\{1,3\}\subset A\subseteq\{0,1,3,5\}$，的所有集合 $A$ 的全部元素之和为\blankline[4.4em].% 左侧为 ⊂（原卷如此）、末集合后的逗号亦原卷有，均照录
 
 \ifanswer
 \solbegin
-\step{符合条件的集合 $A$ 有以下几个，$A_1=\{0,1,3\}$，$A_2=\{1,3,5\}$，$A_3=\{0,1,3,5\}$，}
+\step{符合条件的集合 $A$ 有以下几个，$A_1=\{0,1,3\},A_2=\{1,3,5\},A_3=\{0,1,3,5\}$，}
 \step{所以所有集合 $A$ 的全部元素之和为 $0+1+3+1+3+5+0+1+3+5=22$.}
 \solend
 \fi
@@ -143,7 +143,7 @@
 \solend
 \fi
 
-\item 设 $x\in\R$，$[x]$ 表示不大于 $x$ 的最大整数，如 $[\pi]=3$，$[-1.2]=-2$，$\left[\dfrac12\right]=0$，则使 $[\lvert x-1\rvert]=3$ 成立的 $x$ 的取值范围\blankline[4.4em].
+\item 设 $x\in\R$，$[x]$ 表示不大于 $x$ 的最大整数，如 $[\pi]=3,[-1.2]=-2,\left[\dfrac12\right]=0$，则使 $[\lvert x-1\rvert]=3$ 成立的 $x$ 的取值范围\blankline[4.4em].
 
 \ifanswer
 \solbegin
@@ -179,17 +179,19 @@ C. 充要条件\qquad D. 既非充分又非必要条件
 \item 已知全集 $U=\R$，集合 $A=\{x\mid x(x+2)<0\}$，$B=\{x\mid\lvert x\rvert\leqslant1\}$，则图中阴影部分表示的集合是\mbox{（\quad）}
 
 \begin{center}
-\begin{tikzpicture}[scale=1,line width=0.7pt]
-\draw (0,0) rectangle (4.6,2.3);
-\fill[black!30] (1.65,1.15) ellipse (1.35 and 0.78);
-\fill[black!30] (2.95,1.15) ellipse (1.35 and 0.78);
-\fill[white] (2.3,1.15) circle (0.56);
-\draw[densely dashed] (1.65,1.15) ellipse (1.35 and 0.78);
-\draw[densely dashed] (2.95,1.15) ellipse (1.35 and 0.78);
-\draw (2.3,1.15) circle (0.56);
-\node at (1.35,1.15) {$A$};
-\node at (3.25,1.15) {$B$};
-\node at (4.25,2.0) {$U$};
+\begin{tikzpicture}[scale=1,line width=0.5pt]
+\draw (0,0) rectangle (3.40,1.97);
+\fill[black!48] (1.04,0.985) ellipse (0.845 and 0.483);
+\fill[black!48] (2.30,0.985) ellipse (0.845 and 0.483);
+\begin{scope}
+\clip (1.04,0.985) ellipse (0.845 and 0.483);
+\fill[white] (2.30,0.985) ellipse (0.845 and 0.483);
+\end{scope}
+\draw[dash pattern=on 1.1pt off 1.4pt] (1.04,0.985) ellipse (0.845 and 0.483);
+\draw[dash pattern=on 1.1pt off 1.4pt] (2.30,0.985) ellipse (0.845 and 0.483);
+\node at (0.76,0.985) {$A$};
+\node at (2.62,0.985) {$B$};
+\node at (3.12,1.70) {$U$};
 \end{tikzpicture}
 \end{center}
 
