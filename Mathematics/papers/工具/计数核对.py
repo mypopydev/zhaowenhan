@@ -317,9 +317,9 @@ def _zhenti_g(pat, s, name, n=1, flags=0):
 #   答案也不同），2026-09-15 回原图核过后从两档剔除，见 README“回原图逐题核对”。
 TONGPAI_NOT_SAME = {('高一19', '7')}
 TONGTI_HEAD = '| 题目 | 份数 | 分布 |'
-_TONGTI_SLOT = re.compile(r'(?:高一)?([0-9a-c]{1,2})\s*附加\s*题?\s*第?\s*(\d+)\s*题'
-                          r'|(?:高一)?([0-9a-c]{1,2})\s*附加题(?![\d第])'
-                          r'|(?:高一)?([0-9a-c]{1,2})\s*第\s*(\d+)\s*题')
+_TONGTI_SLOT = re.compile(r'(?:高一)?([0-9a-c]{1,3})\s*附加\s*题?\s*第?\s*(\d+)\s*题'
+                          r'|(?:高一)?([0-9a-c]{1,3})\s*附加题(?![\d第])'
+                          r'|(?:高一)?([0-9a-c]{1,3})\s*第\s*(\d+)\s*题')
 
 
 def _tongti_members(cell):
@@ -650,14 +650,14 @@ NOTIN_HEAD = '| 机判报过的题位 | 机判出处 | 为什么不计入 |'
 NOHIT_LEDGER_HEADING = '### 机判无命中题位人工复核'
 NOHIT_LEDGER_HEAD = '| 题位 key | 批次 | 人工状态 | 核查摘要/证据 | 正式出处表定位 |'
 NOHIT_STATUSES = ('待核', '已确认-高考', '已确认-非高考', '已核查-暂未确证来源')
-NOHIT_KEY = re.compile(r'^高一(?:\d{2}|[abc])#(?:\d+|附加\d+)$')
+NOHIT_KEY = re.compile(r'^高一(?:\d{2,3}|[abc])#(?:\d+|附加\d+)$')
 NOHIT_PLACEHOLDERS = {'', '—', '-', '待核', '无', '暂无'}
 NON_GAOKAO_HEAD = '| 题 | 考据结果 |'
 FUJIA_TRACE_HEAD = '| 卷·题 | 内容 | 考据结果 |'
 
 
 def _nohit_batch(key):
-    m = re.match(r'^高一(\d{2}|[abc])#', key)
+    m = re.match(r'^高一(\d{2,3}|[abc])#', key)
     if not m:
         return None
     vol = m.group(1)
@@ -712,7 +712,7 @@ def _nohit_batch(key):
         return 'X'
     if n == 68:
         return 'Y'
-    if 69 <= n <= 97:
+    if 69 <= n <= 101:
         return 'Z'
     return None
 
