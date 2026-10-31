@@ -1,0 +1,313 @@
+% 高一101_上闵外_10月月考.tex
+%   —— 高一上数学“2026-2027 年上闵外中学高一上 10 月月考”（讲评版）
+% 试卷版：xelatex 高一101_上闵外_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一101_上闵外_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一101_上闵外_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，连载“27学年高一101”；
+% 原文标题“27学年高一101——2026-2027年上海市上闵外高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/jdeaACLBBVF0tPzEFtKbow。
+% 正文为 9 张 PNG 页（`原图/高一101_上闵外_10月月考/01..09.png`），
+% 尺寸混排（第 2、3、5—8 页为 4762×6735，第 1、4、9 页为 2560×3620），按页序读取。
+%
+% 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在原文内）。填空题 3—12（10 题）、
+% 选择题 13—16（4 题）、解答题 17—20（4 题），共 19 题——本卷解答题只有 4 道。
+%
+% 讲评版：第 6、7 题只印【答案】；第 14 题无【解析】、答案“B”直接印在题干括号内，
+% 本稿试卷版按惯例留空、答案版提 \ans{}；其余 16 题印【解析】，其中第 13—16 题的
+% 答案在解析末句“故选 $B$／$C$／$B$”。全卷无插图。
+%
+% 副标题：原卷未印副标题。本稿按内容标作“集合与常用逻辑用语、不等式”。
+%
+% 原卷笔误/存疑（均照录未改，正文对应处另有 % 注）：
+%   ① 第 15 题解析作“**所有** $M\in N$”，应为“所以”，原卷误字，照录；
+%   ② 第 16 题解析作“且 $2021\in A$，$AC$ 正确”——“$AC$”指 A、C 两选项均正确，
+%      照录。
+%
+% 与原卷的排版差异：
+%   ① 原卷每题下直接印【答案】/【解析】，本稿按全稿惯例将答案与解析置于答案版；
+%   ② 原卷未印副标题，本稿补出；填空横线统一排 \blankline[4.4em]；
+%   ③ 原卷数集记号排粗体 $\mathbf R$、$\mathbf Z$、$\mathbf N$，本稿按全稿惯例改用
+%      $\R$、$\Z$、$\N$；
+%   ④ 解答题按惯例加 \ansspace；选择题括号排 \mbox{（\quad）}。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 81 条（Q3：2；Q4：2；Q5：2；Q6：0；Q7：0；
+% Q8：1；Q9：2；Q10：4；Q11：4；Q12：7；Q13：2；Q14：0；Q15：1；Q16：6；Q17：11；
+% Q18：14；Q19：11；Q20：12）。第 6、7 题只印【答案】、第 14 题无解析，
+% 均不计入 \step 账。原卷解析的换行按语意合并，未逐行强拆。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+\begin{document}
+
+\examtitlest[7]{2026--2027 年上闵外中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 不等式 $\left\lvert\dfrac x{x+1}\right\rvert>\dfrac x{x+1}$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $\left\lvert\dfrac x{x+1}\right\rvert>\dfrac x{x+1}$，则 $\dfrac x{x+1}<0$，解得 $-1<x<0$，}
+\step{故所求解集为 $\{x\mid-1<x<0\}$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid ax^2-x+1=0\}$ 只有一个元素，则实数 $a$ 所构成的集合 $B=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{当 $a=0$ 时，方程为 $-x+1=0$，只有一个实数解，符合题意.}
+\step{当 $a\neq0$ 时，须 $\Delta=1-4a=0$，得 $a=\dfrac14$，所以 $B=\left\{0,\dfrac14\right\}$.}
+\solend
+\fi
+
+\item 设集合 $A=\{y\mid y=-x^2-2x+1\},B=\{y\mid y=x^2+x+1\}$，则 $A\cap B=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{$-x^2-2x+1=-(x+1)^2+2,x^2+x+1=\left(x+\dfrac12\right)^2+\dfrac34$，}
+\step{因此 $A=(-\infty,2],B=\left[\dfrac34,+\infty\right),A\cap B=\left[\dfrac34,2\right]$.}
+\solend
+\fi
+
+\item 命题“对任意 $x\in R$，都有 $x^2\geqslant0$”的否定为\blankline[4.4em].
+
+\ifanswer
+\ans{存在 $x\in R$，使得 $x^2<0$}
+\fi
+
+\item 已知集合 $M=\{x\mid x>2\}$，$P=\{x\mid x<3\}$，那么“$x\in M$ 或 $x\in P$”是“$x\in M\cap P$”的\blankline[4.4em]条件.
+
+\ifanswer
+\ans{必要不充分}
+\fi
+
+\item 已知 $x>0$，$y>0$，$x+3y+xy=9$，则 $x+3y$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$(x+3)(y+1)=12$，$x+3y=x+3+3(y+1)-6\geqslant2\sqrt{36}-6=6$，最小值为 6.}
+\solend
+\fi
+
+\item 已知函数 $f(x)=ax^2+bx+c\,(a\neq0),a,b,c\in\R$，集合 $A=\{x\mid f(x)=x\}$，当 $A=\{2\}$ 时，$a:c=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{方程 $ax^2+(b-1)x+c=0$ 只有一个实根 2，故 $ax^2+(b-1)x+c=a(x-2)^2$，}
+\step{比较常数项得 $c=4a$，所以 $a:c=1:4$.}
+\solend
+\fi
+
+\item 若方程 $x^2+px+q=0$ 的两根均为正整数，且 $p+q=28$，则该方程两根为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设两根为正整数 $r,s$，则 $r+s=-p,rs=q$，}
+\step{所以 $(r-1)(s-1)=rs-r-s+1=29$.}
+\step{$r-1,s-1$均为非负整数，且 29 为质数，得 $\{r-1,s-1\}=\{1,29\}$，}
+\step{两根为 2 和 30.}
+\solend
+\fi
+
+\item 关于 $x$ 的不等式 $x^2-(a+1)x+a<0$ 的解集中恰有两个整数，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原不等式可化为 $(x-1)(x-a)<0$，}
+\step{当 $a>1$ 时，解得 $1<x<a$，此时解集中的整数为 2、3，则 $3<a\leqslant4$；}
+\step{当 $a<1$ 时，解得 $a<x<1$，此时解集中的整数为 0、$-1$，则 $-2\leqslant a<-1$；}
+\step{故 $-2\leqslant a<-1$ 或 $3<a\leqslant4$.}
+\solend
+\fi
+
+\item 已知两个正整数集合 $A=\{a_1,a_2,a_3,a_4\},B=\{a_1^2,a_2^2,a_3^2,a_4^2\}$，其中 $a_1<a_2<a_3<a_4$，若 $A\cap B=\{a_1,a_4\}$，且 $a_1+a_4=10$，且 $A\cup B$中所有元素的和为 124，则集合 $A=\blankline[4.4em]$.
+
+\ifanswer
+\solbegin
+\step{由 $a_1<a_2<a_3<a_4$，$A\cap B=\{a_1,a_4\}$，得 $a_1=a_1^2$，所以 $a_1=1$；}
+\step{因为 $a_1+a_4=10$，所以 $a_4=9$；}
+\step{若 $a_2^2=9$，$a_2=3$，则有 $(1+3+a_3+9)+(a_3^2+81)=124$；}
+\step{解得 $a_3=5\ (a_3=-6$ 舍去$)$，所以 $A=\{1,3,5,9\},B=\{1,9,25,81\}$；}
+\step{若 $a_3^2=9$，$a_3=3$，此时只能有 $a_2=2$，}
+\step{则 $A\cup B$中所有元素和为$1+2+3+4+9+81\neq124$，所以不合题意.}
+\step{综上所述，$A=\{1,3,5,9\}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 若 $a,b\in\R$，则“$a+b>4$”是“$a>2$且 $b>2$”的\mbox{（\quad）}条件.
+
+\keepwithprev
+A. 充分非必要\qquad B. 必要非充分
+
+C. 充要\qquad D. 既非充分也非必要
+
+\ifanswer
+\solbegin
+\step{$a>2$ 且 $b>2\Rightarrow a+b>4$；当 $a=1,b=4$ 时，$a+b>4$，}
+\step{但“$a>2$ 且 $b>2$”不成立，因此为必要非充分条件，故选 $B$.}
+\solend
+\fi
+
+\item 用反证法证明：若整系数一元二次方程 $ax^2+bx+c=0\,(a\neq0)$ 有有理数根，那么 $a$、$b$、$c$中至少有一个偶数时，下列假设正确的是\mbox{（\quad）}% 原卷括号内已印“B”，试卷版按惯例留空
+
+\keepwithprev
+A. 假设 $a$、$b$、$c$ 都是偶数\qquad B. 假设 $a$、$b$、$c$ 都不是偶数
+
+C. 假设 $a$、$b$、$c$ 至多有一个偶数\qquad D. 假设 $a$、$b$、$c$ 至多有两个偶数
+
+\ifanswer
+\ans{$B$}
+\fi
+
+\item 设集合 $M=\{1,2,3\},N=\{x\mid x\subseteq M\}$，则 $M$ 与 $N$ 的关系是\mbox{（\quad）}
+
+\keepwithprev
+A. $M\subset N$\qquad B. $N\subset M$\qquad C. $M\in N$\qquad D. $M\cap N=M$
+
+\ifanswer
+\solbegin
+\step{因为 $M\subseteq M$，所有 $M\in N$，故选 $C$.}% “所有”系原卷误字（应为“所以”），照录
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x=a^2-b^2,a,b\in\Z\}$，则下列说法不正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. $2021\in A$\qquad B. 所有质数都在集合 $A$ 中
+
+C. 所有奇数都在集合 $A$ 中\qquad D. 所有 4 的倍数都在集合 $A$ 中
+
+\ifanswer
+\solbegin
+\step{$a^2-b^2=(a-b)(a+b)$，两因数同奇偶，乘积为奇数或 4 的倍数，}
+\step{因而质数 $2\notin A$,$B$ 错误.}
+\step{任意 $k\in\Z,2k+1=(k+1)^2-k^2$，故所有奇数都在 $A$ 中，}
+\step{且 $2021\in A$,$AC$ 正确.}% “AC 正确”指 A、C 两选项均正确，原卷如此，照录
+\step{又 $4k=(k+1)^2-(k-1)^2$，故所有 4 的倍数都在 $A$ 中，$D$ 正确.}
+\step{故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 设全集为 $R$，集合 $A=\left\{x\mid\dfrac{2x-5}{x+1}>1\right\}$,$B=\{x\mid a+1<x<2a-1\}$.
+
+（1）若 $a=4$，求 $A\cup B$、$A\cap\overline B$；
+
+（2）若 $\overline A\cap B=\varnothing$，求实数 $a$ 的取值范围.
+
+\ansspace*[10]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{因为 $\dfrac{2x-5}{x+1}>1\Rightarrow\dfrac{x-6}{x+1}>0\Rightarrow x>6$ 或 $x<-1$，}
+\step{所以集合 $A=\{x\mid x<-1$或$x>6\}$，}
+\step{$a=4$ 时，集合 $B=\{x\mid5<x<7\}$，}
+\step{所以 $A\cup B=\{x\mid x<-1$或$x>5\}$，}
+\step{又因为全集为 $R$，所以 $\overline B=\{x\mid x\leqslant5$ 或 $x\geqslant7\}$，}
+\step{所以 $A\cap\overline B=\{x\mid x<-1$ 或 $x\geqslant7\}$；}
+\stepm{（2）}{因为 $\overline A=\{x\mid-1\leqslant x\leqslant6\}$，且 $\overline A\cap B=\varnothing$，}
+\step{所以 $a+1\geqslant2a-1$ 时，$a\leqslant2$，此时 $B=\varnothing$，满足题意；}
+\step{由 $\begin{cases}a>2\\ a+1\geqslant6\end{cases}$，解得 $a\geqslant5$；}
+\step{由 $\begin{cases}a>2\\ 2a-1\leqslant-1\end{cases}$，解得 $a\in\varnothing$；}
+\step{综上，实数 $a$ 的取值范围是 $\{a\mid a\leqslant2$ 或 $a\geqslant5\}$.}
+\solend
+\fi
+
+\item 已知实数 $a$ 是常数，关于 $x$ 的不等式 $ax^2-(a^2+1)x+a<0$.
+
+（1）若 $a=1$，求上述不等式解集；
+
+（2）若 $a$ 为实数，求解上述不等式.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $a=1$ 时，原不等式为 $x^2-2x+1=(x-1)^2<0$.}
+\step{平方非负，故解集为 $\varnothing$.}
+\stepm{（2）}{原不等式可化为 $(ax-1)(x-a)<0$.}
+\step{当 $a=0$ 时，$-x<0$，解集为 $(0,+\infty)$.}
+\step{当 $a\neq0$ 时，原不等式等价于 $a(x-a)\left(x-\dfrac1a\right)<0,a-\dfrac1a=\dfrac{a^2-1}a$.}
+\step{①当 $a>0$ 时，须两因式异号，解在两根之间.}
+\step{若 $0<a<1$，则 $a<\dfrac1a$，解集为 $\left(a,\dfrac1a\right)$；}
+\step{若 $a>1$，则 $\dfrac1a<a$，解集为 $\left(\dfrac1a,a\right)$.}
+\step{若 $a=1$，两根相等，解集为 $\varnothing$.}
+\step{②当 $a<0$ 时，须两因式同号，解在两根之外.}
+\step{若 $a<-1$，则 $a<\dfrac1a$，解集为 $(-\infty,a)\cup\left(\dfrac1a,+\infty\right)$.}
+\step{若 $-1<a<0$，则 $\dfrac1a<a$，解集为 $\left(-\infty,\dfrac1a\right)\cup(a,+\infty)$.}
+\step{若 $a=-1$，原不等式为 $-(x+1)^2<0$，解集为 $(-\infty,-1)\cup(-1,+\infty)$.}
+\solend
+\fi
+
+\item 某品牌口罩原来每只成本为 6 元．售价为 8 元，月销售 5 万只.
+
+（1）据市场调查，若售价每提高 0.5 元，月销售量将相应减少 0.2 万只，要使月总利润不低于原来的月总利润（月总利润＝月销售总收入－月总成本），该口罩每只售价最多为多少元？
+
+（2）为提高月总利润，厂家决定下月进行营销策略改革，计划每只售价 $x(x\geqslant9)$ 元，并投入 $\dfrac{26}5(x-9)$ 万元作为营销策略改革费用．据市场调查，每只售价每提高 0.5 元，月销售量将相应减少 $\dfrac{0.2}{(x-8)^2}$ 万只．则当每只售价 $x$ 为多少时，下月的月总利润最大？并求出下月最大总利润.
+
+\ansspace*[12]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{设口罩每只售价最多为 $x$ 元，则月销售量为$\left(5-\dfrac{x-8}{0.5}\times0.2\right)$万只，}
+\step{则由已知 $\left(5-\dfrac{x-8}{0.5}\times0.2\right)(x-6)\geqslant(8-6)\times5$，}
+\step{即 $\dfrac25x^2-\dfrac{53}5x+\dfrac{296}5\leqslant0$，即 $2x^2-53x+296\leqslant0$，解得 $8\leqslant x\leqslant\dfrac{37}2$，}
+\step{即每只售价最多为 18.5 元.}
+\stepm{（2）}{下月的月总利润 $y=\left[5-\dfrac{x-8}{0.5}\times\dfrac{0.2}{(x-8)^2}\right](x-6)-\dfrac{26}5(x-9)$}
+\step{$=\dfrac{2.4-0.4x}{x-8}-\dfrac15x+\dfrac{234-150}5=\dfrac{-0.4(x-8)-0.8}{x-8}-\dfrac15x+\dfrac{84}5$}
+\step{$=-\left[\dfrac{4}{5(x-8)}+\dfrac{x-8}5\right]+\dfrac{74}5$，}
+\step{因为 $x\geqslant9$，所以 $\dfrac{4}{5(x-8)}+\dfrac{x-8}5\geqslant2\sqrt{\dfrac4{25}}=\dfrac45$，}
+\step{即 $y=-\left[\dfrac{4}{5(x-8)}+\dfrac{x-8}5\right]+\dfrac{74}5\leqslant-\dfrac45+\dfrac{74}5=14$，}
+\step{当且仅当 $\dfrac{4}{5(x-8)}=\dfrac{x-8}5$，即 $x=10$ 时取等号.}
+\step{答：当 $x=10$ 时，下月的月总利润最大，且最大利润为 14 万元.}
+\solend
+\fi
+
+\item 设集合 $A=\{(x,y)\mid y=2x-1,x\in\N^{*}\}$,$B=\{(x,y)\mid y=ax^2-ax+a,x\in\N^{*}\}$，
+
+（1）若 $\lvert x\rvert\leqslant3$，用列举法写出集合 $A$；
+
+（2）若 $A\cap B=\varnothing$，求实数 $a$ 的取值范围；
+
+（3）是否存在非零整数 $a$，使 $A\cap B\neq\varnothing$？若存在，请求出 $a$ 的值，并求出 $A\cap B$；若不存在，说明理由.
+
+\ansspace*[11]
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$x\in\N^{*}$ 且 $\lvert x\rvert\leqslant3$，得 $x=1,2,3$.}
+\step{代入 $y=2x-1$，相应的 $y$ 分别为 1，3，5，所以 $A=\{(1,1),(2,3),(3,5)\}$.}
+\stepm{（2）}{对任意 $n\in\N^{*}$，有 $n^2-n+1=n(n-1)+1>0$，}
+\step{且 $(n,2n-1)\in A\cap B\Leftrightarrow2n-1=a(n^2-n+1)\Leftrightarrow a=\dfrac{2n-1}{n^2-n+1}$，}
+\step{因此，$A\cap B=\varnothing$ 等价于对任意 $n\in\N^{*}$，均有 $a\neq\dfrac{2n-1}{n^2-n+1}$.}
+\stepm{（3）}{若 $A\cap B\neq\varnothing$，则存在 $n\in\N^{*}$，使 $a=\dfrac{2n-1}{n^2-n+1}$.}
+\step{当 $n=1,2$ 时，$a=1$；}
+\step{当 $n\geqslant3$ 时，$n^2-n+1-(2n-1)=(n-1)(n-2)>0$，所以 $0<a<1$，}
+\step{不可能为整数.}
+\step{因此，满足条件的非零整数只能是 $a=1$.}
+\step{当 $a=1$ 时，公共点的横坐标满足 $2n-1=n^2-n+1\Leftrightarrow(n-1)(n-2)=0$}
+\step{$\Leftrightarrow n=1$ 或 $n=2$．两者均为正整数，对应公共点为 $(1,1)$、$(2,3)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
