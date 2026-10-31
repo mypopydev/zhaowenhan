@@ -8,12 +8,13 @@
 % 原文标题“27学年高一91——2026-2027年上海市敬业中学高一上10月月考”；
 % 原文链接：https://mp.weixin.qq.com/s/FS3eo1G2q5PQKVOR09JtXg。
 % 正文为 8 张 PNG 页（`原图/高一91_敬业中学_10月月考/01..08.png`），
-% 尺寸混排（第 1、2、3、5、6、7、8 页为 2560×3620，第 4 页同为 2560×3620），均按页序读取。
+% 尺寸混排（第 1、2、3、7、8 页为 4762×6735，第 4、5、6 页为 2560×3620），均按页序读取。
 %
 % 篇幅与题号：原卷自第 3 题起编号（第 1、2 题不在原文内）。填空题 3—12（10 题）、
 % 选择题 13—16（4 题）、解答题 17—21（5 题），共 19 题。
 %
-% 讲评版：第 13 题无【解析】（只有四个选项），本稿提 \ans{$D$}；其余 18 题印【解析】，
+% 讲评版：第 13 题原卷未印答案、也无【解析】（括号内为空），本稿按 2013 年上海卷（春）
+% 同题（原题照录，与本库 高一85 第 13 题同源）补提 \ans{$D$}；其余 18 题印【解析】，
 % 其中选择题答案在解析末句“故选 $A$／$B$／$B$”。第 16 题题干带两幅韦恩图
 % （$A\cup(B\triangle C)$ 与 $(A\cup B)\triangle(A\cup C)$），三版都出。
 % 第 18 题解析带原卷的**分步分值**（“…………3 分”“…………4 分”“…………2 分”），照录。
@@ -37,10 +38,11 @@
 %   ⑥ 第 16 题的两幅韦恩图原卷排在题干右侧、文字绕排，本稿改排为选项后的居中图
 %      （自原图裁切、按“$R-\max(G,B)>12$ 且 $R>150$”去粉色水印后转灰度）。
 %
-% 行数核对：逐题数 \step/\stepm 条数，合计 100 条（Q3：1；Q4：2；Q5：1；Q6：2；Q7：1；
-% Q8：2；Q9：3；Q10：4；Q11：6；Q12：5；Q13：0；Q14：3；Q15：8；Q16：5；Q17：3；
-% Q18：6；Q19：13；Q20：20；Q21：15）。第 13 题只印答案、不计入 \step 账。
-% 原卷解析的换行按语意合并，未逐行强拆。
+% 行数核对：逐题数 \step/\stepm 条数，合计 99 条（Q3：1；Q4：2；Q5：1；Q6：2；Q7：1；
+% Q8：2；Q9：3；Q10：4；Q11：6；Q12：5；Q13：0；Q14：3；Q15：8；Q16：5；Q17：2；
+% Q18：6；Q19：13；Q20：20；Q21：15）。第 13 题原卷未印答案与解析，不计入 \step 账。
+% 原卷解析的换行按语意合并，未逐行强拆（2026-10-31 逐题回原图重核：Q17 的
+% “所以…<0，即…”原卷是一印刷行，本稿原拆两条，已合并）。
 %
 \documentclass[a4paper,11pt]{article}
 \usepackage{common}
@@ -79,7 +81,7 @@
 \solend
 \fi
 
-\item 已知集合 $A=\{-1,0,1,2\}$，$B=\{y\mid y=x^2,x\in A\}$，则集合 $B$ 的非空真子集的个数为\blankline[4.4em].
+\item 已知集合 $A=\{-1,0,1,2\},B=\{y\mid y=x^2,x\in A\}$，则集合 $B$ 的非空真子集的个数为\blankline[4.4em].
 
 \ifanswer
 \solbegin
@@ -115,7 +117,7 @@
 \solend
 \fi
 
-\item 已知集合 $A=\{x\mid x^2-9x+18<0\}$，$B=\{x\mid x^2-5ax+6a^2=0\}$，若 $A\cap B\neq\varnothing$，则 $a$ 的取值范围是\blankline[4.4em].
+\item 已知集合 $A=\{x\mid x^2-9x+18<0\},B=\{x\mid x^2-5ax+6a^2=0\}$，若 $A\cap B\neq\varnothing$，则 $a$ 的取值范围是\blankline[4.4em].
 
 \ifanswer
 \solbegin
@@ -139,7 +141,7 @@
 \solend
 \fi
 
-\item 已知 $x\in R$，定义：$[x]$ 表示不小于 $x$ 的最小整数，如：$[\sqrt2]=2$，$[-\sqrt2]=-1$，若 $[2x\cdot[x]]=8$，则 $x$ 的取值范围是\blankline[4.4em].
+\item 已知 $x\in R$，定义：$[x]$ 表示不小于 $x$ 的最小整数，如：$[\sqrt2]=2$，$[-\sqrt2]=-1$，$[2]=2$，若 $[2x\cdot[x]]=8$，则 $x$ 的取值范围是\blankline[4.4em].
 
 \ifanswer
 \solbegin
@@ -241,8 +243,7 @@ C. 只有乙是真命题\qquad D. 甲乙都是假命题
 \ifanswer
 \solbegin
 \step{因为 $a_1$、$a_2$、$a_3$、$a_4$ 是四个正数，$\dfrac{a_1}{a_2}<\dfrac{a_3}{a_4}$，所以 $a_1a_4<a_2a_3$，}
-\step{所以 $\dfrac{a_1}{a_2}-\dfrac{a_1+a_3}{a_2+a_4}=\dfrac{a_1a_2+a_1a_4-a_1a_2-a_2a_3}{a_2(a_2+a_4)}=\dfrac{a_1a_4-a_2a_3}{a_2(a_2+a_4)}<0$，}
-\step{即 $\dfrac{a_1}{a_2}<\dfrac{a_1+a_3}{a_2+a_4}$.}
+\step{所以 $\dfrac{a_1}{a_2}-\dfrac{a_1+a_3}{a_2+a_4}=\dfrac{a_1a_2+a_1a_4-a_1a_2-a_2a_3}{a_2(a_2+a_4)}=\dfrac{a_1a_4-a_2a_3}{a_2(a_2+a_4)}<0$，即 $\dfrac{a_1}{a_2}<\dfrac{a_1+a_3}{a_2+a_4}$.}
 \solend
 \fi
 
@@ -281,9 +282,9 @@ C. 只有乙是真命题\qquad D. 甲乙都是假命题
 \step{当 $a=-3$ 时，$B=\{2\}$，也满足条件，}
 \step{综上，$a$ 的值为 $-1$ 或 $-3$；}
 \stepm{（2）}{因为 $A\cap\overline B=A$，所以 $A\subseteq\overline B$，所以 $A\cap B=\varnothing$，}
-\step{①当 $\Delta<0$，即 $a<-3$ 时，$B=\varnothing$，满足条件，}
-\step{②当 $\Delta=0$ 即 $a=-3$ 时，$B=\{2\}$，$A\cap B=\{2\}$ 不适合条件，}
-\step{③当 $\Delta>0$，即 $a>-3$ 时，此时只需 $1\notin B$ 且 $2\notin B$，}
+\step{①当 $\triangle<0$，即 $a<-3$ 时，$B=\varnothing$，满足条件，}
+\step{②当 $\triangle=0$ 即 $a=-3$ 时，$B=\{2\}$，$A\cap B=\{2\}$ 不适合条件，}
+\step{③当 $\triangle>0$，即 $a>-3$ 时，此时只需 $1\notin B$ 且 $2\notin B$，}
 \step{将 $2$ 代入 $B$ 的方程得 $a=-1$ 或 $a=-3$，}
 \step{将 $1$ 代入 $B$ 的方程得 $a=-1\pm\sqrt3$，所以 $a\neq-1,a\neq-3,a\neq-1\pm\sqrt3$，}
 \step{综上，$a$ 的取值范围是 $\{a\mid a<-3$ 或 $-3<a<-1-\sqrt3$ 或 $-1-\sqrt3<a<-1$}
@@ -347,7 +348,7 @@ C. 只有乙是真命题\qquad D. 甲乙都是假命题
 \step{故假设不成立，从而 $x_1$、$x_2$ 中至少有一个大于等于 $2$.}
 \stepm{（3）}{由 $3a+2b+c=0$ 得 $c=-(3a+2b)$，}
 \step{则方程 $ax^2+bx+c=0$ 等价于 $ax^2+bx-(3a+2b)=0$，}
-\step{由题意得 $\Delta=b^2+4a(3a+2b)\geqslant0$ 且 $a\neq0$，即 $(b+2a)(b+6a)\geqslant0$，}
+\step{由题意得 $\triangle=b^2+4a(3a+2b)\geqslant0$ 且 $a\neq0$，即 $(b+2a)(b+6a)\geqslant0$，}
 \step{故 $\left(\dfrac ba+2\right)\left(\dfrac ba+6\right)\geqslant0$，解得 $-\dfrac ba\leqslant2$ 或 $-\dfrac ba\geqslant6$，}
 \step{又 $x_1+x_2=-\dfrac ba$，所以 $x_1+x_2$ 的取值范围为 $(-\infty,2]\cup[6,+\infty)$，}
 \step{故 $y_1+y_2$ 的取值范围为 $(-\infty,-2]\cup[2,+\infty)$.}
