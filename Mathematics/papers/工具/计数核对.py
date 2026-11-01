@@ -91,7 +91,7 @@ ANS_FULL = re.compile(r'\\ans\{[^}]*（1）')
 # “知识模块”一节里的模块名、以“、”连接（见 README“说明”的“标题行”节）。
 SELFSUB = {'高一14': '集合与逻辑单元练习', '高一24': '集合与逻辑、等式的性质',
            '高一49': '集合与逻辑单元综合检测', '高一50': '不等式章节练习'}
-MODULES = ['集合与常用逻辑用语', '函数与导数', '三角函数', '数列',
+MODULES = ['集合与常用逻辑用语', '函数', '函数与导数', '三角函数', '数列',
            '立体几何', '解析几何', '概率统计', '不等式', '向量']
 
 # 对号副本数：高一16≡高一b、高一18≡高一c，一套副本只算一套（README“试卷清单”的口径）
@@ -198,7 +198,9 @@ def classify_keep(raws):
             if l.strip().startswith('%') or KEEP not in l:
                 continue
             nxt = next_code_line(lines, i)
-            if re.match(r'^A[.．]', nxt):
+            if re.match(r'^A[.．]', nxt) or nxt.startswith(r'\begin{center}'):
+                # 选项段：A. 开头的文字选项，或整块图选项（高一103 第 14 题，\begin{center}
+                # 里是四个文氏图的 tabular——\keepwithprev 挡的正是“题干与图选项分家”）
                 cnt['选项段'] += 1
             elif re.match(r'^[①-⑳]', nxt):
                 # 题干后紧跟 ①②③④ 编号命题列（高一26 第 4 题、高一28 第 15 题这一型）
@@ -712,7 +714,7 @@ def _nohit_batch(key):
         return 'X'
     if n == 68:
         return 'Y'
-    if 69 <= n <= 101:
+    if 69 <= n <= 104:
         return 'Z'
     return None
 
