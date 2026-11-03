@@ -90,7 +90,8 @@ ANS_FULL = re.compile(r'\\ans\{[^}]*（1）')
 # 副标题口径（2026-09-26 起）：原卷自印的四份照录，其余**按本卷实际内容**补出、且只许用
 # “知识模块”一节里的模块名、以“、”连接（见 README“说明”的“标题行”节）。
 SELFSUB = {'高一14': '集合与逻辑单元练习', '高一24': '集合与逻辑、等式的性质',
-           '高一49': '集合与逻辑单元综合检测', '高一50': '不等式章节练习'}
+           '高一49': '集合与逻辑单元综合检测', '高一50': '不等式章节练习',
+           '高一108': '闵行中学、嘉定一中、松江一中、金山中学、嘉一实高'}
 MODULES = ['集合与常用逻辑用语', '函数', '函数与导数', '三角函数', '数列',
            '立体几何', '解析几何', '概率统计', '不等式', '向量']
 
@@ -595,7 +596,7 @@ def check_subtitle_dist(md, root, n_tex):
     n_multi = len(plain) - n_single
     a, b = _zhenti_g(r'其中 (\d+) 个源码文件作“集合与常用逻辑用语”，\s*\*\*另 (\d+) 个源码文件', md,
                      '说明：副标题分布', n=2)
-    self_match = re.search(r'\*\*高一([0-9／]+) 四份是原卷自印、照录', md)
+    self_match = re.search(r'\*\*高一([0-9／]+) (?:四|五)份是原卷自印、照录', md)
     if not self_match:
         raise AssertionError('README 里找不到原卷自印副标题名单')
     self_names = self_match.group(1).split('／')
@@ -714,7 +715,7 @@ def _nohit_batch(key):
         return 'X'
     if n == 68:
         return 'Y'
-    if 69 <= n <= 105:
+    if 69 <= n <= 108:
         return 'Z'
     return None
 
