@@ -1,0 +1,365 @@
+% 高一110_向明中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年向明中学高一上 10 月月考”（试卷版/答案版）
+% 试卷版：xelatex 高一110_向明中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一110_向明中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一110_向明中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-04 20:23 发布；
+% 连载“27学年高一110”，原文标题“27学年高一110——2026-2027年上海市向明中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/gIfB9fGfp1n5Yzk3SiV9fA。
+% 正文为 9 张 PNG 页（第 1—4、6—8 页 4762×6735，第 5、9 页 2560×3620），
+% 题目下印有【解析】，为讲评版。
+% 题目、解析均据原图转录；卷面红色水印及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作“2026-2027 年向明中学高一上 10 月月考”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，本稿按题目内容
+% 标为“集合与常用逻辑用语、不等式”。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，填空题编号为 3—12、选择题为 13—16、解答题为 17—21，本稿保留原题号；
+%   ② 原卷每题下直接印【解析】，本稿按全稿惯例将解析置于答案版；第 7 题只印【答案】另提 \ans{}；
+%   ③ 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；解答题按惯例加 \anspace；选择题括号排
+%      \mbox{（\quad）}、选项段前按惯例加 \keepwithprev；
+%   ⑤ 原卷数集排粗体 $\mathbf R$、$\mathbf N^*$，按全稿惯例改 \R、\N^*。
+%
+% 原卷存疑照录：第 18 题 (2) 解析“分别取 $x=-2,x=3$，得到 $a<-2,3<3a$，即 $a<-2$
+% 且 $a>1$，矛盾”中的不等式链；第 20 题 (2) 解析“$x_1+x_2=-2(m+1)<0\Leftrightarrow m>\sqrt5$”
+% （按上下文应为 $m>-1$，与 $x_1x_2=m^2-5>0$ 联立才得 $m>\sqrt5$）；第 21 题 (3) 解析
+% “显然任意集合 $\{a_1,a_2,a_3\}$ 不是‘可调和集合’”。均照录加注。
+% 判别式原卷排等边三角形 $\triangle$（非 $\Delta$），照录。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 116 条（Q3：1；Q4：4；Q5：3；Q6：5；Q7：0；
+% Q8：2；Q9：3；Q10：4；Q11：4；Q12：12；Q13：1；Q14：3；Q15：3；Q16：4；Q17：6；
+% Q18：7；Q19：6；Q20：12；Q21：36），与原卷印刷行逐题相等。第 7 题只印【答案】，
+% 提 \ans{}，不计入 \step 账。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年向明中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知全集 $U=\R$，设集合 $S=\{x\mid x>-2\}$,$T=\{x\mid-4\leqslant x\leqslant1\}$，则 $\overline S\cap T=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\overline S=(-\infty,-2]$，所以 $\overline S\cap T=(-\infty,-2]\cap[-4,1]=[-4,-2]$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid(k+1)x^2+2x-1=0\}$ 有且仅有两个子集，则实数 $k=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$A$ 有且仅有两个子集，说明 $A$ 恰有一个元素.}
+\step{当 $k=-1$ 时，原方程为 $2x-1=0$，符合题意;}
+\step{当 $k\neq-1$ 时，须有 $\triangle=4+4(k+1)=0$，得 $k=-2$.}
+\step{因此 $k=-1$ 或 $k=-2$.}
+\solend
+\fi
+
+\item 已知实数 $a$、$b$ 满足 $ab=-18$，则 $a^2+b^2$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{已知实数 $a$、$b$ 满足 $ab=-18$,}
+\step{所以 $a^2+b^2=a^2+\dfrac{18^2}{a^2}\geqslant2\sqrt{a^2\cdot\dfrac{18^2}{a^2}}=2\times18=36$,}
+\step{当且仅当 $\dfrac{18^2}{a^2}=a^2$，即 $a=\pm3\sqrt2$，所以 $a^2+b^2$ 的最小值为 36.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid-2\leqslant x\leqslant5\}$，$B=\{x\mid m+1\leqslant x\leqslant2m-1\}$. 若 $A\cup B=A$，则实数 $m$ 的取值范围\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $A\cup B=A$，则 $B\subseteq A$，分两种情况考虑:}
+\step{(i) 若 $B$ 不为空集，得 $m+1\leqslant2m-1$，解得 $m\geqslant2$，$B\subseteq A$,}
+\step{所以 $m+1\geqslant-2$，且 $2m-1\leqslant5$，解得 $-3\leqslant m\leqslant3$，此时 $m$ 的范围为 $2\leqslant m\leqslant3$;}
+\step{(ii) 若 $B$ 为空集，符合题意，得 $m+1>2m-1$，解得 $m<2$,}
+\step{综上，实数 $m$ 的范围为 $(-\infty,3]$.}
+\solend
+\fi
+
+\item 在用反证法证明某命题时，对结论“$a$、$b$、$c$ 至少有一个为整数”的否定为\blankline[4.4em].
+
+\ifanswer
+\ans{$a$、$b$、$c$ 都不是整数}
+\fi
+
+\item 已知 $-3<a<-2$，$3<b<4$，则 $\dfrac{a^2}{b}$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $-3<a<-2$，所以 $4<a^2<9$，因为 $3<b<4$，所以 $\dfrac14<\dfrac1b<\dfrac13$,}
+\step{所以 $1<\dfrac{a^2}{b}<3$，所以 $\dfrac{a^2}{b}$ 的取值范围为 $(1,3)$.}
+\solend
+\fi
+
+\item 设集合 $A=\{x\mid y=2\sqrt{x-1}+1\}$,$B=\{y\mid y=-x^2+2x+3\}$，则 $A\cap B=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{根式有意义需 $x-1\geqslant0$，所以 $A=[1,+\infty)$.}
+\step{由 $y=-x^2+2x+3=4-(x-1)^2$，得 $B=(-\infty,4]$.}
+\step{因此 $A\cap B=[1,4]$.}
+\solend
+\fi
+
+\item 若不等式 $ax^2+bx+c>0$ 的解集为 $(-2,3)$，则不等式 $cx^2+ax-b>0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原不等式的解集为 $(-2,3)$，得 $a<0$，且 $ax^2+bx+c=a(x+2)(x-3)$,}
+\step{即 $b=-a$,$c=-6a$.}
+\step{于是 $cx^2+ax-b=-a(3x+1)(2x-1)>0\Leftrightarrow(3x+1)(2x-1)>0$,}
+\step{解得 $x<-\dfrac13$ 或 $x>\dfrac12$，故解集为 $\left(-\infty,-\dfrac13\right)\cup\left(\dfrac12,+\infty\right)$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的二次方程 $x^2+px+p=0$ 的两个实根分别为 $x_1,x_2$，且满足 $x_1^2+x_2^2=3$，则 $p$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为关于 $x$ 的二次方程 $x^2+px+p=0$ 的两个实根分别为 $x_1,x_2$,}
+\step{所以 $x_1+x_2=-p$,$x_1x_2=p$，因为 $x_1^2+x_2^2=3$,}
+\step{所以 $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=p^2-2p=3$,}
+\step{即 $p^2-2p-3=(p-3)(p+1)=0$，解得 $p=3$ 或 $p=-1$.}
+\solend
+\fi
+
+\item 关于 $x$ 的不等式 $(ax-1)^2<x^2$ 恰有 2 个整数解，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $(ax-1)^2<x^2$ 可化为 $[(a+1)x-1][(a-1)x-1]<0$,}
+\step{①当 $a=1$ 时，原不等式等价于 $2x-1>0$，其解集为 $\left(\dfrac12,+\infty\right)$，不满足题意;}
+\step{②当 $a=-1$ 时，原不等式等价于 $2x+1<0$，其解集为 $\left(-\infty,-\dfrac12\right)$，不满足题意;}
+\step{③当 $a>1$ 时，原不等式等价于 $\left(x-\dfrac1{a+1}\right)\left(x-\dfrac1{a-1}\right)<0$,}
+\step{其解集为 $\left(\dfrac1{a+1},\dfrac1{a-1}\right)$,}
+\step{因为其解集中恰有 2 个整数，所以
+$\begin{cases}2<\dfrac1{a-1}\\3\geqslant\dfrac1{a-1}\end{cases}$，
+解得 $\dfrac43\leqslant a<\dfrac32$;}
+\step{④当 $-1<a<1$ 时，原不等式等价于 $\left(x-\dfrac1{a+1}\right)\left(x-\dfrac1{a-1}\right)>0$,}
+\step{其解集为 $\left(-\infty,\dfrac1{a-1}\right)\cup\left(\dfrac1{a+1},+\infty\right)$，不满足题意;}
+\step{⑤当 $a<-1$ 时，原不等式等价于 $\left(x-\dfrac1{a+1}\right)\left(x-\dfrac1{a-1}\right)<0$,}
+\step{其解集为 $\left(\dfrac1{a+1},\dfrac1{a-1}\right)$,}
+\step{因为其解集中恰有 2 个整数，所以
+$\begin{cases}\dfrac1{a+1}<-2\\\dfrac1{a+1}\geqslant-3\end{cases}$，
+解得 $-\dfrac32<a\leqslant-\dfrac43$,}
+\step{综上，实数 $a$ 的取值范围是 $\left(-\dfrac32,-\dfrac43\right]\cup\left[\dfrac43,\dfrac32\right)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 若集合 $M=\{(x,y)\mid x+y=0\}$，$P=\{(x,y)\mid x-y=2\}$，则 $M\cap P=$\mbox{（\quad）}
+
+\keepwithprev
+A. $(1,-1)$\qquad B. $\{x=1\}\cup\{y=-1\}$\qquad C. $\{1,-1\}$\qquad D. $\{(1,-1)\}$
+
+\ifanswer
+\solbegin
+\step{解方程组
+$\begin{cases}x+y=0\\x-y=2\end{cases}$，
+解得
+$\begin{cases}x=1\\y=-1\end{cases}$，
+故集合 $M\cap P=\{(1,-1)\}$，故选 $D$.}
+\solend
+\fi
+
+\item 下列命题中正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $ac>bc$，则 $a>b$\qquad\qquad B. 若 $a^2>b^2$，则 $a>b$
+
+C. 若 $\dfrac1a>\dfrac1b$，则 $a<b$\qquad\qquad D. 若 $\sqrt a<\sqrt b$，则 $a<b$
+
+\ifanswer
+\solbegin
+\step{A 取 $a=0,b=1,c=-1$; B 取 $a=-2,b=1$;}
+\step{C 取 $a=1,b=-1$; 均可说明命题错误.}
+\step{D $\sqrt{a}$,$\sqrt{b}$ 均非负，将 $\sqrt{a}<\sqrt{b}$ 两边平方得 $a<b$，正确. 故选 $D$.}
+\solend
+\fi
+
+\item 设 $x\in\R$，则“$\lvert x+3\rvert>6$”是“$\frac{2x}{x+5}\geqslant1$”的\mbox{（\quad）}条件.
+
+\keepwithprev
+A. 充分不必要\qquad\qquad B. 必要不充分\newline
+C. 充要\qquad\qquad\qquad D. 既不充分也不必要
+
+\ifanswer
+\solbegin
+\step{$\lvert x+3\rvert>6\Leftrightarrow x<-9$ 或 $x>3$.
+$\dfrac{2x}{x+5}\geqslant1\Leftrightarrow\dfrac{x-5}{x+5}\geqslant0\Leftrightarrow x<-5$ 或 $x\geqslant5$.}
+\step{$x=4$ 时，前者成立、后者不成立，因此不充分;}
+\step{$x=-6$ 时，后者成立、前者不成立，因此不必要. 故选 $D$.}
+\solend
+\fi
+
+\item 买 4 个苹果和 5 只桃子的金额之和小于 22 元，而买 6 个苹果和 3 只桃子的金额之和大于 24 元，那么买 2 个苹果和买 3 只桃子的金额比较，其结果是\mbox{（\quad）}
+
+\keepwithprev
+A. 2 个苹果贵\qquad B. 3 只桃子贵\qquad C. 相同\qquad D. 不能确定
+
+\ifanswer
+\solbegin
+\step{设苹果单价为 $x$ 元／个，桃子单价为 $y$ 元／只,}
+\step{则 $4x+5y<22$,$6x+3y>24$,}
+\step{$12(4x+5y)<264<11(6x+3y)\Rightarrow48x+60y<66x+33y\Rightarrow2x>3y$,}
+\step{所以买 2 个苹果贵，故选 $A$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）解不等式组
+$\begin{cases}x^2-3x-4<0\\\dfrac{3x-4}{x+2}<1\end{cases}$；
+
+（2）求方程 $2ax-3a=x+1$ 的解集.
+
+\ifanswer
+\solbegin
+\step{（1）第一个不等式为 $(x-4)(x+1)<0$，解得 $-1<x<4$.}
+\step{第二个不等式为 $\dfrac{3x-4}{x+2}-1=\dfrac{2(x-3)}{x+2}<0$，解得 $-2<x<3$.}
+\step{原不等式组的解集为 $(-1,4)\cap(-2,3)=(-1,3)$.}
+\step{（2）原方程整理为 $(2a-1)x=3a+1$.}
+\step{当 $a\neq\dfrac12$ 时，$x=\dfrac{3a+1}{2a-1}$，解集为 $\left\{\dfrac{3a+1}{2a-1}\right\}$.}
+\step{当 $a=\dfrac12$ 时，方程为 $0x=\dfrac52$，无解，解集为 $\varnothing$.}
+\solend
+\fi
+
+\item （1）设 $a>b>0$，比较 $\dfrac{a^2-b^2}{a^2+b^2}$ 与 $\dfrac{a-b}{a+b}$ 的大小；
+
+（2）设 $a\in\R$，证明：“$a<x<3a$”不是“$-2\leqslant x\leqslant3$”的必要条件.
+
+\ifanswer
+\solbegin
+\step{（1）因为 $a>b>0$，所以 $\dfrac{a^2-b^2}{a^2+b^2}-\dfrac{a-b}{a+b}$}
+\step{$=\dfrac{(a-b)[(a+b)^2-(a^2+b^2)]}{(a^2+b^2)(a+b)}=\dfrac{2ab(a-b)}{(a^2+b^2)(a+b)}>0$,}
+\step{因此 $\dfrac{a^2-b^2}{a^2+b^2}>\dfrac{a-b}{a+b}$.}
+\step{（2）假设“$a<x<3a$”不是“$-2\leqslant x\leqslant3$”的必要条件,}
+\step{则每个满足 $-2\leqslant x\leqslant3$ 的 $x$ 都满足 $a<x<3a$.}
+\step{分别取 $x=-2,x=3$，得到 $a<-2,3<3a$，即 $a<-2$ 且 $a>1$，矛盾.}
+\step{因此“$a<x<3a$”不是“$-2\leqslant x\leqslant3$”的必要条件.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid\lvert2x-6\rvert\leqslant x\}$，$B=\{x\mid x^2-2mx+m^2-1\leqslant0\}$.
+
+（1）若 $A\cap B=\varnothing$，求实数 $m$ 的取值范围.
+
+（2）命题 $p:x\in A$，命题 $q:x\in B$，且 $p$ 是 $q$ 的必要非充分条件，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\ansspace*
+\step{（1）由 $A=\{x\mid(2x-6)^2\leqslant x^2\}=\{x\mid x^2-8x+12\leqslant0\}=\{x\mid2\leqslant x\leqslant6\}$,}
+\step{$B=\{x\mid(x-m+1)(x-m-1)\leqslant0\}=\{x\mid m-1\leqslant x\leqslant m+1\}$,}
+\step{因为 $A\cap B=\varnothing$，所以 $m+1<2$ 或 $m-1>6$，得 $m<1$ 或 $m>7$,}
+\step{故 $m$ 的范围为 $\{m\mid m<1$ 或 $m>7\}$;}
+\step{（2）由题意得 $B\subset A$，则
+$\begin{cases}m-1\geqslant2\\m+1\leqslant6\end{cases}$（等号不能同时成立），得 $3\leqslant m\leqslant5$,}
+\step{故 $m$ 的范围为 $\{m\mid3\leqslant m\leqslant5\}$.}
+\solend
+\fi
+
+\item 已知命题 $p$：任意 $x\in\R$,$x^2-2x-a+1>0$. 集合 $A$ 为命题 $p$ 为真命题时实数 $a$ 的取值集合. 集合 $B=\{x\mid x^2+2(m+1)x+m^2-5=0\}$.
+
+（1）若 $A\cap B=\{-2\}$，求实数 $m$ 的值；
+
+（2）若 $A\cup B=A$，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{$x^2-2x-a+1=(x-1)^2-a$ 对任意 $x\in\R$ 恒大于 0,}
+\step{当且仅当 $a<0$，所以 $A=(-\infty,0)$.}
+\step{（1）因为 $-2\in B$，所以 $4-4(m+1)+m^2-5=0\Leftrightarrow(m-5)(m+1)=0$,}
+\step{得 $m=5$ 或 $m=-1$.}
+\step{当 $m=5$ 时，$B=\{-10,-2\}$，不满足 $A\cap B=\{-2\}$.}
+\step{当 $m=-1$ 时，$B=\{-2,2\}$，满足 $A\cap B=\{-2\}$，所以 $m=-1$.}
+\step{（2）$A\cup B=A\Leftrightarrow B\subseteq A$.}
+\step{方程的判别式为 $\triangle=[2(m+1)]^2-4(m^2-5)=8(m+3)$.}
+\step{当 $m<-3$ 时，$\triangle<0$,$B=\varnothing$，满足条件.}
+\step{当 $m\geqslant-3$ 时，设方程两实根为 $x_1,x_2$，则 $B\subseteq A$ 当且仅当两根均为负数,}
+\step{即
+$\begin{cases}m\geqslant-3\\x_1+x_2=-2(m+1)<0\Leftrightarrow m>\sqrt5\\x_1x_2=m^2-5>0\end{cases}$.% 原卷此行把 m>−1 与 m>√5 混写，照录
+}
+\step{因此 $m$ 的取值范围为 $(-\infty,-3)\cup(\sqrt5,+\infty)$.}
+\solend
+\fi
+
+\item 对于集合 $M=\{a_1,a_2,\cdots,a_n\}(n\in\N^*,n\geqslant3)$，其中 $a_i\in\N^*(i=1,2,\cdots,n)$，如果任意去掉其中一个元素 $a_i(i=1,2,\cdots,n)$ 之后，剩余的所有元素组成的集合都能分成两个交集为空集的集合，且这两个集合的所有元素之和相等就称集合 $M$ 为“可调和集合”.
+
+（1）判断集合 $\{1,2,3,5\}$ 和 $\{2,4,6,8,10,12,14\}$ 是否为“可调和集合”（不必写过程）；
+
+（2）求证：集合 $M=\{a_1,a_2,a_3,a_4,a_5\}$，其中 $a_i\in\N^*(i=1,2,3,4,5)$ 不是“可调和集合”；
+
+（3）若集合 $M=\{a_1,a_2,\cdots,a_n\}(n\in\N^*,n\geqslant3)$，其中 $a_i\in\N^*(i=1,2,\cdots,n)$ 是“可调和集合”.
+
+①证明：$n$ 为奇数；
+
+②求集合 $M$ 中元素个数的最小值.
+
+\ifanswer
+\solbegin
+\ansspace*
+\step{（1）当去掉集合 $\{1,2,3,5\}$ 中的元素 3 时，剩余元素 1,2,5,}
+\step{显然无法分成两个非空集合，并且两个集合的所有元素之和相等,}
+\step{故集合 $\{1,2,3,5\}$ 不是“可调和集合”；}
+\step{若两个集合的元素之和相等，则所有元素同时除以 2 后，元素之和也相等,}
+\step{所以，若集合 $\{2,4,6,8,10,12,14\}$ 是“可调和集合”,}
+\step{则集合 $\{1,2,3,4,5,6,7\}$ 也是“可调和集合”,}
+\step{当去掉元素 1 时，剩余元素之和为 $2+3+4+5+6+7=27$，为奇数,}
+\step{所以，不可能将剩余元素分成两个非空数集，且元素之和相等,}
+\step{所以，集合 $\{2,4,6,8,10,12,14\}$ 不是“可调和集合”.}
+\step{（2）不妨设 $a_1<a_2<a_3<a_4<a_5$,}
+\step{若去掉的元素为 $a_2$，将集合 $\{a_1,a_3,a_4,a_5\}$ 分成两个交集为空集的子集,}
+\step{且两个子集元素之和相等,}
+\step{则有 $a_1+a_5=a_3+a_4$①，或 $a_5=a_1+a_3+a_4$②,}
+\step{若去掉的元素为 $a_1$，将集合 $\{a_2,a_3,a_4,a_5\}$ 分成两个交集为空集的子集,}
+\step{且两个子集元素之和相等,}
+\step{则有 $a_2+a_5=a_3+a_4$③，或 $a_5=a_2+a_3+a_4$④.}
+\step{由①、③，得 $a_1=a_2$，矛盾; 由①、④，得 $a_1=-a_2$，矛盾;}
+\step{由②、③，得 $a_1=-a_2$，矛盾; 由②、④，得 $a_1=a_2$，矛盾.}
+\step{因此当 $n=5$ 时，集合 $M$ 一定不是“可调和集合”;}
+\step{（3）①设集合 $M=\{a_1,a_2,\cdots,a_n\}$ 所有元素之和为 $S$.}
+\step{由题意得 $S-a_i(i=1,2,\cdots,n)$ 均为偶数,}
+\step{因此 $a_i(i=1,2,\cdots,n)$ 均为奇数或偶数.}
+\step{如果 $S$ 为奇数，则 $a_i(i=1,2,\cdots,n)$ 也均为奇数,}
+\step{由于 $S=a_1+a_2+\cdots+a_n$，所以 $n$ 为奇数.}
+\step{如果 $S$ 为偶数，则 $a_i(i=1,2,\cdots,n)$ 均为偶数,}
+\step{此时设 $a_i=2b_i$，则 $\{b_1,b_2,\cdots,b_n\}$ 也是“可调和集合”.}
+\step{重复上述操作有限次，便可得各项均为奇数的“可调和集合”.}
+\step{此时各项之和也为奇数，则集合 $M$ 中元素个数 $n$ 为奇数.}
+\step{综上所述，集合 $M$ 中元素个数为奇数.}
+\step{②当 $n=3$ 时，显然任意集合 $\{a_1,a_2,a_3\}$ 不是“可调和集合”.}
+\step{当 $n=5$ 时，（2）证明集合 $M=\{a_1,a_2,a_3,a_4,a_5\}$ 不是“可调和集合”.}
+\step{当 $n=7$ 时，集合 $M=\{1,3,5,7,9,11,13\}$,}
+\step{因为 $3+5+7+9=11+13$,$1+9+13=5+7+11$,$9+13=1+3+7+11$,}
+\step{$1+9+11=3+5+13$,$1+3+5+11=7+13$,$3+7+9=1+5+13$,}
+\step{$1+3+5+9=7+11$，则集合 $M$ 是“可调和集合”,}
+\step{所以集合 $M$ 中元素个数 $n$ 的最小值是 7.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}

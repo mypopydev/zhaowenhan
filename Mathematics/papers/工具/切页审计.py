@@ -27,6 +27,13 @@ r"""切页审计 —— 找出“题被切在难看位置”的页
   · C 类 4＋2 处 → 把“（\quad）.”整体包成 `\mbox`（全库 72 处）——原先断行会正好落在
     `\quad` 这枚胶水上，页末就留下“）.”；包成盒子后不再拆开。
 
+**2026-11-04 给 C 类加一道 `-layout` 复核**：`pdftotext` 默认模式按抽取块顺序出行，
+`\mbox{（\quad）}` 右侧的全角“）”可能被单独建块、排到该页文本流的最末尾，于是
+`lines[-1]` 是“）”而物理页末其实是完整的题干＋选项（高一110 答案版 p3 即此例）。
+这类是抽取顺序噪声，不是真的“页末收尾碎片”。故默认模式报 C 类时再用
+`pdftotext -layout` 取同一页的末行复核：**真碎片在 `-layout` 下也独占一行**（物理断行
+真实存在），只有两次都命中才报。方向是只减少假阳性，不放宽任何真问题。
+
 与 `工具/正文指纹.py` 的分工：那个管“内容有没有变”（紧凑版 vs 试卷版逐字一致），
 这个管“分页好不好看”。两个都不进 `make check`（本脚本读的是成品 PDF，跑一次要几十秒）。
 """
@@ -55,6 +62,15 @@ def pages(pdf):
     return out
 
 
+def layout_last(pdf, pno):
+    """`-layout` 模式下该页的最后一个正文行（按物理位置，而非抽取块顺序）。"""
+    t = subprocess.run(['pdftotext', '-f', str(pno), '-l', str(pno), '-layout', pdf, '-'],
+                       capture_output=True, text=True).stdout
+    lines = [l.strip() for l in t.split('\n')
+             if l.strip() and not re.fullmatch(r'\s*\d*\s*', l)]
+    return lines[-1] if lines else ''
+
+
 def audit(pdf):
     pg = pages(pdf)
     bad = []
@@ -66,7 +82,8 @@ def audit(pdf):
             bad.append((i + 1, 'B 节标题落页末'))
         if A_STEM.search(lines[-1]) and A_OPT.match(nxt[0]):
             bad.append((i + 1, 'A 选择题干与选项分页'))
-        if C_FRAG.match(lines[-1]):
+        # 默认模式的“）”可能只是 pdftotext 抽取顺序噪声；物理页末（-layout）也是碎片才报
+        if C_FRAG.match(lines[-1]) and C_FRAG.match(layout_last(pdf, i + 1)):
             bad.append((i + 1, 'C 页末收尾碎片'))
     return len(pg), bad
 
