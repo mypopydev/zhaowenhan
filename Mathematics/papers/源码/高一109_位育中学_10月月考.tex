@@ -1,0 +1,382 @@
+% 高一109_位育中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年位育中学高一上 10 月月考”（试卷版/答案版）
+% 试卷版：xelatex 高一109_位育中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一109_位育中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一109_位育中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-04 20:23 发布；
+% 连载“27学年高一109”，原文标题“27学年高一109——2026-2027年上海市位育中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/Bh7IMP3t2_PjbmBW9Kh2Lg。
+% 正文为 8 张 PNG 页（第 1—7 页 4762×6735，第 8 页 2560×3620），题目下印有【解析】，为讲评版。
+% 题目、解析均据原图转录；卷面红色水印及公众号页脚未录入。全卷无插图；
+% 第 21 题 (3) 解析里“逐行等和分组”的表格用 tabular 照原卷排（仅答案版显示）。
+%
+% 卷首标题：原卷印作“2026-2027 年位育中学高一上 10 月月考”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，本稿按题目内容
+% 标为“集合与常用逻辑用语、不等式”。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，填空题编号为 3—12、选择题为 13—16、解答题为 17—21，本稿保留原题号；
+%   ② 原卷每题下直接印【解析】，本稿按全稿惯例将解析置于答案版；
+%   ③ 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；解答题按惯例加 \anspace；选择题括号排
+%      \mbox{（\quad）}、选项段前按惯例加 \keepwithprev；
+%   ⑤ 原卷数集排粗体 $\mathbf R$／$\mathbf Z$，按全稿惯例改 \R、\Z。
+%
+% 原卷存疑照录：第 4 题解析“由上 $a=2$ 不符合”（措辞含糊）；第 6 题解析“由题意得
+% $2m=m^2,3=m+1,m-1=1$”（三个条件并列、无“或”字）；第 12 题解析“这 1023 个子集分成
+% 以下几种情况”后 ①—④ 的计数与“②③中的集合是一一对应的”；第 18 题解析前两行均
+% 以“因为”起头；第 21 题 (3) 解析“若一组为空集，另一组和为正”措辞含糊。均照录加注。
+% 判别式原卷排等边三角形 $\triangle$（非 $\Delta$），照录。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 103 条（Q3：1；Q4：3；Q5：3；Q6：1；Q7：2；
+% Q8：2；Q9：3；Q10：1；Q11：3；Q12：7；Q13：2；Q14：2；Q15：5；Q16：9；Q17：10；
+% Q18：6；Q19：8；Q20：6；Q21：29），与原卷印刷行逐题相等。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年位育中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知集合 $A=\{(x,y)\mid 2x+y=10\}$，$B=\{(x,y)\mid 3x-y=5\}$，则 $A\cap B=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由
+$\begin{cases}2x+y=10\\3x-y=5\end{cases}$
+解得
+$\begin{cases}x=3\\y=4\end{cases}$，
+所以 $A\cap B=\{(3,4)\}$.}
+\solend
+\fi
+
+\item 已知 $4\in\{0,2a,a^2\}$，则实数 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $2a=4$ 时 $a=2$，则 $a^2=4$，此时 $a^2=2a$，不符合互异性；}
+\step{当 $a^2=4$ 时 $a=\pm2$，由上 $a=2$ 不符合,% 原卷“由上”措辞含糊，照录
+}
+\step{而 $a=-2$ 时 $2a=-4$，此时集合为 $\{0,-4,4\}$. 综上，$a=-2$.}
+\solend
+\fi
+
+\item 已知全集 $U=\{1,2,3,4,5\}$，若 $\overline{A\cup B}=\{4,5\}$，$B=\{2,3\}$，则 $A\cap\overline B=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为全集 $U=\{1,2,3,4,5\}$，集合 $A$、$B$ 是 $U$ 子集，$\overline{A\cup B}=\{4,5\}$，$B=\{2,3\}$,% 原卷“是 U 子集”无“的”，照录
+}
+\step{所以 $A\cup B=\{1,2,3\}$，故 $1\in A$，$1\notin B$，$4\notin A$，$4\notin B$，$5\notin A$，$5\notin B$,}
+\step{故 $A\cap\overline B=\{1\}$.}
+\solend
+\fi
+
+\item 已知 $m\in\R$，若关于 $x$ 的方程 $2mx^2+3x+m-1=m^2\cdot x^2+(m+1)x+1$ 解集为 $\R$，则 $m$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $2m=m^2$,$3=m+1$,$m-1=1$，所以 $m=2$.}
+\solend
+\fi
+
+\item 设 $x_1,x_2$ 是方程 $x^2+x-3=0$ 的两个实数根，则 $x_1^2-x_2+2026=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $x_1,x_2$ 是方程 $x^2+x-3=0$ 的两个实数根，所以 $x_1^2+x_1-3=0$,$x_1+x_2=-1$,}
+\step{所以 $x_1^2-x_2+2026=3-x_1-x_2+2026=2030$.}
+\solend
+\fi
+
+\item 若 $\alpha:x\leqslant-1$ 或 $x>3$，$\beta:a-1\leqslant x<a+2$，$\alpha$ 是 $\beta$ 的必要非充分条件，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\alpha$ 是 $\beta$ 的必要非充分条件，则 $a+2\leqslant-1$ 或 $a-1>3$，解得 $a\leqslant-3$ 或 $a>4$,}
+\step{故实数 $a$ 的取值范围是 $(-\infty,-3]\cup(4,+\infty)$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x^2+(a+2)x+1=0,x\in\R\}$，$B=(0,+\infty)$，若 $A\cap B=\varnothing$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $A=\varnothing$ 时，$\triangle=(a+2)^2-4<0$，所以 $-4<a<0$,}
+\step{当 $A\neq\varnothing$ 时，
+$\begin{cases}\triangle=(a+2)^2-4\geqslant0\\a+2\geqslant0\end{cases}$，
+解得 $a\geqslant0$,}
+\step{综上，$a>-4$.}
+\solend
+\fi
+
+\item 设 $k$ 为实数，关于 $x$ 的不等式组
+$\begin{cases}x^2+kx+1>0\\kx^2+x+2<0\end{cases}$
+的解集为 $A$，若 $-1\notin A$，则 $k$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$-1\in A\Leftrightarrow
+\begin{cases}2-k>0\\k+1<0\end{cases}\Leftrightarrow k<-1$，
+因此 $-1\notin A\Leftrightarrow k\geqslant-1$，即 $k\in[-1,+\infty)$.}
+\solend
+\fi
+
+\item 设集合 $A_p=\{x\mid x^2+2x+p=0,x\in\R\}$，当实数 $p$ 取遍区间 $[-1,1]$ 的所有值时，所有集合 $A_p$ 的并集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$x$ 属于所求并集，当且仅当存在 $p\in[-1,1]$ 使 $p=-x^2-2x$,}
+\step{即 $-1\leqslant-x^2-2x\leqslant1\Leftrightarrow0\leqslant(x+1)^2\leqslant2\Leftrightarrow-1-\sqrt2\leqslant x\leqslant-1+\sqrt2$,}
+\step{所求并集为 $[-1-\sqrt2,-1+\sqrt2]$.}
+\solend
+\fi
+
+\item 集合 $M=\{-4,-3,-2,-1,0,1,2,3,4,5\}$ 有 10 个元素，设 $M$ 的所有非空子集为
+$M_i(i=1,2,\cdots,1023)$，每一个 $M_i$ 中所有元素乘积为 $m_i(i=1,2,\cdots,1023)$，则
+$m_1+m_2+m_3+\cdots+m_{1023}=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $M$ 的所有非空子集为 $M_i(i=1,2,\cdots,1023)$，这 1023 个子集分成以下几种情况:}
+\step{①含 0 的子集有 512 个，这些子集均满足 $m_i=0$;}
+\step{②不含 0，含 $-1$ 且还含有其它元素的子集有 255 个,}
+\step{③不含 0，不含 $-1$ 但含有其它元素的子集有 255 个,}
+\step{④只含 $-1$ 的子集一个 $\{-1\}$，满足 $m_i=-1$;}
+\step{其中②③中的集合是一一对应的，且满足 $m_i$ 对应成相反数,}
+\step{故 $m_1+m_2+m_3+\cdots+m_{1023}=512\times0+255\times0-1=-1$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item “对任意 $c\in\R$，都有 $ac=bc$”是“$a=b$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad\qquad B. 必要非充分条件
+
+C. 充要条件\qquad\qquad\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{取 $c=1$，由 $ac=bc$ 得 $a=b$；反之，若 $a=b$，则对任意 $c\in\R$ 都有 $ac=bc$,}
+\step{因此为充要条件，故选 $C$.}
+\solend
+\fi
+
+\item 已知 $a$、$b$、$c\in\R$，$a>b$，则下列不等式成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac1a<\dfrac1b$\qquad\qquad B. $a^2>b^2$
+
+C. $a\lvert c\rvert>b\lvert c\rvert$\qquad\qquad D. $\dfrac{a}{c^2+1}>\dfrac{b}{c^2+1}$
+
+\ifanswer
+\solbegin
+\step{对于 A、B：令 $a=-1$，$b=-2$，显然错误；对于 C：若 $c=0$，显然错误;}
+\step{对于 D：因为 $c^2+1>0$，所以 $\dfrac{a}{c^2+1}>\dfrac{b}{c^2+1}$，故 D 正确；故选 $D$.}
+\solend
+\fi
+
+\item 设 $k\in\R$，对关于 $x$ 的方程组
+$\begin{cases}y=kx+1\\y=2kx+3\end{cases}$
+的解的说法正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 对任意实数 $k$，该方程组的解集都是单元素集
+
+B. 至少存在一个实数 $k$，使得该方程组的解集为空集
+
+C. 至少存在一个实数 $k$，使得该方程组的解集为无限集
+
+D. 对任意实数 $k$，该方程组的解集都不是空集
+
+\ifanswer
+\solbegin
+\step{当 $k=0$ 时，方程组的解集为空集，A、D 错误,}
+\step{至少存在一个实数 $k=0$，使得方程组的解集为空集，B 正确,}
+\step{当 $k=0$ 时，方程组的解集为空集，当 $k\neq0$ 时，方程组的解集为 $\left(-\dfrac2k,-1\right)$,}
+\step{该方程组的解集不为无限集，C 错误,}
+\step{故选 $B$.}
+\solend
+\fi
+
+\item 设非空集合 $S=\{x\mid m\leqslant x\leqslant n\}$ 满足：当 $x\in S$ 时，有 $x^2\in S$. 给出如下三个命题：①若
+$m=1$，则 $S=\{1\}$；②若 $m=-\dfrac12$，则 $\dfrac14\leqslant n\leqslant1$；③若 $n=\dfrac12$，则 $-\dfrac{\sqrt2}2\leqslant m\leqslant0$. 其中正确命题的个数是\mbox{（\quad）}
+
+\keepwithprev
+A. $0$\qquad\qquad B. $1$\qquad\qquad C. $2$\qquad\qquad D. $3$
+
+\ifanswer
+\solbegin
+\step{由定义设非空集合 $S=\{x\mid m\leqslant x\leqslant n\}$ 满足当 $x\in S$ 时，有 $x^2\in S$.}
+\step{符合定义的参数 $m$ 的值一定大于等于 1 或小于等于 0,}
+\step{惟如此才能保证 $m\in S$ 时，有 $m^2\in S$ 即 $m^2\geqslant m$,}
+\step{符合条件的 $n$ 的值一定大于等于 0，小于等于 1,}
+\step{惟如此才能保证 $n\in S$ 时，有 $n^2\in S$ 即 $n^2\leqslant n$，对各个命题进行判断:}
+\step{对于① $m=1$，$m^2=1\in S$，故必有
+$\begin{cases}n^2\leqslant n\\n\geqslant1\end{cases}$，
+得 $n=1$，$S=\{1\}$,}
+\step{② $m=-\dfrac12$，$m^2=\dfrac14\in S$，则
+$\begin{cases}n^2\leqslant n\\\dfrac14\leqslant n\end{cases}$，
+解得 $\dfrac14\leqslant n\leqslant1$;}
+\step{对于③，若 $n=\dfrac12$，则
+$\begin{cases}\dfrac12\geqslant m\\m^2\geqslant m\\\dfrac12\geqslant m^2\end{cases}$，
+解得 $-\dfrac{\sqrt2}2\leqslant m\leqslant0$,}
+\step{所以正确命题有 3 个. 故选 $D$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知集合 $A=\{-1,1\}$，$B=\{x\mid x^2+ax+b=0,x\in\R\}$，若 $B\neq\varnothing$，且 $A\cup B=A$，求实数 $a,b$ 的值.
+
+\ifanswer
+\solbegin
+\ansspace*
+\step{$A\cup B=A\Rightarrow B\subseteq A$，又 $B\neq\varnothing$，所以 $B=\{-1\}$,$\{1\}$ 或 $\{-1,1\}$.}
+\step{当 $B=\{-1\}$ 时，方程有实根 $-1$,}
+\step{则 $1-a+b=0$,$x^2+ax+b=(x+1)(x+a-1)$,}
+\step{另一根 $1-a$ 也是实数，必在 $B$ 中，只能是 $-1$，即方程有两个相等的实根 $-1$,}
+\step{所以 $x^2+ax+b=(x+1)^2$，得 $a=2,b=1$.}
+\step{当 $B=\{1\}$ 时，同理方程有两个相等的实根 1，所以 $x^2+ax+b=(x-1)^2$,}
+\step{得 $a=-2,b=1$.}
+\step{当 $B=\{-1,1\}$ 时，方程的两根为 $-1$，1,}
+\step{由韦达定理得 $-a=-1+1=0$,$b=(-1)\times1=-1$，所以 $a=0,b=-1$.}
+\step{因此 $(a,b)=(2,1)$ 或 $(-2,1)$ 或 $(0,-1)$.}
+\solend
+\fi
+
+\item 若 $b_1\cdot b_2=2(c_1+c_2)$，求证：关于 $x$ 的方程 $x^2+b_1x+c_1=0$ 和方程 $x^2+b_2x+c_2=0$ 至少有一个方程有实数根.
+
+\ifanswer
+\solbegin
+\step{因为方程 $x^2+b_1x+c_1=0$ 的判别式为 $\triangle_1=b_1^2-4c_1$,}
+\step{因为方程 $x^2+b_2x+c_2=0$ 的判别式为 $\triangle_2=b_2^2-4c_2$,% 原卷两行均以“因为”起头，照录
+}
+\step{所以 $\triangle_1+\triangle_2=b_1^2-4c_1+b_2^2-4c_2=b_1^2+b_2^2-4(c_1+c_2)$,}
+\step{因为 $b_1b_2=2(c_1+c_2)$，所以 $\triangle_1+\triangle_2=b_1^2+b_2^2-2b_1b_2=(b_1-b_2)^2\geqslant0$,}
+\step{所以 $\triangle_1$ 和 $\triangle_2$ 至少有一个正数或都是 0,}
+\step{所以方程 $x^2+b_1x+c_1=0$ 和方程 $x^2+b_2x+c_2=0$ 至少有一个方程有实数根.}
+\solend
+\fi
+
+\item 某公司以每吨 10 万元的价格销售某种化工产品，每年可售出该产品 1000 吨，若将该产品每吨的价格上涨 $x\%$，则每年的销售数量将减少 $(mx)\%$，其中 $m$ 为正常数.
+
+（1）当 $m=0.5$ 时，如何控制产品每吨的价格上涨范围，可使销售的总金额不低于 11200 万元？
+
+（2）如果适当地涨价，能使销售总金额增加，求 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{（1）设销售总金额为 $y$ 元,}
+\step{由题意得 $y=10\times1000\times(1+x\%)\times\left(1-\dfrac12 x\%\right)=\dfrac12[-(x-50)^2+22500]$,}
+\step{令 $\dfrac12[-(x-50)^2+22500]\geqslant11200$，解得 $40\leqslant x\leqslant60$,}
+\step{故当每吨的价格在 $[40,60]$ 时，可使销售的总金额不低于 11200 万元.}
+\step{（2）由题意得 $y=10\times1000\times(1+x\%)\times(1-mx\%)=-mx^2+100(1-m)x+10000$,}
+\step{由题意得 $x>0$，$m>0$，涨价能使销售金额增加,}
+\step{则 $-mx^2+100(1-m)x+10000>10000$，即 $-mx+100(1-m)>0$,}
+\step{则 $\dfrac{100(1-m)}m>x>0$，解得 $0<m<1$，故 $m$ 的取值范围为 $(0,1)$.}
+\solend
+\fi
+
+\item 解决下列问题：
+
+（1）求解关于 $x$ 的不等式：$x^2-4x+q+3\leqslant0$；
+
+（2）设集合 $A=\{x\mid x^2-4x+q+3\leqslant0\}$，若集合 $A\cap\Z$ 中有 3 个元素，求 $q$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{（1）$\triangle=16-4(q+3)=4(1-q)$,}
+\step{当 $q=1$ 时，解集为 $\{2\}$;}
+\step{当 $q>1$ 时，解集为 $\varnothing$;}
+\step{当 $q<1$ 时，解集为 $[2-\sqrt{1-q},2+\sqrt{1-q}]$;}
+\step{（2）由（1）得 $q<1$，解集为 $[2-\sqrt{1-q},2+\sqrt{1-q}]$,}
+\step{只要 $1\leqslant\sqrt{1-q}<2$，解得 $q\in(-3,0]$.}
+\solend
+\fi
+
+\item 对于集合 $A=\{a_1,a_2,\cdots,a_n\}(n\in\Z,n\geqslant3)$，其中每个元素均为正整数，如果去掉其中任意一个元素 $a_i(i=1,2,3,\cdots,n)$ 之后，剩余的所有元素组成集合 $A_i(i=1,2,\cdots,n)$，并且
+$A_i$ 都能分为两个集合 $B$ 和 $C$，满足 $B\cap C=\varnothing$,$B\cup C=A_i$，其中 $B$ 和 $C$ 的所有元素之和相等，就称集合 $A$ 为平衡集.
+
+（1）判断集合 $B=\{7,3,5,7,9\}$ 是否为平衡集，并说明理由；
+
+（2）若集合 $A$ 是平衡集，并且 $a_i(i=1,2,3,\cdots,n)$ 为奇数，求证：集合 $A$ 中元素个数 $n$ 为奇数；
+
+（3）若集合 $A$ 是平衡集，求集合 $A$ 中元素个数的最小值.
+
+\ifanswer
+\solbegin
+\ansspace*
+\step{（1）去掉元素 3，剩余集合为 $\{1,5,7,9\}$，元素总和为 22,% 原卷题干作 B={7,3,5,7,9}（含两个 7、无 1），解析却作 {1,5,7,9}，照录
+}
+\step{等和分组要求每组元素和为 11.}
+\step{四个元素均为奇数，和为 11 的一组只能含 1 个或 3 个元素;}
+\step{但其中没有 11，且最小的三个元素之和为 $1+5+7=13>11$,}
+\step{无法等和分组，因此 $B$ 不是平衡集.}
+\step{（2）去掉任意一个元素后，剩余元素的总和等于其中一组元素和的 2 倍,}
+\step{必为偶数.}
+\step{这也是 $n-1$ 个奇数之和，因此 $n-1$ 为偶数，即 $n$ 为奇数.}
+\step{（3）先证明任意平衡集的元素个数均为奇数.}
+\step{设 $S=a_1+a_2+\cdots+a_n$. 因为 $S-a_i$ 均为偶数，所以所有 $a_i$ 的奇偶性相同.}
+\step{若所有元素均为偶数，把每个元素除以 2，原来的分组同除以 2 后仍等和,}
+\step{所得集合仍是平衡集，且元素个数不变.}
+\step{元素每次减半，有限次后必出现奇数，而平衡集各元素奇偶性相同,}
+\step{故此时全为奇数，由（2）得 $n$ 为奇数.}
+\step{排除 $n=3,5$.}
+\step{当 $n=3$ 时，去掉任意一个元素，剩余两个不同的正整数:}
+\step{若一组为空集，另一组和为正；若各取一个，两数不同. 均不能等和分组.% 原卷“另一组和为正”措辞含糊，照录
+}
+\step{当 $n=5$ 时，设 $0<a_1<a_2<a_3<a_4<a_5$.}
+\step{去掉 $a_5$ 后，剩余四个元素分成等和的两组（两组均非空),}
+\step{只能是“1 个与 3 个”或“2 个与 2 个”.}
+\step{前者单独一组的只能是最大的 $a_5$;}
+\step{后者 $a_5$ 只能与 $a_2$ 同组，因为 $a_3+a_5>a_2+a_4$,$a_4+a_5>a_2+a_3$.}
+\step{故只能满足 $a_5=a_2+a_3+a_4$ 或 $a_2+a_5=a_3+a_4$,}
+\step{因此 $a_2=\lvert a_3+a_4-a_5\rvert$.}
+\step{同理，去掉 $a_2$ 后得 $a_1=\lvert a_3+a_4-a_5\rvert$，于是 $a_1=a_2$，矛盾，所以 $n\geqslant7$.}
+\step{构造 $n=7$ 的平衡集.}
+\step{取 $A=\{1,3,5,7,9,11,13\}$，逐一去掉元素后的等和分组如下,}
+\step{每行等号两侧的数分别组成两组:}
+
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+去掉的元素 & 剩余元素的等和分组 \\
+\hline
+$1$ & $3+5+7+9=11+13$ \\
+$3$ & $1+9+13=5+7+11$ \\
+$5$ & $1+3+7+11=9+13$ \\
+$7$ & $1+9+11=3+5+13$ \\
+$9$ & $1+3+5+11=7+13$ \\
+$11$ & $1+5+13=3+7+9$ \\
+$13$ & $1+3+5+9=7+11$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\step{该集合为平衡集，因此 $n$ 的最小值为 7.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
