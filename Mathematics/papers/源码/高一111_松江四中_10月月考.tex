@@ -1,0 +1,378 @@
+% 高一111_松江四中_10月月考.tex
+%   —— 高一上数学“2026-2027 年松江四中高一上 10 月月考”（试卷版/答案版）
+% 试卷版：xelatex 高一111_松江四中_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一111_松江四中_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一111_松江四中_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-04 20:23 发布；
+% 连载“27学年高一111”，原文标题“27学年高一111——2026-2027年上海市松江四中高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/A5BAHWEjVoczJI7_vaOwbA。
+% 正文为 10 张 PNG 页（第 2—4、6—9 页 4762×6735，第 1、5、10 页 2560×3620），
+% 题目下印有【解析】或【答案】，为讲评版。
+% 题目、解析均据原图转录；卷面红色水印及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作“2026-2027 年松江四中高一上 10 月月考”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，本稿按题目内容
+% 标为“集合与常用逻辑用语、不等式”。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，填空题编号为 3—12、选择题为 13—16、解答题为 17—21，本稿保留原题号；
+%   ② 原卷每题下直接印【解析】／【答案】，本稿按全稿惯例置于答案版；第 3、4 题只印【答案】、
+%      第 13 题把答案“$C$”印在题干括号内且无【解析】，均另提 \ans{}；
+%   ③ 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；解答题按惯例加 \anspace；选择题括号排
+%      \mbox{（\quad）}、选项段前按惯例加 \keepwithprev；
+%   ⑤ 原卷数集排粗体 $\mathbf R$／$\mathbf Z$，按全稿惯例改 \R、\Z。
+%
+% 原卷存疑照录：第 12 题题干“则则集合 $A$ 为‘和谐集’．己则”（“则则”“己则”系原卷
+% 衍字／错字），题干集合 $M$ 与解析结论的第三个“和谐集”元素重复，均照录；第 15 题 (2)
+% 解析“但此时 $\dfrac ca=1$,$\dfrac cb=-1$”；第 20 题 (3) 解析“不是 $(t,+\infty)$
+% 的形式”连说两遍；第 21 题 (3) 解析“因为偶数 $\notin B$”。均照录加注。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 117 条（Q3：0；Q4：0；Q5：2；Q6：4；Q7：2；
+% Q8：3；Q9：3；Q10：4；Q11：5；Q12：10；Q13：0；Q14：7；Q15：12；Q16：4；Q17：7；
+% Q18：8；Q19：13；Q20：19；Q21：14），与原卷印刷行逐题相等。第 3、4、13 题括号内／
+% 只印答案，提 \ans{}，不计入 \step 账。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年松江四中高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 方程组
+$\begin{cases}x+y=5\\y=x+1\end{cases}$
+的解集是\blankline[4.4em].
+
+\ifanswer
+\ans{$\{(2,3)\}$}
+\fi
+
+\item 用反证法证明“$a,b\in\R$，若 $\lvert a-1\rvert\cdot\lvert b-1\rvert=0$，则 $a=1$ 且 $b=1$”时应先假设\blankline[4.4em].
+
+\ifanswer
+\ans{$a\neq1$ 或 $b\neq1$}
+\fi
+
+\item 集合 $A=\{x\mid x\geqslant a\}$，$B=\{x\mid x<1\}$，若 $A\cap B=\varnothing$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{集合 $A=\{x\mid x\geqslant a\}$，$B=\{x\mid x<1\}$，$A\cap B=\varnothing$，则 $a\geqslant1$,}
+\step{故实数 $a$ 的取值范围 $[1,+\infty)$.}
+\solend
+\fi
+
+\item 若 $4\in\{2,a^2,a\}$，则实数 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{①若 $4=a$，则 $\{2,a^2,a\}=\{2,16,4\}$，满足集合元素的互异性;}
+\step{②若 $4=a^2$，则 $a=-2$ 或 2（舍），此时 $\{2,a^2,a\}=\{2,-2,4\}$,}
+\step{满足集合元素的互异性;}
+\step{综上，$a=-2$ 或 4.}
+\solend
+\fi
+
+\item 已知方程 $x^2+x-3=0$ 的两根为 $x_1,x_2$，则 $x_1^2+x_2^2=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由韦达定理得 $x_1+x_2=-1$,$x_1x_2=-3$,}
+\step{则 $x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=1+6=7$.}
+\solend
+\fi
+
+\item 已知 $P=\{x\mid a-4<x<a+4\}$，$Q=\{x\mid x^2-4x+3<0\}$，且 $x\in P$ 是 $x\in Q$ 的必要条件，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$P=\{x\mid a-4<x<a+4\}$，$Q=\{x\mid1<x<3\}$.}
+\step{因为 $x\in P$ 是 $x\in Q$ 的必要条件，所以 $Q\subseteq P\Rightarrow
+\begin{cases}a-4\leqslant1\\a+4\geqslant3\end{cases}\Rightarrow
+\begin{cases}a\leqslant5\\a\geqslant-1\end{cases}$,}
+\step{解得 $-1\leqslant a\leqslant5$，所以实数 $a$ 的取值范围为 $[-1,5]$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的不等式 $-x^2+bx+c>0$ 的解集为 $(-1,2)$，则 $bx^2+cx-8>0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$-1$，2 是方程 $-x^2+bx+c=0$ 的两根，故 $-x^2+bx+c=-(x+1)(x-2)$,}
+\step{得 $b=1,c=2$,}
+\step{于是 $bx^2+cx-8>0\Leftrightarrow(x+4)(x-2)>0$，解集为 $(-\infty,-4)\cup(2,+\infty)$.}
+\solend
+\fi
+
+\item 若不等式组
+$\begin{cases}(x-1)(x-3)<0\\ax>1\end{cases}$
+的解集为空集，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$(x-1)(x-3)<0\Leftrightarrow1<x<3$.}
+\step{当 $a\leqslant0$ 时，$ax\leqslant0<1$，不等式组无解.}
+\step{当 $a>0$ 时，$ax>1\Leftrightarrow x>\dfrac1a$，无公共解当且仅当 $\dfrac1a\geqslant3$，即 $0<a\leqslant\dfrac13$.}
+\step{因此 $a$ 的取值范围为 $\left(-\infty,\dfrac13\right]$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $ax^2-2x+3a+5\geqslant0(a\in\Z)$ 的整数解集为集合 $M$，若集合 $M$ 满足：①$M$ 是有限集，②$0\in M$，则集合 $M$ 中所有元素的和为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $a=0$ 时，整数解为 $x\leqslant\dfrac52$ 的所有整数;}
+\step{当 $a>0$ 时，绝对值充分大的整数均为解. 因此 $M$ 为有限集要求 $a<0$.}
+\step{由 $0\in M$ 得 $3a+5\geqslant0$，即 $a\geqslant-\dfrac53$; 结合 $a\in\Z$，得 $a=-1$.}
+\step{此时 $-x^2-2x+2\geqslant0\Leftrightarrow(x+1)^2\leqslant3$，故 $M=\{-2,-1,0\}$,}
+\step{所有元素的和为 $-3$.}
+\solend
+\fi
+
+\item 若对于任意 $x\in A$，都有 $\dfrac1{1-x}\in A$，则则集合 $A$ 为“和谐集”. 己则\newline
+$M=\left\{-2,-\dfrac12,0,1,\dfrac13,\dfrac23,\dfrac32,3\right\}$，则集合 $M$ 的非空子集中“和谐集”的有\blankline[4.4em].% 原卷“则则”“己则”系衍字／错字，照录；长行按惯例折行
+
+\ifanswer
+\solbegin
+\step{当 $x=-2$ 时，$\dfrac1{1-(-2)}=\dfrac13\in M$，当 $x=\dfrac13$ 时，$\dfrac1{1-\frac13}=\dfrac32\in M$,}
+\step{当 $x=\dfrac32$ 时，$\dfrac1{1-\frac32}=-2\in M$，所以 $-2$,$\dfrac13$,$\dfrac32$ 可作为“和谐集”中一组元素;}
+\step{当 $x=-\dfrac12$ 时，$\dfrac1{1-(-\frac12)}=\dfrac23\in M$，当 $x=\dfrac23$ 时，$\dfrac1{1-\frac23}=3\in M$,}
+\step{当 $x=3$ 时，$\dfrac1{1-3}=-\dfrac12\in M$，所以 $-\dfrac12$,$\dfrac23$,$3$ 可作为“和谐集”中一组元素;}
+\step{当 $x=0$ 时，$\dfrac1{1-0}=1\in M$，当 $x=1$ 时，$\dfrac1{1-x}$ 无意义,}
+\step{所以 0,1 不是“和谐集”中的元素.}
+\step{若集合 $M$ 的非空子集为“和谐集”,}
+\step{则其元素只能从元素组 $-2$,$\dfrac13$,$\dfrac32$ 和 $-\dfrac12$,$\dfrac23$,$3$ 两组数中任意选择一组或两组,}
+\step{所以集合 $M$ 的非空“和谐集”}
+\step{为 $\left\{-\dfrac12,\dfrac23,3\right\}$,$\left\{-2,\dfrac13,\dfrac32\right\}$,$\left\{-\dfrac12,\dfrac23,3,-2,\dfrac13,\dfrac32\right\}$，共 3 个.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 下列命题为真命题的是\mbox{（\quad）}% 原卷把答案“C”印在题干括号内、无【解析】
+
+\keepwithprev
+A. 若 $ac=bc$，则 $a=b$\qquad\qquad B. 若 $a^2=b^2$，则 $a=b$
+
+C. 若 $\dfrac1a=\dfrac1b$，则 $a=b$\qquad\qquad D. 若 $a=b$，则 $\sqrt a=\sqrt b$
+
+\ifanswer
+\ans{$C$}
+\fi
+
+\item 下列说法中，正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\pi\notin\R$
+
+B. 若 $A\cap B=\varnothing$，则 $A$、$B$ 中至少有一个为 $\varnothing$
+
+C. 任何集合必有一个真子集
+
+D. 若 $S$ 为全集，且 $A\cap B=S$，则 $A=B=S$
+
+\ifanswer
+\solbegin
+\step{A、$\pi\in\R$，故 A 错误;}
+\step{B、如 $A=\{1,2\}$,$B=\{3,4,5\}$，则 $A\cap B=\varnothing$,}
+\step{且它们都不是空集，故 B 不正确;}
+\step{C、由空集是任何集合的子集和真子集的定义得,}
+\step{空集是本身的子集但不是真子集，故 C 不正确;}
+\step{D、$A\cap B=S$，则 $S\subseteq A$ 且 $S\subseteq B$，又 $S$ 为全集，则 $A=B=S$，故 D 正确.}
+\step{故选 $D$.}
+\solend
+\fi
+
+\item 对任意实数 $a$、$b$、$c$ 给出下列命题：
+
+（1）“$a>b$”是“$ac^2>bc^2$”的充要条件；（2）若 $a<b,c<0$，则 $\dfrac ca<\dfrac cb$；
+
+（3）“$a>b$”是“$a^2>b^2$”的充分条件；（4）若 $a>b$，则 $a^3>b^3$；
+
+（5）若 $(a-b)c^2\geqslant0$，则 $a\geqslant b$.
+
+其中真命题的个数是\mbox{（\quad）}
+
+\keepwithprev
+A. $1$\qquad\qquad B. $2$\qquad\qquad C. $3$\qquad\qquad D. $4$
+
+\ifanswer
+\solbegin
+\step{对（1），当 $c=0$ 时，由 $a>b$ 无法得到 $ac^2>bc^2$，充分性不满足,}
+\step{故（1）是假命题;}
+\step{对（2），取 $a=-1,b=1,c=-1$，满足 $a<b,c<0$，但此时 $\dfrac ca=1$,$\dfrac cb=-1$,}
+\step{不满足 $\dfrac ca<\dfrac cb$，故（2）是假命题;}
+\step{对（3），取 $a=1,b=-2$，满足 $a>b$，但不满足 $a^2>b^2$，充分性不满足,}
+\step{故（3）是假命题;}
+\step{对（4），若 $a>b$，则 $a-b>0$,}
+\step{则 $a^3-b^3=(a-b)(a^2+ab+b^2)=(a-b)\left[\left(a+\dfrac b2\right)^2+\dfrac34 b^2\right]>0$,}
+\step{故（4）是真命题;}
+\step{对（5），若 $(a-b)c^2\geqslant0$，当 $c=0$ 时，$a,b$ 的大小关系任意,}
+\step{故（5）是假命题.}
+\step{故选 $A$.}
+\solend
+\fi
+
+\item 对于集合 $A$、$B$，定义集合运算 $A-B=\{x\mid x\in A$ 且 $x\notin B\}$，给出下列三个结论：
+
+（1）$(A-B)\cap(B-A)=\varnothing$；（2）$(A-B)\cup(B-A)=(A\cup B)-(A\cap B)$；
+
+（3）若 $A=B$，则 $A-B=\varnothing$. 则其中所有正确结论的序号是\mbox{（\quad）}
+
+\keepwithprev
+A. （1）（2）（3）\qquad B. （1）（2）\qquad C. （2）（3）\qquad D. （1）（3）
+
+\ifanswer
+\solbegin
+\step{由题意得 $A-B=\{x\mid x\in A$ 且 $x\notin B\}=A-A\cap B$,}
+\step{（1）$(A-B)\cap(B-A)=\varnothing$ 和（3）若 $A=B$，则 $A-B=\varnothing$，显然正确;}
+\step{（2）$(A-B)\cup(B-A)=(A-A\cap B)\cup(B-A\cap B)=(A\cup B)-(A\cap B)$，正确;}
+\step{故选 $A$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）设全集为 $\R$，已知集合 $A=\{x\mid(x-4)(3x-5)\geqslant0\}$,$B=\{x\mid x^2-3x+2<0\}$，求
+$A\cup B$；
+
+（2）已知 $a,b\in\R$，比较 $a^2+b^2$ 与 $2(a-3b)-10$ 的大小.
+
+\ifanswer
+\solbegin
+\step{（1）解 $(x-4)(3x-5)\geqslant0$，得 $x\leqslant\dfrac53$ 或 $x\geqslant4$，所以 $A=\left(-\infty,\dfrac53\right]\cup[4,+\infty)$.}
+\step{解 $x^2-3x+2=(x-1)(x-2)<0$，得 $1<x<2$，所以 $B=(1,2)$.}
+\step{因此 $A\cup B=(-\infty,2)\cup[4,+\infty)$.}
+\step{（2）$a^2+b^2-[2(a-3b)-10]=a^2-2a+b^2+6b+10$}
+\step{$=(a-1)^2+(b+3)^2\geqslant0$,}
+\step{当且仅当 $a-1=0$ 且 $b+3=0$，即 $a=1$ 且 $b=-3$ 时取等号,}
+\step{因此 $a^2+b^2\geqslant2(a-3b)-10$.}
+\solend
+\fi
+
+\item （1）设 $a\in\R$，求关于 $x$ 的方程 $ax+1=x$ 的解集.
+
+（2）设 $a\in\R$，求关于 $x$ 的不等式 $ax-3>2x+a$ 的解集.
+
+\ifanswer
+\solbegin
+\step{（1）$ax+1=x\Leftrightarrow(1-a)x=1$,}
+\step{当 $a=1$ 时，原方程解集为 $\varnothing$;}
+\step{当 $a\neq1$ 时，解方程 $(1-a)x=1$ 得 $x=\dfrac1{1-a}$，所以原方程解集为 $\left\{\dfrac1{1-a}\right\}$.}
+\step{综上，当 $a=1$ 时，解集为 $\varnothing$; 当 $a\neq1$ 时，解集为 $\left\{\dfrac1{1-a}\right\}$.}
+\step{（2）原不等式等价于 $(a-2)x>a+3$.}
+\step{当 $a>2$ 时，$a-2>0$，得 $x>\dfrac{a+3}{a-2}$，解集为 $\left(\dfrac{a+3}{a-2},+\infty\right)$.}
+\step{当 $a=2$ 时，不等式化为 $0>5$，解集为 $\varnothing$.}
+\step{当 $a<2$ 时，$a-2<0$，得 $x<\dfrac{a+3}{a-2}$，解集为 $\left(-\infty,\dfrac{a+3}{a-2}\right)$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x^2-5x+6=0\}$,$B=\{x\mid x^2-(m+3)x+m^2=0\}$.
+
+（1）若 $A\cap B=\{3\}$，求实数 $m$ 的值；
+
+（2）若 $A\cup B=A$，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\ansspace*
+\step{$x^2-5x+6=(x-2)(x-3)=0$，所以 $A=\{2,3\}$.}
+\step{（1）$A\cap B=\{3\}$ 要求 $3\in B$,}
+\step{于是 $9-3(m+3)+m^2=0\Leftrightarrow m(m-3)=0\Leftrightarrow m=0$ 或 $m=3$.}
+\step{当 $m=0$ 时，$B=\{0,3\}$; 当 $m=3$ 时，$B=\{3\}$; 均满足 $A\cap B=\{3\}$.}
+\step{因此 $m=0$ 或 $m=3$.}
+\step{（2）$A\cup B=A\Leftrightarrow B\subseteq A$，$\triangle=(m+3)^2-4m^2=-3(m+1)(m-3)$.}
+\step{①当 $\triangle<0$，即 $m<-1$ 或 $m>3$ 时，$B=\varnothing$，满足条件.}
+\step{②当 $\triangle=0$ 时，$m=-1$ 或 $m=3$,}
+\step{此时 $B$ 分别为 $\{1\}$,$\{3\}$，仅 $m=3$ 满足条件.}
+\step{③当 $\triangle>0$ 时，$B$ 有两个不同元素，必须有 $B=\{2,3\}$.}
+\step{由韦达定理得
+$\begin{cases}m+3=2+3=5\\m^2=2\times3=6\end{cases}$，
+两式不能同时成立,}
+\step{此时无符合条件的 $m$.}
+\step{因此，$m$ 的取值范围为 $(-\infty,-1)\cup[3,+\infty)$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $(k^2-4k-5)x^2+(k+1)x+1>0(k\in\R)$ 的解集为 $M$.
+
+（1）若 $M=\R$，求实数 $k$ 的取值范围；
+
+（2）若存在两个不相等的负实数 $a,b$，使得 $M=(-\infty,a)\cup(b,+\infty)$，求实数 $k$ 的取值范围；
+
+（3）是否存在实数 $k$，满足：“对于任意正整数 $n$，都有 $n\in M$；对于任意负整数 $m$，都有 $m\notin M$”，若存在，求出 $k$ 的值，若不存在，说明理由.
+
+\ifanswer
+\solbegin
+\step{（1）当 $k^2-4k-5=0$ 时，解得 $k=5$ 或 $k=-1$,}
+\step{当 $k=-1$ 时，不等式化为 $1>0$，所以 $k=-1$ 时，解集为 $\R$，符合题意;}
+\step{当 $k=5$ 时，不等式化为 $6x+1>0$，解集为 $\left(-\dfrac16,+\infty\right)$,}
+\step{不符合题意，舍去;}
+\step{当 $k^2-4k-5\neq0$ 时，
+$\begin{cases}k^2-4k-5>0\\\triangle=(k+1)^2-4(k^2-4k-5)<0\end{cases}$,}
+\step{解得，$k<-1$ 或 $k>7$,}
+\step{综上，实数 $k$ 的取值范围为 $(-\infty,-1]\cup(7,+\infty)$;}
+\step{（2）由题意得方程 $(k^2-4k-5)x^2+(k+1)x+1=0$ 有两个不相等的负实根,}
+\step{且 $k^2-4k-5>0$，故有
+$\begin{cases}k^2-4k-5>0\\\triangle=(k+1)^2-4(k^2-4k-5)>0\\[2pt]-\dfrac{k+1}{k^2-4k-5}<0\\[2pt]\dfrac1{k^2-4k-5}>0\end{cases}$,}
+\step{解得 $5<k<7$，即实数 $k$ 的取值范围为 $(5,7)$;}
+\step{（3）由题意得解集 $M=(t,+\infty)$,$t\in[-1,1)$,}
+\step{当 $k^2-4k-5=0$ 时，解得 $k=5$ 或 $k=-1$,}
+\step{$k=5$ 时，不等式的解集为 $\left(-\dfrac16,+\infty\right)$，满足条件,}
+\step{$k=-1$ 时，$1>0$ 恒成立，不满足条件,}
+\step{当 $k^2-4k-5>0$ 时，此时对应的一元二次不等式的解集形式}
+\step{不是 $(t,+\infty)$ 的形式，不满足条件,}
+\step{当 $k^2-4k-5<0$ 时，此时对应的一元二次不等式的解集形式}
+\step{不是 $(t,+\infty)$ 的形式，不满足条件,}
+\step{综上，存在满足条件 $k$ 的值为 5.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x=m^2+n^2,m\in\Z,n\in\Z\}$.
+
+（1）判断 2,5,25 是否属于集合 $A$；
+
+（2）若正整数 $y$ 能表示为某个整数的平方，$z\in A$，证明：$yz\in A$；
+
+（3）若集合 $B=\{x\mid x=4k+3,k\in\Z\}$，证明：$A\cap B=\varnothing$.
+
+\ifanswer
+\solbegin
+\ansspace*
+\step{（1）由 $2=1^2+1^2$,$5=1^2+2^2$,$25=3^2+4^2$ 得 2,5,25 属于集合 $A$;}
+\step{（2）设 $y=a^2(a\in\Z)$，由 $z\in A$，设 $z=b^2+c^2(b\in\Z,c\in\Z)$,}
+\step{则 $yz=a^2(b^2+c^2)=(ab)^2+(ac)^2$,}
+\step{因为 $a\in\Z$，$b\in\Z$，$c\in\Z$，所以 $ab\in\Z$，$ac\in\Z$，所以 $yz\in A$;}
+\step{（3）①当 $m$、$n$ 都为偶数时，设 $m=2k_1(k_1\in\Z)$，$n=2k_2(k_2\in\Z)$,}
+\step{则 $x=m^2+n^2=4k_1^2+4k_2^2=4(k_1^2+k_2^2)$，此时 $x$ 为 4 的倍数,}
+\step{因为偶数 $\notin B$，所以 $A\cap B=\varnothing$;}
+\step{②当 $m$、$n$ 都为奇数时，设 $m=2k_1+1(k_1\in\Z)$，$n=2k_2+1(k_2\in\Z)$,}
+\step{则 $x=m^2+n^2=(2k_1+1)^2+(2k_2+1)^2=4(k_1^2+k_2^2+k_1+k_2)+2$,}
+\step{此时 $x$ 为 2 的倍数，因为偶数 $\notin B$，所以 $A\cap B=\varnothing$;}
+\step{③当 $m$、$n$ 一奇一偶时，设 $m=2k_1+1(k_1\in\Z)$，$n=2k_2(k_2\in\Z)$,}
+\step{则 $x=m^2+n^2=(2k_1+1)^2+(2k_2)^2=4(k_1^2+k_2^2+k_1)+1$,}
+\step{此时 $x$ 被 4 除余 1，而 $B$ 中元素被 4 除余 3，此时 $A\cap B=\varnothing$.}
+\step{综上，$A\cap B=\varnothing$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
