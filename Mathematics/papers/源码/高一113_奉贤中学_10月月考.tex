@@ -1,0 +1,384 @@
+% 高一113_奉贤中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年奉贤中学高一上 10 月月考”（试卷版/答案版）
+% 试卷版：xelatex 高一113_奉贤中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一113_奉贤中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一113_奉贤中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-05 20:54 发布；
+% 连载“27学年高一113”，原文标题“27学年高一113——2026-2027年上海市奉贤中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/w7dZYZ3Ps3oUVN5TkBm2xg。
+% 正文为 11 张 PNG 页（第 7、11 页 2560×3620，其余 4762×6735），
+% 题目下印有【解析】或【答案】，为讲评版。
+% 题目、解析均据原图转录；卷面红色水印及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作“2026-2027 年奉贤中学高一上 10 月月考”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，本稿按题目内容
+% 标为“集合与常用逻辑用语、不等式”。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，填空题编号为 3—12、选择题为 13—16、解答题为 17—21，本稿保留原题号；
+%   ② 原卷每题下直接印【解析】／【答案】，本稿按全稿惯例置于答案版；第 3 题只印【答案】、
+%      第 14 题把答案“$D$”印在题干括号内且无【解析】，均另提 \ans{}；其余选择题答案在
+%      解析末句“故选 …”，括号内留空；
+%   ③ 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      选项段前按惯例加 \keepwithprev；解答题不留作答区（原卷为讲评版，与 109—112 同）；
+%   ⑤ 原卷数集排斜体 $R$／$N^*$，按全稿惯例改 \R、\N^*。
+%
+% 判别式字形：原卷 $\triangle$（等边、扁）与 $\Delta$（等腰、高）两种混用，逐处照录——
+%   第 4、18、19 题用 \triangle，第 8 题 cases 用 \Delta。
+%
+% 子集符号：第 10 题题干印 $A\subset B$（真子集，无下划线），按 18／96 成例照录 \subset；
+%   第 6、12、16、19 题的 $A\subseteq B$／$\{s,-s\}\subseteq A$ 印有下划线，照录 \subseteq。
+%
+% 原卷存疑照录：第 20 题 $v$ 公式后的括注作“（储：这里的 $v$ 这里前 $t$ 分钟这一整段
+%   行程的平均速度）”（“储”及“这里…这里”重复系原卷笔误）；第 21 题 (3) 末段
+%   “对任正整数 $n\ge3$”漏“意”字，均照录加注。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 133 条（Q3：0；Q4：5；Q5：1；Q6：6；Q7：2；
+% Q8：4；Q9：5；Q10：2；Q11：4；Q12：9；Q13：5；Q14：0；Q15：11；Q16：21；Q17：5；
+% Q18：10；Q19：13；Q20：13；Q21：17），与原卷印刷行逐题相等。第 3 题只印【答案】、
+% 第 14 题括号内印答案且无解析，均提 \ans{}，不计入 \step 账。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年奉贤中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 不等式 $\dfrac1x\leqslant1$ 的解为\blankline[4.4em].
+
+\ifanswer
+\ans{$\{x\mid x\geqslant1$ 或 $x<0\}$}
+\fi
+
+\item 集合 $A=\{x\mid(a-1)x^2+2x-1=0\}$ 有且仅有一个元素，则实数 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得，集合 $A=\{x\mid(a-1)x^2+2x-1=0\}$ 有且仅有一个元素.}
+\step{当 $a-1=0$，即 $a=1$ 时，方程化为 $2x-1=0$，解得 $x=\dfrac12$，符合题意，}
+\step{当 $a-1\neq0$，即 $a\neq1$ 时，若方程 $(a-1)x^2+2x-1=0$ 只有一个根，}
+\step{则 $\triangle=2^2+4(a-1)=0$，解得 $a=0$，}
+\step{综上所述，实数 $a=1$ 或 $0$.}
+\solend
+\fi
+
+\item 若 $ax>b$ 的解集为 $(-\infty,1)$，比较大小：$2a-b$\blankline[4.4em]$0$（填写“$>$”或“$<$”）.
+
+\ifanswer
+\solbegin
+\step{若 $ax>b$ 的解集为 $(-\infty,1)$，则 $\begin{cases}a<0\\\dfrac ba=1\end{cases}$，则 $a=b<0$，则 $2a-b=b<0$.}
+\solend
+\fi
+
+\item 已知全集为 $\R$，集合 $A=\{2,m\}$，$B=\{2,3,m^2-m\}$，若 $A\cap\bar B=\varnothing$，则 $m=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $A\cap\bar B=\varnothing$，则 $A\subseteq B$，}
+\step{当 $m=3$ 时，$B=\{2,3,6\},A=\{2,3\}$，符合题意；}
+\step{当 $m^2-m=m$ 时，解得 $m=0$ 或 $2$，}
+\step{当 $m=0$ 时，$B=\{2,3,0\},A=\{2,0\}$，符合题意；}
+\step{当 $m=2$ 时，集合 $A$、$B$ 都不满足集合的互异性，}
+\step{综上所述，$m=0$ 或 $3$.}
+\solend
+\fi
+
+\item 已知 $x$、$y$ 是正数，$x+\dfrac1y=1$，则 $\dfrac xy$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\dfrac xy=x\times\dfrac1y\leqslant\dfrac14\left(x+\dfrac1y\right)^2=\dfrac14$，当且仅当 $x=\dfrac1y=\dfrac12$，即 $x=\dfrac12,y=2$ 时取等号，}
+\step{故 $\dfrac xy$ 的最大值为 $\dfrac14$.}
+\solend
+\fi
+
+\item 关于 $x$ 的不等式 $kx^2+2kx+1>0$ 的解集为 $\R$，则实数 $k$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{关于 $x$ 的不等式 $kx^2+2kx+1>0$ 的解集为 $\R$，}
+\step{当 $k=0$ 时，不等式 $1>0$，恒成立；}
+\step{当 $k\neq0$ 时，则 $\begin{cases}k>0\\\Delta=4k^2-4k<0\end{cases}$，$0<k<1$，}
+\step{综上，$k$ 的取值范围为 $[0,1)$.}
+\solend
+\fi
+
+\item 不等式 $\left(\dfrac{\lvert x\rvert}{x}-x\right)(1-x)>0$ 的解为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $x>0$ 时，不等式 $\left(\dfrac{\lvert x\rvert}{x}-x\right)(1-x)>0$ 等价于 $(1-x)^2>0$，}
+\step{即 $x\neq1$，即 $x$ 的范围为 $(0,1)\cup(1,+\infty)$；}
+\step{当 $x<0$ 时，不等式 $\left(\dfrac{\lvert x\rvert}{x}-x\right)(1-x)>0$ 等价于 $1-x^2<0$，}
+\step{即 $x$ 的范围为 $(-\infty,-1)$；}
+\step{故不等式的解集为 $(-\infty,-1)\cup(0,1)\cup(1,+\infty)$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid a^2\leqslant x\leqslant a^2+4\}$，$B=\{x\mid2a^2-4\leqslant x\leqslant a+6\}$，$A\subset B$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{显然 $A\neq\varnothing$，则 $\begin{cases}a^2\geqslant2a^2-4\\a^2+4\leqslant a+6\end{cases}$（两个不等式的等号不能同时成立），}
+\step{解得 $-1\leqslant a<2$，即实数 $a$ 的取值范围是 $[-1,2)$.}
+\solend
+\fi
+
+\item 有两个图形，图形 $A$ 表示一个长方形（有可能为正方形），图形 $B$ 表示一个正方形，这两个图形的周长相等，设图形 $A$ 的长方形相邻两边长分别为 $x$ 和 $y$($x>0,y>0$). 试用 $x$、$y$ 建立一个不等式，该不等式用来表示图形 $A$ 的面积和图形 $B$ 的面积的大小关系，则不等式为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{长方形 $A$ 的周长 $C=2(x+y)$，}
+\step{正方形 $B$ 的周长和 $A$ 的周长相等，所以正方形边长 $a=\dfrac{2(x+y)}{4}=\dfrac{x+y}{2}$，}
+\step{则长方形 $A$ 的面积 $S_A=xy$，正方形 $B$ 的面积 $S_B=\left(\dfrac{x+y}{2}\right)^2$，}
+\step{由基本不等式得 $xy\leqslant\left(\dfrac{x+y}{2}\right)^2$，当且仅当 $x=y$ 时取等号.}
+\solend
+\fi
+
+\item 对于集合 $A$，存在非零实数 $s$，使得 $\{s,-s\}\subseteq A$，我们称集合 $A$ 具有 $p$ 性质. 若集合 $M=\{x\mid(x+1)(x-a)(x-a-2)<0\}$ 具有 $p$ 性质，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得方程 $(x+1)(x-a)(x-a-2)=0$ 的解为 $-1$、$a$、$a+2$，}
+\step{又集合 $M$ 具有 $p$ 性质，则必有 $a+2>0$，即 $a>-2$，}
+\step{①当 $a>-1$ 时，$a+2>1$，}
+\step{此时 $M=\{x\mid x<-1$ 或 $a<x<a+2\}$，满足集合 $M$ 具有 $p$ 性质；}
+\step{②当 $a=-1$ 时，$a+2=1$，}
+\step{此时 $M=\{x\mid x<1$ 且 $x\neq-1\}$，满足集合 $M$ 具有 $p$ 性质；}
+\step{③当 $-2<a<-1$ 时，$0<a+2<1$，}
+\step{此时 $M=\{x\mid x<a$ 或 $-1<x<a+2\}$，满足集合 $M$ 具有 $p$ 性质，}
+\step{综上，实数 $a$ 的取值范围为 $(-2,+\infty)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item “四边形是正方形”是“四边形是矩形”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad\qquad B. 必要非充分条件
+
+C. 充要条件\qquad\qquad\qquad D. 既非充分又非必要条件
+
+\ifanswer
+\solbegin
+\step{正方形满足矩形的定义，}
+\step{所以“四边形是正方形”是“四边形是矩形”的充分条件，}
+\step{四边形是矩形，但邻边不一定相等，}
+\step{所以“四边形是正方形”不是“四边形是矩形”的必要条件，}
+\step{所以“四边形是正方形”是“四边形是矩形”的充分非必要条件. 故选 $A$.}
+\solend
+\fi
+
+\item 已知 $a$、$b$、$c\in\R$ 且 $a>b$，则下列不等式一定成立的是\mbox{（\quad）}% 原卷把答案“$D$”印在题干括号内、无【解析】
+
+\keepwithprev
+A. $\dfrac1a<\dfrac1b$\qquad\qquad\qquad B. $a^2>b^2$\qquad\qquad C. $a\lvert c\rvert>b\lvert c\rvert$\qquad\qquad D. $\dfrac{a}{c^2+1}>\dfrac{b}{c^2+1}$
+
+\ifanswer
+\ans{$D$}
+\fi
+
+\item 下列命题正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 存在三个不同的无理数，其中任意两个之和为有理数
+
+B. 存在三个不同的无理数，其中任意两个之积为有理数
+
+C. 对于任意三个不同的无理数，这三者的和必为无理数
+
+D. 对于任意三个不同的无理数，这三者的积必为无理数
+
+\ifanswer
+\solbegin
+\step{对于 $A$，设 $a$、$b$、$c$ 为三个不同的无理数，}
+\step{假设 $a+b$、$a+c$、$b+c$ 均为有理数，}
+\step{则 $a+b+a+c+b+c=2(a+b+c)$ 为有理数，所以 $a+b+c$ 为有理数，}
+\step{那么 $a$、$b$、$c$ 中至少有一个有理数，与已知矛盾，故 $A$ 错误；}
+\step{对于 $B$，当 $a=\sqrt2$，$b=-\sqrt2$，$c=\dfrac{\sqrt2}{2}$ 时，}
+\step{则其中任意两个数的积都为有理数，故 $B$ 正确；}
+\step{对于 $C$，令 $a=\sqrt2$，$b=\sqrt3$，$c=-\sqrt2-\sqrt3$，}
+\step{则此三个数的和为 $0$，为有理数，故 $C$ 错误；}
+\step{对于 $D$，令 $a=\sqrt2$，$b=\sqrt3$，$c=\dfrac{1}{\sqrt6}$，}
+\step{则此三个数的积为 $1$，为有理数，故 $D$ 错误.}
+\step{故选 $B$.}
+\solend
+\fi
+
+\item 对于实数 $a$，设集合 $A=\left\{x\,\middle|\,x^2+\dfrac ax>0,x\in\R\right\}$，$B=\left\{x\,\middle|\,x^2+\dfrac{a+x}{x}>0,x\in\R\right\}$，
+$C=\left\{x\,\middle|\,(x+1)^2+\dfrac{a}{x+1}>0,x\in\R\right\}$，下列说法正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 存在 $a$ 使得 $A$ 不是 $B$ 的子集，对任意的 $a$ 有 $A$ 是 $C$ 的子集
+
+B. 对任意 $a$ 有 $A$ 是 $B$ 的子集，存在 $a$ 使得 $A$ 是 $C$ 的子集
+
+C. 对任意 $a$ 有 $A$ 是 $B$ 的子集，对任意的 $a$ 有 $A$ 不是 $C$ 的子集
+
+D. 存在 $a$ 使得 $A$ 不是 $B$ 的子集，存在 $a$ 使得 $A$ 不是 $C$ 的子集
+
+\ifanswer
+\solbegin
+\step{注意 $A$ 中 $x\neq0$，$C$ 中 $x\neq-1$.}
+\step{若 $x\in A$，则 $x^2+\dfrac ax>0$，于是 $x^2+1+\dfrac ax>1>0$，即 $x\in B$，}
+\step{所以对任意实数 $a$ 都有 $A\subseteq B$，}
+\step{“存在 $a$ 使 $A$ 不是 $B$ 的子集”错误，$A$、$D$ 都错误.}
+\step{再看 $C$：记 $t=x+1$，则 $C$ 的条件化为 $t^2+\dfrac at>0(t\neq0)$，}
+\step{即“$x\in C$ 等价于 $x+1\in A$”.}
+\step{当 $a=0$ 时，$x^2+\dfrac ax=x^2>0$ 对一切 $x\neq0$ 成立，}
+\step{故 $A=(-\infty,0)\cup(0,+\infty)$，}
+\step{取 $x=-1$，有 $x\in A$ 而 $x+1=0\notin A$，即 $-1\notin C$，所以 $A$ 不是 $C$ 的子集；}
+\step{当 $a<0$ 时，$x^2+\dfrac ax=\dfrac{x^3+a}{x}$：若 $x<0$，则 $x^3<0$、$a<0$，}
+\step{分子与分母同为负、商为正，故 $x<0$ 全部在 $A$ 中；}
+\step{若 $x>0$，需分子 $x^3+a>0$，即 $x>\sqrt[3]{-a}$，故 $A=(-\infty,0)\cup(\sqrt[3]{-a},+\infty)$.}
+\step{取 $x=-1$，有 $x\in A$，而 $x+1=0\notin A$，同样 $A$ 不是 $C$ 的子集；}
+\step{当 $a>0$ 时，若 $x>0$，则 $x^3+a>0$，商为正，故 $x>0$ 全部在 $A$ 中；}
+\step{若 $x<0$，需 $x^3+a<0$，即 $x<-\sqrt[3]{a}$，故 $A=(-\infty,-\sqrt[3]{a})\cup(0,+\infty)$.}
+\step{取 $x=-\sqrt[3]{a}-1$，则 $x<-\sqrt[3]{a}$，即 $x\in A$；}
+\step{而此时 $x+1=-\sqrt[3]{a}$，代入得 $x^2+\dfrac ax=0$，即 $x+1\notin A$，}
+\step{所以 $x\notin C$，仍有 $A$ 不是 $C$ 的子集.}
+\step{综上，对任意实数 $a$ 都有 $A\subseteq B$，且对任意实数 $a$ 都有 $A$ 不是 $C$ 的子集，}
+\step{故 $C$ 正确，$B$ 错误.}
+\step{故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 解不等式组：$\begin{cases}3x(x-1)\geqslant2(1-2x)(1)\\[4pt]\dfrac{3x}{4x-3}<1(2)\end{cases}$.
+
+\ifanswer
+\solbegin
+\step{$3x(x-1)\geqslant2(1-2x)$，得 $(3x-2)(x+1)\geqslant0$，解得 $x\geqslant\dfrac23$ 或 $x\leqslant-1$①；}
+\step{$\dfrac{3x}{4x-3}<1$，得 $\dfrac{3x}{4x-3}-1=\dfrac{3x-(4x-3)}{4x-3}=\dfrac{3-x}{4x-3}<0$，即 $(x-3)(4x-3)>0$，}
+\step{解得 $x>3$ 或 $x<\dfrac34$②，}
+\step{由①②得 $x\leqslant-1$ 或 $\dfrac23\leqslant x<\dfrac34$ 或 $x>3$，}
+\step{故不等式的解集为 $\{x\mid x\leqslant-1$ 或 $\dfrac23\leqslant x<\dfrac34$ 或 $x>3\}$.}
+\solend
+\fi
+
+\item 已知 $a$ 为实数，集合 $A=\{x\mid x^2+2(a+1)x+a^2-1=0,x\in\R\}$.
+
+（1）证明：$2\notin A$；
+
+（2）若 $A=\{x_1,x_2\}$，且满足 $\dfrac{x_1}{x_2}+\dfrac{x_2}{x_1}=3$，求实数 $a$ 的值.
+
+\ifanswer
+\solbegin
+\stepm{（1）}{若 $2\in A$，则 $2^2+4(a+1)+a^2-1=0$，整理得 $a^2+4a+7=0$，}
+\step{因为 $\triangle=4^2-4\times7=-12<0$，所以方程 $a^2+4a+7=0$ 无解，}
+\step{即不存在实数 $a$ 使得 $x=2$ 满足方程 $x^2+2(a+1)x+a^2-1=0$，}
+\step{即 $2\notin A$；}
+\stepm{（2）}{若 $A=\{x_1,x_2\}$，}
+\step{则 $x_1$ 和 $x_2$ 是方程 $x^2+2(a+1)x+a^2-1=0$ 的两个不等实根，}
+\step{所以 $\triangle=4(a+1)^2-4(a^2-1)>0$，解得 $a>-1$，}
+\step{由韦达定理得 $\begin{cases}x_1+x_2=-2(a+1)\\x_1\cdot x_2=a^2-1\end{cases}$，}
+\step{所以 $\dfrac{x_1}{x_2}+\dfrac{x_2}{x_1}=\dfrac{x_1^2+x_2^2}{x_1x_2}=\dfrac{(x_1+x_2)^2-2x_1x_2}{x_1x_2}=\dfrac{4(a+1)^2-2(a^2-1)}{a^2-1}=3$，}
+\step{解得 $a=-1$ 或 $9$，又因为 $a>-1$，所以 $a=9$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x^2-(m-1)x+m^2\leqslant0\}$.
+
+（1）若 $-\dfrac43\in A$，求集合 $A$；
+
+（2）若 $B=\{x\mid x^2-1=0\}$，$A\subseteq B$，求 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{（1）}{若 $-\dfrac43\in A$，则 $\left(-\dfrac43\right)^2+\dfrac43(m-1)+m^2\leqslant0$，整理得 $(3m+2)^2\leqslant0$，}
+\step{解得 $m=-\dfrac23$，}
+\step{所以集合 $A=\{x\mid x^2-(m-1)x+m^2\leqslant0\}=\left\{x\,\middle|\,x^2+\dfrac53x+\dfrac49\leqslant0\right\}$}
+\step{$=\left\{x\,\middle|\,-\dfrac43\leqslant x\leqslant-\dfrac13\right\}$；}
+\stepm{（2）}{由题意得 $B=\{x\mid x^2-1=0\}=\{1,-1\}$，因为 $A\subseteq B$，}
+\step{所以当 $A=\varnothing$ 时，则 $\triangle=[-(m-1)]^2-4m^2<0$，解得 $m<-1$ 或 $m>\dfrac13$，}
+\step{当 $A\neq\varnothing$ 时，则 $A=\{1\}$ 或 $\{-1\}$ 或 $\{1,-1\}$，}
+\step{因为集合 $A$ 是不等式 $x^2-(m-1)x+m^2\leqslant0$ 的解集，}
+\step{所以 $A$ 不可能等于 $\{1,-1\}$，}
+\step{若 $\triangle=[-(m-1)]^2-4m^2=0$，则 $m=-1$ 或 $\dfrac13$，}
+\step{当 $m=-1$ 时，$A=\{x\mid x^2+2x+1\leqslant0\}=\{-1\}$，符合题意，}
+\step{当 $m=\dfrac13$ 时，$A=\left\{x\,\middle|\,x^2+\dfrac23x+\dfrac19\leqslant0\right\}=\left\{-\dfrac13\right\}$，不符合题意，舍去，}
+\step{综上所述，$m$ 的取值范围为 $(-\infty,-1]\cup\left(\dfrac13,+\infty\right)$.}
+\solend
+\fi
+
+\item 小明家距离学校 12 公里. 早上上学，如果小明骑共享单车，则速度恒为 $\dfrac14$ 公里／分钟；如果由家长每天在某一固定时刻开车送，根据导航软件预测，早高峰时段，家长开车的平均速度 $v$（单位：公里／分钟）与行驶时间 $t$（单位：分钟）始终满足
+$v=\dfrac1{10}+\dfrac{19}{2t}-\dfrac{60}{t^2}(t\geqslant10)$（储：这里的 $v$ 这里前 $t$ 分钟这一整段行程的平均速度）.% 原卷“储”“这里…这里”系笔误，照录
+
+（1）若家长全程开车送，则需要多少时间到达学校？
+
+（2）若家长全程开车送，在某一时段内平均车速超过前 10 分钟的平均车速，求行驶时间 $t$ 的取值范围；
+
+（3）若家长开车送，为了赶时间，在中途某一时间点下车骑共享单车去学校，则小明最短需要多少分钟才能到达学校？
+
+\ifanswer
+\solbegin
+\stepm{（1）}{由家长全程开车送，得 $vt=12$，则 $\dfrac{t}{10}+\dfrac{19}{2}-\dfrac{60}{t}=12$，}
+\step{整理得 $t^2-25t-600=0$，而 $t\geqslant10$，解得 $t=40$，}
+\step{所以家长全程开车送，需要 $40$ 分钟到达学校.}
+\stepm{（2）}{当 $t=10$ 时，$v=\dfrac9{20}$，由平均车速超过前 10 分钟的平均车速，}
+\step{得 $\dfrac1{10}+\dfrac{19}{2t}-\dfrac{60}{t^2}>\dfrac9{20}$，而 $t\geqslant10$，整理得 $7t^2-190t+1200<0$，}
+\step{解得 $10<t<\dfrac{120}{7}$，所以行驶时间 $t$ 的取值范围是 $10<t<\dfrac{120}{7}$.}
+\stepm{（3）}{设小明坐车行驶 $t(t\geqslant10)$ 分钟后下车骑共享单车，}
+\step{则小明坐车行驶里程 $\dfrac{t}{10}+\dfrac{19}{2}-\dfrac{60}{t}$，}
+\step{小明骑共享单车行驶里程为 $12-\left(\dfrac{t}{10}+\dfrac{19}{2}-\dfrac{60}{t}\right)=\dfrac52-\dfrac{t}{10}+\dfrac{60}{t}$，}
+\step{所用时间 $\dfrac{\dfrac52-\dfrac{t}{10}+\dfrac{60}{t}}{\dfrac14}$，}
+\step{因此小明到达学校共用时为 $t+\dfrac{\dfrac52-\dfrac{t}{10}+\dfrac{60}{t}}{\dfrac14}=\dfrac35t+\dfrac{240}{t}+10$}
+\step{$\geqslant2\sqrt{\dfrac35t\cdot\dfrac{240}{t}}+10=34$，当且仅当 $\dfrac35t=\dfrac{240}{t}$，即 $t=20$ 时取等号，}
+\step{所以小明最短需要 $34$ 分钟才能到达学校.}
+\solend
+\fi
+
+\item 在平面直角坐标系 $xOy$ 中，$O$ 为坐标原点，$A(x_1,y_1),B(x_2,y_2)$，已知 $p>0$，记
+$L_p(A,B)=(\lvert x_1-x_2\rvert^p+\lvert y_1-y_2\rvert^p)^{\frac1p}$，称 $L_p(A,B)$ 为 $A,B$ 两点的 $p-$范数.
+
+（1）若 $A(\sqrt2,\sqrt2),B(1,2)$，求 $A,B$ 两点的 $1-$范数；
+
+（2）若 $A(1,2),B(2,1)$，求 $A,B$ 两点的 $3-$范数 $L_3(A,B)$，并判断 $L_3(A,B)$ 是否为有理数？证明你的结论；
+
+（3）已知 $a,b,c>0,A(a,0),B(0,b),C(c,0)$，且满足 $L_2(A,B)=L_2(O,C)$，证明：对任意正整数 $n\geqslant3$，都有 $L_n(A,B)<L_n(O,C)$.
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$L_1(A,B)=\lvert\sqrt2-1\rvert+\lvert\sqrt2-2\rvert=\sqrt2-1+2-\sqrt2=1$.}
+\stepm{（2）}{$L_3(A,B)=(\lvert1-2\rvert^3+\lvert2-1\rvert^3)^{\frac13}=2^{\frac13}$，显然 $2^{\frac13}$ 为无理数，}
+\step{下面用反证法证明：}
+\step{假设 $2^{\frac13}$ 是有理数，令 $2^{\frac13}=\dfrac st$（$s,t$ 为互质的正整数），则 $s^3=2t^3$，}
+\step{若 $s$ 为偶数，令 $s=2k,k\in\N^*$，则 $8k^3=2t^3$，即 $t^3=4k^3$，故 $t$ 为偶数，与 $s,t$ 互质矛盾；}
+\step{若 $s$ 为奇数，则 $s^3$ 为奇数，而 $2t^3$ 为偶数，则 $s^3=2t^3$ 不成立.}
+\step{综上，假设不成立，故 $2^{\frac13}$ 为无理数.}
+\stepm{（3）}{$L_2(A,B)=(\lvert a-0\rvert^2+\lvert0-b\rvert^2)^{\frac12}=\sqrt{a^2+b^2}$，}
+\step{$L_2(O,C)=(\lvert c-0\rvert^2+\lvert0-0\rvert^2)^{\frac12}=\sqrt{c^2}$，}
+\step{由 $L_2(A,B)=L_2(O,C)$，得 $a^2+b^2=c^2$，}
+\step{故 $0<a<c,0<b<c$，且 $\left(\dfrac ac\right)^2+\left(\dfrac bc\right)^2=1$，}
+\step{$L_n(A,B)=(\lvert a-0\rvert^n+\lvert0-b\rvert^n)^{\frac1n}=\sqrt[n]{a^n+b^n}$，}
+\step{$L_n(O,C)=(\lvert c-0\rvert^n+\lvert0-0\rvert^n)^{\frac1n}=c$，}
+\step{故只需证对任意正整数 $n\geqslant3$，都有 $\sqrt[n]{a^n+b^n}<c$，即证 $a^n+b^n<c^n$，}
+\step{由 $0<a<c,0<b<c$，故 $0<\dfrac ac<1,0<\dfrac bc<1$，}
+\step{对任正整数 $n\geqslant3$，都有 $\left(\dfrac ac\right)^n+\left(\dfrac bc\right)^n<\left(\dfrac ac\right)^2+\left(\dfrac bc\right)^2=1$，}% 原卷“对任正整数”漏“意”字，照录
+\step{故 $a^n+b^n<c^n$，得证 $L_n(A,B)<L_n(O,C)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
