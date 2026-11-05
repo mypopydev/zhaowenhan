@@ -1,0 +1,371 @@
+% 高一112_进才中学_期中.tex
+%   —— 高一上数学“2026-2027 年进才中学高一上期中”（试卷版/答案版）
+% 试卷版：xelatex 高一112_进才中学_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一112_进才中学_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一112_进才中学_期中.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-05 20:54 发布；
+% 连载“27学年高一112”，原文标题“27学年高一112——2026-2027年上海市进才中学高一上期中”；
+% 原文链接：https://mp.weixin.qq.com/s/0AnO07l0uzTljkxWeIoyBA。
+% 正文为 10 张 PNG 页（第 1、2、5 页 2560×3620，第 3、4、6—10 页 4762×6735），
+% 题目下印有【解析】或【答案】，为讲评版。
+% 题目、解析均据原图转录；卷面红色水印及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作“2026-2027 年进才中学高一上期中”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，本稿按题目内容
+% 标为“集合与常用逻辑用语、不等式、函数”（期中卷跨三章）。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，填空题编号为 3—12、选择题为 13—16、解答题为 17—21，本稿保留原题号；
+%   ② 原卷每题下直接印【解析】／【答案】，本稿按全稿惯例置于答案版；第 3、5、7、8 题只印
+%      【答案】，另提 \ans{}；选择题括号内未印答案（答案在解析末句“故选 …”），试卷版留空；
+%   ③ 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      选项段前按惯例加 \keepwithprev；解答题不留作答区（原卷为讲评版，与 109—111 同）；
+%   ⑤ 原卷数集排斜体 $R$／$N$／$Z$／$N^*$，按全稿惯例改 \R、\N、\Z、\N^*；
+%      $min$／$max$ 及 $W(x)_{max}$ 一类下标原卷排斜体，按 96 成例改正体 \min／\max。
+%
+% 判别式字形：原卷 $\triangle$（等边、扁）与 $\Delta$（等腰、高）两种混用，逐处照录——
+%   第 6 题解析与第 18 题 (2) “当 $B=\varnothing$ 时”一行用 \triangle，
+%   第 18 题 (1) 的 cases、第 18 题 (2) 三个 cases、第 20 题 (2) 的 cases 用 \Delta。
+%
+% 原卷存疑照录：第 16 题解析 $x<0$ 一段先写“$4-a\ge(\cdots)_{\max}$”、末句却按
+%   “即 $2-a\ge-8$”收束（$4-a$／$2-a$ 不一致），且首行以“$<$”连接，均照录；
+%   第 18 题 (2) 题干“若 $\bar A\cap B=\varnothing$”而解析作“则 $B\subseteq A$”，照录；
+%   第 21 题 (3) 解析 $\dfrac{ab+cd-bc-cd}{d(b+d)}$ 的 $ab$ 系原卷笔误（应为 $ad$），
+%   “对 $m\in\{t\mid0<t<2025,t\in\Z\}$ 时恒成立”中 $m$／$t$ 混用，
+%   正文先得“$n=2025+2026=4051$”末句却作“故 $n=4045$”，均照录加注。
+%
+% 第 10 页末原卷另有一段**荧光黄高亮的“补充证明 $n$ 需要满足的必要条件”**（约 13 行，
+% 印刷体），本稿照录为普通 \step 行、不引入黄色底色；其上覆有红色手写批注（“Y”“不”
+% 及勾叉），系批改笔迹、非印刷正文，未录入。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 120 条（Q3：0；Q4：1；Q5：0；Q6：4；Q7：0；
+% Q8：0；Q9：3；Q10：3；Q11：3；Q12：5；Q13：7；Q14：3；Q15：8；Q16：10；Q17：5；
+% Q18：12；Q19：11；Q20：14；Q21：31），与原卷印刷行逐题相等。第 3、5、7、8 题只印
+% 【答案】，提 \ans{}，不计入 \step 账；第 21 题末 13 行是原卷荧光黄高亮的补充证明。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年进才中学高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 用反证法证明命题“若 $x+y>2$，则 $x>1$ 或 $y>1$”的过程中，应当作出的假设是\blankline[4.4em].
+
+\ifanswer
+\ans{$x\leqslant1$ 且 $y\leqslant1$}
+\fi
+
+\item 已知 $f(x-1)=2x+3$，若 $f(t)=4$，则 $t=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{令 $2x+3=4\Rightarrow x=\dfrac12\Rightarrow x-1=-\dfrac12=t$.}
+\solend
+\fi
+
+\item 不等式“$x^2\leqslant3x$”是“$\lvert x-2\rvert<1$”的\blankline[4.4em]条件.
+
+\ifanswer
+\ans{必要不充分}
+\fi
+
+\item 已知 $a\in\R$，若关于 $x$ 的方程 $x^2+ax+a^2-8=0$ 有两个实根 $x_1$、$x_2$，且
+$\dfrac1{x_1}+\dfrac1{x_2}=\dfrac12$，则 $a$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $\triangle=a^2-4(a^2-8)=32-3a^2\geqslant0$，解得 $a^2\leqslant\dfrac{32}{3}$，}
+\step{由韦达定理得 $x_1+x_2=-a$，$x_1x_2=a^2-8$，}
+\step{则 $\dfrac1{x_1}+\dfrac1{x_2}=\dfrac{x_1+x_2}{x_1x_2}=\dfrac{-a}{a^2-8}=-\dfrac12$，即 $a^2-2a-8=(a-4)(a+2)=0$，}
+\step{解得 $a=4$ 或 $a=-2$. 又 $a^2\leqslant\dfrac{32}{3}$，则 $a=-2$.}
+\solend
+\fi
+
+\item 一元二次不等式 $ax^2+bx+c>0$ 的解集是 $\left(-\dfrac12,\dfrac13\right)$，则 $cx^2-bx+a\leqslant0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\ans{$[-3,2]$}
+\fi
+
+\item 若不等式 $\lvert x-a\rvert+\lvert x+1\rvert>2$ 的解集为 $\R$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\ans{$(-\infty,-3)\cup(1,+\infty)$}
+\fi
+
+\item 已知关于 $x$ 的函数 $y=f(x)+x^2$ 是奇函数，且 $f(1)=1$，若 $g(x)=f(x)+2$，则
+$g(-1)=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $y=f(x)+x^2$ 是奇函数，且 $f(1)=1$，}
+\step{所以 $f(1)+1+f(-1)+(-1)^2=0$，解得 $f(-1)=-3$，}
+\step{所以 $g(-1)=f(-1)+2=-3+2=-1$.}
+\solend
+\fi
+
+\item 已知 $a>0$，$b>0$，若 $a+b=2ab$，则 $a+4b$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $a>0$，$b>0$，$a+b=2ab$，得 $\dfrac1a+\dfrac1b=2$，}
+\step{则 $a+4b=\dfrac12\left(\dfrac1a+\dfrac1b\right)(a+4b)=\dfrac12\left(5+\dfrac ab+\dfrac{4b}a\right)\geqslant\dfrac12\left(5+2\sqrt{\dfrac ab\cdot\dfrac{4b}a}\right)=\dfrac92$，}
+\step{当且仅当 $\dfrac ab=\dfrac{4b}a$，即 $a=2b=\dfrac32$ 时取等号，所以 $a+4b$ 的最小值为 $\dfrac92$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $\dfrac{ax-5}{x^2-a}<0$ 的解集为 $M$，若 $3\in M$，且 $5\notin M$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{关于 $x$ 的不等式 $\dfrac{ax-5}{x^2-a}<0$ 的解集为 $M$，若 $3\in M$，且 $5\notin M$，}
+\step{故 $\begin{cases}\dfrac{3\cdot a-5}{9-a}<0 & \text{①}\\[4pt]\dfrac{5\cdot a-5}{25-a}\geqslant0\text{或}25-a=0 & \text{②}\end{cases}$，解得 $1\leqslant a<\dfrac53$ 或 $9<a\leqslant25$.}
+\step{故实数 $a$ 的取值范围是 $\left[1,\dfrac53\right)\cup(9,25]$.}
+\solend
+\fi
+
+\item 定义：$\min\{x,y\}$ 为实数 $x,y$ 中较小的数. 已知 $h=\min\left\{a,\dfrac{b}{a^2+4b^2}\right\}$，
+其中 $a,b$ 均为正实数，则 $h$ 的最大值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $a,b$ 均为正实数，$\dfrac{b}{a^2+4b^2}=\dfrac{1}{\dfrac{a^2}{b}+4b}\leqslant\dfrac{1}{4a}$，}
+\step{所以当 $a\geqslant\dfrac{1}{4a}$，即 $a\geqslant\dfrac12$ 时，$\dfrac{1}{4a}\leqslant\dfrac12$，即 $\dfrac{b}{a^2+4b^2}\leqslant\dfrac12$，}
+\step{所以 $h=\min\left\{a,\dfrac{b}{a^2+4b^2}\right\}=\dfrac{b}{a^2+4b^2}\leqslant\dfrac12$，}
+\step{当 $0<a<\dfrac12$ 时，$h=\min\left\{a,\dfrac{b}{a^2+4b^2}\right\}<\dfrac12$；}
+\step{综上所述，$h$ 的最大值为 $\dfrac12$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 下列各组函数中，同组的两个函数是相同函数的有\mbox{（\quad）}
+
+\keepwithprev
+A. $y=\dfrac{x^2-1}{x-1}$ 与 $y=x+1$\qquad\qquad B. $y=x-1$ 与 $y=\sqrt{x^2-2x+1}$
+
+C. $y=\sqrt{x^2}$ 与 $y=(\sqrt x)^2$\qquad\qquad D. $y=\lvert x+1\rvert$ 与 $y=\begin{cases}x+1,&x\geqslant-1\\-x-1,&x<-1\end{cases}$
+
+\ifanswer
+\solbegin
+\step{对于 $A,y=\dfrac{x^2-1}{x-1}$ 的定义域为 $\{x\mid x\neq1\},y=x+1$ 的定义域为 $\R$，}
+\step{两函数定义域不同，不是相同函数，故 $A$ 错误；}
+\step{对于 $B$，$y=\sqrt{x^2-2x+1}=\lvert x-1\rvert$，所以两函数对应关系不同，不是相同函数，故 $B$ 错误；}
+\step{对于 $C,y=\sqrt{x^2}$ 的定义域为 $\R,y=(\sqrt x)^2$ 的定义域为 $\{x\mid x\geqslant0\}$，}
+\step{两函数定义域不同，不是相同函数，故 $C$ 错误；}
+\step{对于 $D$，两函数定义域相同，对应关系相同，是相同函数，故 $D$ 正确.}
+\step{故选 $D$.}
+\solend
+\fi
+
+\item 已知 $[x]$ 表示不超过 $x$ 的最大整数，例如 $[-3.5]=-4,[3.1]=3$，则关于 $x$ 的方程
+$[\lvert x-1\rvert-1]=2$ 的解集为\mbox{（\quad）}
+
+\keepwithprev
+A. $\{x\mid4\leqslant x\leqslant5\}$\qquad\qquad B. $\{x\mid-3\leqslant x\leqslant-2$ 或 $4\leqslant x\leqslant5\}$
+
+C. $\{x\mid4\leqslant x<5\}$\qquad\qquad D. $\{x\mid-3<x\leqslant-2$ 或 $4\leqslant x<5\}$
+
+\ifanswer
+\solbegin
+\step{由题意得 $[\lvert x-1\rvert-1]=2$，从而 $2\leqslant\lvert x-1\rvert-1<3$，}
+\step{化简得 $3\leqslant\lvert x-1\rvert<4$，解得 $4\leqslant x<5$ 或 $-3<x\leqslant-2$，}
+\step{故解集为 $\{x\mid-3<x\leqslant-2$ 或 $4\leqslant x<5\}$，故选 $D$.}
+\solend
+\fi
+
+\item 有四个命题：① 若 $a>b$，则 $a^3>b^3$；② 若 $a>b>1$，则 $\log_a2>\log_b2$；③ 若
+$a<b<0,c<d<0$，则 $ac>bd$；④ 若 $1<a<2$ 且 $0<b<3$，则 $-2<a-b<2$. 其中真命题的是\mbox{（\quad）}
+
+\keepwithprev
+A. ①②③\qquad\qquad B. ①②④\qquad\qquad C. ①③④\qquad\qquad D. ②③④
+
+\ifanswer
+\solbegin
+\step{对于①，若 $a>b$，则 $a^3>b^3$，故命题①是真命题；}
+\step{对于②，若 $a>b>1$，}
+\step{则 $\log_2a>\log_2b>0\Rightarrow\log_a2=\dfrac{1}{\log_2a}<\log_b2=\dfrac{1}{\log_2b}$，故命题②是假命题；}
+\step{对于③，若 $a<b<0,c<d<0$，}
+\step{则 $\dfrac ab>1,\dfrac cd>1,bd>0\Rightarrow\dfrac{ac}{bd}>1,bd>0\Rightarrow ac>bd$，故命题③是真命题；}
+\step{对于④，若 $1<a<2$ 且 $0<b<3$，则 $1<a<2,-3<-b<0\Rightarrow-2<a-b<2$，}
+\step{故命题④是真命题；}
+\step{故选 $C$.}
+\solend
+\fi
+
+\item 已知不等式 $\left\lvert x^2+\dfrac1x\right\rvert+\left\lvert x^2-\dfrac1x\right\rvert+ax\geqslant2x-8$ 恒成立，则实数 $a$ 不可能是\mbox{（\quad）}
+
+\keepwithprev
+A. $3$\qquad\qquad B. $6$\qquad\qquad C. $9$\qquad\qquad D. $12$
+
+\ifanswer
+\solbegin
+\step{$\left\lvert x^2+\dfrac1x\right\rvert+\left\lvert x^2-\dfrac1x\right\rvert+ax\geqslant2x-8$ 恒成立，}
+\step{即 $\left\lvert x^2+\dfrac1x\right\rvert+\left\lvert x^2-\dfrac1x\right\rvert+8\geqslant(2-a)x$ 恒成立，}
+\step{当 $x>0$ 时，即为 $2-a\leqslant\left(\left\lvert x+\dfrac1{x^2}\right\rvert+\left\lvert x-\dfrac1{x^2}\right\rvert+\dfrac8x\right)_{\min}$，}
+\step{因为 $\left\lvert x+\dfrac1{x^2}\right\rvert+\left\lvert x-\dfrac1{x^2}\right\rvert+\dfrac8x\geqslant x+\dfrac1{x^2}+x-\dfrac1{x^2}+\dfrac8x=2x+\dfrac8x\geqslant2\sqrt{2x\cdot\dfrac8x}=8$，}
+\step{当且仅当 $x=2$ 时，取得最小值 $8$，即 $2-a\leqslant8$，则 $a\geqslant-6$，}
+\step{当 $x<0$ 时，即为 $4-a\geqslant\left(-\left\lvert x+\dfrac1{x^2}\right\rvert-\left\lvert x-\dfrac1{x^2}\right\rvert+\dfrac8x\right)_{\max}$，}
+\step{因为 $\left\lvert x+\dfrac1{x^2}\right\rvert+\left\lvert x-\dfrac1{x^2}\right\rvert<\dfrac8x=\left\lvert-x+\dfrac1{x^2}\right\rvert+\left\lvert-x-\dfrac1{x^2}\right\rvert-\dfrac8x$}
+\step{$\geqslant-2x-\dfrac8x\geqslant2\sqrt{2x\cdot\dfrac8x}=8$，}
+\step{当且仅当 $x=-2$ 时，取得最大值 $8$，即 $2-a\geqslant-8$，则 $a\leqslant10$，}
+\step{则实数 $a$ 的范围是 $-6\leqslant a\leqslant10$，则实数 $a$ 不可能是 $12$，故选 $D$.}% 原卷此段“4-a”与末句“2-a”不一致，照录
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）判断并证明函数 $f(x)=x^3+x$ 的奇偶性；
+
+（2）若函数 $f(x)$ 是定义在 $\R$ 上的奇函数，且当 $x\in(0,+\infty)$ 时，$f(x)=x(1+\sqrt[3]{x})$，求函数 $f(x)$ 在 $x\in(-\infty,0)$ 时的解析式.
+
+\ifanswer
+\solbegin
+\stepm{（1）}{函数的定义域为 $\R$，关于原点对称.}
+\step{对任意 $x\in\R$，有 $f(-x)=(-x)^3+(-x)=-x^3-x=-f(x)$，}
+\step{所以该函数为奇函数.}
+\stepm{（2）}{当 $x<0$ 时，$-x>0$，由已知得 $f(-x)=(-x)(1+\sqrt[3]{-x})$.}
+\step{又因为 $f(x)$ 是奇函数，所以 $f(x)=-f(-x)=x(1+\sqrt[3]{-x})$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid2x^2-3x-2=0\}$，集合 $B=\{x\mid x^2+2(a+1)x+a^2-5=0\}$.
+
+（1）若集合 $B=\{x_1,x_2\}$，且满足 $x_1^2+x_2^2=24$，求实数 $a$ 的值；
+
+（2）若 $\bar A\cap B=\varnothing$，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\stepm{（1）}{$B=\{x\mid x^2+2(a+1)x+a^2-5=0\}$，}
+\step{若 $B=\{x_1,x_2\}$，则 $\begin{cases}\Delta=4(a+1)^2-4(a^2-5)>0\\x_1+x_2=-2(a+1)\\x_1x_2=a^2-5\end{cases}$，$a>-3$，}
+\step{由 $x_1^2+x_2^2=24$，得 $(x_1+x_2)^2-2x_1x_2=24$，}
+\step{即 $4(a+1)^2-2(a^2-5)=24$，解得 $a=1(a=-5$ 舍去$)$；}
+\stepm{（2）}{$A=\{x\mid2x^2-3x-2=0\}=\left\{-\dfrac12,2\right\}$，$B=\{x\mid x^2+2(a+1)x+a^2-5=0\}$，}
+\step{若 $\bar A\cap B=\varnothing$，则 $B\subseteq A$，又 $A=\left\{-\dfrac12,2\right\}$，}
+\step{所以当 $B=\varnothing$ 时，$\triangle=4(a+1)^2-4(a^2-5)=8a+24<0$，解得 $a<-3$，}
+\step{符合题意；}
+\step{当 $B=\left\{-\dfrac12\right\}$ 时，$\begin{cases}\Delta=8a+24=0\\\left(-\dfrac12\right)^2-(a+1)+a^2-5=0\end{cases}$，此方程组无解；}
+\step{当 $B=\{2\}$ 时，$\begin{cases}\Delta=8a+24=0\\2^2+4(a+1)+a^2-5=0\end{cases}$，解得 $a=-3$；}
+\step{当 $B=\left\{-\dfrac12,2\right\}$ 时，$\begin{cases}\Delta=8a+24>0\\-2(a+1)=-\dfrac12+2\\a^2-5=-\dfrac12\times2\end{cases}$，此方程组无解.}
+\step{综上所述，实数 $a$ 的取值范围是 $(-\infty,-3]$.}
+\solend
+\fi
+
+\item 某医疗器械公司为了进一步增加市场竞争力，计划改进技术生产某产品，已知生产该产品的年固定成本为 300 万元，最大产能为 100 台. 每生产 $x$ 台，需另投入成本 $G(x)$ 万元，
+其中 $G(x)=\begin{cases}2x^2+80x,&0<x\leqslant40,x\in\N\\[3pt]201x+\dfrac{3600}{x}-2100,&40<x\leqslant100,x\in\N\end{cases}$，由市场调研知，该产品每台的售价为 200 万元，且全年内生产的该产品当年能全部销售完.
+
+（1）写出年利润 $W(x)$ 万元关于年产量 $x$ 台的函数解析式（利润$=$销售收入$-$成本）；
+
+（2）当该产品的年产量为多少时，公司所获利润最大？最大利润是多少？
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $0<x\leqslant40$ 时，$W(x)=200x-(2x^2+80x)-300=-2x^2+120x-300$，}
+\step{当 $40<x\leqslant100$ 时，$W(x)=200x-\left(201x+\dfrac{3600}{x}-2100\right)-300$}
+\step{$=-\left(x+\dfrac{3600}{x}\right)+1800$，}
+\step{故 $W(x)=\begin{cases}-2x^2+120x-300,&0<x\leqslant40\\[3pt]-\left(x+\dfrac{3600}{x}\right)+1800,&40<x\leqslant100\end{cases}$.}
+\stepm{（2）}{若 $0<x\leqslant40$，$W(x)=-2(x-30)^2+1500$，}
+\step{所以当 $x=30$ 时，$W(x)_{\max}=1500$ 万元，}
+\step{若 $40<x\leqslant100$，$W(x)=-\left(x+\dfrac{3600}{x}\right)+1800$}
+\step{$\leqslant-2\sqrt{x\cdot\dfrac{3600}{x}}+1800=-120+1800=1680$，}
+\step{当且仅当 $x=\dfrac{3600}{x}$ 时，即 $x=60$ 时，故 $W(x)_{\max}=1680$ 万元.}
+\step{所以该产品的年产量为 $60$ 台时，公司所获利润最大，}
+\step{最大利润是 $1680$ 万元.}
+\solend
+\fi
+
+\item 解关于 $x$ 的不等式：$ax^2-(a+1)x+1>0$.
+
+（1）若 $a=2$，解上述关于 $x$ 的不等式；
+
+（2）若不等式 $ax^2-(a+1)x+1>-x$ 的解集为 $\R$，求实数 $a$ 的取值范围；
+
+（3）若 $a\in\R$，解上述关于 $x$ 的不等式 $ax^2-(a+1)x+1>0$；并求实数 $a$ 的取值范围，使此不等式的解集中恰有 2026 个整数.
+
+\ifanswer
+\solbegin
+\stepm{（1）}{当 $a=2$ 时，不等式为 $2x^2-3x+1>0$，即 $(x-1)(2x-1)>0$，}
+\step{所以不等式的解集为 $\left(-\infty,\dfrac12\right)\cup(1,+\infty)$.}
+\stepm{（2）}{不等式化简得 $ax^2-ax+1>0$，}
+\step{$1^\circ$ 当 $a=0$ 时，不等式为 $1>0$，解集为 $\R$；}
+\step{$2^\circ$ 当 $a\neq0$ 时，若不等式的解集为 $\R$，则 $\begin{cases}a>0\\\Delta=a^2-4a<0\end{cases}\Rightarrow0<a<4$，}
+\step{综上，$a\in[0,4)$.}
+\stepm{（3）}{$ax^2-(a+1)x+1>0$ 可化简为 $(ax-1)(x-1)>0$，}
+\step{当 $a>1$ 时，不等式的解集为 $\left(-\infty,\dfrac1a\right)\cup(1,+\infty)$，}
+\step{当 $a=1$ 时，不等式的解集为 $(-\infty,1)\cup(1,+\infty)$，}
+\step{当 $0<a<1$ 时，不等式的解集为 $(-\infty,1)\cup\left(\dfrac1a,+\infty\right)$，}
+\step{当 $a=0$ 时，不等式的解集为 $(-\infty,1)$，}
+\step{当 $a<0$ 时，不等式的解集为 $\left(\dfrac1a,1\right)$，}
+\step{若不等式的解集中恰有 $2026$ 个整数，则 $a<0$ 可满足要求，}
+\step{且 $-2026\leqslant\dfrac1a<-2025$，解得 $a\in\left(-\dfrac1{2025},-\dfrac1{2026}\right]$.}
+\solend
+\fi
+
+\item 对在直角坐标系的第一象限内的任意两点作如下定义：若 $\dfrac ab>\dfrac cd$，那么称点 $(a,b)$ 是点 $(c,d)$ 的“高位点”. 同时点 $(c,d)$ 是点 $(a,b)$ 的“低位点”；
+
+（1）判断 $(3,5)$ 和 $(5,7)$ 中哪一个为“高位点”；
+
+（2）已知点 $(a,b)$ 是点 $(c,d)$ 的“高位点”，判断点 $P\left(\dfrac{a+c}{2},\dfrac{b+d}{2}\right)$ 是否是点 $(a,b)$ 的“低位点”，证明你的结论；
+
+（3）设正整数 $n$ 满足以下条件：对集合 $\{t\mid0<t<2025,t\in\Z\}$ 内的任意元素 $m$，总存在正整数 $k$，使得点 $(n,k)$ 既是点 $(2025,m)$ 的“低位点”，又是点 $(2026,m+1)$ 的“高位点”，求符合要求的一个正整数 $n$ 的值，并说明理由.
+
+\ifanswer
+\solbegin
+\stepm{（1）}{因为 $\dfrac35<\dfrac57$，所以 $(5,7)$ 是 $(3,5)$ 的“高位点”；}
+\stepm{（2）}{点 $P\left(\dfrac{a+c}{2},\dfrac{b+d}{2}\right)$ 是点 $(a,b)$ 的“低位点”.}
+\step{证明：因为点 $(a,b)$ 是点 $(c,d)$ 的“高位点”，所以 $\dfrac ab>\dfrac cd$，}
+\step{因为 $a$、$b$、$c$、$d$ 均大于 $0$，所以 $ad>bc$，所以 $ad-bc>0$，}
+\step{所以 $\dfrac{a+c}{b+d}-\dfrac ab=\dfrac{b(a+c)-a(b+d)}{b(b+d)}=\dfrac{bc-ad}{b(b+d)}<0$，所以 $\dfrac ab>\dfrac{a+c}{b+d}$，}
+\step{所以点 $P\left(\dfrac{a+c}{2},\dfrac{b+d}{2}\right)$ 是点 $(a,b)$ 的“低位点”.}
+\stepm{（3）}{可证点 $P(a+c,b+d)$ 既是点 $(c,d)$ 的“高位点”，又是点 $(a,b)$ 的“低位点”.}
+\step{证明：因为点 $(a,b)$ 是点 $(c,d)$ 的“高位点”，所以 $\dfrac ab>\dfrac cd$，}
+\step{因为 $a$、$b$、$c$、$d$ 均大于 $0$，所以 $ad>bc$，所以 $ad-bc>0$，}
+\step{所以 $\dfrac{a+c}{b+d}-\dfrac cd=\dfrac{d(a+c)-c(b+d)}{d(b+d)}=\dfrac{ab+cd-bc-cd}{d(b+d)}=\dfrac{ad-bc}{d(b+d)}>0$，}% 原卷分子首项印作 ab（应为 ad），照录
+\step{即 $\dfrac{a+c}{b+d}>\dfrac cd$，所以点 $P(a+c,b+d)$ 是点 $(c,d)$ 的“高位点”，}
+\step{同理 $\dfrac{a+c}{b+d}-\dfrac ab=\dfrac{b(a+c)-a(b+d)}{b(b+d)}=\dfrac{bc-ad}{b(b+d)}<0$，即 $\dfrac ab>\dfrac{a+c}{b+d}$，}
+\step{所以点 $P(a+c,b+d)$ 是点 $(a,b)$ 的“低位点”，}
+\step{所以点 $P(a+c,b+d)$ 既是点 $(c,d)$ 的“高位点”，又是点 $(a,b)$ 的“低位点”，}
+\step{由题意得点 $(n,k)$ 既是点 $(2025,m)$ 的“低位点”，}
+\step{又是点 $(2026,m+1)$ 的“高位点”，对 $m\in\{t\mid0<t<2025,t\in\Z\}$ 时恒成立，}% 原卷 m／t 混用，照录
+\step{由上述的结论得，当 $n=2025+2026=4051$，$k=2m+1$ 时，满足条件，}
+\step{故 $n=4045$.}% 原卷与上文 4051 矛盾，照录
+%
+% 以下为第 10 页末原卷荧光黄高亮的“补充证明”，照录为普通 \step、不引入黄色底
+\step{下面补充证明 $n$ 需要满足的必要条件.}
+\step{（1）证明 $\dfrac{mn}{2025}<k<\dfrac{(m+1)n}{2026}$ 对任意 $m$ 成立. 下面先考虑 $m=2024$ 的情况.}
+\step{此时区间长度最小，且由 $\dfrac{2024n}{2025}<k<\dfrac{2025n}{2026}$，此时需 $\begin{cases}2025n-2026k>0\\2025k-2024n>0\end{cases}$，令}
+\step{$u=2025n-2026k$，$v=2025k-2024n$. 易验证 $\begin{cases}n=2025u+2026v\\k=2024u+2025v\end{cases}$，也就是当 $n$ 可}
+\step{以表示为 $2025u+2026v$，$u,v\in\N$ 时成立. 下面证明其充分性.}
+\step{即有 $n=2025u+2026v$ 时，对于所有 $m=1,2,3,\cdots,2024$ 都满足题意.}
+\step{事实上，只需要找到一个整数 $k$，其满足 $m\left(u+\dfrac{2026}{2025}v\right)<k<(m+1)\left(\dfrac{2025}{2026}u+v\right)$（将}
+\step{$\dfrac{mn}{2025}<k<\dfrac{(m+1)n}{2026}$ 变形可以得到}
+\step{注意若 $k=(m+1)(u+v)-v=mu+vm+u$ 满足上面不等式，且为整数.}
+\step{所以当且仅当 $n=2025u+2026v$ 时满足题意.}
+\step{证明 $k=(m+1)(u+v)-u=um+vm+v$.}
+\step{此时 $n=2025(u+v)+(m+1)v$，所以要 $n$ 满足上列条件即可.}
+\step{$n=2025x+y$，$0\leqslant y<2025$，$x>y$，其中 $x,y\in\N^*$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
