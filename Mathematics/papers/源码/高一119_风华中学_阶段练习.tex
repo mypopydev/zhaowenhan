@@ -1,0 +1,167 @@
+% 高一119_风华中学_阶段练习.tex
+%   —— 高一上数学“2026-2027 年风华中学高一上阶段练习”（试卷版/答案版）
+% 试卷版：xelatex 高一119_风华中学_阶段练习.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一119_风华中学_阶段练习.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一119_风华中学_阶段练习.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-06 17:58 发布；
+% 连载“27学年高一119”，原文标题“27学年高一119——2026-2027年上海市风华中学高一上阶段练习”；
+% 原文链接：https://mp.weixin.qq.com/s/LhYZzHp5ZV53XzzOshFhXQ。
+% 正文为 5 张 PNG 页（第 3、4、5 页 2560×3620，其余 4762×6735），
+% 题目下印有【解析】，为讲评版。
+% 题目、解析均据原图转录；卷面红色水印及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作“2026-2027 年风华中学高一上阶段练习”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，本稿按题目内容
+% 标为“集合与常用逻辑用语、不等式”。
+%
+% 与原卷的排版差异：
+%   ① **原卷只有 8 题**：填空题 3—4、解答题 5—10，无选择题（无“二、选择题”一节），
+%      本稿照原卷保留题号与节次：填空题 \setcounter{enumi}{2}、
+%      解答题 \setcounter{enumi}{4}；
+%   ② 原卷每题下直接印【解析】，本稿按全稿惯例置于答案版；全卷无只印【答案】的题，
+%      无选择题括号与选项；
+%   ③ 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；解答题不留作答区
+%      （原卷为讲评版，与 109—118 同）；
+%   ⑤ 原卷数集 $R$ 按全稿惯例改 \R，补集照原卷上划线排 \overline{A}。
+%
+% 判别式与子集符号：第 9 题判别式原卷排 $\triangle$（等边、扁），照录 \triangle；
+%   第 9、10 题的 $B\subseteq A$、$\{x\mid\cdots\}\subseteq C$ 印有下划线，照录 \subseteq。
+%
+% 原卷存疑照录：第 9 题解析②的 cases 作 $\begin{cases}\frac2a=8\\\frac8a=16\end{cases}$
+%   并判“得出矛盾，故此时 $a$ 不存在”；第 10 题三种情形的结论，均照录加注。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 51 条（Q3：9；Q4：6；Q5：4；Q6：4；
+% Q7：4；Q8：6；Q9：9；Q10：9），与原卷印刷行逐题相等（cases 块作一个印刷行计）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年风华中学高一上阶段练习}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 对任意实数 $a$,$b$,$c$，给出下列命题：①“$a=b$”是“$ac=bc$”的充要条件；②
+“$\dfrac ab>1$”是“$\dfrac ba<1$”的充分非必要条件（其中 $a$,$b\neq0$）；③“$a>b$”是“$a^2>b^2$”的充分非必要条件；④“$a<3$”是“$a\leqslant3$”的必要非充分条件，其中真命题的序号是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{①取 $a=1,b=2,c=0$，此时 $ac=bc=0$，而 $a\neq b$，}
+\step{故“$a=b$”不是“$ac=bc$”的充要条件，命题①为假命题.}
+\step{②在 $a$,$b\neq0$ 时，若 $\dfrac ab>1$，则 $\dfrac ba=\dfrac1{\frac ab}<1$，充分性满足；}
+\step{取 $a=-1,b=1$ 时，$\dfrac ba=-1<1$，而 $\dfrac ab=-1<1$，必要性不满足，}
+\step{故“$\dfrac ab>1$”是“$\dfrac ba<1$”的充分非必要条件，命题②为真命题.}
+\step{③取 $a=0,b=-1$，有 $a>b$，但 $a^2=0<b^2=1$，}
+\step{故“$a>b$”不是“$a^2>b^2$”的充分条件，命题③为假命题；}
+\step{④$a<3$ 可推出 $a\leqslant3$，故“$a<3$”是“$a\leqslant3$”的充分条件，命题④为假命题.}
+\step{故真命题是②.}
+\solend
+\fi
+
+\item 不等式 $ax^2-bx-c>0$ 的解集为 $(2,3)$，则 $cx^2-bx-a>0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $ax^2-bx-c>0$ 的解集为 $(2,3)$，得 $a<0$，}
+\step{且 $2$，$3$ 是方程 $ax^2-bx-c=0$ 的两根，}
+\step{则 $\begin{cases}2+3=\dfrac ba\\2\times3=-\dfrac ca\end{cases}$，即 $b=5a$,$c=-6a$，}
+\step{则不等式 $cx^2-bx-a>0$，即为 $-6ax^2-5ax-a>0$，则 $6x^2+5x+1>0$，}
+\step{即 $(3x+1)(2x+1)>0$，解得 $x<-\dfrac12$ 或 $x>-\dfrac13$，}
+\step{所以 $cx^2-bx-a>0$ 的解集为 $\left(-\infty,-\dfrac12\right)\cup\left(-\dfrac13,+\infty\right)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{4}
+
+\item 解不等式：$x^2-\lvert x\rvert-2>0$.
+
+\ifanswer
+\solbegin
+\step{由 $x^2-\lvert x\rvert-2>0$，得 $\lvert x\rvert^2-\lvert x\rvert-2>0$，}
+\step{因式分解得 $(\lvert x\rvert-2)(\lvert x\rvert+1)>0$，解得 $\lvert x\rvert>2$ 或 $\lvert x\rvert<-1$（舍去），}
+\step{由 $\lvert x\rvert>2$，解得 $x<-2$ 或 $x>2$，}
+\step{所以不等式 $x^2-\lvert x\rvert-2>0$ 的解集为 $\{x\mid x<-2$ 或 $x>2\}$.}
+\solend
+\fi
+
+\item 已知 $a>0$，$b>0$ 且 $a+b>2$，求证：$\dfrac{1+b}{a}$、$\dfrac{1+a}{b}$ 中至少有一个小于 $2$.
+
+\ifanswer
+\solbegin
+\step{假设 $\dfrac{1+b}{a}$,$\dfrac{1+a}{b}$ 都不小于 $2$，则 $\dfrac{1+b}{a}\geqslant2$,$\dfrac{1+a}{b}\geqslant2$，}
+\step{因为 $a>0$，$b>0$，所以 $1+b\geqslant2a$，$1+a\geqslant2b$，$1+1+a+b\geqslant2(a+b)$，}
+\step{即 $2\geqslant a+b$，这与已知 $a+b>2$ 相矛盾，故假设不成立.}
+\step{综上，$\dfrac{1+b}{a}$、$\dfrac{1+a}{b}$ 中至少有一个小于 $2$.}
+\solend
+\fi
+
+\item 已知 $a>0$ 且 $a\neq1$，试比较 $\dfrac{a^2+1}{a^2-1}$ 与 $\dfrac{a+1}{a-1}$ 的值的大小.
+
+\ifanswer
+\solbegin
+\step{因为 $\dfrac{a^2+1}{a^2-1}-\dfrac{a+1}{a-1}=\dfrac{-2a}{a^2-1}$，}
+\step{所以当 $a>1$ 时，$-2a<0$，$a^2-1>0$，则 $\dfrac{-2a}{a^2-1}<0$，即 $\dfrac{a^2+1}{a^2-1}<\dfrac{a+1}{a-1}$；}
+\step{当 $0<a<1$ 时，$-2a<0$，$a^2-1<0$，则 $\dfrac{-2a}{a^2-1}>0$，即 $\dfrac{a^2+1}{a^2-1}>\dfrac{a+1}{a-1}$；}
+\step{综上，$a>1$ 时，$\dfrac{a^2+1}{a^2-1}<\dfrac{a+1}{a-1}$；$0<a<1$ 时，$\dfrac{a^2+1}{a^2-1}>\dfrac{a+1}{a-1}$.}
+\solend
+\fi
+
+\item 已知一元二次方程 $2x^2+x-3=0$ 的两个实根分别为 $x_1$,$x_2$，求作二次项系数是 $1$，且分别以 $\dfrac{x_2}{x_1}$、$\dfrac{x_1}{x_2}$ 为根的一元二次方程.
+
+\ifanswer
+\solbegin
+\step{由韦达定理得 $x_1+x_2=-\dfrac12$,$x_1x_2=-\dfrac32$. 设新根 $y_1=\dfrac{x_2}{x_1}$,$y_2=\dfrac{x_1}{x_2}$，}
+\step{两根之和 $y_1+y_2=\dfrac{x_2}{x_1}+\dfrac{x_1}{x_2}=\dfrac{x_1^2+x_2^2}{x_1x_2}=\dfrac{(x_1+x_2)^2-2x_1x_2}{x_1x_2}=-\dfrac{13}{6}$，}
+\step{两根之积 $y_1y_2=\dfrac{x_2}{x_1}\cdot\dfrac{x_1}{x_2}=1$，}
+\step{设二次项系数为 $1$ 的方程 $y^2-(y_1+y_2)y+y_1y_2=0$，}
+\step{代入 $y_1+y_2=-\dfrac{13}{6}$,$y_1y_2=1$ 得 $y^2-\left(-\dfrac{13}{6}\right)y+1=0$，}
+\step{得 $y^2+\dfrac{13}{6}y+1=0$.}
+\solend
+\fi
+
+\item 设集合 $A=\{x\mid x^2-4x=0\}$，$B=\{x\mid ax^2-2x+8=0\}$，若 $A\cap B=B$，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{$A=\{0,4\}$. 因为 $A\cap B=B$，所以 $B\subseteq A$.}
+\step{当 $a=0$ 时，$B=\{4\}$，满足题意.}
+\step{当 $a\neq0$ 时，}
+\step{① $B=\varnothing$ 时，即方程 $ax^2-2x+8=0$ 无解，}
+\step{所以 $\triangle=4-32a<0$，所以 $a>\dfrac18$.}
+\step{② $B\neq\varnothing$ 时，设 $ax^2-2x+8=0$ 的两根为 $x_1$、$x_2$，}
+\step{则 $x_1+x_2=\dfrac2a$，$x_1x_2=\dfrac8a\neq0$，所以 $x_1\neq0$，$x_2\neq0$.}
+\step{由于 $B\subseteq A$，所以 $B=\{4\}$，所以 $\begin{cases}\frac2a=8\\\frac8a=16\end{cases}$ 得出矛盾，故此时 $a$ 不存在.}
+\step{综上所述，实数 $a$ 的取值范围 $\{a\mid a>\dfrac18$ 或 $a=0\}$.}
+\solend
+\fi
+
+\item 设集合 $A=\left\{x\,\middle\vert\,\dfrac1{x-2}>0\right\}$,$B=\{x\mid\lvert 4-3x\rvert<5,x\in\R\}$,$C=\{x\mid x^2-(a+1)x+a>0\}$，若 $(\overline A\cap B)\cup C=\R$，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{由题意得 $A=\{x\mid x>2\}$,$B=\left\{x\,\middle\vert\,-\dfrac13<x<3\right\}$，}
+\step{$\overline A=\{x\mid x\leqslant2\}$,$\overline A\cap B=\left\{x\,\middle\vert\,-\dfrac13<x\leqslant2\right\}$，又因为 $(\overline A\cap B)\cup C=\R$，所以}
+\step{$\{x\mid x\leqslant-\dfrac13$ 或 $x>2\}\subseteq C$，}
+\step{即当 $x\leqslant-\dfrac13$ 或 $x>2$ 时，不等式 $x^2-(a+1)x+a>0$ 恒成立，}
+\step{又不等式 $x^2-(a+1)x+a>0$ 可化简为 $(x-1)(x-a)>0$，}
+\step{①当 $a>1$ 时，$C=\{x\mid x<1$ 或 $x>a\}$，即 $a\leqslant2$，此时 $1<a\leqslant2$；}
+\step{②当 $a=1$ 时，$C=\{x\mid x\neq1\}$，此时满足题意；}
+\step{③当 $a<1$ 时，$C=\{x\mid x<a$ 或 $x>1\}$，即 $a>-\dfrac13$，此时 $-\dfrac13<a<1$；}
+\step{综上所述，$-\dfrac13<a\leqslant2$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
