@@ -1,0 +1,343 @@
+% 高一114_南汇中学_期中.tex
+%   —— 高一上数学“2026-2027 年南汇中学高一上期中”（试卷版/答案版）
+% 试卷版：xelatex 高一114_南汇中学_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一114_南汇中学_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一114_南汇中学_期中.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-06 17:58 发布；
+% 连载“27学年高一114”，原文标题“27学年高一114——2026-2027年上海市南汇中学高一上期中”；
+% 原文链接：https://mp.weixin.qq.com/s/9IKI0K8NFkfALOFb2ibYPw。
+% 正文为 9 张 PNG 页（第 4、7、9 页 2560×3620，其余 4762×6735），
+% 题目下印有【解析】或【答案】，为讲评版。
+% 题目、解析均据原图转录；卷面红色水印及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作“2026-2027 年南汇中学高一上期中”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，本稿按题目内容
+% 标为“集合与常用逻辑用语、不等式、函数”（期中卷跨三章，与 112 同）。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，填空题编号为 3—12、选择题为 13—16、解答题为 17—21，本稿保留原题号；
+%   ② 原卷每题下直接印【解析】／【答案】，本稿按全稿惯例置于答案版；第 3 题只印【答案】、
+%      第 14 题把答案“$A$”印在题干括号内且无【解析】，均另提 \ans{}；其余选择题答案在
+%      解析末句“故选 …”，括号内留空；
+%   ③ 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      选项段前按惯例加 \keepwithprev；解答题不留作答区（原卷为讲评版，与 109—113 同）；
+%   ⑤ 原卷数集排斜体 $R$、粗体 $\mathbf{Z}$／$\mathbf{N}$，按全稿惯例改 \R、\Z、\N。
+%
+% 判别式字形：原卷 $\triangle$（等边、扁）与 $\Delta$（等腰、高）两种混用，逐处照录——
+%   第 10 题与第 20 题 (3) 用 \Delta，第 20 题 (2) 用 \triangle。
+%
+% 子集符号：第 4 题解析的 $\{x\mid x<a\}\subseteq\{x\mid x<2\}$ 印有下划线，照录 \subseteq。
+%
+% 原卷存疑照录：
+%   第 11 题解析的 cases 把 $a\leqslant0$ 与 $a^2+4a<0$ 并列，且末句仍作 $-\sqrt2\leqslant a\leqslant0$；
+%   第 12 题 (4) 题干作 $[0]_3\cup[1]_6\cup[2]_6\cup[4]_6\cup[5]_6$（首项下标印 3、又缺 $[3]_6$），
+%   而解析按 $[0]_3=[0]_6\cup[3]_6$ 判其“正确”，题干与解析不一致；
+%   第 16 题题干 $S$ 的两处 $[\lg 7]$ 系原卷误印（按解析应为 $[\lg 1]$），照录；
+%   第 16 题解析用 $[\lg n]+[-\lg n]$ 而题干写 $\left[\lg\frac1n\right]$，各照录。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 83 条（Q3：0；Q4：1；Q5：1；Q6：1；Q7：2；
+% Q8：4；Q9：5；Q10：3；Q11：1；Q12：6；Q13：1；Q14：0；Q15：5；Q16：3；Q17：5；
+% Q18：5；Q19：7；Q20：19；Q21：14），与原卷印刷行逐题相等（cases 块作一个印刷行计）。
+% 第 3 题只印【答案】、第 14 题括号内印答案且无解析，均提 \ans{}，不计入 \step 账。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年南汇中学高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 不等式 $\dfrac{x-3}{x+2}\leqslant0$ 的解集用区间表示是\blankline[4.4em].
+
+\ifanswer
+\ans{$(-2,3]$}
+\fi
+
+\item 设 $p:x<2,q:x<a$，若 $p$ 是 $q$ 的必要条件，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$p$ 是 $q$ 的必要条件，即 $q\Rightarrow p$，所以 $\{x\mid x<a\}\subseteq\{x\mid x<2\}$，得 $a\leqslant2$.}
+\solend
+\fi
+
+\item 设 $a$、$b$ 为正实数，且 $3a+b=1$，则 $ab$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $3a+b=1\geqslant2\sqrt{3ab}$ 得 $ab\leqslant\dfrac1{12}$，则 $ab$ 的最大值为 $\dfrac1{12}$.}
+\solend
+\fi
+
+\item 已知 $\log_2 3=a$，用 $a$ 的代数式表示 $\log_{18}16=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\log_{18}16=\dfrac{\log_2 16}{\log_2 18}=\dfrac4{1+2\log_2 3}=\dfrac4{1+2a}$.}
+\solend
+\fi
+
+\item 一元二次方程 $x^2+3x+c=0$ 的两个根分别是 $x_1$ 和 $x_2$，若 $x_1^2x_2+x_1x_2^2=3$，则实数 $c=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$x_1+x_2=-3$,$x_1x_2=c$，由 $x_1^2x_2+x_1x_2^2=3$ 得 $x_1x_2(x_1+x_2)=-3c=3$，}
+\step{所以 $c=-1$.}
+\solend
+\fi
+
+\item 已知 $3^x=5^y=A$ 且 $\dfrac2x+\dfrac1y=2$，则 $A$ 的值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $\dfrac2x+\dfrac1y=2$ 得 $xy\neq0$. 又 $3^x=5^y=A$，所以 $x=\log_3 A$，$y=\log_5 A$，}
+\step{代入 $\dfrac2x+\dfrac1y=2$ 得 $\dfrac2{\log_3 A}+\dfrac1{\log_5 A}=2$，所以 $2\log_A 3+\log_A 5=2$，}
+\step{即 $\log_A 9+\log_A 5=\log_A 45=2$，所以 $A^2=45$，解得 $A=3\sqrt5$（负值舍去），}
+\step{故 $A=3\sqrt5$.}
+\solend
+\fi
+
+\item 设 $x\in\R$，求方程 $\lvert x-2\rvert+\lvert 2x-3\rvert=\lvert 3x-5\rvert$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $x\leqslant\dfrac32$ 时，则方程为 $2-x+3-2x=5-3x$，解得 $x\leqslant\dfrac32$；}
+\step{当 $\dfrac32<x<\dfrac53$ 时，则方程为 $2-x+2x-3=5-3x$，解得 $x=\dfrac32$，舍去；}
+\step{当 $\dfrac53\leqslant x<2$ 时，则方程为 $2-x+2x-3=3x-5$，解得 $x=2$，舍去；}
+\step{当 $x\geqslant2$ 时，则方程为 $x-2+2x-3=3x-5$，解得 $x\geqslant2$.}
+\step{综上所述，方程的解集为 $\left(-\infty,\dfrac32\right]\cup[2,+\infty)$.}
+\solend
+\fi
+
+\item 若集合 $A=\{x\mid ax^2+(a-6)x+2=0\}$ 有且仅有两个子集，则实数 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为集合 $A=\{x\mid ax^2+(a-6)x+2=0\}$ 有且仅有两个子集，}
+\step{所以 $ax^2+(a-6)x+2=0$ 只有一个实数解，}
+\step{所以 $a=0$ 或 $\begin{cases}a\neq0\\\Delta=(a-6)^2-8a=0\end{cases}$，解得实数 $a=0$ 或 $a=2$ 或 $a=18$.}
+\solend
+\fi
+
+\item 若不等式组 $\begin{cases}x^2-2ax+2\geqslant0\\ax(x-1)<1\end{cases}$ 的解集是 $\R$，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $\begin{cases}4a^2-8\leqslant0\\a\leqslant0\\a^2+4a<0\end{cases}$，解得 $-\sqrt2\leqslant a\leqslant0$，故 $a$ 的范围是 $[-\sqrt2,0]$.}% 原卷 cases 与结论自身不一致，照录
+\solend
+\fi
+
+\item 在整数集 $\Z$ 中，被整数 $t$ 除所得余数为 $k(t>k\geqslant0)$ 的所有整数组成一个“类”，记为
+$[k]_t=\{x\mid x=at+k,x,a\in\Z\}(k=0,1,2,\cdots,t-1)$，如 $[3]_5=\{x\mid x=5a+3,x,a\in\Z\}$，则有下列结论：
+
+（1）$[1]_2=[1]_4\cup[3]_4$；
+
+（2）整数 $a,b$ 满足 $a\in[1]_5$ 且 $b\in[2]_5$ 的充要条件是 $a+b\in[3]_5$；
+
+（3）$[0]_3\cap[1]_2=[3]_6$；
+
+（4）$\Z=[0]_3\cup[1]_6\cup[2]_6\cup[4]_6\cup[5]_6$；% 首项下标原卷印 3、且缺 [3]_6，照录
+
+则其中正确的序号为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{（1）奇数除以 $4$ 的余数为 $1$ 或 $3$，所以 $[1]_2=[1]_4\cup[3]_4$，正确.}
+\step{（2）取 $a=0,b=3$，则 $a+b\in[3]_5$，但 $a\notin[1]_5$，充分性不成立，错误.}
+\step{（3）$[0]_3\cap[1]_2=\{6n+3\mid n\in\Z\}=[3]_6$，正确.}
+\step{（4）$[0]_3=[0]_6\cup[3]_6$，所给并集恰好包含除以 $6$ 所得余数的全部六种情形，}
+\step{正确.}
+\step{故正确的是（1）（3）（4）.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 下列四个命题中，真命题的是\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $a>b$，则 $ac^2>bc^2$\qquad\qquad B. 若 $a>b,c>d$，则 $a-c<b-d$
+
+C. 若 $a>\lvert b\rvert$，则 $a^2>b^2$\qquad\qquad D. 若 $a>b$，则 $\dfrac1a<\dfrac1b$
+
+\ifanswer
+\solbegin
+\step{$a>\lvert b\rvert\geqslant0\Rightarrow a^2>\lvert b\rvert^2=b^2$，故选 $C$.}
+\solend
+\fi
+
+\item 用反证法证明命题：“如果 $a$、$b\in\N$，$ab$ 可被 $2$ 整除，那么 $a$、$b$ 中至少有一个能被 $2$ 整除.”时，假设的内容应为\mbox{（\quad）}% 原卷把答案“$A$”印在题干括号内、无【解析】
+
+\keepwithprev
+A. $a$、$b$ 都不能被 $2$ 整除\qquad\qquad B. $a$、$b$ 都能被 $2$ 整除
+
+C. $a$、$b$ 不都能被 $2$ 整除\qquad\qquad D. $a$ 不能被 $2$ 整除
+
+\ifanswer
+\ans{$A$}
+\fi
+
+\item 若一元二次不等式 $a_1x^2+b_1x+c_1>0$,$a_2x^2+b_2x+c_2<0$ 的解集分别为 $M,N$，\newline
+$a_1,b_1,c_1,a_2,b_2,c_2$ 均不为 $0$，则“$M=N$”是“$\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}=\dfrac{c_1}{c_2}$”的\mbox{（\quad）}条件
+
+\keepwithprev
+A. 充分不必要\qquad\qquad B. 必要不充分
+
+C. 充要\qquad\qquad D. 既不充分也不必要
+
+\ifanswer
+\solbegin
+\step{注意 $x^2+x+1=\left(x+\dfrac12\right)^2+\dfrac34>0$.}
+\step{取两二次式分别为 $x^2+x+1$,$-x^2-x-2$，则 $M=N=\R$，}
+\step{但系数比依次为 $-1$,$-1$,$-\dfrac12$，不充分.}
+\step{取两二次式均为 $x^2+x+1$，则系数比均为 $1$，但 $M=\R$,$N=\varnothing$，不必要.}
+\step{故选 $D$.}
+\solend
+\fi
+
+\item 如果 $[x]$ 表示不超过 $x$ 的最大整数，若
+$S=[\lg 7]+[\lg 2]+[\lg 3]+\cdots+[\lg 2026]+[\lg 7]+\left[\lg\dfrac12\right]+\left[\lg\dfrac13\right]+\cdots+\left[\lg\dfrac1{2026}\right]$,% 两处 $[\lg 7]$ 系原卷误印（按解析应为 $[\lg 1]$），照录
+则 $S$ 为\mbox{（\quad）}
+
+\keepwithprev
+A. $0$\qquad\qquad B. $-2020$\qquad\qquad C. $-2022$\qquad\qquad D. $-2026$
+
+\ifanswer
+\solbegin
+\step{当 $\lg n$ 为整数时，$[\lg n]+[-\lg n]=0$；否则 $[\lg n]+[-\lg n]=-1$.}
+\step{$1,2,\cdots,2026$ 中，仅 $1$，$10$，$100$，$1000$ 的常用对数为整数，}
+\step{因此 $S=0\times4+(-1)\times(2026-4)=-2022$，故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知集合 $A=\left\{x\,\middle\vert\,\dfrac{2x-1}{x-3}<1\right\}$,$B=\{x\mid\lvert x-a\rvert\leqslant2\}$.
+
+（1）当 $a=1$ 时，求 $A\cup B$；
+
+（2）当 $A\cap B=\varnothing$ 时，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{（1）$\dfrac{2x-1}{x-3}<1\Leftrightarrow\dfrac{x+2}{x-3}<0\Leftrightarrow-2<x<3$，所以 $A=(-2,3)$.}
+\step{当 $a=1$ 时，$B=[-1,3]$，于是 $A\cup B=(-2,3]$.}
+\step{（2）$B=[a-2,a+2]$，而 $A=(-2,3)$，}
+\step{因此 $A\cap B=\varnothing\Leftrightarrow a+2\leqslant-2$ 或 $a-2\geqslant3\Leftrightarrow a\leqslant-4$ 或 $a\geqslant5$，}
+\step{实数 $a$ 的取值范围为 $(-\infty,-4]\cup[5,+\infty)$.}
+\solend
+\fi
+
+\item 已知幂函数 $f(x)=x^{\alpha}$ 经过点 $\left(4,\dfrac18\right)$.
+
+（1）求此幂函数的表达式和定义域；
+
+（2）若 $f(a+2)<f(3-2a)$，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{（1）设幂函数 $y=f(x)=x^{\alpha}$，因为经过点 $\left(4,\dfrac18\right)$，所以 $4^{\alpha}=\dfrac18$，}
+\step{所以 $\alpha=-\dfrac32$，所以 $f(x)=x^{-\frac32}=\dfrac1{\sqrt{x^3}}$，定义域为 $(0,+\infty)$.}
+\step{（2）由于函数 $f(x)$ 在其定义域 $(0,+\infty)$ 上严格减，}
+\step{由 $f(a+2)<f(3-2a)$，得 $\begin{cases}a+2>3-2a\\3-2a>0\end{cases}$，解得 $\dfrac13<a<\dfrac32$，}
+\step{故不等式的解集为 $\left(\dfrac13,\dfrac32\right)$.}
+\solend
+\fi
+
+\item 随着中国经济的腾飞，互联网的快速发展，网络购物需求量不断增大. 某物流公司为扩大经营，今年年初用 $192$ 万元购进一批小型货车，公司每年需要付保险费共计 $12$ 万元，除保险费外，从第一年到第 $n$ 年所需维修费等各种费用总额为 $3n(n-1)$ 万元，且该批小型货车每年给公司带来 $69$ 万元的收入.
+
+（1）该批小型货车购买后第几年开始盈利？
+
+（2）求该批小型货车购买后年平均利润的最大值.
+
+\ifanswer
+\solbegin
+\step{（1）由题意得 $69n-192-12n-3n(n-1)>0$，即 $-3n^2+60n-192>0$，}
+\step{化简整理得 $n^2-20n+64<0$，解得 $4<n<16$，}
+\step{故该批小型货车购买后第 $5$ 年开始盈利.}
+\step{（2）设该批小型货车购买 $n$ 年后的年平均利润为 $y$，}
+\step{则 $y=\dfrac{-3n^2+60n-192}{n}=-3\left(n+\dfrac{64}{n}\right)+60\leqslant-3\times2\sqrt{64}+60=12$，}
+\step{当且仅当 $n=\dfrac{64}{n}$，即 $n=8$ 时取等号，}
+\step{故该批小型货车购买后年平均利润的最大值为 $12$ 万元.}
+\solend
+\fi
+
+\item 对于二次函数 $y=mx^2+nx+t(m\neq0)$，若存在 $x_0\in\R$，使得 $mx_0^2+nx_0+t=x_0$ 成立，则称 $x_0$ 为二次函数 $y=mx^2+nx+t(m\neq0)$ 的不动点.
+
+（1）求二次函数 $y=x^2-x-3$ 的不动点；
+
+（2）若对任意实数 $b$，二次函数 $y=ax^2+(b+1)x+(b-1)(a\neq0)$ 恒有不动点，求 $a$ 的取值范围；
+
+（3）若二次函数 $y=2x^2-(3+a)x+a-1$ 有两个不相等的不动点 $x_1$、$x_2$，且 $x_1$、$x_2>0$，求 $\dfrac{x_1}{x_2}+\dfrac{x_2}{x_1}$ 的最小值.
+
+\ifanswer
+\solbegin
+\step{（1）令 $x^2-x-3=x$，即 $x^2-2x-3=0$，即 $(x-3)(x+1)=0$，}
+\step{解得 $x_1=-1$，$x_2=3$，所以不动点为 $-1$ 和 $3$.}
+\step{（2）设 $f(x)=ax^2+(b+1)x+b-1$，则方程 $f(x)=x$，}
+\step{可化为 $ax^2+(b+1)x+b-1=x$，即 $ax^2+bx+b-1=0$，}
+\step{于是由题意得一元二次方程 $ax^2+bx+b-1=0$ 有解，又 $a\neq0$，}
+\step{所以方程 $ax^2+bx+b-1=0$ 的判别式 $\triangle=b^2-4a(b-1)\geqslant0$，}
+\step{即 $b^2-4ab+4a\geqslant0$，则该不等式对 $\forall b\in\R$ 恒成立，}
+\step{则 $(4a)^2-4\times4a\leqslant0$，且 $a\neq0$，解得 $0<a\leqslant1$，}
+\step{所以实数 $a$ 的取值范围是 $(0,1]$.}
+\step{（3）由题意得 $2x^2-(3+a)x+a-1=x$ 有两个不相等的正实数根，}
+\step{即方程 $2x^2-(4+a)x+a-1=0$ 有两个不相等的正实数根，}
+\step{所以 $\begin{cases}\Delta=(4+a)^2-8(a-1)>0\\x_1+x_2=\dfrac{4+a}{2}>0\\x_1\cdot x_2=\dfrac{a-1}{2}>0\end{cases}$，解得 $a>1$，}
+\step{所以 $\dfrac{x_1}{x_2}+\dfrac{x_2}{x_1}=\dfrac{x_1^2+x_2^2}{x_1\cdot x_2}=\dfrac{(x_1+x_2)^2-2x_1\cdot x_2}{x_1\cdot x_2}=\dfrac{(x_1+x_2)^2}{x_1\cdot x_2}-2$}
+\step{$=\dfrac{\left(\dfrac{4+a}{2}\right)^2}{\dfrac{a-1}{2}}-2=\dfrac{\dfrac{(a+4)^2}{4}}{\dfrac{a-1}{2}}-2=\dfrac{(a-1+5)^2}{2(a-1)}-2$}
+\step{$=\dfrac{(a-1)^2+10(a-1)+25}{2(a-1)}-2=\dfrac{a-1}{2}+\dfrac{25}{2(a-1)}+3$.}
+\step{因为 $a>1$，所以 $a-1>0$，}
+\step{所以 $\dfrac{a-1}{2}+\dfrac{25}{2(a-1)}+3\geqslant2\sqrt{\dfrac{a-1}{2}\cdot\dfrac{25}{2(a-1)}}+3=8$，}
+\step{当且仅当 $\dfrac{a-1}{2}=\dfrac{25}{2(a-1)}$，即 $a=6$ 时取等号，}
+\step{所以 $\dfrac{x_1}{x_2}+\dfrac{x_2}{x_1}$ 的最小值为 $8$.}
+\solend
+\fi
+
+\item 已知 $y_1=m(x-2m)(x+m+3)$,$y_2=x-1$.
+
+（1）若 $m=1$，解关于 $x$ 的不等式组 $\begin{cases}y_1>0\\\lvert y_2\rvert>1\end{cases}$；
+
+（2）若对任意 $x\in\R$，都有 $y_1<0$ 或 $y_2<0$ 成立，求实数 $m$ 的取值范围；
+
+（3）在（2）的条件下，存在 $x<-3$，使得 $y_1y_2<0$，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{（1）$m=1$ 时，$y_1>0\Leftrightarrow(x-2)(x+4)>0\Leftrightarrow x<-4$ 或 $x>2$，}
+\step{$\lvert y_2\rvert>1\Leftrightarrow\lvert x-1\rvert>1\Leftrightarrow x<0$ 或 $x>2$，}
+\step{取交集，不等式组的解集为 $(-\infty,-4)\cup(2,+\infty)$.}
+\step{（2）当 $x<1$ 时，$y_2<0$ 已成立，因而原条件等价于对任意 $x\geqslant1$，恒有 $y_1<0$.}
+\step{若 $m\geqslant0$，取 $x=2m+2\geqslant1$，则 $y_1=2m(3m+5)\geqslant0$，不合题意，}
+\step{所以 $m<0$，此时对任意 $x\geqslant1$，有 $x-2m>0$，}
+\step{从而 $y_1<0\Leftrightarrow x+m+3>0$，}
+\step{该不等式对任意 $x\geqslant1$ 恒成立，当且仅当 $m+4>0$.}
+\step{结合 $m<0$，得 $m$ 的取值范围为 $(-4,0)$.}
+\step{（3）已知 $-4<m<0$. 当 $x<-3$ 时，$y_2<0$，且 $x+m+3<m<0$，}
+\step{因而 $y_1y_2<0\Leftrightarrow y_1>0\Leftrightarrow x-2m>0$，}
+\step{所以存在符合条件的 $x$，当且仅当 $2m<x<-3$ 有解}
+\step{$\Leftrightarrow 2m<-3\Leftrightarrow m<-\dfrac32$.}
+\step{结合 $-4<m<0$，得 $m$ 的取值范围为 $\left(-4,-\dfrac32\right)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
