@@ -1,0 +1,430 @@
+% 高一116_七宝中学_10月月考.tex
+%   —— 高一上数学“2026-2027 年七宝中学高一上 10 月月考”（试卷版/答案版）
+% 试卷版：xelatex 高一116_七宝中学_10月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一116_七宝中学_10月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一116_七宝中学_10月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-06 17:58 发布；
+% 连载“27学年高一116”，原文标题“27学年高一116——2026-2027年上海市七宝中学高一上10月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/D8uwuQfJcDoSskZJ5Kvz0A。
+% 正文为 14 张 PNG 页（第 1、4、7、10、13、14 页 2560×3620，其余 4762×6735），
+% 题目下印有【解析】或【答案】，为讲评版。
+% 题目、解析均据原图转录；卷面红色水印及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作“2026-2027 年七宝中学高一上 10 月月考”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，本稿按题目内容
+% 标为“集合与常用逻辑用语、不等式”。
+%
+% 与原卷的排版差异：
+%   ① **原卷从第 1 题起编**（填空题 1—12、选择题 13—16、解答题 17—21，共 21 题），
+%      与全稿多数卷“从第 3 题起编”不同，本稿照原卷保留题号：填空题不设 setcounter，
+%      选择题 \setcounter{enumi}{12}、解答题 \setcounter{enumi}{16}；
+%   ② 原卷每题下直接印【解析】／【答案】，本稿按全稿惯例置于答案版；第 1、2、7 题只印
+%      【答案】，另提 \ans{}；其余选择题答案在解析末句“故选 …”，括号内留空；
+%   ③ 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      选项段前按惯例加 \keepwithprev；解答题不留作答区（原卷为讲评版，与 109—115 同）；
+%   ⑤ 原卷数集排斜体 $R$／$N$，按全稿惯例改 \R、\N、\N^*；补集照原卷上划线排 \overline{A}。
+%
+% 判别式字形：原卷 $\triangle$（等边、扁）与 $\Delta$（等腰、高）两种混用，逐处照录——
+%   第 10 题、第 17 题 (2)、第 20 题 (2) 的“$\triangle=4-4k(3-2k)$”与“判别式 $\triangle<0$”
+%   用 \triangle；第 15 题题设 cases 与第 20 题 (2) 的“$\Delta<0\Leftrightarrow\cdots$”用 \Delta
+%   （第 20 题 (2) 同一小问内两种字形并用，各照录）。
+%
+% 原卷存疑照录：第 15 题解析 $\dfrac{a-b}{(a-b)^2+4}$ 一行分子的括号未闭；
+%   第 21 题题干 $M_n=\{x\mid 1\leqslant x\leqslant 2n$或$x\in\N\}$ 的“或”字、
+%   第 21 题 (2) 的“所以 $\overline{\overline{T}}=T$”与紧接的“所以 $\overline{\overline{T}}\neq T$”
+%   自相矛盾，均照录加注。
+%
+% 行数核对：逐题数 \step/\stepm 条数，合计 177 条（Q1：0；Q2：0；Q3：2；Q4：2；Q5：3；
+% Q6：3；Q7：0；Q8：6；Q9：7；Q10：14；Q11：3；Q12：14；Q13：5；Q14：3；Q15：4；
+% Q16：14；Q17：8；Q18：13；Q19：5；Q20：25；Q21：46），与原卷印刷行逐题相等
+% （cases／bmatrix 块作一个印刷行计）。第 1、2、7 题只印【答案】，提 \ans{}，
+% 不计入 \step 账。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年七宝中学高一上 10 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+
+\item 已知全集为 $\R$，集合 $A=\{x\mid x>-2\}$，则 $\overline{A}=$\blankline[4.4em].
+
+\ifanswer
+\ans{$\{x\mid x\leqslant-2\}$}
+\fi
+
+\item 已知集合 $A=\{(x,y)\mid y=x\}$，集合 $B=\{(x,y)\mid y=2-x\}$，则 $A\cap B=$\blankline[4.4em].
+
+\ifanswer
+\ans{$\{(1,1)\}$}
+\fi
+
+\item 关于 $x$ 的不等式 $\dfrac{1+3x}{3x-1}<0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $\dfrac{1+3x}{3x-1}<0$ 可变形为 $(1+3x)(3x-1)<0$，解得 $-\dfrac13<x<\dfrac13$，}
+\step{故不等式的解集为 $\left(-\dfrac13,\dfrac13\right)$.}
+\solend
+\fi
+
+\item “若 $a+b>1$ 且 $ab>1$，则 $a>1$ 且 $b>1$”是\blankline[4.4em]命题（填“真”或“假”）.
+
+\ifanswer
+\solbegin
+\step{当 $a=4,b=\dfrac12$ 时，$a+b>1$ 且 $ab>1$，}
+\step{此时不满足 $a>1$ 且 $b>1$，故该命题为假命题.}
+\solend
+\fi
+
+\item 已知 $1<a<3$，$2<b<4$，那么 $2a-b$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $1<a<3$，所以 $2<2a<6$，}
+\step{因为 $2<b<4$，所以 $-4<-b<-2$，}
+\step{则 $-2<2a-b<4$，故 $2a-b$ 的取值范围是 $(-2,4)$.}
+\solend
+\fi
+
+\item 已知 $a>0$，$b>0$，且 $\dfrac2a+\dfrac1b=1$，则 $2a+b$ 的最小值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\dfrac2a+\dfrac1b=1(a>0,b>0)$，}
+\step{所以 $2a+b=\left(\dfrac2a+\dfrac1b\right)(2a+b)=\dfrac{2b}{a}+\dfrac{2a}{b}+5\geqslant5+2\sqrt{\dfrac{2b}{a}\cdot\dfrac{2a}{b}}=9$，}
+\step{当且仅当 $\dfrac{2b}{a}=\dfrac{2a}{b}$，即 $a=b=3$ 时取等号，故所求最小值为 $9$.}
+\solend
+\fi
+
+\item 已知 $a\in\R$，若关于 $x$ 的不等式 $\lvert x-5\rvert<a$ 无解，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\ans{$(-\infty,0]$}
+\fi
+
+\item 已知 $\alpha:x<2m-1$ 或 $x>-m$，$\beta:x<2$ 或 $x\geqslant4$，若 $\alpha$ 是 $\beta$ 的必要条件，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\alpha$ 是 $\beta$ 的必要条件，所以 $\beta\Rightarrow\alpha$，}
+\step{即由 $x<2$ 或 $x\geqslant4\Rightarrow x<2m-1$ 或 $x>-m$；}
+\step{① $m>\dfrac13$ 时，$2m-1>-m$，此时 $\alpha:x\in\R$，有 $\beta\Rightarrow\alpha$ 成立；}
+\step{② $m=\dfrac13$ 时，$\alpha:x\in\R$ 且 $x\neq\dfrac13$，$\beta$ 不能推出 $\alpha$；}
+\step{③ $m<\dfrac13$ 时，有 $\begin{cases}2m-1\geqslant2\\-m\leqslant4\end{cases}$，即 $m\geqslant\dfrac32$，此时无解；}
+\step{综上，$m>\dfrac13$，即实数 $m$ 的取值范围是 $\left(\dfrac13,+\infty\right)$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $\dfrac{ax-3}{x+a}\leqslant0$ 的解集为 $M$. 若 $1\notin M$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{关于 $x$ 的不等式 $\dfrac{ax-3}{x+a}\leqslant0$ 的解集为 $M$，}
+\step{因为 $1\notin M$，所以 $x=1$ 不满足不等式 $\dfrac{ax-3}{x+a}\leqslant0$，}
+\step{则 $x=1$ 时，分母 $1+a=0$，解得 $a=-1$，}
+\step{此时 $x=1$ 不在定义域内，不属于解集，符合条件；}
+\step{分式有意义但值大于 $0$，即 $\dfrac{a-3}{1+a}>0$，等价于 $\begin{cases}(a-3)(1+a)>0\\1+a\neq0\end{cases}$，}
+\step{解得 $a<-1$ 或 $a>3$，}
+\step{综上，实数 $a$ 的取值范围是 $(-\infty,-1]\cup(3,+\infty)$.}
+\solend
+\fi
+
+\item 已知 $a>0$，若关于 $x$ 的不等式 $(x-1)^2>(ax)^2$ 的解集中的整数恰有 $4$ 个，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意，不等式可转化为 $(a^2-1)x^2+2x-1<0$，}
+\step{①当 $a^2-1=0$，即 $a=1$ 时，不等式解集为 $\left\{x\,\middle\vert\,x<\dfrac12\right\}$，}
+\step{很明显此时整数解有无穷多个，不符合题意；}
+\step{②当 $a^2-1>0$，即 $a>1$ 时，此时 $\triangle=4+4(a^2-1)=4a^2$，故 $\triangle>0$，}
+\step{不等式可转化为 $[(a+1)x-1]\cdot[(a-1)x+1]<0$，}
+\step{此时解集为 $\left\{x\,\middle\vert\,-\dfrac1{a-1}<x<\dfrac1{a+1}\right\}$，}
+\step{当 $a>1$ 时，$0<\dfrac1{a+1}<\dfrac12$,$-\dfrac1{a-1}<0$，}
+\step{要使原不等式解集中整数恰有 $4$ 个，则这 $4$ 个整数分别为 $-3$、$-2$、$-1$、$0$，}
+\step{所以 $-4\leqslant-\dfrac1{a-1}<-3$，解得 $\dfrac54\leqslant a<\dfrac43$；}
+\step{③当 $a^2-1<0$，即 $0<a<1$ 时，此时 $\triangle=4+4(a^2-1)=4a^2$，故 $\triangle>0$，}
+\step{不等式可转化为 $[(a+1)x-1]\cdot[(a-1)x+1]<0$，}
+\step{此时解集为 $\left\{x\,\middle\vert\,x<\dfrac1{a+1}\right.$ 或 $\left.x>-\dfrac1{a-1}\right\}$，}
+\step{很明显此时整数解有无穷多个，不符合题意，}
+\step{综上所述，实数 $a$ 的取值范围是 $\left[\dfrac54,\dfrac43\right)$.}
+\solend
+\fi
+
+\item 已知实数 $a,b,c,d$ 满足 $\lvert a-b\rvert\leqslant2$,$\lvert c-d\rvert\leqslant2$,$\lvert a\rvert\leqslant3$,$\lvert c\rvert\leqslant3$，则 $\lvert ad-bc\rvert$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{令 $a-b=e$,$c-d=f$，则 $\lvert e\rvert\leqslant2$,$\lvert f\rvert\leqslant2$,$\lvert a\rvert\leqslant3$,$\lvert c\rvert\leqslant3$，}
+\step{则 $\lvert ad-bc\rvert=\lvert a(c-f)-(a-e)c\rvert=\lvert ce-af\rvert\leqslant\lvert c\rvert\lvert e\rvert+\lvert a\rvert\lvert f\rvert\leqslant12$，}
+\step{则 $\lvert ad-bc\rvert$ 的最大值为 $12$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{a_1,a_2,a_3,\cdots,a_{2027}\}(0\leqslant a_1<a_2<a_3<\cdots<a_{2027})$ 满足：对任意 $1\leqslant i\leqslant j\leqslant2027$，$a_j+a_i$ 与 $a_j-a_i$ 至少有一个属于 $A$. 则 $\dfrac{a_{2027}}{a_1+a_2+a_3+\cdots+a_{2027}}=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $0\leqslant a_1<a_2<a_3<\cdots<a_{2027}$，}
+\step{即集合 $A$ 中的最小元素为 $a_1$，最大元素为 $a_{2027}$，}
+\step{取 $i=j=2027$，则 $a_{2027}+a_{2027}=2a_{2027}>a_{2027}$，则 $a_{2027}+a_{2027}\notin A$，}
+\step{则必有 $a_{2027}-a_{2027}=0\in A$，所以 $a_1=0$，}
+\step{又 $0\leqslant a_1<a_2<a_3<\cdots<a_{2027}$，}
+\step{则 $0\leqslant a_{2027}-a_{2027}<a_{2027}-a_{2026}<a_{2027}-a_{2025}<\cdots<a_{2027}-a_1$，}
+\step{又 $a_{2027}+a_{2027-i}>a_{2027}(i=1,2,\cdots,2025)$，}
+\step{则 $a_{2027}+a_{2027-i}\notin A$，则必有 $a_{2027}-a_{2027-i}\in A$，又 $a_{2027}+a_1=a_{2027}\in A$，}
+\step{所以 $a_1=a_{2027}-a_{2027}$，$a_2=a_{2027}-a_{2026}$，$a_3=a_{2027}-a_{2025}$，$\cdots$，}
+\step{$a_{2027}=a_{2027}-a_1$，}
+\step{令 $S_{2027}=a_1+a_2+a_3+\cdots+a_{2027}$，}
+\step{则 $S_{2027}=(a_{2027}-a_{2027})+(a_{2027}-a_{2026})+(a_{2027}-a_{2025})+\cdots+(a_{2027}-a_1)$}
+\step{$=2027a_{2027}-S_{2027}$，即 $2S_{2027}=2027a_{2027}$，则 $S_{2027}=\dfrac{2027}{2}a_{2027}$，}
+\step{所以 $\dfrac{a_{2027}}{a_1+a_2+a_3+\cdots+a_{2027}}=\dfrac2{2027}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知 $a>b$，$c>d$，则下列不等关系正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. $ac^2>bc^2$\qquad\quad B. $a^3>b^3$\qquad\quad C. $\dfrac1a<\dfrac1b$\qquad\quad D. $a-c>b-d$
+
+\ifanswer
+\solbegin
+\step{若 $c=0$，则由 $a>b$ 不能推出 $ac^2>bc^2$，故 $A$ 项不正确；}
+\step{由 $a>b$ 可以推出 $a^3>b^3$，故 $B$ 项正确；}
+\step{当 $a>0>b$ 时，由 $a>b$ 不能推出 $\dfrac1a<\dfrac1b$，故 $C$ 项不正确；}
+\step{若 $a=5$，$b=4$，$c=3$，$d=2$，满足 $a>b$，$c>d$，此时 $a-c=b-d=2$，}
+\step{因此，由 $a>b$，$c>d$，不能推出 $a-c>b-d$，故 $D$ 项不正确. 故选 $B$.}
+\solend
+\fi
+
+\item 钱大姐常说“便宜没好货”，她这句话的意思是：“不便宜”是“好货”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分条件\qquad\qquad B. 必要条件
+
+C. 充要条件\qquad\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{“好货不便宜”是“便宜没好货”的逆否命题，}
+\step{由互为逆否命题的真假性一致得“好货不便宜”是真命题.}
+\step{所以“好货”$\Rightarrow$“不便宜”，所以“不便宜”是“好货”的必要条件，故选 $B$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的一元二次不等式 $2ax^2+4x+b\leqslant0$ 的解集为 $\left\{x\,\middle\vert\,x=-\dfrac1a\right\}$，且 $a>b$，则 $\dfrac{a-b}{a^2+b^2}$ 的最大值为\mbox{（\quad）}
+
+\keepwithprev
+A. $1$\qquad\qquad B. $\dfrac14$\qquad\qquad C. $\dfrac12$\qquad\qquad D. $\dfrac{\sqrt2}{2}$
+
+\ifanswer
+\solbegin
+\step{由题意得 $\begin{cases}a>0\\\Delta=0\\2a\cdot\left(-\dfrac1a\right)^2-\dfrac4a+b=0\end{cases}$，即 $\begin{cases}a>0\\16-8ba=0\\b=\dfrac2a\end{cases}$，所以 $ba=2>0$，}
+\step{又 $a>b\Rightarrow a>\sqrt2$，所以 $\dfrac{a-b}{a^2+b^2}=\dfrac{a-b}{(a-b)^2+2ab}=\dfrac{a-b}{(a-b)^2+4}$，}% 原卷分母括号未闭，照录
+\step{又 $a-b>0$，所以 $\dfrac{a^2+b^2}{a-b}=\dfrac{(a-b)^2+4}{a-b}=(a-b)+\dfrac4{a-b}\geqslant2\sqrt4=4$，}
+\step{当且仅当 $\begin{cases}a-b=2\\ab=2\end{cases}$ 时取等号，所以 $\dfrac{a-b}{a^2+b^2}\leqslant\dfrac14$，故选 $B$.}
+\solend
+\fi
+
+\item 设有限集合 $A$ 的最大元素为 $M$，最小元素为 $m$，记 $A$ 的特征值为 $X_A=M-m$，若集合中只有一个元素，规定其特征值为 $0$. 最小元素个数均不相同的有限集合 $A_1,A_2,A_3,\cdots,A_n$ 都是全体正整数集的非空真子集，且 $X_{A_1}+X_{A_2}+X_{A_3}+\cdots+X_{A_n}=67$，则 $n$ 的最大值为\mbox{（\quad）}
+
+\keepwithprev
+A. $10$\qquad\qquad B. $11$\qquad\qquad C. $12$\qquad\qquad D. $13$
+
+\ifanswer
+\solbegin
+\step{设集合 $A_i$ 含有 $k_i$ 个元素.}
+\step{对任意 $k$ 元有限集合 $A=\{m,\cdots,M\}\subset\N^*$，}
+\step{由于 $k$ 个互不相同的正整数都落在 $m$ 与 $M$ 之间（含端点），}
+\step{故 $M-m\geqslant k-1$，即 $X_A\geqslant k-1$，当 $A=\{1,2,\cdots,k\}$ 时取等号.}
+\step{$X_{A_1}+X_{A_2}+\cdots+X_{A_n}\geqslant(k_1-1)+(k_2-1)+\cdots+(k_n-1)$，}
+\step{因为 $k_1,k_2,\cdots,k_n$ 是两两不同的正整数，其和最小的情形为 $1,2,\cdots,n$，}
+\step{所以 $(k_1-1)+(k_2-1)+\cdots+(k_n-1)\geqslant0+1+2+\cdots+(n-1)=\dfrac{n(n-1)}2$，}
+\step{于是 $67\geqslant\dfrac{n(n-1)}2$，}
+\step{若 $n=13$，则 $\dfrac{13\times12}2=78>67$，与条件矛盾，故 $n\leqslant12$，}
+\step{取 $A_1=\{1\}$,$A_2=\{1,2\}$,$\cdots$,$A_{11}=\{1,2,\cdots,11\}$,$A_{12}=\{1,2,\cdots,13\}$，}
+\step{各集合元素个数分别为 $1,2,\cdots,11,13$，两两不同；}
+\step{对应特征值分别为 $0,1,2,\cdots,10,12$，}
+\step{其和为 $0+1+2+\cdots+10+12=55+12=67$，满足题意，故 $n=12$ 可以达到，}
+\step{故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item （1）已知 $x$、$y\in\R$ 且 $x+y>5$，用反证法证明：$x>3$ 或 $y>2$；
+
+（2）已知一元二次方程 $x^2-mx+m+1=0$ 的两个不等实根为 $x_1$、$x_2$，且 $x_1^2+x_2^2=1$，求实数 $m$ 的值.
+
+\ifanswer
+\solbegin
+\step{（1）假设 $x\leqslant3$ 且 $y\leqslant2$，则 $x+y\leqslant5$，与已知 $x+y>5$ 矛盾，}
+\step{故假设错误，即 $x>3$ 或 $y>2$；}
+\step{（2）由一元二次方程 $x^2-mx+m+1=0$ 的两个不等实根为 $x_1$、$x_2$，}
+\step{得 $\triangle=m^2-4m-4>0$，得 $m<2-2\sqrt2$ 或 $m>2+2\sqrt2$，}
+\step{且 $x_1+x_2=m$，$x_1x_2=m+1$，}
+\step{又 $x_1^2+x_2^2=1$，则 $(x_1+x_2)^2-2x_1x_2=m^2-2m-2=1$，}
+\step{即 $m^2-2m-3=0$，解得 $m=3$（舍去）或 $m=-1$，}
+\step{即实数 $m$ 的值为 $-1$.}
+\solend
+\fi
+
+\item 求下列关于 $x$ 的不等式的解：
+
+（1）$3(a+1)x-3>2ax-3a(a\in\R)$；
+
+（2）$ax^2-(1+a)x+1<0(a<1$ 且 $a\in\R)$.
+
+\ifanswer
+\solbegin
+\step{（1）$3(a+1)x-3>2ax-3a$，化简为 $(a+3)x>3-3a$，}
+\step{当 $a=-3$ 时，$0>12$，此时不等式无解，所以所求不等式的解集为 $\varnothing$；}
+\step{当 $a>-3$ 时，解得 $x>\dfrac{3-3a}{a+3}$，所以所求不等式的解集为 $\left\{x\,\middle\vert\,x>\dfrac{3-3a}{a+3}\right\}$；}
+\step{当 $a<-3$ 时，解得 $x<\dfrac{3-3a}{a+3}$，所以所求不等式的解集为 $\left\{x\,\middle\vert\,x<\dfrac{3-3a}{a+3}\right\}$；}
+\step{（2）不等式为 $ax^2-(1+a)x+1<0$，即 $(ax-1)(x-1)<0$.}
+\step{当 $a=0$ 时，不等式为 $-x+1<0$，则不等式的解集为 $(1,+\infty)$；}
+\step{当 $a\neq0$ 时，由 $ax^2-(a+1)x+1$ 得 $(ax-1)(x-1)<0$.}
+\step{方程 $(ax-1)(x-1)=0$ 的根为 $x=\dfrac1a$ 或 $x=1$；}
+\step{当 $a<0$ 时，$\dfrac1a<1$，则不等式的解集为 $\left(-\infty,\dfrac1a\right)\cup(1,+\infty)$；}
+\step{当 $0<a<1$ 时，$\dfrac1a>1$，则不等式的解集为 $\left(1,\dfrac1a\right)$；}
+\step{综上所述，当 $a<0$ 时，不等式的解集为 $\left(-\infty,\dfrac1a\right)\cup(1,+\infty)$；}
+\step{当 $a=0$ 时，不等式的解集为 $(1,+\infty)$；}
+\step{当 $0<a<1$ 时不等式的解集为 $\left(1,\dfrac1a\right)$.}
+\solend
+\fi
+
+\item 为提高销量，某厂家拟投入适当的费用，对网上所售产品进行促销. 经调查测算，该促销产品的销售量 $p$ 万件与促销费用 $x(0\leqslant x\leqslant3)$ 万元满足 $p=3-\dfrac2{x+1}$. 已知生产该产品 $p$ 万件需投入成本 $(10+2p)$ 万元（不含促销费用），产品的销售价格定为 $\left(4+\dfrac{20}{p}\right)$ 元／件，假定厂家的生产能力完全能满足市场的销售需求.
+
+（1）将该产品的利润 $y$ 万元表示为促销费用 $x$ 万元的函数；
+
+（2）请问投入促销费用多少万元时，厂家获得的利润最大？
+
+\ifanswer
+\solbegin
+\step{（1）由题意得 $y=\left(4+\dfrac{20}{p}\right)p-x-(10+2p)=2p-x+10$，}
+\step{将 $p=3-\dfrac2{x+1}$ 代入化简得 $y=16-\dfrac4{x+1}-x(0\leqslant x\leqslant3)$.}
+\step{（2）$y=17-\left(\dfrac4{x+1}+x+1\right)\leqslant17-2\sqrt{\dfrac4{x+1}\cdot(x+1)}=13$，}
+\step{当且仅当 $\dfrac4{x+1}=x+1$，即 $x=1$ 时取等号，}
+\step{故投入促销费用为 $1$ 万元时，厂家获得的利润最大.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $k(x^2-2)\leqslant2x-3$ 的解集为 $M$.
+
+（1）若 $M=\left[\dfrac{1-\sqrt3}{2},\dfrac{1+\sqrt3}{2}\right]$，求实数 $k$ 的值；
+
+（2）若 $M=\varnothing$，求实数 $k$ 的取值范围；
+
+（3）若存在实数 $x$，使得对一切 $k\in[0,t]$，不等式 $k(x^2-2)\leqslant2x-3$ 恒成立，求实数 $t$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{（1）令 $f(x)=kx^2-2x+3-2k$，}
+\step{若 $M=\left[\dfrac{1-\sqrt3}{2},\dfrac{1+\sqrt3}{2}\right]$，则 $f(x)\leqslant0$ 的解集为两根之间的闭区间，}
+\step{故 $k>0$，且 $\dfrac{1-\sqrt3}{2}$,$\dfrac{1+\sqrt3}{2}$ 恰为方程 $kx^2-2x+3-2k=0$ 的两根.}
+\step{由韦达定理，两根和为 $x_1+x_2=\dfrac2k=\dfrac{1-\sqrt3}{2}+\dfrac{1+\sqrt3}{2}=1$，解得 $k=2$；}
+\step{（2）$M=\varnothing$，当且仅当 $f(x)\leqslant0$ 无解，即 $f(x)>0$ 对一切 $x\in\R$ 恒成立，}
+\step{①若 $k=0$，则 $f(x)=3-2x$，$f(x)\leqslant0$ 有解 $x\geqslant\dfrac32$，不合题意；}
+\step{②若 $k<0$，抛物线开口向下，$f(x)\leqslant0$ 的解集非空，不合题意；}
+\step{③若 $k>0$，抛物线开口向上，$f(x)\leqslant0$ 无解当且仅当判别式 $\triangle<0$，}
+\step{$\triangle=4-4k(3-2k)=8k^2-12k+4=4(2k^2-3k+1)$，}
+\step{$\Delta<0\Leftrightarrow2k^2-3k+1<0\Leftrightarrow(2k-1)(k-1)<0\Leftrightarrow\dfrac12<k<1$，}
+\step{综上，$k\in\left(\dfrac12,1\right)$；}
+\step{（3）存在实数 $x$，使关于 $k$ 的不等式 $k(x^2-2)\leqslant2x-3$ 对一切 $k\in[0,t]$ 恒成立.}
+\step{设 $g(k)=k(x^2-2)-(2x-3)(k\in[0,t])$，则需 $g(k)\leqslant0$ 恒成立，}
+\step{①若 $x^2-2<0$，即 $-\sqrt2\leqslant x\leqslant\sqrt2$，则 $2x-3<0$，$g(0)=3-2x>0$，$g(k)\leqslant0$ 不可能恒成立，不合题意；}
+\step{②若 $x^2-2\geqslant0$，则 $g(k)$ 在 $[0,t]$ 上严格增，需 $g(0)\leqslant0$ 且 $g(t)\leqslant0$，}
+\step{即 $2x-3\geqslant0$ 且 $t\leqslant\dfrac{2x-3}{x^2-2}$，}
+\step{由 $2x-3\geqslant0$ 且 $x^2-2\geqslant0$，得 $x\geqslant\dfrac32$，}
+\step{令 $h(x)=\dfrac{2x-3}{(x^2-2)},\left(x\geqslant\dfrac32\right)$，}
+\step{令 $u=2x-3$，则 $x\geqslant\dfrac32$ 时，$u\geqslant0$，当 $u=0$（即 $x=\dfrac32$）时，$h(x)=0$，}
+\step{对 $u>0$，由 $x=\dfrac{u+3}{2}$，$h(x)=\dfrac{4u}{u^2+6u+1}=\dfrac4{\left(u+\frac1u+6\right)}$，}
+\step{由基本不等式 $u+\dfrac1u\geqslant2$，$u>0$，}
+\step{当且仅当 $u=1$，$2x-3=1$，$x=2$ 时取等号，$h(x)\leqslant\dfrac4{(2+6)}=\dfrac12$，}
+\step{故 $h(x)$ 在 $\left[\dfrac32,+\infty\right)$ 上的最大值为 $\dfrac12$，}
+\step{因此存在满足条件的 $x$ 当且仅当 $t\leqslant\dfrac12$，}
+\step{综上，$t\in\left(0,\dfrac12\right]$.}
+\solend
+\fi
+
+\item 已知集合 $M_n=\{x\mid 1\leqslant x\leqslant 2n$或$x\in\N\}(n\in\N,n\geqslant4)$，若存在数阵
+$T=\begin{bmatrix}a_1&a_2&\cdots&a_n\\b_1&b_2&\cdots&b_n\end{bmatrix}$ 满足：① $\{a_1,a_2,\cdots,a_n\}\cup\{b_1,b_2,\cdots,b_n\}=M_n$；② $a_k-b_k=k(k=1,2,\cdots,n)$. 则称集合 $M_n$ 为“好集合”，并称数阵 $T$ 为 $M_n$ 的一个“好数阵”.% 题干“或”字照录
+
+（1）已知数阵 $T=\begin{bmatrix}x&y&z&6\\7&w&1&2\end{bmatrix}$ 是 $M_4$ 的一个“好数阵”，试写出 $x$、$y$、$z$、$w$ 的值；
+
+（2）若集合 $M_n$ 为“好集合”，证明：集合 $M_n$ 的“好数阵”必有偶数个；
+
+（3）分别判断 $M_n(n=5,6)$ 是否为“好集合”. 若是，求出满足条件 $n\in\{a_1,a_2,\cdots,a_n\}$ 的所有“好数阵”；若不是，说明理由.
+
+\ifanswer
+\solbegin
+\step{（1）由“好数阵”的定义得 $x-7=1$，$y-w=2$，$z-1=3$，}
+\step{$\{x,y,z,w\}=\{3,4,5,8\}$，故 $x=8$，$z=4$，$y-w=2$，}
+\step{$\{y,z\}=\{3,5\}$，进一步得到 $y=5$，$w=3$，}
+\step{从而 $x=8$，$y=5$，$z=4$，$w=3$.}
+\step{（2）当集合 $M_n$ 为“好集合”时，}
+\step{设 $T=\begin{bmatrix}a_1&a_2&\cdots&a_n\\b_1&b_2&\cdots&b_n\end{bmatrix}$ 是 $M_n$ 的一个“好数阵”，}
+\step{构造数阵 $\begin{bmatrix}2n+1-b_1&2n+1-b_2&\cdots&2n+1-b_n\\2n+1-a_1&2n+1-a_2&\cdots&2n+1-a_n\end{bmatrix}$，记为 $\overline{T}$.}
+\step{因为 $T$ 是“好数阵”，所以当 $k=1,2,\cdots,n$ 时，}
+\step{$(2n+1-b_k)\in M_n$，$(2n+1-a_k)\in M_n$，}
+\step{且 $\{2n+1-b_1,2n+1-b_2,\cdots,2n+1-b_n\}$}
+\step{$\cup\{2n+1-a_1,2n+1-a_2,\cdots,2n+1-a_n\}=M_n$，}
+\step{因为 $(2n+1-b_k)-(2n+1-a_k)=a_k-b_k=k(k=1,2,\cdots,n)$，}
+\step{所以 $\overline{T}=\begin{bmatrix}2n+1-b_1&2n+1-b_2&\cdots&2n+1-b_n\\2n+1-a_1&2n+1-a_2&\cdots&2n+1-a_n\end{bmatrix}$ 也是 $M_n$ 的一个“好数阵”.}
+\step{一方面，因为 $(2n+1)-(2n+1-a_k)=a_k$，}
+\step{$(2n+1)-(2n+1-b_k)=b_k(k=1,2,\cdots,n)$，所以 $\overline{\overline{T}}=T$，}
+\step{另一方面，假设 $2n+1-b_2=a_2$，}
+\step{因为 $a_2-b_2=2$，所以 $2n+1-b_2=2+b_2$，}
+\step{所以 $b_2=\dfrac{2n-1}{2}$，与 $b_2\in M_n$ 矛盾，所以 $\overline{T}\neq T$，}
+\step{故集合 $M_n$ 的“好数阵”必有偶数个；}
+\step{（3）设 $T=\begin{bmatrix}a_1&a_2&\cdots&a_n\\b_1&b_2&\cdots&b_n\end{bmatrix}$ 是集合 $M_n$ 的一个“好数阵”，}
+\step{由题意得 $\displaystyle\sum_{i=1}^n a_i+\sum_{i=1}^n b_i=\sum_{i=1}^{2n}i$,$\displaystyle\sum_{i=1}^n a_i-\sum_{i=1}^n b_i=\sum_{i=1}^n i$，}
+\step{相加得 $2\displaystyle\sum_{i=1}^n a_i=\sum_{i=1}^{2n}i+\sum_{i=1}^n i=\dfrac{(1+2n)\times2n}{2}+\dfrac{(1+n)\times n}{2}=\dfrac{n(5n+3)}2$，}
+\step{即 $\displaystyle\sum_{i=1}^n a_i=\dfrac{n(5n+3)}4$，}
+\step{当 $n=6$ 时，$\displaystyle\sum_{i=1}^6 a_i=\dfrac{6\times33}{4}=\dfrac{99}{2}$，与 $\displaystyle\sum_{i=1}^6 a_i\in\N^*$ 矛盾；}
+\step{所以 $M_6$ 不是“好集合”.}
+\step{当 $n=5$ 时，$\displaystyle\sum_{i=1}^5 a_i=\dfrac{5\times28}{4}=35$，若 $5\in\{a_1,a_2,a_3,a_4,a_5\}$，}
+\step{因为 $10\in\{a_1,a_2,a_3,a_4,a_5\}$，$1\notin\{a_1,a_2,a_3,a_4,a_5\}$，}
+\step{所以 $\{a_1,a_2,a_3,a_4,a_5\}$ 只有以下两种可能：$\{10,5,9,8,3\}$ 和 $\{10,5,9,7,4\}$，}
+\step{①若 $\{a_1,a_2,a_3,a_4,a_5\}=\{10,5,9,8,3\}$，则 $\{b_1,b_2,b_3,b_4,b_5\}=\{1,2,4,6,7\}$，}
+\step{使 $a_k-b_k=5$ 的只有 $9-4$，使 $a_k-b_k=4$ 的有两种可能：}
+\step{$5-1=4$ 或 $10-6=4$，}
+\step{情形一：$5-1=4$ 时，只有 $10-7=3$，$8-6=2$，$3-2=1$，}
+\step{得 $T_1=\begin{bmatrix}3&8&10&5&9\\2&6&7&1&4\end{bmatrix}$；}
+\step{情形二：$10-6=4$ 时，只有 $5-2=3$，$3-1=2$，$8-7=1$，}
+\step{得 $T_2=\begin{bmatrix}8&3&5&10&9\\7&1&2&6&4\end{bmatrix}$；}
+\step{②若 $\{a_1,a_2,a_3,a_4,a_5\}=\{10,5,9,7,4\}$，则 $\{b_1,b_2,b_3,b_4,b_5\}=\{1,2,3,6,8\}$，}
+\step{使 $a_k-b_k=5$ 的只有 $7-2$，使 $a_k-b_k=4$ 的有两种可能：}
+\step{$5-1=4$，或 $10-6=4$，}
+\step{情形一：$5-1=4$ 时，只有 $9-6=3$，$10-8=2$，$4-3=1$，}
+\step{得 $T_3=\begin{bmatrix}4&10&9&5&7\\3&8&6&1&2\end{bmatrix}$，}
+\step{情形二：$10-6=4$ 时，只有 $4-1=3$，$5-3=2$，$9-8=1$，}
+\step{得 $T_4=\begin{bmatrix}9&5&4&10&7\\8&3&1&6&2\end{bmatrix}$.}
+\step{综上，$M_6$ 不是“好集合”；$M_5$ 是“好集合”，}
+\step{且满足 $5\in\{a_1,a_2,a_3,a_4,a_5\}$ 的好数阵有四个：}
+\step{$T_1=\begin{bmatrix}3&8&10&5&9\\2&6&7&1&4\end{bmatrix}$;$T_2=\begin{bmatrix}8&3&5&10&9\\7&1&2&6&4\end{bmatrix}$；}
+\step{$T_3=\begin{bmatrix}4&10&9&5&7\\3&8&6&1&2\end{bmatrix}$;$T_4=\begin{bmatrix}9&5&4&10&7\\8&3&1&6&2\end{bmatrix}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
