@@ -715,7 +715,7 @@ def _nohit_batch(key):
         return 'X'
     if n == 68:
         return 'Y'
-    if 69 <= n <= 120:
+    if 69 <= n <= 124:
         return 'Z'
     return None
 
