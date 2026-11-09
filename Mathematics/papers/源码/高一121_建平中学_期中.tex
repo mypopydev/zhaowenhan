@@ -1,0 +1,396 @@
+% 高一121_建平中学_期中.tex
+%   —— 高一上数学“2026-2027 年建平中学高一上期中”（试卷版/答案版）
+% 试卷版：xelatex 高一121_建平中学_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一121_建平中学_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一121_建平中学_期中.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-09 17:52 发布；
+% 连载“27学年高一121”，原文标题“27学年高一121——2026-2027年上海市建平中学高一上期中”；
+% 原文链接：https://mp.weixin.qq.com/s/tkruZmYBLwZ3SlMOS_QRsQ。
+% 正文为 12 张 PNG 页（第 1、2、4、5、9、10 页 4762×6735，第 3、6、7、8、11、12 页
+% 2560×3620），题目下印有【解析】，为讲评版。
+% 题目、解析均据原图转录；卷面红色水印及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作“2026-2027 年建平中学高一上期中”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题。
+% 副标题按全部 12 页实际内容定为“函数、不等式”，不套“集合与常用逻辑用语、不等式、函数”
+% 三章口径：19 题里函数占绝对主体（第 3 题指数幂化简、第 4 题定义域、第 5 题分段函数、
+% 第 6 题单调区间、第 7 题对数、第 8 题偶函数、第 9 题值域、第 11 题函数存在性、第 15 题
+% 图象旋转、第 17 题奇偶性与单调性定义证明、第 20 题二次函数不动点、第 21 题抽象函数等 13 题），
+% 不等式为次主体（第 12、13、14、16、18、19 题共 6 题）；集合仅第 10 题数集 $M$、常用逻辑
+% 仅第 14 题“充分不必要条件”一处，均未成章。故照 高一105（主体为指数与对数，副标题作
+% “函数、不等式”）成例；“函数”沿用 高一102／高一105 对“函数与导数”模块名的简称，
+% 本卷无导数内容，不排“函数与导数”，集合与逻辑亦不列入。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，填空题编号为 3—12、选择题为 13—16、解答题为 17—21，本稿保留原题号；
+%   ② 原卷每题下直接印【解析】，本稿按全稿惯例置于答案版；全卷无只印【答案】的题，
+%      四道选择题均有【解析】且末句“故选 …”，题干括号内留空、不另提 \ans{}；
+%   ③ 原卷未印副标题，本稿按全部 12 页实际内容与“知识模块”口径补出（见上“卷首标题”）；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      选项段前按惯例加 \keepwithprev；解答题不留作答区（原卷为讲评版，与 109—120 同）；
+%   ⑤ 原卷数集 $R$、$Z$、$N^*$ 排斜体，按全稿惯例改 \R、\Z、\N^*；绝对值 \lvert…\rvert，
+%      集合描述竖线 \mid；$\lvert M\rvert$ 按 103／106／107／120 成例排；原卷角度 60°／30°／0°
+%      排 $60^\circ$ 等（照 11／17 成例）；单位 km 原卷排斜体，本稿按正体照排。
+%
+% 判别式字形：第 20 题 (3) 解析一行作 $\triangle=b^2-4a(b-2)\geqslant0$（等边、扁，照录 \triangle），
+%   紧接一行作 $\Delta_{\triangle}=(-4a)^2-4\times8a\leqslant0$（主号等腰、高 \Delta，
+%   下标为小三角 \triangle），逐处照录字形。
+%
+% 子集符号：第 10 题 ② 的 $Z\subseteq M$ 与第 21 题题干的 $I\subseteq D$ 均印有下划线，
+%   照录 \subseteq。
+%
+% 子题标号：原卷 (1)(2)(3) 一律用全角括号（1）（2）（3），本稿照录（\step 行内亦同）。
+%
+% 原卷存疑照录：第 6 题解析“任取同一上述区间内的”语序／用字（通常作“任取上述同一区间内的”）
+%   照录；第 16 题题干“的解集记作为 $A$”中“记作为”略冗余，照录；
+%   第 19 题 (1)“求 $y$ 关于 $x$ 的解析式及并写出 $x$ 的取值范围”的“及并”疑为笔误
+%   （当作“及”或“并”），照录；第 21 题题号印作“21..”（多一个句点），本稿题号由 enumerate
+%   排为“21.”，照录加注；第 10 题解析末“故①②③⑤正确，正确的有 4 个”与前文四项判正确自洽。
+%
+% 行数核对：逐题数 \step 条数，合计 134 条（Q3：1；Q4：2；Q5：1；Q6：2；Q7：2；Q8：4；
+% Q9：4；Q10：14；Q11：4；Q12：6；Q13：2；Q14：8；Q15：13；Q16：6；Q17：9；Q18：7；
+% Q19：5；Q20：13；Q21：31），与原卷印刷行逐题相等（cases 块作一个印刷行计）。全卷无
+% 只印【答案】的题，\ans{} 数为 0，19 道 \solbegin 全在 \ifanswer 内。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年建平中学高一上期中}{函数、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 将 $a\cdot\sqrt{a^{-3}}(a>0)$ 化简为指数幂的形式为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a\cdot\sqrt{a^{-3}}(a>0)=a\cdot a^{-\frac{3}{2}}=a^{-\frac{1}{2}}$.}
+\solend
+\fi
+
+\item 函数 $f(x)=\sqrt{x-1}+\dfrac{1}{x-2}$ 的定义域为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{函数 $f(x)=\sqrt{x-1}+\dfrac{1}{x-2}$，则 $\begin{cases}x-1\geqslant0\\x-2\neq0\end{cases}$，解得 $x\geqslant1$ 且 $x\neq2$，}
+\step{故函数 $f(x)$ 的定义域为 $[1,2)\cup(2,+\infty)$.}
+\solend
+\fi
+
+\item 已知函数 $f(x)=\begin{cases}3x+1,&x\leqslant1\\x^2-1,&x>1\end{cases}$，若 $f(a)=8$，则 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a\leqslant1$ 时 $f(a)\leqslant4$，因而 $a>1$，$a^2-1=8\Rightarrow a=3$.}
+\solend
+\fi
+
+\item 函数 $f(x)=\dfrac{\pi}{x}$ 的单调递减区间为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+% 原卷作"任取同一上述区间内的"（语序／用字存疑），照录
+\step{任取同一上述区间内的 $x_1<x_2$，则 $f(x_1)-f(x_2)=\dfrac{\pi(x_2-x_1)}{x_1x_2}>0$，}
+\step{因此两个区间上分别严格递减，故单调递减区间为 $(-\infty,0)$ 和 $(0,+\infty)$.}
+\solend
+\fi
+
+\item 已知 $a>1$，$b>1$，若 $\log_a b+\log_b a=2$，且 $ab=2$，则 $\log_2(a+b)=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{令 $t=\log_a b>0$，则 $t+\dfrac1t=2\Leftrightarrow(t-1)^2=0$，得 $a=b$，}
+\step{结合 $ab=2$ 得 $a=b=\sqrt2$，$\log_2(a+b)=\log_2(2\sqrt2)=\dfrac32$.}
+\solend
+\fi
+
+\item 已知函数 $f(x)$ 是定义在 $\R$ 上的偶函数，若 $f(x)$ 在区间 $(-\infty,0]$ 上是严格增函数，则不等式 $f(2a-1)>f(a+1)$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为函数 $f(x)$ 是定义在 $\R$ 上的偶函数，}
+\step{不等式 $f(2a-1)>f(a+1)$，即 $f(\lvert2a-1\rvert)>f(\lvert a+1\rvert)$，}
+\step{又因为 $f(x)$ 在 $(-\infty,0]$ 上是严格增函数，所以 $f(x)$ 在 $[0,+\infty)$ 上是严格减函数，}
+\step{所以 $\lvert2a-1\rvert<\lvert a+1\rvert$，即 $a^2-2a<0$，解得 $a\in(0,2)$.}
+\solend
+\fi
+
+\item 已知函数 $f(x)$ 的表达式为 $y=x^2+3$，其值域为 $\{3,4,7,517,2026\}$，则满足条件的函数有\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{定义域必须含 0，且从 $\{-1,1\}$、$\{-2,2\}$、$\{-\sqrt{514},\sqrt{514}\}$、}
+\step{$\{-\sqrt{2023},\sqrt{2023}\}$ 中各至少选取一个元素，不能含其他元素.}
+\step{每组均有“只选负数、只选正数、两个都选”共 3 种选择，}
+\step{所求函数个数为 $3^4=81$.}
+\solend
+\fi
+
+\item 已知 $M=\{x\mid x=a\sqrt2+b,a\in\Z,b\in\Z\}$，则下列结论中，正确的有\blankline[4.4em]个.
+
+① $\dfrac1{3-2\sqrt2}\in M$；② $\Z\subseteq M$；③ 若 $x_1$、$x_2\in M$，则 $x_1+x_2\in M$；
+
+④ 若 $x_1$、$x_2\in M$ 且 $x_2\neq0$，则 $\dfrac{x_1}{x_2}\in M$；
+
+⑤ 存在 $x\in M$ 且 $x\notin\Z$，满足 $x^{-2022}\in M$.
+
+\ifanswer
+\solbegin
+\step{对于①，$\dfrac1{3-2\sqrt2}=3+2\sqrt2\in M$，①正确；}
+\step{对于②，当 $x=a\sqrt2+b,a\in\Z,b\in\Z$ 中 $a=0$ 时，$x\in\Z$，所以 $\Z\subseteq M$，}
+\step{②正确；}
+\step{对于③，若 $x_1$、$x_2\in M$，不妨设 $x_1=a\sqrt2+b,x_2=c\sqrt2+d$，}
+\step{则 $x_1+x_2=(a+c)\sqrt2+b+d$，$a+c\in\Z$，$b+d\in\Z$，所以 $x_1+x_2\in M$，}
+\step{③正确；}
+\step{对于④，若 $x_1$、$x_2\in M$ 且 $x_2\neq0$，$\dfrac{x_1}{x_2}\in M$ 不正确，}
+\step{例如 $x_1=2$，$x_2=3$，$\dfrac{x_1}{x_2}=\dfrac23\notin M$，④不正确；}
+\step{对于⑤，存在 $x\in M$ 且 $x\notin\Z$，满足 $x^{-2022}\in M$，}
+\step{例如 $x=3-2\sqrt2\in M$，$x^{-1}=3+2\sqrt2\in M$，$x^{-2}=17+12\sqrt2\in M$，}
+\step{若 $x^{-n}=a\sqrt2+b\in M(n\in\N^*)$，}
+\step{则 $x^{-(n+1)}=(a\sqrt2+b)(3+2\sqrt2)=(3a+2b)\sqrt2+3b+4a\in M$，}
+\step{故 $x^{-2022}\in M$，⑤正确.}
+\step{故①②③⑤正确，正确的有 4 个.}
+\solend
+\fi
+
+\item 设 $a\in\R$，若存在定义域为 $\R$ 的函数 $f(x)$ 既满足“对于任意 $x_0\in\R$，$f(x_0)=x_0^2$ 或 $f(x_0)=x_0+2$”，又满足“关于 $x$ 的方程 $f(x)=a$ 无实数解”，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{恒有 $f(-1)=1$、$f(2)=4$，因此必须 $a\neq1,4$.}
+\step{当 $a\neq1,4$ 时，取 $f(x)=\begin{cases}x^2,&x^2\neq a\\x+2,&x^2=a\end{cases}$，}
+\step{由于 $x^2=x+2$ 仅在 $x=-1,2$ 时成立，对应函数值为 $1,4$，}
+\step{上述函数处处不取 $a$，所求范围为 $(-\infty,1)\cup(1,4)\cup(4,+\infty)$.}
+\solend
+\fi
+
+\item 对于任意 $x\in\R$，都有 $2x+2\leqslant ax^2+bx+c\leqslant2x^2-2x+4$ 恒成立，则 $a^2+b^2+c^2$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $q(x)=ax^2+(b-2)x+c-2$.}
+\step{原条件等价于 $0\leqslant q(x)\leqslant2(x-1)^2$，故 $q(1)=0$.}
+\step{若 $a\neq0$，恒非负的二次式 $q(x)$ 只能以 1 为重根.}
+\step{若 $a=0$，则 $q(x)$ 至多是一次式，它恒非负且 $q(1)=0$，只能恒为零，}
+\step{因此 $q(x)=a(x-1)^2$，且 $0\leqslant a\leqslant2$，对照系数得 $b=2-2a,c=a+2$，}
+\step{于是 $a^2+b^2+c^2=6\left(a-\dfrac13\right)^2+\dfrac{22}{3}$. 取 $a=\dfrac13$ 时达到最小值 $\dfrac{22}{3}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知 $a,b,c\in\R$，下列结论中正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $a>b$，则 $a^2>b^2$\qquad\qquad B. 若 $a>b$，则 $ac>bc$
+
+C. 若 $a>b$，则 $\dfrac1a<\dfrac1b$\qquad\qquad D. 若 $ac^2>bc^2$，则 $a>b$
+
+\ifanswer
+\solbegin
+\step{$ac^2>bc^2\Rightarrow(a-b)c^2>0$，结合 $c^2\geqslant0$，得 $c^2>0$ 且 $a-b>0$，即 $a>b$，}
+\step{故选 $D$.}
+\solend
+\fi
+
+\item 已知 $a_1,a_2,b_1,b_2\in\R$ 且 $a_1\neq0$，$a_2\neq0$，若关于 $x$ 的不等式 $a_1x+b_1>0$ 的解集为 $A$，关于 $x$ 的不等式 $a_2x+b_2>0$ 的解集为 $B$，则“$A=B$”是“$\dfrac{b_1}{a_1}=\dfrac{b_2}{a_2}$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分不必要条件\qquad\qquad B. 必要不充分条件
+
+C. 充要条件\qquad\qquad\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{若关于 $x$ 的不等式 $a_1x+b_1>0$ 的解集为 $A$，}
+\step{关于 $x$ 的不等式 $a_2x+b_2>0$ 的解集为 $B$，}
+\step{当 $a_1>0$ 时，$A=\{x\mid x>-\dfrac{b_1}{a_1}\}$，当 $a_1<0$ 时，$A=\{x\mid x<-\dfrac{b_1}{a_1}\}$，}
+\step{当 $a_2>0$ 时，$B=\{x\mid x>-\dfrac{b_2}{a_2}\}$，当 $a_2<0$ 时，$B=\{x\mid x<-\dfrac{b_2}{a_2}\}$，}
+\step{若 $A=B$，必有 $\dfrac{b_1}{a_1}=\dfrac{b_2}{a_2}$，}
+\step{反之，当 $a_1=1$，$b_1=2$ 且 $a_2=-1$，$b_2=-2$ 时，有 $\dfrac{b_1}{a_1}=\dfrac{b_2}{a_2}$ 成立，}
+\step{但 $A=\{x\mid x>-2\}$，$B=\{x\mid x<-2\}$，此时 $A\neq B$，}
+\step{故“$A=B$”是“$\dfrac{b_1}{a_1}=\dfrac{b_2}{a_2}$”的充分不必要条件. 故选 $A$.}
+\solend
+\fi
+
+\item 设 $D$ 是含数 1 的有限实数集，$f(x)$ 是定义在 $D$ 上的函数，若 $f(x)$ 的图像绕原点逆时针旋转 $60^\circ$ 后与原图像重合，则在以下各项中，$f(1)$ 的可能取值只能是\mbox{（\quad）}
+
+\keepwithprev
+A. $\sqrt3$\qquad\qquad B. $\dfrac{\sqrt3}{2}$\qquad\qquad C. $\dfrac{\sqrt3}{3}$\qquad\qquad D. 0
+
+\ifanswer
+\solbegin
+\step{设 $P=(1,f(1))$.}
+\step{连续旋转 $60^\circ$，得到以原点为中心的正六边形的六个顶点.}
+\step{若有两个顶点关于 $x$ 轴对称，其余顶点沿圆周每隔 $60^\circ$ 排列，}
+\step{反射后也两两对应.}
+\step{反之，若 $x$ 轴是对称轴，必有两个不同顶点横坐标相等.}
+\step{正六边形的对称轴经过对顶点或对边中点，}
+\step{与射线 $OP$ 的夹角都是 $30^\circ$ 的整数倍.}
+\step{A、C、D 对应的 $OP$ 与 $x$ 轴正半轴的夹角分别为 $60^\circ,30^\circ,0^\circ$，}
+\step{均出现相同横坐标.}
+\step{B 中 $\dfrac{\sqrt3}{3}<\dfrac{\sqrt3}{2}<\sqrt3$，对应夹角严格介于 $30^\circ$ 与 $60^\circ$ 之间，}
+\step{此时六个顶点横坐标互异，取它们为定义域，以对应纵坐标为函数值，}
+\step{就得到了满足条件的函数.}
+\step{故选 $B$.}
+\solend
+\fi
+
+% 原卷题干作"的解集记作为 $A$"（"记作为"略冗余），照录
+\item 已知 $x\in\R$，$[x]$ 表示不大于 $x$ 的最大整数，如：$[2.7]=2$，$[5]=5$，$[-1.3]=-2$. 已知实数 $a,b$ 满足 $0<b<1+a$，将关于 $x$ 的不等式 $(ax)^2<(x-b)^2$ 的解集记作为 $A$. 若集合 $\{m\mid m=[x],x\in A\}$ 有且仅有 62 个非空真子集，则实数 $a$ 的可能取值是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac34$\qquad\qquad B. $\dfrac85$\qquad\qquad C. $\dfrac{11}{6}$\qquad\qquad D. $\dfrac{15}{7}$
+
+\ifanswer
+\solbegin
+\step{记 $M=\{m\mid m=[x],x\in A\}$，则 $2^{\lvert M\rvert}-2=62\Rightarrow\lvert M\rvert=6$.}
+\step{又 $a>-1$，当 $-1<a\leqslant1$ 时 $A$ 无界，$M$ 有无穷多个元素，故 $a>1$.}
+\step{$A=\left(-\dfrac{b}{a-1},\dfrac{b}{a+1}\right)$,$0<\dfrac{b}{a+1}<1$，}
+\step{$\lvert M\rvert=6\Leftrightarrow\left[-\dfrac{b}{a-1}\right]=-5\Leftrightarrow-5\leqslant-\dfrac{b}{a-1}<-4\Leftrightarrow4(a-1)<b\leqslant5(a-1)$}
+\step{结合 $b<1+a$，得 $4(a-1)<1+a$，即 $1<a<\dfrac53$，仅 B 符合；}
+\step{取 $a=\dfrac85$，$b=\dfrac52$，满足全部条件. 故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 设 $a$ 是实数，函数 $f(x)=4x+\dfrac1x+a$.
+
+（1）若函数 $f(x)$ 是奇函数，求 $a$ 的值；
+
+（2）判断函数 $f(x)$ 在区间 $\left(\dfrac12,+\infty\right)$ 上的单调性，并用函数单调性的定义证明.
+
+\ifanswer
+\solbegin
+\step{（1）函数 $f(x)=4x+\dfrac1x+a$ 是奇函数，定义域为 $\{x\mid x\neq0\}$.}
+\step{由 $f(-x)=-f(x)$，得 $-4x-\dfrac1x+a=-\left(4x+\dfrac1x+a\right)$，解得 $a=0$；}
+\step{（2）函数 $f(x)$ 在区间 $\left(\dfrac12,+\infty\right)$ 上严格增，}
+\step{证明如下：任取 $x_1,x_2\in\left(\dfrac12,+\infty\right)$ 且 $x_1<x_2$，}
+\step{$f(x_1)-f(x_2)=4x_1+\dfrac1{x_1}+a-\left(4x_2+\dfrac1{x_2}+a\right)=4(x_1-x_2)+\dfrac1{x_1}-\dfrac1{x_2}$}
+\step{$=4(x_1-x_2)+\dfrac{x_2-x_1}{x_1x_2}=(x_1-x_2)\left(4-\dfrac1{x_1x_2}\right)=(x_1-x_2)\dfrac{4x_1x_2-1}{x_1x_2}$，}
+\step{因为 $\dfrac12<x_1<x_2$，所以 $x_1-x_2<0$,$x_1x_2>\dfrac14$ 即 $4x_1x_2-1>0$，}
+\step{所以 $f(x_1)-f(x_2)<0$，即 $f(x_1)<f(x_2)$，}
+\step{故函数 $f(x)$ 在区间 $\left(\dfrac12,+\infty\right)$ 上严格增.}
+\solend
+\fi
+
+\item 已知 $a\in\R$，解关于 $x$ 的不等式：$(a-4)x\leqslant4-ax^2$.
+
+\ifanswer
+\solbegin
+\step{原不等式等价于 $ax^2+(a-4)x-4=(x+1)(ax-4)\leqslant0$，}
+\step{当 $a=0$ 时，$-4(x+1)\leqslant0$，解得 $x\geqslant-1$.}
+\step{当 $a>0$ 时，$-1<\dfrac4a$，解得 $-1\leqslant x\leqslant\dfrac4a$.}
+\step{当 $a<-4$ 时，$-1<\dfrac4a$，解得 $x\leqslant-1$ 或 $x\geqslant\dfrac4a$.}
+\step{当 $a=-4$ 时，原不等式为 $-4(x+1)^2\leqslant0$，解集为 $\R$.}
+\step{当 $-4<a<0$ 时，$\dfrac4a<-1$，解得 $x\leqslant\dfrac4a$ 或 $x\geqslant-1$.}
+\step{故解集为 $\begin{cases}(-\infty,-1]\cup\left[\dfrac4a,+\infty\right),&a<-4\\\R,&a=-4\\\left(-\infty,\dfrac4a\right]\cup[-1,+\infty),&-4<a<0\\{}[-1,+\infty),&a=0\\\left[-1,\dfrac4a\right],&a>0\end{cases}$.}
+\solend
+\fi
+
+\item 某工厂新建员工宿舍，若建造宿舍的所有费用 $P$（万元）和宿舍与工厂的距离 $x$km 的关系为 $P=\dfrac{k}{3x+2}$（$0\leqslant x\leqslant5$），若距离为 $1$km 时，测算宿舍建造费用为 40 万元. 为了交通方便，工厂和宿舍之间还要修一条道路，已知铺设路面成本为 6 万元/km，设 $y$ 为建造宿舍与修路费用之和.
+
+（1）求 $y$ 关于 $x$ 的解析式及并写出 $x$ 的取值范围；% 原卷作"及并写出"（疑为笔误），照录
+
+（2）宿舍应建在离工厂多远处，可使总费用 $y$ 最小，并求总费用 $y$ 最小值.
+
+\ifanswer
+\solbegin
+\step{（1）由题意得 $40=\dfrac{k}{3\times1+2}$，解得 $k=200$，}
+\step{建造宿舍与修路费用之和 $y=P+6x=\dfrac{200}{3x+2}+6x(0\leqslant x\leqslant5)$；}
+\step{（2）$y=\dfrac{200}{3x+2}+6x=\dfrac{200}{3x+2}+2(3x+2)-4\geqslant2\sqrt{\dfrac{200}{3x+2}\times2(3x+2)}-4=36$，}
+\step{当且仅当 $\dfrac{200}{3x+2}=2(3x+2)$，且 $0\leqslant x\leqslant5$，即 $x=\dfrac83$ 时取等号，}
+\step{所以，宿舍应建在离工厂 $\dfrac83$km 处，总费用最小为 36 万元.}
+\solend
+\fi
+
+\item 对于二次函数 $y=ax^2+bx+c(a\neq0)$，若存在 $x_0\in\R$ 使得 $ax_0^2+bx_0+c=x_0$ 成立，则称 $x_0$ 为二次函数 $y=ax^2+bx+c(a\neq0)$ 的不动点.
+
+（1）求二次函数 $y=2x^2-4x-3$ 的不动点；
+
+（2）若二次函数 $y=x^2-(5t-1)x+6t^2$ 在区间 $(-1,4)$ 内仅有一个不动点，求 $t$ 的取值范围；
+
+（3）若对任意实数 $b$，二次函数 $y=ax^2+(b+1)x+(b-2)(a\neq0)$ 恒有不动点，求 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{（1）令 $2x^2-4x-3=x$，则 $2x^2-5x-3=0$，即 $(2x+1)(x-3)=0$，}
+\step{解得 $x=-\dfrac12$ 或 $x=3$，所以二次函数的不动点为 $-\dfrac12$ 和 3.}
+\step{（2）不动点方程为 $(x-2t)(x-3t)=0$.}
+\step{当 $t=0$ 时，两根重合为 0，区间内恰有一个不动点.}
+\step{当 $t\neq0$ 时，$2t\in(-1,4)$ 等价于 $-\dfrac12<t<2$，}
+\step{而 $3t\in(-1,4)$ 等价于 $-\dfrac13<t<\dfrac43$.}
+\step{后一个区间包含于前一个，所以只有 $2t$ 在区间内时符合题意.}
+\step{合并两种情形，得 $t\in\left(-\dfrac12,-\dfrac13\right]\cup\{0\}\cup\left[\dfrac43,2\right)$.}
+\step{（3）令 $ax^2+(b+1)x+(b-2)=x$，整理得 $ax^2+bx+b-2=0$，}
+\step{由题意得，对任意 $b\in\R$，$\triangle=b^2-4a(b-2)\geqslant0$ 恒成立，}
+\step{即 $b^2-4ab+8a\geqslant0$ 对任意 $b\in\R$ 恒成立，那么 $\Delta_{\triangle}=(-4a)^2-4\times8a\leqslant0$，}
+\step{化简得 $16a^2-32a\leqslant0$，即 $a(a-2)\leqslant0$，解得 $0\leqslant a\leqslant2$.}
+\step{又 $a\neq0$，故 $0<a\leqslant2$，所以 $a$ 的取值范围是 $(0,2]$.}
+\solend
+\fi
+
+% 原卷题号印作"21.."（多一个句点），本稿题号由 enumerate 排为"21."
+\item 对于函数 $f(x)$，定义域 $D$，区间 $I\subseteq D$. 若在区间 $I$ 内存在非零实数 $x_0$，满足 $\dfrac1{x_0}\in I$ 且 $f\left(\dfrac1{x_0}\right)=-f(x_0)$，则称函数 $f(x)$ 是区间 $I$ 上的“局部倒负函数”.
+
+（1）判断函数 $h(x)=x-1$ 是否为 $(0,+\infty)$ 上的“局部倒负函数”；
+
+（2）设函数 $m(x)=\begin{cases}x+1,0<x\leqslant1\\\dfrac{kx}{1-x},x>1\end{cases}$，是否存在实数 $k$，使得 $m(x)$ 是区间 $(0,+\infty)$ 上的“局部倒负函数”. 若存在，请求出 $k$ 的取值范围；若不存在，请说明理由；
+
+（3）$f(x)$ 的定义域为 $[0,+\infty)$，对任意的 $x,y\in[0,+\infty)$，都有 $f(x+y)=f(y)+x(x+2y-a)$，且 $f(1)=1$. 若函数 $f(x)$ 是区间 $(0,+\infty)$ 上的“局部倒负函数”，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{（1）因为 $h(x)+h\left(\dfrac1x\right)=x-1+\dfrac1x-1=0(x>0)$，解得 $x=1$，}
+\step{所以区间 $(0,+\infty)$ 内存在实数 $x_0=1$，满足 $h\left(\dfrac1{x_0}\right)=-h(x_0)$，}
+\step{所以函数 $h(x)=x-1$ 是 $(0,+\infty)$ 上的“局部倒负函数”.}
+\step{（2）假设存在实数 $k$，使得函数 $m(x)$ 是区间 $(0,+\infty)$ 上的“局部倒负函数”.}
+\step{则存在 $x_0\in(0,+\infty)$，使得 $m\left(\dfrac1{x_0}\right)=-m(x_0)$.}
+\step{因为 $m(1)=2$，所以 $x_0\neq1$，}
+\step{当 $0<x_0<1$ 时，$\dfrac1{x_0}>1$，则 $m(x_0)+m\left(\dfrac1{x_0}\right)=x_0+1+\dfrac{k\cdot\dfrac1{x_0}}{1-\dfrac1{x_0}}=0$，}
+\step{即 $x_0^2+k-1=0$①，}
+\step{当 $x_0>1$ 时，$0<\dfrac1{x_0}<1$，则 $m(x_0)+m\left(\dfrac1{x_0}\right)=\dfrac{kx_0}{1-x_0}+\dfrac1{x_0}+1=0$，}
+\step{即 $(k-1)x_0^2+1=0$②，}
+\step{所以①或②有解，}
+\step{即 $k=1-x_0^2$ 在 $(0,1)$ 上有解或 $k=1-\dfrac1{x_0^2}$ 在 $(1,+\infty)$ 上有解，}
+\step{当 $x_0\in(0,1)$ 时，$0<1-x_0^2<1$；当 $x_0\in(1,+\infty)$ 时，$0<1-\dfrac1{x_0^2}<1$；}
+\step{所以 $0<k<1$，}
+\step{所以存在实数 $k\in(0,1)$，使得 $m(x)$ 是区间 $(0,+\infty)$ 上的“局部倒负函数”.}
+\step{（3）因为对任意的 $x,y\in[0,+\infty)$，$f(x+y)=f(y)+x(x+2y-a)$.}
+\step{令 $x=1$，$y=0$，则 $f(1)=f(0)+1-a$，又 $f(1)=1$，所以 $f(0)=a$.}
+\step{令 $y=0$，则 $f(x)=f(0)+x(x-a)=x^2-ax+a$，}
+\step{此时 $f(x+y)=x^2+2xy+y^2-ax-ay+a$，}
+\step{而 $f(y)+x(x+2y-a)=y^2-ay+a+x^2+2xy-ax=f(x+y)$，}
+\step{满足条件，所以 $f(x)=x^2-ax+a$，}
+\step{因为 $f(x)$ 是区间 $(0,+\infty)$ 上的“局部倒负函数”，}
+\step{所以存在实数 $x_0\in(0,+\infty)$，满足 $f\left(\dfrac1{x_0}\right)=-f(x_0)$，}
+\step{又 $f(1)=1$，所以 $x_0\neq1$，}
+\step{所以 $f(x_0)+f\left(\dfrac1{x_0}\right)=\left(x_0^2-ax_0+a\right)+\left(\dfrac1{x_0^2}-\dfrac a{x_0}+a\right)=0$，}
+\step{则 $\left(x_0^2+\dfrac1{x_0^2}\right)-a\left(x_0+\dfrac1{x_0}\right)+2a=0$ 在区间 $(0,1)\cup(1,+\infty)$ 上有解.}
+\step{令 $x_0+\dfrac1{x_0}=\lambda$，由于函数 $y=x+\dfrac1x$ 在 $(0,1)$ 上严格减，$(1,+\infty)$ 上严格增，}
+\step{所以 $\lambda\in(2,+\infty)$，则上式即为 $\lambda^2-a\lambda+2a-2=0$ 在区间 $(2,+\infty)$ 上有解，}
+\step{因为 $a=\dfrac{\lambda^2-2}{\lambda-2}=\lambda-2+\dfrac2{\lambda-2}+4\geqslant2\sqrt2+4$，}
+\step{当且仅当 $\lambda=2+\sqrt2$ 时取等号，所以 $\lambda-2+\dfrac2{\lambda-2}+4\in[4+2\sqrt2,+\infty)$，}
+\step{所以实数 $a$ 的取值范围为 $[4+2\sqrt2,+\infty)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
