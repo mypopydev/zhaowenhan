@@ -1,0 +1,340 @@
+% 高一124_光明中学_9月月考.tex
+%   —— 高一上数学“2026-2027 年光明中学高一上 9 月月考”（试卷版/答案版）
+% 试卷版：xelatex 高一124_光明中学_9月月考.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一124_光明中学_9月月考.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一124_光明中学_9月月考.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-09 17:52 发布；
+% 连载“27学年高一124”，原文标题“27学年高一124——2026-2027年上海市光明中学高一上9月月考”；
+% 原文链接：https://mp.weixin.qq.com/s/0Ma8qwuUaYnnhK5iciZYgA。
+% 正文为 8 张 PNG 页（全部 4762×6735），题目下印有【解析】或【答案】，为讲评版。
+% 题目、解析均据原图转录；卷面红色水印及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作“2026-2027 年光明中学高一上 9 月月考”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，本稿按题目内容
+% 标为“集合与常用逻辑用语、不等式”（与 110／111／113／116／118／120 同）。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，填空题编号为 3—12、选择题为 13—16、解答题为 17—21，本稿保留原题号；
+%   ② 原卷每题下直接印【解析】／【答案】，本稿按全稿惯例置于答案版；第 5、6、7 题只印
+%      【答案】，另提 \ans{}；四道选择题答案均在解析末句“故选 …”，括号内留空、不另提 \ans{}；
+%   ③ 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      选项段前按惯例加 \keepwithprev；解答题不留作答区（原卷为讲评版，与 109—120 同）；
+%   ⑤ 原卷数集排斜体 $R$、$Z$，按全稿惯例改 \R、\Z；绝对值排 \lvert…\rvert，
+%      集合描述竖线排 \mid；补集记号照原卷上划线排 \overline{S}、\overline{A}。
+%
+% 判别式字形：第 19 题两处 $\triangle=4k^2-4k$、$\triangle=(k-1)^2-16$ 原卷均排
+%   $\triangle$（等边、扁），照录 \triangle（与 高一26 同一题排 $\Delta$ 不同，逐处照本卷字形）。
+%
+% 子集符号：第 12 题题干 $A\subseteq U$ 印有下划线，照录 \subseteq；
+%   第 18 题 (2) 解析 $B\subset A$ 印单线，照录 \subset。
+%
+% 原卷存疑照录：
+%   第 8 题解析把整数集 $\{y\mid -1\leqslant y\leqslant2,y\in\Z\}$ 记作 $[-1,2]$（整数集与
+%     闭区间记号不一致），照录（高一20 同题亦如此）；
+%   第 11 题解析由 $(bx-a)(x+2)>0$ 直接写 $\left(x-\dfrac ab\right)(x+2)>0$，未讨论 $b$ 的符号，照录；
+%   第 14 题解析 A、B 两行用同一推导分别判“故 $A$ 错误”“故 $B$ 正确”，照录；
+%   第 16 题解析②的展开 $m^2-2n+1+n^2-2m+1$ 与 $(m-1)^2+(n-1)^2$ 的通常展开次序不同
+%     （值相同），照录；
+%   第 15 题解析 B“当且仅当 $x=0$ 时取等号，选项 $B$ 错误”（该等号指 $x^2+2=2$），照录。
+%
+% 行数核对：逐题数 \step 条数，合计 102 条（Q3：4；Q4：1；Q5：0；Q6：0；Q7：0；
+% Q8：3；Q9：4；Q10：3；Q11：4；Q12：8；Q13：2；Q14：5；Q15：9；Q16：16；
+% Q17：5；Q18：9；Q19：12；Q20：5；Q21：12），与原卷印刷行逐题相等
+% （cases 块作一个印刷行计）。第 5、6、7 题只印【答案】，提 \ans{}，不计入 \step 账；
+% 选择题答案均在解析末句，括号内留空、不另提 \ans{}。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年光明中学高一上 9 月月考}{集合与常用逻辑用语、不等式}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 若 $4\in\{2,a^2,a\}$，则实数 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{①若 $4=a$，则 $\{2,a^2,a\}=\{2,16,4\}$，满足集合元素的互异性；}
+\step{②若 $4=a^2$，则 $a=-2$ 或 $2$（舍），此时 $\{2,a^2,a\}=\{2,-2,4\}$，}
+\step{满足集合元素的互异性；}
+\step{综上，$a=-2$ 或 $4$.}
+\solend
+\fi
+
+\item 关于 $x$ 的不等式 $x^2>0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{关于 $x$ 的不等式 $x^2>0$ 的解集为 $\{x\mid x\neq0\}$.}
+\solend
+\fi
+
+\item 已知全集 $U=\R$，设集合 $S=\{x\mid x>-2\}$,$T=\{x\mid -4\leqslant x\leqslant1\}$，则 $\overline{S}\cap T=$\blankline[4.4em].
+
+\ifanswer
+\ans{$[-4,-2]$}
+\fi
+
+\item 用反证法证明：“若 $x+y\leqslant2$，则 $x\leqslant1$ 或 $y\leqslant1$”时，需假设\blankline[4.4em].
+
+\ifanswer
+\ans{$x>1$ 且 $y>1$}
+\fi
+
+\item 设实数 $x\in[2,+\infty)$，则 $\dfrac1x\in$\blankline[4.4em].
+
+\ifanswer
+\ans{$\left(0,\dfrac12\right]$}
+\fi
+
+\item 设集合 $P=\{y\mid y=x^2-1,y\in\Z\}$，$Q=\{y\mid y=-2x^2+2,y\in\Z\}$，则 $P\cap Q=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为集合 $P=\{y\mid y=x^2-1,y\in\Z\}=\{y\mid y\geqslant-1,y\in\Z\}$，}
+\step{$Q=\{y\mid y=-2x^2+2,y\in\Z\}=\{y\mid y\leqslant2,y\in\Z\}$，}
+\step{则 $P\cap Q=\{y\mid -1\leqslant y\leqslant2,y\in\Z\}=[-1,2]$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x^2-x-2<0\}$，$B=\{x\mid (x-a)(x-a-1)<0\}$，若 $A\cap B=\varnothing$，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{集合 $A=\{x\mid x^2-x-2<0\}=\{x\mid -1<x<2\}$，}
+\step{$B=\{x\mid (x-a)(x-a-1)<0\}=\{x\mid a<x<a+1\}$，}
+\step{因为 $A\cap B=\varnothing$，所以 $a+1\leqslant-1$ 或 $a\geqslant2$，解得 $a\leqslant-2$ 或 $a\geqslant2$，}
+\step{所以实数 $a$ 的取值范围为 $(-\infty,-2]\cup[2,+\infty)$.}
+\solend
+\fi
+
+\item 若 $a>-2$，$b>0$ 且 $a+b=8$，则 $\sqrt{(a+2)b}$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $a>-2$，$b>0$ 且 $a+b=8$，}
+\step{所以 $(a+2)+b=10\geqslant2\sqrt{(a+2)b}$，当且仅当 $a+2=b=5$ 时取等号，}
+\step{则 $\sqrt{(a+2)b}$ 的最大值为 $5$.}
+\solend
+\fi
+
+\item 关于 $x$ 的不等式 $ax+b>0$ 的解集为 $(-\infty,1)$，则关于 $x$ 的不等式 $(bx-a)(x+2)>0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为关于 $x$ 的不等式 $ax+b>0$ 的解集为 $(-\infty,1)$，}
+\step{所以 $(bx-a)(x+2)>0\Rightarrow\left(x-\dfrac ab\right)(x+2)>0\Rightarrow(x+1)(x+2)>0$}
+\step{$\Rightarrow x>-1$ 或 $x<-2$，}
+\step{则关于 $x$ 的不等式 $(bx-a)(x+2)>0$ 的解集为 $(-\infty,-2)\cup(-1,+\infty)$.}
+\solend
+\fi
+
+\item 设全集 $U=\{1,2,3,4,5,6,7,8,9,10\}$，给出条件：① $A\subseteq U$；②若 $x\in A$，则 $2x\notin A$；③若 $x\in\overline{A}$，则 $2x\notin\overline{A}$. 那么同时满足三个条件的集合 $A$ 的个数为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $1\in A$，则 $2\in\overline{A}$，$4\in A$，$8\in\overline{A}$；}
+\step{若 $1\in\overline{A}$，则 $2\in A$，$4\in\overline{A}$，$8\in A$，此时 $1$，$2$，$4$，$8$ 的放置有 $2$ 种；}
+\step{若 $3\in A$，则 $6\in\overline{A}$；}
+\step{若 $3\in\overline{A}$，则 $6\in A$，此时 $3$，$6$ 的放置有 $2$ 种；}
+\step{若 $5\in A$，则 $10\in\overline{A}$；}
+\step{若 $5\in\overline{A}$，则 $10\in A$，此时 $5$，$10$ 的放置有 $2$ 种；}
+\step{$7$，$9$ 的放置各 $2$ 种，}
+\step{综上所述，同时满足三个条件的集合 $A$ 的个数为 $2\times2\times2\times2\times2=32$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item “$a\in(2,3)$” 是 “$a\in(2,4)$” 的\mbox{（\quad）}条件.
+
+\keepwithprev
+A. 充分非必要\qquad\qquad B. 必要非充分
+
+C. 充要\qquad\qquad\qquad\quad D. 既不充分也不必要
+
+\ifanswer
+\solbegin
+\step{因为 $a\in(2,3)$，能得到 $a\in(2,4)$，但 $a\in(2,4)$，不能得到 $a\in(2,3)$，}
+\step{所以 “$a\in(2,3)$” 是 “$a\in(2,4)$” 的充分非必要条件. 故选 $A$.}
+\solend
+\fi
+
+\item 下列结论正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $a>b$，$c>d$，则 $a-c>b-d$\qquad\qquad B. 若 $a>b$，$c>d$，则 $a-d>b-c$
+
+C. 若 $a>b$，$c>d$，则 $ac>bd$\qquad\qquad\quad D. 若 $a>b$，$c>d$，则 $\dfrac ad>\dfrac bc$
+
+\ifanswer
+\solbegin
+\step{对于 $A$ 选项，$c>d\Rightarrow-d>-c$，又 $a>b\Rightarrow a-d>b-c$，故 $A$ 错误；}
+\step{对于 $B$，由 $c>d\Rightarrow-d>-c$，又 $a>b\Rightarrow a-d>b-c$，故 $B$ 正确；}
+\step{对于 $C$，特例法：$0>-1$，$-2>-3$，显然不能推出 $0>3$，故 $C$ 错误；}
+\step{对于 $D$，可取特例：$2>1$，$-2>-3$，不能推出 $\dfrac{2}{-3}>\dfrac{1}{-2}$，故 $D$ 错误；}
+\step{故选 $B$.}
+\solend
+\fi
+
+\item 下列代数式中，最小值是 $2$ 的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac ba+\dfrac ab$\qquad\qquad B. $x^2+2+\dfrac{1}{x^2+2}$
+
+C. $\sqrt{a^2+1}+\dfrac{1}{\sqrt{a^2+1}}$\qquad\qquad D. $\sin\alpha+\dfrac{1}{\sin\alpha}$（$\alpha$ 是锐角）
+
+\ifanswer
+\solbegin
+\step{对于 $A$，当 $a$、$b$ 异号时，$\dfrac ba+\dfrac ab\leqslant-2$，且没有最小值，选项 $A$ 错误；}
+\step{对于 $B$，因为 $x^2+2\geqslant2$，所以 $x^2+2+\dfrac{1}{x^2+2}\geqslant2+\dfrac12=\dfrac52$，}
+\step{当且仅当 $x=0$ 时取等号，选项 $B$ 错误；}
+\step{对于 $C$，因为 $\sqrt{a^2+1}\geqslant1$，所以 $\sqrt{a^2+1}+\dfrac{1}{\sqrt{a^2+1}}\geqslant2\sqrt{\sqrt{a^2+1}\cdot\dfrac{1}{\sqrt{a^2+1}}}=2$，}
+\step{当且仅当 $\sqrt{a^2+1}=\dfrac{1}{\sqrt{a^2+1}}$，即 $a=0$ 时取等号，}
+\step{所以 $\sqrt{a^2+1}+\dfrac{1}{\sqrt{a^2+1}}$ 的最小值是 $2$，选项 $C$ 正确；}
+\step{对于 $D$，因为 $\alpha$ 为锐角，所以 $\sin\alpha\in(0,1)$，所以 $\sin\alpha+\dfrac{1}{\sin\alpha}>2$，}
+\step{选项 $D$ 错误.}
+\step{故选 $C$.}
+\solend
+\fi
+
+\item 关于 $x$ 的一元二次方程 $x^2+2mx+2n=0$ 有两个整数根且乘积为正，关于 $y$ 的一元二次方程 $y^2+2ny+2m=0$ 同样也有两个整数根且乘积为正. 给出三个结论：①这两个方程的根都是负根；② $(m-1)^2+(n-1)^2\geqslant2$；③ $-1\leqslant2m-2n\leqslant1$. 其中正确结论的个数是\mbox{（\quad）}
+
+\keepwithprev
+A. $3$\qquad\qquad B. $2$\qquad\qquad C. $1$\qquad\qquad D. $0$
+
+\ifanswer
+\solbegin
+\step{设方程 $x^2+2mx+2n=0$ 的两根为 $x_1$,$x_2$，方程 $y^2+2ny+2m=0$ 的两根为 $y_1$,$y_2$.}
+\step{①关于 $x$ 的一元二次方程 $x^2+2mx+2n=0$ 有两个整数根且乘积为正，关于 $y$ 的一}
+\step{元二次方程 $y^2+2ny+2m=0$ 同样也有两个整数根且乘积为正，}
+\step{所以 $x_1x_2=2n>0$，$y_1y_2=2m>0$，因为 $x_1+x_2=-2m$，$y_1+y_2=-2n$，}
+\step{所以这两个方程的根都是负根，①正确；}
+\step{②关于 $x$ 的一元二次方程 $x^2+2mx+2n=0$ 有两个整数根且乘积为正，关于 $y$ 的一}
+\step{元二次方程 $y^2+2ny+2m=0$ 同样也有两个整数根且乘积为正，}
+\step{所以 $4m^2-8n\geqslant0$，$4n^2-8m\geqslant0$，所以 $m^2-2n\geqslant0$，$n^2-2m\geqslant0$，}
+\step{所以 $(m-1)^2+(n-1)^2=m^2-2n+1+n^2-2m+1\geqslant2$，②正确；}
+\step{③因为 $y_1y_2=2m$，$y_1+y_2=-2n$，}
+\step{所以 $2m-2n=y_1y_2+y_1+y_2=(y_1+1)(y_2+1)-1$，}
+\step{因为 $y_1$,$y_2$ 均为负整数，所以 $(y_1+1)(y_2+1)\geqslant0$，所以 $2m-2n\geqslant-1$.}
+\step{因为 $x_1x_2=2n$，$x_1+x_2=-2m$，所以 $2n-2m=x_1x_2+x_1+x_2=(x_1+1)(x_2+1)-1$，}
+\step{因为 $x_1$,$x_2$ 均为负整数，所以 $(x_1+1)(x_2+1)\geqslant0$，}
+\step{所以 $2n-2m\geqslant-1$，即 $2m-2n\leqslant1$，所以 $-1\leqslant2m-2n\leqslant1$，③成立.}
+\step{综上所述，成立的结论有①②③. 故选 $A$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 求下列不等式的解集
+
+(1) $\dfrac{2x-3}{x+2}\geqslant1$;
+
+(2) $\lvert x-1\rvert\leqslant4$.
+
+\ifanswer
+\solbegin
+\step{(1) $\dfrac{2x-3}{x+2}\geqslant1$，即 $\dfrac{2x-3}{x+2}-1=\dfrac{2x-3-(x+2)}{x+2}=\dfrac{x-5}{x+2}\geqslant0$，}
+\step{得 $(x-5)(x+2)\geqslant0$ 且 $x+2\neq0$，解得 $x\geqslant5$ 或 $x<-2$，}
+\step{故不等式的解集为 $\{x\mid x\geqslant5$ 或 $x<-2\}$；}
+\step{(2) $\lvert x-1\rvert\leqslant4$，得 $-4\leqslant x-1\leqslant4$，解得 $-3\leqslant x\leqslant5$，}
+\step{故不等式的解集为 $\{x\mid -3\leqslant x\leqslant5\}$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x^2-4ax+3a^2<0\}$，集合 $B=\{x\mid (x-3)(2-x)\geqslant0\}$.
+
+(1) 当 $a=1$ 时，求 $A\cup B$；
+
+(2) 设 $a>0$，若 “$x\in A$” 是 “$x\in B$” 的必要不充分条件，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 由 $x^2-4ax+3a^2<0$ 得 $(x-3a)(x-a)<0$，}
+\step{当 $a=1$ 时，$(x-3)(x-1)<0$，解得 $1<x<3$，故 $A=\{x\mid 1<x<3\}$，}
+\step{由 $(x-3)(2-x)\geqslant0$ 得 $(x-3)(x-2)\leqslant0$，解得 $2\leqslant x\leqslant3$，}
+\step{故 $B=\{x\mid 2\leqslant x\leqslant3\}$，}
+\step{所以 $A\cup B=\{x\mid 1<x\leqslant3\}$.}
+\step{(2) 当 $a>0$ 时，$a<3a$，故由 $x^2-4ax+3a^2<0$ 解得 $a<x<3a$，}
+\step{故 $A=\{x\mid a<x<3a\}$，}
+\step{因为 “$x\in A$” 是 “$x\in B$” 的必要不充分条件，所以 $B\subset A$，}
+\step{由数轴法得 $\begin{cases}a<2\\3a>3\end{cases}$，解得 $1<a<2$，即 $a\in(1,2)$.}
+\solend
+\fi
+
+\item 命题甲：集合 $M=\{x\mid kx^2-2kx+1=0\}$ 为空集；命题乙：关于 $x$ 的不等式 $x^2+(k-1)x+4>0$ 的解集为 $\R$，若命题甲、乙中有且只有一个是真命题，求实数 $k$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{命题甲：集合 $M=\{x\mid kx^2-2kx+1=0\}$ 为空集，}
+\step{即方程 $kx^2-2kx+1=0$ 没有实数解，}
+\step{当 $k=0$ 时，方程变为 $1=0$，故无解，符合题意，}
+\step{当 $k\neq0$ 时，$\triangle=4k^2-4k<0$，即 $0<k<1$，}
+\step{综上命题甲为真，则 $0\leqslant k<1$，}
+\step{命题乙：关于 $x$ 的不等式 $x^2+(k-1)x+4>0$ 的解集为 $\R$，}
+\step{则 $\triangle=(k-1)^2-16<0$，解得 $-3<k<5$，}
+\step{所以命题乙为真，则 $-3<k<5$，}
+\step{因为命题甲、乙中有且只有一个是真命题，}
+\step{所以当甲真乙假时，此时 $k\in\varnothing$，}
+\step{当甲假乙真时，即 $k\in(-3,0)\cup[1,5)$，}
+\step{综上所述，$k$ 的取值范围为 $(-3,0)\cup[1,5)$.}
+\solend
+\fi
+
+\item 设 $P$ 表示 $\dfrac{4}{x+1}>1$ 的解集；$Q$ 表示不等式 $\lvert x-1\rvert+\lvert x-2a\rvert>1$ 对任意 $x\in\R$ 恒成立的 $a$ 的集合，求 $P\cap Q$.
+
+\ifanswer
+\solbegin
+\step{不等式 $\dfrac{4}{x+1}>1$ 等价于 $\dfrac{4-(x+1)}{x+1}>0$，即 $\dfrac{x-3}{x+1}<0$，即 $(x+1)(x-3)<0$，}
+\step{即 $-1<x<3$，}
+\step{又不等式 $\lvert x-1\rvert+\lvert x-2a\rvert>1$ 对任意 $x\in\R$ 恒成立，}
+\step{由绝对值三角不等式得 $\lvert x-1\rvert+\lvert x-2a\rvert\geqslant\lvert 2a-1\rvert$，则 $\lvert 2a-1\rvert>1$，}
+\step{则 $a<0$ 或 $a>1$，则 $P\cap Q=(-1,0)\cup(1,3)$.}
+\solend
+\fi
+
+\item 某化妆品生产企业为了占有更多的市场份额，拟在 2010 年世博会期间进行一系列促销活动，经过市场调查和测算，化妆品的年销量 $x$ 万件与年促销费 $t$ 万元之间满足 $3-x$ 与 $t+1$ 成反比例，如果不搞促销活动，化妆品的年销量只能是 1 万件，已知 2010 年生产化妆品的设备折旧、维修等固定费用为 3 万元，每生产 1 万件化妆品需要再投入 32 万元的生产费用，若将每件化妆品的售价定为：其生产成本的 $150\%$ 与平均每件促销费的一半之和，则当年生产的化妆品正好能销完.
+
+(1) 将 2010 年利润 $y$（万元）表示为促销费 $t$（万元）的函数;
+
+(2) 该企业 2010 年的促销费投入多少万元时，企业的年利润最大?
+
+（注：利润 $=$ 销售收入 $-$ 生产成本 $-$ 促销费，生产成本 $=$ 固定费用 $+$ 生产费用）
+
+\ifanswer
+\solbegin
+\step{(1) 由题意 $3-x=\dfrac{k}{t+1}$，且当 $t=0$ 时，$x=1$，所以 $k=2$，即 $x=\dfrac{3t+1}{t+1}$.}
+\step{当年销量为 $x$ 万件时，成本为 $3+32x$（万元）.}
+\step{化妆品的售价为 $\dfrac{3+32x}{x}\times150\%+\dfrac12\times\dfrac tx$（万元/万件），}
+\step{所以年利润 $y=\left(\dfrac{3+32x}{x}\times150\%+\dfrac12\times\dfrac tx\right)x-(3+32x+t)$（万元），}
+\step{把 $x=\dfrac{3t+1}{t+1}$ 代入整理得到 $y=\dfrac{-t^2+98t+35}{2(t+1)}$，其中 $t\geqslant0$.}
+\step{(2) 去分母整理得 $t^2+2(y-49)t+2y-35=0$.}
+\step{该关于 $t$ 的方程在 $[0,+\infty)$ 上有解.}
+\step{当 $2y-35\leqslant0$，即 $y\leqslant17.5$ 时，必有一解.}
+\step{当 $2y-35>0$ 时，该关于 $t$ 的方程必须有两正根，}
+\step{所以 $\begin{cases}4(y-49)^2-4(2y-35)\geqslant0\\-2(y-49)>0\\2y-35>0\end{cases}$，解得 $17.5<y\leqslant42$.}
+\step{综上，年利润最大为 42 万元，此时促销费 $t=7$（万元），}
+\step{所以当促销费定在 7 万元时，企业的年利润最大.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
