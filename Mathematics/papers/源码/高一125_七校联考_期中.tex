@@ -1,0 +1,354 @@
+% 高一125_七校联考_期中.tex
+%   —— 高一上数学“2026-2027 年七校联考高一上期中”（试卷版/答案版）
+% 试卷版：xelatex 高一125_七校联考_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一125_七校联考_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一125_七校联考_期中.tex}"
+%
+% 原始材料：微信公众号“魔都数学加油站”文章，作者破晓，2026-11-10 19:50 发布；
+% 连载“27学年高一125”，原文标题“27学年高一125——2026-2027年上海市七校联考高一上期中”；
+% 原文链接：https://mp.weixin.qq.com/s/Ol1MdI9QZoFu_RhJQpNBFA。
+% 正文为 9 张 PNG 页（01—05、07 为 4762×6735，06、08、09 为 2560×3620），
+% 题目下印有【解析】或【答案】，为讲评版。题目、解析均据原图转录；
+% 卷面粉红色水印“魔都数学加油站”及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作“2026-2027 年七校联考高一上期中”（公众号标题中的“上海市”
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，
+% 本卷为期中复习卷、跨三章，按题目内容标为“集合与常用逻辑用语、不等式、函数”
+% （与 106 同为期中复习卷，口径相同）。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，填空题编号为 3—12、选择题为 13—16、解答题为 17—21，本稿保留原题号；
+%   ② 原卷每题下直接印【解析】／【答案】，本稿按全稿惯例置于答案版；第 3、4、6 题只印
+%      【答案】，另提 \ans{}；第 13、14 题答案印在题干括号内（A、D）、无独立答案段，
+%      按 高一37／52／53／55／63／64 成例括号留空、另提 \ans{}；第 15、16 题答案在解析
+%      末句“故选 …”，括号内留空、不另提 \ans{}；
+%   ③ 原卷未印副标题，本稿按“知识模块”口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      选项段前按惯例加 \keepwithprev；解答题不留作答区（原卷为讲评版，与 109—124 同）；
+%   ⑤ 原卷数集排斜体 $R$、$N$、$Z$，按全稿惯例改 \R、\N、\Z；绝对值排 \lvert…\rvert，
+%      集合描述竖线排 \mid；补集记号照原卷上划线排 \overline{D}。
+%
+% 子集符号：第 8 题题干 $\{a\}\subseteq M\subset\{a,b,c\}$ 前者印有下划线、后者单线，
+%   照录 \subseteq 与 \subset；第 15 题解析 $A\subseteq B$ 印有下划线，照录 \subseteq。
+%
+% 判别式字形：第 20 题 (3) 解析 $\triangle=b^2+4a(3a+2b)\geqslant0$ 原卷排 $\triangle$
+%   （等边、扁），照录 \triangle（与 高一26 同一题排 $\Delta$ 不同，逐处照本卷字形）。
+%
+% 原卷存疑照录：
+%   第 8 题解析作“$M=\{a\}\cup\{b,c\}$ 的真子集，共有 3 个”，与通常表述不同，照录；
+%   第 19 题题干“令经过 1 分钟后”却给出指数 $\left(\dfrac12\right)^{\frac th}$（$t$ 为
+%     时间变量），且解析由 10 分钟数据解得 $h=10$、再设经过 $t$ 分钟，题干与公式不一致，照录；
+%   第 19 题 (2) 题干材料成本印 $\left(10x+\dfrac{x^2}{20}\right)$ 万元，解析中成本式却作
+%     $10x+\dfrac{x^2}{20}+20$（多常数 20），且 $y=\dfrac tx$ 分子印作 $t$（前文的分钟数），
+%     三处互不一致，均照录、未统一；
+%   第 21 题 (1) 解析末句“故 $\{1,2,4\}$ 不是为‘自返集合’”（“不是为”疑为“不是”之误），照录；
+%   第 21 题 (2) 解析的“(符合题意)”“(不符合题意)”用半角括号，照录；
+%   第 21 题 (3) “若满足条件的‘自返集合’，只有两个元素”句式照录。
+%
+% 行数核对：逐题数 \step 条数，合计 94 条（Q3：0；Q4：0；Q5：1；Q6：0；Q7：2；
+% Q8：1；Q9：4；Q10：1；Q11：4；Q12：6；Q13：0；Q14：0；Q15：6；Q16：12；
+% Q17：6；Q18：8；Q19：10；Q20：15；Q21：18），与原卷印刷行逐题相等
+% （cases 块作一个印刷行计）。第 3、4、6、13、14 题只印【答案】或括号内答案，提 \ans{}，
+% 不计入 \step 账；第 15、16 题答案在解析末句，括号内留空、不另提 \ans{}。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年七校联考高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 不等式 $\dfrac1x>1$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\ans{$(0,1)$}
+\fi
+
+\item “$x>1$ 或 $y>1$” 的否定形式为\blankline[4.4em].
+
+\ifanswer
+\ans{$x\leqslant1$ 且 $y\leqslant1$}
+\fi
+
+\item 若 $a<b<0$，则 $ab$\blankline[4.4em]$b^2$（填“$>$”或“$<$”）.
+
+\ifanswer
+\solbegin
+\step{因为 $a<b<0$，所以 $a-b<0$，所以 $ab-b^2=b(a-b)>0$，即 $ab>b^2$.}
+\solend
+\fi
+
+\item 将 $\sqrt{a^2\sqrt a}$（其中 $a>0$）化为有理数指数幂的形式为\blankline[4.4em].
+
+\ifanswer
+\ans{$a^{\frac54}$}
+\fi
+
+\item 已知方程 $x^2+x-4=0$ 的两个根为 $x_1$、$x_2$，则 $x_1^2x_2+x_1x_2^2=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为方程 $x^2+x-4=0$ 的两个根为 $x_1$、$x_2$，所以 $x_1+x_2=-1$，$x_1x_2=-4$，}
+\step{得 $x_1^2x_2+x_1x_2^2=x_1x_2(x_1+x_2)=-4\times(-1)=4$.}
+\solend
+\fi
+
+\item 满足 $\{a\}\subseteq M\subset\{a,b,c\}$ 的集合 $M$ 的个数为\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{$M=\{a\}\cup\{b,c\}$ 的真子集，共有 3 个.}
+\solend
+\fi
+
+\item 若直角三角形斜边长等于 10，则直角三角形面积的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设直角三角形的直角边为 $a$、$b$，面积为 $S$，}
+\step{因为直角三角形斜边长等于 10，所以 $a^2+b^2=100$，}
+\step{则 $S=\dfrac12ab\leqslant\dfrac14(a^2+b^2)=25$，当且仅当 $a=b$ 时取等号，}
+\step{故这个直角三角形的面积最大值为 25.}
+\solend
+\fi
+
+\item 若 $\lg2=a$，$\lg3=b$，则 $\log_9 16=$\blankline[4.4em]（用 $a$、$b$ 的代数式表示）.
+
+\ifanswer
+\solbegin
+\step{$\log_9 16=\dfrac{\lg16}{\lg9}=\dfrac{4\lg2}{2\lg3}=\dfrac{2a}{b}$.}
+\solend
+\fi
+
+\item 设关于 $x$ 的方程 $\lvert x-2\rvert+\lvert 2x-3\rvert=\lvert ax+b\rvert$（$a,b\in\R$）的解集为 $M$，关于 $x$ 的不等式 $(x-2)(2x-3)\geqslant0$ 的解集为 $N$，若集合 $M=N$，则 $a\cdot b=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $(x-2)(2x-3)\geqslant0$ 的解集为 $N=\{x\mid x\leqslant\dfrac32$ 或 $x\geqslant2\}$，}
+\step{所以 $\begin{cases}x-2<0\\2x-3<0\end{cases}$ 或 $\begin{cases}x-2>0\\2x-3>0\end{cases}$，所以 $\lvert ax+b\rvert=5-3x$ 或 $\lvert ax+b\rvert=3x-5$，}
+\step{故 $\lvert ax+b\rvert=\lvert 3x-5\rvert$，所以 $ab=3\times(-5)=-15$ 或 $ab=(-3)\times5=-15$，}
+\step{故 $ab=-15$.}
+\solend
+\fi
+
+\item 对于任意两个正实数 $a$、$b$，定义 $a\otimes b=\lambda\cdot\dfrac ab$，其中常数 $\lambda\in\left(\dfrac{\sqrt2}{2},1\right)$. 若 $u\geqslant v>0$，且 $u\otimes v$ 与 $v\otimes u$ 都是集合 $\left\{x\mid x=\dfrac n2,n\in\Z\right\}$ 的元素，则 $u\otimes v=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $u\otimes v$ 与 $v\otimes u$ 都是集合 $\left\{x\mid x=\dfrac n2,n\in\Z\right\}$ 的元素，}
+\step{不妨设 $\lambda\times\dfrac uv=\dfrac12 n_1$，$\lambda\times\dfrac vu=\dfrac12 n_2$，$n_1$、$n_2\in\Z$，}
+\step{因为 $u\geqslant v>0$，所以 $0<\dfrac vu\leqslant1$，因为 $\lambda\in\left(\dfrac{\sqrt2}{2},1\right)$，所以 $\dfrac12 n_2=\lambda\cdot\dfrac vu\in(0,1)$，}
+\step{因为 $n_2\in\Z$，所以 $n_2=1$，即 $\dfrac12=\dfrac{\lambda v}u$，所以 $\lambda=\dfrac u{2v}\in\left(\dfrac{\sqrt2}{2},1\right)$，}
+\step{所以 $\dfrac uv\in(\sqrt2,2)$，$\dfrac{u^2}{v^2}\in(2,4)$，则 $\lambda\cdot\dfrac uv=\dfrac{u^2}{v^2}\times\dfrac12=\dfrac12 n_1\in(1,2)$，}
+\step{因为 $n_1\in\Z$，所以 $n_1=3$，$\dfrac12 n_1=\dfrac32$，故 $u\otimes v=\dfrac32$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 若 $a\in\R$，则 “$a=1$” 是 “$\lvert a\rvert=1$” 的\mbox{（\quad）}条件.
+
+\keepwithprev
+A. 充分非必要\qquad\qquad B. 必要非充分
+
+C. 充要\qquad\qquad\qquad\quad D. 非充分非必要
+
+\ifanswer
+\ans{$A$}
+\fi
+
+\item 用反证法证明命题 “$a,b\in\N$，若 $ab$ 可以被 5 整除，那么 $a$、$b$ 中至少有一个能被 5 整除” 时，假设的内容应该是\mbox{（\quad）}
+
+\keepwithprev
+A. $a$、$b$ 中至多有两个能被 5 整除\qquad\qquad B. $a$、$b$ 都能被 5 整除
+
+C. $a$、$b$ 不都能被 5 整除\qquad\qquad\qquad D. $a$、$b$ 都不能被 5 整除
+
+\ifanswer
+\ans{$D$}
+\fi
+
+\item 已知集合 $A=\{x\mid a-1\leqslant x\leqslant2a+3\}$，$B=\{x\mid x^2-2x-8\leqslant0\}$，若 $A\cap B=A$，则实数 $a$ 的取值范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $(-\infty,-4]\cup\left[-1,\dfrac12\right]$\qquad\qquad B. $(-\infty,-4)\cup\left[-1,\dfrac12\right]$
+
+C. $\left[-1,\dfrac12\right]$\qquad\qquad\qquad\qquad\qquad D. $\left[-4,\dfrac12\right]$
+
+\ifanswer
+\solbegin
+\step{由不等式 $x^2-2x-8\leqslant0$，得 $(x-4)(x+2)\leqslant0$，解得 $-2\leqslant x\leqslant4$，}
+\step{故 $B=\{x\mid -2\leqslant x\leqslant4\}$，}
+\step{因为 $A\cap B=A$，所以 $A\subseteq B$，}
+\step{若 $A=\varnothing$，则 $a-1>2a+3$，解得 $a<-4$，}
+\step{若 $A\neq\varnothing$，则 $\begin{cases}a-1\leqslant2a+3\\a-1\geqslant-2\\2a+3\leqslant4\end{cases}$，解得 $-1\leqslant a\leqslant\dfrac12$，}
+\step{综上，实数 $a$ 的取值范围是 $(-\infty,-4)\cup\left[-1,\dfrac12\right]$. 故选 $B$.}
+\solend
+\fi
+
+\item 以下四个命题中，正确的有\mbox{（\quad）}个.
+
+①存在 $0<a<1$，以及 $x>y>0$，使得 $\log_a(xy)=\log_a(x)+\log_a(y)$；
+
+②存在 $0<a<1$，以及 $x>y>0$，使得 $\log_a(xy)=\log_a(x)\log_a(y)$；
+
+③存在 $0<a<1$，以及 $x>y>0$，使得 $\log_a(x+y)=\log_a(x)+\log_a(y)$；
+
+④存在 $0<a<1$，以及 $x>y>0$，使得 $\log_a(x^y)=\log_a(y^x)$.
+
+\keepwithprev
+A. $1$\qquad\qquad B. $2$\qquad\qquad C. $3$\qquad\qquad D. $4$
+
+\ifanswer
+\solbegin
+\step{对于①，由对数的运算性质得①正确；}
+\step{对于②，假设存在 $0<a<1$，以及 $x>y>0$，使得 $\log_a(xy)=\log_a x\cdot\log_a y$，}
+\step{即 $\log_a x+\log_a y=\log_a x\cdot\log_a y$，}
+\step{令 $m=\log_a x$，$n=\log_a y$，则 $m+n=mn$，整理得 $(m-1)(n-1)=1$，}
+\step{因为 $0<a<1$，$x>y>0$，所以 $m=\log_a x<\log_a y=n<0$，}
+\step{那么 $m-1<-1$，$n-1<-1$，则 $(m-1)(n-1)>1$，与 $(m-1)(n-1)=1$ 矛盾，}
+\step{所以命题②错误；}
+\step{对于③，若存在 $0<a<1$，以及 $x>y>0$，使得 $\log_a(x+y)=\log_a x+\log_a y$，}
+\step{则 $\log_a(x+y)=\log_a x+\log_a y=\log_a(xy)$，即 $xy=x+y$，}
+\step{因为 $x>y>0$，所以当 $x=3$，$y=\dfrac32$ 时，满足 $xy=x+y$，故命题③正确；}
+\step{对于④，令 $a=\dfrac12$，$x=4$，$y=2$，此时 $\log_a(x^y)=\log_a(y^x)$，所以命题④正确.}
+\step{故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知集合 $A=\{x\mid 2x-1<5\}$，$B=\{x\mid x^2-5x+6>0\}$，$C=\left\{x\mid\dfrac{x-1}{x+2}\leqslant0\right\}$，$D=\{x\mid\lvert 2x-3\rvert\geqslant5\}$.
+
+(1) 求 $A\cap B$；
+
+(2) 求 $(A\cup C)\cap\overline{D}$.
+
+\ifanswer
+\solbegin
+\step{(1) $A=\{x\mid 2x-1<5\}=\{x\mid x<3\}$，$B=\{x\mid x^2-5x+6>0\}=\{x\mid x<2$ 或 $x>3\}$，}
+\step{所以 $A\cap B=\{x\mid x<2\}$；}
+\step{(2) 因为 $C=\left\{x\mid\dfrac{x-1}{x+2}\leqslant0\right\}=\{x\mid -2<x\leqslant1\}$，}
+\step{$D=\{x\mid\lvert 2x-3\rvert\geqslant5\}=\{x\mid x\leqslant-1$ 或 $x\geqslant4\}$，}
+\step{所以 $A\cup C=\{x\mid x<3\}$，$\overline{D}=\{x\mid -1<x<4\}$，}
+\step{所以 $(A\cup C)\cap\overline{D}=\{x\mid -1<x<3\}$.}
+\solend
+\fi
+
+\item 已知 $k\in\R$，关于 $x$ 的不等式 $(k^2-4k-5)x^2+(k+1)x+1>0$ 的解集为 $M$.
+
+(1) 若 $k=1$，求集合 $M$；
+
+(2) 若 $M=\R$，求实数 $k$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 当 $k=1$ 时，$-8x^2+2x+1>0$，$M=\left(-\dfrac14,\dfrac12\right)$；}
+\step{(2) $k^2-4k-5=0$ 即 $k=5$ 或 $k=-1$，}
+\step{当 $k=-1$ 时，不等式化为 $1>0$，}
+\step{所以 $k=-1$ 时，解集为 $\R$，}
+\step{当 $k=5$ 时，不等式化为 $6x+1>0$，对任意实数 $x$ 不等式不恒成立，}
+\step{当 $k^2-4k-5\neq0$ 时，$\begin{cases}k^2-4k-5>0\\(k+1)^2-4(k^2-4k-5)<0\end{cases}$，}
+\step{解得 $k\in(-\infty,-1)\cup(7,+\infty)$，}
+\step{综上，$k$ 的取值范围是 $(-\infty,-1]\cup(7,+\infty)$.}
+\solend
+\fi
+
+\item 慢慢暑期，某制冷杯成了畅销商品. 该制冷杯遵循牛顿冷却定律，即如果某液体的初始温度为 $T_0$（单位：$^\circ\mathrm{C}$），令经过 1 分钟后，温度 $T$ 满足 $T-T_a=\left(\dfrac12\right)^{\frac th}(T_0-T_a)$，其中 $T_a$ 为室温，$h$ 为参数. 为观察制冷杯的降温效果，小侯把一杯 $75^\circ\mathrm{C}$ 的茶水放在 $25^\circ\mathrm{C}$ 的房间，10 分钟后茶水降温至 $50^\circ\mathrm{C}$.
+
+(1) 若欲将这杯茶水继续降温至 $40^\circ\mathrm{C}$，大约还需要多少分钟？（精确到个位）
+
+(2) 材料成本：$\left(10x+\dfrac{x^2}{20}\right)$ 万元，其中 $x$（万套）为每月产品的产量. 则当每月产量为多少时，平均每万套的成本最低？最低为多少？
+
+\ifanswer
+\solbegin
+\step{(1) 由题意得 $50-25=\left(\dfrac12\right)^{\frac{10}h}\times(75-25)$，解得 $h=10$，}
+\step{设经过 $t$ 分钟，这杯茶水由 $50^\circ\mathrm{C}$ 降温至 $40^\circ\mathrm{C}$，}
+\step{则 $40-25=\left(\dfrac12\right)^{\frac t{10}}\times(50-25)$，}
+\step{解得 $t=10(\log_2 5-\log_2 3)=10\times\dfrac{\lg5-\lg3}{\lg2}=10\times\dfrac{1-(\lg2+\lg3)}{\lg2}\approx7.333$，}
+\step{故欲将这杯茶水继续降温至 $40^\circ\mathrm{C}$，大约还需要 8 分钟.}
+\step{(2) 设平均每一万套所需的成本费用为 $y$ 万元，}
+\step{则有 $y=\dfrac tx=\dfrac{10x+\dfrac{x^2}{20}+20}{x}=10+\dfrac x{20}+\dfrac{20}x\geqslant10+2\sqrt{\dfrac x{20}\cdot\dfrac{20}x}=12$，}
+\step{当且仅当 $\dfrac x{20}=\dfrac{20}x$，即 $x=20$ 时取等号，}
+\step{所以该企业每月产量 20 万套时，一万套的成本最低，}
+\step{一万套的最低成本为 12 万元.}
+\solend
+\fi
+
+\item 已知一元二次方程 $ax^2+bx+c=0$（$a$、$b$、$c\in\R$，$a\neq0$）的两个实根为 $x_1$、$x_2$.
+
+(1) 若 $a=1$，$b=-2$，$c>0$，求 $\lvert x_1\rvert+\lvert x_2\rvert$ 的值；
+
+(2) 若 $b+c=0$，$ab<0$，用反证法证明 $x_1$、$x_2$ 中至少有一个大于等于 2；
+
+(3) 若 $3a+2b+c=0$，$y=\dfrac ba$，求实数 $y$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 当 $a=1$，$b=-2$，$c>0$ 时，$ax^2+bx+c=0$ 化为 $x^2-2x+c=0$，}
+\step{则两个实根 $x_1$、$x_2$ 由韦达定理得 $\begin{cases}x_1+x_2=2\\x_1x_2=c>0\end{cases}$，}
+\step{则 $\lvert x_1\rvert+\lvert x_2\rvert=x_1+x_2=2$；}
+\step{(2) 假设 $x_1$、$x_2$ 都小于 2，因为 $b+c=0$，$ab<0$，}
+\step{所以 $c=-b$，且 $a$ 与 $b$ 异号，$ax^2+bx+c=0$ 的两个实根 $x_1$、$x_2$，}
+\step{由韦达定理得 $\begin{cases}x_1+x_2=-\dfrac ba>0\\x_1\cdot x_2=\dfrac ca=-\dfrac ba>0\end{cases}$，则 $x_1$ 与 $x_2$ 同正，}
+\step{且此时 $x_1+x_2=x_1\cdot x_2$，则 $\dfrac1{x_1}+\dfrac1{x_2}=1$，}
+\step{因为 $x_1$、$x_2$ 都小于 2，所以 $\dfrac1{x_1}+\dfrac1{x_2}>\dfrac12+\dfrac12=1$，这与 $\dfrac1{x_1}+\dfrac1{x_2}=1$ 矛盾，}
+\step{故假设不成立，所以 $x_1$、$x_2$ 中至少有一个大于等于 2；}
+\step{(3) 因为 $3a+2b+c=0$，所以 $c=-(3a+2b)$，}
+\step{则 $ax^2+bx+c=0$ 可化为 $ax^2+bx-(3a+2b)=0$，}
+\step{因为一元二次方程 $ax^2+bx+c=0$（$a$、$b$、$c\in\R$，$a\neq0$）有两个实根，}
+\step{所以 $\triangle=b^2+4a(3a+2b)\geqslant0$，且 $a\neq0$，即 $(b+2a)(b+6a)\geqslant0$，}
+\step{则 $\left(\dfrac ba+2\right)\left(\dfrac ba+6\right)\geqslant0$，解得 $-\dfrac ba\leqslant2$ 或 $-\dfrac ba\geqslant6$，又 $y=\dfrac ba$，}
+\step{所以实数 $y$ 的取值范围为 $(-\infty,-6]\cup[-2,+\infty)$.}
+\solend
+\fi
+
+\item 若有限个正整数组成的集合 $A$ 中至少有两个元素，且对于任意的 $x,y\in A(x>y)$，都有 $\dfrac{y^2}{x-y}\in A$，则称 $A$ 为“自返集合”.
+
+(1) 判断 $\{1,2,4\}$ 是否为“自返集合”，说明理由；
+
+(2) 若双元素集 $M$ 为“自返集合”，且 $2\in M$，求所有满足条件的集合 $M$；
+
+(3) 求所有满足条件的“自返集合”.
+
+\ifanswer
+\solbegin
+\step{(1) 假设 $x=4,y=1$，则 $\dfrac{y^2}{x-y}=\dfrac13\notin A$，故 $\{1,2,4\}$ 不是为“自返集合”.}
+\step{(2) 假设 $x=2$，则另一个元素为 $y$，因为 $\dfrac{y^2}{x-y}\in A$，}
+\step{若 $\dfrac{y^2}{2-y}=2$，解得 $y=-1\pm\sqrt5$ 不符合题意；}
+\step{若 $\dfrac{y^2}{2-y}=y$，解得 $y=1$(符合题意)或 $y=0$(不符合题意)；}
+\step{所以此时 $M=\{1,2\}$；}
+\step{假设 $y=2$，则另一个元素为 $x$，因为 $\dfrac{y^2}{x-y}\in A$，}
+\step{若 $\dfrac{2^2}{x-2}=2$，解得 $x=4$ 符合题意；}
+\step{若 $\dfrac{2^2}{x-2}=x$，解得 $x=1\pm\sqrt5$ 不符合题意；}
+\step{所以此时 $M=\{2,4\}$；}
+\step{(3) 若满足条件的“自返集合”，只有两个元素，仿照 (2) 讨论，}
+\step{得满足“自返集合”的有 $\{k,2k\}(k\in\N^*)$，}
+\step{当“自返集合”有两个以上的元素时，设最小的元素为 $b$，最大元素为 $a$，}
+\step{第二大的元素为 $n$，所以有 $\dfrac{b^2}{a-b}$，$\dfrac{n^2}{a-n}$ 是“自返集合”中的元素，}
+\step{所以 $\dfrac{b^2}{a-b}\geqslant b\Rightarrow a\leqslant2b$，若 $\dfrac{n^2}{a-n}\leqslant n\Rightarrow a\geqslant2n$，与已知矛盾，}
+\step{故 $\dfrac{n^2}{a-n}\leqslant a$；}
+\step{解得 $n=\dfrac{\sqrt5-1}{2}a$，显然 $a$ 与 $n$ 不可能同时为整数，故该假设不成立，}
+\step{所以“自返集合”不可能有两个以上的元素；}
+\step{故所有满足的“自返集合”为 $\{k,2k\}(k\in\N^*)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
