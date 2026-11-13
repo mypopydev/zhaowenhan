@@ -1,0 +1,353 @@
+% 高一128_虹口中学_期中.tex
+%   —— 高一上数学"2026-2027 年虹口中学高一上期中"（试卷版/答案版）
+% 试卷版：xelatex 高一128_虹口中学_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一128_虹口中学_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一128_虹口中学_期中.tex}"
+%
+% 原始材料：微信公众号"魔都数学加油站"文章，作者破晓，2026-11-12 18:56 发布；
+% 连载"27学年高一128"，原文标题"27学年高一128——2026-2027年上海市虹口中学高一上期中"；
+% 原文链接：https://mp.weixin.qq.com/s/jy74Jp3oO8w6rRm3XA1IPA。
+% 正文为 8 张 PNG 页（01、03、08 为 2560x3620，02、04、05、06、07 为 4762x6735），
+% 题目下印有【解析】或【答案】，为讲评版。题目、解析均据原图转录；
+% 卷面粉红色水印"魔都数学加油站"及公众号页脚未录入。全卷无插图。
+%
+% 卷首标题：原卷印作"2026-2027 年虹口中学高一上期中"（公众号标题中的"上海市"
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，
+% 本卷为期中卷、跨集合与常用逻辑用语／不等式／函数三章，按题目内容标为
+% "集合与常用逻辑用语、不等式、函数"（与 125／126／127 同期中卷口径相同）：
+% 集合与逻辑见 Q3、Q9、Q13，不等式见 Q4、Q7、Q9、Q15、Q16、Q20，
+% 函数（幂函数、对数、二次函数、基本不等式）见 Q5、Q6、Q8、Q10、Q12、Q14、
+% Q17、Q18、Q19。
+%
+% 题号体例（与标准 19 题卷不同）：本卷共 18 题——
+%   一、填空题 3—10（8 题）、二、选择题 11—15（5 题）、三、解答题 16—20（5 题）。
+%   三节分别 \setcounter{enumi}{2}／{10}／{15}。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，本稿保留原题号（见上"题号体例"）；
+%   ② 原卷每题下直接印【解析】／【答案】，本稿按全稿惯例置于答案版；第 5 题只印
+%      【答案】，另提 \ans{}；第 11 题把答案 D 印在题干括号内、无独立答案段，
+%      按 高一37／52／53／55／63／64 成例括号留空、另提 \ans{$D$}；
+%      第 12—15 题答案在解析末句"故选 …"，括号内留空、不另提 \ans{}；
+%   ③ 原卷未印副标题，本稿按"知识模块"口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      选项段前按惯例加 \keepwithprev；解答题不留作答区（原卷为讲评版，与 109—127 同）；
+%   ⑤ 原卷数集排斜体 $R$／$Z$，按全稿惯例改 \R／\Z；绝对值排 \lvert…\rvert，
+%      集合描述竖线排 \mid；不等号按全稿惯例排 \leqslant／\geqslant；
+%   ⑥ 子题标号 (1)(2)(3) 原卷用半角括号，照录（与 125 同、与 126 全角不同）；
+%   ⑦ 原卷第 10、12、18、20 题解析及第 17 题题目跨页续印，本稿按题合并连续排版。
+%
+% 判别式字形：第 8、9 题的 $\triangle$、$\triangle'$ 原卷排 $\triangle$（等边、扁），
+%   照录 \triangle（与 高一126 同题排 $\Delta$ 不同，逐处照本卷字形）。
+%
+% 子集符号：第 3 题解析 $(-1,3)\subset(3m-7,4m)$ 印单线、无下划线，照录 \subset；
+%   全卷未出现带下划线的 \subseteq。
+%
+% 原卷存疑照录：
+%   第 5 题反证法题干作"a,b,c 至少有一个为正数"、【答案】作"a,b,c 全为非正数"，照录；
+%   第 9 题解析"故 $0\leq k<1$"（$k=0$ 时方程 $1=0$ 无解，合并得 $0\leq k<1$）、
+%     "当甲命题为真，乙命题为假时，无解"、"当甲命题为假，乙命题为真时，
+%     $k\in(-3,0)\cup[1,5)$"等表述均照录；
+%   第 10 题解析"所以一解为直角边 $x_1$ 和另一解为斜边 $x_2$，其中一条直角边为
+%     $-\dfrac a2(a<0)$"、圈数字 ①②③④⑤ 作方程编号，照录；
+%   第 15 题解析"$2\sqrt{ab}\leq a+b=cd\leq\dfrac{(c+d)^2}{4}$"链式不等式，照录；
+%   第 17 题 (2) 解析"所以 $\dfrac m4=\log_3 2,\dfrac1n=\log_3 5$"用半角逗号、连写两式，照录；
+%   第 18 题题干"每瓶消毒液生产成本增加 $\dfrac{10000}{x}$ 元"与 (1) 解析"每件成本为
+%     $\left(3+\dfrac{10000}{x}\right)$ 元"措辞不同（"瓶"／"件"），照录；
+%   第 19 题题干 $f(x)=\lvert 2x-a\rvert+a$、$g(x)=\lvert 2x-1\rvert$，解析 (2)
+%     "当 $a\geq3$ 时，原不等式成立"及"平方得 $(a-1)^2\geq(3-a)^2$，解得 $2\leq a<3$"，照录；
+%   第 20 题题干 $(kx-k^2-4)(x-4)>0$，(3) "$A\cap Z=B$"、"$k=-2$ 时，$B$ 中元素最少，
+%     此时 $A=\{x\mid -4<x<4\}$，所以 $B=\{-3,-2,-1,0,1,2,3\}$"，照录。
+%
+% 行数复核：逐题数 \step 条数，合计 88 条（Q3：2；Q4：1；Q5：0；Q6：2；Q7：3；
+% Q8：5；Q9：7；Q10：8；Q11：0；Q12：11；Q13：3；Q14：5；Q15：2；Q16：4；
+% Q17：6；Q18：8；Q19：9；Q20：12），与原卷印刷行逐题相等
+% （cases 块作一个印刷行计）。第 5、11 题只印【答案】或括号内答案，提 \ans{}，
+% 不计入 \step 账；第 12—15 题答案在解析末句，括号内留空、不另提 \ans{}。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年虹口中学高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知 $\alpha:3m-7<x<4m$，$\beta:-1<x<3$，若 $\alpha$ 是 $\beta$ 的必要非充分条件，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若 $\alpha$ 是 $\beta$ 的必要非充分条件，则 $(-1,3)\subset(3m-7,4m)$，}
+\step{故 $\begin{cases}3m-7\leqslant-1\\4m\geqslant3\end{cases}$，解得 $\dfrac34\leqslant m\leqslant2$，即 $m$ 的取值范围是 $\left[\dfrac34,2\right]$.}
+\solend
+\fi
+
+\item 不等式 $\dfrac{1-x}{3x+1}>0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\dfrac{1-x}{3x+1}>0\Leftrightarrow(3x+1)(x-1)<0$，故解集为 $\left(-\dfrac13,1\right)$.}
+\solend
+\fi
+
+\item 利用反证法求证：$a,b,c$ 至少有一个为正数，应该假设\blankline[4.4em].
+
+\ifanswer
+\ans{$a,b,c$ 全为非正数（即 $a\leqslant0,b\leqslant0,c\leqslant0$）}
+\fi
+
+\item 幂函数 $y=(m^2-m-1)x^{m^2-2m-3}$ 在区间 $(0,+\infty)$ 上为严格减函数，则 $m$ 的值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为幂函数 $y=(m^2-m-1)x^{m^2-2m-3}$ 在区间 $(0,+\infty)$ 上是严格减函数，}
+\step{所以 $\begin{cases}m^2-m-1=1\\m^2-2m-3<0\end{cases}$，所以 $m=2$.}
+\solend
+\fi
+
+\item 若 $x>1$，则 $4x+\dfrac{1}{x-1}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $x>1$，所以 $4(x-1)>0$，$\dfrac{1}{x-1}>0$，}
+\step{所以 $4x+\dfrac{1}{x-1}=4(x-1)+\dfrac{1}{x-1}+4\geqslant2\sqrt{4(x-1)\cdot\dfrac{1}{x-1}}+4=8$，}
+\step{当且仅当 $4(x-1)=\dfrac{1}{x-1}$ 即 $x=\dfrac32$ 时，取等号，所以 $4x+\dfrac{1}{x-1}$ 的最小值是 8.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的方程 $x^2-(k+1)x+\dfrac14k^2+1=0$ 有两个实数根 $x_1$、$x_2$，若 $x_1^2+x_2^2=6x_1x_2-15$，则实数 $k$ 的值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{关于 $x$ 的方程 $x^2-(k+1)x+\dfrac14k^2+1=0$ 有两个实数根 $x_1$、$x_2$，}
+\step{则 $x_1+x_2=k+1$，$x_1x_2=\dfrac14k^2+1$，}
+\step{同时 $\triangle=(k+1)^2-4\times\left(\dfrac14k^2+1\right)=2k-3\geqslant0$，解得 $k\geqslant\dfrac32$，}
+\step{若 $x_1^2+x_2^2=6x_1x_2-15$，变形得 $(x_1+x_2)^2=8x_1x_2-15$，即 $k^2-2k-8=0$，}
+\step{解得 $k_1=4$ 或 $k_2=-2$，又 $k\geqslant\dfrac32$，则 $k=4$.}
+\solend
+\fi
+
+\item 命题甲：集合 $M=\{x\mid kx^2-2kx+1=0\}$ 为空集；命题乙：关于 $x$ 的不等式 $x^2+(k-1)x+4>0$ 的解集为 $\R$. 若命题甲、乙中有且只有一个是真命题，则实数 $k$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为集合 $M=\{x\mid kx^2-2kx+1=0\}$ 为空集，}
+\step{当 $k\neq0$ 时，$\triangle=(-2k)^2-4k<0$，解得 $0<k<1$，}
+\step{当 $k=0$ 时，方程变为 $1=0$，无解，满足题意，故 $0\leqslant k<1$；}
+\step{又关于 $x$ 的不等式 $x^2+(k-1)x+4>0$ 的解集为 $\R$，}
+\step{所以 $\triangle'=(k-1)^2-4\times4<0$，解得 $-3<k<5$，}
+\step{当甲命题为真，乙命题为假时，无解，}
+\step{当甲命题为假，乙命题为真时，$k\in(-3,0)\cup[1,5)$.}
+\solend
+\fi
+
+\item 若集合 $A=\{x\mid\lvert x^2+ax+b\rvert=2,a,b\in\R\}$ 中有且只有 3 个元素，且这 3 个元素恰为直角三角形的三边，则 $4a+b=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由二次函数的图象得 $y=\lvert x^2+ax+b\rvert$ 与 $y=2$ 恰有三个交点，}
+\step{即方程 $x^2+ax+b=2$，有两个解 $x_1$、$x_2$，不妨设 $x_1<x_2$，}
+\step{因为 3 个元素恰为直角三角形的三边，}
+\step{所以一解为直角边 $x_1$ 和另一解为斜边 $x_2$，其中一条直角边为 $-\dfrac a2(a<0)$，}
+\step{且 $x_1+x_2=-a$①，$x_1\cdot x_2=b-2$②，由勾股定理得 $x_1^2+\dfrac{a^2}{4}=x_2^2$③，}
+\step{由①②③得 $\left(\dfrac{a^2}{4}-a\right)^2=a^2-4(b-2)$④，}
+\step{当 $x=-\dfrac a2$ 时，函数 $y=x^2+ax+b$ 的函数值为 $-2$，即 $b=\dfrac{a^2}{4}-2$⑤，}
+\step{由④⑤解得 $a=-16$，$b=62$，所以 $4a+b=4\times(-16)+62=-2$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+\item 如果 $a>b$，那么下列不等式中一定成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac1a<\dfrac1b$\qquad\qquad\qquad\quad B. $a^2>b^2$
+
+C. $a\lvert c\rvert>b\lvert c\rvert$\qquad\qquad\qquad D. $\dfrac{a}{c^2+1}>\dfrac{b}{c^2+1}$
+
+\ifanswer
+\ans{$D$}
+\fi
+
+\item 已知幂函数① $y=x^{-\frac12}$，② $y=x^{-\frac23}$，③ $y=x^3$，④ $y=x^{\frac45}$，其中图象关于 $y$ 轴对称的函数个数为\mbox{（\quad）}
+
+\keepwithprev
+A. $1$\qquad\qquad B. $2$\qquad\qquad C. $3$\qquad\qquad D. $4$
+
+\ifanswer
+\solbegin
+\step{① $y=x^{-\frac12}=\dfrac1{\sqrt x}$，定义域为 $(0,+\infty)$，不关于原点对称，所以不是偶函数，}
+\step{即图象不关于 $y$ 轴对称，}
+\step{② $y=x^{-\frac23}=\dfrac1{\sqrt[3]{x^2}}$，定义域为 $(-\infty,0)\cup(0,+\infty)$，关于原点对称，}
+\step{又 $f(-x)=\dfrac1{\sqrt[3]{(-x)^2}}=\dfrac1{\sqrt[3]{x^2}}=f(x)$，所以函数 $y=x^{-\frac23}$ 为偶函数，}
+\step{图象关于 $y$ 轴对称，}
+\step{③ $y=x^3$，定义域为 $\R$，关于原点对称，又 $f(-x)=(-x)^3=-x^3=-f(x)$，}
+\step{所以函数 $y=x^3$ 为奇函数，图象关于原点对称，}
+\step{④ $y=x^{\frac45}=\sqrt[5]{x^4}$，定义域为 $\R$，关于原点对称，}
+\step{又 $f(-x)=\sqrt[5]{(-x)^4}=\sqrt[5]{x^4}=f(x)$，所以函数 $y=x^{\frac45}$ 为偶函数，}
+\step{图象关于 $y$ 轴对称，}
+\step{故选 $B$.}
+\solend
+\fi
+
+\item $p:\begin{cases}a>2\\b=3\end{cases}$ 是 $q:\begin{cases}a+b>5\\ab>6\end{cases}$ 成立的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad\qquad B. 必要非充分条件
+
+C. 充要条件\qquad\qquad\qquad\quad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{当 $\begin{cases}a>2\\b=3\end{cases}$，则 $\begin{cases}a+b>5\\ab>6\end{cases}$ 成立，即充分性成立，}
+\step{当 $a=1$，$b=7$ 时，满足 $\begin{cases}a+b>5\\ab>6\end{cases}$，但 $\begin{cases}a>2\\b=3\end{cases}$ 不成立，即必要性不成立，}
+\step{则 $p$ 是 $q$ 成立的充分不必要条件，故选 $A$.}
+\solend
+\fi
+
+\item 若 $\log_3[\log_4(\log_5 a)]=\log_4[\log_3(\log_5 b)]=0$，则 $\dfrac ab$ 的值是\mbox{（\quad）}
+
+\keepwithprev
+A. $4$\qquad\qquad B. $5$\qquad\qquad C. $3$\qquad\qquad D. $\dfrac15$
+
+\ifanswer
+\solbegin
+\step{因为 $\log_3[\log_4(\log_5 a)]=0$，所以 $\log_4(\log_5 a)=1$，所以 $\log_5 a=4$，}
+\step{所以 $a=625$；}
+\step{因为 $\log_4[\log_3(\log_5 b)]=0$，所以 $\log_3(\log_5 b)=1$，所以 $\log_5 b=3$，}
+\step{所以 $b=125$；}
+\step{所以 $\dfrac ab=5$，故选 $B$.}
+\solend
+\fi
+
+\item 如果正数 $a$、$b$、$c$、$d$ 满足 $a+b=cd=4$，那么\mbox{（\quad）}
+
+\keepwithprev
+A. $ab\leqslant c+d$ 且等号成立时 $a$、$b$、$c$、$d$ 的取值唯一
+
+B. $ab\geqslant c+d$ 且等号成立时 $a$、$b$、$c$、$d$ 的取值唯一
+
+C. $ab\leqslant c+d$ 且等号成立时 $a$、$b$、$c$、$d$ 的取值不唯一
+
+D. $ab\geqslant c+d$ 且等号成立时 $a$、$b$、$c$、$d$ 的取值不唯一
+
+\ifanswer
+\solbegin
+\step{$2\sqrt{ab}\leqslant a+b=cd\leqslant\dfrac{(c+d)^2}{4}$，当且仅当 $a=b=c=d=2$ 时取等号，}
+\step{化简即为 $ab\leqslant c+d$ 且等号成立时 $a$、$b$、$c$、$d$ 的取值唯一. 故选 $A$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{15}
+
+\item 解不等式：$\begin{cases}\dfrac{2x-1}{x+1}\leqslant1\\x^2-x\geqslant0\end{cases}$.
+
+\ifanswer
+\solbegin
+% 2026-11-13 回原图核对订正：原卷 Q16 解析首行在 \dfrac{2x-1-x-1}{x+1} 后直接接 \leqslant0，
+% 本稿初转曾顺手补入一步化简 "=\dfrac{x-2}{x+1}"，已照原卷删去（该分式全行只出现一次）。
+\step{由 $\dfrac{2x-1}{x+1}\leqslant1$ 得 $\dfrac{2x-1}{x+1}-1=\dfrac{2x-1-x-1}{x+1}\leqslant0\Rightarrow\dfrac{x-2}{x+1}\leqslant0$}
+\step{$\Rightarrow\begin{cases}(x-2)(x+1)\leqslant0\\x+1\neq0\end{cases}$，解得 $-1<x\leqslant2$，}
+\step{由 $x^2-x\geqslant0$ 得 $x(x-1)\geqslant0$，解得 $x\geqslant1$ 或 $x\leqslant0$，}
+\step{故原不等式组的解集为 $(-1,0]\cup[1,2]$.}
+\solend
+\fi
+
+\item 已知 $m=2\log_3 x$，$n=\log_5(x-1)$.
+
+(1) 当 $3^m-5^n=3$，求 $x$ 的值；
+
+(2) 当 $x=4$ 时，用 $m$、$n$ 表示 $\log_{15}20$.
+
+\ifanswer
+\solbegin
+\step{(1) 因为 $m=2\log_3 x$，$n=\log_5(x-1)$，所以 $x>0$ 且 $x-1>0$，解得 $x>1$，}
+\step{则 $3^m-5^n=3^{2\log_3 x}-5^{\log_5(x-1)}=x^2-x+1=3$，解得 $x=-1$（舍），$x=2$，}
+\step{所以 $x$ 的值为 2；}
+\step{(2) 当 $x=4$ 时，$m=2\log_3 4=4\log_3 2$，$n=\log_5(4-1)=\log_5 3$，}
+\step{所以 $\dfrac m4=\log_3 2,\dfrac1n=\log_3 5$，}
+\step{则 $\log_{15}20=\dfrac{\log_3 20}{\log_3 15}=\dfrac{2\log_3 2+\log_3 5}{1+\log_3 5}=\dfrac{\dfrac m2+\dfrac1n}{1+\dfrac1n}=\dfrac{mn+2}{2n+2}$.}
+\solend
+\fi
+
+\item 某生产消毒液企业每天能生产 30000 瓶消毒液，每瓶消毒液的生产成本为 3 元钱，由于受到疫情影响，该生产消毒液企业迅速组织各方面力量扩大生产规模，每天增加生产 $x$（$x>0$）瓶消毒液，同时每瓶消毒液生产成本增加 $\dfrac{10000}{x}$ 元，设该企业扩大生产规模后每天投入的总生产成本为 $p$ 元.
+
+(1) 请用 $x$ 的表达式表示出 $p$；
+
+(2) 试问该生产消毒液企业每天增加生产多少瓶消毒液，才能使得每天投入的生产成本最小？并求出此时 $p$ 的值.
+
+\ifanswer
+\solbegin
+\step{(1) 扩大生产规模后，每件成本为 $\left(3+\dfrac{10000}{x}\right)$ 元，}
+\step{每天的产量为 $(x+30000)$ 瓶，}
+\step{所以 $p=\left(3+\dfrac{10000}{x}\right)(x+30000),x>0$；}
+\step{(2) $p=\left(3+\dfrac{10000}{x}\right)(x+30000)=3x+\dfrac{300000000}{x}+100000$}
+\step{$\geqslant2\sqrt{3x\cdot\dfrac{300000000}{x}}+100000=160000$，}
+\step{当且仅当 $3x=\dfrac{300000000}{x}$，即 $x=10000$ 时取等号，}
+\step{所以每天增加生产 10000 瓶消毒液，每天投入的生产成本最小，}
+\step{此时 $p=160000$.}
+\solend
+\fi
+
+\item 已知函数 $f(x)=\lvert 2x-a\rvert+a$.
+
+(1) 当 $a=2$ 时，求不等式 $f(x)\leqslant6$ 的解集；
+
+(2) 设函数 $g(x)=\lvert 2x-1\rvert$，且 $f(x)+g(x)\geqslant3$ 恒成立，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 当 $a=2$ 时，$f(x)=\lvert 2x-2\rvert+2$，}
+\step{因为 $f(x)\leqslant6$，所以 $\lvert 2x-2\rvert+2\leqslant6$，$\lvert 2x-2\rvert\leqslant4$，$\lvert x-1\rvert\leqslant2$，}
+\step{解得 $-1\leqslant x\leqslant3$，所以不等式 $f(x)\leqslant6$ 的解集为 $[-1,3]$；}
+\step{(2) 不等式 $f(x)+g(x)\geqslant3$ 可化为 $\lvert 2x-1\rvert+\lvert 2x-a\rvert\geqslant3-a$，}
+\step{即 $\left\lvert x-\dfrac12\right\rvert+\left\lvert x-\dfrac a2\right\rvert\geqslant\dfrac{3-a}{2}$，}
+\step{当 $a\geqslant3$ 时，原不等式成立；}
+\step{当 $a<3$ 时，由绝对值三角不等式得 $\left\lvert x-\dfrac12\right\rvert+\left\lvert x-\dfrac a2\right\rvert\geqslant\dfrac12\lvert a-1\rvert$，}
+\step{所以 $\dfrac12\lvert a-1\rvert\geqslant\dfrac{3-a}{2}>0$，平方得 $(a-1)^2\geqslant(3-a)^2$，解得 $2\leqslant a<3$，}
+\step{所以实数 $a$ 的取值范围是 $[2,+\infty)$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的不等式 $(kx-k^2-4)(x-4)>0$，其中 $k\in\R$.
+
+(1) 设此不等式的解集为 $A$，若 $5\in A$，求实数 $k$ 的取值范围；
+
+(2) 当 $k$ 变化时，试求不等式的解集 $A$；
+
+(3) 对于不等式解集 $A$，满足 $A\cap\Z=B$. 试探究集合 $B$ 能否为有限集，若能，求出使得集合 $B$ 中元素最少的 $k$ 的所有取值，并用列举法表示此时的集合 $B$，若不能，说明理由；
+
+\ifanswer
+\solbegin
+\step{(1) 由 $5\in A$，有 $(5k-k^2-4)(5-4)>0$，即 $k^2-5k+4<0$.}
+\step{因为 $(k-1)(k-4)<0$，所以 $1<k<4$.}
+\step{(2) 当 $k=0$ 时，解集为 $\{x\mid x<4\}$，}
+\step{当 $k>0$ 时，$\dfrac{k^2+4}{k}=k+\dfrac4k\geqslant4$，解集为 $\{x\mid x<4$ 或 $x>\dfrac{k^2+4}{k}\}$；}
+\step{当 $k<0$ 时，解集为 $\{x\mid \dfrac{k^2+4}{k}<x<4\}$，}
+\step{综上，当 $k=0$ 时，$A=\{x\mid x<4\}$，}
+\step{当 $k>0$ 时，$A=\{x\mid x<4$ 或 $x>\dfrac{k^2+4}{k}\}$；}
+\step{当 $k<0$ 时，$A=\{x\mid \dfrac{k^2+4}{k}<x<4\}$，}
+\step{(3) 由 (2) 得当 $k\geqslant0$ 时，$B$ 为无限集，当 $k<0$ 时，$B$ 为有限集，}
+\step{此时，$\dfrac{k^2+4}{k}=k+\dfrac4k\leqslant-4$，当且仅当 $k=-2$ 时取等号，}
+\step{所以 $k=-2$ 时，$B$ 中元素最少，此时 $A=\{x\mid -4<x<4\}$，}
+\step{所以 $B=\{-3,-2,-1,0,1,2,3\}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
