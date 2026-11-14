@@ -1,0 +1,422 @@
+% 高一133_复旦中学_期中.tex
+%   —— 高一上数学"2026-2027 年复旦中学高一上期中"（试卷版/答案版）
+% 试卷版：xelatex 高一133_复旦中学_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一133_复旦中学_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一133_复旦中学_期中.tex}"
+%
+% ① 原始材料：微信公众号"魔都数学加油站"文章，作者破晓，2026-11-14 19:00 发布；
+% 连载"27学年高一133"，原文标题"27学年高一133——2026-2027年上海市复旦中学高一上期中"；
+% 原文链接：https://mp.weixin.qq.com/s/vc4VnyvO1FNUlJ24xrZpcg。
+% 正文为 11 张 PNG 页（01、03、06、11 为 2560x3620；02、04、05、07、08、09、10 为
+% 4762x6735，同一篇各页分辨率不同，逐页按各自分辨率裁图核对），题目下印有【解析】，为讲评版。
+% 题目、解析均据原图转录；卷面粉红色水印"魔都数学加油站"及公众号页脚未录入。
+% 全卷无插图：11 页均为文字与数学式，无示意图、无函数图象、无表格，故不裁图、
+% 无 figures/ 文件、不加 \needvspace 图守卫。
+%
+% 卷首标题：原卷印作"2026-2027 年复旦中学高一上期中"（公众号标题中的"上海市"
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，
+% 本卷为期中卷、跨集合与常用逻辑用语／不等式／函数三章，按题目内容标为
+% "集合与常用逻辑用语、不等式、函数"（与 125／126／128／129／131 同期中卷口径相同）：
+% 集合与逻辑见 Q3、Q11、Q12、Q14、Q18、Q20，不等式见 Q7、Q9、Q10、Q13、Q15、Q16、
+% Q19、Q21，函数（对数运算、基本不等式应用、方程与根式化简）见 Q4、Q5、Q6、Q8、Q17。
+%
+% 题号体例：本卷共 19 题——一、填空题 3—12（10 题）、二、选择题 13—16（4 题）、
+% 三、解答题 17—21（5 题）。三节分别 \setcounter{enumi}{2}／{12}／{16}。
+%
+% ② 与原卷的排版差异：
+%   ① 原文从第 3 题起，本稿保留原题号（见上"题号体例"）；
+%   ② 原卷每题下直接印【解析】，本稿按全稿惯例置于答案版；第 14 题无【解析】、答案"B"
+%      直接印在题干括号内（"下列假设中正确的是（ B ）"），按 高一53／高一108 成例把括号
+%      留空、另提 \ans{$B$}；第 13、15、16 题答案在解析末句"故选 …"，题干括号内留空、
+%      不另提 \ans{}；其余各题印【解析】、无独立答案段；
+%   ③ 原卷未印副标题，本稿按"知识模块"口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      每个选项段前按惯例加 \keepwithprev；解答题不留作答区、不加 \anspace（原卷为
+%      讲评版，与 129／131 同）；
+%   ⑤ 原卷数集排斜体 $R$（Q7、Q8、Q9、Q11、Q18、Q21 等）与粗体 $Z$（Q20 (3)），
+%      按全稿惯例改 \R、\Z；空集记号统一 \varnothing；绝对值排 \lvert…\rvert，
+%      集合描述竖线排 \mid；不等号按全稿惯例排 \leqslant／\geqslant；角度排 90^\circ；
+%   ⑥ 子题标号 (1)(2)(3) 与 (i)(ii) 原卷用半角括号，照录；圈数字 ①② 照录；
+%      原卷第 10 题解析"法一：""法二："两处标签排红色加粗，按 高一108 成例排
+%      \stepm{法一：}／\stepm{法二：}（加粗着色、不引入红色，不动 common.sty）；
+%   ⑦ 数学式内半角逗号照录（如 Q6"用含 $a,b$ 的式子表示"、Q10"$x=-\frac12,y=-1$"、
+%      Q11"$x^2+2(m+1)x+m^2-1=0,m\in\R$"、Q15"$m$、$n>0$ 且 $m\neq n$"、
+%      Q16"$x_1$,$x_2\in A$"、Q21"$y^2+my+n=0(m,n\in\R)$"）；原卷行末全角句点
+%      按全稿惯例从宽排西文句点；
+%   ⑧ 原卷 Q7 解析跨 01—02 页、Q10 题干在 02 页而解析在 03 页、Q12 解析跨 04—05 页、
+%      Q15 解析跨 05—06 页、Q17 题干在 06 页而解析在 07 页、Q18 解析跨 07—08 页、
+%      Q20 题干 (1) 在 08 页而 (2)(3) 在 09 页且解析跨 09—10 页、Q21 解析跨 10—11 页，
+%      本稿按题合并连续排版；末页第 11 页为 Q21 (2) 解析续尾与 (3) 解析，按实际印刷行单列；
+%   ⑨ 题干中的中文弯引号按原卷照录，注释内一律 ASCII 引号。
+%   ⑩ 2026-11-14 回原图二轮核对订正 5 处标点照录：第 6 题题干 $\log_{18}9=a,5^b=18$、第 11 题解析末行句点、第 20 题 (3) 题干 $\},S=$ 及解析「当 $k>1$」「当 $k\leqslant-7$」两行的 $\},P\cap T$ 均依原卷改回半角逗号／西文句点（本稿初转曾顺手改成全角）。
+%
+% 判别式字形：原卷 $\triangle$（等边、扁）与 $\Delta$（等腰、高）两种混用，逐处放大核对——
+%   第 11 题解析第 3 行与第 21 题 (3) 解析的判别式印宽三角 $\triangle$，照录 \triangle；
+%   第 11 题三个 cases 块与第 20 题 (2) cases 块印高三角 $\Delta$，照录 \Delta。
+%   同卷两种字形不一，属原卷自相矛盾，照录不"顺手统一"。
+%
+% 子集符号：第 3 题解析 $\{x\mid x>m\}\subset\{x\mid x>-3\}$ 印单线 $\subset$（无下划线），
+%   照录 \subset；第 11 题题干 $A\subseteq\{0,-4\}$ 印带下划线 $\subseteq$，照录 \subseteq。
+%   两处逐处放大核对，全卷仅此两处子集符号。
+%
+% 原卷存疑照录（均照录未改，正文对应处另有 % 注）：
+%   第 12 题解析"此时有 $C_5^2=4$"，而 $C_5^2=10\neq4$，且与同页相邻两行 $C_4^3=4$、
+%      $C_4^4=1$ 不合（按组合意义此行当为 $C_4^1=4$），照录；
+%   第 11 题题干 $A=\{x\mid x^2+2(m+1)x+m^2-1=0,m\in\R\}$ 把参量 $m\in\R$ 印进集合
+%      描述式内，照录；
+%   第 16 题选项 A"$a$ 取遍任意大于 $1$ 的实数"措辞，照录；
+%   第 19 题 (1) 解析"解得 $1\leqslant r<100$"与紧接一行"则 $r$ 的取值范围是 $[1,100)$"
+%      两处写法不一（不等式与区间），照录；
+%   第 21 题 (2) 解析"假设 $x_1$、$x_2$ 都小于 $2$"为反证法假设，照录。
+%
+% 行数复核：逐题数 \step/\stepm 条数，合计 146 条（Q3：2；Q4：1；Q5：3；Q6：1；Q7：4；
+% Q8：6；Q9：9；Q10：14；Q11：10；Q12：11；Q13：1；Q14：0；Q15：6；Q16：6；Q17：6；
+% Q18：11；Q19：9；Q20：28；Q21：18），与原卷印刷行逐题相等（cases 块作一个印刷行计）。
+% 第 14 题只印括号内答案、提 \ans{}，不计入 \step 账；第 13、15、16 题答案在解析末句，
+% 括号内留空、不另提 \ans{}。第 10 题两条 \stepm 计入 14 条内。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年复旦中学高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 若“$x>-3$”是“$x>m$”的必要非充分条件，则 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若“$x>-3$”是“$x>m$”的必要非充分条件，所以 $\{x\mid x>m\}\subset\{x\mid x>-3\}$，}
+\step{则 $m>-3$，故 $m$ 的取值范围是 $\{m\mid m>-3\}$.}
+\solend
+\fi
+
+\item 使得 $\lg(\lvert x-1\rvert-2)$ 有意义的 $x$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\lvert x-1\rvert-2>0\Leftrightarrow x<-1$ 或 $x>3$，所求范围为 $(-\infty,-1)\cup(3,+\infty)$.}
+\solend
+\fi
+
+\item 对任意实数 $x$，等式 $ax^4+bx^3+cx^2+dx+e=x(x-2)(x^2+3)$ 恒成立，则 $b+c+d=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $ax^4+bx^3+cx^2+dx+e=x(x-2)(x^2+3)=(x^2-2x)(x^2+3)$}
+\step{$=x^4-2x^3+3x^2-6x$，所以 $a=1$，$b=-2$，$c=3$，$d=-6$，$e=0$，}
+\step{所以 $b+c+d=-2+3-6=-5$.}
+\solend
+\fi
+
+\item 已知 $\log_{18}9=a,5^b=18$，则 $\log_{18}15=$\blankline[4.4em]（用含 $a,b$ 的式子表示）.
+
+\ifanswer
+\solbegin
+\step{$\log_{18}15=\log_{18}3+\log_{18}5=\dfrac12\log_{18}9+\dfrac1{\log_5 18}=\dfrac a2+\dfrac1b$.}
+\solend
+\fi
+
+\item 已知对任意实数 $x$，不等式 $mx^2-mx+2\geqslant0$ 都成立，则 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $m=0$ 时，原不等式变为 $2\geqslant0$，该不等式对于任意 $x\in\R$ 恒成立，符合题意；}
+\step{当 $m\neq0$ 时，不等式 $mx^2-mx+2\geqslant0$ 是一元二次不等式，}
+\step{要使其对于任意 $x\in\R$ 恒成立，需满足 $\begin{cases}m>0\\(-m)^2-4\times2m\leqslant0\end{cases}$，解得 $0<m\leqslant8$，}
+\step{综上，实数 $m$ 的取值范围是 $[0,8]$.}
+\solend
+\fi
+
+\item 已知 $m\in\R$，关于 $x$ 的方程 $x^2-6x+(4m+8)=0$ 的两个实数根为 $x_1$、$x_2$，且 $\lvert x_1-x_2\rvert=4$，则 $x_1^2x_2+x_1x_2^2=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由关于 $x$ 的方程 $x^2-6x+(4m+8)=0$ 的两个实数根为 $x_1$、$x_2$，}
+\step{且 $\lvert x_1-x_2\rvert=4$，得 $(-6)^2-4(4m+8)>0$，解得 $m<\dfrac14$，}
+\step{且 $x_1+x_2=6$，$x_1x_2=4m+8$，}
+\step{由 $\lvert x_1-x_2\rvert=4$，得 $(x_1-x_2)^2=16$，则 $(x_1+x_2)^2-4x_1x_2=16$，}
+\step{得 $36-4(4m+8)=16$，解得 $m=-\dfrac34<\dfrac14$，}
+\step{所以 $x_1^2x_2+x_1x_2^2=x_1x_2(x_1+x_2)=6\times(-3+8)=30$.}
+\solend
+\fi
+
+\item 已知 $x\in\R$，则方程 $\lvert 6-x\rvert+\lvert 6x-3\rvert=\lvert 5x+3\rvert$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $x<-\dfrac35$ 时，$6-x>0$，$6x-3<0$，$5x+3<0$，}
+\step{原方程为 $6-x-6x+3=-5x-3$，解得 $x=6$，不满足 $x<-\dfrac35$；}
+\step{当 $-\dfrac35\leqslant x\leqslant\dfrac12$ 时，$5x+3\geqslant0$，$6x-3<0$，$6-x>0$，}
+\step{原方程为 $6-x+3-6x=5x+3$，解得 $x=\dfrac12$；}
+\step{当 $\dfrac12<x\leqslant6$ 时，$5x+3>0$，$6x-3>0$，$6-x\geqslant0$，}
+\step{原方程为 $6-x+6x-3=5x+3$，即 $0=0$，恒成立，所以 $\dfrac12<x\leqslant6$；}
+\step{当 $x>6$ 时，$5x+3\geqslant0$，$6x-3>0$，$6-x<0$，}
+\step{原方程为 $x-6+6x-3=5x+3$，解得 $x=6$，不满足 $x>6$；}
+\step{综上 $\dfrac12\leqslant x\leqslant6$，所以原方程的解集为 $\{x\mid \dfrac12\leqslant x\leqslant6\}$.}
+\solend
+\fi
+
+\item 已知 $x>-1$，$y>-2$，且 $\dfrac1{x+1}+\dfrac2{y+2}=4$，则 $2x+y$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\stepm{法一：}{因为 $x>-1$，$y>-2$，所以 $2x+y=2(x+1)+(y+2)-4$，}
+\step{而 $2(x+1)+(y+2)=\dfrac14[2(x+1)+(y+2)]\left(\dfrac1{x+1}+\dfrac2{y+2}\right)$}
+\step{$=\dfrac14\left[4+\dfrac{4(x+1)}{y+2}+\dfrac{y+2}{x+1}\right]\geqslant\dfrac14\left(4+2\sqrt4\right)=2$，}
+\step{当且仅当 $\dfrac{4(x+1)}{y+2}=\dfrac{y+2}{x+1}$ 时取等号，由 $\begin{cases}\dfrac{4(x+1)}{y+2}=\dfrac{y+2}{x+1}\\\dfrac1{x+1}+\dfrac2{y+2}=4\end{cases}$，解得 $\begin{cases}x=-\dfrac12\\y=-1\end{cases}$，}
+\step{当 $x=-\dfrac12,y=-1$ 时，$2(x+1)+(y+2)$ 取得最小值为 $2$，}
+\step{此时 $2x+y=2(x+1)+(y+2)-4$ 取得最小值为 $-2$，}
+\step{即 $2x+y$ 的取值范围为 $[-2,+\infty)$.}
+\stepm{法二：}{由 $\dfrac1{x+1}+\dfrac2{y+2}=4$ 去分母，得 $2(x+1)+y+2=4(x+1)(y+2)$，}
+\step{整理得 $4xy+3(2x+y)+4=0(*)$，}
+\step{$x>-1$，$y>-2$，$(2x+y)^2=4x^2+y^2+4xy\geqslant8xy$，即 $xy\leqslant\dfrac{(2x+y)^2}8$，}
+\step{当且仅当 $2x=y$ 时取等号，}
+\step{由 $(*)$ 得 $-3(2x+y)-4=4xy\leqslant\dfrac{(2x+y)^2}2$，即 $(2x+y)^2+6(2x+y)+8\geqslant0$，}
+\step{解得 $2x+y\geqslant-2$ 或 $2x+y\leqslant-4$（不合题意舍去），}
+\step{故 $2x+y$ 的取值范围为 $[-2,+\infty)$.}
+\solend
+\fi
+
+\item 设集合 $A=\{x\mid x^2+2(m+1)x+m^2-1=0,m\in\R\}$，且 $A\subseteq\{0,-4\}$，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $A=\varnothing$ 或 $A=\{0\}$ 或 $A=\{-4\}$ 或 $A=\{0,-4\}$，}
+\step{当 $A=\varnothing$ 时，方程 $x^2+2(m+1)x+m^2-1=0$ 无实根，}
+\step{则 $\triangle=[2(m+1)]^2-4\times1\times(m^2-1)=8m+8<0$，解得 $m<-1$，}
+\step{当 $A=\{0\}$ 时，方程 $x^2+2(m+1)x+m^2-1=0$ 有一个实根 $0$，}
+\step{则 $\begin{cases}\Delta=8m+8=0\\m^2-1=0\end{cases}$，解得 $m=-1$，}
+\step{当 $A=\{-4\}$ 时，方程 $x^2+2(m+1)x+m^2-1=0$ 有一个实根 $-4$，}
+\step{则 $\begin{cases}\Delta=8m+8=0\\16-8(m+1)+m^2-1=0\end{cases}$，无解，}
+\step{当 $A=\{0,-4\}$ 时，方程 $x^2+2(m+1)x+m^2-1=0$ 有两个实根 $-4$ 和 $0$，}
+\step{则 $\begin{cases}\Delta=8m+8>0\\16-8(m+1)+m^2-1=0\\m^2-1=0\end{cases}$，解得 $m=1$，}
+\step{综上所述，实数 $m$ 的取值范围是 $\{m\mid m\leqslant-1\text{ 或 }m=1\}$.}
+\solend
+\fi
+
+\item 已知非空集合 $A$、$B$ 满足以下两个条件：(i) $A\cup B=\{1,2,3,4,5,6\}$，$A\cap B=\varnothing$；(ii) $A$ 的元素个数不是 $A$ 中的元素，$B$ 的元素个数不是 $B$ 中的元素，则有序集合对 $(A,B)$ 的个数为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{若集合 $A$ 中只有 $1$ 个元素，则集合 $B$ 中只有 $5$ 个元素，则 $1\notin A$，$5\notin B$，}
+\step{即 $5\in A$，$1\in B$，此时 $(A,B)$ 有 $1$ 个；}
+\step{若集合 $A$ 中只有 $2$ 个元素，则集合 $B$ 中只有 $4$ 个元素，则 $2\notin A$，$4\notin B$，}
+\step{即 $4\in A$，$2\in B$，此时有 $C_5^2=4$；}% 原卷作 $C_5^2=4$，与相邻两行 $C_4^3=4$、$C_4^4=1$ 不合，照录
+\step{若集合 $A$ 中只有 $3$ 个元素，则集合 $B$ 中只有 $3$ 个元素，则 $3\notin A$，$3\notin B$，}
+\step{不满足题意，}
+\step{若集合 $A$ 中只有 $4$ 个元素，则集合 $B$ 中只有 $2$ 个元素，则 $4\notin A$，$2\notin B$，}
+\step{即 $2\in A$，$4\in B$，此时有 $C_4^3=4$；}
+\step{若集合 $A$ 中只有 $5$ 个元素，则集合 $B$ 中只有 $1$ 个元素，则 $5\notin A$，$1\notin B$，}
+\step{即 $1\in A$，$5\in B$，此时有 $C_4^4=1$，}
+\step{故有序集合对 $(A,B)$ 的个数是 $1+4+4+1=10$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 若 $a<b<0$，则下列不等式中不能成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac1a>\dfrac1b$\qquad\qquad B. $a-b>a$\qquad\qquad C. $\lvert a\rvert>\lvert b\rvert$\qquad\qquad D. $a^3>b^3$
+
+\ifanswer
+\solbegin
+\step{$a<b<0\Rightarrow-a>-b>0\Rightarrow a^3<b^3$，故选 $D$.}
+\solend
+\fi
+
+\item 用反证法证明“平面四边形中至少有一个内角不超过 $90^\circ$”，下列假设中正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 假设有两个内角超过 $90^\circ$\qquad B. 假设四个内角均超过 $90^\circ$
+
+C. 假设至多有两个内角超过 $90^\circ$\qquad D. 假设有三个内角超过 $90^\circ$
+
+\ifanswer
+\ans{$B$}
+\fi
+
+\item 小明同学用一架两臂不等长的天平称 $20$ 克药剂，他先将 $10$ 克的砝码放在天平左盘中，取出一些药剂放在天平右盘中使天平平衡；再将 $10$ 克的砝码放在天平右盘中，再取出一些药剂放在天平左盘中使天平平衡；最后将两次称得的药剂装入烧杯. 你认为小明装入烧杯中药剂的剂量\mbox{（\quad）}
+
+\keepwithprev
+A. 小于 $20$ 克\qquad B. 等于 $20$ 克\qquad C. 大于 $20$ 克\qquad D. 不能判断
+
+\ifanswer
+\solbegin
+\step{设天平左臂长为 $m$，右臂长为 $n$，$m$、$n>0$ 且 $m\neq n$，}
+\step{设第一次操作（药剂在右盘）称得的药剂为 $x_2$ 克，}
+\step{第二次操作（药剂在左盘）称得的药剂为 $x_1$ 克，}
+\step{则 $\begin{cases}10m=nx_2\\mx_1=10n\end{cases}$，解得 $x_1=\dfrac{10n}m$，$x_2=\dfrac{10m}n$，}
+\step{$x=x_1+x_2=\dfrac{10n}m+\dfrac{10m}n\geqslant2\sqrt{\dfrac{10n}m\cdot\dfrac{10m}n}=20$，}
+\step{当且仅当 $m=n$ 时，取等号，而 $m\neq n$，所以 $x>20$. 故选 $C$.}
+\solend
+\fi
+
+\item 已知集合 $A=[1,a]\cup[a^3,a^4]$，集合 $B=\{x\mid x=x_1-x_2$，其中 $x_1$,$x_2\in A\}$. 若集合 $B$ 表示的区间为一个闭区间，则 $a$ 的取值范围为\mbox{（\quad）}
+
+\keepwithprev
+A. $a$ 取遍任意大于 $1$ 的实数\qquad B. $a\geqslant2$
+
+C. $a\geqslant\dfrac{1+\sqrt5}2$\qquad D. $a\geqslant1+\sqrt2$
+
+\ifanswer
+\solbegin
+\step{由题意得 $a^3>a>1$，则 $x_1-x_2$ 的最小值为 $1-a^4$，最大值为 $a^4-1$，}
+\step{所以 $B=[1-a^4,a^4-1]$，}
+\step{又因为 $a^4-a^3-(a-1)=a^3(a-1)-(a-1)=(a^3-1)(a-1)>0$，}
+\step{所以 $a^4-a^3>a-1$，又集合 $B$ 表示的区间为一个闭区间，}
+\step{则 $a^3-a\leqslant a^4-a^3$，化简得 $a^2-a-1\geqslant0$，又 $a>1$，解得 $a\geqslant\dfrac{1+\sqrt5}2$.}
+\step{故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item (1) 当 $x<0$ 时，化简：$3\sqrt[5]{x^5}+\sqrt[4]{x^4}+\lvert x\rvert$；
+
+(2) 已知 $2\lg\dfrac{x-y}2=\lg x+\lg y$，求 $\dfrac xy$ 的值.
+
+\ifanswer
+\solbegin
+\step{(1) $x<0$，所以 $\sqrt[5]{x^5}=x$，$\sqrt[4]{x^4}=\lvert x\rvert=-x$，}
+\step{于是 $3\sqrt[5]{x^5}+\sqrt[4]{x^4}+\lvert x\rvert=3x-x-x=x$；}
+\step{(2) 对数有意义要求 $x>0$、$y>0$、$x-y>0$，即 $x>y>0$.}
+\step{$\lg\left[\left(\dfrac{x-y}2\right)^2\right]=\lg(xy)\Rightarrow(x-y)^2=4xy$，}
+\step{两边除以 $y^2$，得 $\left(\dfrac xy\right)^2-6\dfrac xy+1=0\Rightarrow\dfrac xy=3\pm2\sqrt2$，}
+\step{因为 $\dfrac xy>1$，所以 $\dfrac xy=3+2\sqrt2$.}
+\solend
+\fi
+
+\item 设全集 $U=\R$，集合 $A=\{x\mid\lvert x+3\rvert\leqslant4\}$，集合 $B=\{x\mid a-2\leqslant x\leqslant1+2a\}$，其中 $a\in\R$.
+
+(1) 若 $a=\dfrac12$，求 $A\cap B$；
+
+(2) 若 $A\cap B=\varnothing$，求 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 由 $\lvert x+3\rvert\leqslant4$，得 $-4\leqslant x+3\leqslant4$，解得 $-7\leqslant x\leqslant1$，}
+\step{所以 $A=\{x\mid -7\leqslant x\leqslant1\}$，}
+\step{当 $a=\dfrac12$ 时，$a-2=\dfrac12-2=-\dfrac32$，$1+2a=1+2\times\dfrac12=2$，}
+\step{$B=\{x\mid -\dfrac32\leqslant x\leqslant2\}$，$A\cap B=\{x\mid -\dfrac32\leqslant x\leqslant1\}$，即 $\left[-\dfrac32,1\right]$.}
+\step{(2) 若 $A\cap B=\varnothing$，分两种情况讨论，}
+\step{①当 $B\neq\varnothing$ 时，$a-2\leqslant1+2a$，即 $a\geqslant-3$，}
+\step{要满足 $A\cap B=\varnothing$，则 $1+2a<-7$ 或 $a-2>1$，}
+\step{由 $1+2a<-7$，得 $a<-4$，与 $a\geqslant-3$ 无交集，无解，}
+\step{由 $a-2>1$ 得 $a>3$，符合 $a\geqslant-3$，}
+\step{②当 $B=\varnothing$ 时，有 $a-2>1+2a$，解得 $a<-3$，满足 $A\cap B=\varnothing$；}
+\step{综上，$a$ 的取值范围是 $(-\infty,-3)\cup(3,+\infty)$.}
+\solend
+\fi
+
+\item 某文具企业生产笔记本，在某市原有年销售量为 $10$ 万本. 现委托代理商销售，代理商收取销售额的 $r\%$ 作为代理费. 为保证厂家利润不变，每本笔记本售价调整为 $\dfrac{20}{1-r\%}$ 元. 受涨价影响，年销售量减少 $0.1r$ 万本.
+
+(1) 若代理商每年获得的代理费不少于 $2$ 万元，求 $r$ 的取值范围；
+
+(2) 是否存在正数 $r$，使得代理商每年获得的代理费超过厂家委托代理商之后自身实际到手的收入？若存在，求出所有满足条件的 $r$；若不存在，请说明理由.
+
+\ifanswer
+\solbegin
+\step{(1) 由题意得 $\begin{cases}\dfrac{20}{1-r\%}\times(10-0.1r)\times r\%\geqslant2\\10-0.1r>0\end{cases}$，解得 $1\leqslant r<100$，}
+\step{则 $r$ 的取值范围是 $[1,100)$；}
+\step{(2) 由题意，代理商每年获得的代理费为 $\dfrac{20}{1-r\%}\times(10-0.1r)\times r\%=2r$，}
+\step{厂家委托代理商之后自身实际到手的收入}
+\step{为 $\dfrac{20}{1-r\%}\times(10-0.1r)-2r=200-2r$，}
+\step{由 $2r>200-2r$，得 $r>50$，}
+\step{又 $10-0.1r>0$，即 $r<100$，则 $50<r<100$，}
+\step{因此，存在正数 $r$，使得代理商每年获得的代理费超过厂家委托代理商}
+\step{之后自身实际到手的收入，所有满足条件的 $r$ 的取值范围为 $(50,100)$.}
+\solend
+\fi
+
+\item 设集合 $P=\{x\mid\lvert 2x-k\rvert<\lvert x+2k\rvert\}$，集合 $Q=\{x\mid(k-1)x^2+(k-1)x-2\geqslant0\}$.
+
+(1) 若 $k=-1$，求集合 $P$.
+
+(2) 若 $Q=\varnothing$，求 $k$ 的取值范围.
+
+(3) 设集合 $T=\{k\mid Q\neq\varnothing\},S=(P\cap T)\cap\Z$，其中 $\Z$ 是整数集. 是否存在 $k$ 使得集合 $S$ 有且仅有两个子集？若存在，求出 $k$ 的取值范围；若不存在，说明理由.
+
+\ifanswer
+\solbegin
+\step{(1) 当 $k=-1$ 时，集合 $P$ 中的不等式为 $\lvert 2x+1\rvert<\lvert x-2\rvert$，}
+\step{两边同时平方去掉绝对值符号，得到 $(2x+1)^2<(x-2)^2$，}
+\step{展开式子得 $4x^2+4x+1<x^2-4x+4$，移项合并同类项得 $3x^2+8x-3<0$.}
+\step{因式分解得 $(3x-1)(x+3)<0$，解得 $-3<x<\dfrac13$，}
+\step{所以集合 $P=\left\{x\mid -3<x<\dfrac13\right\}$.}
+\step{(2) 若 $Q=\varnothing$，则一元二次不等式 $(k-1)x^2+(k-1)x-2\geqslant0$ 无解.}
+\step{当 $k-1=0$，即 $k=1$ 时，不等式变为 $-2\geqslant0$，显然无解，满足 $Q=\varnothing$.}
+\step{当 $k-1\neq0$ 时，要使不等式无解，}
+\step{则二次函数 $y=(k-1)x^2+(k-1)x-2$ 的图象开口向下，且与 $x$ 轴无交点，}
+\step{即 $\begin{cases}k-1<0\\\Delta=(k-1)^2+8(k-1)<0\end{cases}$，}
+\step{解不等式 $(k-1)^2+8(k-1)<0$，因式分解得 $(k-1)(k+7)<0$，}
+\step{解得 $-7<k<1$.}
+\step{结合 $k-1<0$，即 $k<1$，所以 $-7<k<1$.}
+\step{综上，$k$ 的取值范围是 $(-7,1]$.}
+\step{(3) 因为 $Q\neq\varnothing$，所以 $k$ 的取值范围是 $k\leqslant-7$ 或 $k>1$，}
+\step{即集合 $T=\{k\mid k\leqslant-7\text{ 或 }k>1\}$.}
+\step{解不等式 $\lvert 2x-k\rvert<\lvert x+2k\rvert$，两边同时平方得 $(2x-k)^2<(x+2k)^2$，}
+\step{展开式子得 $4x^2-4kx+k^2<x^2+4kx+4k^2$，}
+\step{移项合并同类项得 $3x^2-8kx-3k^2<0$，因式分解得 $(3x+k)(x-3k)<0$，}
+\step{当 $k>0$ 时，不等式的解集为 $\left\{x\mid -\dfrac k3<x<3k\right\}$；}
+\step{当 $k=0$ 时，不等式变为 $3x^2<0$，无解；}
+\step{当 $k<0$ 时，不等式的解集为 $\left\{x\mid 3k<x<-\dfrac k3\right\}$.}
+\step{因为集合 $S$ 有且仅有两个子集，所以集合 $S$ 中只有一个元素.}
+\step{当 $k>1$ 时，$P=\left\{x\mid -\dfrac k3<x<3k\right\},P\cap T=\{x\mid 1<x<3k\}$，}
+\step{要使 $S$ 中只有一个元素，则 $3k=3$，解得 $k=1$，不满足 $k>1$，舍去.}
+\step{当 $k\leqslant-7$ 时，$P=\left\{x\mid 3k<x<-\dfrac k3\right\},P\cap T=\{x\mid 3k<x\leqslant-7\}$，}
+\step{要使 $S$ 中只有一个元素，则 $3k=-6$，解得 $k=-2$，不满足 $k\leqslant-7$，舍去.}
+\step{因此，不存在这样的 $k$ 值.}
+\solend
+\fi
+
+\item 已知一元二次方程 $ax^2+bx+c=0(a$、$b$、$c\in\R$，$a\neq0)$ 的两个实根为 $x_1$、$x_2$.
+
+(1) 若 $a=b=1$，$c>0$，求 $\lvert x_1\rvert+\lvert x_2\rvert$ 的值；
+
+(2) 若 $b+c=0$，$ab<0$，用反证法证明 $x_1$、$x_2$ 中至少有一个大于等于 $2$；
+
+(3) 若 $3a+2b+c=0$，设 $y_i=x_i-2(i=1,2)$，若 $y_1$、$y_2$ 是方程 $y^2+my+n=0(m,n\in\R)$ 的实根，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 当 $a=b=1$，$c>0$ 时，$x^2+x+c=0$ 的两个实根为 $x_1$、$x_2$，}
+\step{由韦达定理得 $x_1+x_2=-1<0$，$x_1x_2=c>0$，即 $x_1<0$，$x_2<0$，}
+\step{故 $\lvert x_1\rvert+\lvert x_2\rvert=-x_1-x_2=-(x_1+x_2)=1$.}
+\step{(2) 假设 $x_1$、$x_2$ 都小于 $2$，}
+\step{由 $b+c=0$，$ab<0$ 得 $c=-b$，且 $a$ 与 $b$ 异号，}
+\step{由韦达定理得 $x_1+x_2=-\dfrac ba>0$，$x_1x_2=\dfrac ca=-\dfrac ba>0$，}
+\step{则 $x_1$ 与 $x_2$ 同正，此时 $x_1+x_2=x_1x_2$，则 $\dfrac1{x_1}+\dfrac1{x_2}=1$，}
+\step{又 $x_1$、$x_2$ 都小于 $2$，所以 $\dfrac1{x_1}+\dfrac1{x_2}>\dfrac12+\dfrac12=1$，这与 $\dfrac1{x_1}+\dfrac1{x_2}=1$ 矛盾，}
+\step{故假设不成立，从而 $x_1$、$x_2$ 中至少有一个大于等于 $2$.}
+\step{(3) 由 $3a+2b+c=0$ 得 $c=-(3a+2b)$，}
+\step{则方程 $ax^2+bx+c=0$ 等价于 $ax^2+bx-(3a+2b)=0$，}
+\step{由题意得 $\triangle=b^2+4a(3a+2b)\geqslant0$ 且 $a\neq0$，即 $(b+2a)(b+6a)\geqslant0$，}
+\step{故 $\left(\dfrac ba+2\right)\left(\dfrac ba+6\right)\geqslant0$，解得 $-\dfrac ba\leqslant2$ 或 $-\dfrac ba\geqslant6$，}
+\step{又 $x_1+x_2=-\dfrac ba$，所以 $x_1+x_2$ 的取值范围为 $(-\infty,2]\cup[6,+\infty)$，}
+\step{又 $y_1$、$y_2$ 是方程 $y^2+my+n=0(m,n\in\R)$ 的实根，}
+\step{所以 $y_1+y_2=-m=x_1-2+x_2-2=x_1+x_2-4$，即 $4-m=x_1+x_2$，}
+\step{所以 $4-m\leqslant2$ 或 $4-m\geqslant6$，解得 $m\leqslant-2$ 或 $m\geqslant2$，}
+\step{故实数 $m$ 的取值范围为 $(-\infty,-2]\cup[2,+\infty)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
