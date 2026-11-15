@@ -1,0 +1,368 @@
+% 高一135_嘉定二中_期中.tex
+%   —— 高一上数学"2026-2027 年嘉定二中高一上期中"（试卷版/答案版）
+% 试卷版：xelatex 高一135_嘉定二中_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一135_嘉定二中_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一135_嘉定二中_期中.tex}"
+%
+% 原始材料：微信公众号"魔都数学加油站"文章，作者破晓，2026-11-15 18:04 发布；
+% 连载"27学年高一135"，原文标题"27学年高一135——2026-2027年上海市嘉定二中高一上期中"；
+% 原文链接：https://mp.weixin.qq.com/s/28ZuqO8W5q8lWI75F0OSXw。
+% 正文为 8 张 PNG 页（01、05、08 为 2560x3620，02、03、04、06、07 为 4762x6735），
+% 题目下印有【答案】或【解析】，为讲评版。题目、解析均据原图转录；
+% 卷面粉红色水印"魔都数学加油站"及公众号页脚未录入。全卷无插图
+% （8 页均为文字与数学式，无示意图、无函数图象、无表格，故不裁图、不加 \needvspace 图守卫）。
+%
+% 卷首标题：原卷印作"2026-2027 年嘉定二中高一上期中"（公众号标题中的"上海市"
+% 卷面标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，
+% 本卷为期中卷、跨集合与常用逻辑用语／不等式／函数三章，按题目内容标为
+% "集合与常用逻辑用语、不等式、函数"（与 125／126／128／129／131／132／133 同期中卷口径相同）：
+% 集合与逻辑见 Q5、Q11、Q12、Q13、Q18、Q21，不等式见 Q3、Q10、Q15、Q17、Q19、Q20，
+% 函数（幂函数、指数／对数、基本不等式应用）见 Q4、Q6、Q7、Q8、Q9、Q14、Q16、Q19、Q20。
+%
+% 题号体例：本卷共 19 题——一、填空题 3—12（10 题）、二、选择题 13—16（4 题）、
+% 三、解答题 17—21（5 题）。三节分别 \setcounter{enumi}{2}／{12}／{16}。
+%
+% 与原卷的排版差异：
+%   ① 原文从第 3 题起，本稿保留原题号（见上"题号体例"）；
+%   ② 原卷每题下直接印【答案】／【解析】，本稿按全稿惯例置于答案版；第 5 题只印
+%      【答案】（"x≥1 且 y≥1"），另提 \ans{}；第 13—16 题答案在解析末句"故选 …"，
+%      题干括号内留空、不另提 \ans{}；其余各题印【解析】、无独立答案段；
+%   ③ 原卷未印副标题，本稿按"知识模块"口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      选项段前按惯例加 \keepwithprev；解答题不留作答区（原卷为讲评版，与 109—133 同）；
+%   ⑤ 原卷数集排斜体 $R$／$Z$／$N$，按全稿惯例改 \R／\Z／\N；绝对值排 \lvert…\rvert，
+%      集合描述竖线排 \mid；不等号照原卷排 \leq／\geq（本卷用普通不等号，非斜底的 \leqslant／\geqslant）；
+%      全集补集照原卷上划线排 \overline{A}；
+%   ⑥ 子题标号 (1)(2)(3) 原卷用半角括号，照录；圈数字 ①②③ 照录；
+%   ⑦ 原卷 Q8 解析跨 01—02 页、Q11 解析跨 02—03 页、Q14 解析在 04 页页首、
+%      Q16 解析跨 04—05 页、Q19 (2) 题干续于 06 页页首而解析 7 行全在 06 页、Q20 解析跨 06—07 页、
+%      Q21 解析跨 07—08 页，本稿按题合并连续排版；末页第 08 页为 Q21 (3) 解析的续尾，
+%      按实际印刷行单列。
+%
+% 判别式字形：全卷未出现判别式符号（第 19 题 (2) 只写"判别式为 $5>0$"文字，
+%   未印 $\Delta$／$\triangle$ 记号），故无字形可照录。
+%
+% 子集符号：第 11 题解析 $P\subset Q$ 印单线 $\subset$（无下划线），照录 \subset；
+%   第 18 题 (2) 解析 $B\subseteq A$ 带下划线，照录 \subseteq。全卷两处逐处放大核对。
+%
+% 原卷存疑照录：
+%   第 13 题题干作"$a<b<0$"，解析末句却作"故"$0<a<b$"是"$\frac1a>\frac1b$"的
+%     充分不必要条件，故选 $A$"，条件方向与题干不符，照录；
+%   第 15 题解析"若 $4\notin S$，则 $16-a=0$ 或 $\frac{4a-1}{16-a}\geq0$，解得
+%     $a\in\left[\frac14,16\right]$"与结论 $a\in\left[\frac14,\frac13\right)\cup(9,16]$ 照录；
+%   第 16 题解析"若 $B$ 中有三个元素 $0<u<v<w$，则 $\frac vu,\frac wu,\frac uv,\frac uw$
+%     是 $A$ 中四个互异元素"照录；
+%   第 19 题 (1) 解析"$m>0$ 时，$y=m\left(x-\frac12\right)^2+\frac{3m}4+1>0$，
+%     因此 $m\in[0,+\infty)$"由 $m=0$ 与 $m>0$ 两情形合并得来，照录；
+%   第 21 题 (3) 解析"由平衡条件得 $b_1b_2\cdots b_{m-1}=1+\frac{b_1}{b_m}+\frac{b_2}{b_m}+
+%     \cdots+\frac{b_{m-1}}{b_m}<m$"照录；
+%   第 6、10、11、12、16、18、19、20、21 题数学式内半角逗号（如 $1\leq x\leq\frac32$、
+%     $m\in[-2,0]$、$a\in\left(-\infty,\frac13\right)\cup(9,+\infty)$、$0\leq x\leq300$、
+%     $n\geq2,n\in\N$、$0<a_1<a_2$）照录。
+%
+% 2026-11-15 回原图核对订正 7 处：第 16 题解析第三个分式 $\frac uv$（初转误作 $\frac wv$）、
+%   第 19 题 (2)、第 21 题 (3) 各一处箭头由 $\Leftrightarrow$ 改回单向 $\Rightarrow$、
+%   第 9 题题干「图象」（初转误作「图像」，第 4 题原卷仍作「图像」照旧）、
+%   第 7 题题干 $\lg 2=a,\lg 3=b$. 两处标点（顿号→半角逗号、全角逗号→西文句点）。
+% 行数复核：逐题数 \step 条数，合计 84 条（Q3：1；Q4：1；Q5：0；Q6：2；Q7：1；
+% Q8：2；Q9：11；Q10：4；Q11：5；Q12：4；Q13：4；Q14：2；Q15：3；Q16：8；
+% Q17：2；Q18：3；Q19：7；Q20：9；Q21：15），与原卷印刷行逐题相等
+% （cases 块作一个印刷行计）。第 5 题只印【答案】，提 \ans{}，不计入 \step 账；
+% 四道选择题答案均在解析末句，括号内留空、不另提 \ans{}。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年嘉定二中高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 不等式 $\dfrac1{x-1}>2$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\dfrac1{x-1}>2\Leftrightarrow\dfrac{3-2x}{x-1}>0\Leftrightarrow1<x<\dfrac32$，故解集为 $\left(1,\dfrac32\right)$.}
+\solend
+\fi
+
+\item 若幂函数 $y=x^a$ 的图像经过点 $(4,2)$，则 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$4^a=2=4^{\frac12}$，得 $a=\dfrac12$.}
+\solend
+\fi
+
+\item 若要用反证法证明“若 $x+y<2$，则 $x<1$ 或 $y<1$”，应先假设\blankline[4.4em].
+
+\ifanswer
+\ans{$x\geq1$ 且 $y\geq1$}
+\fi
+
+\item 已知 $x\in\R$，则方程 $\lvert 2x-3\rvert+\lvert 1-x\rvert=\lvert x-2\rvert$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\lvert x-2\rvert=\lvert(2x-3)+(1-x)\rvert$，原方程成立当且仅当 $(2x-3)(1-x)\geq0$，}
+\step{解得 $1\leq x\leq\dfrac32$，故解集为 $\left[1,\dfrac32\right]$.}
+\solend
+\fi
+
+\item 已知 $\lg 2=a,\lg 3=b$. 用 $a$ 和 $b$ 表示 $\log_{12}5=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\log_{12}5=\dfrac{\lg5}{\lg12}=\dfrac{1-\lg2}{2\lg2+\lg3}=\dfrac{1-a}{2a+b}$.}
+\solend
+\fi
+
+\item 正数 $a$、$b$ 满足 $a+b=2$，则 $\dfrac2a+\dfrac1{2b}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\dfrac2a+\dfrac1{2b}=\dfrac{a+b}2\left(\dfrac2a+\dfrac1{2b}\right)=\dfrac54+\dfrac ba+\dfrac a{4b}\geq\dfrac54+2\sqrt{\dfrac ba\cdot\dfrac a{4b}}=\dfrac94$，}
+\step{等号当且仅当 $a=2b$，即 $a=\dfrac43$、$b=\dfrac23$ 时成立，最小值为 $\dfrac94$.}
+\solend
+\fi
+
+\item 对任意的 $m\in\Z$，$m\ne3$，函数 $y=x^m$ 和 $y=x^3$ 的图象的公共点个数可能有\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{函数 $y=x^3$ 的图象过原点，在第一、三象限，且图象关于原点对称，}
+\step{由幂函数图象都过点 $(1,1)$，得 $y=x^m$ 与 $y=x^3$ 的图象在第一象限有 $1$ 个公共点，}
+\step{当 $m$ 是 $0$ 或负偶数时，$y=x^m$ 的图象关于 $y$ 轴对称，不过原点，}
+\step{因此它们只在第一象限有 $1$ 个公共点；}
+\step{当 $m$ 是正偶数时，$y=x^m$ 的图象关于 $y$ 轴对称，过原点，}
+\step{因此它们的图象有 $2$ 个公共点；}
+\step{当 $m$ 是负奇数时，$y=x^m$ 的图象关于原点对称，不过原点，}
+\step{因此它们的图象有 $2$ 个公共点；}
+\step{当 $m$ 是正奇数时，$y=x^m$ 的图象关于原点对称，过原点，}
+\step{因此它们的图象有 $3$ 个公共点，}
+\step{所以公共点个数可能是 $1$ 或 $2$ 或 $3$.}
+\solend
+\fi
+
+\item 已知一元二次不等式 $ax^2+bx+c>0$ 的解集为 $(1,2)$，则不等式 $bx^2-5ax+c<0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由已知得 $a<0$，且 $ax^2+bx+c=a(x-1)(x-2)$，}
+\step{所以 $b=-3a$，$c=2a$.}
+\step{$bx^2-5ax+c<0\Leftrightarrow a(-3x^2-5x+2)<0\Leftrightarrow(3x-1)(x+2)<0$，}
+\step{解得 $-2<x<\dfrac13$，所求解集为 $\left(-2,\dfrac13\right)$.}
+\solend
+\fi
+
+\item 已知集合 $P=\{x\mid\lvert x-3m\rvert\leq m^2-2m\}$，$Q=\{y\mid y=-x^2+2x+1\}$. 若“$x\in Q$”是“$x\in P$”的必要不充分条件，则 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$Q=(-\infty,2]$，题意等价于 $P\subset Q$.}
+\step{当 $0<m<2$ 时，$m^2-2m<0$，$P=\varnothing$，满足题意.}
+\step{当 $m\leq0$ 或 $m\geq2$ 时，$P=[-m^2+5m,m^2+m]$，须有 $m^2+m\leq2$，}
+\step{结合条件得 $m\in[-2,0]$，此时包含关系必为真包含.}
+\step{因此 $m$ 的取值范围为 $[-2,0]\cup(0,2)=[-2,2)$.}
+\solend
+\fi
+
+\item 若集合 $P_k=\{(x,y)\mid y=kx^2-(k+1)x-2k+17,x\in\R\}$. 当 $k\in\N$ 且 $k\leq2026$ 时，所有 $P_k$ 的交集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{将 $k=1,2$ 对应的曲线方程相减，得 $x^2-x-2=(x+1)(x-2)=0$，}
+\step{即 $x=-1$ 或 $x=2$.}
+\step{代入 $y=k(x^2-x-2)-x+17$，分别得 $y=18,15$，且均与 $k$ 无关，}
+\step{因此交集为 $\{(-1,18),(2,15)\}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 已知 $a$、$b$ 都是实数，那么“$a<b<0$”是“$\dfrac1a>\dfrac1b$”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分不必要条件\qquad\qquad B. 必要不充分条件
+
+C. 充要条件\qquad\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{若 $\dfrac1a>\dfrac1b$，则 $\dfrac1a-\dfrac1b=\dfrac{b-a}{ab}>0$，}
+\step{若 $0<a<b$，则 $\dfrac1a>\dfrac1b$ 成立，}
+\step{当 $a>0$，$b<0$ 时，满足 $\dfrac1a>\dfrac1b$，但 $0<a<b$ 不成立，}
+\step{故“$0<a<b$”是“$\dfrac1a>\dfrac1b$”的充分不必要条件，故选 $A$.}
+\solend
+\fi
+
+\item 若函数 $y=(m^2-2m-2)\cdot m^x$ 是指数函数，则 $m$ 等于\mbox{（\quad）}
+
+\keepwithprev
+A. $-1$ 或 $3$\qquad\qquad B. $-1$\qquad\qquad C. $3$\qquad\qquad D. $\dfrac13$
+
+\ifanswer
+\solbegin
+\step{因为函数 $y=(m^2-2m-2)\cdot m^x$ 是指数函数，所以 $\begin{cases}m^2-2m-2=1\\m>0\\m\ne1\end{cases}$，解得 $m=3$，}
+\step{故选 $C$.}
+\solend
+\fi
+
+\item 设关于 $x$ 的不等式 $\dfrac{ax-1}{x^2-a}<0$ 的解集为 $S$，满足 $3\in S$ 且 $4\notin S$，则实数 $a$ 的取值范围为\mbox{（\quad）}
+
+\keepwithprev
+A. $(-\infty,-\sqrt3)\cup\left(\dfrac13,\sqrt3\right)$\qquad\qquad B. $\left(-\infty,-\dfrac14\right)\cup(16,+\infty)$
+
+C. $\left[\dfrac14,\dfrac13\right)\cup[9,16]$\qquad\qquad D. 不能确定
+
+\ifanswer
+\solbegin
+\step{若 $3\in S$，则 $\dfrac{3a-1}{9-a}<0$，解得 $a\in\left(-\infty,\dfrac13\right)\cup(9,+\infty)$，}
+\step{若 $4\notin S$，则 $16-a=0$ 或 $\dfrac{4a-1}{16-a}\geq0$，解得 $a\in\left[\dfrac14,16\right]$，}
+\step{故实数 $a$ 的取值范围为 $\left[\dfrac14,\dfrac13\right)\cup(9,16]$，故选 $C$.}
+\solend
+\fi
+
+\item 已知集合 $A,B$ 中都至少有两个元素，并且满足下列条件：①集合 $A,B$ 中的元素都为正数；
+②对于任意 $a,b\in B$（$a\ne b$），都有 $\dfrac ab\in A$；③对于任意 $a,b\in A$（$a\ne b$），
+都有 $ab\in B$；则下列说法正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $A$ 有 $2$ 个元素，则 $B$ 有 $3$ 个元素
+
+B. 若 $A$ 有 $2$ 个元素，则 $A\cap B$ 有 $1$ 个元素
+
+C. 若 $A$ 有 $2$ 个元素，则 $A\cup B$ 有 $4$ 个元素
+
+D. 存在满足条件且有 $3$ 个元素的集合 $A$
+
+\ifanswer
+\solbegin
+\step{若 $B$ 中有三个元素 $0<u<v<w$，则 $\dfrac vu,\dfrac wu,\dfrac uv,\dfrac uw$ 是 $A$ 中四个互异元素，}
+\step{因此当 $A$ 有 $2$ 或 $3$ 个元素时，$B$ 恰有 $2$ 个元素.}
+\step{若 $A$ 有 $2$ 个元素，由②得 $A=\left\{\dfrac1t,t\right\}$，其中 $t>1$；}
+\step{由③得 $1\in B$，结合②得 $B=\{1,t\}$ 或 $\left\{1,\dfrac1t\right\}$.}
+\step{此时 $A\cap B$ 有 $1$ 个元素，$A\cup B$ 有 $3$ 个元素，故 $A$、$C$ 错误，$B$ 正确.}
+\step{若 $A=\{x,y,z\}$，其中 $0<x<y<z$，则 $xy<xz<yz$ 均属于 $B$，}
+\step{与 $B$ 恰有 $2$ 个元素矛盾，故 $D$ 错误.}
+\step{故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 计算
+
+(1) 解不等式：$\dfrac{3x}{x^2+4}\geq1$；
+
+(2) 若 $a^{2x}=2$（$a>0$），求 $\dfrac{a^{3x}+a^{-3x}}{a^x+a^{-x}}$.
+
+\ifanswer
+\solbegin
+\step{(1) $x^2+4>0$，原不等式等价于 $x^2-3x+4=\left(x-\dfrac32\right)^2+\dfrac74\leq0$，解集为 $\varnothing$.}
+\step{(2) 利用立方和分解，得 $\dfrac{a^{3x}+a^{-3x}}{a^x+a^{-x}}=a^{2x}-1+a^{-2x}=2-1+\dfrac12=\dfrac32$.}
+\solend
+\fi
+
+\item 设全集为 $\R$，$m\in\R$，集合 $A=\{x\mid2<x<5\}$，$B=\{x\mid2m\leq x<2m+2\}$.
+
+(1) 若 $m=2$，求 $\overline{A}\cup B$；
+
+(2) 若 $A\cap B=B$，求 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) $\overline{A}=(-\infty,2]\cup[5,+\infty)$，$B=[4,6)$，所以 $\overline{A}\cup B=(-\infty,2]\cup[4,+\infty)$.}
+\step{(2) $A\cap B=B\Leftrightarrow B\subseteq A$，即 $[2m,2m+2)\subseteq(2,5)$，}
+\step{因此 $\begin{cases}2m>2\\2m+2\leq5\end{cases}\Leftrightarrow1<m\leq\dfrac32$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的函数 $y=mx^2-mx+m+1$.
+
+(1) 若不等式 $y>0$ 的解集为 $\R$，求实数 $m$ 的取值范围；
+
+(2) 设 $\alpha$、$\beta$ 是方程 $y=0$ 的两个根，若 $\dfrac\beta\alpha+\dfrac\alpha\beta=-3$，求实数 $m$ 的值.
+
+\ifanswer
+\solbegin
+\step{(1) $m=0$ 时，$y=1>0$；}
+\step{$m<0$ 时，二次函数开口向下，不可能对一切实数 $x$ 都有 $y>0$.}
+\step{$m>0$ 时，$y=m\left(x-\dfrac12\right)^2+\dfrac{3m}4+1>0$，因此 $m\in[0,+\infty)$.}
+\step{(2) 由题意，$m\ne0$，$\alpha\beta\ne0$，由根与系数的关系，$\alpha+\beta=1$，$\alpha\beta=\dfrac{m+1}m$.}
+\step{$\dfrac\beta\alpha+\dfrac\alpha\beta=-3\Leftrightarrow(\alpha+\beta)^2=-\alpha\beta\Rightarrow1=-\dfrac{m+1}m\Rightarrow m=-\dfrac12$，}
+\step{此时方程化为 $x^2-x-1=0$，判别式为 $5>0$，且两根之积为 $-1$，}
+\step{满足条件.}
+\solend
+\fi
+
+\item 《上海市生活垃圾管理条例》于 $2019$ 年正式实施以来已逾 $7$ 年，某小区在全面实施垃圾分
+类处理的过程中积累了经验，通过对以往数据进行整理获知：该小区每月垃圾分类处
+理量不超过 $300$ 吨，每月垃圾分类处理成本 $y$（元）与每月分类处理量 $x$（吨）之间的函
+数关系式可近似表示为 $y=x^2-200x+40000$，而分类处理一吨垃圾小区也可以获得 $300$
+元的收益.
+
+(1) 为保证该小区每月的垃圾分类处理不亏损，求每月垃圾分类处理量的范围；
+
+(2) 该小区每月分类处理多少吨垃圾，才能使得每吨垃圾分类处理的平均成本最低？最低平均成本是多少？
+
+\ifanswer
+\solbegin
+\step{(1) $0\leq x\leq300$，不亏损要求 $300x\geq x^2-200x+40000$，}
+\step{即 $(x-100)(x-400)\leq0$，解得 $100\leq x\leq400$.}
+\step{结合处理量限制，得 $100\leq x\leq300$，}
+\step{即每月垃圾分类处理量为 $100$ 吨至 $300$ 吨（含端点）.}
+\step{(2) 当 $0<x\leq300$ 时，}
+\step{每吨垃圾分类处理的平均成本为 $\dfrac yx=x+\dfrac{40000}x-200$}
+\step{$\geq2\sqrt{x\cdot\dfrac{40000}x}-200=200$，}
+\step{当且仅当 $x=\dfrac{40000}x$，即 $x=200$ 时取等号，且符合处理量限制，}
+\step{因此最低平均成本为 $200$ 元/吨.}
+\solend
+\fi
+
+\item 已知有限数集 $A=\{a_1,a_2,\cdots,a_n\}$（$n\geq2,n\in\N$），如果 $A$ 中元素 $a_i$
+（$i=1,2,3,\cdots,n$）满足 $a_1+a_2+a_3+\cdots+a_n=a_1\times a_2\times\cdots\times a_n$，就称 $A$ 为“平衡集”.
+
+(1) 判断集合 $\{-1+\sqrt3,-1-\sqrt3\}$ 是否为“平衡集”；
+
+(2) 若 $a_1,a_2$ 是两个不同的正数，且 $\{a_1,a_2\}$ 是“平衡集”，写出以 $a_1,a_2$ 为根的一个一元二次方程（系数可用 $a_1,a_2$ 表示），并证明 $a_1,a_2$ 至少有一个大于 $2$；
+
+(3) 若一个由正整数集构成的集合 $M$ 为“平衡集”，求所有符合条件的集合 $M$.
+
+\ifanswer
+\solbegin
+\step{(1) 两元素之和为 $-2$，积为 $(-1+\sqrt3)(-1-\sqrt3)=1-3=-2$，}
+\step{所以该集合是“平衡集”.}
+\step{(2) 由 $a_1+a_2=a_1a_2$，}
+\step{得 $(x-a_1)(x-a_2)=x^2-(a_1+a_2)x+a_1a_2=x^2-a_1a_2x+a_1a_2$，}
+\step{所以所求方程可为 $x^2-a_1a_2x+a_1a_2=0$.}
+\step{不妨设 $0<a_1<a_2$，则 $a_1a_2=a_1+a_2>2a_1$，两边除以 $a_1>0$，得 $a_2>2$.}
+\step{(3) 设 $M=\{b_1,b_2,\cdots,b_m\}$，其中 $1\leq b_1<b_2<\cdots<b_m$，$m\geq2$，则 $b_i\geq i$.}
+\step{由平衡条件得 $b_1b_2\cdots b_{m-1}=1+\dfrac{b_1}{b_m}+\dfrac{b_2}{b_m}+\cdots+\dfrac{b_{m-1}}{b_m}<m$，}
+\step{若 $m\geq4$，则 $b_1b_2\cdots b_{m-1}\geq b_2b_{m-1}\geq2(m-1)\geq m$，矛盾，}
+\step{因此 $m$ 只能为 $2$ 或 $3$.}
+\step{当 $m=2$ 时，$b_1+b_2=b_1b_2\Leftrightarrow(b_1-1)(b_2-1)=1$，}
+\step{$b_1,b_2$ 为正整数，得 $b_1=b_2=2$，与元素互异矛盾.}
+\step{当 $m=3$ 时，由 $b_1b_2<3$ 及 $1\leq b_1<b_2$，得 $b_1=1,b_2=2$，}
+\step{于是 $1+2+b_3=2b_3\Rightarrow b_3=3$，检验：$1+2+3=1\times2\times3=6$，}
+\step{所以所有符合条件的集合为 $M=\{1,2,3\}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
