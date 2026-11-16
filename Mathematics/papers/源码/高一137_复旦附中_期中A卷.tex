@@ -1,0 +1,472 @@
+% 高一137_复旦附中_期中A卷.tex
+%   —— 高一上数学"2026-2027 年复旦附中高一上期中 A 卷"（试卷版/答案版/紧凑版）
+% 试卷版：xelatex 高一137_复旦附中_期中A卷.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一137_复旦附中_期中A卷.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一137_复旦附中_期中A卷.tex}"
+%
+% ① 原始材料：微信公众号"魔都数学加油站"连载"27学年高一137"，原文标题
+% "27学年高一137——2026-2027年上海市复旦附中高一上期中A卷"；
+% 原文链接：https://mp.weixin.qq.com/s/8RHYw65aKCkBQUS5qnYBnA 。
+% 正文为 13 张 PNG 页（01、02、03、05、06、10、12、13 为 2560x3620；
+% 04、07、08、09、11 为 4762x6735，同一篇各页分辨率混排，逐页按各自分辨率放大核对，
+% 不按预览比例换算裁框）。题目下直接印【解析】，为讲评版。
+% 题目、解析均据原图转录；卷面粉红色水印"魔都数学加油站"及公众号页脚未录入。
+% 全卷无插图（13 页逐页核对，Q13 选项 D 的分段函数是文字公式、Q20 只作文字假设，
+% 原卷均未印图形）。
+% 本卷与高一138（B 卷）是"共同题＋差异题"的平行卷，仅 01 页填空 3—7 题字节相同；
+% 本稿按分工只录 137，13 页全部题目完整独立录入，不作任何"见 B 卷"之类交叉引用。
+%
+% 卷首标题：原卷印作"2026-2027 年复旦附中高一上期中 A 卷"（公众号标题中的"上海市"
+% 与"A 卷"字样按卷面照录，年份区间按全稿惯例排 en dash）。原卷未印副标题，本卷为期中卷、
+% 跨集合与常用逻辑用语／不等式／函数三章，按题目内容标为
+% "集合与常用逻辑用语、不等式、函数"（与 125／126／128／129／131／132／133 同期中卷口径相同）：
+% 集合与逻辑见 Q6、Q15、Q17、Q21，不等式见 Q3、Q4、Q8、Q10、Q14，
+% 函数（零点、值域、单调性、奇偶性、分段函数、实际应用）见 Q5、Q7、Q9、Q11、Q12、
+% Q13、Q16、Q18、Q19、Q20。
+%
+% 题号体例：本卷共 19 题——一、填空题 3—12（10 题）、二、选择题 13—16（4 题）、
+% 三、解答题 17—21（5 题）。三节分别 \setcounter{enumi}{2}／{12}／{16}。原卷无附加题节。
+%
+% ② 与原卷的排版差异：
+%   ① 原文从第 3 题起，本稿保留原题号；三节用 \bigsec 另起，题号续到 21；
+%   ② 原卷每题下直接印【解析】、无独立【答案】段，本稿按全稿惯例把解析置于答案版；
+%      全卷 19 题均不另提 \ans{}（详见下"各题 \ans 口径"）；
+%   ③ 原卷未印副标题，本稿按"知识模块"口径补出（见上）；
+%   ④ 原卷填空横线按全稿惯例排 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      每处选项段前按惯例加 \keepwithprev（Q16 的 ①②③④ 编号命题列前另加一枚命题段守卫）；
+%      解答题不留作答区、不加 \anspace（原卷为讲评版，与 129／131／132／133／136 同）；
+%   ⑤ 原卷数集排黑板粗体 $R$，按全稿惯例改 \R；空集记号 \varnothing；绝对值排
+%      \lvert…\rvert，集合描述竖线排 \mid；不等号按全稿惯例排 \leqslant／\geqslant；
+%   ⑥ 子题标号 (1)(2)(3) 与 (i)(ii) 原卷用半角括号，照录；圈数字 ①②③④ 照录（Q16、
+%      Q20）；题干中的行内括注（如 Q20"（$0\leqslant t\leqslant2$）""（$k$ 为常数）"、
+%      Q21"（充分不必要、必要不充分、充分必要、既不充分也不必要）"）用全角括号，照录；
+%   ⑦ 数学式内半角逗号照录（如 Q3 $\alpha,\beta\in(-1,1)$、Q7 $x_1,x_2$、
+%      Q18 $x_1,x_2\in[0,1]$、Q21 $a=v-u\neq0$）；原卷 Q20 题干与 Q21 (3) 题干若干句末
+%      用西文句点加空格断句（"连续变化. 已知""$r(t)$. 根据临床观察""无实数解. 判断"、
+%      Q20 (ii)"函数表达式. 进一步判断"），照录；其余行末句点按全稿惯例从宽排西文句点；
+%      Q21 (3) 解析"$a>0\Rightarrow\cdots<0; a<0\Rightarrow\cdots>0$；"半角分号与
+%      全角分号混用，照录；
+%   ⑧ 全卷无插图，故无 \includegraphics、无 \needvspace 图块守卫；三版试排切页审计均
+%      "合计异常：无"（试卷 3 页／紧凑 3 页／答案 9 页），节标题未落页末，无需另加 \needvspace；
+%   ⑨ 跨页续印按题合并：Q11 解析跨 02—03 页、Q13 解析跨 03—04 页、Q16 题干（04 页）
+%      与 ④ 命题／选项／【解析】（05 页）、Q17 解析跨 05—06 页、Q18 解析跨 06—07 页、
+%      Q19 解析跨 07—08 页、Q20 题干跨 08—09 页、解析跨 09—11 页、
+%      Q21 解析跨 11—13 页；本稿按题连排；
+%   ⑩ 题干中的中文弯引号按原卷照录（Q15 的"$A\cap(0,1)=B\cap(0,1)$"等两处引号），
+%      注释内一律 ASCII 引号；原卷 Q13、Q16、Q18、Q20、Q21 均作"图像"，
+%      Q20 (2) 括注"图像是一条线段"同，逐处照录；
+%   ⑪ 原卷 Q21 (3) 解析的"先证充分性.""再证必要性."两枚标签印红色加粗、且各自独占
+%      一个印刷行（同行无正文），按 高一53／66／134 成例加粗着色、不引入红色、不动
+%      common.sty；因无同行正文，排为独立 \step 行内 {\bfseries\color{solblue}…}，
+%      而非 \stepm{标签}{正文}；两行仍各计 1 条 \step。
+%
+% 判别式字形：全卷仅第 7 题【解析】出现"$\Delta=4(m^2-m-1)\geqslant0$"，原卷印
+%   等腰、偏高的三角 $\Delta$，逐处放大 01 页核对并照录 \Delta；全卷未出现扁等边三角 \triangle。
+%
+% 子集符号：以下 7 处原卷均印带下划线 $\subseteq$，逐处放大核对、照录 \subseteq：
+%   Q6 题干"$A\subseteq B$"、Q6【解析】"$A=\varnothing\subseteq B$"（01 页）；
+%   Q15 题干"$A\subseteq\R$，$B\subseteq\R$"（04 页）；
+%   Q17 (2) 题干"$A\subseteq B$"、Q17【解析】"若 $A\subseteq B$"（05 页）与
+%   "即 $A\subseteq B$"（06 页）。全卷未出现单线 \subset。
+%
+% 原卷存疑照录（均照录未改，正文对应处另有 % 注）：
+%   ① Q20 (2)(ii) 题干"函数表达式. 进一步判断"用西文句点断句、后接空格（09 页），照录；
+%   ② Q21 (3)【解析】"$a>0\Rightarrow f(x+a)-f(x)<0; a<0\Rightarrow f(x+a)-f(x)>0$；"
+%      前一处分号用半角、句末用全角（12 页），照录；
+%   ③ Q19 (3)【解析】末行 cases 块末的句点、Q17 (1)【解析】cases 块后的逗号均按原卷
+%      逐处照录（见 高一134 头注"cases 块末的句点逐处照录"口径）。
+%
+% 2026-11-16 回原图逐题核对订正 2 处（原卷无此笔误，均系本稿初转之误）：
+%   ① Q20 (2)(ii)【解析】（10 页）分式前本稿初转多加一个负号，并误判为"原卷笔误、
+%      自相矛盾"写入存疑照录与行内 % 注。放大 10 页逐列核：原卷印
+%      "$y-\dfrac a3=\dfrac{a(2t-5)(3t-7)}{24(t-1)}\geqslant0$"（等号后直接是分式、无负号）；
+%      由同题上方"所以 $y=$"分段式代入亦得 $y-\dfrac a3=\dfrac{a(6t^2-29t+35)}{24(t-1)}
+%      =\dfrac{a(2t-5)(3t-7)}{24(t-1)}\geqslant0$，与紧随"所以此阶段始终满足治疗标准"自洽。
+%      今删去负号、删去该存疑条与行内误注，改按原卷照录；
+%   ② Q18 (2)【解析】首行"由（1）得"本稿初转把子题标号排作全角括号，原卷同行
+%      "(2)"与"(1)"同为半角细弧，且全卷其余子题标号均半角（见 ② ⑥），今改回半角。
+%
+% 各题 \ans 口径（逐题看原卷判定）：全卷 19 题均印【解析】、无独立【答案】段，
+%   故全卷 **0 处 \ans{}**，答案版【解析】标记 19 个＝题数 19。其中：
+%   · Q13、Q14、Q15、Q16 四道选择题答案在解析末句"故选 $D$／$B$／$D$／$B$"，
+%     括号 \mbox{（\quad）} 留空、不另提 \ans{}（按 高一53／108／136 成例）；
+%   · Q3—Q12 十道填空题的答案嵌在解析末句（如"所以 $2\alpha-\beta$ 的取值范围为
+%     $(-3,3)$""故解集是 $[0,1)$"），Q17—Q21 五道解答题印【解析】、无独立答案段，
+%     均不另提 \ans{}（按 高一136 Q5／Q7—Q12／Q17—Q21 成例）。
+%
+% 行数复核：逐题数 \step 条数（一条 \step＝原卷解析的一个印刷行，cases 块算一个印刷行），
+%   合计 137 条：Q3:1；Q4:1；Q5:1；Q6:3；Q7:3；Q8:3；Q9:3；Q10:3；Q11:4；Q12:6；
+%   Q13:3；Q14:1；Q15:5；Q16:6；Q17:7；Q18:11；Q19:14；Q20:24；Q21:38。
+%   与原卷印刷行逐题相等（Q17 (1) 一行内两个 cases 块仍算一个印刷行；Q19 (3) 末行、
+%   Q20 (2)(i)(ii) 与 (2) 的 cases 块、Q21 (ii) 的 cases 块各算一个印刷行；
+%   Q21 (3) 两枚红色标签各独占一行、各计 1 条）。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年复旦附中高一上期中 A 卷}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 若 $\alpha,\beta\in(-1,1)$，则 $2\alpha-\beta$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$2\alpha\in(-2,2)$，$-\beta\in(-1,1)$，所以 $2\alpha-\beta$ 的取值范围为 $(-3,3)$.}
+\solend
+\fi
+
+\item 不等式 $\dfrac{x}{1-x}\geqslant0$ 的解集是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\dfrac{x}{1-x}\geqslant0\Leftrightarrow x(1-x)\geqslant0$ 且 $x\neq1\Leftrightarrow0\leqslant x<1$，故解集是 $[0,1)$.}
+\solend
+\fi
+
+\item 函数 $y=\sqrt{x}+x$ 的零点为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{定义域为 $[0,+\infty)$，$\sqrt{x}+x=0\Leftrightarrow x=0$.}
+\solend
+\fi
+
+\item 已知 $k\in\R$，集合 $A=\{x\mid kx=2\}$，$B=\{0,1\}$，且 $A\subseteq B$，则 $k$ 的值是\blankline[4.4em].% 原卷印带下划线 $\subseteq$，照录
+
+\ifanswer
+\solbegin
+\step{当 $k=0$ 时，$A=\varnothing\subseteq B$，符合题意.}% 原卷印带下划线 $\subseteq$，照录
+\step{当 $k\neq0$ 时，$A=\left\{\dfrac2k\right\}$，由 $\dfrac2k\neq0$ 得 $\dfrac2k=1$，即 $k=2$.}
+\step{综上，$k=0$ 或 $k=2$.}
+\solend
+\fi
+
+\item 已知关于 $x$ 的方程 $x^2-2mx+m+1=0$ 的两实根为 $x_1,x_2$，且 $x_1^2+x_2^2=4$，则 $m=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由韦达定理得 $x_1+x_2=2m$，$x_1x_2=m+1$，则 $4m^2-2(m+1)=4$，}
+\step{解得 $m=-1$ 或 $m=\dfrac32$.}
+\step{两实根要求 $\Delta=4(m^2-m-1)\geqslant0$，排除 $m=\dfrac32$，得 $m=-1$.}% 判别式原卷印等腰偏高三角 $\Delta$，照录
+\solend
+\fi
+
+\item 已知 $a>0$，$b>0$，且 $a+2b=2ab$，则 $a+2b$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $a>0$，$b>0$，且 $a+2b=2ab$，所以 $\dfrac1a+\dfrac1{2b}=1$，}
+\step{所以 $a+2b=(a+2b)\left(\dfrac1a+\dfrac1{2b}\right)=2+\dfrac{2b}{a}+\dfrac{a}{2b}\geqslant2+2\sqrt{\dfrac{2b}{a}\cdot\dfrac{a}{2b}}=4$，}
+\step{当且仅当 $\dfrac{2b}{a}=\dfrac{a}{2b}$ 时，即 $a=2$，$b=1$ 时取等号，故最小值为 $4$.}
+\solend
+\fi
+
+\item 已知函数 $y=f(x)$ 的值域为 $\left[\dfrac13,2\right]$，则函数 $y=f(2x+1)+\dfrac1{f(2x+1)}$ 的最大值与最小值的差为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{令 $t=f(2x+1)$，则 $t$ 取遍 $\left[\dfrac13,2\right]$，且 $t+\dfrac1t\geqslant2$，当且仅当 $t=1$ 时取等号，}
+\step{又 $\dfrac{10}{3}-\left(t+\dfrac1t\right)=\dfrac{(3t-1)(3-t)}{3t}\geqslant0$，当且仅当 $t=\dfrac13$ 时取等号，}
+\step{最大值与最小值的差为 $\dfrac{10}{3}-2=\dfrac43$.}
+\solend
+\fi
+
+\item 已知 $x>0$，$y>0$，若对任意的正实数 $z$，恒有 $1<\dfrac{y+z}{x+z}<2$，则 $\dfrac{y}{x}$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$x+z>0$，原不等式等价于 $x<y<2x+z$，}
+\step{正数 $z$ 可任意小，恒成立的充要条件为 $x<y\leqslant2x$，即 $1<\dfrac{y}{x}\leqslant2$，}
+\step{故 $\dfrac{y}{x}$ 的取值范围是 $(1,2]$.}
+\solend
+\fi
+
+\item 已知 $a\in\R$，$f(x)=\lvert x-1\rvert+a$，若存在 $c\in\R$，使得 $f(c)+f(-c)=0$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$0=f(c)+f(-c)=\lvert c-1\rvert+\lvert c+1\rvert+2a\geqslant\lvert(c-1)-(c+1)\rvert+2a=2+2a$，}
+\step{得 $a\leqslant-1$.}
+\step{当 $a\leqslant-1$ 时，取 $c=-a\geqslant1$，则 $f(c)+f(-c)=2c+2a=0$，}
+\step{所以 $a\in(-\infty,-1]$.}
+\solend
+\fi
+
+\item 已知 $a\in\R$，若存在定义在 $\R$ 上的函数 $y=f(x)$，使得对任意的 $x>0$，恒有 $f\left(x+\dfrac ax\right)=x^2+\dfrac4{x^2}$，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $a\leqslant0$ 时，对任意 $0<u<v$，有 $\left(v+\dfrac av\right)-\left(u+\dfrac au\right)=(v-u)\left(1-\dfrac{a}{uv}\right)>0$，}
+\step{因此可在 $x+\dfrac ax$ 的值域上按题设定义 $f$，其余处任意赋值.}
+\step{当 $a>0$ 时，以 $\dfrac ax$ 代替 $x$，函数自变量不变，须有 $x^2+\dfrac4{x^2}=\dfrac{a^2}{x^2}+\dfrac{4x^2}{a^2}$，}
+\step{即 $(a^2-4)(x^4-a^2)=0$ 对任意 $x>0$ 成立，得 $a=2$.}
+\step{当 $a=2$ 时，取 $f(t)=t^2-4$，则 $f\left(x+\dfrac2x\right)=\left(x+\dfrac2x\right)^2-4=x^2+\dfrac4{x^2}$，}
+\step{满足条件，故所求范围为 $(-\infty,0]\cup\{2\}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 下列函数中，与 $y=x$ 是相同函数的是\mbox{（\quad）}
+
+\keepwithprev
+A. $y=\sqrt{x^2}$\qquad B. $y=(\sqrt{x})^2$
+
+C. $y=\dfrac{x^2}{x}$\qquad D. $y=\begin{cases}\lvert x\rvert,x\geqslant0\\-\lvert x\rvert,x<0\end{cases}$
+
+\ifanswer
+\solbegin
+\step{A 中 $y=\lvert x\rvert$，B 的定义域为 $[0,+\infty)$，}
+\step{C 的定义域为 $(-\infty,0)\cup(0,+\infty)$，均与 $y=x$ 不同.}
+\step{D 的定义域为全体实数，且两段均有 $y=x$，故选 $D$.}
+\solend
+\fi
+
+\item 如果 $a<b<0$，那么下列不等式中成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac ab<1$\qquad B. $a^2>ab$\qquad C. $\dfrac1{b^2}<\dfrac1{a^2}$\qquad D. $\dfrac1b>\dfrac1a$
+
+\ifanswer
+\solbegin
+\step{$a<b$ 两边同乘负数 $a$，不等号方向改变，得 $a^2>ab$，故选 $B$.}
+\solend
+\fi
+
+\item 已知集合 $A\subseteq\R$，$B\subseteq\R$，则 “$A\cap(0,1)=B\cap(0,1)$” 是 “$A\cup(0,1)=B\cup(0,1)$” 的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分不必要条件\qquad B. 必要不充分条件
+
+C. 充要条件\qquad D. 既不充分也不必要条件
+
+\ifanswer
+\solbegin
+\step{取 $A=\varnothing$，$B=\{0\}$，则 $A\cap(0,1)=B\cap(0,1)=\varnothing$，}
+\step{但 $A\cup(0,1)\neq B\cup(0,1)$，故不充分.}
+\step{取 $A=\varnothing$，$B=\left\{\dfrac12\right\}$，则 $A\cup(0,1)=B\cup(0,1)=(0,1)$，}
+\step{但 $A\cap(0,1)\neq B\cap(0,1)$，故不必要.}
+\step{故选 $D$.}
+\solend
+\fi
+
+\item 关于定义域为 $\R$ 的函数 $y=f(x)$，下列四个命题中，正确命题的序号为\mbox{（\quad）}
+
+\keepwithprev
+①存在 $\R$ 上的严格增函数 $y=f(x)$ 使得 $f(x)+f(2x)=-x$ 恒成立；
+
+②存在 $\R$ 上的严格增函数 $y=f(x)$ 使得 $f(x)+f(2x)=x$ 恒成立；
+
+③使得 $f(x)+f(-x)=x^2$ 恒成立的函数 $y=f(x)$ 存在且有无穷多个；
+
+④使得 $f(x)-f(-x)=x^2$ 恒成立的函数 $y=f(x)$ 存在且有无穷多个.
+
+\keepwithprev
+A. ①③\qquad B. ②③\qquad C. ②④\qquad D. ②③④
+
+\ifanswer
+\solbegin
+\step{①若 $f$ 严格递增，则 $f(x)+f(2x)$ 随 $x$ 严格增大，不可能恒等于 $-x$，错误.}
+\step{②取 $f(x)=\dfrac x3$，它在 $\R$ 上严格递增，且 $f(x)+f(2x)=x$，正确.}
+\step{③取 $f(x)=\dfrac{x^2}{2}+ax$，$a\in\R$，均满足等式，且不同的 $a$ 对应不同函数，正确.}
+\step{④分别令 $x=1,-1$，得 $f(1)-f(-1)=1$，$f(-1)-f(1)=1$，相加得 $0=2$，}
+\step{错误.}
+\step{故选 $B$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item 已知 $a\in\R$，设集合 $A=\{x\mid(x-2a)(3x-1)\leqslant0\}$，$B=\{x\mid x>a\}$.
+
+(1) 若 $1\in A\cap B$，求 $a$ 的取值范围；
+
+(2) 若 $A\subseteq B$，求 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) $1\in A\cap B$ 等价于 $\begin{cases}(1-2a)(3-1)\leqslant0\\1>a\end{cases}\Leftrightarrow\begin{cases}a\geqslant\dfrac12\\a<1\end{cases}$，}% 原卷两个 cases 块同处一个印刷行、块后逗号照录
+\step{所以 $a$ 的取值范围为 $\left[\dfrac12,1\right)$.}
+\step{(2) $A$ 是以 $2a$ 与 $\dfrac13$ 为端点的非空闭区间.}
+\step{若 $A\subseteq B$，则两个端点均属于 $B$，所以 $\begin{cases}2a>a\\\dfrac13>a\end{cases}\Leftrightarrow0<a<\dfrac13$，}% 原卷印带下划线 $\subseteq$，照录
+\step{反之，若 $0<a<\dfrac13$，则 $2a>a$ 且 $\dfrac13>a$，}
+\step{于是任意 $x\in A$ 均满足 $x\geqslant\min\left\{2a,\dfrac13\right\}>a$，即 $A\subseteq B$.}% 原卷印带下划线 $\subseteq$，照录
+\step{所以 $a$ 的取值范围为 $\left(0,\dfrac13\right)$.}
+\solend
+\fi
+
+\item 已知实数 $a>0$，$f(x)=\dfrac{ax+1}{x+a}$.
+
+(1) 讨论函数 $y=f(x)$ 在 $[0,+\infty)$ 上的单调性，并用定义证明你的结论；
+
+(2) 若对任意的 $x_1,x_2\in[0,1]$，$\lvert f(x_1)-f(x_2)\rvert\leqslant\dfrac12$ 恒成立，求 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 任取 $0\leqslant x_1<x_2$，则 $f(x_2)-f(x_1)=\dfrac{ax_2+1}{x_2+a}-\dfrac{ax_1+1}{x_1+a}=\dfrac{(a^2-1)(x_2-x_1)}{(x_1+a)(x_2+a)}$，}
+\step{$x_2-x_1>0$，$(x_1+a)(x_2+a)>0$，}
+\step{所以当 $0<a<1$ 时，$f(x_2)-f(x_1)<0$，函数在 $[0,+\infty)$ 上严格递减.}
+\step{当 $a=1$ 时，$f(x)=1$，函数在 $[0,+\infty)$ 上为常函数.}
+\step{当 $a>1$ 时，$f(x_2)-f(x_1)>0$，函数在 $[0,+\infty)$ 上严格递增.}
+\step{(2) 由(1)得 $f(x)$ 在 $[0,1]$ 上的最大值与最小值均在端点处取得，}
+\step{且 $f(0)=\dfrac1a$，$f(1)=1$.}
+\step{因此，对任意 $x_1,x_2\in[0,1]$，$\lvert f(x_1)-f(x_2)\rvert\leqslant\lvert f(0)-f(1)\rvert=\left\lvert\dfrac1a-1\right\rvert$，}
+\step{取 $x_1=0$，$x_2=1$ 时等号成立.}
+\step{原条件等价于 $\left\lvert\dfrac1a-1\right\rvert\leqslant\dfrac12\Leftrightarrow\dfrac12\leqslant\dfrac1a\leqslant\dfrac32\Leftrightarrow\dfrac23\leqslant a\leqslant2$，}
+\step{所以 $a$ 的取值范围为 $\left[\dfrac23,2\right]$.}
+\solend
+\fi
+
+\item 已知 $c\in\R$，设 $f(x)=x\lvert x-c\rvert$.
+
+(1) 判断函数 $y=f(x)$ 的奇偶性，并说明理由；
+
+(2) 已知 $c=2$，解不等式：$f(x)<1$；
+
+(3) 已知 $c>0$，设 $y=f(x)$ 在 $[0,2]$ 上的最大值为 $g(c)$，求 $g(c)$ 的表达式.
+
+\ifanswer
+\solbegin
+\step{(1) 定义域为 $\R$，关于原点对称.}
+\step{当 $c=0$ 时，$f(-x)=-x\lvert x\rvert=-f(x)$，所以 $f(x)$ 为奇函数.}
+\step{当 $c\neq0$ 时，$f(c)=0$，而 $f(-c)=-2c\lvert c\rvert\neq0$，}
+\step{既不满足 $f(-c)=f(c)$，也不满足 $f(-c)=-f(c)$，所以为非奇非偶函数.}
+\step{(2) 当 $x<2$ 时，$f(x)<1\Leftrightarrow2x-x^2<1\Leftrightarrow(x-1)^2>0$，得 $x<2$ 且 $x\neq1$.}
+\step{当 $x\geqslant2$ 时，$f(x)<1\Leftrightarrow x^2-2x<1\Leftrightarrow(x-1)^2<2$，得 $2\leqslant x<1+\sqrt2$.}
+\step{因此解集为 $(-\infty,1)\cup(1,1+\sqrt2)$.}
+\step{(3) 当 $0<c<2$ 时，在 $[0,c]$ 上，$f(x)=\dfrac{c^2}{4}-\left(x-\dfrac c2\right)^2$，最大值为 $\dfrac{c^2}{4}$；}
+\step{在 $[c,2]$ 上，$f(x)=x(x-c)\leqslant2(2-c)$，当且仅当 $x=2$ 时取等号.}
+\step{因此 $g(c)=\max\left\{\dfrac{c^2}{4},4-2c\right\}$，其中 $\dfrac{c^2}{4}\geqslant4-2c\Leftrightarrow c\geqslant4(\sqrt2-1)$.}
+\step{当 $2\leqslant c\leqslant4$ 时，$f(x)=\dfrac{c^2}{4}-\left(x-\dfrac c2\right)^2$，且 $\dfrac c2\in[0,2]$，所以 $g(c)=\dfrac{c^2}{4}$.}
+\step{当 $c>4$ 时，对任意 $x\in[0,2]$，$f(2)-f(x)=(2-x)(c-2-x)\geqslant0$，}
+\step{所以 $g(c)=f(2)=2c-4$.}
+\step{由此，$g(c)=\begin{cases}4-2c,&0<c\leqslant4(\sqrt2-1)\\\dfrac{c^2}{4},&4(\sqrt2-1)<c\leqslant4\\2c-4,&c>4\end{cases}$.}% 原卷 cases 块末有句点，照录
+\solend
+\fi
+
+\item 某口服药剂进入人体后，其药量随时间连续变化. 已知一次性服用 1 单位的药物 $t$ 小时后，该单位药物产生的有效药量为 $r(t)$. 根据临床观察，服药后药物的吸收与代谢过程满足以下描述：
+
+①服药瞬间，有效药量为 0；
+
+②在吸收期间（$0\leqslant t\leqslant2$），有效药量逐渐上升，并且在 $t=2$ 时达到峰值 1；
+
+③在代谢衰减期内（$t\geqslant2$），有效药量随时间增大而减少，最终趋近于 0，但始终大于 0.
+
+(1) 根据上述描述，指出函数 $y=r(t)$ 的定义域、值域与单调区间；
+
+(2) 为了便于计算，假设：在吸收期内，函数 $y=r(t)$ 的图像是一条线段；在代谢衰减期内，$r(t)=\dfrac{k}{t-1}$（$k$ 为常数）. 现有一患者需要服用总量为 $a$（$a>0$）个单位的该药物. 研究中发现，体内有效药量不低于 $\dfrac a3$ 个单位时，才能起到有效治疗作用. 现提供两种给药方案：
+
+方案一：一次性服用全部剂量 $a$；
+
+方案二：将剂量平均分成 2 份，在 $t=0$ 时服用第一次药物，该次服药产生的体内有效药量衰减至 $\dfrac a3$ 个单位的时刻为 $t_0$，在 $t=t_0$ 时再服用第二份药物（假设两次服药互不影响，任意时刻，体内有效药量为多次服药单独产生的有效药量之和）.
+
+(i) 试求 $r(t)$ 的表达式，并求出方案一的有效治疗时长 $T_1$；
+
+(ii) 求 $t_0$，并求出 $t\geqslant t_0$ 时，体内有效药量 $y$ 关于时间 $t$ 的函数表达式. 进一步判断哪种方案能让体内药物起到有效治疗作用的时间更长，并说明理由.% 原卷"函数表达式"后用西文句点加空格断句，照录
+
+\ifanswer
+\solbegin
+\step{(1) $t\geqslant0$，有效药量从 0 上升至 1，再逐渐减少并始终大于 0，}
+\step{所以定义域为 $[0,+\infty)$，值域为 $[0,1]$；}
+\step{在 $[0,2]$ 上严格增，在 $[2,+\infty)$ 上严格减.}
+\step{(2) (i) 吸收期的线段经过 $(0,0)$、$(2,1)$，所以 $r(t)=\dfrac t2$；}
+\step{又 $r(2)=\dfrac{k}{2-1}=1$，得 $k=1$，即得上述 $r(t)$ 的表达式.}
+\step{方案一满足治疗标准的条件为 $ar(t)\geqslant\dfrac a3$，}
+\step{即 $\begin{cases}\dfrac t2\geqslant\dfrac13,&0\leqslant t\leqslant2\\\dfrac1{t-1}\geqslant\dfrac13,&t\geqslant2\end{cases}\Rightarrow t\in\left[\dfrac23,4\right]$，因此 $T_1=4-\dfrac23=\dfrac{10}{3}$ 小时.}
+\step{(ii) 第一次服用的剂量为 $\dfrac a2$，且 $t_0$ 处于衰减期，}
+\step{所以 $\dfrac a2\cdot\dfrac1{t_0-1}=\dfrac a3\Rightarrow t_0=\dfrac52$，}
+\step{第二份药物在 $t=\dfrac52$ 时服用，在 $t=\dfrac92$ 时达到峰值.}
+\step{对 $t\geqslant\dfrac52$，$y=\dfrac a2r(t)+\dfrac a2r\left(t-\dfrac52\right)$，}
+\step{当 $\dfrac52\leqslant t<\dfrac92$ 时，$0\leqslant t-\dfrac52<2$，$r\left(t-\dfrac52\right)=\dfrac12\left(t-\dfrac52\right)$；}
+\step{当 $t\geqslant\dfrac92$ 时，$r\left(t-\dfrac52\right)=\dfrac1{t-\dfrac72}=\dfrac2{2t-7}$；}
+\step{所以 $y=\begin{cases}\dfrac{a}{2(t-1)}+\dfrac a4\left(t-\dfrac52\right),&\dfrac52\leqslant t<\dfrac92\\\dfrac{a}{2(t-1)}+\dfrac{a}{2t-7},&t\geqslant\dfrac92\end{cases}$；}
+\step{在 $0\leqslant t\leqslant\dfrac52$ 内，仅第一次服药产生有效药量，}
+\step{有 $\dfrac a2r(t)\geqslant\dfrac a3\Leftrightarrow r(t)\geqslant\dfrac23\Leftrightarrow\dfrac43\leqslant t\leqslant\dfrac52$；}
+\step{在 $\dfrac52\leqslant t\leqslant\dfrac92$ 内，$y-\dfrac a3=\dfrac{a(2t-5)(3t-7)}{24(t-1)}\geqslant0$，}% 2026-11-16 回原图核对订正：原卷等号后无负号，本稿初转误加并误判为笔误，今删负号按原卷照录
+\step{所以此阶段始终满足治疗标准.}
+\step{在 $t\geqslant\dfrac92$ 内，分母均为正，因此 $y\geqslant\dfrac a3\Leftrightarrow\dfrac1{2(t-1)}+\dfrac1{2t-7}\geqslant\dfrac13$}
+\step{$\Leftrightarrow4t^2-30t+41\leqslant0\Leftrightarrow\dfrac{15-\sqrt{61}}4\leqslant t\leqslant\dfrac{15+\sqrt{61}}4$，}
+\step{结合 $t\geqslant\dfrac92$，此阶段的有效治疗时间区间为 $\left[\dfrac92,\dfrac{15+\sqrt{61}}4\right]$.}
+\step{方案二的整个有效治疗时间区间为 $\left[\dfrac43,\dfrac{15+\sqrt{61}}4\right]$，}
+\step{所以 $T_2=\dfrac{15+\sqrt{61}}4-\dfrac43=\dfrac{29+3\sqrt{61}}{12}$ 小时，}
+\step{$T_2-T_1=\dfrac{3\sqrt{61}-11}{12}>0$，方案二的有效治疗时间更长.}
+\solend
+\fi
+
+\item 对于定义在 $\R$ 上的函数 $y=f(x)$，记集合
+
+$M=\{x_0\mid$ 对任意的 $x\in(-\infty,x_0)$，都有 $f(x)>f(x_0)\}$.
+
+(1) 若 $f(x)=x^2$，判断 $-1$ 和 $3$ 是否属于 $M$，并说明理由；
+
+(2) 若 $M=(-2,2]$，
+
+(i) 判断 $y=f(x)$ 是否可能为偶函数，并说明理由；
+
+(ii) 判断 $y=f(x)$ 是否可能为减函数，并说明理由；
+
+(3) 已知 $y=f(x)$ 的图像是连续曲线，且 $M$ 不为空集. 设命题 $p$：函数 $y=f(x)$ 满足 $M=\R$；命题 $q$：对任意的非零实数 $a$，关于 $x$ 的方程 $f(x+a)-f(x)=0$ 无实数解. 判断 $p$ 是 $q$ 的什么条件（充分不必要、必要不充分、充分必要、既不充分也不必要），并说明理由.
+
+\ifanswer
+\solbegin
+\step{(1) 对任意 $x<-1$，都有 $f(x)=x^2>1=f(-1)$，所以 $-1\in M$.}
+\step{取 $x=0<3$，有 $f(0)=0<9=f(3)$，所以 $3\notin M$.}
+\step{(2) (i) 不可能.}
+\step{因为 $2\in M$ 且 $-2<2$，所以 $f(-2)>f(2)$；}
+\step{若 $f$ 为偶函数，则 $f(-2)=f(2)$，矛盾.}
+\step{(ii) 可能. 例如取 $f(x)=\begin{cases}2,&x\leqslant-2\\-x,&-2<x\leqslant2\\-2,&x>2\end{cases}$，}
+\step{则当 $x_1<x_2$ 时总有 $f(x_1)\geqslant f(x_2)$，所以 $y=f(x)$ 是 $\R$ 上的减函数.}
+\step{当 $-2<x_0\leqslant2$ 时，对任意 $x<x_0$：}
+\step{若 $x\leqslant-2$，则 $f(x)=2>-x_0=f(x_0)$；}
+\step{若 $-2<x<x_0$，则 $f(x)=-x>-x_0=f(x_0)$；}
+\step{所以 $x_0\in M$.}
+\step{当 $x_0\leqslant-2$ 时，取 $x=x_0-1$，有 $f(x)=2=f(x_0)$；}
+\step{当 $x_0>2$ 时，取 $x=2$，有 $f(2)=-2=f(x_0)$.}
+\step{两种情形 $x_0\notin M$.}
+\step{所以 $M=(-2,2]$，满足题意.}
+% 原卷 (3) 解析"先证充分性.""再证必要性."两枚标签印红色加粗、各独占一行，按 高一53／66／134 成例加粗着色、不引入红色
+\step{(3) {\bfseries\color{solblue}先证充分性.}}
+\step{若 $p$ 成立，则对任意 $u<v$，由 $v\in M$ 得 $f(u)>f(v)$，}
+\step{所以 $f$ 在 $\R$ 上严格递减.}
+\step{因此，对任意非零实数 $a$，}
+\step{$a>0\Rightarrow f(x+a)-f(x)<0; a<0\Rightarrow f(x+a)-f(x)>0$；}% 原卷前半角分号、句末全角分号混用，照录
+\step{方程均无实数解，即 $q$ 成立.}
+\step{{\bfseries\color{solblue}再证必要性.}}
+\step{若 $q$ 成立，则对任意 $u\neq v$，取 $a=v-u\neq0$，得 $f(v)-f(u)\neq0$，}
+\step{即不同自变量取不同函数值.}
+\step{结合图像连续，$f$ 必严格单调.}
+\step{事实上，若 $f$ 既不是严格增函数也不是严格减函数，}
+\step{则有一对自变量 $x_1<x_2$ 使 $f(x_1)>f(x_2)$，}
+\step{又有一对自变量 $x_3<x_4$ 使 $f(x_3)<f(x_4)$；}
+\step{这几个点的函数值互不相同且按自变量从小到大排列时不单调，}
+\step{故其中存在 $u<v<w$，}
+\step{使 $f(v)>\max\{f(u),f(w)\}$ 或 $f(v)<\min\{f(u),f(w)\}$，}
+\step{第一种情形下，取 $\max\{f(u),f(w)\}<k<f(v)$，}
+\step{连续曲线在 $(u,v)$、$(v,w)$ 内各有一点的函数值为 $k$，}
+\step{与不同自变量取不同函数值矛盾；第二种情形同理.}
+\step{又 $M\neq\varnothing$，可取 $c\in M$，则 $f(c-1)>f(c)$，所以 $f$ 不可能严格递增，}
+\step{只能在 $\R$ 上严格递减，}
+\step{于是每个 $x_0\in\R$ 均属于 $M$，即 $M=\R$，$p$ 成立.}
+\step{因此，$p$ 是 $q$ 的充分必要条件.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
