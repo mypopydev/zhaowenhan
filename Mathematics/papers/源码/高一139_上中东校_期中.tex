@@ -1,0 +1,416 @@
+% 高一139_上中东校_期中.tex
+%   —— 高一上数学"2026-2027 年上中东校高一上期中"（试卷版/答案版）
+% 试卷版：xelatex 高一139_上中东校_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一139_上中东校_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一139_上中东校_期中.tex}"
+%
+% ① 原始材料：微信公众号"魔都数学加油站"连载"27学年高一139"，原文标题
+% "27学年高一139——2026-2027年上海市上中东校高一上期中"；
+% 原文链接：https://mp.weixin.qq.com/s/138SGjywdFUTGZaO2dIKVw。
+% 正文为 11 张 PNG 页（01、02、04、06、11 为 2560x3620；03、05、07、08、09、10 为
+% 4762x6735；同一篇各页分辨率不同，逐页按各自分辨率放大核对），题目下印有【解析】或
+% 【答案】，为讲评版。题目、解析均据原图转录；卷面粉红色水印"魔都数学加油站"及
+% 公众号页脚未录入。全卷无插图（第 22 题那张是印刷数据表格、用 tabular 重排，非插图）。
+%
+% 卷首标题：原卷印作"2026-2027 年上中东校高一上期中"（公众号标题中的"上海市"卷面
+% 标题行没有，本稿照卷面），年份区间按全稿惯例排 en dash；原卷未印副标题，本卷为
+% 期中卷、跨集合与常用逻辑用语／不等式／函数三章，按题目内容标为
+% "集合与常用逻辑用语、不等式、函数"（与 125／126／128／129／131／132／133／136／112
+% 同期中卷口径相同）。
+%
+% 题号体例：本卷共 21 题——一、填空题 3—14（12 题）、二、选择题 15—18（4 题）、
+% 三、解答题 19—23（5 题）。三节分别 \setcounter{enumi}{2}／{14}／{18}。无附加题节。
+%
+% ② 与原卷的排版差异：
+%   ① 原文从第 3 题起，本稿保留原题号；
+%   ② 原卷每题下直接印【解析】或【答案】，本稿按全稿惯例置于答案版；第 3、7、10 题
+%      只印【答案】、无【解析】，提 \ans{}、不计 \step；选择题 15—18 答案在解析末句
+%      "故选 …"，括号内留空、不另提 \ans{}；其余各题印【解析】；
+%   ③ 原卷未印副标题，本稿按"知识模块"口径补出；
+%   ④ 原卷填空横线按全稿惯例排为 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      每个选项段前按惯例加 \keepwithprev；解答题不留作答区、不加 \anspace（讲评版）；
+%   ⑤ 原卷数集排斜体 $R$／$N$／$Z$，按全稿惯例改 \R／\N／\Z；空集记号 \varnothing；
+%      绝对值排 \lvert…\rvert，集合描述竖线排 \mid；不等号按全稿惯例排 \leqslant／\geqslant；
+%   ⑥ 第 22 题印刷数据表格（两行五列）按原卷用 tabular 重排，题干内、三版都出；
+%      判"A\subseteq\{…\}"等带下划线子集符号逐处放大核对、照录 \subseteq；
+%   ⑦ 题干中文弯引号按原卷照录，注释内一律 ASCII 引号；数学式内 CJK 用 \text{…}。
+%
+% ③ 行数复核：逐题 \step 条数合计 120 ＝ 原卷印刷行数（cases 块与 tabular 各作一个
+%   印刷行计）；逐题 breakdown：Q3:0 Q4:1 Q5:1 Q6:3 Q7:0 Q8:5 Q9:2 Q10:0 Q11:2
+%   Q12:4 Q13:7 Q14:13 Q15:5 Q16:2 Q17:2 Q18:5 Q19:4 Q20:12 Q21:6 Q22:18 Q23:28。
+%   第 3、7、10 题只印【答案】、提 \ans{}、不计入 \step 账；选择题 15—18 答案在
+%   解析末句「故选 …」，括号内留空、不另提 \ans{}。
+%
+% ④ 判别式／子集符号结论：
+%   判别式：全卷仅第 11 题【解析】出现"$\Delta=a^2-4>0$"，原卷印等腰、偏高的
+%      三角 $\Delta$，逐处放大核对并照录 \Delta；全卷未出现扁等边三角 \triangle。
+%   子集符号：第 14 题题干"$A\subseteq\{x\mid0\leqslant x\leqslant2027,x\in N\}$"、
+%      第 20 题 (2) 题干"$C\subseteq A$"及【解析】"$C\subseteq A$"（两处）原卷均印
+%      带下划线 $\subseteq$，逐处放大核对、照录 \subseteq；全卷未出现单线 \subset。
+%
+% ⑤ 原卷存疑照录（均照录未改，正文对应处另有 % 注）：
+%   ① 第 18 题题干定义运算 $A_i\oplus A_j=A_k$（$\oplus$），但【解析】四处都印作
+%      "$(x+x)+A_2$""$(A_0+A_0)+A_2$" 等，把 $\oplus$ 写作 $+$，原卷如此，照录并加注；
+%   ② 第 23 题 (3)②【解析】"当 $n=5$ 时，第（2）问已经证明集合 $A=\{a_1,a_3,a_4,a_5\}$
+%      不是"可分集合""——按 (2) 应为 $\{a_1,a_2,a_3,a_4,a_5\}$，原卷脱 $a_2$，照录并加注；
+%   ③ 第 21 题 (2)【解析】"由（1）得"用全角括号、第 20/22/23 题 (1)(2)(3) 子题标号
+%      原卷全角，逐处照录未统一；第 19 题 (2)、第 20 题 (1)(2)、第 22 题 (2) 等句末
+%      西文句点／分号按原卷照录。
+%
+% ⑥ 跨页续印按题合并：Q8（题干 01 页末、解析 02 页）、Q14（题干 03 页、解析
+%   03—04 页）、Q15（解析 04 页、末句"故选 B"在 05 页）、Q19（题干 05 页末、
+%   解析 06 页）、Q20（解析 06—07 页）、Q22（题干 07 页末、表格与解析 08—09 页）、
+%   Q23（题干 09 页、解析 10—11 页）；cases 块（Q5 定义运算、Q20(2) 两处不等式组、
+%   Q22(1)(2) 各函数式）算一个印刷行。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年上中东校高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 不等式 $\dfrac{x-1}{2x+5}>0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\ans{$\left(-\infty,-\dfrac52\right)\cup(1,+\infty)$}
+\fi
+
+\item 已知一元二次方程 $x^2+2x-12=0$ 的两根为 $x_1$、$x_2$，则 $\dfrac1{x_1}+\dfrac1{x_2}=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由韦达定理得 $x_1+x_2=-2$，$x_1x_2=-12$，则 $\dfrac1{x_1}+\dfrac1{x_2}=\dfrac{x_2+x_1}{x_1x_2}=\dfrac{-2}{-12}=\dfrac16$.}
+\solend
+\fi
+
+\item 定义运算 $x\otimes y\begin{cases}x(x\leqslant y)\\y(x>y)\end{cases}$，若 $\lvert m-1\rvert\otimes m=\lvert m-1\rvert$，则 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $\lvert m-1\rvert\leqslant m$ ①，所以 $m\geqslant0$，①式平方得 $m^2-2m+1\leqslant m^2$，即 $m\geqslant\dfrac12$.}
+\solend
+\fi
+
+\item 已知正实数 $x$、$y$ 满足 $\dfrac2x+\dfrac1y=1$，则 $2x+y$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为正实数 $x$、$y$ 满足 $\dfrac2x+\dfrac1y=1$，}
+\step{所以 $2x+y=\left(\dfrac2x+\dfrac1y\right)(2x+y)=5+\dfrac{2y}{x}+\dfrac{2x}{y}\geqslant5+2\sqrt{\dfrac{2y}{x}\cdot\dfrac{2x}{y}}=9$，}
+\step{当且仅当 $\dfrac{2y}{x}=\dfrac{2x}{y}$，即 $x=y=3$ 时取等号，所以 $2x+y$ 的最小值为 $9$.}
+\solend
+\fi
+
+\item 下列幂函数在区间 $(0,+\infty)$ 上是严格增函数，且图像关于原点成中心对称的是\blankline[4.4em]（请填入全部正确的序号）.
+
+① $y=x^{\frac12}$；② $y=x^{\frac13}$；③ $y=x^{\frac23}$；④ $y=x^{-\frac13}$.
+
+\ifanswer
+\ans{\text{②}}
+\fi
+
+\item 设 $a\in\R$，若关于 $x$ 的不等式 $x^2-ax<0$ 的解集是区间 $(0,1)$ 的真子集，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为关于 $x$ 的不等式 $x^2-ax<0$ 的解集是区间 $(0,1)$ 的真子集，}
+\step{当 $a=0$ 时，不等式的解集为 $\varnothing$，符合题意；}
+\step{当 $a>0$ 时，不等式的解集为 $(0,a)$，则 $0<a<1$，}
+\step{当 $a<0$ 时，不等式的解集为 $(a,0)$，不符合题意，}
+\step{故 $a$ 的范围为 $[0,1)$.}
+\solend
+\fi
+
+\item 荀子《劝学》中说：“不积跬步，无以至千里；不积小流，无以成江海．”所以说学习是日积月累的过程，每天进步一点点，前进不止一点点．我们可以把 $(1+1\%)^{365}$ 看作是每天的“进步”率都是 $1\%$，一年后是 $1.01^{365}\approx37.7834$；而把 $(1-1\%)^{365}$ 看作是每天“退步”率都是 $1\%$，一年后是 $0.99^{365}\approx0.0255$．若“进步”的值是“退步”的值的 $100$ 倍，大约经过\blankline[4.4em]天（精确到个位）.
+
+\ifanswer
+\solbegin
+\step{设经过 $x$ 天“进步”的值是“退步”的值的 $100$ 倍，}
+\step{则 $100\times0.99^x=1.01^x$，即 $\left(\dfrac{1.01}{0.99}\right)^x=100$，所以 $x=\log_{\frac{1.01}{0.99}}100\approx230$.}
+\solend
+\fi
+
+\item 若关于 $x$ 的不等式 $\lvert x+3\rvert-\lvert x-1\rvert<a-1$ 恒成立，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\ans{$(5,+\infty)$}
+\fi
+
+\item 已知 $a\in\R$，若不等式 $4^{ax}<\left(\dfrac12\right)^{x^2-ax+1}$ 有解，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$4^{ax}<\left(\dfrac12\right)^{x^2-ax+1}\Leftrightarrow2^{2ax}<2^{-1+ax-x^2}\Leftrightarrow2ax<-1+ax-x^2\Leftrightarrow x^2+ax+1<0$ 有}
+\step{解，所以 $\Delta=a^2-4>0$，即所求 $a$ 的取值范围为 $(-\infty,-2)\cup(2,+\infty)$.}
+\solend
+\fi
+
+\item 一元二次不等式 $ax^2+2x+b>0(a>b)$ 的解集为 $\left\{x\mid x\neq-\dfrac1a\right\}$，则 $\dfrac{a^2+b^2}{a-b}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{一元二次不等式 $ax^2+2x+b>0$（$a>b$）的解集为 $\left\{x\mid x\neq-\dfrac1a\right\}$，}
+\step{说明 $x=-\dfrac1a$ 时，不等式对应的方程为 $0$，得 $b=\dfrac1a$，即 $ab=1$，因为 $a>b$，}
+\step{所以 $\dfrac{a^2+b^2}{a-b}=\dfrac{(a-b)^2+2ab}{a-b}=(a-b)+\dfrac2{a-b}\geqslant2\sqrt2$，}
+\step{当且仅当 $a-b=\sqrt2$ 时取等号，则 $\dfrac{a^2+b^2}{a-b}$ 的最小值为 $2\sqrt2$.}
+\solend
+\fi
+
+\item 对于实数 $m$ 和正数 $n$，称满足不等式 $\lvert x-m\rvert<n(m\in\R,n>0)$ 的实数 $x$ 的集合叫做 $m$ 的 $n$ 邻域，已知 $a>\dfrac12$，若 $2a-\dfrac12$ 的 $a-\dfrac12$ 邻域中恰有 $2$ 个整数，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由题意得 $\left\lvert x-2a+\dfrac12\right\rvert<a-\dfrac12$ 有恰两个整数解，}
+\step{得 $\dfrac12-a<x-2a+\dfrac12<a-\dfrac12\Rightarrow a<x<3a-1$，}
+\step{所以 $(a,3a-1)$ 中恰有两个整数，}
+\step{故 $1<3a-1-a\leqslant3\Rightarrow1<a\leqslant2$，所以 $3a-1\leqslant5$，}
+\step{当两个整数为 $2$，$3$ 时，得 $1<a<2$，$3<3a-1\leqslant4$，解得 $\dfrac43<a\leqslant\dfrac53$；}
+\step{当两个整数为 $3$，$4$ 时，$a=2$，所以 $3a-1=5$，}
+\step{综上所述，$a\in\left(\dfrac43,\dfrac53\right]\cup\{2\}$.}
+\solend
+\fi
+
+\item 设集合 $A$ 为非空数集，定义 $A^+=\{x\mid x=a+b,a,b\in A\}$，$A^-=\{x\mid x=\lvert a-b\rvert,a,b\in A\}$．若 $A\subseteq\{x\mid0\leqslant x\leqslant2027,x\in\N\}$，且 $A^+\cap A^-=\varnothing$，则集合 $A$ 元素个数的最大值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $A=\{a_1,a_2,\cdots,a_k\}$ 满足题意，其中 $a_1<a_2<\cdots<a_k$，}
+\step{则 $2a_1<a_1+a_2<a_1+a_3<\cdots<a_1+a_k<a_2+a_k<a_3+a_k<\cdots<a_{k-1}+a_k<2a_k$，}
+\step{所以 $\lvert A^+\rvert\geqslant2k-1$，且 $a_1-a_1<a_2-a_1<a_3-a_1<\cdots<a_k-a_1$，所以 $\lvert A^-\rvert\geqslant k$，}
+\step{因为 $A^+\cap A^-=\varnothing$，所以 $\lvert A^+\cup A^-\rvert=\lvert A^+\rvert+\lvert A^-\rvert\geqslant3k-1$，}
+\step{$A^+\cup A^-$ 中最小的元素为 $0$，最大的元素为 $2a_k$，所以 $\lvert A^+\cup A^-\rvert\leqslant2a_k+1$，}
+\step{所以 $3k-1\leqslant2a_k+1\leqslant4055(k\in\N^*)$，所以 $k\leqslant1352$，}
+\step{实际上当 $A=\{676,677,678,\cdots,2027\}$ 时满足题意，证明如下：}
+\step{设 $A=\{m,m+1,m+2,\cdots,2027\}$，$m\in\N$，}
+\step{则 $A^+=\{2m,2m+1,2m+2,\cdots,4054\}$，$A^-=\{0,1,2,\cdots,2027-m\}$，}
+\step{由题意得 $2027-m<2m$，即 $m>675\dfrac23$，}
+\step{故 $m$ 的最小值为 $676$，于是当 $m=676$ 时，$A$ 中元素最多，}
+\step{即 $A=\{676,677,678,\cdots,2027\}$ 时满足题意，}
+\step{综上所述，集合 $A$ 中元素的个数的最大值是 $1352$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{14}
+
+\item 下列函数中，值域为 $(0,+\infty)$ 的是\mbox{（\quad）}
+
+\keepwithprev
+A. $y=x^2$\qquad B. $y=2^x$\qquad C. $y=\ln x$\qquad D. $y=x+\dfrac1x$
+
+\ifanswer
+\solbegin
+\step{$y=x^2\geqslant0$，即函数的值域为 $[0,+\infty)$，不满足条件.}
+\step{$y=2^x>0$，即函数的值域为 $(0,+\infty)$，满足条件.}
+\step{$y=\ln x$ 的值域为 $\R$，不满足条件.}
+\step{当 $x<0$ 时，$y<0$，则函数的值域不是 $(0,+\infty)$，不满足条件.}
+\step{故选 $B$.}
+\solend
+\fi
+
+\item 已知 $x$、$y$、$z\in\R$，且 $a=x^2+2y$，$b=y^2+2z$，$c=z^2+2x$，则 $a$、$b$、$c$ 三个数\mbox{（\quad）}
+
+\keepwithprev
+A. 至少有一个不小于 $-1$\qquad B. 都小于 $-1$
+
+C. 至少有一个不大于 $-1$\qquad D. 都大于 $-1$
+
+\ifanswer
+\solbegin
+\step{$a+b+c=x^2+y^2+z^2+2x+2y+2z=(x+1)^2+(y+1)^2+(z+1)^2-3\geqslant-3$，}
+\step{所以 $a$、$b$、$c$ 三个数中至少有一个不小于 $-1$. 故选 $A$.}
+\solend
+\fi
+
+\item 实数 $x$ 与 $y$，“$x+y>2$”的\mbox{（\quad）}条件是“$x>1$ 或 $y>1$”.
+
+\keepwithprev
+A. 充分非必要\qquad B. 必要非充分
+
+C. 充要\qquad D. 既非充分又非必要
+
+\ifanswer
+\solbegin
+\step{当 $x>1$ 或 $y>1$ 时，$x+y>2$ 不一定成立，充分性不成立；}
+\step{当 $x+y>2$ 时，$x>1$ 或 $y>1$ 一定成立，必要性成立. 故选 $B$.}
+\solend
+\fi
+
+\item 设集合 $S=\{A_0,A_1,A_2,A_3\}$，在 $S$ 上定义运算 $\oplus$ 为：$A_i\oplus A_j=A_k$，其中 $k$ 为 $i+j$ 被 $4$ 除的余数，$i$、$j\in\{0,1,2,3\}$，则满足关系式 $(x\oplus x)\oplus A_2=A_0$ 的 $x(x\in S)$ 的个数为\mbox{（\quad）}
+
+\keepwithprev
+A. $4$\qquad B. $3$\qquad C. $2$\qquad D. $1$
+
+\ifanswer
+\solbegin
+\step{当 $x=A_0$ 时，$(x+x)+A_2=(A_0+A_0)+A_2=A_0+A_2=A_2$，}% 原卷解析把 \oplus 印作 +，照录
+\step{当 $x=A_1$ 时，$(x+x)+A_2=(A_1+A_1)+A_2=A_2+A_2=A_0$，}
+\step{当 $x=A_2$ 时，$(x+x)+A_2=(A_2+A_2)+A_2=A_0+A_2=A_2$，}
+\step{当 $x=A_3$ 时，$(x+x)+A_2=(A_3+A_3)+A_2=A_2+A_2=A_0$，}
+\step{满足关系式 $(x+x)+A_2=A_0$ 的 $x(x\in S)$ 的个数为 $2$ 个，故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{18}
+
+\item 完成下列 $2$ 个小题：
+
+(1) 化简 $\log_{27}9+2\lg5+\lg4-2^{1-\log_23}$；
+
+(2) 已知 $2^a=27$，$3^b=16$，求 $ab$ 的值．
+
+\ifanswer
+\solbegin
+\step{(1) 因为 $\log_{27}9=\log_{3^3}3^2=\dfrac23$，$2\lg5+\lg4=\lg25+\lg4=\lg100=2$，}
+\step{$2^{1-\log_23}=\dfrac2{2^{\log_23}}=\dfrac23$，所以原式 $=\dfrac23+2-\dfrac23=2$；}
+\step{(2) 由 $3^b=16$ 得 $b=\log_316=4\log_32$，由 $2^a=27$ 得 $a=\log_227=3\log_23$，}
+\step{所以 $ab=12\log_23\cdot\log_32=12$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid2x^2-3x-5<0\}$，$B=\left\{x\mid\dfrac1{x-2}>1\right\}$，$C=\{x\mid x^2-x-a^2+a\leqslant0,a\in\R\}$．
+
+(1) 求 $A\cup B$；
+
+(2) 若 $C\subseteq A$，求 $a$ 的取值范围．
+
+\ifanswer
+\solbegin
+\step{(1) 由不等式 $2x^2-3x-5<0$ 得 $(x+1)(2x-5)<0$，解得 $-1<x<\dfrac52$，}
+\step{所以集合 $A=\left\{x\mid-1<x<\dfrac52\right\}$，}
+\step{由不等式 $\dfrac1{x-2}>1$ 得 $\dfrac1{x-2}-1>0$，整理得 $\dfrac{3-x}{x-2}>0$，}
+\step{即 $(x-2)(3-x)>0$，解得 $2<x<3$，所以集合 $B=\{x\mid2<x<3\}$，}
+\step{所以 $A\cup B=\{x\mid-1<x<3\}$；}
+\step{(2) $C=\{x\mid x^2-x-a^2+a\leqslant0,a\in\R\}=\{x\mid(x-a)[x-(1-a)]\leqslant0,a\in\R\}$，}
+\step{当 $a<\dfrac12$ 时，$C=\{x\mid a\leqslant x\leqslant1-a\}$，}
+\step{若 $C\subseteq A$，则 $\begin{cases}a>-1\\1-a<\dfrac52\end{cases}$，解得 $-1<a<\dfrac12$，}
+\step{当 $a=\dfrac12$ 时，$C=\left\{\dfrac12\right\}$，满足 $C\subseteq A$，}
+\step{当 $a>\dfrac12$ 时，$C=\{x\mid1-a\leqslant x\leqslant a\}$，}
+\step{若 $C\subseteq A$，则 $\begin{cases}1-a>-1\\a<\dfrac52\end{cases}$，解得 $\dfrac12<a<2$，}
+\step{综上所述，$a$ 的取值范围为 $\{a\mid-1<a<2\}$.}
+\solend
+\fi
+
+\item 已知 $a>0$ 且 $a\neq1$，函数 $f(x)=(m^2-4m-4)a^x$．
+
+(1) 若 $m>0$，$f(x)$ 是指数函数，且 $f(2)=4$，求 $m$ 和 $a$ 的值；
+
+(2) 若 $m=-1,a=2$，求 $f(2x)-2f(x)-3>0$ 的解集．
+
+\ifanswer
+\solbegin
+\step{(1) 由题意得 $m^2-4m-4=1$，解得 $m=5$ 或 $m=-1$（不合题意，舍去），}
+\step{由 $f(2)=a^2=4$，$a>0$ 且 $a\neq1$，得 $a=2$；}
+\step{(2) 由（1）得 $f(x)=2^x$，$f(2x)-2f(x)-3>0$ 即为 $2^{2x}-2\times2^x-3>0$，}
+\step{设 $2^x=t(t>0)$，原不等式化为 $t^2-2t-3>0$，}
+\step{整理得 $(t-3)(t+1)>0$，解得 $t>3$ 或 $t<-1$，因为 $t>0$，所以 $t>3$，}
+\step{所以 $2^x>3$，得 $x>\log_23$，所以原不等式的解集为 $(\log_23,+\infty)$.}
+\solend
+\fi
+
+\item 新能源电动汽车主要采用电能作为动力来源，目前比较常见的主要有两种：混合动力汽车、纯电动汽车．有关部门在国道上对某型号纯电动汽车进行测试，国道限速 $60km/h$．经数次测试，得到该纯电动汽车每小时耗电量 $Q$（单位：$W\cdot h$）与速度 $x$（单位：$km/h$）的数据如表所示：
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$x/(km/h)$ & $0$ & $10$ & $40$ & $60$ \\
+\hline
+$Q/(W\cdot h)$ & $0$ & $1420$ & $4480$ & $6720$ \\
+\hline
+\end{tabular}
+\end{center}
+
+为了描述该纯电动汽车在国道上行驶时每小时耗电量 $Q$ 与速度 $x$ 的关系，现有以下两种函数模型供选择：
+
+① $Q_1(x)=\dfrac1{50}x^3-2x^2+cx$（$c$ 为常数）；② $Q_2(x)=\dfrac{ax}{x^2+1}$（$a$ 为大于 $0$ 的常数）．
+
+(1) 当 $0\leqslant x\leqslant60$ 时，请选出你认为最符合表格中所列数据的函数模型（需说明理由），并求出相应的函数表达式．
+
+(2) 现有一辆同型号纯电动汽车从 $A$ 地行驶到 $B$ 地，其中，国道上行驶 $50km$，高速上行驶 $300km$．假设该纯电动汽车在国道和高速上均做匀速运动，国道上每小时的耗电量 $Q$ 与速度 $x$ 的关系满足 (1) 中的函数表达式；高速路上车速 $x$（单位：$km/h$）满足 $x\in[80,120]$，且每小时耗电量 $N$（单位：$W\cdot h$）与速度 $x$（单位：$km/h$）的关系满足 $N(x)=2x^2-10x+200(80\leqslant x\leqslant120)$，则当国道和高速上的车速分别为多少时，该车辆的总耗电量最少？最少总耗电量为多少？
+
+\ifanswer
+\solbegin
+\step{(1) 对于② $Q_2(x)=\dfrac{ax}{x^2+1}=\dfrac{a}{x+\dfrac1x}(a>0)$，}
+\step{当 $x>1$ 时，函数 $y=x+\dfrac1x$ 严格增，}
+\step{所以当 $x>1$ 时，$Q_2(x)=\dfrac{ax}{x^2+1}(a>0)$ 严格减，不符合题意；}
+\step{故选① $Q_1(x)=\dfrac1{50}x^3-2x^2+cx$，}
+\step{由表中的数据得 $\dfrac1{50}\times10^3-2\times10^2+c\times10=1420$，解得 $c=160$，}
+\step{所以 $Q(x)=\dfrac1{50}x^3-2x^2+160x$；}
+\step{(2) 高速上行驶 $300km$，所用时间为 $\dfrac{300}{x}h$，}
+\step{则所耗电量为 $f(x)=\dfrac{300}{x}\cdot N(x)=\dfrac{300}{x}\cdot(2x^2-10x+200)$}
+\step{$=600\left(x+\dfrac{100}{x}\right)-3000$，}
+\step{由对勾函数的性质得 $f(x)$ 在 $[80,120]$ 上严格增，}
+\step{$f(x)_{min}=f(80)=600\times\left(80+\dfrac{100}{80}\right)-3000=45750w\cdot h$；}
+\step{国道上行驶 $50km$，所用时间为 $\dfrac{50}{x}h$，}
+\step{则所耗电量为 $g(x)=\dfrac{50}{x}\cdot Q(x)=\dfrac{50}{x}\left(\dfrac1{50}x^3-2x^2+160x\right)$}
+\step{$=x^2-100x+8000$，}
+\step{因为 $0\leqslant x\leqslant60$，所以当 $x=50$ 时，$g(x)_{min}=g(50)=5500w\cdot h$；}
+\step{所以当这辆车在高速上的行驶速度为 $80km/h$，}
+\step{在国道上的行驶速度为 $50km/h$ 时，该车辆的总耗电量最少，}
+\step{最少总耗电量为 $45750+5500=51250w\cdot h$.}
+\solend
+\fi
+
+\item 对于正整数集合 $A=\{a_1,a_2,\cdots,a_n\}(n\in\N,n\geqslant3)$，如果任意去掉其中一个元素 $a_i(i=1,2,\cdots,n)$ 之后，剩余的所有元素组成的集合都能分为两个交集为空集的集合，且这两个集合的所有元素之和相等，就称集合 $A$ 为“可分集合”；
+
+(1) 判断集合 $\{1,2,3,4,5\}$ 和 $\{1,3,5,7,9,11,13\}$ 是否是“可分集合”（不必写过程）；
+
+(2) 求证：五个元素的集合 $A=\{a_1,a_2,a_3,a_4,a_5\}$ 一定不是“可分集合”；
+
+(3) 若集合 $A=\{a_1,a_2,\cdots,a_n\}(n\in\N,n\geqslant3)$ 是“可分集合”．
+
+①证明：$n$ 为奇数；
+
+②求集合 $A$ 中元素个数的最小值．
+
+\ifanswer
+\solbegin
+\step{(1) 集合 $\{1,2,3,4,5\}$ 不是“可分集合”，集合 $\{1,3,5,7,9,11,13\}$ 是“可分集合”；}
+\step{(2) 不妨设 $a_1<a_2<a_3<a_4<a_5$，}
+\step{若去掉的元素为 $a_2$，将集合 $\{a_1,a_3,a_4,a_5\}$ 分成两个交集为空集的子集，}
+\step{且两个子集元素之和相等，则有 $a_1+a_5=a_3+a_4$ ①，}
+\step{或 $a_5=a_1+a_3+a_4$ ②；}
+\step{若去掉的元素为 $a_1$，将集合 $\{a_2,a_3,a_4,a_5\}$ 分成两个交集为空集的子集，}
+\step{且两个子集元素之和相等，则有 $a_2+a_5=a_3+a_4$ ③，}
+\step{或 $a_5=a_2+a_3+a_4$ ④.}
+\step{由①、③，得 $a_1=a_2$，矛盾；由①、④，得 $a_1=-a_2$，矛盾；}
+\step{由②、③，得 $a_1=-a_2$，矛盾；由②、④，得 $a_1=a_2$ 矛盾.}
+\step{因此当 $n=5$ 时，集合一定不是“可分集合”；}
+\step{(3) ①设集合 $A=\{a_1,a_2,\cdots,a_n\}(n\in\N,n\geqslant3)$ 的所有元素之和为 $M$.}
+\step{由题意得 $M-a_i(i=1,2,\cdots,n)$ 均为偶数，}
+\step{因此 $a_i(i=1,2,\cdots,n)$ 均为奇数或偶数.}
+\step{如果 $M$ 为奇数，则 $a_i(i=1,2,\cdots,n)$ 也均为奇数，}
+\step{由于 $M=a_1+a_2+\cdots+a_n$，所以 $n$ 为奇数.}
+\step{如果 $M$ 为偶数，则 $M-a_i(i=1,2,\cdots,n)$ 均为偶数，此时设 $a_i=2b_i$，}
+\step{则 $\{b_1,b_2,\cdots,b_n\}$ 也是“可分集合”. 重复上述操作有限次，}
+\step{便可得各项均为奇数的“可分集合”. 此时各项之和也为奇数，}
+\step{则集合 $A$ 中元素个数 $n$ 为奇数.}
+\step{综上所述，集合 $A$ 中元素个数为奇数.}
+\step{②当 $n=3$ 时，显然任意集合 $\{a_1,a_2,a_3\}$ 不是“可分集合”.}
+\step{当 $n=5$ 时，第（2）问已经证明集合 $A=\{a_1,a_3,a_4,a_5\}$ 不是“可分集合”.}% 原卷脱 a_2，照录
+\step{当 $n=7$ 时，集合 $A=\{1,3,5,7,9,11,13\}$，}
+\step{因为 $3+5+7+9=11+13$，$1+9+13=5+7+11$，$9+13=1+3+7+11$，}
+\step{$1+3+5+11=7+13$，$1+9+11=3+5+13$，$3+7+9=1+5+13$，}
+\step{$1+3+5+9=7+11$，所以集合 $A$ 是“可分集合”，}
+\step{所以集合 $A$ 中元素个数 $n$ 的最小值是 $7$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
