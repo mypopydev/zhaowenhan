@@ -1,0 +1,412 @@
+% 高一143_上海中学_期中.tex
+%   —— 高一上数学"2026-2027 年上海中学高一上期中"（试卷版/答案版/紧凑版）
+% 试卷版：xelatex 高一143_上海中学_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一143_上海中学_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一143_上海中学_期中.tex}"
+%
+% ① 原始材料：微信公众号"魔都数学加油站"文章，连载"27学年高一143"，原文标题
+% "27学年高一143——2026-2027年上海市上海中学高一上期中"；
+% 原文链接：https://mp.weixin.qq.com/s/5koNRgSEqTf3uRC-kFEGog 。
+% 正文为 10 张 PNG 页，题目下印【解析】，为讲评版。
+% 题目、解析均据原图转录；卷面粉红色水印"魔都数学加油站"及公众号页脚未录入。
+% 全卷无插图：通读 10 页确认无题目配图、无表格，亦无"题干写如图而源码漏图"一处。
+%
+% 卷首标题：原卷印作"2026-2027 年上海中学高一上期中"，年份区间按全稿惯例排 en dash；
+% 原卷卷面未印副标题，本稿按同期中卷（高一140／141）知识模块口径补出
+% "集合与常用逻辑用语、不等式、函数"：集合与逻辑见 Q4、Q9、Q19、Q21，
+% 不等式见 Q5、Q7、Q10、Q11、Q12、Q16、Q17、Q20，
+% 函数见 Q3、Q6、Q8、Q13、Q14、Q15、Q18、Q20。
+%
+% 题号体例：本卷共 19 题——一、填空题 3—12（10 题）、二、选择题 13—16（4 题）、
+% 三、解答题 17—21（5 题）。三节分别 \setcounter{enumi}{2}／{12}／{16}。
+% 原卷从第 3 题起、无第 1、2 题，本稿保留原题号；全卷无附加题节。
+%
+% ② 与原卷的排版差异：
+%   ① 原文从第 3 题起，本稿保留原题号；
+%   ② 原卷 19 题题下均印【解析】，无独立【答案】段：填空题与解答题的答案落在
+%      【解析】末句，四道选择题答案在【解析】末句"故选 …"
+%      （Q13 选 C、Q14 选 A、Q15 选 D、Q16 选 A），题干括号内一律留空；
+%      本稿 19 题一律 \solbegin…\solend、全卷不提 \ans{}，答案版【解析】标记数
+%      = 19 = 全卷题数；
+%   ③ 原卷卷面未印副标题，本稿按知识模块口径补出；
+%   ④ 原卷填空横线按全稿惯例排 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}，
+%      选项段前按惯例加 \keepwithprev；解答题不留作答区、不加 \anspace
+%      （原卷为讲评版，与 129／131／132／133／136／140／141 同）；
+%   ⑤ 数集：Q4 题干"设 x,y∈R"、Q19 题干"U=R"、Q20 题干"x∈R"原卷印黑板粗体 R，
+%      按全稿惯例统一改 \R；绝对值排 \lvert…\rvert，集合描述竖线排 \mid；
+%      不等号按全稿惯例排 \leqslant／\geqslant；补集照原卷上划线排
+%      \overline{B}（Q19(2) 题干）与 \overline{A}（Q19 解析(2)）；
+%      空集记号 \varnothing（Q19 解析(2)）；
+%   ⑥ 子题标号 (1)(2)(3) 原卷印半角括号，照录；圈数字 ①②③④⑤ 在正文（文本模式）
+%      按原卷照录（Q8 题干与解析），未进数学式；数学式内半角逗号照录
+%      （Q18 解析"k\ne0,\Delta=…"、Q20 解析"f(a)\ge a,f(b)\le b"、
+%      "a\le\alpha<1,\alpha\le b\le\beta<5"、"f(a)=b,f(b)=a"、"a<1,b<2"、
+%      Q20(3)"m=-2,0"等）；全卷行末西文句点照录为 ASCII 句点；
+%      行中全角逗号、顿号照录；
+%   ⑦ 题干中的中文弯引号按原卷照录（Q4 的 “ x>y ” 与 “ log_2 x>log_2 y ” 含引号内空格、
+%      Q5 古语引号及引号内句点、Q21 的 “学习搭子” 与 “共同学习搭子”）；
+%      注释内一律 ASCII 引号；
+%   ⑧ 全卷无插图，故无 \includegraphics、无 \needvspace 守卫；三版切页审计
+%      均"合计异常：无"；
+%   ⑨ 跨页续印按题合并：Q6 题干与【解析】首行在 01 页、次行在 02 页；
+%      Q9 题干与【解析】前 2 行在 02 页、末行在 03 页；Q12 题干与【解析】
+%      前 2 行在 03 页、后 2 行在 04 页；Q15 题干在 04 页、选项与【解析】
+%      在 05 页；Q16 题干与【解析】前 3 行在 05 页、后 2 行在 06 页；
+%      Q18 题干与【解析】前 5 行在 06 页、后 4 行在 07 页；Q19 全在 07 页；
+%      Q20 题干与【解析】(1)(2) 前 2 行在 08 页、(2) 末 2 行与 (3) 在 09 页；
+%      Q21 题干与【解析】(1) 在 09 页、(2)(3) 在 10 页；本稿按题连排，不丢行；
+%   ⑩ 原卷无红色加粗标签（【解析】均黑色印刷），故本卷未用 \stepm；
+%   ⑪ "图像／图象"逐处照录不统一：Q3 题干与【解析】作"图像"，Q11 解析
+%      "由图象开口向上"、Q18 解析"由二次函数的图象"作"图象"，未统一；
+%   ⑫ 数学式内 CJK 用 \text{ 或 }（Q20(3) cases 块内"x<-1 或 x>1"等），
+%      半角逗号在数学组间为全稿惯例、非笔误。
+%
+% ③ 行数复核：一条 \step = 原卷解析的一个印刷行，cases 块作一个印刷行计。逐题数 \step
+%   条数，合计 125 条（Q3：4；Q4：3；Q5：2；Q6：2；Q7：7；Q8：3；Q9：3；
+%   Q10：3；Q11：7；Q12：4；Q13：3；Q14：3；Q15：7；Q16：5；Q17：5；
+%   Q18：9；Q19：10；Q20：19；Q21：26），与原卷印刷行逐题相等。全卷 19 题
+%   均印【解析】、无独立 \ans{}，答案版【解析】标记数 = 19 = 全卷题数。
+%
+% ④ 判别式／子集符号结论（逐处放大原图照录、不得统一）：
+%   判别式：全卷仅 Q18【解析】"$k\ne0,\Delta=(k+3)^2-4k^2=-3(k+1)(k-3)\ge0$"
+%     一处，原卷印等腰偏高的高三角 $\Delta$，照录 \Delta（放大图见
+%     /tmp/gao143sh/z_delta_glyph.png、z_q18_delta.png）；全卷无扁三角 \triangle。
+%   子集：全卷 3 处，Q19 题干(1)"B⊂A"、解析(1)"B⊂A"、解析(2)
+%     "B⊂\overline{A}=[1,2]" 均印单线 $\subset$（无下划线），照录 \subset；
+%     全卷无 \subseteq。
+%
+% ⑤ 存疑照录（照录未改，正文对应处另有 % 注）：
+%   第 10 题题干第二个根号为 $\sqrt{-x^2+4}$，其后的 $+x^4$ 在根号外：
+%     放大原图确认根号横线止于 "+4"（见 /tmp/gao143sh/q10_bar_tight.png），
+%     与【解析】"根式有意义需 -x^2+4\ge0"及"代入原不等式得 16>-10"一致
+%     （x=-2 时左端 = 0-0+16 = 16），故未把 x^4 并入根号内、未改解析。
+%   第 14 题题干原卷印"假设函数 f(x)=…"（非"设函数"），照录未改。
+%   全卷除此 2 条外未发现其它笔误／自相矛盾处。
+%
+% ⑥ 跨页续印按题合并说明：见 ② ⑨。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年上海中学高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item 已知函数 $f(x)=(m^2-3m-9)x^{m-2}$ 是幂函数，且该幂函数的图像和两条坐标轴都没有交点，则 $m=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{幂函数的系数为 1，所以 $m^2-3m-9=1$，解得 $m=5$ 或 $m=-2$.}
+\step{当 $m=5$ 时，$f(x)=x^3$ 的图像经过原点；}
+\step{当 $m=-2$ 时，$f(x)=x^{-4}$ 的图像与两条坐标轴都没有交点；}
+\step{因此 $m=-2$.}
+\solend
+\fi
+
+\item 设 $x,y\in\R$，则 “ $x>y$ ” 是 “ $\log_2 x>\log_2 y$ ” 的\blankline[4.4em]条件.
+
+\ifanswer
+\solbegin
+\step{由对数的定义域及单调性，$\log_2 x>\log_2 y$ 可推出 $x>y>0$，必要性成立.}
+\step{取 $x=1,y=-1$，虽有 $x>y$，但 $\log_2 y$ 无意义，充分性不成立.}
+\step{故为必要非充分条件.}
+\solend
+\fi
+
+\item 古语云：“学而不思则罔，思而不学则殆.” 这说明了花时间分别去“学”和“思”的重要性，假设杨老师一天用来“学”的时间为 $x$ 小时，一天用来“思”的时间为 $y$ 小时，且二者满足 $x+2y=12$，若我们用 $xy$ 来表示“学”与“思”相互结合、相互促进后产生的综合认知效益，则杨老师综合认知效益的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $x,y\geqslant0$，$xy=\dfrac12 x(2y)\leqslant\dfrac{(x+2y)^2}{8}=18$，}
+\step{当且仅当 $x=2y$，即 $x=6,y=3$ 时取等号，故最大值为 18.}
+\solend
+\fi
+
+\item 已知 $\log_a 18=m$，$\log_a 24=n\ (a>0,a\ne1)$，则 $\log_a 1.5=$\blankline[4.4em]（用含有 $m,n$ 的代数式表示）.
+
+\ifanswer
+\solbegin
+\step{由 $18=2\cdot3^2$，$24=2^3\cdot3$，$1.5=\dfrac32$，得 $18^4=2^4\cdot3^8=24^3\cdot(1.5)^5$，}
+\step{两边取以 $a$ 为底的对数得 $4m=3n+5\log_a 1.5\Rightarrow\log_a 1.5=\dfrac{4m-3n}{5}$.}
+\solend
+\fi
+
+\item 若方程 $x^2-ax+2=0$ 有且仅有一根在 $(1,4)$ 内，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $f(x)=x^2-ax+2$.}
+\step{两根不等且均不为区间端点时，恰有一根在 $(1,4)$ 内}
+\step{$\Leftrightarrow f(1)f(4)<0\Leftrightarrow(3-a)(18-4a)<0\Leftrightarrow3<a<\dfrac92$；}
+\step{检验端点，$a=3$ 时两根为 $1,2$，符合；$a=\dfrac92$ 时两根为 $\dfrac12,4$，不符合.}
+\step{两根相等时，$a^2-8=0$，$a=\pm2\sqrt2$；}
+\step{只有 $a=2\sqrt2$ 时唯一实根 $\sqrt2\in(1,4)$，符合.}
+\step{综上，$a$ 的取值范围是 $\{2\sqrt2\}\cup\left[3,\dfrac92\right)$.}
+\solend
+\fi
+
+\item 已知实数 $a,b$ 满足 $\left(\dfrac12\right)^a=\left(\dfrac13\right)^b$，下列五个关系式：① $0<b<a$，② $a<b<0$，③ $0<a<b$，④ $b<a<0$，⑤ $a=b$，其中不可能成立的所有关系式的序号为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原式等价于 $2^a=3^b$，即 $b=a\log_3 2$，且 $0<\log_3 2<1$.}
+\step{当 $a>0$ 时，$0<b<a$；当 $a<0$ 时，$a<b<0$；当 $a=0$ 时，$a=b=0$；}
+\step{所以不可能成立的是③④.}
+\solend
+\fi
+
+\item 已知 $\alpha: x<2m+1$ 或 $x>-m-2$，$\beta: x<2$ 或 $x\geqslant4$，若 $\alpha$ 是 $\beta$ 的必要条件，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\beta\Rightarrow\alpha$. 取 $x=-1$，$\beta$ 成立，须有 $-1<2m+1$ 或 $-1>-m-2$，即 $m>-1$.}
+\step{当 $m>-1$ 时，$2m+1>-m-2$，$\alpha$ 对一切实数 $x$ 成立，满足题意，}
+\step{因此 $m\in(-1,+\infty)$.}
+\solend
+\fi
+
+% 第 10 题：第二个根号横线止于 +4，+x^4 在根号外（放大原图确认；与解析"代入得 16>-10"一致）
+\item 不等式 $\sqrt{x^2-3x-10}-\sqrt{-x^2+4}+x^4>3x-4$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{根式有意义需 $x^2-3x-10\geqslant0$ 且 $-x^2+4\geqslant0$，}
+\step{即 $(x\leqslant-2$ 或 $x\geqslant5)$ 且 $-2\leqslant x\leqslant2$，得 $x=-2$.}
+\step{代入原不等式得 $16>-10$，成立，解集为 $\{-2\}$.}
+\solend
+\fi
+
+\item 已知不等式 $ax^2-(10+a)x+6<0$ 的解集中恰有 3 个整数，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $f(x)=ax^2-(10+a)x+6$.}
+\step{若 $a\leqslant0$，则所有正整数均满足 $f(x)=ax(x-1)-10x+6<0$，不合题意，}
+\step{故 $a>0$.}
+\step{由图象开口向上，且 $f(0)=6>0$、$f(1)=-4<0$，}% "图象"照原卷，不改"图像"
+\step{两个实根满足 $0<x_1<1<x_2$.}
+\step{恰有三个整数解等价于 $3<x_2\leqslant4$，即 $\begin{cases}f(3)=6a-24<0\\f(4)=12a-34\geqslant0\end{cases}\Leftrightarrow\dfrac{17}{6}\leqslant a<4$，}
+\step{故实数 $a$ 的取值范围是 $\left[\dfrac{17}{6},4\right)$.}
+\solend
+\fi
+
+\item 若正实数 $x,y,z$ 满足 $2x^2+y^2+z^2=4$，则 $\dfrac{z+2}{xyz}$ 的最小值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $0<z<2$，且 $4-z^2=2x^2+y^2\geqslant2\sqrt2 xy$，当且仅当 $y=\sqrt2 x$ 时取等号，}
+\step{得 $\dfrac{z+2}{xyz}\geqslant\dfrac{2\sqrt2(z+2)}{z(4-z^2)}=\dfrac{2\sqrt2}{z(2-z)}\geqslant2\sqrt2$，}
+\step{其中 $z(2-z)=1-(z-1)^2\leqslant1$，当且仅当 $z=1$ 时取等号.}
+\step{当 $x=\dfrac{\sqrt3}{2}$，$y=\dfrac{\sqrt6}{2}$，$z=1$ 时，两次等号同时成立，最小值为 $2\sqrt2$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item 下列函数中，函数的定义域和自身值域不同的是\mbox{（\quad）}
+
+\keepwithprev
+A. $y=x^2,x\in\{0,1\}$\qquad B. $y=\dfrac1x,x\in(-\infty,0)\cup(0,+\infty)$
+
+C. $y=2\left\lvert x-\dfrac12\right\rvert,x\in(0,1)$\qquad D. $y=-x^2+1,x\in[0,1]$
+
+\ifanswer
+\solbegin
+\step{A、B、D 的值域分别为 $\{0,1\}$、$(-\infty,0)\cup(0,+\infty)$、$[0,1]$，}
+\step{均与各自定义域相同.}
+\step{C 中 $0\leqslant2\left\lvert x-\dfrac12\right\rvert<1$，值域为 $[0,1)$，与定义域 $(0,1)$ 不同，故选 $C$.}
+\solend
+\fi
+
+% 第 14 题：原卷题干印"假设函数"（非"设函数"），照录未改
+\item 假设函数 $f(x)=\lvert x-2\rvert+\lvert5-x\rvert+\lvert2x-12\rvert$，则无论 $x$ 取何值，$f(x)$ 的值都不可能为\mbox{（\quad）}
+
+\keepwithprev
+A. $2\sqrt6$\qquad B. $14$\qquad C. $\sqrt{31}$\qquad D. $10\pi$
+
+\ifanswer
+\solbegin
+\step{$f(x)=(\lvert x-2\rvert+\lvert x-6\rvert)+(\lvert x-5\rvert+\lvert x-6\rvert)\geqslant4+1=5$.}
+\step{当 $x\geqslant6$ 时，$f(x)=4x-19$，可取遍 $[5,+\infty)$，因此 $f(x)$ 的值域为 $[5,+\infty)$.}
+\step{$2\sqrt6<5$，其余三项均大于 5，故选 $A$.}
+\solend
+\fi
+
+\item 当 $x>0$ 时，关于 $x$ 的不等式 $(ax-1)(x^2+bx-4)\geqslant0$ 恒成立，则 $b+\dfrac2a$ 的最小值为\mbox{（\quad）}
+
+\keepwithprev
+A. $2\sqrt3$\qquad B. $4\sqrt3$\qquad C. $2\sqrt2$\qquad D. $4$
+
+\ifanswer
+\solbegin
+\step{方程 $x^2+bx-4=0$ 的两根异号，设正根为 $r$.}
+\step{若 $a\leqslant0$，取 $x>r$，两因式异号，矛盾，所以 $a>0$.}
+\step{若 $r\ne\dfrac1a$，取 $x$ 在 $r$ 与 $\dfrac1a$ 之间，两因式仍异号，所以 $r=\dfrac1a$.}
+\step{代入得 $\dfrac1{a^2}+\dfrac ba-4=0$，即 $b=4a-\dfrac1a$，}
+\step{此时原式为 $a\left(x-\dfrac1a\right)^2(x+4a)\geqslant0$，满足题意.}
+\step{因此 $b+\dfrac2a=4a+\dfrac1a\geqslant2\sqrt{4a\cdot\dfrac1a}=4$，}
+\step{当且仅当 $4a=\dfrac1a$，即 $a=\dfrac12$，$b=0$ 时取等，最小值为 $4$，故选 $D$.}
+\solend
+\fi
+
+\item 已知实数 $x,y$ 满足 $\lvert3x-2y\rvert+\lvert y-x\rvert=\lvert2x-y\rvert$ 且 $y\ne0$，则 $\dfrac{2xy}{9x^2+3xy+4y^2}$ 的最大值是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac{2}{15}$\qquad B. $\dfrac13$\qquad C. $\dfrac29$\qquad D. $\dfrac{2}{75}$
+
+\ifanswer
+\solbegin
+\step{$2x-y=(3x-2y)+(y-x)$，原等式等价于 $(3x-2y)(y-x)\geqslant0$.}
+\step{令 $t=\dfrac xy$，则 $(3t-2)(1-t)\geqslant0$，得 $t\in\left[\dfrac23,1\right]$.}
+\step{$\dfrac{2xy}{9x^2+3xy+4y^2}=\dfrac{2}{9t+3+\dfrac4t}\leqslant\dfrac{2}{2\sqrt{9t\cdot\dfrac4t}+3}=\dfrac{2}{15}$，}
+\step{等号当且仅当 $9t=\dfrac4t$，即 $t=\dfrac23$ 时成立，此时满足原条件，最大值为 $\dfrac{2}{15}$，}
+\step{故选 $A$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item (1) 解不等式：$\dfrac{x+1}{3x-1}>1$；
+
+(2) 解不等式：$(x-3)\sqrt{x+2}\geqslant0$.
+
+\ifanswer
+\solbegin
+\step{(1) $\dfrac{x+1}{3x-1}>1\Leftrightarrow\dfrac{2(1-x)}{3x-1}>0\Leftrightarrow\dfrac13<x<1$. 解集为 $\left(\dfrac13,1\right)$.}
+\step{(2) 根式有意义要求 $x\geqslant-2$.}
+\step{当 $x=-2$ 时，原不等式成立；}
+\step{当 $x>-2$ 时，$\sqrt{x+2}>0$，原不等式等价于 $x-3\geqslant0$，即 $x\geqslant3$.}
+\step{解集为 $\{-2\}\cup[3,+\infty)$.}
+\solend
+\fi
+
+\item 若 $x_1,x_2$ 是方程 $k^2x^2+(k+3)x+1=0$ 的两个根.
+
+(1) 求实数 $k$ 的范围；
+
+(2) 用 $k$ 表示 $x_1+x_2$，并求出 $x_1+x_2$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 方程有两个实根（含两个相等实根），}
+\step{须满足 $k\ne0,\Delta=(k+3)^2-4k^2=-3(k+1)(k-3)\geqslant0$，}% 判别式原卷印等腰偏高的高三角 $\Delta$，照录
+\step{解得 $k\in[-1,0)\cup(0,3]$.}
+\step{(2) 由韦达定理，$x_1+x_2=-\dfrac{k+3}{k^2}$.}
+\step{令 $t=\dfrac1k$，则 $t\in(-\infty,-1]\cup\left[\dfrac13,+\infty\right)$，}
+\step{且 $x_1+x_2=-3t^2-t=-3\left(t+\dfrac16\right)^2+\dfrac1{12}$，}
+\step{由二次函数的图象，$t\leqslant-1$ 时，和的取值范围为 $(-\infty,-2]$；}% "图象"照原卷
+\step{$t\geqslant\dfrac13$ 时，和的取值范围为 $\left(-\infty,-\dfrac23\right]$；}
+\step{因此 $x_1+x_2$ 的取值范围为 $\left(-\infty,-\dfrac23\right]$.}
+\solend
+\fi
+
+\item 已知集合 $A=\{x\mid x^2-3x+2>0\}$，$B=\{x\mid x^2-2x+2a-a^2=0\}$，$U=\R$.
+
+(1) 若 $B\subset A$，求 $a$ 的取值范围；% 子集符号原卷印单线 $\subset$，照录
+
+(2) 若 $A\cap\overline{B}=A$，求 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{由因式分解，得 $A=(-\infty,1)\cup(2,+\infty)$，$B=\{x\mid(x-a)(x-2+a)=0\}$，}
+\step{方程 $x^2-2x+2a-a^2=0$ 的两根为 $x=a$ 与 $x=2-a$（当 $a=1$ 时两根重合，}
+\step{$B=\{1\}$）.}
+\step{(1) $B\subset A$ 要求 $a$、$2-a$ 均属于 $A$，其中 $a<1$ 或 $a>2$.}% 子集符号原卷印单线 $\subset$，照录
+\step{若 $a<1$，则 $2-a>1$，须 $2-a>2$，得 $a<0$.}
+\step{若 $a>2$，则 $2-a<0$，两数均属于 $A$.}
+\step{因此 $a$ 的取值范围为 $(-\infty,0)\cup(2,+\infty)$.}
+\step{(2) $A\cap\overline{B}=A$ 等价于 $A\cap B=\varnothing$，即 $B\subset\overline{A}=[1,2]$，}% 子集符号原卷印单线 $\subset$，照录
+\step{所以 $\begin{cases}1\leqslant a\leqslant2\\1\leqslant2-a\leqslant2\end{cases}\Leftrightarrow a=1$，}
+\step{当 $a=1$ 时，$B=\{1\}$，满足条件，因此 $a$ 的取值范围为 $\{1\}$.}
+\solend
+\fi
+
+\item 令函数 $f(x)=x^2-2mx+m-1$，$x\in\R$，其中 $m$ 为实数.
+
+(1) 若 $m=2$，是否存在实数 $a,b$ 使得 $f(x)$ 在区间 $[a,b]$ 上的值域为 $[a,b]$，若存在，求 $a+b$ 的值；若不存在，请说明理由.
+
+(2) 将 $f(x)$ 在 $[0,2]$ 上的最小值记为 $g(m)$. 求 $g(m)$ 的最大值.
+
+(3) 若对于任意 $-2\leqslant m\leqslant0$，不等式 $f(x)>4x-m-4$ 均成立，求实数 $x$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 当 $m=2$ 时，$f(x)=(x-2)^2-3$.}
+\step{假设存在 $a<b$ 满足条件，}
+\step{则 $f(a)\geqslant a,f(b)\leqslant b\Rightarrow a^2-5a+1\geqslant0,b^2-5b+1\leqslant0$，}
+\step{记 $\alpha=\dfrac{5-\sqrt{21}}2$，$\beta=\dfrac{5+\sqrt{21}}2$.}
+\step{结合 $a<b$，得 $a\leqslant\alpha<1,\alpha\leqslant b\leqslant\beta<5$，}
+\step{若 $b\geqslant2$，则 $2\in[a,b]$，最小值为 $-3$，即 $a=-3$，}
+\step{但 $f(a)=22>b$，矛盾.}
+\step{若 $b<2$，则 $f(x)$ 在 $[a,b]$ 上严格递减，因而 $f(a)=b,f(b)=a$.}
+\step{两式相减得 $(a-b)(a+b-4)=b-a\Rightarrow a+b=3$，}
+\step{而 $a<1,b<2$ 给出 $a+b<3$，矛盾.}
+\step{因此不存在满足条件的 $a<b$.}
+\step{(2) 因为 $\dfrac12\in[0,2]$，}
+\step{所以对任意实数 $m$，$g(m)\leqslant f\left(\dfrac12\right)=\dfrac14-m+m-1=-\dfrac34$，}
+\step{当 $m=\dfrac12$ 时，$f(x)=\left(x-\dfrac12\right)^2-\dfrac34$，在 $x=\dfrac12$ 处取得最小值 $-\dfrac34$.}
+\step{因此 $g(m)$ 的最大值为 $-\dfrac34$.}
+\step{(3) 原不等式等价于 $x^2-4x+3+2m(1-x)>0$，}
+\step{左式关于 $m$ 是一次式或常数，在 $[-2,0]$ 上恒正，}
+\step{当且仅当 $m=-2,0$ 时均为正，即 $\begin{cases}x^2-1>0\\x^2-4x+3>0\end{cases}\Leftrightarrow\begin{cases}x<-1\text{ 或 }x>1\\x<1\text{ 或 }x>3\end{cases}$，}
+\step{因此 $x$ 的取值范围为 $(-\infty,-1)\cup(3,+\infty)$.}
+\solend
+\fi
+
+\item 在上海中学中，同学们和谐相处，有一些同学喜欢一起写作业，我们将这种关系定义为“学习搭子”，“学习搭子”是一种两两之间的相互关系，例如，假设小黄的所有学习搭子构成集合 $A$，小姜的所有学习搭子构成集合 $B$，若小黄 $\in B$，则小姜 $\in A$，并称他们是一对学习搭子；同时，如果一名同学同时是两名同学的学习搭子，则该同学称为这两名同学的“共同学习搭子”，例如，若小郑 $\in A$ 且小郑 $\in B$，即小郑 $\in(A\cap B)$，那么小郑就称为小黄和小姜的共同学习搭子.
+
+(1) 假设 $U=\{\text{小黄},\text{小姜},\text{小郑}\}$，小黄、小姜、小郑在 $U$ 中的学习搭子分别构成集合 $A_1,A_2,A_3$，直接写出学习搭子对数的所有可能取值，和对应的 $\lvert A_1\rvert+\lvert A_2\rvert+\lvert A_3\rvert$ 的值.
+
+(2) 上海中学高一某班有奇数个同学，求证：该班级一定存在一名同学，他/她在班级中的学习搭子数量为偶数.
+
+(3) 上海中学高一年级共有偶数个同学，求证：高一年级中必存在两个同学的共同学习搭子数量为偶数.
+
+\ifanswer
+\solbegin
+\step{(1) 一名同学不是自己的学习搭子.}
+\step{三名同学之间共有 3 种可能的搭子配对，实际对数 $m$ 可取 $0,1,2,3$.}
+\step{每对学习搭子在两人的搭子集合中各计 1 次，}
+\step{因而 $\lvert A_1\rvert+\lvert A_2\rvert+\lvert A_3\rvert=2m$，对应的值为 $0,2,4,6$.}
+\step{(2) 把全班每人的学习搭子数相加，}
+\step{每对学习搭子恰被计数 2 次，所得总和为偶数.}
+\step{若每人的学习搭子数均为奇数，因全班人数为奇数，该总和应为奇数，}
+\step{矛盾.}
+\step{因此至少有一名同学的学习搭子数为偶数.}
+\step{(3) 设高一年级有 $n$ 名同学，$n$ 为正偶数.}
+\step{反设任意两名不同同学的共同学习搭子数均为奇数.}
+\step{记同学 $u$ 的学习搭子数为 $d(u)$，}
+\step{不同同学 $u,v$ 的共同学习搭子数为 $c(u,v)$.}
+\step{任取同学 $u$，设其学习搭子组成集合 $A$，$A$ 内部共有 $t$ 对学习搭子.}
+\step{对每个 $v\in A$，$c(u,v)$ 就是 $v$ 在 $A$ 内的学习搭子数.}
+\step{每对 $A$ 内的学习搭子被两人各计 1 次，所以 $\sum\limits_{v\in A}c(u,v)=2t$，}
+\step{左边是 $\lvert A\rvert$ 个奇数之和，右边为偶数，因而 $d(u)=\lvert A\rvert$ 为偶数.}
+\step{由 $u$ 的任意性，每名同学的学习搭子数均为偶数.}
+\step{再固定同学 $u$，对其余 $n-1$ 名同学分别计算与 $u$ 的共同学习搭子数，}
+\step{得 $S=\sum\limits_{v\ne u}c(u,v)$.}
+\step{由于 $n-1$ 为奇数，每个 $c(u,v)$ 均为奇数，所以 $S$ 为奇数.}
+\step{另一方面，对每个 $w\in A$，在 $w$ 的学习搭子中除去 $u$，}
+\step{其余 $d(w)-1$ 名同学都与 $u$ 以 $w$ 为共同学习搭子.}
+\step{按共同学习搭子 $w$ 计数，得 $S=\sum\limits_{w\in A}(d(w)-1)$，}
+\step{每个 $d(w)-1$ 均为奇数，而 $\lvert A\rvert=d(u)$ 为偶数，所以 $S$ 为偶数，矛盾.}
+\step{因此必存在两名同学，其共同学习搭子数量为偶数.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
