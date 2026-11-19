@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=1.9cm}
+\linespread{1.25}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{tipblue}{RGB}{0,95,160}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
+% 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体
+\newcommand{\prompt}[1]{\emph{\textcolor{tipblue}{\small（#1）}}}
+
+\begin{document}
+\pagestyle{plain}
+\begin{center}
+{\LARGE\bfseries 上海高考高分翻译背诵 \quad 132}\\[0.25em]
+{\large 25二模　2026-11-19 \quad\ 默写（中 $\to$ 英）}\\[0.35em]
+{\footnotesize 来源：微信公众号「发现之旅 速来记单词」· 2026-11-19 · 赵文瀚}
+\end{center}
+
+\vspace{0.4em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.0cm}} & 日期：\underline{\hspace{2.0cm}} & 得分：\underline{\hspace{1.4cm}}\,/\enspace 4 \\
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\small 根据中文句子与提示词写出英文翻译，题号沿用原文。}
+
+\vspace{0.8em}
+\num{1}\textbf{这个方案看似简单,实际操作起来却需要丰富的经验。}\prompt{require}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\num{2}\textbf{幸亏你及时提醒我查阅文献,导师在面试中问到了数据来源。}\prompt{reminder}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\num{3}\textbf{如何让莘莘学子更好地适应未来生活,很多高中和大学都已将该问题提上日程。}\prompt{how}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\num{4}\textbf{不必焦虑,包粽子虽看似复杂,其实只要依循步骤操作,便能轻松掌握这一传统手艺。}\prompt{craft}
+
+\vspace{0.3em}
+
+\wline\vspace{0.3em}
+\wline
+
+\end{document}
