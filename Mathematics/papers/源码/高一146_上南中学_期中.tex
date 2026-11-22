@@ -1,0 +1,441 @@
+% 高一146_上南中学_期中.tex
+%   —— 高一上数学"2026-2027 年上南中学高一上期中"（试卷版/答案版/紧凑版）
+% 试卷版：xelatex 高一146_上南中学_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一146_上南中学_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一146_上南中学_期中.tex}"
+%
+% ① 原始材料：微信公众号"魔都数学加油站"文章，连载"27学年高一146"，原文标题
+% "27学年高一146——2026-2027年上海市上南中学高一上期中"；
+% 原文链接：https://mp.weixin.qq.com/s/v-4CqE49D9oERJwETH4EAw 。
+% 正文为 9 张 PNG 页（01/07/08/09 为 2560×3620，02/03/04/05/06 为 4762×6735，
+% 同一篇各页分辨率不同，逐页按各自分辨率裁图核对，别按预览比例换算裁框）。
+% 体例：讲评版，19 题题下均印【解析】（逐题核实，无只印【答案】之题，见 ② ②）。
+% 题目、解析均据原图转录；卷面粉红色水印"魔都数学加油站"及公众号页脚未录入。
+% 全卷插图清单（逐页通读 9 页确认）：空——全卷无题目配图、无解析内配图、无表格、
+%   亦无"题干写如图而源码漏图"一处；Q14／Q16 选项为竖排多条印刷行（非图），
+%   Q15 分段定义与 Q18 不等式组为 cases 数学块（非图）。
+%
+% 卷首标题：原卷印作"2026-2027 年上南中学高一上期中"，年份区间按全稿惯例排 en dash；
+% 原卷卷面未印副标题，本稿按同期中卷（高一140／141／143／144／145）知识模块口径补出
+% "集合与常用逻辑用语、不等式、函数"。
+%
+% 题号体例（逐页核实定稿）：本卷共 19 题——一、填空题 3—12（10 题）、
+% 二、选择题 13—16（4 题）、三、解答题 17—21（5 题）。
+% 三节分别 \setcounter{enumi}{2}／{12}／{16}。原卷从第 3 题起、无第 1、2 题，
+% 本稿保留原题号；全卷无附加题节（Q21 解析末行"…的最小值为 1/2."为全卷收尾）。
+%
+% ② 与原卷的排版差异：
+%   ① 原文从第 3 题起，本稿保留原题号；共 19 题三节；
+%   ② 体例：讲评版，19 题全印【解析】、用 \solbegin…\solend；选择题答案在解析末句
+%      （Q13 选 D、Q14 选 C、Q15 选 A、Q16 选 C，逐个放大原图核实），题干括号
+%      \mbox{（\quad）} 留空、不另提 \ans{}；答案版【解析】标记数 = 19（19 个
+%      \solbegin）= 全卷题数。交办提示的"混合体例（某题只印【答案】）"经逐题
+%      核实本卷并未出现，未补造 \ans{}（不编造）；
+%   ③ 原卷卷面未印副标题，本稿按知识模块口径补出；
+%   ④ 原卷填空横线按全稿惯例排 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      选项段前按惯例加 \keepwithprev；Q14／Q16 四选项为竖排四个印刷行，用空行
+%      分段照录（非一行 \qquad）；解答题不留作答区、不加 \anspace
+%      （原卷为讲评版，与 129／131／132／133／136／140／141／143／144／145 同）；
+%   ⑤ 数集：Q10"对一切 x∈R 恒成立"、Q11"(a,b∈R)"、Q15 解析"x∈R 恒成立"、
+%      Q18"已知 x∈R"原卷印斜体或黑板粗体 R，按全稿惯例统一改 \R；
+%      本卷未出现 Z/N（\Z／\N^* 无对应处）；Q16"有理数集 Q"原卷印斜体 $Q$，
+%      照录不改 \Q。绝对值排 \lvert…\rvert，集合描述竖线排 \mid；不等号按全稿
+%      惯例排 \leqslant／\geqslant；补集照原卷上划线排 \overline{B}（Q17）；
+%      空集记号 \varnothing（Q16、Q17）；Q21 城市街区距离双竖线排 \lVert…\rVert；
+%   ⑥ 子题标号 (1)(2)(3) 半角括号照录；cases 块整体算一个印刷行；
+%      \left…\right 不得拆到不同 $…$ 组；数学式内 CJK 用 \text{}
+%      （Q11"\text{ 或 }"、Q14"\text{ 且 }"、Q17"且"在文本模式）；
+%   ⑦ 题干／解析中的中文弯引号按原卷照录：Q15"真指数"、Q16"分割""无理"、
+%      Q17" x∈A "" x∈B "、Q21"城市街区距离"（含引号内／周围空格），
+%      注释内一律 ASCII 引号；
+%   ⑧ 半角逗号在数学组之间是全稿惯例、非笔误（Q5"$4^\alpha=2$"、Q8"$a,b$"、
+%      Q9"$a>0$ 且 $a\ne1$"、Q11"$x_1,x_2$"、Q12"$x+1=a>0,3(y-2)=b>0$"、
+%      Q13、Q16"$x\in Q\mid$"、Q18、Q20"$x_1+x_2=1,x_1x_2=$"、Q21 等），
+%      逐处照录别改全角；行末西文句点照录为 ASCII `.`；行中全角逗号／顿号照录；
+%   ⑨ "图像／图象"逐处核：全卷 3 处均用"图像"（Q5"幂函数…的图像过点"、
+%      Q21(2)"的图像上"、Q21(3)"的图像上"），无"图象"，照录；
+%   ⑩ 判别式 Δ/△ 混用是照录项：Q7 解析"△=a²−4×4=0"印扁等边三角 \triangle；
+%      Q10 cases 块"Δ=4(a−2)²+16(a−2)<0"、Q20 独立行与 cases 块两处
+%      "Δ=(−4k)²−4·4k(k+1)"印等腰偏高粗三角 \Delta，逐处放大判断、
+%      照录不统一（参照 高一142／144／145 头注④口径，详见 ④）；
+%   ⑪ 一条 \step = 原卷解析的一个印刷行，cases 块整体算一个印刷行；别把原卷折行
+%      并起来、别把一行拆多条。Q9 六行、Q10 三行（含 1 个 cases）、Q12 五行
+%      （含 1 个三行 cases）、Q14 八行、Q16 八行、Q19 六行（含"应控制在／
+%      20 千米/小时…"折行两行）、Q20 十行（含 1 个 cases）、Q21 十一行
+%      均按印刷行逐条断，不丢行；
+%   ⑫ 配图：逐页通读 9 页确认全卷无配图（见 ①），故无 \includegraphics、
+%      无 figures/gao146_*.png、无 \needvspace 大图块守卫（仅 \bigsec 自带
+%      \needvspace{3\baselineskip}）；三版切页审计均"合计异常：无"；
+%   ⑬ 跨页续印按题合并：Q3/4/5/6/7 在 01 页（Q5 解析续 01 页下半、Q8 题干
+%      在 01 页末）；Q8 解析在 02 页顶；Q9/10/11 在 02 页；Q12 在 03 页上半、
+%      "二、选择题"标题在 03 页下半、Q13 题干＋解析在 03 页下半（末句
+%      "故选 D."续 04 页顶）；Q14 题干＋解析前段在 04 页（解析续 04 页下半）、
+%      Q15 题干在 04 页末（解析续 05 页顶）；Q16 题干＋解析在 05 页上半、
+%      "三、解答题"标题与 Q17 题干在 05 页下半；Q17 解析、Q18 题干＋解析在 06 页、
+%      Q19 题干始在 06 页末；Q19 题干续＋解析、Q20 题干＋解析前段在 07 页；
+%      Q20 解析末、Q21 题干＋解析前段在 08 页；Q21 解析末 3 行在 09 页上半
+%      （09 页下半仅水印、无正文）。本稿按题连排，不丢行、不并折行；
+%   ⑭ 原卷解析内无红色"法一／法二"之类小标题（Q10 的①②为黑色圈数字，
+%      非红色标签），故本卷无 \stepm；水印"魔都数学加油站"红色不录入。
+%
+% ③ 行数复核：一条 \step／\stepm = 原卷解析的一个印刷行，cases 块作一个印刷行计。
+%   逐题数（主会话逐页核对定稿）：Q3：2；Q4：1；Q5：1；Q6：1；Q7：3；Q8：1；
+%   Q9：6；Q10：3；Q11：4；Q12：5；Q13：6；Q14：8；Q15：3；Q16：8；
+%   Q17：7；Q18：8；Q19：6；Q20：10；Q21：11。
+%   合计 94 条 \step（本卷无 \stepm：解析内无红色"法一／法二"类小标题），
+%   与原卷逐题印刷行相等。全卷 19 题设 \solbegin…\solend，答案版【解析】
+%   标记数 = 19 = 全卷题数。
+%
+% ④ 判别式／子集符号结论（逐处放大原图照录、不得统一，主会话像素级复核）：
+%   判别式全卷 4 处，两形混用逐处照录不统一（参照 高一142／144 头注④口径）：
+%     · Q7 解析"△=a²−4×4=0" 原卷印扁等边空心三角（宽≈高、细线），照录
+%       \triangle（放大 01 页 /tmp/gao146/z/z_q7_tri.png、z_q7_vs_q20line.png 确认）；
+%     · Q10 解析 cases 块"Δ=4(a−2)²+16(a−2)<0" 原卷印等腰偏高粗三角（高>宽），
+%       照录 \Delta（放大 02 页 /tmp/gao146/z/z_q10_ruler.png 确认）；
+%     · Q20 解析独立行"Δ=(−4k)²−4·4k(k+1)=−16k>0" 与 cases 块
+%       "Δ=(−4k)²−4×4k×(k+1)≥0" 两处均印等腰偏高粗三角（高>宽、粗笔画），
+%       照录 \Delta（放大 07 页 /tmp/gao146/z/z_q20_line_ruler.png、
+%       z_q20_delta2.png、z_q7_vs_q20cases.png 与 Q7 扁形并排确认）。
+%   子集／补集：Q4 解析"P∩Q=P⇔P⊆Q⇔a≥1" 原卷印带下划线 ⊆，照录 \subseteq
+%     （放大 01 页 z_q4_sub2.png 确认）；Q17 解析"所以 A⊆B" 原卷印带下划线 ⊆，
+%     照录 \subseteq，"且 B≠A" 为不等号 ≠（非 \not\subset，放大 06 页
+%     z_q17_sub2.png 确认）；Q17 补集 \overline{B}（题干 A∩\overline{B} 与解析
+%     \overline{B}）照原卷上划线；Q16"M∪N=Q，M∩N=∅" 空集 \varnothing；
+%     Q11／Q17 集合描述竖线 \mid；数集 \R 归一见 ② ⑤。
+%
+% ⑤ 存疑照录（放大原图确认，照录未改、正文对应处另有 % 注）：
+%   1. Q10 解析"②当 a≠0 时" 原卷印 $a\ne0$（放大 02 页 z_q10_case2.png 逐字
+%      确认；按上下文①已处理 a=2、②应为 $a\ne2$，疑为原卷笔误），照录未改。
+%   2. Q14 解析"对于 D：(x−3)(x+1)/(x−3) 的解集是…" 原卷此处未印 ">0"
+%      （选项 D 与"对于 C"均印 ">0"），放大 04 页 z_q14_D.png 确认，照录未改。
+%   3. Q21 (3) 解析"记 ||PQ||=|a−b|+|2a−2−b²|" 后径用 $d$（"≤2d"
+%      "所以 d≥…"）而未显式定义 $d$（疑为 $\lVert PQ\rVert$ 的简记），
+%      放大 08 页 z_q21_ji.png、z_q21_2d_right.png 确认，照录未改。
+%   4. Q7 判别式扁 \triangle 与 Q10／Q20 高 \Delta 两形混用，逐处照录不统一（见 ④）。
+%   5. 全卷 19 题均印【解析】，交办提示的"混合体例（某题只印【答案】）"
+%      经逐题核实本卷并未出现，未补造 \ans{} / 解析。
+%   全卷除此 5 类外未发现其它笔误／自相矛盾处。
+%
+% ⑥ 跨页续印按题合并说明：见 ② ⑬。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年上南中学高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+% === Q3 ===
+\item 已知 $x>1$，则 $x+\dfrac{1}{x-1}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $x-1>0$，$x+\dfrac{1}{x-1}=(x-1)+\dfrac{1}{x-1}+1\geqslant2+1=3$，}
+\step{当且仅当 $x-1=\dfrac{1}{x-1}$，即 $x=2$ 时取等号，故最小值为 $3$.}
+\solend
+\fi
+
+% === Q4 ===
+\item 已知集合 $P=\{y\mid y=x^2+a\}$，$Q=\{y\mid y=3x^2+1\}$，若 $P\cap Q=P$，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$P=[a,+\infty)$，$Q=[1,+\infty)$，$P\cap Q=P\Leftrightarrow P\subseteq Q\Leftrightarrow a\geqslant1$.}% 子集符号原卷印带下划线 $\subseteq$，照录（放大 01 页 z_q4_sub2.png 确认）
+\solend
+\fi
+
+% === Q5 ===："图像"照录
+\item 已知幂函数 $y=x^\alpha$ 的图像过点 $(4,2)$，则实数 $\alpha=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$4^\alpha=2\Leftrightarrow 2^{2\alpha}=2^1\Leftrightarrow\alpha=\dfrac{1}{2}$.}
+\solend
+\fi
+
+% === Q6 ===
+\item 不等式 $\left(\dfrac{1}{3}\right)^x<81$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$3^{-x}<3^4\Leftrightarrow -x<4\Leftrightarrow x>-4$，解集为 $(-4,+\infty)$.}
+\solend
+\fi
+
+% === Q7 ===：判别式扁 \triangle
+\item 已知集合 $A=\{x\mid x^2+ax+4=0\}$，若 $A$ 有且仅有一个非空子集，则实数 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为集合 $A$ 有且只有一个非空子集，所以集合 $A$ 中只有一个元素，}
+\step{所以一元二次方程 $x^2+ax+4=0$ 有两个相等的解，}
+\step{所以 $\triangle=a^2-4\times4=0$，解得 $a=\pm4$.}% 判别式原卷印扁等边三角 $\triangle$，照录（放大 01 页 z_q7_tri.png 确认）
+\solend
+\fi
+
+% === Q8 ===：题干在 01 页末、解析续 02 页顶
+\item 已知 $\lg2=a$，$\lg3=b$，则 $\log_5 6=$\blankline[4.4em]（结果用 $a,b$ 表示）.
+
+\ifanswer
+\solbegin
+\step{$\log_5 6=\dfrac{\lg6}{\lg5}=\dfrac{\lg2+\lg3}{1-\lg2}=\dfrac{a+b}{1-a}$.}
+\solend
+\fi
+
+% === Q9 ===：解析共 6 个印刷行
+\item 已知指数函数 $y=a^x$ 在区间 $[-1,1]$ 上的最大值和最小值之和为 $\dfrac{5}{2}$，则它在区间 $[-2,2]$ 上的最大值和最小值之和为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设指数函数为 $y=a^x(a>0$ 且 $a\ne1)$，}
+\step{指数函数在定义域内单调，故在 $[-1,1]$ 上最大值与最小值分别为 $a$ 与 $\dfrac{1}{a}$（或反之），}
+\step{则 $a+\dfrac{1}{a}=\dfrac{5}{2}$，整理得 $2a^2-5a+2=0$，解得 $a=2$ 或 $a=\dfrac{1}{2}$，}
+\step{当 $a=2$ 时，在 $[-2,2]$ 上最大值为 $2^2=4$，最小值为 $2^{-2}=\dfrac{1}{4}$，和为 $4+\dfrac{1}{4}=\dfrac{17}{4}$；}
+\step{当 $a=\dfrac{1}{2}$ 时，在 $[-2,2]$ 上最大值为 $\left(\dfrac{1}{2}\right)^{-2}=4$，最小值为 $\left(\dfrac{1}{2}\right)^2=\dfrac{1}{4}$，和为 $4+\dfrac{1}{4}=\dfrac{17}{4}$；}
+\step{故最大值和最小值之和为 $\dfrac{17}{4}$.}
+\solend
+\fi
+
+% === Q10 ===：②$a\ne0$ 存疑照录；判别式高 \Delta；cases 块作一个印刷行
+\item 若不等式 $(a-2)x^2+2(a-2)x-4<0$ 对一切 $x\in\R$ 恒成立，则 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{①当 $a=2$ 时，$-4<0$ 恒成立；}
+\step{②当 $a\ne0$ 时，$\begin{cases}a<2\\\Delta=4(a-2)^2+16(a-2)<0\end{cases}\Rightarrow-2<a<2$，}% 原卷印 $a\ne0$（疑为 $a\ne2$ 之笔误），照录未改（放大 02 页 z_q10_case2.png）；判别式印等腰偏高 $\Delta$（z_q10_ruler.png）
+\step{综上，$-2<a\leqslant2$.}
+\solend
+\fi
+
+% === Q11 ===：\text{ 或 } 置于集合描述数学式内；解析 4 行
+\item 设关于 $x$ 的方程 $\lvert x-2\rvert+\lvert 2x-3\rvert=\lvert ax+b\rvert(a,b\in\R)$ 的解集为 $M$，关于 $x$ 的不等式 $(x-2)(2x-3)\geqslant0$ 的解集为 $N$，若集合 $M=N$，则 $a^b=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $(x-2)(2x-3)\geqslant0$ 的解集为 $N=\left\{x\mid x\leqslant\dfrac{3}{2}\text{ 或 }x\geqslant2\right\}$，}
+\step{所以 $\begin{cases}x-2<0\\2x-3<0\end{cases}$ 或 $\begin{cases}x-2>0\\2x-3>0\end{cases}$，所以 $\lvert ax+b\rvert=5-3x$ 或 $\lvert ax+b\rvert=3x-5$，}
+\step{故 $\lvert ax+b\rvert=\lvert 3x-5\rvert$，所以 $ab=3\times(-5)=-15$ 或 $ab=(-3)\times5=-15$，}
+\step{故 $a^b=\dfrac{1}{243}$ 或 $-243$.}
+\solend
+\fi
+
+% === Q12 ===：三行 cases 块整体算一个印刷行；解析 5 行
+\item 已知 $\max\{a,b,c\}$ 表示 $a,b,c$ 中最大的数，若 $x>-1,y>2$，则 $\max\left\{\dfrac{1}{x+1},\dfrac{1}{3(y-2)},2x^2+3xy+3y\right\}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $x+1=a>0,3(y-2)=b>0$，则 $2x^2+3xy+3y=2a^2+ab+2a+2$，}
+\step{记原式为 $M$，则有 $\begin{cases}\dfrac{1}{a}\leqslant M\\\dfrac{1}{b}\leqslant M\\2a^2+ab+2a+2\leqslant M\end{cases}$，}
+\step{由上面两式得 $a\geqslant\dfrac{1}{M},b\geqslant\dfrac{1}{M}$，代入第三式整理得 $(M-3)(M^2+M+1)\geqslant0$，}
+\step{得 $M\geqslant3$，当 $M=3$ 时，有 $a=b=\dfrac{1}{3},2a^2+ab+2a+2=3$，可以取等，}
+\step{故最小值为 $3$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+% === Q13 ===：题干＋解析在 03 页下半，末句"故选 D."续 04 页顶；解析 6 行
+\item 如果实数 $a$、$b$ 同号，则下列命题中正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. $a^2+b^2>2ab$\qquad B. $a+b\geqslant2\sqrt{ab}$\qquad C. $\dfrac{1}{a}+\dfrac{1}{b}>\dfrac{2}{\sqrt{ab}}$\qquad D. $\dfrac{b}{a}+\dfrac{a}{b}\geqslant2$
+
+\ifanswer
+\solbegin
+\step{选项 $A$，当 $a=b$ 时，$a^2+b^2=2ab$，故 $A$ 错误；}
+\step{选项 $B$，当 $a<0$，$b<0$ 时，$a+b<0$，而 $\sqrt{ab}>0$，故 $B$ 错误；}
+\step{选项 $C$，当 $a<0$，$b<0$ 时，$\dfrac{1}{a}+\dfrac{1}{b}<0$，而 $\dfrac{2}{\sqrt{ab}}>0$，故 $C$ 错误；}
+\step{选项 $D$，因为实数 $a$、$b$ 同号，所以 $\dfrac{b}{a}>0$，$\dfrac{a}{b}>0$，}
+\step{所以 $\dfrac{b}{a}+\dfrac{a}{b}\geqslant2\sqrt{\dfrac{b}{a}\cdot\dfrac{a}{b}}=2$，当且仅当 $\dfrac{b}{a}=\dfrac{a}{b}$，即 $a=b$ 时取等号，故 $D$ 正确.}
+\step{故选 $D$.}
+\solend
+\fi
+
+% === Q14 ===：四选项竖排四个印刷行（空行分段）；解析 8 行；D 行存疑照录
+\item 下列不等式中，解集相同的是\mbox{（\quad）}
+
+\keepwithprev
+A. $x^2-2x<3$ 与 $\dfrac{x^2-2x}{x-1}<\dfrac{3}{x-1}$
+
+B. $x<5$ 与 $x+\dfrac{1}{x^2-3x+2}<5+\dfrac{1}{x^2-3x+2}$
+
+C. $\dfrac{(x-3)(x+1)}{x+1}>0$ 与 $x-3>0$
+
+D. $\dfrac{(x-3)(x+1)}{x-3}>0$ 与 $x+1>0$
+
+\ifanswer
+\solbegin
+\step{对于 $A$：由 $x^2-2x-3<0$，解得 $-1<x<3$，故不等式的解集是 $(-1,3)$，}
+\step{而 $\dfrac{x^2-2x}{x-1}<\dfrac{3}{x-1}$ 中 $x\ne1$，故不等式的解集是 $(-1,1)\cup(1,3)$，$A$ 中解集不同；}
+\step{对于 $B$：由 $x^2-3x+2\ne0$，解得 $x\ne1$ 且 $x\ne2$，故 $B$ 中解集不同；}
+\step{对于 $C$：$\dfrac{(x-3)(x+1)}{x+1}>0$ 的解集是 $\{x\mid x>3\}$，$x-3>0$ 的解集是 $\{x\mid x>3\}$，}
+\step{$C$ 中的解集相同；}
+\step{对于 $D$：$\dfrac{(x-3)(x+1)}{x-3}$ 的解集是 $\left\{x\mid x>-1\text{ 且 }x\ne3\right\}$，}% 原卷此处未印 $>0$（选项 D 与"对于 C"均印），放大 04 页 z_q14_D.png 确认，照录未改
+\step{$x+1>0$ 的解集是 $\{x\mid x>-1\}$，故 $D$ 中解集不同；}
+\step{故选 $C$.}
+\solend
+\fi
+
+% === Q15 ===：新定义"真指数" $e_+^x$ 分段；题干在 04 页末、解析续 05 页顶；解析 3 行
+\item 定义 “真指数”： $e_+^x=\begin{cases}1,x<0\\e^x,x\geqslant0\end{cases}$（$e$ 为自然对数的底数），则\mbox{（\quad）}
+
+\keepwithprev
+A. $e_+^{x_1}+e_+^{x_2}\geqslant2e_+^{\frac{x_1+x_2}{2}}$\qquad B. $e_+^{x_1+x_2}=e_+^{x_1}\cdot e_+^{x_2}$\qquad C. $e_+^{x_1-x_2}=\dfrac{e_+^{x_1}}{e_+^{x_2}}$\qquad D. $e_+^{x_1x_2}\leqslant\left(e_+^{x_1}\right)^{x_2}$
+
+\ifanswer
+\solbegin
+\step{对于 $A$，由于 $e^x>0$ 恒成立，所以 $e_+^x>0$ 在 $x\in\R$ 恒成立，}
+\step{所以自然指数函数满足 $e_+^{x_1}+e_+^{x_2}\geqslant2\sqrt{e_+^{x_1}\cdot e_+^{x_2}}$，}
+\step{当且仅当 $e_+^{x_1}=e_+^{x_2}$ 时，即 $x_1=x_2$ 时取等号，故 $A$ 正确；故选 $A$.}
+\solend
+\fi
+
+% === Q16 ===：戴德金分割；四选项竖排四个印刷行；"分割""无理"弯引号照录；解析 8 行
+\item 由无理数引发的数学危机一直延续到 19 世纪. 直到 1872 年，德国数学家戴德金从连续性的要求出发，用有理数的 “分割” 来定义无理数（史称戴德金分割），并把实数理论建立在严格的科学基础上，才结束了无理数被认为 “无理” 的时代，也结束了持续 2000 多年的数学史上的第一次大危机. 所谓戴德金分割，是指将有理数集 $Q$ 划分为两个非空的子集 $M$ 与 $N$，且满足 $M\cup N=Q$，$M\cap N=\varnothing$，$M$ 中的每一个元素都小于 $N$ 中的每一个元素，则称 $(M,N)$ 为戴德金分割. 试判断，对于任一戴德金分割 $(M,N)$，下列选项中，不可能成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $M$ 没有最大元素，$N$ 有一个最小元素
+
+B. $M$ 没有最大元素，$N$ 也没有最小元素
+
+C. $M$ 有一个最大元素，$N$ 有一个最小元素
+
+D. $M$ 有一个最大元素，$N$ 没有最小元素
+
+\ifanswer
+\solbegin
+\step{若 $M=\{x\in Q\mid x<0\}$，$N=\{x\in Q\mid x\geqslant0\}$，}
+\step{则 $M$ 没有最大元素，$N$ 有一个最小元素 $0$，故 $A$ 正确；}
+\step{若 $M=\{x\in Q\mid x<\sqrt2\}$，$N=\{x\in Q\mid x\geqslant\sqrt2\}$，}
+\step{则 $M$ 没有最大元素，$N$ 也没有最小元素，故 $B$ 正确；}
+\step{$M$ 有一个最大元素，$N$ 有一个最小元素不可能，故 $C$ 不正确；}
+\step{若 $M=\{x\in Q\mid x\leqslant0\}$，$N=\{x\in Q\mid x>0\}$，}
+\step{则 $M$ 有一个最大元素，$N$ 没有最小元素，故 $D$ 正确；}
+\step{故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+% === Q17 ===：题干在 05 页下半、解析在 06 页；弯引号含空格；\subseteq／\ne／\overline{B}；7 行
+\item 已知集合 $A=\{x\mid m-1\leqslant x\leqslant m+1\}$，$B=\{x\mid x\leqslant4\}$.
+
+(1) 当 $m=4$ 时，求集合 $A\cap\overline{B}$；
+
+(2) 若 “ $x\in A$ ” 是 “ $x\in B$ ” 成立的充分非必要条件，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 当 $m=4$ 时，$A=\{x\mid 3\leqslant x\leqslant5\}$，$\overline{B}=\{x\mid x>4\}$，}
+\step{所以 $A\cap\overline{B}=\{x\mid 4<x\leqslant5\}$.}
+\step{(2) 因为 “ $x\in A$ ” 是 “ $x\in B$ ” 成立的充分非必要条件，}
+\step{所以 $A\subseteq B$，且 $B\ne A$，}% 子集符号原卷印带下划线 $\subseteq$；"且 $B\ne A$" 为不等号 $\ne$（非 $\not\subset$），放大 06 页 z_q17_sub2.png 确认
+\step{易得 $A=\{x\mid m-1\leqslant x\leqslant m+1\}\ne\varnothing$，所以 $m+1\leqslant4$，}
+\step{解得 $m\leqslant3$，符合题意；}
+\step{综上所述，$m$ 的取值范围为 $\{m\mid m\leqslant3\}$.}
+\solend
+\fi
+
+% === Q18 ===：题干含 cases 不等式组；解析 8 行
+\item (1) 已知 $x\in\R$，比较 $2x^2+3x-1$ 与 $7x-3$ 的大小.
+
+(2) 写出不等式组： $\begin{cases}\dfrac{1}{2x-3}\geqslant1\\\lvert x+1\rvert<3\end{cases}$ 的解.
+
+\ifanswer
+\solbegin
+\step{(1) $(2x^2+3x-1)-(7x-3)=2x^2-4x+2=2(x-1)^2$，}
+\step{当 $x=1$ 时，$2(x-1)^2=0$，此时 $2x^2+3x-1=7x-3$；}
+\step{当 $x\ne1$ 时，$2(x-1)^2>0$，此时 $2x^2+3x-1>7x-3$.}
+\step{综上所述，当 $x=1$ 时，$2x^2+3x-1=7x-3$；}
+\step{当 $x\ne1$ 时，$2x^2+3x-1>7x-3$.}
+\step{(2) 由 $\dfrac{1}{2x-3}\geqslant1$，得 $0<2x-3\leqslant1$，解得 $\dfrac{3}{2}<x\leqslant2$，}
+\step{由 $\lvert x+1\rvert<3$，得 $(x+1)^2<9$，即 $x^2+2x-8<0$，解得 $-4<x<2$，}
+\step{所以原不等式组的解集为 $\left(\dfrac{3}{2},2\right)$.}
+\solend
+\fi
+
+% === Q19 ===：题干跨 06→07 页；解析 6 行（含"应控制在／20 千米…"折行两行）
+\item 经观测，某公路段在某时段内的车流量 $y$（千辆/小时）与汽车的平均速度 $v$（千米/小时）之间有函数关系： $y=\dfrac{900v}{v^2+5v+1000}$（$v>0$）.
+
+(1) 为保证在该时段内车流量至少为 12 千辆/小时，则汽车平均速度应控制在什么范围？
+
+(2) 在该时段内，当汽车的平均速度 $v$ 为多少时，车流量 $y$ 最大？
+
+\ifanswer
+\solbegin
+\step{(1) 令 $\dfrac{900v}{v^2+5v+1000}\geqslant12$，即 $(v-20)(v-50)\leqslant0$，解得 $20\leqslant v\leqslant50$，}
+\step{故为保证在该时段内车流量至少为 12 千辆/小时，则汽车平均速度应控制在}
+\step{20 千米/小时到 50 千米/小时范围内.}
+\step{(2) $y=\dfrac{900v}{v^2+5v+1000}=\dfrac{900}{v+\dfrac{1000}{v}+5}\leqslant\dfrac{900}{2\sqrt{v\cdot\dfrac{1000}{v}}+5}=\dfrac{180}{4\sqrt{10}+1}$，}
+\step{当且仅当 $v=\dfrac{1000}{v}$，即 $v=10\sqrt{10}$ 时取等号，}
+\step{故当汽车的平均速度 $v=10\sqrt{10}$ 千米/小时时，车流量最大.}
+\solend
+\fi
+
+% === Q20 ===：题干＋解析前段在 07 页、解析末 3 行在 08 页；判别式两处 \Delta；
+%   乘号一处 \cdot、一处 \times 逐处照录；解析 10 行
+\item 已知 $x_1,x_2$ 是一元二次方程 $4kx^2-4kx+k+1=0$ 的两个不相等的实数根.
+
+(1) 若 $x_1,x_2$ 均为正根，求实数 $k$ 的取值范围；
+
+(2) 是否存在实数 $k$，使 $(2x_1-x_2)(x_1-2x_2)=-\dfrac{3}{2}$ 成立？若存在，求出 $k$ 的值，若不存在，说明理由.
+
+\ifanswer
+\solbegin
+\step{(1) 方程为一元二次方程，需 $k\ne0$；}
+\step{有两个不相等的实根，需 $\Delta=(-4k)^2-4\cdot4k(k+1)=-16k>0$，}% 判别式原卷印等腰偏高 $\Delta$，照录（放大 07 页 z_q20_delta1.png）；乘号此处印 \cdot
+\step{即 $k<0$，此时也满足 $k\ne0$，所以 $k\in(-\infty,0)$.}
+\step{(2) 不存在，理由如下：}
+\step{因为 $x_1,x_2$ 是一元二次方程 $4kx^2-4kx+k+1=0$ 的两个实数根，}
+\step{所以 $\begin{cases}k\ne0\\\Delta=(-4k)^2-4\times4k\times(k+1)\geqslant0\end{cases}$，所以 $k<0$，}% 判别式 $\Delta$ 同上；此处乘号原卷印 \times（与前一行 \cdot 不同），逐处照录
+\step{由根与系数的关系得 $x_1+x_2=1,x_1x_2=\dfrac{k+1}{4k}$，}
+\step{所以 $(2x_1-x_2)(x_1-2x_2)=2(x_1+x_2)^2-9x_1x_2=2-9\times\dfrac{k+1}{4k}=-\dfrac{3}{2}$，}
+\step{解得 $k=\dfrac{9}{5}$，而 $k<0$，}
+\step{故不存在实数 $k$ 使得 $(2x_1-x_2)(x_1-2x_2)=-\dfrac{3}{2}$ 成立.}
+\solend
+\fi
+
+% === Q21 ===：城市街区距离 \lVert PQ\rVert；"图像"两处；题干＋解析前段在 08 页、
+%   解析末 3 行在 09 页；$d$ 未显式定义存疑照录；解析 11 行
+\item 在平面直角坐标系中，两点 $P(x_1,y_1)$、$Q(x_2,y_2)$ 的 “城市街区距离” 定义为 $\lvert x_1-x_2\rvert+\lvert y_1-y_2\rvert$，记为 $\lVert PQ\rVert$. 如点 $P(1,-1)$、$Q(2,4)$ 的 “城市街区距离” 为 $\lVert PQ\rVert=\lvert1-2\rvert+\lvert-1-4\rvert=1+5=6$.
+
+(1) 动点 $P$ 在直线 $y=1-x$ 上，点 $Q(0,0)$，若 $\lVert PQ\rVert\leqslant1$，求点 $P$ 的横坐标 $x$ 的取值范围；
+
+(2) 动点 $P$ 在函数 $y=x^2-5$，$x\in[-2,2]$ 的图像上，点 $Q(0,2)$，求 $\lVert PQ\rVert$ 的最大值；
+
+(3) 动点 $P$ 在直线 $y=2x-2$ 上，动点 $Q$ 在函数 $y=x^2$ 的图像上，求 $\lVert PQ\rVert$ 的最小值.
+
+\ifanswer
+\solbegin
+\step{(1) $\lVert PQ\rVert=\lvert x\rvert+\lvert1-x\rvert\geqslant\lvert x+(1-x)\rvert=1$.}
+\step{等号成立当且仅当 $x\geqslant0$ 且 $1-x\geqslant0$，因此 $\lVert PQ\rVert\leqslant1\Leftrightarrow x\in[0,1]$.}
+\step{(2) 当 $x\in[-2,2]$ 时，$x^2-7<0$，}
+\step{因此 $\lVert PQ\rVert=\lvert x\rvert+\lvert x^2-7\rvert=7+\lvert x\rvert-x^2=\dfrac{29}{4}-\left(\lvert x\rvert-\dfrac{1}{2}\right)^2\leqslant\dfrac{29}{4}$，}
+\step{当且仅当 $x=\pm\dfrac{1}{2}$ 时取等，所以最大值为 $\dfrac{29}{4}$.}
+\step{(3) 设 $P(a,2a-2)$、$Q(b,b^2)$，记 $\lVert PQ\rVert=\lvert a-b\rvert+\lvert2a-2-b^2\rvert$，}
+\step{由绝对值三角不等式，$(b-1)^2+1=\lvert b^2-2b+2\rvert$}
+\step{$=\lvert(b^2-2a+2)+2(a-b)\rvert\leqslant\lvert b^2-2a+2\rvert+2\lvert a-b\rvert\leqslant2d$，}% 原卷此处径用 $d$ 而未显式定义（疑为 $\lVert PQ\rVert$ 简记），放大 08 页 z_q21_2d_right.png 确认，照录未改
+\step{所以 $d\geqslant\dfrac{(b-1)^2+1}{2}\geqslant\dfrac{1}{2}$，}
+\step{取 $P\left(\dfrac{3}{2},1\right)$、$Q(1,1)$，两点分别在所给直线和抛物线上，}
+\step{且 $\lVert PQ\rVert=\left\lvert\dfrac{3}{2}-1\right\rvert+\lvert1-1\rvert=\dfrac{1}{2}$，因此 $\lVert PQ\rVert$ 的最小值为 $\dfrac{1}{2}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
