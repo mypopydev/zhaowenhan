@@ -1,0 +1,433 @@
+% 高一151_东昌中学_期中.tex
+%   —— 高一上数学"2026-2027 年东昌中学高一上期中"（试卷版/答案版/紧凑版）
+% 试卷版：xelatex 高一151_东昌中学_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一151_东昌中学_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一151_东昌中学_期中.tex}"
+%
+% ① 原始材料：微信公众号"魔都数学加油站"文章，连载"27学年高一151"，原文标题
+% "27学年高一151——2026-2027年上海市东昌中学高一上期中"；
+% 原文链接：https://mp.weixin.qq.com/s/YSJnoa-NMD4wbDzfo3rklg 。
+% 正文为 9 张 PNG 页（01/03/05/07/09 为 2560×3620，02/04/06/08 为 4762×6735，
+% 同一篇各页分辨率混排，逐页按各自分辨率裁图核对，别按预览比例换算裁框）。
+% 体例：讲评版——填空 3—12（10 题）、选择 13—16（4 题）、解答 17—21（5 题），
+% 共 19 题，自第 3 题起编；除第 7 题只印【答案】、无【解析】外，其余 18 题均印
+% 【解析】（逐题核实，见 ② ②）。题目、答案、解析均据原图转录；卷面粉红色水印
+% "魔都数学加油站"及公众号页脚未录入。
+% 全卷无插图（逐页通读 9 页确认无题目配图、无解析内配图、无表格、无"如图"处），
+% 09 页下半仅水印、无正文；配图清单为空，故无 figures/gao151_*.png。
+%
+% 卷首标题：原卷印作"2026-2027 年东昌中学高一上期中"，年份区间按全稿惯例排 en dash；
+% 原卷卷面未印副标题，本稿按同期中卷知识模块口径补出"集合与常用逻辑用语、不等式、函数"。
+%
+% ② 与原卷的排版差异：
+%   ① 原文从第 3 题起，本稿保留原题号；共 19 题三节，解答题 5 题到 21；
+%   ② 混合体例：第 7 题只印【答案】（反证法第一步假设）、无【解析】，按 高一140
+%      第 5 题／高一145 第 3 题成例另提 \ans{}、不补造解析；其余 18 题印【解析】、
+%      用 \solbegin…\solend；四道选择题答案在解析末句"故选 A／B／C／D"
+%      （Q13 选 A、Q14 选 B、Q15 选 C、Q16 选 D，逐个放大复核）、括号
+%      \mbox{（\quad）} 留空、不另提 \ans{}；答案版【答案】/【解析】标记数
+%      = 19 = 全卷题数（1 个 \ans ＋ 18 个 \solbegin）；
+%   ③ 原卷卷面未印副标题，本稿按知识模块口径补出；
+%   ④ 原卷填空横线按全稿惯例排 \blankline[4.4em]；选择题括号排 \mbox{（\quad）}、
+%      四道选择题的选项段前按惯例各加 \keepwithprev；解答题不留作答区、不加
+%      \anspace（原卷为讲评版，109—113 起全稿不用 \anspace）；
+%   ⑤ 数集：Q9"解集为 R"、Q12"$a\in Z$／$x_0\notin Q$／$A\subset Q$"、
+%      Q16"$U=Z$／$U=R$"、Q18"全集为 R／$a\in R$"原卷均印正体粗体 R/Z/Q，
+%      按全稿惯例归一 \R／\Z／\Q（参见 高一14 头注④、高一150 头注② ⑤）；
+%      绝对值排 \lvert…\rvert（Q3、Q7、Q9、Q20），集合描述竖线排 \mid
+%      （Q12、Q18、Q21），不等号按全稿惯例排 \leqslant／\geqslant；
+%      补集照原卷上划线排 \overline{B}（Q18 题干＋解析）、\overline{[2,4]}、
+%      \overline{[0,3]}、\overline{P}（Q16 解析 D）；空集 \varnothing（Q16）；
+%      子集 Q12 印单线 ⊂、照录 \subset，Q18 两处印带下划线 ⊆、照录 \subseteq
+%      （逐处放大核，见 ④）；
+%   ⑥ 判别式 Δ/△：本卷两处判别式算式逐处放大并与 xelatex 实渲染的
+%      \triangle／\Delta 并排比较（/tmp/gao151/z/zoom/delta_pair.png、
+%      delta_4up.png、glyph_ref_lines.png）：Q13 解析印扁等边细线三角、
+%      照录 \triangle，Q20 (1) 解析印等腰偏高粗三角、照录 \Delta，两处不统一
+%      （与 高一142／146／148／149 的"Δ/△ 混用逐处照录"口径一致）；
+%   ⑦ 中文弯引号照录：Q7"若 x²−y≤1，则 |x|≤1 且 y≥−1"、Q13"ac<0"与
+%      "一元二次方程 ax²+bx+c=0 有实根"；引号内全角逗号照录；
+%      注释里一律 ASCII 引号；数学式内 CJK 用 \text{}；
+%   ⑧ "图像／图象"逐处放大核：Q11 解析印"图象"（象，无亻）、Q17 题干与 (2)
+%      及解析印"图像"（像，有亻），同卷两形并用、逐处照录未统一；
+%      子题标号 (1)(2)(3) 半角括号照录；圈数字①②在文本模式（Q16 两条件与
+%      解析 A/B/C/D 行"满足①②"）按 common.sty 划入 CJK 字符类渲染；
+%   ⑨ 半角逗号在数学组之间是全稿惯例、非笔误，逐处照录（Q5、Q6、Q12、Q14、
+%      Q17、Q19、Q20、Q21 的 $a,b,c$ 之类）；行末西文句点 ASCII `.`；
+%      行中全角逗号／顿号照录（Q12"依次为 2+√3、7/3+√2、1+log₂3"、
+%      Q16"[0,3]、[2,4]"、Q21"即大于等于 0 且小于 1 的小数"）；
+%   ⑩ 复杂式照录别简化：Q5 $\sqrt[5]{t\cdot\sqrt[3]{t}}$、Q10
+%      $\sqrt{\log_y\sqrt{5y}}$ 与 $\sqrt{\frac1x-y}$、Q12 四组根式与对数、
+%      Q19 分段函数 cases 块、Q20 $f(1)$ 作指数的 $(3x-2)^{f(1)}$、
+%      Q21 $I_a(x)$／$D_a(x)$ 与 $x^{I_2(t)}$；
+%      \left…\right 不得拆到不同 $…$ 组（Q17 $\left(\frac{m+2}{2m-1}\right)^x$、
+%      Q18 $\left\{x\mid\frac{x-7}{x+1}\geqslant0\right\}$、Q19 $\left(\frac t4+\frac{16}{t-12}\right)$、
+%      Q21 $\left\{a^{-\frac12},a^{\frac32}\right\}$ 等）；
+%   ⑪ 一条 \step = 原卷解析的一个印刷行，cases 块整体算一个印刷行；别并折行、
+%      别拆行。Q10 四行、Q11 六行（两 cases 块同处一个印刷行）、Q12 七行、
+%      Q16 八行、Q17 六行、Q18 七行、Q19 九行、Q20 十行、Q21 十一行
+%      均按印刷行逐条断，不丢行；
+%   ⑫ 配图：本卷无插图（见 ①），故无 \includegraphics、无 \needvspace；
+%   ⑬ 原卷解析内无红色"法一／法二"之类小标题，故本卷无 \stepm；红色水印
+%      "魔都数学加油站"不录入；
+%   ⑭ 跨页续印按题合并：见 ⑥；
+%
+% ③ 行数复核：一条 \step = 原卷解析的一个印刷行，cases 块作一个印刷行计。
+%   逐题数（主会话逐页核对定稿）：Q3：1；Q4：1；Q5：1；Q6：1；
+%   Q7：0（只印【答案】、提 \ans{}，不计入 \step 账）；Q8：2；Q9：2；Q10：4；
+%   Q11：6；Q12：7；Q13：2；Q14：1；Q15：2；Q16：8；Q17：6；Q18：7；
+%   Q19：9；Q20：10；Q21：11。
+%   合计 81 条 \step（本卷无 \stepm），与原卷逐题印刷行相等。全卷 18 题设
+%   \solbegin…\solend ＋ Q7 一处 \ans{}，答案版【答案】/【解析】标记数 = 19 = 全卷题数。
+%
+% ④ 判别式／子集符号结论（逐处放大原图照录、不得统一，主会话像素级复核）：
+%   判别式：Q13 解析"$ac<0\Rightarrow\triangle=b^2-4ac>0$"印扁等边细线三角，
+%      照录 \triangle；Q20 (1) 解析"又 $\Delta=[-2(a+1)]^2-4(a^2-1)=8(a+1)\ge0$"
+%      印等腰偏高粗三角，照录 \Delta（/tmp/gao151/z/zoom/delta_4up.png 与
+%      xelatex 实渲染的 \triangle／\Delta 并排比较）。本卷无几何三角形符号。
+%   子集：Q12 解析"$A=\{0,\frac45,2\}\subset\Q$"印单线 ⊂、照录 \subset；
+%      Q18 解析 (2)"$C\subseteq B$"与"$(a,3a+1]\subseteq[7,+\infty)$"两处
+%      印带下划线 ⊆、照录 \subseteq（/tmp/gao151/z/zoom/q18_sub_L.png、
+%      q18_sub_R.png、q12_subset.png 放大确认）。本卷无 \not\subset 用例。
+%      补集上划线 \overline{B}（Q18）、\overline{[2,4]}／\overline{[0,3]}／
+%      \overline{P}（Q16 解析 D）；空集 \varnothing（Q16 条件①、解析 C、
+%      解析 D 的 8 元素表）；数集 \R／\Z／\Q 归一见 ② ⑤。
+%
+% ⑤ 存疑照录（放大原图确认，照录未改、正文对应处另有 % 注）：
+%   1. Q11 题干"若满足对于任意 $x\in\R$，$f(x)<0$ 和 $g(x)<0$ 至少有一个成立"
+%      用"和"字，解析内改用"或"（"又 $\forall x\in\R$，$f(x)<0$ 或 $g(x)<0$"），
+%      逐处照录未统一（放大 02 页 /tmp/gao151/z/hi_02_2.png 确认）。
+%   2. Q11 解析"$m(x-2m)(x+m+3)<0$ 在 $x\ge1$ 时恒成立"重复印两次（先说
+%      $f(x)=\ldots<0$ 在 $x\ge1$ 时恒成立、再说"即 $m(x-2m)(x+m+3)<0$
+%      在 $x\ge1$ 时恒成立"），照录未删，两条各占一个印刷行。
+%   3. Q12 解析"$\log_2 3$ 为无理数（否则可设 $\log_2 3=\frac mn$，$m,n$ 为
+%      正整数，则 $2^m=3^n$，奇偶性矛盾）"跨两印刷行，照录不合并。
+%   4. Q19 解析 (2) 首行"$y=6-\frac t4+\left(4-\frac{16}{t-16+4}\right)$"分母
+%      径写 $t-16+4$（即 $t-12$），下一行才化简成 $t-12$，逐处照录未改
+%      （放大 07 页 /tmp/gao151/z/hi_07_1.png 确认）。
+%   5. Q20 (2) 题干指数径写 $f(1)$，解析先算 $f(1)=-2$ 再作
+%      $\frac1{(3x-2)^2}>\frac1{(x+1)^2}$，照录未把指数直接改成 $-2$。
+%   6. "图像／图象"两形并用（Q11 图象、Q17 图像）、Δ/△ 两形并用（Q13
+%      \triangle、Q20 \Delta）均逐处照录、未统一（见 ② ⑥ ⑧ 与 ④）。
+%   全卷除此 6 类外未发现其它笔误／自相矛盾处；19 题中 18 题印【解析】、
+%   Q7 只印【答案】（见 ② ②）。
+%
+% ⑥ 跨页续印按题合并说明（逐页核实定稿）：Q3—Q8 题干＋解析在 01 页；
+%   Q9 题干＋解析 2 行、Q10 题干＋解析 4 行（末行"代入满足原式…"续 02 页
+%   下半）、Q11 题干＋解析 6 行在 02 页；Q12 题干＋解析 7 行在 03 页，
+%   "二、选择题"标题在 03 页下半；Q13、Q14 题干＋选项＋解析在 03 页；
+%   Q15 题干＋选项＋解析 2 行、Q16 题干＋①②两条件＋四选项＋解析前 4 行
+%   在 04 页，解析 D 的 R 行与"三者两两不交…""故选 D"续 05 页上半；
+%   "三、解答题"标题与 Q17 题干＋两问＋解析 (1)(2) 共 6 行在 05 页；
+%   Q18 题干＋两问＋解析 7 行在 05—06 页（(2) 题干续 06 页顶）；
+%   Q19 题干＋两问＋解析 (1) 3 行＋(2) 首行在 06 页，(2) 余 5 行续 07 页上半；
+%   Q20 题干＋三问＋解析 (1)(2) 6 行在 07 页，(3) 首行在 07 页末、
+%   余 3 行续 08 页顶；Q21 题干＋三问在 08 页，解析 (1)(2)(3) 前 5 行在
+%   08 页下半、(3) 末 6 行续 09 页上半；09 页下半仅水印、无正文。
+%   本稿按题连排，不丢行、不并折行；全卷末题为第 21 题，无附加题节。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年东昌中学高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+% === Q3 === 绝对值 \lvert…\rvert；解析 1 行
+\item 不等式 $\lvert x-2\rvert<3$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $\lvert x-2\rvert<3$，得 $-3<x-2<3$，即 $-1<x<5$，故解集为 $(-1,5)$.}
+\solend
+\fi
+
+% === Q4 === 恒过定点用 \left(\frac14,1\right)；解析 1 行
+\item 函数 $y=a^{4x-1}$（$a>0$，$a\ne1$）恒过定点\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{令 $4x-1=0$，得 $x=\dfrac14$，此时 $y=a^0=1$，故恒过定点 $\left(\dfrac14,1\right)$.}
+\solend
+\fi
+
+% === Q5 === 嵌套根式 \sqrt[5]{t\cdot\sqrt[3]{t}} 照录别简化；解析 1 行
+\item $\sqrt[5]{t\cdot\sqrt[3]{t}}$（$t>0$）的有理指数幂形式为 $t^m$，则 $m=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\sqrt[5]{t\cdot\sqrt[3]{t}}=\left(t^{1+\frac13}\right)^{\frac15}=t^{\frac4{15}}$，所以 $m=\dfrac4{15}$.}
+\solend
+\fi
+
+% === Q6 === 对数换底 \frac{1}{\log_5 3}；解析 1 行
+\item 已知 $a=\log_5 3$，则 $\log_3 45=$\blankline[4.4em]（用 $a$ 表示）.
+
+\ifanswer
+\solbegin
+\step{$\log_3 45=\log_3(9\times5)=2+\log_3 5=2+\dfrac{1}{\log_5 3}=2+\dfrac1a$.}
+\solend
+\fi
+
+% === Q7 === 混合体例：原卷只印【答案】、无【解析】，另提 \ans{}，不补造解析
+\item 用反证法证明命题：“若 $x^2-y\leqslant1$，则 $\lvert x\rvert\leqslant1$ 且 $y\geqslant-1$”时，应假设\blankline[4.4em].
+
+\ifanswer
+\ans{$\lvert x\rvert>1$ 或 $y<-1$}
+\fi
+
+% === Q8 === 解析 2 行
+\item 已知正数 $x,y$ 满足 $x+2y=3$，则 $\dfrac2x+\dfrac1y$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$8xy\leqslant(x+2y)^2=9$，所以 $\dfrac2x+\dfrac1y=\dfrac{x+2y}{xy}=\dfrac3{xy}\geqslant\dfrac83$，}
+\step{当且仅当 $x=2y$，即 $x=\dfrac32$，$y=\dfrac34$ 时取等号，最小值为 $\dfrac83$.}
+\solend
+\fi
+
+% === Q9 === 解集为 \R（原卷印正体粗体 R，归一 \R）；解析 2 行
+\item 若关于 $x$ 的不等式 $\lvert x-a\rvert+\lvert x-4\rvert\geqslant5$ 的解集为 $\R$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\lvert x-a\rvert+\lvert x-4\rvert\geqslant\lvert a-4\rvert$，且 $x=a$ 时等号成立，因此题意等价于 $\lvert a-4\rvert\geqslant5$，}
+\step{解得 $a\leqslant-1$ 或 $a\geqslant9$.}
+\solend
+\fi
+
+% === Q10 === \sqrt{\log_y\sqrt{5y}} 与 \sqrt{\frac1x-y} 照录；解析 4 行
+\item 已知 $2^x\cdot\log_x4-2^{x-1}=0$，$\sqrt{\log_y\sqrt{5y}}\cdot\log_5y=-1$，则 $\sqrt{\dfrac1x-y}=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$2^{x-1}(2\log_x4-1)=0\Rightarrow\log_x4=\dfrac12\Rightarrow x=16$.}
+\step{令 $t=\log_5 y$，则 $t\sqrt{\dfrac{t+1}{2t}}=-1$，所以 $t<0$.}
+\step{两边平方得 $t(t+1)=2$，即 $(t+2)(t-1)=0$，取 $t=-2$，得 $y=\dfrac1{25}$，}
+\step{代入满足原式，因此 $\sqrt{\dfrac1x-y}=\sqrt{\dfrac1{16}-\dfrac1{25}}=\dfrac3{20}$.}
+\solend
+\fi
+
+% === Q11 === "图象"（象，无亻）照录；题干"和"字照录；两 cases 块同一印刷行；解析 6 行
+\item 已知 $f(x)=m(x-2m)(x+m+3)$，$g(x)=2^x-2$，若满足对于任意 $x\in\R$，$f(x)<0$ 和 $g(x)<0$ 至少有一个成立，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $g(x)=2^x-2$，当 $x\geqslant1$ 时，$g(x)\geqslant0$，}
+\step{又 $\forall x\in\R$，$f(x)<0$ 或 $g(x)<0$，所以 $f(x)=m(x-2m)(x+m+3)<0$ 在 $x\geqslant1$ 时}
+\step{恒成立，即 $m(x-2m)(x+m+3)<0$ 在 $x\geqslant1$ 时恒成立，}% 原卷此处重复印一遍条件，照录未删（见 ⑤ 2）
+\step{则二次函数 $y=m(x-2m)(x+m+3)$ 图象开口只能向下，}
+\step{且与 $x$ 轴交点都在 $(1,0)$ 的左侧，所以 $\begin{cases}m<0\\-m-3<1\\2m<1\end{cases}$，即 $\begin{cases}m<0\\m>-4\\m<\frac12\end{cases}$，}
+\step{解得 $-4<m<0$，所以实数 $m$ 的取值范围是 $(-4,0)$.}
+\solend
+\fi
+
+% === Q12 === \Z／\Q 归一、单线 \subset 照录；解析 7 行（末行续 03 页下半）
+\item 已知 $a\in\Z$，集合 $A=\left\{x\mid\left(x-\dfrac4{a+1}\right)(x-\log_2a)(x-\sqrt{4-a})=0\right\}$，记 $S$ 为 $A$ 中所有元素之和，若 $A$ 中至少存在一个 $x_0$ 满足 $x_0\notin\Q$，则 $S$ 的最大值与最小值之和为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{各式有意义得 $a\in\{1,2,3,4\}$；$a=4$ 时 $A=\left\{0,\dfrac45,2\right\}\subset\Q$，不合题意.}
+\step{当 $a=1,2,3$ 时，$S$ 依次为 $2+\sqrt3$、$\dfrac73+\sqrt2$、$1+\log_2 3$，}
+\step{其中 $a=3$ 时元素 1 只计一次.}
+\step{$\log_2 3$ 为无理数（否则可设 $\log_2 3=\dfrac mn$，$m,n$ 为正整数，则 $2^m=3^n$，}
+\step{奇偶性矛盾），且 $1+\log_2 3<3<2+\sqrt3$.}
+\step{又 $\sqrt3-\sqrt2=\dfrac1{\sqrt3+\sqrt2}<\dfrac13$，}
+\step{所以 $S_{\max}+S_{\min}=\left(\dfrac73+\sqrt2\right)+(1+\log_2 3)=\dfrac{10}3+\sqrt2+\log_2 3$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+% === Q13 === 扁等边细线判别式 \triangle 照录（见 ④）；中文弯引号照录；解析 2 行，故选 A
+\item “$ac<0$”是“一元二次方程 $ax^2+bx+c=0$ 有实根”的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad\qquad B. 必要非充分条件
+
+C. 充要条件\qquad\qquad D. 既非充分也非必要条件
+
+\ifanswer
+\solbegin
+\step{$ac<0\Rightarrow\triangle=b^2-4ac>0$，方程有实根；而方程 $x^2-2x+1=0$ 有实根，}
+\step{但 $ac=1>0$，所以是充分非必要条件，故选 $A$.}
+\solend
+\fi
+
+% === Q14 === 解析 1 行，故选 B
+\item 已知 $a=0.5^{0.3}$，$b=0.3^{-2}$，$c=\log_2 0.3$，则 $a,b,c$ 的大小关系是\mbox{（\quad）}
+
+\keepwithprev
+A. $a>b>c$\qquad B. $b>a>c$\qquad C. $b>c>a$\qquad D. $c>a>b$
+
+\ifanswer
+\solbegin
+\step{$0<a<1$，$b>1$，$c<0$，所以 $b>a>c$，故选 $B$.}
+\solend
+\fi
+
+% === Q15 === 经验公式 S=\frac ab+\frac cd；0<c<d<b<a 照录；解析 2 行，故选 C
+\item 在创建全国文明城区的活动中，督导组对城区的评选设计了 $a,b,c,d$ 四项多元评价指标，并通过经验公式 $S=\dfrac ab+\dfrac cd$ 来计算各城区的综合得分，$S$ 的值越高则评价效果越好. 若某城区在自查过程中各项指标显示为 $0<c<d<b<a$，则下阶段要把其中的一个指标增加一个单位，而使得 $S$ 的值增加最多，那么该指标应为\mbox{（\quad）}
+
+\keepwithprev
+A. $a$\qquad\qquad B. $b$\qquad\qquad C. $c$\qquad\qquad D. $d$
+
+\ifanswer
+\solbegin
+\step{各指标均为正，增加 $b$ 或 $d$ 时，$S$ 减小；增加 $a$ 或 $c$ 时，$S$ 分别增加 $\dfrac1b$ 或 $\dfrac1d$.}
+\step{由 $0<d<b$，得 $\dfrac1d>\dfrac1b$，应增加指标 $c$，故选 $C$.}
+\solend
+\fi
+
+% === Q16 === 新定义"环"；圈数字①②文本模式；补集上划线 \overline{B} 等；解析 8 行，故选 D
+\item 设 $U$ 是一个非空集合，$F$ 是 $U$ 的子集构成的集合，若 $F$ 同时满足① $\varnothing\in F$，②若 $A,B\in F$，则 $A\cap\overline{B}\in F$ 且 $A\cap B\in F$，那么称 $F$ 是 $U$ 的一个环，下列说法中错误的是\mbox{（\quad）}
+
+\keepwithprev
+A. 若 $U=\{1,2,3,4,5,6\}$，则 $F=\{\varnothing,\{1,3,5\},\{2,4,6\},U\}$ 是 $U$ 的一个环
+
+B. 若 $U=\{a,b,c\}$，则存在 $U$ 的一个环 $F$，$F$ 含有 8 个元素
+
+C. 若 $U=\Z$，则存在 $U$ 的一个环 $F$，$F$ 含有 4 个元素且 $\{2\},\{3,5\}\in F$
+
+D. 若 $U=\R$，则存在 $U$ 的一个环 $F$，$F$ 含有 7 个元素且 $[0,3],[2,4]\in F$
+
+\ifanswer
+\solbegin
+\step{A：$\{1,3,5\}$ 与 $\{2,4,6\}$ 互补，所列 $F$ 满足①②，正确.}
+\step{B：取 $U$ 的全部子集组成 $F$，满足①②，且有 $2^3=8$ 个元素，正确.}
+\step{C：取 $F=\{\varnothing,\{2\},\{3,5\},\{2,3,5\}\}$，满足①②，正确.}
+\step{D：由②，$P=[0,3]\cap\overline{[2,4]}=[0,2)$、$Q=[2,4]\cap\overline{[0,3]}=(3,4]$、}
+\step{$R=[0,3]\cap\overline{P}=[2,3]$ 均属于 $F$.}
+\step{三者两两不交且非空，$\varnothing,P,Q,R,P\cup Q,P\cup R,Q\cup R,P\cup Q\cup R$ 是 $F$ 中的}
+\step{8 个不同元素，与仅有 7 个元素矛盾，错误.}
+\step{故选 $D$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+% === Q17 === "图像"（像，有亻）逐处照录；\left(\frac{m+2}{2m-1}\right)^x；解析 6 行
+\item 已知指数函数 $y=\left(\dfrac{m+2}{2m-1}\right)^x$ 的图像过点 $(1,3)$.
+
+(1) 求实数 $m$ 的值；
+
+(2) 若函数 $y=b^x$ 与函数 $y=\left(\dfrac{m+2}{2m-1}\right)^x$ 的图像关于 $y$ 轴对称，求函数 $y=b^x$ 在区间 $[-1,0]$ 上的最大值与最小值.
+
+\ifanswer
+\solbegin
+\step{(1) 将 $(1,3)$ 代入，得 $\dfrac{m+2}{2m-1}=3\Rightarrow m+2=6m-3\Rightarrow m=1$，}
+\step{此时底数为 3，符合指数函数的要求.}
+\step{(2) $y=3^x$ 的图像关于 $y$ 轴对称的图像对应函数为 $y=3^{-x}=\left(\dfrac13\right)^x$，}
+\step{所以 $b=\dfrac13$.}
+\step{函数 $y=\left(\dfrac13\right)^x$ 在 $[-1,0]$ 上严格递减，}
+\step{因此 $y_{\max}=\left(\dfrac13\right)^{-1}=3$，$y_{\min}=\left(\dfrac13\right)^0=1$.}
+\solend
+\fi
+
+% === Q18 === 全集 \R；补集 \overline{B}；子集 ⊆ 两处照录；解析 7 行
+\item 设全集为 $\R$，集合 $A=\{x\mid x^2-5x+4\geqslant0\}$，$B=\left\{x\mid\dfrac{x-7}{x+1}\geqslant0\right\}$，$C=\{x\mid a<x\leqslant3a+1,a\in\R\}$.
+
+(1) 求 $A\cap\overline{B}$；
+
+(2) 若 $B\cup C=B$，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) $(x-1)(x-4)\geqslant0$，得 $A=(-\infty,1]\cup[4,+\infty)$.}
+\step{$B=(-\infty,-1)\cup[7,+\infty)$，$\overline{B}=[-1,7)$，因此 $A\cap\overline{B}=[-1,1]\cup[4,7)$.}
+\step{(2) $B\cup C=B\Leftrightarrow C\subseteq B$.}
+\step{当 $C=\varnothing$ 时，$a\geqslant3a+1$，即 $a\leqslant-\dfrac12$，满足条件.}
+\step{当 $C\ne\varnothing$ 时，$a<3a+1$，即 $a>-\dfrac12$，}
+\step{此时 $C$ 中的元素均大于 $-1$，所以 $C\subseteq B\Leftrightarrow(a,3a+1]\subseteq[7,+\infty)\Leftrightarrow a\geqslant7$.}
+\step{实数 $a$ 的取值范围为 $\left(-\infty,-\dfrac12\right]\cup[7,+\infty)$.}
+\solend
+\fi
+
+% === Q19 === 分段函数 cases 块；"y mol/L" 照录；解析 9 行
+\item 培养某种水生植物需要定期向水中加入营养物质 N. 已知向水中每投放 1 个单位的物质 N，则 $t$（$t\in[0,24]$）小时后，水中含有物质 N 的浓度增加 $y$ mol/L，$y$ 与 $t$ 的函数关系可近似地表示为 $y=\begin{cases}4-\dfrac{16}{t+4},&0\leqslant t\leqslant12\\6-\dfrac t4,&12<t\leqslant24\end{cases}$. 根据经验，当水中含有物质 N 的浓度不低于 2 mol/L 时，物质 N 才能有效发挥作用.
+
+(1) 若在水中首次投放 1 个单位的物质 N，计算物质 N 能持续有效发挥作用的时长；
+
+(2) 若 $t=0$ 时在水中首次投放 1 个单位的物质 N，$t=16$ 时再投放 1 个单位的物质 N，试判断当 $t\in[16,24]$ 时，水中含有物质 N 的浓度是否始终不超过 3 mol/L，并说明理由.
+
+\ifanswer
+\solbegin
+\step{(1) 当 $0\leqslant t\leqslant12$ 时，由题意得 $4-\dfrac{16}{t+4}\geqslant2$，解得 $4\leqslant t\leqslant12$；}
+\step{当 $12<t\leqslant24$ 时，由题意得 $6-\dfrac t4\geqslant2$，解得 $12\leqslant t\leqslant16$；}
+\step{所以 $4\leqslant t\leqslant16$，所以物质 N 能持续有效发挥作用的时长为 12 小时.}
+\step{(2) 当 $t\in[16,24]$ 时，水中含有物质 N 的浓度为 $y$ mol/L，}
+\step{则 $y=6-\dfrac t4+\left(4-\dfrac{16}{t-16+4}\right)=10-\left(\dfrac t4+\dfrac{16}{t-12}\right)$}% 分母径写 t-16+4（即 t-12），下一行才化简，照录（见 ⑤ 4）
+\step{$=10-\left(\dfrac{t-12+12}4+\dfrac{16}{t-12}\right)=7-\left(\dfrac{t-12}4+\dfrac{16}{t-12}\right)\leqslant7-2\sqrt{\dfrac{t-12}4\cdot\dfrac{16}{t-12}}=3$.}
+\step{当且仅当 $t=20$ 时取等号.}
+\step{所以当 $t\in[16,24]$ 时，水中含有物质 N 的浓度的最大值为 3 mol/L.}
+\step{所以当 $t\in[16,24]$ 时，水中含有物质 N 的浓度始终不超过 3 mol/L.}
+\solend
+\fi
+
+% === Q20 === 等腰偏高粗判别式 \Delta 照录（见 ④）；$f(1)$ 作指数；解析 10 行
+\item 已知关于 $x$ 的函数 $f(x)=(a^2-1)x^2-2(a+1)x+1$.
+
+(1) 若方程 $f(x)=0$ 的两实根互为倒数，求实数 $a$ 的值；
+
+(2) 若 $a=2$，求不等式 $(3x-2)^{f(1)}>(x+1)^{f(1)}$ 的解集；
+
+(3) 若不等式 $f(x)>0$ 恒成立，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 方程有两个互为倒数的实根，必有 $a^2-1\ne0$，}
+\step{且 $x_1x_2=\dfrac1{a^2-1}=1\Rightarrow a=\pm\sqrt2$，}
+\step{又 $\Delta=[-2(a+1)]^2-4(a^2-1)=8(a+1)\geqslant0$，即 $a\geqslant-1$，因此 $a=\sqrt2$.}
+\step{(2) 当 $a=2$ 时，$f(1)=3-6+1=-2$，原不等式要求 $x\ne\dfrac23$ 且 $x\ne-1$.}
+\step{$\dfrac1{(3x-2)^2}>\dfrac1{(x+1)^2}\Leftrightarrow(3x-2)^2<(x+1)^2\Leftrightarrow(2x-3)(4x-1)<0$，}
+\step{解得 $\dfrac14<x<\dfrac32$，结合底数非零，解集为 $\left(\dfrac14,\dfrac23\right)\cup\left(\dfrac23,\dfrac32\right)$.}
+\step{(3) 当 $a=-1$ 时，$f(x)=1>0$ 恒成立；}
+\step{当 $a=1$ 时，$f(x)=-4x+1$ 不恒大于 0.}
+\step{当 $a\ne\pm1$ 时，$f(x)>0$ 对一切实数 $x$ 恒成立 $\Leftrightarrow\begin{cases}a^2-1>0\\8(a+1)<0\end{cases}\Leftrightarrow a<-1$.}
+\step{因此 $a$ 的取值范围为 $(-\infty,-1]$.}
+\solend
+\fi
+
+% === Q21 === 首数 I_a(x)／尾数 D_a(x) 新定义；解析 11 行（末 6 行续 09 页上半）
+\item 在数学中，对于任意一个正实数 $x$，其以 $a$（$a>0,a\ne1$）为底的对数 $\log_a x$ 都可以唯一地表示为一个整数与一个非负纯小数（即大于等于 0 且小于 1 的小数）的和. 我们规定：这个整数部分称为 $x$ 的首数，记作 $I_a(x)$；这个非负纯小数部分称为 $x$ 的尾数，记作 $D_a(x)$.
+
+(1) 若 $I_{10}(x)=I_e(10)$，$D_{10}(x)=D_{10}(e)$，其中 $e$ 为自然对数的底数，求正实数 $x$ 的值；
+
+(2) 若 $\left|\dfrac{I_a(x)}{D_a(x)}\right|=2$，求正实数 $x$ 的取值范围.
+
+(3) 求证：对任意的实数 $t>1$，关于 $x$ 的方程 $\dfrac{I_2(t)}{x-D_2(t)}=x^{I_2(t)}$ 在区间 $(0,1)$ 上没有实数解.
+
+\ifanswer
+\solbegin
+\step{(1) $e^2<10<e^3$，所以 $I_e(10)=2$；$1<e<10$，所以 $D_{10}(e)=\log_{10}e$.}
+\step{因此 $\log_{10}x=I_{10}(x)+D_{10}(x)=2+\log_{10}e=\log_{10}(100e)$，得 $x=100e$.}
+\step{(2) 记 $n=I_a(x)$，$d=D_a(x)$，则 $n$ 为整数，且原式有意义要求 $0<d<1$.}
+\step{由 $\left|\dfrac nd\right|=2$，得 $|n|=2d\in(0,2)$，所以 $n=\pm1$，$d=\dfrac12$.}
+\step{于是 $\log_a x=n+d=\dfrac32$ 或 $-\dfrac12$，即 $x\in\left\{a^{-\frac12},a^{\frac32}\right\}$.}
+\step{(3) 记 $n=I_2(t)$，$d=D_2(t)$，则 $\log_2 t=n+d>0$，}
+\step{所以整数 $n\geqslant0$，且 $0\leqslant d<1$.}
+\step{假设原方程在 $(0,1)$ 上有解 $x$，则 $x\ne d$.}
+\step{当 $n=0$ 时，原方程成为 $\dfrac0{x-d}=1$，矛盾.}
+\step{当 $n\geqslant1$ 时，原方程两边乘以 $x-d$，得 $n=x^n(x-d)\leqslant x^{n+1}<1$，}
+\step{与 $n\geqslant1$ 矛盾.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
