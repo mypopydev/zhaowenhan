@@ -1,0 +1,493 @@
+% 高一155_南洋模范中学_期中.tex
+%   —— 高一上数学"2026-2027 年南洋模范中学高一上期中"（试卷版/答案版/紧凑版）
+% 试卷版：xelatex 高一155_南洋模范中学_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一155_南洋模范中学_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一155_南洋模范中学_期中.tex}"
+%
+% ① 原始材料：微信公众号"魔都数学加油站"文章，连载"27学年高一155"，原文标题
+% "27学年高一155——2026-2027年上海市南洋模范中学高一上期中"；
+% 原文链接：https://mp.weixin.qq.com/s/C-lxKBQpdR-FlWqG3m6XIA 。
+% 正文为 13 张 PNG 页（01/05/07/12/13 为 2560×3620，02/03/04/06/08/09/10/11
+% 为 4762×6735，同一篇各页分辨率混排，逐页按各自分辨率裁图核对）。
+% 体例：讲评版——填空 3—12（10 题）、选择 13—16（4 题）、解答 17—21（5 题），
+% 共 19 题，自第 3 题起编（1、2 未印在本篇）；19 题全部印【解析】（逐题核实，
+% 见 ②）。题目、答案、解析均据原图转录；卷面粉红色水印"魔都数学加油站"及公众号
+% 页脚未录入。
+% 全卷无插图（逐页通读 13 页确认无题目配图、无解析内配图、无表格、无"如图"处），
+% 13 页下半仅水印、无正文；配图清单为空，故无 figures/gao155_*.png。
+%
+% 卷首标题：原卷印作"2026-2027 年南洋模范中学高一上期中"，年份区间按全稿惯例排 en dash；
+% 原卷卷面未印副标题，本稿按同期中卷知识模块口径补出"集合与常用逻辑用语、不等式、函数"。
+%
+% ② 与原卷的排版差异：
+%   ① 原文从第 3 题起，本稿保留原题号；共 19 题三节，解答题 5 题到 21；
+%   ② 全 19 题均印【解析】，逐题设 \solbegin…\solend；四道选择题答案在解析末句
+%      "故选 B／D／A／C"（逐个放大复核）、括号 \mbox{（\quad）} 留空、不另提 \ans{}；
+%      答案版【答案】/【解析】标记数 = 19 = 全卷题数（19 个 \solbegin）；
+%   ③ 原卷卷面未印副标题，本稿按知识模块口径补出；
+%   ④ 原卷填空横线按全稿惯例排 \blankline[4.4em]；选择题选项段前按惯例各加
+%      \keepwithprev；解答题不留作答区、不加 \anspace（原卷为讲评版，109—113 起
+%      全稿不用 \anspace）；
+%   ⑤ 数集：Q7"$x\in\R$"、Q10"$b\in R$"、Q12"$x,y\in\R$"、Q13"$a,b\in\R$"
+%      原卷印粗体/斜体 R，Q11"$x\in\N$"印粗体 N，Q21"$n\in\N^*$"印斜体 N 带星号，
+%      按全稿惯例归一 \R／\N／\N^*（参见 高一14 头注④、高一150 头注② ⑤）；
+%      绝对值排 \lvert…\rvert（Q12），集合描述竖线排 \mid，空集 \varnothing
+%      （Q9"$A\cap B\ne\varnothing$"、Q17"$A=\varnothing$"），不等号按全稿惯例排
+%      \leqslant／\geqslant；
+%   ⑥ 子集符号逐处照录不统一：Q3 题干"$\{1,2\}\subset M\subseteq\{1,2,3,4,5\}$"
+%      左印单线 ⊂、右印带下划线 ⊆（放大 01 页确认），照录 \subset／\subseteq；
+%      Q17"$A\subseteq B$""$B\subseteq A$"、Q21"$M\subseteq S_n$"均印带下划线 ⊆、
+%      照录 \subseteq；本卷无 \not\subset 用例；
+%   ⑦ 取整函数：Q16 题干"$[a]$ 表示不超过 $a$ 的最大整数，如 $[1.2]=1$，
+%      $[-3.2]=-4$"，解析内多处 $\left[\frac{y+z}{x}\right]$ 等取整记号，
+%      按 高一108／高一150 成例排方括号（含分式时用 \left[…\right]）；
+%   ⑧ Q16 解析"即 … 中至少有一个不小于 2，不妨设 …"与紧接的
+%      "$[a]$ 表示不超过 $a$ 的最大整数和 … 中至少有一个不小于 2，"两句
+%      内容重复（原卷如此），照录未删，各占一个印刷行（放大 06 页确认）；
+%   ⑨ 红字照录为黑体：Q21 (3) 解析的"先证充分性：""再证必要性："两处原卷排
+%      **红色加粗**，按 高一53 成例排 \stepm 子题标号样式（加粗着色、不改黑色
+%      基调），全库无红字排字先例、本稿不引入红色定义，文件头注明；
+%   ⑩ 中文弯引号照录：Q20 材料"当你找到第一个蘑菇或作出第一个发现后，再四处
+%      看看，它们总是成群生长。"、Q21 题干与解析"期待子集""集合 M 具有性质 P"
+%      等；引号内全角逗号照录；注释里一律 ASCII 引号；数学式内 CJK 用 \text{}；
+%   ⑪ 半角逗号在数学组之间是全稿惯例、非笔误，逐处照录（$a,b$、$x,y$、$a,b,c$
+%      之类）；行末西文句点 ASCII `.`；行中全角逗号／顿号照录；
+%   ⑫ 复杂式照录别简化：Q5 $2^{\frac13}\cdot2^{\frac23}$、Q7
+%      $\left(\frac1x-\frac12\right)^2-\frac14$、Q10 $\left(0,\frac1a\right)$、
+%      Q15 $\frac{2\sqrt{81}+66}{36}$、Q16 六个根式与取整、Q20 $a+3+\frac2a$
+%      与 $D=ab+a+1$、Q21 $\frac{x+y+z}{2}-z$ 等；
+%      \left…\right 不得拆到不同 $…$ 组（Q9 $\left[-\frac14,+\infty\right)$、
+%      Q12 $\left[-\frac{\sqrt5}{5},0\right)\cup\left(0,\frac{\sqrt5}{5}\right]$、
+%      Q14 $\left(0,\sqrt3\right)$ 等）；
+%   ⑬ 一条 \step = 原卷解析的一个印刷行，cases 块整体算一个印刷行；别并折行、
+%      别拆行。跨页续印按题合并（Q4 的 01 页上下、Q6 的 01—02 页、Q9 的
+%      02—03 页、Q10 的 03 页上下、Q11 的 03—04 页、Q12 的 04 页上下、
+%      Q13 的 04—05 页、Q15 的 05—06 页、Q16 的 06—07 页、Q20 的 09—10 页、
+%      Q21 的 11—13 页）；两处跨半页重叠行（Q4"则 $5x^2-6x+1>0$…"、
+%      Q10"对于 $g(x)$…"、Q12"又 $5(x^2+y^2)$…"）只算一个印刷行；
+%   ⑭ 配图：本卷无插图（见 ①），故无 \includegraphics、无 \needvspace；
+%   ⑮ Q18 解析印评分标注"（1 分）""（2 分）""（3 分）""（4 分）"，照录未删；
+%   ⑯ Q20 为材料阅读题，题干含两段背景文字、示例"正数 a,b 满足 ab=1，求证
+%      $\frac1{1+a}+\frac1{1+b}=1$"及其证明、波利亚《怎样解题》引文、
+%      "请根据以上阅读材料，解答下列问题"一整段，全数照录为题干（非解析）；
+%   ⑰ Q21 为定义证明题，题干含"性质 P"与"期待子集"两则自定义名词、
+%      $S_n=\{1,2,3,\cdots,2n\}$ 定义、三问，照录；(1) 解析 (i)(ii) 两情形
+%      按全稿 \step 行首标号照录（未另用 \stepm）；(3) 解析两处红字见 ⑨；
+%
+% ③ 行数复核：一条 \step = 原卷解析的一个印刷行，cases 块作一个印刷行计。
+%   逐题数（主会话逐页核对定稿）：Q3：1；Q4：6；Q5：2；Q6：6；Q7：3；
+%   Q8：4；Q9：2；Q10：8；Q11：8；Q12：5；Q13：3；Q14：4；Q15：6；
+%   Q16：16；Q17：8；Q18：8；Q19：7；Q20：10；Q21：38。
+%   合计 145 行（143 条 \step ＋ 2 条 \stepm），与原卷逐题印刷行相等。
+%   全卷 19 题设 \solbegin…\solend，答案版【答案】/【解析】标记数 = 19 = 全卷题数。
+%
+% ④ 页码分布（供回原图复核）：
+%   卷首标题＋"一、填空题"＋Q3 题干＋解析 1 行、Q4 题干＋解析前 5 行在 01 页上半；
+%   Q4 解析末行、Q5 题干＋解析 2 行、Q6 题干＋解析前 3 行在 01 页下半；
+%   Q6 解析后 3 行、Q7 题干＋解析 3 行、Q8 题干首行在 02 页上半；
+%   Q8 完整题干＋解析 4 行、Q9 题干＋解析首行在 02 页下半；
+%   Q9 解析 cases 行、Q10 题干＋解析前 6 行在 03 页上半；
+%   Q10 解析后 2 行、Q11 题干＋解析前 3 行在 03 页下半；
+%   Q11 解析后 5 行、Q12 题干＋解析前 3 行在 04 页上半；
+%   Q12 解析后 2 行、"二、选择题"标题、Q13 题干＋选项＋解析前 2 行在 04 页下半；
+%   Q13 解析末行、Q14 题干＋选项＋解析 4 行在 05 页上半；
+%   Q14 解析末行（重复印）、Q15 题干＋选项＋解析 5 行在 05 页下半；
+%   Q15 解析末行、Q16 题干＋选项＋解析前 4 行在 06 页上半；
+%   Q16 解析中 8 行在 06 页下半；Q16 解析末 4 行、"三、解答题"标题、
+%   Q17 题干＋两问＋解析 (1) 首行在 07 页上半；Q17 解析 (1)(2) 后 7 行在 07 页下半；
+%   Q18 题干＋两问＋解析 (1)(2) 前 7 行在 08 页上半；Q18 解析末行、
+%   Q19 题干＋两问＋解析 (1) 3 行在 08 页下半；Q19 解析 (2) 4 行、
+%   Q20 题干材料前半在 09 页上半；Q20 材料后半＋三问＋解析 (1) 1 行在 09 页下半；
+%   Q20 解析 (2) 5 行＋(3) 前 2 行在 10 页上半；Q20 解析 (3) 后 2 行、
+%   Q21 题干全＋(1)(2) 两问在 10 页下半；Q21 (3) 问＋解析 (1) 7 行＋(2) 首行
+%   在 11 页上半；Q21 (2) 后 6 行＋(3)"先证充分性"红字＋充分性前 3 行在 11 页下半；
+%   Q21 充分性后 6 行＋"再证必要性"红字＋必要性前 4 行在 12 页上半；
+%   Q21 必要性后 10 行在 12 页下半；Q21 末行"'期待子集'""在 13 页上半；
+%   13 页下半仅水印、无正文。本稿按题连排，不丢行、不并折行；
+%   全卷末题为第 21 题，无附加题节。
+%
+% ⑤ 存疑照录（放大原图确认，照录未改、正文对应处另有 % 注）：
+%   1. Q16 解析"即 … 中至少有一个不小于 2"与"$[a]$ 表示不超过 $a$ 的最大整数和
+%      … 中至少有一个不小于 2，"重复（见 ② ⑧），照录未删；
+%   2. Q10 解析"$g\left(\frac1a\right)=\frac1{a^2}+\frac ba-4=0$"径写 $\frac ba$，
+%      照录未改；
+%   3. Q15 分子径写 $2\sqrt{81}+66$（即 84），照录未化简；
+%   4. Q20 (3) 解析"$5x\left(\frac aD+\frac{ab}D+\frac{abc}D\right)=1\Leftrightarrow
+%      5x\cdot\frac{a+ab+1}{D}=1$"，由 $abc=1$ 得 $abc=1$ 代入 $a+ab+abc=a+ab+1$，
+%      照录未简化；
+%   5. Q21 (3) 解析"因为 $z-c=z+x-\frac{x+y+z}{2}=\frac{z+x-y}{2}>
+%      \frac{z+(z-y)-y}{2}=z-y>0$"，中间项照录未化简。
+%   全卷除此 5 类外未发现其它笔误／自相矛盾处；19 题全部印【解析】。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年南洋模范中学高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+% === Q3 === 子集 ⊂／⊆ 逐处照录；解析 1 行
+\item 已知集合 $M$ 满足 $\{1,2\}\subset M\subseteq\{1,2,3,4,5\}$，则满足条件的集合 $M$ 共有\blankline[4.4em]个.
+
+\ifanswer
+\solbegin
+\step{$M$ 必含 1,2，且至少含 3,4,5 中的一个，因此共有 $2^3-1=7$ 个.}
+\solend
+\fi
+
+% === Q4 === 解析 6 行，末行跨 01 页上下
+\item 已知不等式 $ax^2+bx+c>0$ 的解集为 $(1,5)$，则不等式 $cx^2+bx+a<0$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{不等式 $ax^2+bx+c>0$ 的解集为 $(1,5)$，}
+\step{得 $a<0$，且 1，5 是方程 $ax^2+bx+c=0$ 的两根，}
+\step{则 $-\dfrac{b}{a}=6,\dfrac{c}{a}=5$，所以 $b=-6a$，$c=5a$，}
+\step{所以不等式 $cx^2+bx+a<0$ 化为 $5ax^2-6ax+a<0$，}
+\step{则 $5x^2-6x+1>0$，解得 $x<\dfrac15$ 或 $x>1$，}
+\step{故不等式 $cx^2+bx+a<0$ 的解集为 $\{x\mid x>1\text{ 或 }x<\dfrac15\}$.}
+\solend
+\fi
+
+% === Q5 === 指数 1/3、2/3 照录；解析 2 行
+\item 已知实数 $a>1$，$b>1$，若 $\log_a b=2$，$\log_2\dfrac{b}{a}=\dfrac13$，则 $\log_4(ab)=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{因为 $\log_2\dfrac{b}{a}=\dfrac13$，所以 $\dfrac{b}{a}=2^{\frac13}$，又 $\log_a b=2$，故 $a^2=b$，所以 $a^2=2^{\frac13}a$，}
+\step{所以 $a=2^{\frac13}$，$b=2^{\frac13}a=2^{\frac23}$，所以 $\log_4(ab)=\log_4\left(2^{\frac13}\cdot2^{\frac23}\right)=\log_4 2=\dfrac12$.}
+\solend
+\fi
+
+% === Q6 === cases 块一个印刷行；解析 6 行，跨 01—02 页
+\item 已知 $1<a+2b<3$，$-1<2a-b<2$，则 $4a+3b$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $4a+3b=x(a+2b)+y(2a-b)$，}
+\step{则 $4a+3b=x(a+2b)+y(2a-b)=(x+2y)a+(2x-y)b$，}
+\step{即 $\begin{cases}x+2y=4\\2x-y=3\end{cases}$，解得 $x=2$，$y=1$，所以 $4a+3b=2(a+2b)+(2a-b)$.}
+\step{又因为 $1<a+2b<3$，$2<2(a+2b)<6$，且 $-1<2a-b<2$，}
+\step{所以 $2+(-1)<2(a+2b)+(2a-b)<6+2$，即 $1<4a+3b<8$，}
+\step{故 $4a+3b$ 的取值范围是 $(1,8)$.}
+\solend
+\fi
+
+% === Q7 === \R 归一；解析 3 行
+\item 若存在 $x\in\R$，使得 $ax^2+x-1\geqslant0$，则实数 $a$ 的取值范围为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{原不等式成立时 $x\ne0$，且 $a\geqslant\dfrac{1-x}{x^2}=\left(\dfrac1x-\dfrac12\right)^2-\dfrac14\geqslant-\dfrac14$，}
+\step{反之，当 $a\geqslant-\dfrac14$ 时，取 $x=2$，则 $ax^2+x-1=4a+1\geqslant0$，}
+\step{所以所求范围为 $\left[-\dfrac14,+\infty\right)$.}
+\solend
+\fi
+
+% === Q8 === 命题 P／q；解析 4 行
+\item 设命题 $P$：幂函数 $f(x)=x^{m^2+2m}$ 在区间 $(0,+\infty)$ 上是严格减函数，命题 $q$：$mx^2+4mx-4<0$ 对任意实数 $x$ 恒成立. 若命题 $P$ 和 $q$ 中有且只有一个是真命题，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{命题 $P$ 为真 $\Leftrightarrow m^2+2m<0\Leftrightarrow-2<m<0$.}
+\step{由 $mx^2+4mx-4=m(x+2)^2-4(m+1)$，命题 $q$ 为真}
+\step{$\Leftrightarrow m\leqslant0$ 且 $-4(m+1)<0\Leftrightarrow-1<m\leqslant0$.}
+\step{两命题恰有一个为真，得 $m\in(-2,-1]\cup\{0\}$.}
+\solend
+\fi
+
+% === Q9 === \varnothing；cases 块一个印刷行；解析 2 行，跨 02—03 页
+\item 集合 $A=\left\{x\mid\dfrac{4}{x-2}\geqslant1\right\}$，集合 $B=\{x\mid m+1<x\leqslant2m-1\}$，若 $A\cap B\ne\varnothing$，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\dfrac{4}{x-2}\geqslant1\Leftrightarrow\dfrac{6-x}{x-2}\geqslant0$，得 $A=(2,6]$.}
+\step{$A\cap B\ne\varnothing\Leftrightarrow\begin{cases}m+1<2m-1\\m+1<6\\2m-1>2\end{cases}\Leftrightarrow2<m<5$，则实数 $m$ 的取值范围是 $(2,5)$.}
+\solend
+\fi
+
+% === Q10 === 两个 cases 块同一印刷行；解析 8 行，跨 03 页上下
+\item 已知 $a>0$，$b\in\R$，当 $x>0$ 时，关于 $x$ 的不等式 $(ax-1)(x^2+bx-4)\geqslant0$ 恒成立，则 $b+\dfrac{2}{a}$ 的最小值是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{对于 $(ax-1)(x^2+bx-4)\geqslant0$，设 $f(x)=ax-1$，$g(x)=x^2+bx-4$，}
+\step{对于 $f(x)=ax-1$，$a>0$，}
+\step{在 $\left(0,\dfrac1a\right)$ 上，$f(x)<0$，在 $\left(\dfrac1a,+\infty\right)$ 上，$f(x)>0$，}
+\step{又由不等式 $(ax-1)(x^2+bx-4)\geqslant0\Rightarrow\begin{cases}ax-1\leqslant0\\x^2+bx-4\leqslant0\end{cases}$ 或 $\begin{cases}ax-1\geqslant0\\x^2+bx-4\geqslant0\end{cases}$，}
+\step{对于 $g(x)=x^2+bx-4$，必有 $g\left(\dfrac1a\right)=\dfrac{1}{a^2}+\dfrac{b}{a}-4=0$，即 $b=4a-\dfrac1a$，}
+\step{则 $b+\dfrac2a=\left(4a-\dfrac1a\right)+\dfrac2a=4a+\dfrac1a$，}
+\step{又 $a>0$，则 $b+\dfrac2a=4a+\dfrac1a\geqslant2\sqrt4=4$，当且仅当 $a=\dfrac12$ 时取等号，}
+\step{即 $b+\dfrac2a$ 的最小值为 4.}
+\solend
+\fi
+
+% === Q11 === 圈数字①②、"幸运数"；\N 归一；解析 8 行，跨 03—04 页
+\item 已知集合 $M=\{x\in\N\mid6\leqslant x\leqslant29\}$，集合 $A,B,C$ 满足：①每个集合恰有 8 个元素；②$A\cup B\cup C=M$. 若集合 $P$ 中元素最大值与最小值之和称为 $P$ 的幸运数，记作 $X(P)$，则 $X(A)+X(B)+X(C)$ 的最大值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$M$ 恰有 24 个元素，故 $A,B,C$ 两两不交，三组元素总和为 420.}
+\step{任一组的元素按 $p_1<\cdots<p_8$ 排列，各元素均为整数，}
+\step{有 $p_1+\cdots+p_8\geqslant p_1+(p_1+1)+\cdots+(p_1+6)+p_8=7p_1+p_8+21$.}
+\step{设三组最小值之和为 $s$，最大值之和为 $t$，则 $7s+t+63\leqslant420$，}
+\step{且 $t\leqslant27+28+29=84$，}
+\step{因此 $7(s+t)\leqslant420-63+6t\leqslant357+6\times84=861$，$s+t\leqslant123$，}
+\step{取 $A=\{6,7,\cdots,12,27\}$，$B=\{13,14,\cdots,19,28\}$，$C=\{20,21,\cdots,26,29\}$，}
+\step{此时 $X(A)+X(B)+X(C)=33+41+49=123$，最大值为 123.}
+\solend
+\fi
+
+% === Q12 === \lvert…\rvert、\varnothing；解析 5 行，跨 04 页上下
+\item 设 $a,b$ 为非零实数，定义运算 $T[x,y]=(x-y)(2ax+by)$，其中 $x,y\in\R$. 已知 $T[1,2]=0$，若对任意实数 $x,y$，恒有 $\lvert T[x,y]\rvert\leqslant\lvert x-y\rvert\sqrt{x^2+y^2}$，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$T[1,2]=-2(a+b)=0\Rightarrow b=-a$，于是 $T[x,y]=a(x-y)(2x-y)$.}
+\step{取 $x=2,y=-1$，得 $15\lvert a\rvert\leqslant3\sqrt5$，即 $\lvert a\rvert\leqslant\dfrac{\sqrt5}{5}$.}
+\step{又 $5(x^2+y^2)-(2x-y)^2=(x+2y)^2\geqslant0$，等号成立当且仅当 $x=-2y$.}
+\step{当 $\lvert a\rvert\leqslant\dfrac{\sqrt5}{5}$ 时，$\lvert T[x,y]\rvert\leqslant\lvert a\rvert\sqrt5\lvert x-y\rvert\sqrt{x^2+y^2}\leqslant\lvert x-y\rvert\sqrt{x^2+y^2}$，}
+\step{结合 $a\ne0$ 即得所求范围为 $\left[-\dfrac{\sqrt5}{5},0\right)\cup\left(0,\dfrac{\sqrt5}{5}\right]$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+% === Q13 === \R 归一；解析 3 行，跨 04—05 页；故选 B
+\item 已知 $a,b\in\R$，$A=\{1,3,a^2\}$，$B=\{1,a+2,b\}$，若 $A=B$，则 $a-b=$\mbox{（\quad）}
+
+\keepwithprev
+A. 5\qquad\qquad B. $-1$\qquad\qquad C. 1\qquad\qquad D. $-4$
+
+\ifanswer
+\solbegin
+\step{由集合元素的互异性，$a^2\ne1$，即 $a\ne\pm1$.}
+\step{若 $a+2=3$，则 $a=1$，矛盾；故 $b=3$，$a+2=a^2$，}
+\step{解得 $a=2$（$a=-1$ 舍去），此时 $A=B=\{1,3,4\}$，所以 $a-b=-1$，故选 $B$.}
+\solend
+\fi
+
+% === Q14 === 三个 cases 块一个印刷行；解析 4 行；故选 D
+\item 已知幂函数 $f(x)=(m^2-m-5)x^{2-m}$，且 $f(1)>f(3)$，若 $f(2a)>f(a^2-3)$，则实数 $a$ 的取值范围是\mbox{（\quad）}
+
+\keepwithprev
+A. $(-\infty,-\sqrt3)\cup(3,+\infty)$\qquad\qquad B. $(-\infty,-1)\cup(3,+\infty)$
+
+C. $(-\infty,-1)\cup(0,\sqrt3)\cup(3,+\infty)$\qquad\qquad D. $(-\sqrt3,-1)\cup(0,\sqrt3)\cup(3,+\infty)$
+
+\ifanswer
+\solbegin
+\step{由 $f(x)=(m^2-m-5)x^{2-m}$ 为幂函数得 $m^2-m-5=1$，}
+\step{解得 $m=-2$ 或 3，又 $f(1)>f(3)$，故 $m=3$，}
+\step{$f(2a)>f(a^2-3)\Rightarrow\begin{cases}2a<a^2-3\\2a>0\end{cases}$ 或 $\begin{cases}2a>0\\a^2-3<0\end{cases}$ 或 $\begin{cases}2a<a^2-3\\a^2-3<0\end{cases}$，}
+\step{即 $(-\sqrt3,-1)\cup(0,\sqrt3)\cup(3,+\infty)$. 故选 $D$.}
+\solend
+\fi
+
+% === Q15 === cases 块一个印刷行；分子 2\sqrt{81}+66 照录；解析 6 行，跨 05—06 页；故选 A
+\item 已知正实数 $a$、$b$ 满足 $5a^2+4ab=1+b^2$，则 $12a^2+8ab-b^2$ 的最小值为\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac73$\qquad\qquad B. $\dfrac{19}{8}$\qquad\qquad C. $\dfrac{19}{4}$\qquad\qquad D. $\dfrac76$
+
+\ifanswer
+\solbegin
+\step{因为 $5a^2+4ab=1+b^2$，所以 $(5a-b)(a+b)=1$，令 $s=5a-b$，$t=a+b$，}
+\step{因为 $a$、$b$ 都是正数，所以 $5a-b=\dfrac{1}{a+b}>0$，即 $a>\dfrac{b}{5}$，}
+\step{且 $\begin{cases}a=\dfrac{s+t}{6}\\b=\dfrac{-s+5t}{6}\end{cases}$，$st=1$，同时 $t>\dfrac{s}{5}$，}
+\step{所以 $12a^2+8ab-b^2=\dfrac{(s+t)^2}{3}+\dfrac{2(s+t)(5t-s)}{9}-\dfrac{(5t-s)^2}{36}$}
+\step{$=\dfrac{3s^2+66st+27t^2}{36}=\dfrac{3s^2+27t^2+66}{36}\geqslant\dfrac{2\sqrt{81}+66}{36}=\dfrac73$.}
+\step{当且仅当 $s=\sqrt3,t=\dfrac{\sqrt3}{3}$ 时取等号. 故选 $A$.}
+\solend
+\fi
+
+% === Q16 === 取整函数 [ ]；解析 16 行，跨 06—07 页；故选 C
+\item 设 $[a]$ 表示不超过 $a$ 的最大整数，如 $[1.2]=1$，$[-3.2]=-4$，若 $x$、$y$、$z$ 为正实数，则 $\left[\dfrac{y+z}{x}\right]+\left[\dfrac{z+x}{y}\right]+\left[\dfrac{x+y}{z}\right]$ 的最小值为\mbox{（\quad）}
+
+\keepwithprev
+A. 2\qquad\qquad B. 3\qquad\qquad C. 4\qquad\qquad D. 6
+
+\ifanswer
+\solbegin
+\step{若 $x$、$y$、$z$ 为正实数，}
+\step{结合基本不等式得 $\dfrac{y+z}{x}+\dfrac{z+x}{y}+\dfrac{x+y}{z}=\dfrac yx+\dfrac xy+\dfrac zx+\dfrac xz+\dfrac zy+\dfrac yz$}
+\step{$\geqslant2\sqrt{\dfrac yx\cdot\dfrac xy}+2\sqrt{\dfrac zx\cdot\dfrac xz}+2\sqrt{\dfrac zy\cdot\dfrac yz}=6$，当且仅当 $x=y=z$ 时取等号，}
+\step{即 $\dfrac{y+z}{x}$，$\dfrac{z+x}{y}$，$\dfrac{x+y}{z}$ 中至少有一个不小于 2，不妨设 $\dfrac{y+z}{x}\geqslant\dfrac{z+x}{y}\geqslant\dfrac{x+y}{z}$，}
+\step{$[a]$ 表示不超过 $a$ 的最大整数和 $\dfrac{y+z}{x}$，$\dfrac{z+x}{y}$，$\dfrac{x+y}{z}$ 中至少有一个不小于 2，}
+\step{得 $\left[\dfrac{y+z}{x}\right]\geqslant2$，所以 $\left[\dfrac{y+z}{x}\right]+\left[\dfrac{z+x}{y}\right]+\left[\dfrac{x+y}{z}\right]\geqslant2$，}
+\step{假设 $\left[\dfrac{y+z}{x}\right]+\left[\dfrac{z+x}{y}\right]+\left[\dfrac{x+y}{z}\right]$ 的最小值为 2，$\left[\dfrac{y+z}{x}\right]=2,\left[\dfrac{z+x}{y}\right]+\left[\dfrac{x+y}{z}\right]=0$，}
+\step{所以 $2\leqslant\dfrac{y+z}{x}<3,0<\dfrac{z+x}{y}<1,0<\dfrac{x+y}{z}<1$，所以 $2<\dfrac{y+z}{x}+\dfrac{z+x}{y}+\dfrac{x+y}{z}<5$，}
+\step{$\dfrac{y+z}{x}+\dfrac{z+x}{y}+\dfrac{x+y}{z}\geqslant6$ 矛盾，假设不成立，$A$ 错误；}
+\step{假设 $\left[\dfrac{y+z}{x}\right]+\left[\dfrac{z+x}{y}\right]+\left[\dfrac{x+y}{z}\right]$ 的最小值为 3，}
+\step{则 $\left[\dfrac{y+z}{x}\right]=2,\left[\dfrac{z+x}{y}\right]=1,\left[\dfrac{x+y}{z}\right]=0$ 或 $\left[\dfrac{y+z}{x}\right]=3,\left[\dfrac{z+x}{y}\right]=\left[\dfrac{x+y}{z}\right]=0$，}
+\step{同理可得 $3<\dfrac{y+z}{x}+\dfrac{z+x}{y}+\dfrac{x+y}{z}<6$，显然不成立，$B$ 错误；}
+\step{假设 $\left[\dfrac{y+z}{x}\right]+\left[\dfrac{z+x}{y}\right]+\left[\dfrac{x+y}{z}\right]$ 的最小值为 4，易得 $4<\dfrac{y+z}{x}+\dfrac{z+x}{y}+\dfrac{x+y}{z}<7$，}
+\step{若取 $x=100$，$y=103$，$z=104$，则 $\left[\dfrac{y+z}{x}\right]=2,\left[\dfrac{z+x}{y}\right]=1,\left[\dfrac{x+y}{z}\right]=1$，}
+\step{即 $\left[\dfrac{y+z}{x}\right]+\left[\dfrac{z+x}{y}\right]+\left[\dfrac{x+y}{z}\right]=4$，假设成立，$C$ 正确，$D$ 错误.}
+\step{故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+% === Q17 === \varnothing、\subseteq；cases 块算一行；解析 8 行，跨 07 页上下
+\item 已知集合：$A=\{x\mid a-1\leqslant x\leqslant3-2a\}$，$B=\{x\mid x^2-2x-8\leqslant0\}$.
+
+(1) 若 $A\cap B=A$，求实数 $a$ 的取值范围；
+
+(2) 设命题 $p:x\in A$，命题 $q:x\in B$，若 $p$ 是 $q$ 成立的必要不充分条件，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) $B=\{x\mid(x+2)(x-4)\leqslant0\}=[-2,4]$，$A\cap B=A\Leftrightarrow A\subseteq B$.}
+\step{若 $a>\dfrac43$，则 $A=\varnothing$，满足条件.}
+\step{若 $a\leqslant\dfrac43$，则 $A=[a-1,3-2a]$，此时 $A\subseteq B\Leftrightarrow\begin{cases}a-1\geqslant-2\\3-2a\leqslant4\end{cases}\Leftrightarrow a\geqslant-\dfrac12$.}
+\step{合并得 $a\in\left[-\dfrac12,+\infty\right)$.}
+\step{(2) $p$ 是 $q$ 成立的必要不充分条件，即 $B$ 是 $A$ 的真子集.}
+\step{先由 $B\subseteq A$ 得 $\begin{cases}a-1\leqslant-2\\3-2a\geqslant4\end{cases}\Leftrightarrow a\leqslant-1$，}
+\step{当 $a\leqslant-1$ 时，$3-2a\geqslant5>4$，因此 $B$ 确为 $A$ 的真子集，}
+\step{所求范围为 $(-\infty,-1]$.}
+\solend
+\fi
+
+% === Q18 === 评分标注照录；cases 块算一行；解析 8 行，跨 08 页上下
+\item 已知幂函数 $y=f(x)$ 在 $(0,+\infty)$ 上是严格减函数，其中 $f(x)=(m^2-m-1)x^{\frac m2}$.
+
+(1) 求 $m$ 的值；
+
+(2) 求关于 $x$ 的不等式 $f(x^2+2x)<f(x+6)$ 的解集.
+
+\ifanswer
+\solbegin
+\step{(1) 由已知得 $m^2-m-1=1$（1 分），}
+\step{即 $m^2-m-2=(m+1)(m-2)=0$，则 $m=-1$ 或 $m=2$（2 分）}
+\step{当 $m=-1$ 时，$y=x^{-\frac12}$ 在 $(0,+\infty)$ 上严格减，符合条件，（3 分）}
+\step{当 $m=2$ 时，$y=x$ 在 $(0,+\infty)$ 上严格增，不符合条件，（4 分）}
+\step{综上所述，$m=-1$.}
+\step{(2) 由 (1) 及不等式，有 $\begin{cases}x^2+2x>0\\x+6>0\\x^2+2x>x+6\end{cases}$（2 分）}
+\step{得 $\begin{cases}x(x+2)>0\\x>-6\\(x+3)(x-2)>0\end{cases}$，解得 $-6<x<-3$ 或 $x>2$，}
+\step{故所求解集为 $(-6,-3)\cup(2,+\infty)$.（4 分）}
+\solend
+\fi
+
+% === Q19 === 换底公式；解析 7 行，跨 08—09 页
+\item 对数的发明大大提高了复杂计算的效率，为天文学研究提供了重要工具.
+
+(1) 设 $\log_a c$、$\log_b c$ 是关于 $x$ 的方程 $x^2-3x+1=0$ 的两个实数根，求：$\log_{ab}c$ 的值；
+
+(2) 已知 $x^2+y^2=1$，且 $x,y>0$，若 $\log_a(1+x)=m$，$\log_a\dfrac{1}{1-x}=n$，求：$\log_a y$ 的值.
+
+\ifanswer
+\solbegin
+\step{(1) 设 $u=\log_a c$，$v=\log_b c$，由韦达定理得 $u+v=3$，$uv=1$.}
+\step{$u,v\ne0$，有 $c\ne1$，换底得 $\log_c(ab)=\log_c a+\log_c b=\dfrac1u+\dfrac1v=\dfrac{u+v}{uv}=3$，}
+\step{因此 $ab\ne1$，且 $\log_{ab}c=\dfrac{1}{\log_c(ab)}=\dfrac13$；}
+\step{(2) $x^2+y^2=1$ 且 $x,y>0$，所以 $0<x<1$，$y^2=(1+x)(1-x)$.}
+\step{由已知得 $\log_a(1-x)=-n$，}
+\step{于是 $2\log_a y=\log_a y^2=\log_a(1+x)+\log_a(1-x)=m-n$，}
+\step{所以 $\log_a y=\dfrac{m-n}{2}$.}
+\solend
+\fi
+
+% === Q20 === 材料阅读题；解析 10 行，跨 09—10 页
+\item 数学研究常常从经典问题出发，通过观察、类比与推广，从特殊走向一般，从局部走向整体. 善于发现问题之间的联系，是探索新方法、获得新结论的重要途径.
+
+在解题过程中，整体思想是一种重要的数学思想. 有时，问题中的局部条件或代数式看似复杂，但通过整体观察、恒等变形、整体代入或整体求和，可以发现其中的内在联系，从而将复杂问题转化为简洁的问题. 例如，正数 $a$，$b$ 满足 $ab=1$，求证：$\dfrac{1}{1+a}+\dfrac{1}{1+b}=1$. 证明：原式 $=\dfrac{ab}{ab+a}+\dfrac{1}{1+b}=\dfrac{b}{1+b}+\dfrac{1}{1+b}=1$.
+
+波利亚在《怎样解题》中曾用一个形象的比喻说明发现与推广的关系：“当你找到第一个蘑菇或作出第一个发现后，再四处看看，它们总是成群生长.”
+
+类似地，当我们发现一个具有特定结构的代数式时，不妨进一步观察：是否还有其他式子具有相似的结构？能否运用相同的思想与方法解决新的问题？
+
+请根据以上阅读材料，解答下列问题. 解答时应写出必要的文字说明、证明过程或演算步骤.
+
+(1) 已知 $ab=1$，求 $\dfrac{1}{1+a^2}+\dfrac{1}{1+b^2}$ 的值.
+
+(2) 若正数 $a$、$b$ 满足 $ab=1$，求 $M=\dfrac{1}{1+a}+\dfrac{1}{1+2b}$ 的最小值.
+
+(3) 若正数 $a$、$b$、$c$ 满足 $abc=1$，解关于 $x$ 的方程 $\dfrac{5ax}{ab+a+1}+\dfrac{5bx}{bc+b+1}+\dfrac{5cx}{ca+c+1}=1$.
+
+\ifanswer
+\solbegin
+\step{(1) 由 $ab=1$，得 $b=\dfrac1a$，所以 $\dfrac{1}{1+a^2}+\dfrac{1}{1+b^2}=\dfrac{1}{1+a^2}+\dfrac{a^2}{1+a^2}=1$.}
+\step{(2) 由 $b=\dfrac1a$，得 $M=\dfrac{1}{1+a}+\dfrac{a}{a+2}=1-\dfrac{a}{(a+1)(a+2)}=1-\dfrac{1}{a+3+\frac2a}$，}
+\step{因为 $a>0$，所以 $a+\dfrac2a\geqslant2\sqrt{a\cdot\dfrac2a}=2\sqrt2$，}
+\step{当且仅当 $a=\dfrac2a$，即 $a=\sqrt2$ 时取等号，}
+\step{因此 $M\geqslant1-\dfrac{1}{3+2\sqrt2}=2\sqrt2-2$，}
+\step{当 $a=\sqrt2$，$b=\dfrac{\sqrt2}{2}$ 时取等号，故 $M$ 的最小值为 $2\sqrt2-2$.}
+\step{(3) 记 $D=ab+a+1>0$，由 $abc=1$，得 $a(bc+b+1)=1+ab+a=D$，}
+\step{$ab(ca+c+1)=a+1+ab=D$，}
+\step{原方程等价于 $5x\left(\dfrac{a}{D}+\dfrac{ab}{D}+\dfrac{abc}{D}\right)=1\Leftrightarrow5x\cdot\dfrac{a+ab+1}{D}=1\Leftrightarrow5x=1$，}
+\step{解得 $x=\dfrac15$.}
+\solend
+\fi
+
+% === Q21 === 定义证明题；红字 2 处排 \stepm；解析 38 行，跨 11—13 页
+\item 已知集合 $A$ 中含有三个元素 $x$、$y$、$z$，同时满足①$x<y<z$；②$x+y>z$；③$x+y+z$ 为偶数，那么称集合 $A$ 具有性质 $P$. 已知集合 $S_n=\{1,2,3,\cdots,2n\}(n\in\N^*,n\geqslant4)$，对于集合 $S_n$ 的非空子集 $B$，若 $S_n$ 中存在三个互不相同的元素 $a$、$b$、$c$，使得 $a+b$、$b+c$、$c+a$ 均属于 $B$，则称集合 $B$ 是集合 $S_n$ 的“期待子集”.
+
+(1) 试判断集合 $A=\{1,2,3,5,7,9\}$ 是否具有性质 $P$，并说明理由；
+
+(2) 若集合 $B=\{3,4,a\}$ 具有性质 $P$，证明：集合 $B$ 是集合 $S_4$ 的“期待子集”；
+
+(3) 已知集合 $M\subseteq S_n$，证明：“集合 $M$ 具有性质 $P$”的充要条件是“集合 $M$ 是集合 $S_n$ 的‘期待子集’”.
+
+\ifanswer
+\solbegin
+\step{(1) 集合 $A=\{1,2,3,5,7,9\}$ 不具有性质 $P$，理由如下：}
+\step{(i) 从集合 $A$ 中任取三个元素 $x$、$y$、$z$ 均为奇数时，$x+y+z$ 为奇数，}
+\step{不满足条件③.}
+\step{(ii) 从集合 $A$ 中任取三个元素 $x$、$y$、$z$ 有一个为 2，另外两个为奇数时，}
+\step{不妨设最小值为 $y=2$，$x<z$，则有 $z-x\geqslant2$，即 $z-x\geqslant y$，}
+\step{不满足条件②，}
+\step{综上所述，集合 $A=\{1,2,3,5,7,9\}$ 不具有性质 $P$.}
+\step{(2) 由 $3+4+a$ 是偶数，得正整数 $a$ 是奇数，}
+\step{当 $a<3<4$ 时，$a\leqslant1$，此时 $a+3\leqslant4$，不满足 $x+y>z$，舍去，}
+\step{当 $3<4<a$ 时，由 $3+4>a$，得 $4<a<7$，即 $a=5$ 或 $a=6$（舍），}
+\step{因为 $3+4+5=12$ 是偶数，所以集合 $B=\{3,4,5\}$，}
+\step{令 $a+b=3$，$b+c=4$，$c+a=5$，解得 $a=2$，$b=1$，$c=3$，}
+\step{显然 $a$、$b$、$c\in S_4=\{1,2,3,4,5,6,7,8\}$，}
+\step{所以集合 $B$ 是集合 $S_4$ 的“期待子集”，得证.}
+\stepm{(3) 先证充分性：}{}
+\step{当集合 $M$ 是集合 $S_n$ 的“期待子集”时，}
+\step{由期待子集的定义结合 $n\geqslant4$ 得，存在三个互不相同的元素 $a$、$b$、$c$，}
+\step{使得 $a+b$、$b+c$、$c+a$ 均属于 $M$，}
+\step{不妨设 $a<b<c$，令 $x=a+b$，$y=a+c$，$z=b+c$，则 $x<y<z$，}
+\step{即满足条件①，}
+\step{因为 $x+y-z=(a+b)+(a+c)-(b+c)=2a>0$，所以 $x+y>z$，}
+\step{即满足条件②，}
+\step{因为 $x+y+z=2(a+b+c)$，所以 $x+y+z$ 为偶数，即满足条件③，}
+\step{所以当集合 $M$ 是集合 $S_n$ 的“期待子集”时，集合 $M$ 具有性质 $P$.}
+\stepm{再证必要性：}{}
+\step{当集合 $M$ 具有性质 $P$，则存在 $x$、$y$、$z$，同时满足①$x<y<z$；}
+\step{②$x+y>z$；③$x+y+z$ 为偶数，}
+\step{令 $a=\dfrac{x+y+z}{2}-z$，$b=\dfrac{x+y+z}{2}-y$，$c=\dfrac{x+y+z}{2}-x$，}
+\step{则由条件①得 $a<b<c$，}
+\step{由条件②得 $a=\dfrac{x+y+z}{2}-z=\dfrac{x+y-z}{2}>0$，}
+\step{由条件③得 $a$、$b$、$c$ 均为整数，}
+\step{因为 $z-c=z+x-\dfrac{x+y+z}{2}=\dfrac{z+x-y}{2}>\dfrac{z+(z-y)-y}{2}=z-y>0$，}
+\step{所以 $0<a<b<c<z$，且 $a$、$b$、$c$ 均为整数，所以 $a$、$b$、$c\in S_n$，}
+\step{因为 $a+b=x$，$a+c=y$，$b+c=z$，}
+\step{所以 $a+b$、$b+c$、$c+a$ 均属于 $M$，}
+\step{所以当集合 $M$ 具有性质 $P$ 时，集合 $M$ 是集合 $S_n$ 的“期待子集”.}
+\step{综上所述，“集合 $M$ 具有性质 $P$”的充要条件是}
+\step{“集合 $M$ 是集合 $S_n$ 的‘期待子集’”.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
