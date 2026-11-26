@@ -1,0 +1,486 @@
+% 高一157_交大附中_期中.tex
+%   —— 高一上数学"2026-2027 年交大附中高一上期中"（试卷版/答案版/紧凑版）
+% 试卷版：xelatex 高一157_交大附中_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一157_交大附中_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一157_交大附中_期中.tex}"
+%
+% ① 原始材料：微信公众号"魔都数学加油站"文章，连载"27学年高一157"，原卷卷面标题
+% "2026-2027 年交大附中高一上期中"（卷面未印副标题、未印连载号）。
+% 正文为 10 张 PNG 页（01/05/07/08/10 为 2560×3620，02/03/04/06/09 为
+% 4762×6735，同一篇各页分辨率混排，逐页按各自分辨率裁图核对）。
+% 体例：讲评版——填空 3—12（10 题）、选择 13—16（4 题）、解答 17—21（5 题），
+% 共 19 题，自第 3 题起编（1、2 未印在本篇）；Q5 只印【答案】、无【解析】，
+% 其余 18 题逐题印【解析】。题目、答案、解析均据原图转录；卷面粉红色
+% 水印"魔都数学加油站"及公众号页脚未录入。
+% 全卷无插图（逐页通读 10 页确认无题目配图、无解析内配图、无表格、无"如图"处），
+% 故无 \includegraphics、无 \needvspace，配图清单为空、无 figures/gao157_*.png。
+%
+% 卷首标题：原卷印作"2026-2027 年交大附中高一上期中"，年份区间按全稿惯例排 en dash；
+% 原卷卷面未印副标题，本稿按同期中卷知识模块口径补出"集合与常用逻辑用语、不等式、函数"。
+%
+% ② 与原卷的排版差异／照录项清单：
+%   ① 原文从第 3 题起，本稿保留原题号；共 19 题三节，解答题 5 题到 21；
+%      三节各自一个 enumerate + \setcounter{enumi}{2}/{12}/{16}（不贯穿），
+%      用 \examtitlest[3] 起手；
+%   ② 混合体例：Q5 只印【答案】"A⊆B"、无【解析】，按 高一140 第 5 题／高一145
+%      第 3 题／高一156 第 3 题成例另提 \ans{}、不补造解析；其余 18 题印
+%      【解析】、用 \solbegin…\solend；四道选择题答案在解析末句"故选 D／B／B／C"
+%      （逐个放大复核）、括号 \mbox{（\quad）} 留空、不另提 \ans{}；答案版
+%      【答案】/【解析】标记数 = 19 = 全卷题数（1 个 \ans ＋ 18 个 \solbegin）；
+%   ③ 原卷卷面未印副标题，本稿按知识模块口径补出；
+%   ④ 原卷填空横线按全稿惯例排 \blankline[4.4em]；选择题选项段前按惯例各加
+%      \keepwithprev；解答题不留作答区、不加 \anspace（原卷为讲评版，109—113 起
+%      全稿不用 \anspace）；
+%   ⑤ 数集：Q12"$x_0\in\R$""定义域为 \R"、Q15"$d\in\R$"、Q18"$a$、$b\in\R$"、
+%      Q20"$A\cap\Z$"、Q21"$a\in\R$""定义域为 \R 上的奇函数"原卷印正体粗体
+%      R／Z，按全稿惯例归一 \R／\Z；绝对值排 \lvert…\rvert（Q6 题干的
+%      $\begin{cases}$ 分支、Q7、Q10、Q16 题干与解析、Q21 cases），集合描述竖线
+%      排 \mid（Q5、Q9、Q11、Q14、Q17），空集 \varnothing（Q11、Q16、Q17、Q20），
+%      不等号按全稿惯例排 \leqslant／\geqslant；
+%   ⑥ 子集符号逐处照录不统一（放大逐处确认）：Q5 【答案】"$A\subseteq B$"、
+%      Q17 (1) 题干与解析"$B\subseteq A$"印带下划线 ⊆，照录 \subseteq；
+%      Q11 题干与解析"$B\subset A$"、Q14 解析"$\{x\mid x>1\}\subset\{x\mid x>1$ 或
+%      $x<0\}$"印单线 ⊂，照录 \subset；本卷无 \not\subset 用例；
+%   ⑦ 判别式：Q11 解析"$\Delta=16-4m$"印等腰偏高 \Delta，照录 \Delta；
+%      本卷无扁三角 \triangle 用例（逐页像素级复核全卷仅此一处判别式记号）；
+%   ⑧ 红字照录为黑体：Q21 (3) 解析"(3) 必要性.""充分性不成立."两处原卷排
+%      **红色加粗**（09 页 y≈0.78、10 页 y≈0.21 两处强红像素带，逐页扫描全卷
+%      仅此两处），按 高一53 成例排 \stepm{标题}{…}（加粗着色、不改黑色基调）；
+%      第一处"(3)"原卷印黑色，按 高一155 Q21 (3) 成例连同"(3)"一并放进
+%      \stepm 标号；全库无红字排字先例、本稿不引入红色定义，文件头注明；
+%   ⑨ 文本模式圈数字逐处照录：Q12 题干①②、Q15 题干①②③④与解析①②③④、
+%      Q12 解析"条件②"、Q15 解析"③④均为假"，均为印刷圈数字（非 \textcircled、
+%      非数学模式），计入圈数字实测；
+%   ⑩ 中文弯引号照录：Q5"若 $\alpha$，则 $\beta$"、Q13"运动达人""热心人"
+%      "好学生"、Q14"$\dfrac{1}{x}<1$""$x>1$"、Q21 (3) 题干两处"$y=f(x)\in
+%      A_{y=g(x)}$""$y=g(x)\in A_{y=f(x)}$"；注释里一律 ASCII 引号；
+%      数学式内 CJK 用 \text{}（Q14 集合描述内"或"、Q21 cases 内"或"）；
+%   ⑪ 半角逗号在数学组之间是全稿惯例、非笔误，逐处照录（$x,y\in A$、
+%      $x\in A,\ y\in A,\ x-y\in A$、$t_1,t_2$、$a_1$、$a_2$ 与 $b_1$、$b_2$ 之类）；
+%      行末西文句点 ASCII `.`；行中全角逗号／顿号照录；原卷中文语境行中
+%      的句点（Q5、Q10、Q11 题干与解析里"$\beta\}$.""$x>0$.""和为 4."）按
+%      全稿惯例一律排 ASCII `.`，字形与行末句点相同；
+%   ⑫ "图像"／"图象"逐处照录：本卷 Q12"由 $y=2^x$ 与 $y=x+1$ 的图像得"、
+%      Q21"$y=4^x$ 的图像总在直线 $y=x$ 上方"均印"图像"，无"图象"用例；
+%   ⑬ 复杂式照录别简化：Q4 $\log_2 3\cdot\dfrac{\log_2 x}{2\log_2 3}$、
+%      Q6 $-2\times2-1=-5$ 与 $a^{-5}=f(-5)=\dfrac{1}{32}\Rightarrow a^5=32$、
+%      Q8 $2\sqrt{\dfrac{y}{2x}}$ 与 $\dfrac{1}{2x}=y$、Q10 $\dfrac{1}{2}x>
+%      \lvert x^2-2x\rvert\geqslant0$ 与 $\left(\dfrac{3}{2},\dfrac{5}{2}\right)$、
+%      Q11 $m=1\cdot3=3$、Q12 $2^{a-1}$、Q19 $\dfrac{x}{4}+\dfrac{800}{x}-25$
+%      与 $25-\dfrac{2500}{x}+\dfrac{80000}{x^2}$ 与 $80000\left(\dfrac1x-
+%      \dfrac1{64}\right)^2+\dfrac{175}{32}$、Q20 $\dfrac{2^a-x}{x-b}\geqslant0$
+%      与 $2^{a_1}(2^{a_2-a_1}-1)=32$、Q21 $b=e^{a^2}$ 与 $\sqrt{b}=2^a$ 等；
+%      \left…\right 不得拆到不同 $…$ 组（Q10 $\left(\dfrac{3}{2},\dfrac{5}{2}\right)$、
+%      Q18 $\left(\dfrac{1}{4},\dfrac{1}{2}\right]$、$\left(\dfrac{3}{2}-m\right)$、
+%      $\left(-1,\dfrac{5}{4}\right]$、Q19 $\left(\dfrac{x}{4}+\dfrac{800}{x}-25\right)$
+%      与 $\left(\dfrac1x-\dfrac1{64}\right)^2$ 等）；cases 块整体算一个印刷行
+%      （Q6 题干、Q12 解析、Q20 解析、Q21 解析两处）；
+%   ⑭ 一条 \step = 原卷解析的一个印刷行；别并折行、别拆行。跨页续印按题合并
+%      （Q6 的 01 页上下题干重复印、Q8 的 01—02 页、Q11 的 02 页上下、
+%      Q12 的 02—03 页、Q15 的 03—04 页、Q16 的 04—05 页、Q17 的 05 页上下、
+%      Q18 的 05—06 页、Q19 的 06—07 页、Q20 的 07—08 页、Q21 的 09—10 页）；
+%      跨半页重叠行（Q17 的"【解析】由 $2m-1\leqslant m+1\Leftrightarrow m\leqslant2$，"、
+%      Q20 的"因此，在 $b$ 的其余取值中，若有两个符合条件的正整数 $a_1<a_2$，"、
+%      Q21 的"【解析】(1) 对 $g(x)=\sqrt{x}$：…"与"取 $a=\dfrac{1}{2}$，则…"）
+%      只算一个印刷行；
+%   ⑮ 自定义记号照录：Q21"$D_f$""$D_g$""$A_{y=g(x)}$""$y=f(x)\in A_{y=g(x)}$"
+%      整套新定义；Q20"令 $t=2^a>0$"；Q16"设 $F(x)$ 为等式左边减右边，
+%      $s=a_1+a_2-b_1-b_2$"；
+%   ⑯ 选项字母体例照录不统一：Q16 解析"排除 A.""排除 D.""排除 B."三处原卷
+%      印正体（文本模式），四道选择题解析末句"故选 $D$/$B$/$B$/$C$"印斜体
+%      （数学模式），逐处照录、不统一；
+%
+% ③ 行数复核：一条 \step = 原卷解析的一个印刷行，cases 块作一个印刷行计。
+%   逐题数（逐页核对定稿）：Q3：1；Q4：1；Q5：0（只印【答案】、提 \ans{}，
+%   不计入 \step 账）；Q6：1；Q7：2；Q8：2；Q9：3；Q10：1；Q11：5；
+%   Q12：9；Q13：2；Q14：2；Q15：5；Q16：12；Q17：9；Q18：10；Q19：7；
+%   Q20：23；Q21：18（16 条 \step ＋ 2 条 \stepm）。
+%   合计 113 行（111 条 \step ＋ 2 条 \stepm），与原卷逐题印刷行相等。
+%   全卷 19 题：Q5 一处 \ans{} ＋ 其余 18 题设 \solbegin…\solend，
+%   答案版【答案】/【解析】标记数 = 19 = 全卷题数。
+%
+% ④ 页码分布（供回原图复核）：
+%   卷首标题＋"一、填空题"＋Q3 题干＋解析 1 行、Q4 题干＋解析 1 行、
+%   Q5 题干＋【答案】、Q6 题干首行（cases）在 01 页上半；
+%   Q6 题干（重复印）＋解析 1 行、Q7 题干＋解析 2 行、Q8 题干＋解析首行
+%   在 01 页下半；Q8 解析末行、Q9 题干＋解析 3 行、Q10 题干＋解析 1 行、
+%   Q11 题干首行在 02 页上半；Q11 题干（重复印）＋解析 5 行、
+%   Q12 题干＋①②两条件＋解析首行在 02 页下半；Q12 解析中 8 行＋
+%   "二、选择题"标题在 03 页上半；"二、选择题"标题（重复印）＋
+%   Q13 题干＋选项＋解析 2 行＋Q14 题干＋选项＋解析 2 行＋Q15 题干首行
+%   在 03 页下半；Q15 题干③④两命题＋"其中真命题的个数"行＋选项＋解析 5 行
+%   ＋Q16 题干首行在 04 页上半；Q16 题干（重复印）＋选项＋解析前 7 行
+%   在 04 页下半；Q16 解析后 5 行＋"三、解答题"标题＋Q17 题干＋两问＋
+%   解析前 2 行在 05 页上半；Q17 解析后 7 行＋Q18 题干＋(1) 问在 05 页下半；
+%   Q18 (2) 问＋解析 (1) 4 行＋(2) 前 2 行在 06 页上半；Q18 解析 (2) 后 4 行
+%   ＋Q19 题干＋两问在 06 页下半；Q19 解析 (1) 3 行＋(2) 4 行＋
+%   Q20 题干首行在 07 页上半；Q20 题干三问＋解析 (1)(2) 前 4 行在 07 页下半；
+%   Q20 解析 (2) 后 1 行＋(3) 前 9 行在 08 页上半；Q20 解析 (3) 后 7 行
+%   在 08 页下半；Q21 题干全＋(1)(2)(3) 三问＋解析 (1) 首行在 09 页上半；
+%   Q21 解析 (1)（重复印）＋(1) 后 2 行＋(2) 3 行＋(3) 必要性 3 行
+%   在 09 页下半；Q21 (3) 后 2 行＋充分性不成立 1 行＋其后 5 行＋
+%   末行"取 $a=\dfrac{1}{2}$"在 10 页上半；末行（重复印）＋
+%   "所以 $y=g(x)\notin A_{y=f(x)}$."在 10 页下半。本稿按题连排，不丢行、
+%   不并折行；全卷末题为第 21 题，无附加题节。
+%
+% ⑤ 存疑照录（放大原图确认，照录未改、正文对应处另有 % 注）：
+%   1. Q21 (3) 解析末段"满足 $f(b)=g(a)$ 的 $b$ 只能是 $0<a$，"原卷如此
+%      （按上下文应为"$b$ 只能是 $0$，而 $0<a$"），照录未改；
+%   2. Q18 解析同一题内区间开闭不一致："只需使 $x+1>m$ 对所有
+%      $x\in\left(\dfrac{1}{4},\dfrac{1}{2}\right]$ 成立"印右闭，紧接
+%      "取 $x=m-1\in\left(\dfrac{1}{4},\dfrac{1}{2}\right)$"印右开，照录未统一；
+%   3. Q12 解析"所以 $a=1$ 或 $a=2$ 时不存在满足条件的 $f(x)$"一行无句点，
+%      下一行"（$f(0)=1$，$f(1)=2$ 是被迫取到的）."才收句，照录未补；
+%   4. Q11 解析"当 $m<4$ 时，两个不同实根的和为 4. $A$ 中和为 4 的两个不同
+%      元素只有 $1,3$，"行中用句点断句，照录未改；
+%   5. Q5 题干"集合 $B=\{x\mid x$ 满足 $\beta\}$."与 Q10 解析"得 $x>0$."
+%      行中句点按全稿惯例排 ASCII `.`（见 ② ⑪）；
+%   6. Q16 解析"排除 A.""排除 D.""排除 B."用正体字母，而四道选择题
+%      "故选 $D$/$B$/$B$/$C$"用斜体字母，原卷体例不一（见 ② ⑯），照录未统一。
+%   全卷除此 6 类外未发现其它笔误／自相矛盾处；Q5 只印【答案】、其余 18 题
+%   全部印【解析】。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年交大附中高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+% === Q3 === 解析 1 行
+\item 函数 $y=\lg(-x^2-3x+4)$ 的定义域为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$-x^2-3x+4>0\Leftrightarrow(x+4)(x-1)<0\Leftrightarrow-4<x<1$，定义域为 $(-4,1)$.}
+\solend
+\fi
+
+% === Q4 === 换底公式；解析 1 行
+\item 若 $\log_2 3\cdot\log_9 x=2$，则 $x=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\log_2 3\cdot\log_9 x=\log_2 3\cdot\dfrac{\log_2 x}{2\log_2 3}=\dfrac{\log_2 x}{2}=2\Rightarrow x=16$.}
+\solend
+\fi
+
+% === Q5 === 只印【答案】、无【解析】；\subseteq 带下划线；中文弯引号照录
+\item 记集合 $A=\{x\mid x$ 满足 $\alpha\}$，集合 $B=\{x\mid x$ 满足 $\beta\}$. “若 $\alpha$，则 $\beta$” 为真命题，用集合语言描述为\blankline[4.4em].
+
+\ifanswer
+\ans{$A\subseteq B$}
+\fi
+
+% === Q6 === 分段函数 cases 与 $a^{-5}$；解析 1 行；题干跨 01 页上下重复印
+\item 设 $f(x)=\begin{cases}-2x-1,&x\geqslant1\\a^x,&x<1\end{cases}$，若 $f(f(2))=\dfrac{1}{32}$，则 $a=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$f(2)=-2\times2-1=-5$，$a^{-5}=f(-5)=\dfrac{1}{32}\Rightarrow a^5=32\Rightarrow a=2$.}
+\solend
+\fi
+
+% === Q7 === 绝对值三角不等式；解析 2 行
+\item 若不等式 $\lvert x+1\rvert+\lvert x-3\rvert\geqslant a$ 对一切实数 $x$ 都成立，则实数 $a$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\lvert x+1\rvert+\lvert x-3\rvert\geqslant\lvert(x+1)-(x-3)\rvert=4$，且 $x=0$ 时取等号，}
+\step{因此不等式对一切实数 $x$ 成立当且仅当 $a\leqslant4$，则实数 $a$ 的取值范围是 $(-\infty,4]$.}
+\solend
+\fi
+
+% === Q8 === 基本不等式；解析 2 行，跨 01—02 页
+\item 已知 $x$、$y$ 均为正实数，且 $\dfrac{1}{2x}+y=3$，则 $\dfrac{x}{y}$ 的最小值为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$3=\dfrac{1}{2x}+y\geqslant2\sqrt{\dfrac{y}{2x}}$，得 $\dfrac{x}{y}\geqslant\dfrac{2}{9}$，当 $x=\dfrac{1}{3}$、$y=\dfrac{3}{2}$ 时，$\dfrac{1}{2x}=y$，等号成立，}
+\step{则 $\dfrac{x}{y}$ 的最小值为 $\dfrac{2}{9}$.}
+\solend
+\fi
+
+% === Q9 === 集合描述竖线 \mid、半角逗号；解析 3 行
+\item 已知集合 $A=\{1,2,3,4,5,6\}$，$B=\{(x,y)\mid x\in A,\ y\in A,\ x-y\in A\}$，则 $B$ 中所含元素的个数是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{对 $x,y\in A$，$x-y$ 是不超过 5 的整数，因此 $x-y\in A\Leftrightarrow x>y$.}
+\step{$x$ 依次取 $1,2,3,4,5,6$ 时，$y$ 分别有 $0,1,2,3,4,5$ 种取法，}
+\step{故 $B$ 中共有 $0+1+2+3+4+5=15$ 个元素.}
+\solend
+\fi
+
+% === Q10 === 解析 1 行；句点行中照排 ASCII `.`
+\item 不等式 $\lvert x^2-2x\rvert<\dfrac{1}{2}x$ 的解集为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{由 $\dfrac{1}{2}x>\lvert x^2-2x\rvert\geqslant0$ 得 $x>0$. 两边同除以 $x$ 得 $\lvert x-2\rvert<\dfrac{1}{2}$，解集为 $\left(\dfrac{3}{2},\dfrac{5}{2}\right)$.}
+\solend
+\fi
+
+% === Q11 === \Delta 高瘦等腰、\varnothing、\subset 单线；解析 5 行
+\item 设集合 $A=\{1,2,3,4\}$，$B=\{x\mid x^2-4x+m=0\}$. 若 $B\subset A$，则实数 $m$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$\Delta=16-4m$.}
+\step{当 $m>4$ 时，$B=\varnothing$；当 $m=4$ 时，$B=\{2\}$. 两种情形均满足 $B\subset A$.}
+\step{当 $m<4$ 时，两个不同实根的和为 4. $A$ 中和为 4 的两个不同元素只有 $1,3$，}
+\step{因此 $m=1\cdot3=3$，此时 $B=\{1,3\}$，符合题意.}
+\step{$m$ 的取值范围为 $\{3\}\cup[4,+\infty)$.}
+\solend
+\fi
+
+% === Q12 === ①② 文本圈数字、\R、cases；解析 9 行，跨 02—03 页
+\item 已知 $a$ 为实数，若存在定义域为 $\R$ 的函数 $y=f(x)$ 同时满足下列两个条件，则 $a$ 的取值范围是\blankline[4.4em].
+
+①对任意的 $x_0\in\R$，$f(x_0)$ 的值为 $x_0+1$ 或 $2^{x_0}$；②关于 $x$ 的方程 $f(x)=a$ 无实数解.
+
+\ifanswer
+\solbegin
+\step{不存在满足条件②的 $f$，当且仅当某个 $x_0$ 处两个候选值都等于 $a$，}
+\step{即 $x_0+1=2^{x_0}=a$.}
+\step{由 $y=2^x$ 与 $y=x+1$ 的图像得，两者只交于 $(0,1)$ 和 $(1,2)$，}
+\step{所以 $a=1$ 或 $a=2$ 时不存在满足条件的 $f(x)$}
+\step{（$f(0)=1$，$f(1)=2$ 是被迫取到的）.}
+\step{当 $a\ne1$ 且 $a\ne2$ 时，令 $f(x)=\begin{cases}2^x,&x=a-1\\x+1,&x\ne a-1\end{cases}$，}
+\step{则 $x\ne a-1$ 时 $f(x)=x+1\ne a$，}
+\step{而 $f(a-1)=2^{a-1}\ne a$（因为 $a-1\ne0$ 且 $a-1\ne1$），两个条件都满足.}
+\step{所以 $a$ 的取值范围是 $(-\infty,1)\cup(1,2)\cup(2,+\infty)$.}
+\solend
+\fi
+
+\end{enumerate}
+
+% 答案版里填空解析把第 2 页排满，节标题会落到页末、与第 13 题分家（切页审计 B 类）；
+% 守卫放 \bigsec 之前，连节标题一起量页高（高一123 成例）
+\needvspace{7cm}
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+% === Q13 === 解析 2 行，故选 $D$（斜体）
+\item 下列给出的对象中，能组成集合的是\mbox{（\quad）}
+
+\keepwithprev
+A. 运动达人\qquad B. 热心人\qquad C. 好学生\qquad D. 在职教师
+
+\ifanswer
+\solbegin
+\step{“运动达人”“热心人”“好学生”都没有明确的判定标准，}
+\step{不满足集合元素的确定性；任意一个人是否为在职教师可以明确判定，故选 $D$.}
+\solend
+\fi
+
+% === Q14 === \subset 单线、\text{ 或 }；解析 2 行，故选 $B$
+\item “$\dfrac{1}{x}<1$” 是 “$x>1$” 的\mbox{（\quad）}
+
+\keepwithprev
+A. 充分非必要条件\qquad\qquad B. 必要非充分条件
+
+C. 充要条件\qquad\qquad D. 既非充分也非必要条件
+
+\ifanswer
+\solbegin
+\step{由 $\dfrac{1}{x}<1$ 得 $x>1$ 或 $x<0$，所以 $\{x\mid x>1\}\subset\{x\mid x>1\text{ 或 }x<0\}$，}
+\step{所以 “$\dfrac{1}{x}<1$” 是 “$x>1$” 的必要不充分条件，故选 $B$.}
+\solend
+\fi
+
+% === Q15 === ①②③④ 文本圈数字、\R；解析 5 行，故选 $B$
+\item 如果 $a$、$b$、$c$、$d\in\R$，给出下列命题：
+
+①若 $a>b$，$c>d$，则 $a+c>b+d$；②若 $a>b$，$c>d$，则 $ac>bd$；
+
+③若 $a>b$，则 $\dfrac{1}{a}<\dfrac{1}{b}$；④若 $a>b$，则 $\dfrac{1}{a}>\dfrac{1}{b}$.
+
+其中真命题的个数是\mbox{（\quad）}
+
+\keepwithprev
+A. 0 个\qquad B. 1 个\qquad C. 2 个\qquad D. 3 个
+
+\ifanswer
+\solbegin
+\step{①$(a+c)-(b+d)=(a-b)+(c-d)>0$，①为真.}
+\step{②取 $a=c=1$，$b=d=-2$，则 $ac=1<4=bd$，②为假.}
+\step{③取 $a=1$，$b=-1$，则 $\dfrac{1}{a}=1>-1=\dfrac{1}{b}$；}
+\step{④取 $a=2$，$b=1$，则 $\dfrac{1}{a}=\dfrac{1}{2}<1=\dfrac{1}{b}$（且 $a=0$ 或 $b=0$ 时倒数无意义）.}
+\step{③④均为假，故选 $B$.}
+\solend
+\fi
+
+% === Q16 === 绝对值方程解集讨论；"排除 A/D/B" 正体字母；解析 12 行，故选 $C$
+\item 已知 $a_1$、$a_2$ 与 $b_1$、$b_2$ 是 4 个不同的实数，关于 $x$ 的方程 $\lvert x-a_1\rvert+\lvert x-a_2\rvert=\lvert x-b_1\rvert+\lvert x-b_2\rvert$ 的解集记为 $A$. 下列关于集合 $A$ 的结论中，可能成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $A=\varnothing$\qquad B. $A=[a_1,a_2]$\qquad C. $A=[a_1,b_1]$\qquad D. $A=[a_1,+\infty)$
+
+\ifanswer
+\solbegin
+\step{设 $F(x)$ 为等式左边减右边，$s=a_1+a_2-b_1-b_2$.}
+\step{在四个数的最左侧和最右侧，$F(x)$ 分别恒为 $s$ 和 $-s$.}
+\step{若 $s=0$，两侧都有解；}
+\step{若 $s\ne0$，连接两侧的线段首尾相接，至少有一段与 $x$ 轴相交. 排除 A.}
+\step{若 $A=[a_1,+\infty)$，则最右侧的常值 $-s=0$，最左侧也有解. 排除 D.}
+\step{若 $A=[a_1,a_2]$，右边在该区间恒为 $a_2-a_1$.}
+\step{右边在 $b_1,b_2$ 所夹区间的两侧各自严格单调，所以 $[a_1,a_2]$ 必须包含于该区间.}
+\step{四个端点互异，右边的常值 $\lvert b_1-b_2\rvert>a_2-a_1$，矛盾. 排除 B.}
+\step{取 $(a_1,a_2,b_1,b_2)=(1,3,2,0)$.}
+\step{当 $1\leqslant x\leqslant2$ 时，两边都等于 2. 当 $x<1$ 时，$F(x)=2-x-\lvert x\rvert>0$.}
+\step{由 $F(3-x)=-F(x)$，当 $x>2$ 时，$F(x)<0$.}
+\step{因此 $A=[1,2]=[a_1,b_1]$，故选 $C$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+% === Q17 === \subseteq 带下划线、\varnothing、\mid；解析 9 行
+\item 已知集合 $A=[-3,4)$，集合 $B=\{x\mid x\leqslant m+1\}\cap\{x\mid x\geqslant2m-1\}$.
+
+(1) 若 $B\subseteq A$，求实数 $m$ 的取值范围；
+
+(2) 若 $A\cap B\ne\varnothing$，求实数 $m$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{由 $2m-1\leqslant m+1\Leftrightarrow m\leqslant2$，}
+\step{当 $m\leqslant2$ 时，$B=[2m-1,m+1]$；当 $m>2$ 时，$B=\varnothing$.}
+\step{(1) 当 $m>2$ 时，$B\subseteq A$ 成立.}
+\step{当 $m\leqslant2$ 时，$m+1\leqslant3<4$，}
+\step{所以 $B\subseteq A\Leftrightarrow2m-1\geqslant-3\Leftrightarrow m\geqslant-1$，即 $-1\leqslant m\leqslant2$.}
+\step{合并两种情形，$m\in[-1,+\infty)$.}
+\step{(2) $A\cap B\ne\varnothing$ 要求 $m\leqslant2$，此时 $m+1\leqslant3<4$，}
+\step{所以 $A\cap B\ne\varnothing\Leftrightarrow m+1\geqslant-3$.}
+\step{由 $m+1\geqslant-3\Leftrightarrow m\geqslant-4$，得 $m\in[-4,2]$.}
+\solend
+\fi
+
+% === Q18 === 区间开闭不一致照录；解析 10 行，跨 05—06 页
+\item 已知函数 $f(x)=\dfrac{x}{ax+b}$，$a$、$b\in\R$，$a\ne0$ 且 $b\ne0$，$f(1)=\dfrac{1}{2}$，且方程 $f(x)=x$ 有且仅有一个实数解.
+
+(1) 求 $a$、$b$ 的值；
+
+(2) 当 $x\in\left(\dfrac{1}{4},\dfrac{1}{2}\right]$ 时，不等式 $(x+1)\cdot f(x)>m(m-x)-1$ 恒成立，求实数 $m$ 的范围.
+
+\ifanswer
+\solbegin
+\step{(1) $f(1)=\dfrac{1}{2}$，所以 $a+b=2$.}
+\step{在定义域内，$f(x)=x\Leftrightarrow x=0$ 或 $ax+b=1$.}
+\step{$x=0$ 在定义域内，$ax+b=1$ 的解 $x=\dfrac{1-b}{a}$ 也在定义域内.}
+\step{两解重合时方程恰有一个实数解，所以 $\dfrac{1-b}{a}=0$，得 $b=1$，$a=1$.}
+\step{(2) $(x+1)f(x)=x$，原不等式等价于 $(m+1)(x+1-m)>0$.}
+\step{取 $x=\dfrac{1}{2}$，得 $(m+1)\left(\dfrac{3}{2}-m\right)>0$，所以 $-1<m<\dfrac{3}{2}$，}
+\step{此时 $m+1>0$，只需使 $x+1>m$ 对所有 $x\in\left(\dfrac{1}{4},\dfrac{1}{2}\right]$ 成立.}
+\step{若 $\dfrac{5}{4}<m<\dfrac{3}{2}$，取 $x=m-1\in\left(\dfrac{1}{4},\dfrac{1}{2}\right)$，则 $x+1=m$，不等式不成立.}
+\step{若 $-1<m\leqslant\dfrac{5}{4}$，则对区间内任意 $x$，都有 $x+1>\dfrac{5}{4}\geqslant m$.}
+\step{因此 $m$ 的取值范围为 $\left(-1,\dfrac{5}{4}\right]$.}
+\solend
+\fi
+
+% === Q19 === 汽车油耗应用题；解析 7 行，跨 06—07 页
+\item 某辆汽车以每小时 $x$ 公里的速度在高速公路上匀速行驶（高速公路行车限速 $60\leqslant x\leqslant120$），每小时的油耗（所需要的汽油量）为 $\dfrac{x}{4}+\dfrac{800}{x}-25$ 升.
+
+(1) 欲使每小时的油耗不超过 8 升，求 $x$ 的取值范围；
+
+(2) 求该汽车行驶 100 公里的油耗 $y$ 关于汽车行驶速度 $x$ 的函数，并求 $y$ 的最小值.
+
+\ifanswer
+\solbegin
+\step{(1) 因为 $x>0$，所以 $\dfrac{x}{4}+\dfrac{800}{x}-25\leqslant8\Leftrightarrow x^2-132x+3200\leqslant0$}
+\step{$\Leftrightarrow(x-32)(x-100)\leqslant0$，解得 $32\leqslant x\leqslant100$，}
+\step{与限速范围取交集，得 $x\in[60,100]$.}
+\step{(2) 行驶 100 公里需 $\dfrac{100}{x}$ 小时，}
+\step{所以 $y=\dfrac{100}{x}\left(\dfrac{x}{4}+\dfrac{800}{x}-25\right)=25-\dfrac{2500}{x}+\dfrac{80000}{x^2}$，$x\in[60,120]$，}
+\step{配方得 $y=80000\left(\dfrac{1}{x}-\dfrac{1}{64}\right)^2+\dfrac{175}{32}\geqslant\dfrac{175}{32}$，}
+\step{$64\in[60,120]$，当且仅当 $x=64$ 时等号成立，故 $y$ 的最小值为 $\dfrac{175}{32}$ 升.}
+\solend
+\fi
+
+% === Q20 === 指数不等式、16 个整数讨论、\Z；解析 23 行，跨 07—08 页
+\item 已知关于 $x$ 的不等式 $\dfrac{2^a-x}{x-b}\geqslant0$ 的解集为 $A$.
+
+(1) 当 $a=2$，$b=3$ 时，求集合 $A$；
+
+(2) 已知 $b=8$，若集合 $A\cap\Z$ 中恰有 7 个元素，求实数 $a$ 的取值范围；
+
+(3) 若至少存在 2 个不同的整数 $a$，使集合 $A\cap\Z$ 中恰有 16 个元素，求正实数 $b$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{令 $t=2^a>0$. 由分子、分母的符号得 $A=\begin{cases}[t,b),&t<b\\\varnothing,&t=b\\(b,t],&t>b\end{cases}$.}
+\step{(1) $t=4$，$b=3$，所以 $A=(3,4]$.}
+\step{(2) 当 $t<8$ 时，恰有 7 个整数等价于 $A$ 包含 $1,2,\cdots,7$，即 $0<t\leqslant1$.}
+\step{当 $t>8$ 时，恰有 7 个整数等价于其中最小的整数为 9、最大的整数为 15，}
+\step{即 $15\leqslant t<16$.}
+\step{当 $t=8$ 时，$A=\varnothing$.}
+\step{因此 $a\in(-\infty,0]\cup[\log_2 15,4)$.}
+\step{(3) 当 $a\leqslant0$ 时，$0<t\leqslant1$.}
+\step{若 $b\leqslant t$，$A$ 至多含一个整数.}
+\step{若 $b>t$，恰有 16 个整数等价于 $A$ 中的整数为 $1,2,\cdots,16$，}
+\step{即 $16<b\leqslant17$，此时每个非正整数 $a$ 都满足条件.}
+\step{当 $a\geqslant1$ 时，$t=2^a$ 为正偶数.}
+\step{若 $t<b$，恰有 16 个整数等价于 $t+15<b\leqslant t+16$，即 $t\in[b-16,b-15)$.}
+\step{若 $t>b$，恰有 16 个整数等价于 $t-16\leqslant b<t-15$，即 $t\in(b+15,b+16]$.}
+\step{这两个区间各至多含一个整数.}
+\step{因此，在 $b$ 的其余取值中，若有两个符合条件的正整数 $a_1<a_2$，}
+\step{则 $t_1=2^{a_1}\in[b-16,b-15)$，$t_2=2^{a_2}\in(b+15,b+16]$，}
+\step{从而 $30<t_2-t_1\leqslant32$.}
+\step{由于 $t_1,t_2$ 均为偶数，$t_2-t_1=32$.}
+\step{$2^{a_1}(2^{a_2-a_1}-1)=32$，括号内为正奇数，所以 $a_1=5$，$a_2=6$，}
+\step{此时 $t_1=32$，$t_2=64$，由 $t_1+16=t_2-16$ 得 $b=48$.}
+\step{代入后，$a=5$ 和 $a=6$ 分别得到 $[32,48)$ 和 $(48,64]$，各含 16 个整数.}
+\step{因此 $b\in(16,17]\cup\{48\}$.}
+\solend
+\fi
+
+% === Q21 === 新定义 $A_{y=g(x)}$ 证明题；红字 2 处排 \stepm；解析 18 行，跨 09—10 页
+\item 已知函数 $y=f(x)$ 的定义域为 $D_f$，函数 $y=g(x)$ 的定义域为 $D_g$. 若对任意的 $a\in D_f$，都存在 $b\in[a,+\infty)\cap D_g$，使得 $g(b)=f(a)$，则称函数 $y=f(x)$ 属于集合 $A_{y=g(x)}$，记作 $y=f(x)\in A_{y=g(x)}$.
+
+(1) 若 $f(x)=2^x$，试写出两个幂函数 $y=g(x)$ 与 $y=h(x)$，使得 $y=f(x)\in A_{y=g(x)}$ 成立而 $y=f(x)\in A_{y=h(x)}$ 不成立（无需说明理由）；
+
+(2) 若 $f(x)=x^2$，$g(x)=\ln x$，证明：函数 $y=f(x)\in A_{y=g(x)}$（可以使用结论：对于任意实数 $x$，有 $e^x>x$ 恒成立）；
+
+(3) 已知 $f(x)=x$，函数 $y=g(x)$ 是定义域为 $\R$ 上的奇函数. 求证：
+
+“$y=f(x)\in A_{y=g(x)}$” 是 “$y=g(x)\in A_{y=f(x)}$” 的一个必要但非充分条件.
+
+\ifanswer
+\solbegin
+\step{(1) 对 $g(x)=\sqrt{x}$：任给 $a$，取 $b=4^a$，则 $\sqrt{b}=2^a=f(a)$，}
+\step{且 $y=4^x$ 的图像总在直线 $y=x$ 上方，故 $b\geqslant a$.}
+\step{对 $h(x)=\dfrac{1}{x}$：取 $a=1$，由 $\dfrac{1}{b}=2$ 只能得 $b=\dfrac{1}{2}<1$，不满足要求.}
+\step{(2) 对任意 $a\in\R$，取 $b=e^{a^2}$，则 $b>0$，且 $g(b)=\ln b=a^2=f(a)$.}
+\step{当 $a\leqslant1$ 时，$b\geqslant1\geqslant a$；当 $a>1$ 时，$b>a^2>a$.}
+\step{因此 $b\in[a,+\infty)\cap D_g$，所以 $y=f(x)\in A_{y=g(x)}$.}
+\stepm{(3) 必要性.}{若 $y=g(x)\in A_{y=f(x)}$，则对任意 $a\in\R$，存在 $b\geqslant a$，}
+\step{使 $f(b)=b=g(a)$，所以 $g(a)\geqslant a$.}
+\step{将 $a$ 换为 $-a$，由奇函数得 $-g(a)=g(-a)\geqslant-a$，即 $g(a)\leqslant a$.}
+\step{因此对任意 $a\in\R$，都有 $g(a)=a$.}
+\step{取 $b=a$，则 $g(b)=f(a)$，所以 $y=f(x)\in A_{y=g(x)}$.}
+\stepm{充分性不成立.}{取奇函数 $g(x)=\begin{cases}x,&\lvert x\rvert\geqslant1\text{ 或 }x=0\\2x-1,&0<x<1\\2x+1,&-1<x<0\end{cases}$，}
+\step{当 $\lvert a\rvert\geqslant1$ 时，取 $b=a$，有 $g(b)=a$.}
+\step{当 $-1<a<1$ 时，取 $b=\dfrac{a+1}{2}\in(0,1)$，则 $b-a=\dfrac{1-a}{2}>0$，}
+\step{且 $g(b)=2b-1=a$.}
+\step{因此 $y=f(x)\in A_{y=g(x)}$.}
+\step{取 $a=\dfrac{1}{2}$，则 $g(a)=0$，满足 $f(b)=g(a)$ 的 $b$ 只能是 $0<a$，}
+\step{所以 $y=g(x)\notin A_{y=f(x)}$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
