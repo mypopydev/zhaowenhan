@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=1.9cm}
+\linespread{1.25}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{tipblue}{RGB}{0,95,160}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+% 极长的英文单句（如第 135 期第 3 条）偶尔会差 <1pt 排不进一行、
+% 且落在 \hangindent 悬挂段落里（\emergencystretch 对悬挂缩进无效）。
+% \hfuzz 只抑制 <1pt 的、视觉不可见的水平溢出警告，不改变任何排版。
+\hfuzz=1pt
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
+% 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体
+\newcommand{\prompt}[1]{\emph{\textcolor{tipblue}{\small（#1）}}}
+
+\begin{document}
+\pagestyle{plain}
+\begin{center}
+{\LARGE\bfseries 上海高考高分翻译背诵 \quad 135}\\[0.25em]
+{\large 25二模　2026-11-26 \quad\ 回译（英 $\to$ 中）}\\[0.35em]
+{\footnotesize 来源：微信公众号「发现之旅 速来记单词」· 2026-11-26 · 赵文瀚}
+\end{center}
+
+\vspace{0.4em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.0cm}} & 日期：\underline{\hspace{2.0cm}} & 得分：\underline{\hspace{1.4cm}}\,/\enspace 4 \\
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\small 根据英文句子写出中文原句，题号沿用原文。}
+
+\vspace{0.8em}
+\num{1}The sunset dyed half of the sky red, engaging viewers with its breathtaking beauty.
+
+\vspace{0.25em}
+
+\wline
+
+\num{2}Tofu is rich in nutrition and easy to digest, perfect for all ages.
+
+\vspace{0.25em}
+
+\wline
+
+\num{3}The exquisite carvings on the stone pillars by the pond reflect the belief in the harmonious coexistence between humans and nature.
+
+\vspace{0.25em}
+
+\wline
+
+\num{4}The elderly neighbor originally thought of trendy apps like photo editors as a hassle to use, but after just a few tries with her niece, she was already adjusting photo tones with ease.
+
+\vspace{0.25em}
+
+\wline
+
+\end{document}

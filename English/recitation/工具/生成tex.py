@@ -38,6 +38,10 @@ PRE = r"""\documentclass[11pt,a4paper]{article}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.35em}
+% 极长的英文单句（如第 135 期第 3 条）偶尔会差 <1pt 排不进一行、
+% 且落在 \hangindent 悬挂段落里（\emergencystretch 对悬挂缩进无效）。
+% \hfuzz 只抑制 <1pt 的、视觉不可见的水平溢出警告，不改变任何排版。
+\hfuzz=1pt
 \newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
 \newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
 % 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体

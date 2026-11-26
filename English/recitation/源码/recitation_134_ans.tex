@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage[protrusion=true]{microtype}
+\geometry{margin=1.8cm,top=1.9cm}
+\linespread{1.25}
+
+\setmainfont{Baskerville}
+\setCJKmainfont{Songti SC}
+
+\definecolor{tipblue}{RGB}{0,95,160}
+\definecolor{rulegray}{RGB}{190,190,190}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+% 极长的英文单句（如第 135 期第 3 条）偶尔会差 <1pt 排不进一行、
+% 且落在 \hangindent 悬挂段落里（\emergencystretch 对悬挂缩进无效）。
+% \hfuzz 只抑制 <1pt 的、视觉不可见的水平溢出警告，不改变任何排版。
+\hfuzz=1pt
+\newcommand{\num}[1]{\makebox[1.9em][r]{#1.}\hspace{0.3em}}
+\newcommand{\wline}{\noindent\rule{\linewidth}{0.4pt}}
+% 中文题干：宋体粗体；提示词：蓝色小字；英文句子：Baskerville 正体
+\newcommand{\prompt}[1]{\emph{\textcolor{tipblue}{\small（#1）}}}
+
+\begin{document}
+\pagestyle{plain}
+\begin{center}
+{\LARGE\bfseries 上海高考高分翻译背诵 \quad 134}\\[0.25em]
+{\large 25二模　2026-11-24 \quad\ 中英对照（背诵 · 答案）}\\[0.35em]
+{\footnotesize 来源：微信公众号「发现之旅 速来记单词」· 2026-11-24 · 赵文瀚}
+\end{center}
+
+\vspace{0.4em}
+\noindent\begin{tabular}{@{}p{0.33\textwidth}@{}p{0.34\textwidth}@{}p{0.33\textwidth}@{}}
+姓名：\underline{\hspace{2.0cm}} & 日期：\underline{\hspace{2.0cm}} & 得分：\underline{\hspace{1.4cm}}\,/\enspace 4 \\
+\end{tabular}
+
+\vspace{0.5em}
+\noindent{\small 中 $\to$ 英默写卷的参考答案；亦可直接用于背诵与回译自查。}
+
+\vspace{0.8em}
+\num{1}\textbf{不要因为一次失败的尝试,就放弃你的目标。}\prompt{give}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}Never give up your goals simply because of a single failed attempt.
+
+\num{2}\textbf{这位知名作家推荐的书广受追捧,现已售罄。}\prompt{so}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}The book recommended by the famous writer is so sought-after that it has sold out.
+
+\num{3}\textbf{这座北方冰城面对突如其来的大批游客,一时无所适从。}\prompt{number}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}With a large number of visitors\ suddenly flooding in, the northern ice city was at a loss.
+
+\num{4}\textbf{当你知道这些交通工具和旅行线路背后的故事,你一定会惊叹人类一直以来是多么富有冒险精神。}\prompt{amazed}
+
+\vspace{0.15em}
+
+\noindent\hangindent=2.2em\hangafter=1\hspace{2.2em}After learning the stories behind these modes of transport and travel routes, you will surely be amazed at how adventurous humans have always been.
+
+\end{document}
