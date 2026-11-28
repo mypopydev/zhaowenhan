@@ -1,0 +1,455 @@
+% 高一162_华实高中_期中.tex
+%   —— 高一上数学"2026-2027 年华实高中高一上期中"（试卷版/答案版/紧凑版）
+% 试卷版：xelatex 高一162_华实高中_期中.tex
+% 答案版：xelatex "\def\isanswer{1}\input{高一162_华实高中_期中.tex}"
+% 紧凑版：xelatex "\def\iscompact{1}\input{高一162_华实高中_期中.tex}"
+%
+% ① 原始材料：微信公众号"魔都数学加油站"连载试卷（本地编号 162，与连载号一致），
+% 原卷卷面标题"2026-2027 年华实高中高一上期中"（卷面未印副标题、未印连载号）。
+% 正文为 9 张 PNG 页（01/07/08/09 为 2560×3620，02/03/04/05/06 为
+% 4762×6735，同一篇各页分辨率混排，逐页按各自分辨率裁图核对）。
+% 体例：讲评版——填空 3—12（10 题）、选择 13—16（4 题）、解答 17—21（5 题），
+% 共 19 题，自第 3 题起编（1、2 未印在本篇）；Q3 只印【答案】、其余 18 题
+% 逐题印【解析】（逐题核实，见 ②）。题目、答案、解析均据原图转录；卷面粉红色
+% 水印"魔都数学加油站"及公众号页脚未录入。
+% 全卷无插图（逐页通读 9 页确认无题目配图、无解析内配图、无表格、无"如图"处），
+% 故无 \includegraphics、无配图 \needvspace，配图清单为空、无 figures/gao162_*.png；
+% Q14 政治书集合题用 A、B 两个集合表示、原卷未配示意图，逐页确认无图。
+%
+% 卷首标题：原卷印作"2026-2027 年华实高中高一上期中"，年份区间按全稿惯例排 en dash；
+% 原卷卷面未印副标题，本稿按同期中卷知识模块口径补出"集合与常用逻辑用语、不等式、函数"。
+%
+% ② 与原卷的排版差异／照录项清单：
+%   ① 原文从第 3 题起，本稿保留原题号；共 19 题三节，解答题 5 题到 21；
+%      三节各自一个 enumerate + \setcounter{enumi}{2}/{12}/{16}（不贯穿），
+%      用 \examtitlest[3] 起手；
+%   ② 混合体例：第 3 题只印【答案】"$\{2,3\}$"、无【解析】，按 高一156 第 3 题／
+%      高一157 第 5 题成例另提 \ans{}、不补造解析；其余 18 题印【解析】、
+%      用 \solbegin…\solend；四道选择题答案在解析末句"故选 A／C／A／D"
+%      （逐个放大复核）、括号 \mbox{（\quad）} 留空、不另提 \ans{}；答案版
+%      【答案】/【解析】标记数 = 19 = 全卷题数（1 个 \ans ＋ 18 个 \solbegin）；
+%   ③ 原卷卷面未印副标题，本稿按知识模块口径补出；
+%   ④ 原卷填空横线按全稿惯例排 \blankline[4.4em]；选择题选项段前按惯例各加
+%      \keepwithprev；解答题不留作答区、不加 \anspace（原卷为讲评版，109—113 起
+%      全稿不用 \anspace）；
+%   ⑤ 数集：Q3"$U=\R$"、Q10"解集为 \R"、Q12"$n\in\Z$"、Q16"$a,b\in\R$"
+%      "$Q_1=Q_2=\R$"、Q18"（$k\in\R$）"原卷印正体粗体 R／Z，按全稿惯例
+%      归一 \R／\Z；绝对值排 \lvert…\rvert（Q20 全题、Q21 (2) 解析
+%      "$2\lvert xy\rvert$"），集合描述竖线排 \mid（Q3、Q12、Q16、Q17），
+%      空集 \varnothing（Q7、Q14、Q18 (2)、Q20 (3)），不等号按全稿惯例排
+%      \leqslant／\geqslant；
+%   ⑥ 子集符号逐处放大确认：Q14 解析"$B\subseteq A$"、Q16 解析
+%      "$P_2\subseteq P_1$""$Q_1\subseteq Q_2$"、Q17 解析"$A\subseteq B$"
+%      均印带下划线 ⊆，照录 \subseteq；本卷无单线 ⊂ 用例；
+%   ⑦ 判别式：Q10 解析"$\Delta=36k^2-32k<0$"、Q18 解析
+%      "$\Delta=(k+1)^2-8k=8>0$""$\Delta=-8<0$"两处三角符号逐点放大比对
+%      同形，均为等腰偏高 \Delta，照录 \Delta；本卷无扁三角 \triangle 用例；
+%   ⑧ 红字：逐页扫描 9 页纯红像素无横带（橙色像素均为粉红水印与黑字交界
+%      的抗锯齿），全卷无红色加粗小标题，故无 \stepm、无红字定义；
+%   ⑨ 文本模式圈数字逐处照录：Q11 题干①②③④ 四命题与解析"故①真，③假"
+%      "故②真""若④成立""故④假""真命题的序号是①②"、Q19 题干①② 两项成本，
+%      均为印刷圈数字（非 \textcircled、非数学模式），计入圈数字实测；
+%   ⑩ 中文弯引号照录：Q11 猜想引文（"当整数 n>2 时…没有正整数解."）、
+%      Q12 自定义名词"变项和"、Q14 政治书引文（"有使用价值…一定有使用价值"）、
+%      Q19"新零售""新制造"两处，正文一律用弯引号（U+201C/U+201D）；注释里一律
+%      ASCII 引号；
+%      安德鲁·怀尔斯人名中点照录；
+%   ⑪ 半角逗号在数学组之间是全稿惯例、非笔误，逐处照录（Q3 $\{1,2,3,4,5\}$、
+%      Q4 $\{-1,\lg m\}$、Q10"$k>0,\Delta=36k^2-32k<0$"、Q11"$a,b,c$"、
+%      Q12"$1\leqslant n\leqslant10,n\in\Z$"、Q16"$a,b\in\R$" 等）；
+%      行末西文句点 ASCII `.`；行中全角逗号／顿号照录；
+%   ⑫ "图像"／"图象"：Q5"幂函数 $y=f(x)$ 的图像经过点"印"图像"，无"图象"用例；
+%   ⑬ 复杂式照录别简化：Q5 $\left(9,\dfrac13\right)$ 与
+%      $\left(\dfrac4{25}\right)^{-\frac12}=\dfrac52$、Q8
+%      $\dfrac{\log_2 4}{\log_2 40}=\dfrac{2}{3+\log_2 5}$ 与
+%      $\log_2 5=\dfrac2m-3$、Q12 $(2^{10}-1)-(2^9-1)=2^9$ 与
+%      $1\times(-1)^1\times2^9+\cdots+10\times(-1)^{10}\times2^9$ 与
+%      $(-1+2-3+4-\cdots-9+10)\times2^9=5\times2^9=2560$、
+%      Q19 $\dfrac tx=12+\dfrac{1000}{x}+\dfrac x{10}$ 与
+%      $\dfrac{x^2}{10}+23x-1000$ 与 $\left(35+\dfrac x5\right)$、
+%      Q21 解法 $\sqrt{\dfrac ba\times\dfrac ab}$（乘号 ×）与解析三处
+%      $\sqrt{\dfrac{3y}{x}\cdot\dfrac xy}$、$\sqrt{\dfrac{b^2x^2}{a^2}\cdot
+%      \dfrac{a^2y^2}{b^2}}$、$\sqrt{ab\cdot\dfrac{25}{ab}}$（居中点 ·），
+%      乘号／居中点逐处照录不统一；\left…\right 不得拆到不同 $…$ 组；
+%   ⑭ 一条 \step = 原卷解析的一个印刷行；别并折行、别拆行。跨页续印按题合并
+%      （Q9 的 01—02 页、Q11 的 02 页上下、Q12 的 02—03 页、Q15 的 03—04 页、
+%      Q16 的 04 页上下、Q17 的 04—05 页、Q18 的 05 页上下、Q19 的 05—06 页、
+%      Q20 的 06—07 页、Q21 的 07—09 页）；跨半页重叠行（各 hi 裁片上下
+%      半页交界处重复出现的行）只算一个印刷行；
+%   ⑮ 单位标注体例不一照录：Q19"月的成本 $t$（单位，万元）"印全角逗号，
+%      而"平均每个人形机器人的成本（单位：万元）""利润 $W$（单位：万元）"
+%      印冒号，逐处照录、不统一；Q19"5G 通信"数字与汉字间空一格照录；
+%   ⑯ 选项字母体例照录不统一：Q13 解析"故 A 不能成立"印正体（文本模式）、
+%      "故选 $A$"印斜体（数学模式）；Q16 解析"排除 A、B.""排除 C，"
+%      印正体、"故选 $D$"印斜体；四道选择题解析末句"故选 $A$/$C$/$A$/$D$"
+%      均印斜体（数学模式），逐处照录、不统一；
+%   ⑰ 自定义名词照录：Q12"变项和"、Q19"数字经济""人形机器人"、
+%      Q11"费马大定理""费马提出猜想"、Q21"学习上述解法"；Q11 材料题
+%      "十七世纪，法国数学家费马""1995 年英国数学家安德鲁·怀尔斯"照录。
+%
+% ③ 行数复核：一条 \step = 原卷解析的一个印刷行，cases 块作一个印刷行计。
+%   逐题数（逐页核对定稿）：Q3：0（只印【答案】、提 \ans{}，不计入 \step 账）；
+%   Q4：1；Q5：1；Q6：1；Q7：1；Q8：1；Q9：2；Q10：3；Q11：5；Q12：4；
+%   Q13：1；Q14：1；Q15：4；Q16：4；Q17：6；Q18：9；Q19：9；Q20：11；
+%   Q21：19（(1) 5 ＋ (2) 6 ＋ (3) 8）。
+%   合计 83 行（83 条 \step ＋ 0 条 \stepm），与原卷逐题印刷行相等。
+%   全卷 19 题：Q3 一处 \ans{} ＋ 其余 18 题设 \solbegin…\solend，
+%   答案版【答案】/【解析】标记数 = 19 = 全卷题数。
+%
+% ④ 页码分布（供回原图复核）：
+%   卷首标题＋"一、填空题"＋Q3 题干＋【答案】、Q4 题干＋解析 1 行、
+%   Q5 题干＋解析 1 行、Q6 题干在 01 页上半；
+%   Q6 解析 1 行、Q7 题干＋解析 1 行、Q8 题干＋解析 1 行、
+%   Q9 题干＋解析首行在 01 页下半；Q9 解析末行、Q10 题干＋解析 3 行、
+%   Q11 题干首行在 02 页上半；Q11 题干续行＋①②③④ 四命题＋解析 5 行、
+%   Q12 题干首行在 02 页下半；Q12 题干续行＋解析 4 行＋"二、选择题"标题＋
+%   Q13 题干＋选项＋解析 1 行在 03 页上半；Q14 题干＋选项＋解析 1 行＋
+%   Q15 题干＋选项＋解析前 3 行在 03 页下半；Q15 解析末行＋Q16 题干＋
+%   四选项＋解析前 2 行在 04 页上半；Q16 解析后 2 行＋"三、解答题"标题＋
+%   Q17 题干＋两问＋解析前 2 行在 04 页下半；Q17 解析后 4 行＋Q18 题干＋
+%   两问＋解析前 2 行在 05 页上半；Q18 解析后 7 行＋Q19 题干首行在 05 页下半；
+%   Q19 题干续行＋两问＋解析 (1) 4 行在 06 页上半；Q19 解析 (2) 5 行＋
+%   Q20 题干＋三问在 06 页下半；Q20 解析 (1) 4 行＋(2) 2 行＋(3) 前 3 行
+%   在 07 页上半；Q20 解析 (3) 后 2 行＋Q21 题干首段＋解法示例＋(1) 问
+%   在 07 页下半；Q21 (2)(3) 两问＋解析 (1) 5 行＋(2) 首行在 08 页上半；
+%   Q21 解析 (2) 后 5 行＋(3) 首行在 08 页下半；
+%   Q21 解析 (3) 后 7 行（末行"所以最小值为 8."）在 09 页上半；
+%   09 页下半仅粉红水印、无正文。本稿按题连排，不丢行、不并折行；
+%   全卷末题为第 21 题，无附加题节。
+%
+% ⑤ 存疑照录（放大原图确认，照录未改、正文对应处另有 % 注）：
+%   1. Q19"月的成本 $t$（单位，万元）"用全角逗号，同题其余单位标注用
+%      冒号"："（见 ② ⑮），照录未统一；
+%   2. Q9 解析"有无穷多个解须 $3a-5=0$"中"解"与"须"间原卷无逗号，照录未补；
+%   3. Q11"使它终成了费马大定理."原卷如此（"终成了"按文义略拗），照录未改；
+%   4. Q21 (2) 解析"两者同时取等号等价于 $b^2x=a^2y$."原卷如此，照录未改；
+%   5. Q12 解析"则集合 $A$ 的所有非空子集的"变项和"的总和"一行无标点、
+%      与下一行"为 $1\times(-1)^1\times2^9+\cdots$"连读，照录未并成一行；
+%   6. Q19 (2) 解析"$\Leftrightarrow x\leqslant-280$ 或 $x\geqslant50$"
+%      另起一行续印上行"$(x-50)(x+280)\geqslant0$"，照录未并成一行；
+%   7. Q13 解析"故 A 不能成立"正体字母与"故选 $A$"斜体字母体例不一
+%      （见 ② ⑯），照录未统一。
+%   全卷除此 7 类外未发现其它笔误／自相矛盾处；Q3 只印【答案】、其余 18 题
+%   全部印【解析】。
+%
+\documentclass[a4paper,11pt]{article}
+\usepackage{common}
+
+\begin{document}
+
+\examtitlest[3]{2026--2027 年华实高中高一上期中}{集合与常用逻辑用语、不等式、函数}
+
+\bigsec{一、填空题}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+% === Q3 === 只印【答案】、无【解析】；U=R 正体粗体 \R；集合描述竖线 \mid
+\item 设全集 $U=\R$，若集合 $A=\{1,2,3,4,5\}$，$B=\{x\mid 2\leqslant x\leqslant3\}$，则 $A\cap B=$\blankline[4.4em].
+
+\ifanswer
+\ans{$\{2,3\}$}
+\fi
+
+% === Q4 === 集合 A={-1,lg m}；解析 1 行
+\item 设集合 $A=\{-1,\lg m\}$，若 $2\in A$，则实数 $m=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$2\ne-1$，所以 $\lg m=2$，即 $m=10^2=100$.}
+\solend
+\fi
+
+% === Q5 === 幂函数；"图像"照录；解析 1 行
+\item 幂函数 $y=f(x)$ 的图像经过点 $\left(9,\dfrac13\right)$，则 $f\left(\dfrac4{25}\right)=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{设 $f(x)=x^\alpha$，则 $9^\alpha=\dfrac13\Rightarrow\alpha=-\dfrac12$，所以 $f\left(\dfrac4{25}\right)=\left(\dfrac4{25}\right)^{-\frac12}=\dfrac52$.}
+\solend
+\fi
+
+% === Q6 === 解析 1 行；题干在 01 页上下半页交界（重叠行，只算一次）
+\item 若 $a<0$，则关于 $x$ 的不等式 $ax>1$ 的解为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$a<0$，不等式两边同除以 $a$ 时不等号反向，得 $x<\dfrac1a$.}
+\solend
+\fi
+
+% === Q7 === \varnothing；解析 1 行
+\item 已知集合 $P=\{x\mid x\leqslant1\}$，$Q=\{x\mid x>a\}$，若 $P\cap Q\ne\varnothing$，则实数 $a$ 的值组成的集合是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$P\cap Q=\{x\mid a<x\leqslant1\}\ne\varnothing\Leftrightarrow a<1$.}
+\solend
+\fi
+
+% === Q8 === 换底公式；解析 1 行；"（用 m 表示）"全角括号照录
+\item 已知 $\log_{40}4=m$，则 $\log_2 5=$\blankline[4.4em]（用 $m$ 表示）.
+
+\ifanswer
+\solbegin
+\step{$m=\dfrac{\log_2 4}{\log_2 40}=\dfrac{2}{3+\log_2 5}$，解得 $\log_2 5=\dfrac2m-3$.}
+\solend
+\fi
+
+% === Q9 === 无穷多解；解析 2 行，跨 01—02 页；"解须"原卷无逗号
+\item 若关于 $x$ 的方程 $2ax-2a=(5-a)x+2b$ 有无穷多个解，则 $b=$\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{方程化为 $(3a-5)x=2(a+b)$，有无穷多个解须 $3a-5=0$ 且 $a+b=0$，}
+\step{解得 $a=\dfrac53$，$b=-\dfrac53$.}
+\solend
+\fi
+
+% === Q10 === \Delta（等腰偏高）、k=0 讨论；解析 3 行；k>0 后半角逗号照录
+\item 若关于 $x$ 的不等式 $kx^2-6kx+8>0$ 的解集为 $\R$，则实数 $k$ 的取值范围是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{当 $k=0$ 时，不等式恒成立；}
+\step{当 $k\ne0$ 时，须有 $k>0,\Delta=36k^2-32k<0\Leftrightarrow0<k<\dfrac89$；}
+\step{因此 $k\in\left[0,\dfrac89\right)$.}
+\solend
+\fi
+
+% === Q11 === 十七世纪法国数学家材料题、①②③④ 文本圈数字、中文弯引号；解析 5 行
+\item 十七世纪，法国数学家费马提出猜想：“当整数 $n>2$ 时，关于 $x$、$y$、$z$ 的方程 $x^n+y^n=z^n$ 没有正整数解.” 经历三百多年，1995 年英国数学家安德鲁·怀尔斯给出了证明，使它终成了费马大定理. 则下面四个命题：
+
+①当正整数 $n\leqslant2$ 时，关于 $x$、$y$、$z$ 的方程 $x^n+y^n=z^n$ 至少存在一组正整数解；
+
+②若关于 $x$、$y$、$z$ 的方程 $x^n+y^n=z^n$ 至少存在一组正整数解，则正整数 $n\leqslant2$；
+
+③对任意正整数 $n$，关于 $x$、$y$、$z$ 的方程 $x^n+y^n=z^n$ 都没有正整数解；
+
+④关于 $x$、$y$ 的方程 $x^3+y^3=1$ 存在正有理数解.
+
+真命题的序号是\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$n=1$ 时，$1+1=2$；$n=2$ 时，$3^2+4^2=5^2$，故①真，③假.}
+\step{由费马大定理，方程存在正整数解时，正整数 $n$ 不可能大于 2，故②真.}
+\step{若④成立，设 $x=\dfrac ac$，$y=\dfrac bc$，其中 $a,b,c$ 均为正整数，则 $a^3+b^3=c^3$，}
+\step{与费马大定理矛盾，故④假.}
+\step{真命题的序号是①②.}
+\solend
+\fi
+
+% === Q12 === "变项和"自定义定义、(-1)^m；解析 4 行，跨 02—03 页
+\item 已知集合 $M$ 的元素均为正整数，定义集合 $M$ 的“变项和”为：将 $M$ 中每个元素 $m$ 都乘以 $(-1)^m$ 后再求和. 若集合 $A=\{n\mid 1\leqslant n\leqslant10,n\in\Z\}$，则集合 $A$ 的所有非空子集的“变项和”的总和为\blankline[4.4em].
+
+\ifanswer
+\solbegin
+\step{$A$ 集合的所有非空子集中，每个元素出现的次数都是 $(2^{10}-1)-(2^9-1)=2^9$，}
+\step{则集合 $A$ 的所有非空子集的“变项和”的总和}
+\step{为 $1\times(-1)^1\times2^9+2\times(-1)^2\times2^9+\cdots+10\times(-1)^{10}\times2^9$}
+\step{$=(-1+2-3+4-\cdots-9+10)\times2^9=5\times2^9=2560$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{二、选择题}
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+% === Q13 === 不能成立的是；C 选项指数 1/5（放大确认）；解析 1 行，故选 $A$（斜体）
+\item 若 $a<b<0$，则下列不等关系中，不能成立的是\mbox{（\quad）}
+
+\keepwithprev
+A. $\dfrac{1}{a-b}>\dfrac1a$\qquad B. $a^2>b^2$\qquad C. $a^{\frac15}<b^{\frac15}$\qquad D. $\dfrac1a>\dfrac1b$
+
+\ifanswer
+\solbegin
+\step{$a<b<0\Rightarrow a<a-b<0\Rightarrow\dfrac{1}{a-b}<\dfrac1a$，故 A 不能成立，故选 $A$.}
+\solend
+\fi
+
+% === Q14 === 政治书集合题、\subseteq 带下划线；解析 1 行，故选 $C$
+\item 政治书上讲，“有使用价值的东西不一定有价值，有价值的东西一定有使用价值”，如把有使用价值的东西看作集合 $A$，把有价值的东西看作集合 $B$，那么它们的关系是\mbox{（\quad）}
+
+\keepwithprev
+A. $A\cap B=\varnothing$\qquad B. $A\cup B=B$\qquad C. $A\cup B=A$\qquad D. $A=B$
+
+\ifanswer
+\solbegin
+\step{有价值的东西一定有使用价值，即 $B\subseteq A$，所以 $A\cup B=A$，故选 $C$.}
+\solend
+\fi
+
+% === Q15 === 2^x=5^y=10^z 取对数比较；解析 4 行，跨 03—04 页，故选 $A$
+\item 已知正数 $x$、$y$、$z$ 满足 $2^x=5^y=10^z$，则下列结论正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. $x+y>4z$\qquad B. $x+y<4z$\qquad C. $\dfrac1x+\dfrac1y>\dfrac1z$\qquad D. $\dfrac1x+\dfrac1y<\dfrac1z$
+
+\ifanswer
+\solbegin
+\step{取常用对数得 $x\lg2=y\lg5=z$，则 $\dfrac1x+\dfrac1y=\dfrac{\lg2+\lg5}{z}=\dfrac1z$，即 $xy=z(x+y)$.}
+\step{基本不等式给出 $(x+y)^2\geqslant4xy=4z(x+y)$，取等当且仅当 $x=y$.}
+\step{若 $x=y>0$，则 $2^x<5^y$，与题设矛盾，因此 $(x+y)^2>4z(x+y)$，}
+\step{得 $x+y>4z$，故选 $A$.}
+\solend
+\fi
+
+% === Q16 === P_1/P_2、Q_1/Q_2 子集判断；解析 4 行，故选 $D$
+\item 设集合 $P_1=\{x\mid x^2+2ax+3>0\}$，$P_2=\{x\mid x^2+2ax+2>0\}$，$Q_1=\{x\mid x^2+2x+b>0\}$，$Q_2=\{x\mid x^2+3x+b>0\}$，其中 $a,b\in\R$. 下列说法正确的是\mbox{（\quad）}
+
+\keepwithprev
+A. 对任意实数 $a$，$P_2$ 都不是 $P_1$ 的子集，存在实数 $b$，使得 $Q_1$ 不是 $Q_2$ 的子集
+
+B. 对任意实数 $a$，$P_2$ 都不是 $P_1$ 的子集，对任意实数 $b$，$Q_1$ 都不是 $Q_2$ 的子集
+
+C. 对任意实数 $a$，$P_2$ 是 $P_1$ 的子集，对任意实数 $b$，$Q_1$ 都不是 $Q_2$ 的子集
+
+D. 对任意实数 $a$，$P_2$ 是 $P_1$ 的子集，存在实数 $b$，使得 $Q_1$ 是 $Q_2$ 的子集
+
+\ifanswer
+\solbegin
+\step{对任意 $a\in\R$，$x\in P_2\Rightarrow x^2+2ax+3=(x^2+2ax+2)+1>0$，}
+\step{所以 $P_2\subseteq P_1$，排除 A、B.}
+\step{取 $b=3$，则 $x^2+2x+3=(x+1)^2+2>0$，$x^2+3x+3=\left(x+\dfrac32\right)^2+\dfrac34>0$，}
+\step{此时 $Q_1=Q_2=\R$，因而 $Q_1\subseteq Q_2$，排除 C，故选 $D$.}
+\solend
+\fi
+
+\end{enumerate}
+
+\bigsec{三、解答题}
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+% === Q17 === 不等式组 cases、A\cap B=A \Leftrightarrow A\subseteq B；解析 6 行，跨 04—05 页
+\item 已知关于 $x$ 的不等式组 $\begin{cases}x-1>a^2\\x-4<2a\end{cases}$ 的解集 $A$ 是非空集，$B=\left\{x\mid\dfrac{x-3}{x+2}<0\right\}$.
+
+(1) 求集合 $B$ 及实数 $a$ 的取值范围；
+
+(2) 若 $A\cap B=A$，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 分式为负，分子与分母异号，因此 $\dfrac{x-3}{x+2}<0\Leftrightarrow-2<x<3$，即 $B=(-2,3)$.}
+\step{不等式组的解集为 $A=(a^2+1,2a+4)$.}
+\step{由 $A$ 非空，$a^2+1<2a+4\Leftrightarrow(a-3)(a+1)<0\Leftrightarrow-1<a<3$；}
+\step{(2) $A\cap B=A\Leftrightarrow A\subseteq B$.}
+\step{因为 $A$ 非空，且 $a^2+1\geqslant1>-2$，所以 $A\subseteq B\Leftrightarrow2a+4\leqslant3\Leftrightarrow a\leqslant-\dfrac12$，}
+\step{结合 $-1<a<3$，得 $a\in\left(-1,-\dfrac12\right]$.}
+\solend
+\fi
+
+% === Q18 === 韦达定理、\Delta、k 分类讨论；解析 9 行，跨 05 页上下半页
+\item 已知函数 $f(x)=x^2-(k+1)x+2k$.
+
+(1) 若关于 $x$ 的 $f(x)=0$ 有两个实数根 $x_1$、$x_2$，且 $x_1^2+x_2^2=4$，求实数 $k$ 的值；
+
+(2) 解关于 $x$ 的不等式：$x^2-(k+1)x+2k<x$（$k\in\R$）.
+
+\ifanswer
+\solbegin
+\step{(1) 由韦达定理，$x_1+x_2=k+1$，$x_1x_2=2k$.}
+\step{$x_1^2+x_2^2=(x_1+x_2)^2-2x_1x_2=(k+1)^2-4k=(k-1)^2=4$，得 $k=-1$ 或 $k=3$.}
+\step{当 $k=-1$ 时，$\Delta=(k+1)^2-8k=8>0$；}
+\step{当 $k=3$ 时，$\Delta=-8<0$，不符合题意.}
+\step{所以 $k=-1$.}
+\step{(2) 原不等式等价于 $x^2-(k+2)x+2k<0\Leftrightarrow(x-2)(x-k)<0$，}
+\step{当 $k<2$ 时，两因式异号得 $k<x<2$，解集为 $(k,2)$.}
+\step{当 $k=2$ 时，不等式为 $(x-2)^2<0$，解集为 $\varnothing$.}
+\step{当 $k>2$ 时，两因式异号得 $2<x<k$，解集为 $(2,k)$.}
+\solend
+\fi
+
+% === Q19 === 数字经济应用题、①② 圈数字、单位标注体例不一；解析 9 行，跨 05—06 页
+\item 数字经济是以数据资源为关键要素，以现代信息网络为主要载体，通过信息通信技术的融合应用推动全要素数字化转型的新经济形态，在技术层面，包括大数据、云计算、物联网、区块链、人工智能、5G 通信等新兴技术；在应用层面，包括“新零售”、“新制造”、工业互联网、元宇宙、无人驾驶等. 现有一人工智能企业生产制造人形机器人，每月的成本 $t$（单位，万元）由两部分构成. ①固定成本： 1000 万元； ②材料成本：$\left(12x+\dfrac{x^2}{10}\right)$ 万元，$x$ 为每月生产人形机器人的个数.
+
+(1) 该企业每月的产量为多少时，平均每个人形机器人的成本（单位：万元）最低，最低为多少万元？
+
+(2) 若每个人形机器人的售价为 $\left(35+\dfrac x5\right)$ 万元，假设生产出来的每个人形机器人都能够售出，则该企业应如何制订生产计划，才能确保每月的利润 $W$（单位：万元）不低于 400 万元？（附：利润$=$售价$\times$销量$-$成本）
+
+\ifanswer
+\solbegin
+\step{(1) $x$ 为正整数，每月总成本为 $t=1000+12x+\dfrac{x^2}{10}$，}
+\step{平均每个人形机器人的成本为 $\dfrac tx=12+\dfrac{1000}{x}+\dfrac x{10}\geqslant12+2\sqrt{\dfrac{1000}{x}\cdot\dfrac x{10}}=32$，}
+\step{当且仅当 $\dfrac{1000}{x}=\dfrac x{10}$，即 $x=100$ 时取等号，}
+\step{因此，每月生产 100 个时，平均每个的成本最低，为 32 万元.}
+\step{(2) 每月利润为 $W=\left(35+\dfrac x5\right)x-\left(1000+12x+\dfrac{x^2}{10}\right)=\dfrac{x^2}{10}+23x-1000$，}
+\step{要求 $W\geqslant400$，即 $x^2+230x-14000\geqslant0\Leftrightarrow(x-50)(x+280)\geqslant0$}
+\step{$\Leftrightarrow x\leqslant-280$ 或 $x\geqslant50$，因为 $x$ 为正整数，所以 $x\geqslant50$.}
+\step{因此，企业应安排每月至少生产 50 个人形机器人，}
+\step{才能确保每月利润不低于 400 万元.}
+\solend
+\fi
+
+% === Q20 === \lvert…\rvert 分类讨论、\varnothing；解析 11 行，跨 06—07 页
+\item 已知函数 $f(x)=\lvert x+a\rvert+\lvert x-2\rvert$.
+
+(1) 当 $a=1$ 时，解关于 $x$ 的不等式：$f(x)<9$；
+
+(2) 当 $a=0$ 时，求证：$\lvert x\rvert+\lvert x-2\rvert\geqslant2$ 恒成立并指出等号的成立条件；
+
+(3) 若不等式 $f(x)<5$ 的解集为 $\varnothing$，求实数 $a$ 的取值范围.
+
+\ifanswer
+\solbegin
+\step{(1) 当 $x<-1$ 时，$f(x)<9\Leftrightarrow1-2x<9$，得 $-4<x<-1$.}
+\step{当 $-1\leqslant x\leqslant2$ 时，$f(x)=3<9$，均满足.}
+\step{当 $x>2$ 时，$f(x)<9\Leftrightarrow2x-1<9$，得 $2<x<5$.}
+\step{不等式的解集为 $(-4,5)$.}
+\step{(2) 由绝对值三角不等式得 $\lvert x\rvert+\lvert x-2\rvert=\lvert x\rvert+\lvert 2-x\rvert\geqslant\lvert x+(2-x)\rvert=2$，}
+\step{等号成立当且仅当 $x(2-x)\geqslant0$，即 $x\in[0,2]$.}
+\step{(3) 由绝对值三角不等式得 $f(x)=\lvert x+a\rvert+\lvert 2-x\rvert\geqslant\lvert(x+a)+(2-x)\rvert=\lvert a+2\rvert$，}
+\step{当 $x=2$ 时，$f(2)=\lvert a+2\rvert$，因此 $f(x)$ 的最小值为 $\lvert a+2\rvert$.}
+\step{不等式 $f(x)<5$ 的解集为 $\varnothing$，}
+\step{当且仅当 $\lvert a+2\rvert\geqslant5\Leftrightarrow a+2\leqslant-5$ 或 $a+2\geqslant5\Leftrightarrow a\leqslant-7$ 或 $a\geqslant3$，}
+\step{所以 $a$ 的取值范围为 $(-\infty,-7]\cup[3,+\infty)$.}
+\solend
+\fi
+
+% === Q21 === 学习解法、2^x\cdot8^y=2^{x+3y}、三问证明；解析 19 行，跨 07—09 页
+\item 已知正实数 $a$、$b$ 满足 $a+b=1$，求 $\dfrac1a+\dfrac1b$ 的最小值，其中一种解法是：
+
+$\dfrac1a+\dfrac1b=\left(\dfrac1a+\dfrac1b\right)(a+b)=1+\dfrac ba+\dfrac ab+1\geqslant2+2\sqrt{\dfrac ba\times\dfrac ab}=2+2=4$，
+
+当且仅当 $\dfrac ba=\dfrac ab$ 且 $a+b=1$ 时，即 $a=b=\dfrac12$ 时取等号.
+
+学习上述解法并解决下列问题：
+
+(1) 已知 $x>0$，$y>0$，且 $2^x\cdot8^y=2$，求 $\dfrac1x+\dfrac1y$ 的最小值；
+
+(2) 若实数 $a$、$b$、$x$、$y$ 满足 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$，求证：$a^2+b^2\geqslant(x+y)^2$；
+
+(3) 若正数 $a$、$b$ 满足 $a+b=2\sqrt6$，求 $\left(a+\dfrac1a\right)\left(b+\dfrac1b\right)$ 的最小值以及取得最小值时 $a$、$b$ 的值.
+
+\ifanswer
+\solbegin
+\step{(1) $2^x\cdot8^y=2^{x+3y}=2$，得 $x+3y=1$，}
+\step{因而 $\dfrac1x+\dfrac1y=\left(\dfrac1x+\dfrac1y\right)(x+3y)=4+\dfrac{3y}{x}+\dfrac xy\geqslant4+2\sqrt{\dfrac{3y}{x}\cdot\dfrac xy}=4+2\sqrt3$，}
+\step{当且仅当 $\dfrac{3y}{x}=\dfrac xy$，即 $x=\sqrt3y$ 时取等号，}
+\step{结合 $x+3y=1$，得 $x=\dfrac{\sqrt3-1}{2}$，$y=\dfrac{3-\sqrt3}{6}$，均为正数，}
+\step{所以最小值为 $4+2\sqrt3$.}
+\step{(2) 题设中 $a\ne0$，$b\ne0$. 将条件乘入 $a^2+b^2$，}
+\step{得 $a^2+b^2=(a^2+b^2)\left(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}\right)=x^2+y^2+\dfrac{b^2x^2}{a^2}+\dfrac{a^2y^2}{b^2}$}
+\step{$\geqslant x^2+y^2+2\sqrt{\dfrac{b^2x^2}{a^2}\cdot\dfrac{a^2y^2}{b^2}}=x^2+y^2+2\lvert xy\rvert\geqslant x^2+y^2+2xy=(x+y)^2$，}
+\step{第一个不等式当且仅当 $\dfrac{b^2x^2}{a^2}=\dfrac{a^2y^2}{b^2}$ 时取等号，}
+\step{第二个当且仅当 $xy\geqslant0$ 时取等号，}
+\step{两者同时取等号等价于 $b^2x=a^2y$.}
+\step{(3) 由 $a+b=2\sqrt6$，得 $(a+b)^2=24$，即 $1=\dfrac{(a+b)^2}{24}$，}
+\step{因而 $\left(a+\dfrac1a\right)\left(b+\dfrac1b\right)=ab+\dfrac ab+\dfrac ba+\dfrac1{ab}\cdot\dfrac{(a+b)^2}{24}$}
+\step{$=ab+\dfrac{(a+b)^2-2ab}{ab}+\dfrac{(a+b)^2}{24ab}=ab+\dfrac{25(a+b)^2}{24ab}-2$}
+\step{$=ab+\dfrac{25}{ab}-2\geqslant2\sqrt{ab\cdot\dfrac{25}{ab}}-2=8$，}
+\step{当且仅当 $ab=\dfrac{25}{ab}$，即 $ab=5$ 时取等号.}
+\step{结合 $a+b=2\sqrt6$，$a$、$b$ 为方程 $t^2-2\sqrt6t+5=0$ 的两根，}
+\step{得 $a=\sqrt6+1$，$b=\sqrt6-1$，或两者交换，均满足正数条件，}
+\step{所以最小值为 8.}
+\solend
+\fi
+
+\end{enumerate}
+
+\end{document}
