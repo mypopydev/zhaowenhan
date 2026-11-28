@@ -92,7 +92,10 @@ HITLIST = os.path.join(HERE, '真题命中清单.txt')
 # 对号副本：高一16 的正文就是 高一b、高一18 的正文就是 高一c（源码逐字相同），
 # 只差卷面标题的“（补）”二字。重复计入既会把份数/题数算大，更会在跨卷两两里
 # **造出成对的假同题**（高一18×高一c 会凭空多出一整套“逐字同题”）。
+# 注意用「卷号恰为 16／18」的精确匹配，不能用前缀：卷号进三位数后
+# 高一160／161／162 都以「高一16」开头，前缀匹配会把它们误当副本跳过（2026-11-28 踩过）。
 SKIP = ('高一16', '高一18')
+SKIP_RE = re.compile(r'^高一(?:16|18)_')
 
 # ---------------------------------------------------------------- 骨架化
 SYM = [   # 数学符号一律保留（顺序有讲究：长命令在前，短宏带“后不接字母”守卫）
@@ -215,7 +218,7 @@ def our_stems():
     out = []
     for f in sorted(glob.glob(os.path.join(SRC, '高一*.tex'))):
         name = os.path.basename(f)[:-4]
-        if name.startswith(SKIP):
+        if SKIP_RE.match(name):
             continue
         body = strip_answers(io.open(f, encoding='utf-8').read())
         body = body[body.index('\\begin{document}'):]

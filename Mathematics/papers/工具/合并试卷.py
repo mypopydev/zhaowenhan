@@ -38,6 +38,9 @@ PAT = '*_试卷.pdf'
 
 # 对号副本：与 高一b／高一c 逐字相同，打印版只收一份
 SKIP = ('高一16', '高一18')
+# 卷号进三位数后，startswith(('高一16','高一18')) 会误杀 高一160／161／162，
+# 故按「卷号后紧跟下划线」精确匹配（与 题目溯源.py 的 SKIP_RE 同一口径）
+SKIP_RE = re.compile(r'^高一(?:16|18)_')
 
 
 def title_of(path):
@@ -84,8 +87,8 @@ def main():
     files = sorted(glob.glob(os.path.join(SRC_DIR, PAT)))
     if not files:
         sys.exit('❌ %s 里没有 %s，先跑 make compact' % (SRC_DIR, PAT))
-    keep = [f for f in files if not os.path.basename(f).startswith(SKIP)]
-    drop = [f for f in files if os.path.basename(f).startswith(SKIP)]
+    keep = [f for f in files if not SKIP_RE.match(os.path.basename(f))]
+    drop = [f for f in files if SKIP_RE.match(os.path.basename(f))]
 
     w = PdfWriter()
     rows = []
